@@ -1,0 +1,5 @@
+interface:
+  display_name: "writing-tips"
+  short_description: "Writing · 5 tips: Orwell's rules, one-line de-AI prompt, README rewrites, task briefs."
+policy:
+  allow_implicit_invocation: false

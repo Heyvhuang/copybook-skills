@@ -1,0 +1,5 @@
+interface:
+  display_name: "review-tips"
+  short_description: "验收 · 14 条：bug 打分、红队提示词、代码和计划复查、skill 回测。"
+policy:
+  allow_implicit_invocation: false

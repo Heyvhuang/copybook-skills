@@ -1,0 +1,5 @@
+# Several agents, and work for later
+
+The lead agent chooses tips for work that can be verified independently, with one tip per item by default. When the user permits parallel work, independent items can run in parallel with the same or different tips. If the user requests independent reviews of the same question using different methods, split the work by method. Workers use the lead’s selected tip within their existing permissions and do not pick again. The lead checks and combines their findings.
+
+When the user invokes Copybook, mark any agreed later deliverable in the existing plan or handoff with “pick a tip when this starts.” When that work starts or the user changes the goal, the lead reads the list of the topic it belongs to, even if an earlier step used another topic. If the next step depends on an earlier result, wait for that result before choosing. Treat a recheck you initiate as automatic under step 6 of SKILL.md. Keep a tip that still fits, switch to a better fit, or quietly drop it if none fits. Follow-ups on the same item, small edits, retries and steps within a tip need no new match.

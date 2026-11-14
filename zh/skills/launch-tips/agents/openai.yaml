@@ -1,0 +1,5 @@
+interface:
+  display_name: "launch-tips"
+  short_description: "上线推广 · 11 条：上线前检查清单、搜索引流小工具、VPS 加固。"
+policy:
+  allow_implicit_invocation: false

@@ -1,0 +1,31 @@
+{
+  "name": "copybook-zh",
+  "version": "1.0.0",
+  "description": "按情景替你的 coding agent 挑技巧（中文版）：一个会自己加载的 skill 从 134 条提示词、规则和设置里选一条，照着做。来自 @Voxyz_ai 在 X 上被读者收藏最多的帖子。",
+  "author": {
+    "name": "Vox",
+    "url": "https://x.com/Voxyz_ai"
+  },
+  "homepage": "https://copybook.page/zh/",
+  "repository": "https://github.com/Heyvhuang/copybook-skills",
+  "license": "MIT AND CC-BY-4.0",
+  "keywords": [
+    "claude-code",
+    "codex",
+    "skills",
+    "prompts",
+    "agents-md",
+    "coding-agents",
+    "chinese"
+  ],
+  "skills": [
+    "./skills/copybook",
+    "./skills/codebase-tips",
+    "./skills/review-tips",
+    "./skills/design-tips",
+    "./skills/long-run-tips",
+    "./skills/model-tips",
+    "./skills/launch-tips",
+    "./skills/writing-tips"
+  ]
+}

@@ -1,0 +1,22 @@
+# Sets the labels the issue forms use. Generated from Copybook like every file here; it runs when this file changes.
+name: Labels
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/labels.yml]
+  workflow_dispatch:
+permissions:
+  issues: write
+jobs:
+  labels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Create or update the labels
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh label create broken --color d73a4a --description 'A tip stopped working · 技巧不灵了' --force
+          gh label create translation --color 0075ca --description 'A Chinese translation reads wrong · 中文译文有误或不顺' --force
+          gh label create suggestion --color 0e8a16 --description 'An X post worth adding to Copybook · 值得收进 Copybook 的 X 帖子' --force

@@ -1,0 +1,5 @@
+interface:
+  display_name: "writing-tips"
+  short_description: "写作 · 5 条：Orwell 写作规则、去 AI 腔、README 改写、任务说明。"
+policy:
+  allow_implicit_invocation: false

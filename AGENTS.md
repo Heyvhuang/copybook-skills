@@ -1,0 +1,3 @@
+# AGENTS.md
+
+Everything in this repository is generated from Copybook (https://copybook.page) by a script that runs whenever a tip is added or checked again. Edits made here are overwritten on the next sync, so don't change a SKILL.md, a tip's file under references/, a README or a manifest by hand. A copy block in a tip's file or a SKILL.md is the original post's text and must stay byte for byte as it is. The one mark added, in a SKILL.md only, is a backslash before a `$` that Claude Code would take for an argument (`\$5,000`); Claude Code removes it when the skill loads, so leave it in. Report a problem through the issue forms instead.

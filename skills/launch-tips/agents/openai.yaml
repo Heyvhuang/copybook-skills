@@ -1,0 +1,5 @@
+interface:
+  display_name: "launch-tips"
+  short_description: "Launch · 11 tips: pre-launch, speed, and legal checks, SEO tool pages, VPS lockdown."
+policy:
+  allow_implicit_invocation: false

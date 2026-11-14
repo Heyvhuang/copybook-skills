@@ -1,0 +1,5 @@
+interface:
+  display_name: "review-tips"
+  short_description: "Review · 14 tips: PR, code, and plan reviews, bug scoring, skill audits and backtests."
+policy:
+  allow_implicit_invocation: false

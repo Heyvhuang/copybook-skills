@@ -1,0 +1,15 @@
+name: "Suggest a tip · 推荐新技巧"
+description: "A post on X with a prompt, rules or a setup worth adding to Copybook. 包含提示词、规则或设置，值得收进 Copybook 的 X 帖子。"
+labels: ["suggestion"]
+body:
+  - type: input
+    id: link
+    attributes:
+      label: "Link to the post · 帖子链接"
+      placeholder: "https://x.com/…/status/…"
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: "What it does for you · 它帮你做成了什么"

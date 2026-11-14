@@ -1,0 +1,5 @@
+interface:
+  display_name: "model-tips"
+  short_description: "模型和额度 · 23 条：模型搭配、推理强度、缓存倒计时、剩余额度。"
+policy:
+  allow_implicit_invocation: false

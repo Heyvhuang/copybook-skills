@@ -1,0 +1,3 @@
+interface:
+  display_name: "Copybook"
+  short_description: "134 prompts, rules, checklists, and setups. Auto-loads one when a task fits, or browse."

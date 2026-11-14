@@ -1,0 +1,30 @@
+{
+  "name": "copybook",
+  "version": "1.0.0",
+  "description": "Your coding agent picks the tip that fits the task: a skill that loads by itself chooses one of 134 prompts, rules and setups and follows it. From @Voxyz_ai's posts on X, the ones readers saved most.",
+  "author": {
+    "name": "Vox",
+    "url": "https://x.com/Voxyz_ai"
+  },
+  "homepage": "https://copybook.page",
+  "repository": "https://github.com/Heyvhuang/copybook-skills",
+  "license": "MIT AND CC-BY-4.0",
+  "keywords": [
+    "claude-code",
+    "codex",
+    "skills",
+    "prompts",
+    "agents-md",
+    "coding-agents"
+  ],
+  "skills": [
+    "./skills/copybook",
+    "./skills/codebase-tips",
+    "./skills/review-tips",
+    "./skills/design-tips",
+    "./skills/long-run-tips",
+    "./skills/model-tips",
+    "./skills/launch-tips",
+    "./skills/writing-tips"
+  ]
+}
