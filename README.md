@@ -3,20 +3,26 @@
 Copybook picks a tip for your coding agent by the situation it is in. You ask for the work as usual, and a skill that loads by itself picks one of the 134 tips and follows it. You have nothing to remember and nothing to choose. The tips are the prompts, rules and setups readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai)'s posts on X.
 
 ```text
-       >  Is this site ready to launch?
-copybook  Launch list · picks 1 of 11 tips
+copybook ─────────────────────────
 
-       >  This page looks AI-made, redo it
-copybook  Design list · picks 1 of 30 tips
+› Is this site ready to launch?
+  Launch list · picks 1 of 11
+  ·····•·····
 
-       >  Trim our AGENTS.md
-copybook  Codebase list · picks 1 of 32 tips
+› This page looks AI-made, redo it
+  Design list · picks 1 of 30
+  ···········•··················
 
-       >  Review this PR before I merge
-copybook  Review list · picks 1 of 14 tips
-────────────────────────────────────────────────
-          then tells you which tip, and why,
-          and does the work by that tip's steps
+› Trim our AGENTS.md
+  Codebase list · picks 1 of 32
+  ·······················•········
+
+› Review this PR before I merge
+  Review list · picks 1 of 14
+  ··········•···
+──────────────────────────────────
+  then names the tip, and why,
+  and works through its steps
 ```
 
 [copybook.page](https://copybook.page) · [New tips by email](https://copybook.page/#email-bottom-title) · [Changelog](CHANGELOG.md) · [中文](README.zh-CN.md)
@@ -143,6 +149,7 @@ Copybook is written by [@Voxyz_ai](https://x.com/Voxyz_ai).
 - **X**: [@Voxyz_ai](https://x.com/Voxyz_ai), where each tip was first posted
 - **Site**: [copybook.page](https://copybook.page), every tip with copy buttons and its original post
 - **Issues**: https://github.com/Heyvhuang/copybook-skills/issues
+- **Star**: [Star this repository](https://github.com/Heyvhuang/copybook-skills) to keep it in your stars. To hear of each new version, choose **Watch** → **Custom** → **Releases**
 - **New tips by email**: [Sign up](https://copybook.page/#email-bottom-title)
 
 ## What's inside

@@ -3,20 +3,26 @@
 Copybook 按情景替你的 coding agent 挑技巧。你照常说要做什么，一个会自己加载的 skill 从 134 条技巧里选一条，照着做。你不用记，也不用选。这些提示词、规则和设置，来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子。
 
 ```text
-       >  这个网站能上线了吗
-copybook  上线推广 · 11 条里选 1 条
+copybook ─────────────────────────
 
-       >  这个页面一股 AI 味，重做
-copybook  设计 · 30 条里选 1 条
+› 这个网站能上线了吗
+  上线推广 · 11 条里选 1 条
+  ·····•·····
 
-       >  AGENTS.md 太长了，精简一下
-copybook  代码库 · 32 条里选 1 条
+› 这个页面一股 AI 味，重做
+  设计 · 30 条里选 1 条
+  ···········•··················
 
-       >  合并前审一下这个 PR
-copybook  验收 · 14 条里选 1 条
-────────────────────────────────────────────────
-          然后用一句话告诉你选了哪条、为什么，
-          照这条技巧的步骤把事做完
+› AGENTS.md 太长了，精简一下
+  代码库 · 32 条里选 1 条
+  ·······················•········
+
+› 合并前审一下这个 PR
+  验收 · 14 条里选 1 条
+  ··········•···
+──────────────────────────────────
+  然后说出选了哪条、为什么，
+  照它的步骤把事做完
 ```
 
 [copybook.page](https://copybook.page/zh/) · [用邮件收新技巧（英文）](https://copybook.page/zh/#email-bottom-title) · [更新记录](CHANGELOG.md) · [English](README.md)
@@ -143,6 +149,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 - **X**：[@Voxyz_ai](https://x.com/Voxyz_ai)，每条技巧最早发在这里
 - **网站**：[copybook.page](https://copybook.page/zh/)，每条技巧都有复制按钮和原帖
 - **Issues**：https://github.com/Heyvhuang/copybook-skills/issues
+- **Star**：[给这个仓库点 Star](https://github.com/Heyvhuang/copybook-skills)，收进你的 Star 列表。想收到每个新版本，选 **Watch** → **Custom** → **Releases**
 - **用邮件收新技巧（英文）**：[订阅](https://copybook.page/zh/#email-bottom-title)
 
 ## 里面有什么
