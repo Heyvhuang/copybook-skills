@@ -1,5 +1,5 @@
 interface:
   display_name: "long-run-tips"
-  short_description: "Long runs · 19 tips: multi-agent roles, progress dashboards, handoffs, remote workflows."
+  short_description: "Long runs · 21 tips: multi-agent roles, progress dashboards, handoffs, remote workflows."
 policy:
   allow_implicit_invocation: false

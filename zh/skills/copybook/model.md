@@ -16,9 +16,9 @@ Copybook 的 23 条「模型和额度」技巧。顺序按收藏数，不按合�
 | hillclimb-a-cheaper-feature | 最花钱的 Claude API 调用：先搭测试集，再一档档换便宜模型、降 effort，准确率不掉才算数。 |
 | fable-5-2-agent-tree | 每个角色选哪个模型和 effort：Haiku 5.5 找文件、跑测试，Opus 5.5 改代码，Fable 卡住才上 high。 |
 | gpt-6-1-sol-main-astra-reviews | Astra 一周吃光额度：6.1 Sol 用 high 调度、medium 跑 subagent，Astra 只审上线前的大改动。 |
+| advisor-opus-on-call | $20 套餐默认跑 Opus 5.5：Haiku 读代码、查文档，定方案前、错误反复时、说做完前叫 Opus 出主意。 |
 | fable-5-2-plans-opus-builds | Fable 5.2 烧 token 太快：规划留在主会话，最难的部分也可留下，其余交给 Opus 5.5 subagent 或 Codex。 |
 | old-rules-review-for-fable-5-2 | 给老模型写死的规则拖累 Fable 5.2：派活、少想、文风限制和「never」的句子，引原文给改法。 |
-| advisor-opus-on-call | $20 套餐默认跑 Opus 5.5：Haiku 读代码、查文档，定方案前、错误反复时、说做完前叫 Opus 出主意。 |
 | 3-habits-burning-your-usage | 总撞额度上限：扫最近 7 天的会话日志，算出每个习惯各占多少额度，再写规则把它们堵上。 |
 | fable-main-opus-subagents | Fable 额度不够用：3 行设置，读代码、查文档交给半价的 Opus subagent，判断留给 Fable。 |
 | openais-5-cheap-harness-rules | agent 配置省不省钱：对照 OpenAI 自己用的 5 条规则逐条判过不过，给出文件和要改的那一件事。 |

@@ -70,4 +70,4 @@ Original is in an image, transcribed verbatim.
 
 ## Source
 
-From [Copybook](https://copybook.page/t/switch-to-sonnet-5-5-with-opus-on-call): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2119082454120337491) on 7 Nov 2026, 818 saves as of 8 Nov 2026. For Claude Code.
+From [Copybook](https://copybook.page/t/switch-to-sonnet-5-5-with-opus-on-call): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2119082454120337491) on 7 Nov 2026, 968 saves as of 14 Nov 2026. For Claude Code.

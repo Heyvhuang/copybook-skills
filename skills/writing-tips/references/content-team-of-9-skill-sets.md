@@ -1,4 +1,4 @@
-# Content team of 9 skill sets
+# Content team of 9 skill sets in Claude Code
 
 Making content solo: skills for topics, writing, visuals, video, sound and scheduling, installed and tried on one topic.
 

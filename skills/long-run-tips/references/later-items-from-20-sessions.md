@@ -1,4 +1,4 @@
-# Later items from your last 20 sessions
+# Later items from your last 20 Claude Code sessions
 
 What you said you'd do later and forgot: past sessions searched, items ranked, each one a card that opens its own session.
 

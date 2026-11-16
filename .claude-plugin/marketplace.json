@@ -11,7 +11,7 @@
     {
       "name": "copybook",
       "source": "./",
-      "description": "Your coding agent picks the tip that fits the task: a skill that loads by itself chooses one of 134 prompts, rules and setups and follows it. From @Voxyz_ai's posts on X, the ones readers saved most.",
+      "description": "Your coding agent picks the tip that fits the task: a skill that loads by itself chooses one of 138 prompts, rules and setups and follows it. From @Voxyz_ai's posts on X, the ones readers saved most.",
       "category": "development",
       "keywords": [
         "claude-code",
@@ -25,7 +25,7 @@
     {
       "name": "copybook-zh",
       "source": "./zh",
-      "description": "按情景替你的 coding agent 挑技巧（中文版）：一个会自己加载的 skill 从 134 条提示词、规则和设置里选一条，照着做。来自 @Voxyz_ai 在 X 上被读者收藏最多的帖子。",
+      "description": "按情景替你的 coding agent 挑技巧（中文版）：一个会自己加载的 skill 从 138 条提示词、规则和设置里选一条，照着做。来自 @Voxyz_ai 在 X 上被读者收藏最多的帖子。",
       "category": "development",
       "keywords": [
         "claude-code",

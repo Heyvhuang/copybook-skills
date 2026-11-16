@@ -4,6 +4,42 @@
       "version": "1.0.0",
       "date": "2026-11-14",
       "start": 134
+    },
+    {
+      "version": "1.0.2",
+      "date": "2026-11-16",
+      "added": [
+        {
+          "slug": "coordinator-skill-for-claude-code-and-codex",
+          "title": {
+            "en": "Coordinator skill for Claude Code and Codex",
+            "zh": "Claude Code 和 Codex 的协调者 skill"
+          }
+        },
+        {
+          "slug": "open-preview-links-on-your-phone-with-tailscale",
+          "title": {
+            "en": "Tailscale preview links on your phone: a rule",
+            "zh": "手机上的 Tailscale 预览链接规则"
+          }
+        },
+        {
+          "slug": "turn-design-corrections-into-rules-with-learn-taste",
+          "title": {
+            "en": "/learn-taste: design corrections as rules",
+            "zh": "/learn-taste：设计修正变成规则"
+          }
+        },
+        {
+          "slug": "walk-through-two-way-doors-stop-at-one-way-doors",
+          "title": {
+            "en": "One-way door rules for AGENTS.md: when to ask",
+            "zh": "AGENTS.md 单向门规则：什么时候该问"
+          }
+        }
+      ],
+      "changed": [],
+      "retired": []
     }
   ],
   "tips": {
@@ -299,8 +335,16 @@
       "en": "d380f7b3f492bb90",
       "zh": "7ca4ea5469f71b9d",
       "title": {
-        "en": "Content team of 9 skill sets",
+        "en": "Content team of 9 skill sets in Claude Code",
         "zh": "内容团队：9 套 skill"
+      }
+    },
+    "coordinator-skill-for-claude-code-and-codex": {
+      "en": "168c5a357b41ffe7",
+      "zh": "cb939b5d177da264",
+      "title": {
+        "en": "Coordinator skill for Claude Code and Codex",
+        "zh": "Claude Code 和 Codex 的协调者 skill"
       }
     },
     "daily-fix-list-from-your-apps-logs": {
@@ -355,7 +399,7 @@
       "en": "bb946067d07f4a18",
       "zh": "87626d1e9cd4f1d8",
       "title": {
-        "en": "Later items from your last 20 sessions",
+        "en": "Later items from your last 20 Claude Code sessions",
         "zh": "最近 20 个会话里的「以后再弄」"
       }
     },
@@ -483,7 +527,7 @@
       "en": "5e386ad5130600c2",
       "zh": "0a8e4bb1decbe898",
       "title": {
-        "en": "codebase-memory: an index of your repo",
+        "en": "codebase-memory MCP: an index of your repo",
         "zh": "codebase-memory 仓库索引"
       }
     },
@@ -619,7 +663,7 @@
       "en": "69b94f0790dd5380",
       "zh": "31b5aa8ee0755d64",
       "title": {
-        "en": "Every UI state mocked up with /design",
+        "en": "Every UI state mocked up with Claude Design",
         "zh": "/design 画出的每个界面状态"
       }
     },
@@ -639,6 +683,14 @@
         "zh": "Claude Code 和 Codex 共用的 AGENTS.md"
       }
     },
+    "open-preview-links-on-your-phone-with-tailscale": {
+      "en": "702a17f35b3677e9",
+      "zh": "44b3f7fee2184cf2",
+      "title": {
+        "en": "Tailscale preview links on your phone: a rule",
+        "zh": "手机上的 Tailscale 预览链接规则"
+      }
+    },
     "orchestrate-opus-and-haiku-subagents-with-fable-5-2": {
       "en": "bc59f65817419397",
       "zh": "267331516c11ad6e",
@@ -651,7 +703,7 @@
       "en": "8e74cbc8ff59452d",
       "zh": "5c3044eb7982689e",
       "title": {
-        "en": "Orwell's 6 writing rules",
+        "en": "Orwell's 6 writing rules for CLAUDE.md and AGENTS.md",
         "zh": "Orwell 的 6 条写作规则"
       }
     },
@@ -667,7 +719,7 @@
       "en": "e7bc27cdbe467906",
       "zh": "0db57eba1886b411",
       "title": {
-        "en": "The job worth a dynamic workflow",
+        "en": "The job worth a dynamic workflow in Claude Code",
         "zh": "最该用动态工作流跑的活"
       }
     },
@@ -955,7 +1007,7 @@
       "en": "2601274fd5528ca8",
       "zh": "3daba45b4281779b",
       "title": {
-        "en": "Astra without default subagents",
+        "en": "Codex: Astra without default subagents",
         "zh": "Astra 默认不开 subagent"
       }
     },
@@ -1003,7 +1055,7 @@
       "en": "3993882b740003a6",
       "zh": "43646abac1ee8807",
       "title": {
-        "en": "Claude Code permissions: deny, ask and allow",
+        "en": "Claude Code permissions: deny, ask and allow commands",
         "zh": "deny、ask、allow 权限规则"
       }
     },
@@ -1013,6 +1065,14 @@
       "title": {
         "en": "Week calendar from Claude Code sessions",
         "zh": "Claude Code 会话做的周日历"
+      }
+    },
+    "turn-design-corrections-into-rules-with-learn-taste": {
+      "en": "c491601615b7c763",
+      "zh": "875a8add5aef6b93",
+      "title": {
+        "en": "/learn-taste: design corrections as rules",
+        "zh": "/learn-taste：设计修正变成规则"
       }
     },
     "turn-repeat-agent-mistakes-into-lint-rules": {
@@ -1071,11 +1131,19 @@
         "zh": "Codex computer use 当本地 MCP server"
       }
     },
+    "walk-through-two-way-doors-stop-at-one-way-doors": {
+      "en": "8817828bbfe33871",
+      "zh": "f12a0037e840d57d",
+      "title": {
+        "en": "One-way door rules for AGENTS.md: when to ask",
+        "zh": "AGENTS.md 单向门规则：什么时候该问"
+      }
+    },
     "write-claude-code-project-instructions-from-your-sessions": {
       "en": "b568d1c59bf61ccd",
       "zh": "0befe1835c949b9d",
       "title": {
-        "en": "Project instructions from your sessions",
+        "en": "Claude Code project instructions from your sessions",
         "zh": "从会话里写出的项目说明"
       }
     }

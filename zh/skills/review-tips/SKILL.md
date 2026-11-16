@@ -1,19 +1,20 @@
 ---
 name: review-tips
-description: "验收 · 14 条：bug 打分、红队提示词、代码和计划复查、skill 回测。"
+description: "验收 · 15 条：bug 打分、红队提示词、代码和计划复查、skill 回测。"
 disable-model-invocation: true
 ---
 
-# 验收 · 14 条
+# 验收 · 15 条
 
-Copybook 的 14 条「验收」技巧，收藏多的在前。每条要用的文字、放到哪里、最后得到什么，都在 references/ 里它自己的文件中。
+Copybook 的 15 条「验收」技巧，收藏多的在前。每条要用的文字、放到哪里、最后得到什么，都在 references/ 里它自己的文件中。
 
 - 用户点名技巧时，用点名的那条。用户只说了要做什么时，从适用于实际执行者的技巧里，选最符合用户目标和限制的一条。几条同样合适时，选一条即可。选中后，用一句话说明选了哪条、为什么，再读它的文件照着做。另一条也合适，而且换用它会明显改变做法或结果时，顺带点出它的名字和区别。
 - 用户什么都没说：把下面的列表（每条的名字和做什么）给用户看，问用哪条。
-- 都不合适就直说，并建议用 copybook，它会在全部 134 条里找。
+- 都不合适就直说，并建议用 copybook，它会在全部 138 条里找。
 
 | 技巧 | 做什么 |
 | --- | --- |
+| [手机上的 Tailscale 预览链接规则](references/tailscale-preview-links.md) `tailscale-preview-links` | agent 给的链接是 localhost：预览、审查页面、看板都换成 Tailscale 链接，手机上直接打开。 |
 | [Astra 审查的 bug 打分规则](references/bug-score-rule-for-astra.md) `bug-score-rule-for-astra` | Astra 总挑几乎不会发生的 bug，Opus 一条条去修：给 bug 打分，分低的记成 issue，代码不动。 |
 | [影响范围、红队等 5 条让模型判断的提示词](references/blast-radius-and-4-more-prompts.md) `blast-radius-and-4-more-prompts` | 只说「修这个 bug」只拿到默认答案：影响范围、并行目标、红队计划、真实用户走查、思考预算。 |
 | [性能审查：最慢的 5 处](references/perf-review-the-5-slowest-spots.md) `perf-review-the-5-slowest-spots` | 想让代码变快，多半换来一层缓存：profile 测出的耗时，每处对上的改法，要改的行和预计提速。 |

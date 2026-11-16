@@ -1,4 +1,4 @@
-# Project instructions from your sessions
+# Claude Code project instructions from your sessions
 
 Background you re-explain every new session: pulled from your last 20 sessions and written up as project instructions.
 

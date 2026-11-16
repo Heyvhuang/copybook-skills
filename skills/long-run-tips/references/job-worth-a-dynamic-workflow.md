@@ -1,4 +1,4 @@
-# The job worth a dynamic workflow
+# The job worth a dynamic workflow in Claude Code
 
 Which job is worth many agents: repo-wide checks, migrations or fix loops, planned on one directory with at most 10 agents.
 

@@ -1,16 +1,16 @@
 ---
 name: design-tips
-description: "Design · 30 tips: image-first pages, motion libraries, reference sites, design skills."
+description: "Design · 31 tips: image-first pages, motion libraries, reference sites, design skills."
 disable-model-invocation: true
 ---
 
-# Design · 30 tips
+# Design · 31 tips
 
-Copybook's 30 tips on design, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
+Copybook's 31 tips on design, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
 
 - If the user names a tip, use that tip. If they describe a task, choose the tip that best meets their goal and constraints from those that work with the agent doing the work. If several fit equally well, choose one. Tell the user in one sentence which tip you picked and why, then read its file and follow it. If another tip also fits and would materially change the approach or result, name it and say how it differs.
 - If the user said nothing, show them the list below (each tip's name and what it does) and ask which to use.
-- If none fits, say so and suggest copybook, which looks through all 134 tips.
+- If none fits, say so and suggest copybook, which looks through all 138 tips.
 
 | Tip | What it does |
 | --- | --- |
@@ -34,9 +34,10 @@ Copybook's 30 tips on design, most saved first. Each tip's text, where it goes a
 | [Awwwards scoring loop](references/awwwards-scoring-loop.md) `awwwards-scoring-loop` | Only on an explicit request for Awwwards scoring during visual exploration. Scores guide design discussion. |
 | [Component stress test in every state](references/component-stress-test.md) `component-stress-test` | Sample data proves little: the real component rendered in every state that matters, fixed only where a failure reproduces. |
 | [6 ChatGPT photo prompts](references/6-chatgpt-photo-prompts.md) `6-chatgpt-photo-prompts` | A finish you'd pay a photographer for: headshot, cinematic still, travel, magazine shoot, old-photo repair, golden hour. |
-| [Every UI state mocked up with /design](references/every-ui-state-with-design.md) `every-ui-state-with-design` | Before any app code changes: default, loading, empty, error and success on separate artboards, from a design reference repo. |
+| [Every UI state mocked up with Claude Design](references/every-ui-state-with-design.md) `every-ui-state-with-design` | Before any app code changes: default, loading, empty, error and success on separate artboards, from a design reference repo. |
 | [Image options in one grid: an AGENTS.md rule](references/image-options-in-one-grid.md) `image-options-in-one-grid` | Image options drawn one at a time burn your limits: a global rule puts them all in one numbered grid, then builds your pick. |
 | [Camera moves to name in video prompts](references/camera-moves-for-video-prompts.md) `camera-moves-for-video-prompts` | Opus 5.5 videos that look like a slideshow: six camera moves by name with what each one does, plus seconds and speed to add. |
+| [/learn-taste: design corrections as rules](references/learn-taste-design-corrections.md) `learn-taste-design-corrections` | You keep fixing the same design mistakes: each correction in a session turned into a strict rule with reasoning. |
 | [Happy-path debt, found and fixed](references/happy-path-debt-found-and-fixed.md) `happy-path-debt-found-and-fixed` | Screens that only work when data loads fast and nothing fails: missing states and layout breaks fixed per component, design kept. |
 | [Unslop prompt for pages that look AI-made](references/unslop-prompt.md) `unslop-prompt` | Pages that scream AI at first glance: every slop sign listed, a five-line direction for your OK, then fixes pass by pass. |
 | [703 Opus 5.5 video prompts, one remade for you](references/703-video-prompts-one-remade.md) `703-video-prompts-one-remade` | A product video like the viral ones: the 5 of 703 prompts that fit your product, your pick remade as one HTML file. |

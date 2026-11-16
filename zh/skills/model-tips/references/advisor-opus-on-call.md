@@ -70,4 +70,4 @@ advisor 文档：https://code.claude.com/docs/en/advisor
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/switch-to-sonnet-5-5-with-opus-on-call)：@Voxyz_ai 2026年11月7日[发在 X 上](https://x.com/Voxyz_ai/status/2119082454120337491)，截至 2026年11月8日有 818 次收藏。适用于 Claude Code。
+来自 [Copybook](https://copybook.page/zh/t/switch-to-sonnet-5-5-with-opus-on-call)：@Voxyz_ai 2026年11月7日[发在 X 上](https://x.com/Voxyz_ai/status/2119082454120337491)，截至 2026年11月14日有 968 次收藏。适用于 Claude Code。

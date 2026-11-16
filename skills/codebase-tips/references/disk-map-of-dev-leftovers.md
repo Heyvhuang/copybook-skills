@@ -32,4 +32,4 @@ Send this to Claude Code and see how much is on yours.
 
 ## Source
 
-From [Copybook](https://copybook.page/t/map-your-disk-before-cleaning-up-dev-leftovers): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2111472304643612774) on 17 Oct 2026, 2K saves as of 24 Oct 2026. For Claude Code.
+From [Copybook](https://copybook.page/t/map-your-disk-before-cleaning-up-dev-leftovers): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2111472304643612774) on 17 Oct 2026, 2K saves as of 14 Nov 2026. For Claude Code.

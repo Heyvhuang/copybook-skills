@@ -1,11 +1,11 @@
 ---
 name: copybook
-description: "134 条提示词、规则、检查清单和设置，按场景自动选用。开始做下面任何一件事之前，先加载这个技能，用户没提 Copybook 也一样：装技能包或插件；网站上线前的准备；设计或重做页面、落地页、仪表盘，或去掉 AI 味；写或精简 AGENTS.md、CLAUDE.md、agent 权限；往下做之前审一遍计划、diff 或 PR；同一个 bug 修了两次还没好；跨好几个会话或多个 agent 的任务；省 Claude Code 或 Codex 的额度，选模型和推理强度；为新读者重写整份 README、写任务说明，或长任务做完给用户写报告。仅改单个 README 章节、补安装说明或修错字时直接处理。用户要现成的提示词、规则、检查清单或设置，或问 Copybook 有什么时，也加载。这些技巧都是 X 上读者收藏最多的。"
+description: "138 条提示词、规则、检查清单和设置，按场景自动选用。开始做下面任何一件事之前，先加载这个技能，用户没提 Copybook 也一样：装技能包或插件；网站上线前的准备；设计或重做页面、落地页、仪表盘，或去掉 AI 味；写或精简 AGENTS.md、CLAUDE.md、agent 权限；往下做之前审一遍计划、diff 或 PR；同一个 bug 修了两次还没好；跨好几个会话或多个 agent 的任务；省 Claude Code 或 Codex 的额度，选模型和推理强度；为新读者重写整份 README、写任务说明，或长任务做完给用户写报告。仅改单个 README 章节、补安装说明或修错字时直接处理。用户要现成的提示词、规则、检查清单或设置，或问 Copybook 有什么时，也加载。这些技巧都是 X 上读者收藏最多的。"
 ---
 
 # Copybook
 
-Copybook 有 134 条写给 coding agent 的技巧：提示词、规则、检查清单和设置，每条都来自一条读者在 X 上收藏过的帖子。它们分在下面 7 个话题里。每个话题的列表是这个文件旁边的一个文件；每条的文字是它所在话题技能里的一个文件。
+Copybook 有 138 条写给 coding agent 的技巧：提示词、规则、检查清单和设置，每条都来自一条读者在 X 上收藏过的帖子。它们分在下面 7 个话题里。每个话题的列表是这个文件旁边的一个文件；每条的文字是它所在话题技能里的一个文件。
 
 替用户挑一条直接用：用户要的是用上对的那条，不是一张自己去选的清单。
 
@@ -26,23 +26,23 @@ Copybook 有 134 条写给 coding agent 的技巧：提示词、规则、检查�
 
 技巧：3-slimmer-agents-md-plans、agent-memory-tools-8-repos、agent-workspace-audit、archify-system-diagrams、ask-before-edge-case-code、bug-fix-loop-rules、ci-time-audit、clickable-repo-map、codebase-memory-repo-index、codex-and-claude-sorted、deny-ask-and-allow-permissions、disk-map-of-dev-leftovers、fewer-deeper-modules、instructions-from-your-sessions、investigate-and-plan-prompt、karpathys-4-coding-principles、less-defensive-code、mod-ideas-from-20-sessions、mod-request-for-claude-code、no-compatibility-code-yet、one-agents-md-for-both-agents、pr-comments-as-agents-md-rules、rea-take-apart-a-feature、repeat-mistakes-as-lint-rules、repo-map-words-vs-names、scope-guard-rules、situation-routing-for-skills、teach-strategic-programming、ub-mode-clean-code-agent-rules、untangle-goal、vibe-coding-cleanup-prompts、whole-project-audit。
 
-### 验收 · 14 条
+### 验收 · 15 条
 
 bug 打分、红队提示词、代码和计划复查、skill 回测。列表：[review.md](review.md)
 
-技巧：3-checks-before-a-skill-install、blast-radius-and-4-more-prompts、bug-score-rule-for-astra、claude-api-prompt-audit、code-and-direction-review、fake-busy-check、logging-plan-and-daily-fix-list、nightly-push-review-routine、one-question-before-it-answers、perf-review-the-5-slowest-spots、plan-review-5-methods、skill-backtest-on-codex-sessions、skill-score-by-yes-no-questions、state-machine-check。
+技巧：3-checks-before-a-skill-install、blast-radius-and-4-more-prompts、bug-score-rule-for-astra、claude-api-prompt-audit、code-and-direction-review、fake-busy-check、logging-plan-and-daily-fix-list、nightly-push-review-routine、one-question-before-it-answers、perf-review-the-5-slowest-spots、plan-review-5-methods、skill-backtest-on-codex-sessions、skill-score-by-yes-no-questions、state-machine-check、tailscale-preview-links。
 
-### 设计 · 30 条
+### 设计 · 31 条
 
 先出图再写页面、动效库、参考网站、设计 skill。列表：[design.md](design.md)
 
-技巧：120-sample-motion-library、4-person-motion-video-team、4-starts-for-code-only-animation、6-chatgpt-photo-prompts、703-video-prompts-one-remade、8-frontend-reference-sites、awesome-design-md-shadcn-skill、awwwards-scoring-loop、camera-moves-for-video-prompts、claude-motion-project-animation、codex-computer-use-as-mcp-server、component-stress-test、dashboard-redesign-2-skills、design-md-from-sites-you-like、designers-landing-page-skill、every-ui-state-with-design、good-css-css-check、hallmark-audit-and-redesign、happy-path-debt-found-and-fixed、huashu-art-motion-35-art-styles、image-options-in-one-grid、internet-archive-clips-and-music、lemo-opuscar-launch-films、page-design-as-an-image-first、refero-style-prompt、tasteskill-v2-ai-look-check、two-agents-md-lines、ui-ux-audit-as-a-senior-designer、unslop-prompt、video-sound-by-measurement。
+技巧：120-sample-motion-library、4-person-motion-video-team、4-starts-for-code-only-animation、6-chatgpt-photo-prompts、703-video-prompts-one-remade、8-frontend-reference-sites、awesome-design-md-shadcn-skill、awwwards-scoring-loop、camera-moves-for-video-prompts、claude-motion-project-animation、codex-computer-use-as-mcp-server、component-stress-test、dashboard-redesign-2-skills、design-md-from-sites-you-like、designers-landing-page-skill、every-ui-state-with-design、good-css-css-check、hallmark-audit-and-redesign、happy-path-debt-found-and-fixed、huashu-art-motion-35-art-styles、image-options-in-one-grid、internet-archive-clips-and-music、learn-taste-design-corrections、lemo-opuscar-launch-films、page-design-as-an-image-first、refero-style-prompt、tasteskill-v2-ai-look-check、two-agents-md-lines、ui-ux-audit-as-a-senior-designer、unslop-prompt、video-sound-by-measurement。
 
-### 长任务 · 19 条
+### 长任务 · 21 条
 
 进度看板、多 agent 分工、会话周历、遗留待办。列表：[long-run.md](long-run.md)
 
-技巧：7-role-prompts-from-idea-to-done、bedtime-report-of-safe-tasks、codex-remote-workflow、decision-page-for-long-tasks、goal-wrapper-and-5-prompts、grok-bot-team-of-6-roles、handoff-md-for-the-next-agent、herdr-app-opus-5-5-coordinates、herdr-astra-coordinates-workers、herdr-claude-and-codex-panes、job-worth-a-dynamic-workflow、later-items-from-20-sessions、orca-a-task-across-cli-agents、overnight-goal-for-open-issues、progress-dashboard-subagent、scheduled-agents-review、slow-computer-audit-for-agents、to-dos-first-in-long-reports、week-calendar-from-sessions。
+技巧：7-role-prompts-from-idea-to-done、bedtime-report-of-safe-tasks、codex-remote-workflow、coordinator-for-claude-and-codex、decision-page-for-long-tasks、goal-wrapper-and-5-prompts、grok-bot-team-of-6-roles、handoff-md-for-the-next-agent、herdr-app-opus-5-5-coordinates、herdr-astra-coordinates-workers、herdr-claude-and-codex-panes、job-worth-a-dynamic-workflow、later-items-from-20-sessions、one-way-door-rules-when-to-ask、orca-a-task-across-cli-agents、overnight-goal-for-open-issues、progress-dashboard-subagent、scheduled-agents-review、slow-computer-audit-for-agents、to-dos-first-in-long-reports、week-calendar-from-sessions。
 
 ### 模型和额度 · 23 条
 

@@ -2,7 +2,7 @@
 
 A tip comes into these plugins when its post gives text an agent can carry out: a prompt, rules, a setup. Installation-only entries and selected reading guides stay on the site. The following articles are outside the plugin catalogue:
 
-- [70+ game-dev skills in one command](https://copybook.page/t/install-70-game-dev-skills-before-you-make-a-game)
+- [awesome-gamedev-agent-skills: 70+ game-dev skills](https://copybook.page/t/install-70-game-dev-skills-before-you-make-a-game)
 - [Epic's Unreal Engine plugin for Claude Code](https://copybook.page/t/install-epic-unreal-engine-plugin-in-claude-code)
 - [OpenAI's Game Studio plugin for Codex](https://copybook.page/t/install-openai-game-studio-plugin-for-codex)
 - [Ponytail 5: reuse what exists before writing](https://copybook.page/t/install-ponytail-so-your-agent-looks-before-it-writes) · Third-party plugin installation.

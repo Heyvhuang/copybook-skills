@@ -32,4 +32,4 @@ Opus 5.5 能给你一份 10 年老手的市场判断，前提是你先让它把�
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/market-read-before-you-build)：@Voxyz_ai 2026年11月7日[发在 X 上](https://x.com/Voxyz_ai/status/2119142844212629752)，截至 2026年11月8日有 146 次收藏。
+来自 [Copybook](https://copybook.page/zh/t/market-read-before-you-build)：@Voxyz_ai 2026年11月7日[发在 X 上](https://x.com/Voxyz_ai/status/2119142844212629752)，截至 2026年11月14日有 173 次收藏。

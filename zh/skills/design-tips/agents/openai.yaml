@@ -1,5 +1,5 @@
 interface:
   display_name: "design-tips"
-  short_description: "设计 · 30 条：先出图再写页面、动效库、参考网站、设计 skill。"
+  short_description: "设计 · 31 条：先出图再写页面、动效库、参考网站、设计 skill。"
 policy:
   allow_implicit_invocation: false

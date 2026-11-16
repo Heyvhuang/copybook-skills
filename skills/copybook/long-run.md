@@ -1,6 +1,6 @@
-# Long runs · 19 tips
+# Long runs · 21 tips
 
-Copybook's 19 tips on long runs. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../long-run-tips/references/<name>.md`, in its topic's skill.
+Copybook's 21 tips on long runs. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../long-run-tips/references/<name>.md`, in its topic's skill.
 
 | Tip | What it does |
 | --- | --- |
@@ -23,3 +23,5 @@ Copybook's 19 tips on long runs. The order is by saves, not by fit: read the who
 | scheduled-agents-review | 'The last 24 hours' in a scheduled task skips or repeats work: fixed windows, silent read failures and risky posting flagged. |
 | overnight-goal-for-open-issues | Before bed: each issue and TODO taken as far as it can go without you, then one HTML board of what's done, stuck or your call. |
 | goal-wrapper-and-5-prompts | One preference typed in three places: a goal wrapper, plus prompts for components, parallel runs, review, states and corrections. |
+| one-way-door-rules-when-to-ask | Questions you'd only rubber-stamp: work you can undo done and shown after, a stop at anything you can't undo. |
+| coordinator-for-claude-and-codex | Too much for one agent session: a coordinator that never codes runs Claude and Codex workers in Herdr and ships tested batches. |

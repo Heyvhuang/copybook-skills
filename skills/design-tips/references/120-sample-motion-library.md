@@ -37,4 +37,4 @@ It gets each sample's motion spec and reference code, and it works with Remotion
 
 ## Source
 
-From [Copybook](https://copybook.page/t/pick-moves-from-a-120-sample-motion-prompt-library): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2111502499048026232) on 17 Oct 2026, 1.6K saves as of 24 Oct 2026. For Claude Code.
+From [Copybook](https://copybook.page/t/pick-moves-from-a-120-sample-motion-prompt-library): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2111502499048026232) on 17 Oct 2026, 1.7K saves as of 14 Nov 2026. For Claude Code.

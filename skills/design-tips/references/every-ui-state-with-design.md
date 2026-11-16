@@ -1,4 +1,4 @@
-# Every UI state mocked up with /design
+# Every UI state mocked up with Claude Design
 
 Before any app code changes: default, loading, empty, error and success on separate artboards, from a design reference repo.
 

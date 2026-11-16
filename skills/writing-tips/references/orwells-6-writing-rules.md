@@ -1,4 +1,4 @@
-# Orwell's 6 writing rules
+# Orwell's 6 writing rules for CLAUDE.md and AGENTS.md
 
 Banning AI words one by one never ends: 6 rules from 1946 for your global rules file, plus prompts for docs, PRs and reports.
 

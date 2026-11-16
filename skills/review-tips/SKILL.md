@@ -1,19 +1,20 @@
 ---
 name: review-tips
-description: "Review · 14 tips: PR, code, and plan reviews, bug scoring, skill audits and backtests."
+description: "Review · 15 tips: PR, code, and plan reviews, bug scoring, skill audits and backtests."
 disable-model-invocation: true
 ---
 
-# Review · 14 tips
+# Review · 15 tips
 
-Copybook's 14 tips on review, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
+Copybook's 15 tips on review, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
 
 - If the user names a tip, use that tip. If they describe a task, choose the tip that best meets their goal and constraints from those that work with the agent doing the work. If several fit equally well, choose one. Tell the user in one sentence which tip you picked and why, then read its file and follow it. If another tip also fits and would materially change the approach or result, name it and say how it differs.
 - If the user said nothing, show them the list below (each tip's name and what it does) and ask which to use.
-- If none fits, say so and suggest copybook, which looks through all 134 tips.
+- If none fits, say so and suggest copybook, which looks through all 138 tips.
 
 | Tip | What it does |
 | --- | --- |
+| [Tailscale preview links on your phone: a rule](references/tailscale-preview-links.md) `tailscale-preview-links` | Agent links that say localhost: Tailscale links to previews, review pages and dashboards that open right on your phone. |
 | [Bug-score rule for Astra's code reviews](references/bug-score-rule-for-astra.md) `bug-score-rule-for-astra` | Astra flags bugs that almost never happen and Opus fixes each one: bugs scored, low scores filed as issues, code left alone. |
 | [Blast radius, red team and 3 more prompts](references/blast-radius-and-4-more-prompts.md) `blast-radius-and-4-more-prompts` | 'Fix this bug' hands you defaults: what your diff touches, an end-to-end goal, a red-teamed plan, a user walk, a thinking budget. |
 | [Perf review: the 5 slowest spots](references/perf-review-the-5-slowest-spots.md) `perf-review-the-5-slowest-spots` | Ask for faster code and you probably get a cache: timings from a profile, one matching fix each, its lines and expected speedup. |

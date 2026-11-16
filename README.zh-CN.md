@@ -1,6 +1,6 @@
 # Copybook
 
-Copybook 按情景替你的 coding agent 挑技巧。你照常说要做什么，一个会自己加载的 skill 从 134 条技巧里选一条，照着做。你不用记，也不用选。这些提示词、规则和设置，来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子。
+Copybook 按情景替你的 coding agent 挑技巧。你照常说要做什么，一个会自己加载的 skill 从 138 条技巧里选一条，照着做。你不用记，也不用选。这些提示词、规则和设置，来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子。
 
 ```text
 copybook ─────────────────────────
@@ -10,16 +10,16 @@ copybook ───────────────────────�
   ·····•·····
 
 › 这个页面一股 AI 味，重做
-  设计 · 30 条里选 1 条
-  ···········•··················
+  设计 · 31 条里选 1 条
+  ············•··················
 
 › AGENTS.md 太长了，精简一下
   代码库 · 32 条里选 1 条
   ·······················•········
 
 › 合并前审一下这个 PR
-  验收 · 14 条里选 1 条
-  ··········•···
+  验收 · 15 条里选 1 条
+  ···········•···
 ──────────────────────────────────
   然后说出选了哪条、为什么，
   照它的步骤把事做完
@@ -60,7 +60,7 @@ skill 会在任务对得上时自己加载，你不用记得有哪条技巧。
 
 ## 安装
 
-只有 Markdown、YAML、JSON 和 PNG 文件，没有脚本、hook 或 MCP server。装好后 agent 的 skill 列表里多 8 个 skill：1 个会自己加载，7 个话题菜单由你自己打开。
+插件里只有 Markdown、YAML、JSON 和 PNG 文件，没有脚本、hook 或 MCP server。装好后 agent 的 skill 列表里多 8 个 skill：1 个会自己加载，7 个话题菜单由你自己打开。
 
 每个 agent 只选一种装法：插件和 skills.sh 版都装上，每个 skill 会出现两次。
 
@@ -120,7 +120,7 @@ npx skills@latest update copybook codebase-tips review-tips design-tips long-run
 
 ## 它从哪里选
 
-134 条提示词、规则、检查清单和设置，按场景自动选用。
+138 条提示词、规则、检查清单和设置，按场景自动选用。
 
 下面是这个 skill 留意的情景，各自排在它先读的那个话题下面。这个列表里没有专为这件事写的技巧时，它会再读一个。
 
@@ -149,12 +149,12 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 - **X**：[@Voxyz_ai](https://x.com/Voxyz_ai)，每条技巧最早发在这里
 - **网站**：[copybook.page](https://copybook.page/zh/)，每条技巧都有复制按钮和原帖
 - **Issues**：https://github.com/Heyvhuang/copybook-skills/issues
-- **Star**：[给这个仓库点 Star](https://github.com/Heyvhuang/copybook-skills)，收进你的 Star 列表。想收到每个新版本，选 **Watch** → **Custom** → **Releases**
+- **Star**：[给这个仓库点 Star](https://github.com/Heyvhuang/copybook-skills)，收进你的 Star 列表。想在技巧新增、改动或撤下时收到通知，选 **Watch** → **Custom** → **Releases**
 - **用邮件收新技巧（英文）**：[订阅](https://copybook.page/zh/#email-bottom-title)
 
 ## 里面有什么
 
-按话题分，收藏多的在前；收藏数统计于 2026年7月22日到 11月13日，每条的日期在它的文件里。
+按话题分，收藏多的在前；收藏数统计于 2026年7月22日到 11月15日，每条的日期在它的文件里。
 
 技巧里用到的词在[词汇表](docs/glossary.zh-CN.md)，只留在 copybook.page 上的技巧在[范围](docs/scope.md#范围)。
 
@@ -169,7 +169,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 | **[vibe coding 后的清理：5 条 Codex /goal 提示词](./zh/skills/codebase-tips/references/vibe-coding-cleanup-prompts.md)** `vibe-coding-cleanup-prompts`<br>额度重置时还剩一半：清掉死代码、重复实现和用不上的依赖，给定时任务和旧 worktree 分好类。 | 3,883 |
 | **[能点的仓库地图](./zh/skills/codebase-tips/references/clickable-repo-map.md)** `clickable-repo-map`<br>改一个仓库前先看清它：点任一模块，看到调用方、依赖、相关测试和源码证据，地图随代码更新。 | 2,670 |
 | **[Scope Guard：不让小任务越做越大的规则](./zh/skills/codebase-tips/references/scope-guard-rules.md)** `scope-guard-rules`<br>改个配置就搭框架、修个 bug 就加一层：够用的最小改动，复用现有代码，扩大范围先问你。 | 2,058 |
-| **[开发遗留文件的磁盘地图](./zh/skills/codebase-tips/references/disk-map-of-dev-leftovers.md)** `disk-map-of-dev-leftovers`<br>硬盘快满时先别乱删：只读扫一遍，树状图标出开发留下的大文件夹，清理脚本只删你勾选的。 | 2,013 |
+| **[开发遗留文件的磁盘地图](./zh/skills/codebase-tips/references/disk-map-of-dev-leftovers.md)** `disk-map-of-dev-leftovers`<br>硬盘快满时先别乱删：只读扫一遍，树状图标出开发留下的大文件夹，清理脚本只删你勾选的。 | 1,998 |
 | **[Claude Code 和 Codex 共用的 AGENTS.md](./zh/skills/codebase-tips/references/one-agents-md-for-both-agents.md)** `one-agents-md-for-both-agents`<br>两个 agent 同一套做法：先规划、最小改动、分活、修 bug、做完先验证，每次纠正记进 Lessons。 | 1,937 |
 | **[理清面条代码的 /goal](./zh/skills/codebase-tips/references/untangle-goal.md)** `untangle-goal`<br>几个月 vibe coding 让代码缠成一团：一页 HTML 接线图，最严重的结标红编号，再逐个修、逐个跑测试。 | 1,741 |
 | **[Codex 动手前先调查和计划的提示词](./zh/skills/codebase-tips/references/investigate-and-plan-prompt.md)** `investigate-and-plan-prompt`<br>怕 agent 做错方向：先查仓库、复述目标、列假设和计划，批准才动手。 | 1,673 |
@@ -199,10 +199,11 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 
 ### 验收
 
-`/copybook-zh:review-tips` · 14 条：bug 打分、红队提示词、代码和计划复查、skill 回测。
+`/copybook-zh:review-tips` · 15 条：bug 打分、红队提示词、代码和计划复查、skill 回测。
 
 | 技巧 | 收藏 |
 | :-- | :-: |
+| **[手机上的 Tailscale 预览链接规则](./zh/skills/review-tips/references/tailscale-preview-links.md)** `tailscale-preview-links`<br>agent 给的链接是 localhost：预览、审查页面、看板都换成 Tailscale 链接，手机上直接打开。 | 3,819 |
 | **[Astra 审查的 bug 打分规则](./zh/skills/review-tips/references/bug-score-rule-for-astra.md)** `bug-score-rule-for-astra`<br>Astra 总挑几乎不会发生的 bug，Opus 一条条去修：给 bug 打分，分低的记成 issue，代码不动。 | 3,241 |
 | **[影响范围、红队等 5 条让模型判断的提示词](./zh/skills/review-tips/references/blast-radius-and-4-more-prompts.md)** `blast-radius-and-4-more-prompts`<br>只说「修这个 bug」只拿到默认答案：影响范围、并行目标、红队计划、真实用户走查、思考预算。 | 1,411 |
 | **[性能审查：最慢的 5 处](./zh/skills/review-tips/references/perf-review-the-5-slowest-spots.md)** `perf-review-the-5-slowest-spots`<br>想让代码变快，多半换来一层缓存：profile 测出的耗时，每处对上的改法，要改的行和预计提速。 | 849 |
@@ -220,7 +221,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 
 ### 设计
 
-`/copybook-zh:design-tips` · 30 条：先出图再写页面、动效库、参考网站、设计 skill。
+`/copybook-zh:design-tips` · 31 条：先出图再写页面、动效库、参考网站、设计 skill。
 
 | 技巧 | 收藏 |
 | :-- | :-: |
@@ -228,7 +229,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 | **[Codex 页面设计：先画成一张图，再照着做](./zh/skills/design-tips/references/page-design-as-an-image-first.md)** `page-design-as-an-image-first`<br>直接让 Codex 写页面，设计总很烂：一句话让内置图像模型先画出页面，再交给写代码的模型照着做。 | 4,196 |
 | **[huashu-art-motion：35 种画风动画](./zh/skills/design-tips/references/huashu-art-motion-35-art-styles.md)** `huashu-art-motion-35-art-styles`<br>想要梵高、莫奈或包豪斯风格的动画：用代码画出来，几乎不动的片子交付前会被打回。 | 3,790 |
 | **[写进 CLAUDE.md 的 8 个前端参考网站](./zh/skills/design-tips/references/8-frontend-reference-sites.md)** `8-frontend-reference-sites`<br>卡在风格、组件、动效、演示视频或收尾：8 个网站按卡点分好，存进 CLAUDE.md，该用哪个它知道。 | 1,693 |
-| **[120 个可点选的动效样例库](./zh/skills/design-tips/references/120-sample-motion-library.md)** `120-sample-motion-library`<br>动效靠点选：120 个带标注的样例分 5 组，勾选喜欢的，Claude Code 就把它们做进你的视频或网站。 | 1,624 |
+| **[120 个可点选的动效样例库](./zh/skills/design-tips/references/120-sample-motion-library.md)** `120-sample-motion-library`<br>动效靠点选：120 个带标注的样例分 5 组，勾选喜欢的，Claude Code 就把它们做进你的视频或网站。 | 1,667 |
 | **[good-css：vibe coding 网站的 CSS 检查](./zh/skills/design-tips/references/good-css-css-check.md)** `good-css-css-check`<br>手机上 hover 卡住、表单一打开全红框：47 条现代 CSS 写法，先列出网站样式的毛病，不改代码。 | 1,547 |
 | **[视频配声音：测节拍和响度](./zh/skills/design-tips/references/video-sound-by-measurement.md)** `video-sound-by-measurement`<br>Opus 5.5 听不见自己配的声音：librosa 找节拍，120 Hz 以下波形核对，导出的 MP4 上测响度。 | 1,499 |
 | **[做动效视频的 4 人小组](./zh/skills/design-tips/references/4-person-motion-video-team.md)** `4-person-motion-video-team`<br>Claude Code 里做动效视频：拆片、分镜、审片 3 个 subagent 配合主会话做片，你只管像导演一样拍板。 | 1,441 |
@@ -247,6 +248,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 | **[/design 画出的每个界面状态](./zh/skills/design-tips/references/every-ui-state-with-design.md)** `every-ui-state-with-design`<br>功能做之前先看到每个状态：/design 配一个设计参考仓库，默认、加载、空、出错、成功都画成稿。 | 386 |
 | **[图片方案并成一张网格图：AGENTS.md 规则](./zh/skills/design-tips/references/image-options-in-one-grid.md)** `image-options-in-one-grid`<br>图片方案一张张生成太烧额度：一条全局规则让所有方案进同一张带编号的网格图，再做你挑中的。 | 379 |
 | **[视频提示词里的运镜名称](./zh/skills/design-tips/references/camera-moves-for-video-prompts.md)** `camera-moves-for-video-prompts`<br>Opus 5.5 做的视频像幻灯片：6 种运镜的名字和各自效果，外加要写的秒数和速度。 | 354 |
+| **[/learn-taste：设计修正变成规则](./zh/skills/design-tips/references/learn-taste-design-corrections.md)** `learn-taste-design-corrections`<br>你总在改同样的设计错误：一次会话里的每个修正，都变成一条带理由的严格规则。 | 314 |
 | **[happy-path 债务排查和修复](./zh/skills/design-tips/references/happy-path-debt-found-and-fixed.md)** `happy-path-debt-found-and-fixed`<br>界面只在数据加载快、什么都不出错时才正常：缺的状态和布局错乱逐个组件修好，设计不变。 | 252 |
 | **[Unslop 提示词：去掉页面 AI 味](./zh/skills/design-tips/references/unslop-prompt.md)** `unslop-prompt`<br>页面第一眼就像 AI 做的：列出每处 AI 味的痕迹，先写 5 行方向等你点头，再一轮一轮改。 | 240 |
 | **[703 条 Opus 5.5 视频提示词，重做一条](./zh/skills/design-tips/references/703-video-prompts-one-remade.md)** `703-video-prompts-one-remade`<br>给产品做一支爆款那样的视频：703 条提示词里最适合你的 5 条，你选的那条重做成一个 HTML 文件。 | 214 |
@@ -257,7 +259,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 
 ### 长任务
 
-`/copybook-zh:long-run-tips` · 19 条：进度看板、多 agent 分工、会话周历、遗留待办。
+`/copybook-zh:long-run-tips` · 21 条：进度看板、多 agent 分工、会话周历、遗留待办。
 
 | 技巧 | 收藏 |
 | :-- | :-: |
@@ -280,6 +282,8 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 | **[定时 agent 检查：按 Anthropic 指南](./zh/skills/long-run-tips/references/scheduled-agents-review.md)** `scheduled-agents-review`<br>定时任务写「最近 24 小时」会漏会重：固定时间窗口、读取失败不报和发帖风险，各附最小改法。 | 380 |
 | **[通宵 /goal：未关闭的 issue 和 TODO](./zh/skills/long-run-tips/references/overnight-goal-for-open-issues.md)** `overnight-goal-for-open-issues`<br>睡前：每个 issue 和 TODO 不靠你推进到最远，最后一张 HTML 看板列出完成、卡住和等你拍板的。 | 315 |
 | **[目标外壳和 5 条配套提示词](./zh/skills/long-run-tips/references/goal-wrapper-and-5-prompts.md)** `goal-wrapper-and-5-prompts`<br>一个偏好写了 3 处还要说第四遍：一个目标外壳，加组件库、并行、互审、交互状态、纠正清单 5 条。 | 309 |
+| **[AGENTS.md 单向门规则：什么时候该问](./zh/skills/long-run-tips/references/one-way-door-rules-when-to-ask.md)** `one-way-door-rules-when-to-ask`<br>只需要你走个过场的提问：撤得回的先做完再给你看，撤不回的先停下。 | 247 |
+| **[Claude Code 和 Codex 的协调者 skill](./zh/skills/long-run-tips/references/coordinator-for-claude-and-codex.md)** `coordinator-for-claude-and-codex`<br>一个会话做不完的活：不写代码的协调者在 Herdr 里分派 Claude 和 Codex 执行者，按批验收后再推。 |  |
 
 ### 模型和额度
 
@@ -299,9 +303,9 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 | **[hillclimb：Claude API 功能降本](./zh/skills/model-tips/references/hillclimb-a-cheaper-feature.md)** `hillclimb-a-cheaper-feature`<br>最花钱的 Claude API 调用：先搭测试集，再一档档换便宜模型、降 effort，准确率不掉才算数。 | 1,710 |
 | **[Fable 5.2 agent 树：Opus 5.5 和 Haiku](./zh/skills/model-tips/references/fable-5-2-agent-tree.md)** `fable-5-2-agent-tree`<br>每个角色选哪个模型和 effort：Haiku 5.5 找文件、跑测试，Opus 5.5 改代码，Fable 卡住才上 high。 | 1,267 |
 | **[Codex：GPT-6.1 Sol 主跑，medium subagent，Astra 终审](./zh/skills/model-tips/references/gpt-6-1-sol-main-astra-reviews.md)** `gpt-6-1-sol-main-astra-reviews`<br>Astra 一周吃光额度：6.1 Sol 用 high 调度、medium 跑 subagent，Astra 只审上线前的大改动。 | 1,061 |
+| **[/advisor：Sonnet 5.5 主跑，Opus 待命](./zh/skills/model-tips/references/advisor-opus-on-call.md)** `advisor-opus-on-call`<br>$20 套餐默认跑 Opus 5.5：Haiku 读代码、查文档，定方案前、错误反复时、说做完前叫 Opus 出主意。 | 968 |
 | **[Fable 5.2 管规划，实现给 Opus 5.5 或 Codex](./zh/skills/model-tips/references/fable-5-2-plans-opus-builds.md)** `fable-5-2-plans-opus-builds`<br>Fable 5.2 烧 token 太快：规划留在主会话，最难的部分也可留下，其余交给 Opus 5.5 subagent 或 Codex。 | 886 |
 | **[Fable 5.2 旧规则审查](./zh/skills/model-tips/references/old-rules-review-for-fable-5-2.md)** `old-rules-review-for-fable-5-2`<br>给老模型写死的规则拖累 Fable 5.2：派活、少想、文风限制和「never」的句子，引原文给改法。 | 843 |
-| **[/advisor：Sonnet 5.5 主跑，Opus 待命](./zh/skills/model-tips/references/advisor-opus-on-call.md)** `advisor-opus-on-call`<br>$20 套餐默认跑 Opus 5.5：Haiku 读代码、查文档，定方案前、错误反复时、说做完前叫 Opus 出主意。 | 818 |
 | **[Claude Code 里最耗额度的 3 个习惯](./zh/skills/model-tips/references/3-habits-burning-your-usage.md)** `3-habits-burning-your-usage`<br>总撞额度上限：扫最近 7 天的会话日志，算出每个习惯各占多少额度，再写规则把它们堵上。 | 730 |
 | **[Fable 做主、Opus 做 subagent 的 3 个设置](./zh/skills/model-tips/references/fable-main-opus-subagents.md)** `fable-main-opus-subagents`<br>Fable 额度不够用：3 行设置，读代码、查文档交给半价的 Opus subagent，判断留给 Fable。 | 715 |
 | **[设置检查：OpenAI 的 5 条 harness 省钱规则](./zh/skills/model-tips/references/openais-5-cheap-harness-rules.md)** `openais-5-cheap-harness-rules`<br>agent 配置省不省钱：对照 OpenAI 自己用的 5 条规则逐条判过不过，给出文件和要改的那一件事。 | 715 |
@@ -326,7 +330,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 | **[上线前检查：6 个法律坑](./zh/skills/launch-tips/references/pre-launch-check-6-legal-traps.md)** `pre-launch-check-6-legal-traps`<br>按产品实际业务和适用法规，核查数据收集、字体、会话录屏、营销邮件、续费和用户上传。 | 1,184 |
 | **[Google 搜索检查：已上线网站 12 项](./zh/skills/launch-tips/references/google-search-check-12-items.md)** `google-search-check-12-items`<br>拿名字在 Google 上搜不到你用 AI 做的网站：抓取、每个页面和全站，一次修好。 | 829 |
 | **[low effort 写、high effort 验的两个 subagent](./zh/skills/launch-tips/references/builder-and-verifier-subagents.md)** `builder-and-verifier-subagents`<br>high 多花的 token 主要买到验证：builder 用 low、verifier 用 high，一条规则让新功能都走一遍。 | 740 |
-| **[动手前的市场判断](./zh/skills/launch-tips/references/market-read-before-you-build.md)** `market-read-before-you-build`<br>还没调研就给建议：25-40 家竞争对手逐家记下，反复出现的抱怨排好序，再看你的方向会死在哪。 | 146 |
+| **[动手前的市场判断](./zh/skills/launch-tips/references/market-read-before-you-build.md)** `market-read-before-you-build`<br>还没调研就给建议：25-40 家竞争对手逐家记下，反复出现的抱怨排好序，再看你的方向会死在哪。 | 173 |
 | **[扩容检查：缓存、队列、负载均衡](./zh/skills/launch-tips/references/scaling-check.md)** `scaling-check`<br>应用现在真需要扩容吗：6 种方案对照你的代码逐一判断，每条附文件证据和每月大概多花多少钱。 | 79 |
 
 ### 写作

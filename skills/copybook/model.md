@@ -16,9 +16,9 @@ Copybook's 23 tips on models and cost. The order is by saves, not by fit: read t
 | hillclimb-a-cheaper-feature | Your costliest Claude API feature: a test set first, then cheaper models and lower effort step by step while accuracy holds. |
 | fable-5-2-agent-tree | Picking a model and effort per role: Haiku 5.5 finds files and runs tests, Opus 5.5 edits code, Fable on high only if stuck. |
 | gpt-6-1-sol-main-astra-reviews | Astra eats a week's quota: 6.1 Sol on high as orchestrator, on medium for 3 subagents, Astra only to review big changes. |
+| advisor-opus-on-call | $20 plan on Opus 5.5 by default: Haiku reads code, looks up docs; Opus advises before plans, on repeat errors, before 'done'. |
 | fable-5-2-plans-opus-builds | Fable 5.2 burns tokens fast: planning stays with it, the hardest parts may too, the rest goes to an Opus 5.5 subagent or Codex. |
 | old-rules-review-for-fable-5-2 | Rules hard-coded for older models work against Fable 5.2: delegation, think-less, style-limit and 'never' lines quoted with a fix. |
-| advisor-opus-on-call | $20 plan on Opus 5.5 by default: Haiku reads code, looks up docs; Opus advises before plans, on repeat errors, before 'done'. |
 | 3-habits-burning-your-usage | Keep hitting the usage limit: 7 days of session logs scanned, the 3 costliest habits and their share, rules to plug them. |
 | fable-main-opus-subagents | Fable quota going fast: 3 settings send reading and lookups to half-price Opus subagents; Fable keeps the judgment. |
 | openais-5-cheap-harness-rules | Is your setup as cheap as OpenAI's harness: pass or fail on each of its 5 rules, with the file and the one thing to change. |

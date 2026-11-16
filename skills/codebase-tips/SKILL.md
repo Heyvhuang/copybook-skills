@@ -10,11 +10,11 @@ Copybook's 32 tips on codebase, most saved first. Each tip's text, where it goes
 
 - If the user names a tip, use that tip. If they describe a task, choose the tip that best meets their goal and constraints from those that work with the agent doing the work. If several fit equally well, choose one. Tell the user in one sentence which tip you picked and why, then read its file and follow it. If another tip also fits and would materially change the approach or result, name it and say how it differs.
 - If the user said nothing, show them the list below (each tip's name and what it does) and ask which to use.
-- If none fits, say so and suggest copybook, which looks through all 134 tips.
+- If none fits, say so and suggest copybook, which looks through all 138 tips.
 
 | Tip | What it does |
 | --- | --- |
-| [codebase-memory: an index of your repo](references/codebase-memory-repo-index.md) `codebase-memory-repo-index` | Dozens of grep and read turns per question: the repo as one graph of functions, files and dependencies; dead code found too. |
+| [codebase-memory MCP: an index of your repo](references/codebase-memory-repo-index.md) `codebase-memory-repo-index` | Dozens of grep and read turns per question: the repo as one graph of functions, files and dependencies; dead code found too. |
 | [Karpathy's 4 coding principles for CLAUDE.md](references/karpathys-4-coding-principles.md) `karpathys-4-coding-principles` | The agent over-designs and edits what it wasn't asked to: think before coding, simplicity first, surgical edits, goal-driven work. |
 | [Vibe-coding cleanup: 5 Codex /goal prompts](references/vibe-coding-cleanup-prompts.md) `vibe-coding-cleanup-prompts` | Half your quota left at reset: dead code, duplicates and unneeded dependencies cut; scheduled tasks and old worktrees sorted. |
 | [Clickable repo map](references/clickable-repo-map.md) `clickable-repo-map` | Before you change a repo: click any module for its callers, dependencies, tests and source evidence; a rule keeps it current. |
@@ -34,9 +34,9 @@ Copybook's 32 tips on codebase, most saved first. Each tip's text, where it goes
 | [3 slimmer AGENTS.md plans side by side](references/3-slimmer-agents-md-plans.md) `3-slimmer-agents-md-plans` | AGENTS.md past 200 lines gets followed less: 3 slimmer versions, each more aggressive, nothing lost, shown before changes. |
 | [Whole-project audit with ASCII diagrams](references/whole-project-audit.md) `whole-project-audit` | Broken, inconsistent or unneeded code: how it connects explained before any change, what it's sure about fixed, the rest listed. |
 | [No compatibility code yet: AGENTS.md rules](references/no-compatibility-code-yet.md) `no-compatibility-code-yet` | No users yet, but the agent adds compatibility code and migrations: skip both, then docs, tests, smallest change and cleanup. |
-| [Claude Code permissions: deny, ask and allow](references/deny-ask-and-allow-permissions.md) `deny-ask-and-allow-permissions` | Claude deleted a config that 'looked unused': risky commands blocked, pushes ask first, routine ones run, deny always wins. |
+| [Claude Code permissions: deny, ask and allow commands](references/deny-ask-and-allow-permissions.md) `deny-ask-and-allow-permissions` | Claude deleted a config that 'looked unused': risky commands blocked, pushes ask first, routine ones run, deny always wins. |
 | [Ask before edge-case code: one AGENTS.md line](references/ask-before-edge-case-code.md) `ask-before-edge-case-code` | The agent codes for races that never happen: one line makes it state the risk and the odds, then wait for your OK. |
-| [Project instructions from your sessions](references/instructions-from-your-sessions.md) `instructions-from-your-sessions` | Background you re-explain every new session: pulled from your last 20 sessions and written up as project instructions. |
+| [Claude Code project instructions from your sessions](references/instructions-from-your-sessions.md) `instructions-from-your-sessions` | Background you re-explain every new session: pulled from your last 20 sessions and written up as project instructions. |
 | [Mod request for Claude Code itself](references/mod-request-for-claude-code.md) `mod-request-for-claude-code` | Something in Claude Code's interface you want changed: a prompt that finds an existing Mod or proposes the smallest one. |
 | [\~/.codex and \~/.claude sorted before cleanup](references/codex-and-claude-sorted.md) `codex-and-claude-sorted` | A cleanup that could delete your chats: items sorted Keep, History, Work, Clearable or Unknown, each command approved by you. |
 | [Mod ideas from your last 20 sessions](references/mod-ideas-from-20-sessions.md) `mod-ideas-from-20-sessions` | Requests you repeat, commands you stop or undo, how you check changes: ranked by how much each would help, your words quoted. |

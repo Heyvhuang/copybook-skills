@@ -37,4 +37,4 @@
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/pick-moves-from-a-120-sample-motion-prompt-library)：@Voxyz_ai 2026年10月17日[发在 X 上](https://x.com/Voxyz_ai/status/2111502499048026232)，截至 2026年10月24日有 1,624 次收藏。适用于 Claude Code。
+来自 [Copybook](https://copybook.page/zh/t/pick-moves-from-a-120-sample-motion-prompt-library)：@Voxyz_ai 2026年10月17日[发在 X 上](https://x.com/Voxyz_ai/status/2111502499048026232)，截至 2026年11月14日有 1,667 次收藏。适用于 Claude Code。

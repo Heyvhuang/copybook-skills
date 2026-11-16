@@ -32,4 +32,4 @@
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/map-your-disk-before-cleaning-up-dev-leftovers)：@Voxyz_ai 2026年10月17日[发在 X 上](https://x.com/Voxyz_ai/status/2111472304643612774)，截至 2026年10月24日有 2,013 次收藏。适用于 Claude Code。
+来自 [Copybook](https://copybook.page/zh/t/map-your-disk-before-cleaning-up-dev-leftovers)：@Voxyz_ai 2026年10月17日[发在 X 上](https://x.com/Voxyz_ai/status/2111472304643612774)，截至 2026年11月14日有 1,998 次收藏。适用于 Claude Code。

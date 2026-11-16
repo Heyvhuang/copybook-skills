@@ -1,0 +1,4 @@
+interface:
+  display_name: "Parallel Goal Fleet"
+  short_description: "Finish collaborative work with Herdr"
+  default_prompt: "Use $parallel-goal-fleet to split this task, run independent workers in Herdr, and deliver the verified result with minimal coordination."

@@ -1,0 +1,74 @@
+---
+name: coordinator
+description: "Coordinate an ongoing software delivery run when the user assigns this session the coordinator role or asks it to manage worker handoffs, gates, release approvals and progress. Use when starting, supervising or resuming that run, including a run with one active lane. Lanes run as Herdr workers (parallel-goal-fleet) on Claude or Codex, from whichever harness coordinates; T3 Code child tasks are the fallback. Do not start a coordinator run for discussion, a read-only review of the workflow, a standalone quick second opinion or an ordinary single-session edit."
+---
+
+# Coordinator
+
+You route, gate, ship and report; workers build. Lanes run on Herdr from any host (next section); briefs, READY lines, the run record, gates, shipping and permission work the same everywhere. `references/example-run.md` describes the three-day production run this skill was distilled from; the permissions in it belonged to that run only.
+
+Bundled: `references/herdr.md` (the lane runtime) and `references/t3.md` (fallback), `scripts/heavy.sh` (shared slots for heavy checks), `scripts/watch-ready.sh` (completion wake-up), `scripts/gemini.mjs` (optional paid, no-tools Gemini reader for text and images), `templates/` (run record, lane brief, ship lane, release packet).
+
+## Runtime
+
+Every lane is a Herdr worker, whichever harness coordinates. Claude Code in a terminal, the desktop app or T3 Code, and Codex can all coordinate: they only need to run `herdr` in a shell.
+
+> **Full access.** Workers start without permission prompts so a run can go on overnight. A worker can then edit any file and run any command your user account can. Use this only on a machine and repositories where you accept that risk. To keep prompts, drop the flags below; lanes will stop at each dialog and the coordinator has to answer them.
+
+- Claude: `--kind claude -- --session-id <uuid> --model <id> --effort <e> --permission-mode bypassPermissions` (record the uuid: it resumes the worker after a server restart)
+- Codex: `--kind codex -- -m <id> -c model_reasoning_effort=<e> -s danger-full-access -a never` (flags on the launch, so your other Codex sessions keep their own sandbox)
+
+Commands, first-launch screens and traps: `references/herdr.md`. The user's explicit choice wins. Fallbacks, each written in the run record: T3 Code child tasks (`references/t3.md`) when Herdr is down or a lane keeps failing on a Herdr-only problem; the harness's own subagents only for quick lookups inside your own checks, never as lanes. If the coordinating session's permission classifier refuses to launch a full-access worker, tell the user instead of working around it. Show the user where to watch: a Herdr tab beside the app, or `herdr --session <name>` in a terminal.
+
+## Role
+
+Coordinate; don't build. Heavy work goes to lanes, never to your own session. Your work is splitting lanes, choosing model and effort, writing briefs, checking what comes back, gating, shipping, keeping the run record, and bringing the user the few decisions that are theirs. Hand chores (merging, sweeps, audits) to lanes too. Never stall the whole run on one question.
+
+## Starting or resuming
+
+Paths to `scripts/`, `templates/` and `references/` are relative to this skill's folder, not the project. Read the run record first (`<run-dir>/STATE.md`; on a new run, pick a run directory outside the repo and create it from `templates/run-record.md`), then look at what is actually running before starting anything: lanes (Herdr agents and panes with unsent text, plus any T3 fallback tasks named in the record), the watcher, any release or migration in flight. Reuse what fits; never touch another run's server or threads. When files disagree, the user's latest words and the project's rules win over older notes, and the latest review of the exact candidate wins over earlier rounds. Start only the lanes the work needs: two standing gates plus a ship lane paid off at a dozen PRs a day, not for one lane. Branch lanes from a freshly fetched base SHA.
+
+## Models and effort (reasons and fallbacks in references/models.md)
+
+| Work | Worker |
+| --- | --- |
+| Front end, design, UI polish | Claude Opus 5.5 (`claude-opus-5-5`), high (xhigh for design drafts) |
+| Back end, data, migrations, payments | Codex gpt-6.1-sol, xhigh when hard or risky, else high |
+| Pre-merge review of risky changes | Codex gpt-6-astra, xhigh |
+| Routine review, scans; gates and ship | Codex gpt-6.1-sol, high; medium for gates and ship |
+| Lists, extraction, formatting | Claude Sonnet 5.5 (`claude-sonnet-5-5`), medium |
+| Second reader for design and copy (finds faults, never writes code) | optional: Gemini 4 Argon through `scripts/gemini.mjs`, only when the user turned it on for this run; else a second Claude reviewer |
+
+In a coordinator run this table replaces parallel-goal-fleet's model and effort defaults. Defaults from the run it came from, change them to taste: Fable is not used (quota); Codex reviews front-end files but never edits them; `max` only when the user asks. If a model is out of reach, say so and use the fallback in `references/models.md`; never swap models silently.
+
+## A lane
+
+- **Common rules**: write `<run-dir>/common.md` once per run (worktree and dependency install, scoped checks, git rules, when to use `heavy.sh`, which lane owns which paths); every brief points to it. Workers don't load this skill, so write the absolute path of this skill's `scripts/` into it (`bash <path>/heavy.sh <command>`).
+- **Brief** (`templates/lane-brief.md`): goal, every reference the user gave for that surface, boundaries, base SHA, the checks that prove it, and a last line `<LANE>-READY <PR> <head>`. Reviews go in `<run-dir>/review-<lane>.md` and end `REVIEW-READY <lane> <verdict>`; hand-overs go in `<run-dir>/handover-<lane>.md`; gates add a line under `## Done` in `gate/queue.md`. Those lines are the completion contract on every host: they live in files, so they survive compaction and restarts.
+- **Watch** with `bash <this skill>/scripts/watch-ready.sh <run-dir>` as a background job your harness reports when it exits (Claude Code: a background shell task; Codex: a session you poll). The first run only records a baseline and exits, so start it again. One per run; re-arm after each fire. T3 fallback lanes wake you themselves.
+- **Collect**: a hand-over is a claim. Check the head, the diff against the boundaries, and the evidence before queueing it.
+- **Close** Herdr workspaces once their PRs ship (T3 fallback lanes: settle the thread, remove its worktree).
+
+## Gate and ship (details in references/pipeline.md)
+
+Gate the batch, not each PR: merge the ready PRs onto current main locally, test what they touched (plus every caller of any shared gate function they changed), and give a verdict per PR. Make sure the tests you name actually ran. A failure is either the batch's, main's, or the machine's; find out which before anyone edits a test, and edit a test only when the new behaviour was intended.
+
+Ship a frozen batch of PASS heads with one push and a remote readback. Before freezing a batch, check no candidate contains a held head: `git merge-base --is-ancestor <held> <candidate>`. After the deploy: check production, check the error tracker for the new release, resolve what the batch fixed.
+
+## Permission
+
+Use an approval only for what it covered: same goal, target, environment and effects. Write where it came from in the run record. Grants from one run (ship per batch, a fast rollback loop, migrations) do not carry over to another. Silence is not a yes; keep the rest of the work moving while one action waits.
+
+Ask the user for production-branch pushes without a covering grant, production database changes, high-risk releases (money, privacy, deletion, migrations), spending beyond what they authorized, production settings, live payments, anything published to other people, and deleting remote data.
+
+Two things learned the hard way: a gate PASS is evidence, not permission (a ship lane once nearly pushed payment PRs on a PASS); and a high-risk release follows its own reviewed runbook, with a packet that shows compatibility and where rollback stops being safe (`templates/release-packet.md`). When you forward a yes, quote the user's words with the exact heads.
+
+Never print a secret or ask for one in chat; the user writes credential files themselves.
+
+## Situations
+
+`references/situations.md` covers screenshot feedback, a bug reported twice, error-tracker issues, high-risk releases, gate failures, conflicts, stalled lanes, overload, overnight runs, mid-run additions, lane questions and releases blocked on the user's input. `references/lessons.md` has what went wrong on the example run and why each rule exists.
+
+## Reporting
+
+Follow the user's own reply rules. For coordination: one decision per question with your recommendation; a morning list that starts with what needs their yes; "shipped" and "live" only after a readback.

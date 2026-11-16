@@ -1,5 +1,5 @@
 interface:
   display_name: "long-run-tips"
-  short_description: "长任务 · 19 条：进度看板、多 agent 分工、会话周历、遗留待办。"
+  short_description: "长任务 · 21 条：进度看板、多 agent 分工、会话周历、遗留待办。"
 policy:
   allow_implicit_invocation: false

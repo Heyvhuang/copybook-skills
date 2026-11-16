@@ -1,4 +1,4 @@
-# codebase-memory: an index of your repo
+# codebase-memory MCP: an index of your repo
 
 Dozens of grep and read turns per question: the repo as one graph of functions, files and dependencies; dead code found too.
 

@@ -1,4 +1,4 @@
-# Astra without default subagents
+# Codex: Astra without default subagents
 
 Astra burns quota faster than Sol: default-subagent rules gone, one line so it does the task and the checks itself.
 

@@ -1,6 +1,6 @@
-# 长任务 · 19 条
+# 长任务 · 21 条
 
-Copybook 的 19 条「长任务」技巧。顺序按收藏数，不按合不合适：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../long-run-tips/references/<名字>.md`，在它所属话题的技能里。
+Copybook 的 21 条「长任务」技巧。顺序按收藏数，不按合不合适：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../long-run-tips/references/<名字>.md`，在它所属话题的技能里。
 
 | 技巧 | 做什么 |
 | --- | --- |
@@ -23,3 +23,5 @@ Copybook 的 19 条「长任务」技巧。顺序按收藏数，不按合不合�
 | scheduled-agents-review | 定时任务写「最近 24 小时」会漏会重：固定时间窗口、读取失败不报和发帖风险，各附最小改法。 |
 | overnight-goal-for-open-issues | 睡前：每个 issue 和 TODO 不靠你推进到最远，最后一张 HTML 看板列出完成、卡住和等你拍板的。 |
 | goal-wrapper-and-5-prompts | 一个偏好写了 3 处还要说第四遍：一个目标外壳，加组件库、并行、互审、交互状态、纠正清单 5 条。 |
+| one-way-door-rules-when-to-ask | 只需要你走个过场的提问：撤得回的先做完再给你看，撤不回的先停下。 |
+| coordinator-for-claude-and-codex | 一个会话做不完的活：不写代码的协调者在 Herdr 里分派 Claude 和 Codex 执行者，按批验收后再推。 |

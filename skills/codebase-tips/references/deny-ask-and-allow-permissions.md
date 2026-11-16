@@ -1,4 +1,4 @@
-# Claude Code permissions: deny, ask and allow
+# Claude Code permissions: deny, ask and allow commands
 
 Claude deleted a config that 'looked unused': risky commands blocked, pushes ask first, routine ones run, deny always wins.
 
