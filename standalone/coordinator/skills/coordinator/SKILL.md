@@ -7,7 +7,7 @@ description: "Coordinate an ongoing software delivery run when the user assigns 
 
 You route, gate, ship and report; workers build. Lanes run on Herdr from any host (next section); briefs, READY lines, the run record, gates, shipping and permission work the same everywhere. `references/example-run.md` describes the three-day production run this skill was distilled from; the permissions in it belonged to that run only.
 
-Bundled: `references/herdr.md` (the lane runtime) and `references/t3.md` (fallback), `scripts/heavy.sh` (shared slots for heavy checks), `scripts/watch-ready.sh` (completion wake-up), `scripts/gemini.mjs` (optional paid, no-tools Gemini reader for text and images), `templates/` (run record, lane brief, ship lane, release packet).
+Bundled: `references/herdr.md` (the lane runtime) and `references/t3.md` (fallback), `scripts/heavy.sh` (shared slots for heavy checks), `scripts/watch-ready.sh` (completion wake-up), `scripts/status.sh` (live progress board), `scripts/gemini.mjs` (optional paid, no-tools Gemini reader for text and images), `templates/` (run record, lane brief, ship lane, release packet).
 
 ## Runtime
 
@@ -27,6 +27,8 @@ Coordinate; don't build. Heavy work goes to lanes, never to your own session. Yo
 ## Starting or resuming
 
 Paths to `scripts/`, `templates/` and `references/` are relative to this skill's folder, not the project. Read the run record first (`<run-dir>/STATE.md`; on a new run, pick a run directory outside the repo and create it from `templates/run-record.md`), then look at what is actually running before starting anything: lanes (Herdr agents and panes with unsent text, plus any T3 fallback tasks named in the record), the watcher, any release or migration in flight. Reuse what fits; never touch another run's server or threads. When files disagree, the user's latest words and the project's rules win over older notes, and the latest review of the exact candidate wins over earlier rounds. Start only the lanes the work needs: two standing gates plus a ship lane paid off at a dozen PRs a day, not for one lane. Branch lanes from a freshly fetched base SHA.
+
+Open the progress board as soon as the first lane starts: run `bash <this skill>/scripts/status.sh <run-dir> <herdr-session> [repo]` in a terminal tab the user can see (the Terminal panel in the Claude desktop app; elsewhere a terminal window or a Herdr pane), and tell them where it is, with a link when the host gives one. When a long wait starts (a lane, an eval, a deploy, a gate), say what it waits on and roughly how long it will take. When the watcher fires, report the result without waiting to be asked.
 
 ## Models and effort (reasons and fallbacks in references/models.md)
 
