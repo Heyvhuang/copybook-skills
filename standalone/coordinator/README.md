@@ -7,7 +7,7 @@ It was distilled from a three-day production run: about 160 PRs, 107 lane briefs
 **Quick start**
 
 - Needs: Herdr 0.9.5+ (a terminal workspace that runs and watches many coding agents at once), Claude Code and Codex CLI signed in, a git repo with the GitHub CLI (`gh`).
-- Install: `npx skills@latest add Heyvhuang/copybook-skills --full-depth --skill coordinator --skill parallel-goal-fleet`, both skills.
+- Install: `npx skills@latest add Heyvhuang/copybook-skills --skill coordinator --skill parallel-goal-fleet`, both skills.
 - Say: "You are the coordinator for this run. Goal: close issues #12 to #18, one PR each, CI green. Use Herdr for the lanes. Run directory: ../myapp-fleet"
 
 Workers run with full access. Read the next section before the first run.
@@ -38,7 +38,7 @@ What the bundled scripts do: `heavy.sh` queues heavy checks into a few machine-w
 ## Install
 
 ```bash
-npx skills@latest add Heyvhuang/copybook-skills --full-depth --skill coordinator --skill parallel-goal-fleet
+npx skills@latest add Heyvhuang/copybook-skills --skill coordinator --skill parallel-goal-fleet
 ```
 
 Pick both skills when it asks: `coordinator` needs `parallel-goal-fleet`. Or copy the two folders under `skills/` into `~/.claude/skills/` (Claude Code) or `~/.codex/skills/` (Codex).

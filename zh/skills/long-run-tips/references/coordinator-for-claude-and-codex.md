@@ -19,7 +19,7 @@
 ## 安装命令
 
 ```bash
-npx skills@latest add Heyvhuang/copybook-skills --full-depth --skill coordinator --skill parallel-goal-fleet
+npx skills@latest add https://copybook.page --skill coordinator --skill parallel-goal-fleet
 ```
 
 ## 第一句提示词
@@ -32,7 +32,7 @@ npx skills@latest add Heyvhuang/copybook-skills --full-depth --skill coordinator
 
 两个 skill 把一个 Claude Code 或 Codex 会话变成协调者，指挥一组在 [Herdr](https://herdr.dev) 里运行的执行者。协调者自己从不写代码：它把工作拆成 lane（一个执行者、一个分支、一份任务说明），给每条 lane 选模型和推理强度，检查交回来的结果，把准备好的 PR 按批一起测试，每批只推一次，只把该你拍板的事交给你。
 
-它提炼自一次为期三天的真实运行：大约 160 个 PR、107 份 lane 任务说明、118 份交接和 166 次按批测试。需要 Herdr 0.9.5 或更高版本、已登录的 Claude Code 和 Codex CLI，以及带 GitHub CLI 的 git 仓库。两个 skill 和它们的 README 在 Heyvhuang/copybook-skills 的 [coordinator 文件夹](https://github.com/Heyvhuang/copybook-skills/tree/main/coordinator)里。
+它提炼自一次为期三天的真实运行：大约 160 个 PR、107 份 lane 任务说明、118 份交接和 166 次按批测试。需要 Herdr 0.9.5 或更高版本、已登录的 Claude Code 和 Codex CLI，以及带 GitHub CLI 的 git 仓库。源码在 [Heyvhuang/copybook-skills](https://github.com/Heyvhuang/copybook-skills/tree/main/standalone/coordinator)，README 写了每个脚本做什么。
 
 执行者以全权限运行：启动时没有权限弹窗，能改你的用户账号能改的任何文件、跑任何命令。只在你接受这一点的机器和仓库上用。
 

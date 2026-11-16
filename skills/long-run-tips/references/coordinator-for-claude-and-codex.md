@@ -19,7 +19,7 @@ The user chose this tip. The steps above are written for a person; do them for t
 ## Install command
 
 ```bash
-npx skills@latest add Heyvhuang/copybook-skills --full-depth --skill coordinator --skill parallel-goal-fleet
+npx skills@latest add https://copybook.page --skill coordinator --skill parallel-goal-fleet
 ```
 
 ## First prompt
@@ -32,7 +32,7 @@ You are the coordinator for this run. Goal: <what done means, and the check that
 
 Two skills turn one Claude Code or Codex session into a coordinator for a fleet of workers running in [Herdr](https://herdr.dev). The coordinator never writes code itself. It splits the work into lanes (one worker, one branch, one brief), picks a model and effort for each, checks what comes back, tests ready PRs together in batches, ships each batch with one push, and brings you only the decisions that are yours.
 
-It was distilled from a three-day production run: about 160 PRs, 107 lane briefs, 118 hand-overs and 166 batch test runs. It needs Herdr 0.9.5 or later, Claude Code and Codex CLI signed in, and a git repo with the GitHub CLI. The two skills and their README are in the [coordinator folder](https://github.com/Heyvhuang/copybook-skills/tree/main/coordinator) of Heyvhuang/copybook-skills.
+It was distilled from a three-day production run: about 160 PRs, 107 lane briefs, 118 hand-overs and 166 batch test runs. It needs Herdr 0.9.5 or later, Claude Code and Codex CLI signed in, and a git repo with the GitHub CLI. The source is in [Heyvhuang/copybook-skills](https://github.com/Heyvhuang/copybook-skills/tree/main/standalone/coordinator), with a README on what each script does.
 
 Workers run with full access: they start without permission prompts and can edit any file and run any command your user account can. Use it only on a machine and repositories where you accept that.
 

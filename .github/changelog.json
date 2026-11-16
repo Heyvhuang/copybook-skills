@@ -40,6 +40,21 @@
       ],
       "changed": [],
       "retired": []
+    },
+    {
+      "version": "1.0.3",
+      "date": "2026-11-16",
+      "added": [],
+      "changed": [
+        {
+          "slug": "coordinator-skill-for-claude-code-and-codex",
+          "title": {
+            "en": "Coordinator skill for Claude Code and Codex",
+            "zh": "Claude Code 和 Codex 的协调者 skill"
+          }
+        }
+      ],
+      "retired": []
     }
   ],
   "tips": {
@@ -340,8 +355,8 @@
       }
     },
     "coordinator-skill-for-claude-code-and-codex": {
-      "en": "168c5a357b41ffe7",
-      "zh": "cb939b5d177da264",
+      "en": "93b07e42ab657e6c",
+      "zh": "b59226c73c1c0cb0",
       "title": {
         "en": "Coordinator skill for Claude Code and Codex",
         "zh": "Claude Code 和 Codex 的协调者 skill"
