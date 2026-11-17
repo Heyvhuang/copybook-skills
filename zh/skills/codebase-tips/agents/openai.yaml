@@ -1,5 +1,5 @@
 interface:
   display_name: "codebase-tips"
-  short_description: "代码库 · 32 条：仓库索引和地图、写代码原则、AGENTS.md、改动范围规则。"
+  short_description: "代码库 · 33 条：仓库索引和地图、写代码原则、AGENTS.md、改动范围规则。"
 policy:
   allow_implicit_invocation: false

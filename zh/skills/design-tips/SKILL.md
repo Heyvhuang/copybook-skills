@@ -1,16 +1,16 @@
 ---
 name: design-tips
-description: "设计 · 31 条：先出图再写页面、动效库、参考网站、设计 skill。"
+description: "设计 · 32 条：先出图再写页面、动效库、参考网站、设计 skill。"
 disable-model-invocation: true
 ---
 
-# 设计 · 31 条
+# 设计 · 32 条
 
-Copybook 的 31 条「设计」技巧，收藏多的在前。每条要用的文字、放到哪里、最后得到什么，都在 references/ 里它自己的文件中。
+Copybook 的 32 条「设计」技巧，收藏多的在前。每条要用的文字、放到哪里、最后得到什么，都在 references/ 里它自己的文件中。
 
 - 用户点名技巧时，用点名的那条。用户只说了要做什么时，从适用于实际执行者的技巧里，选最符合用户目标和限制的一条。几条同样合适时，选一条即可。选中后，用一句话说明选了哪条、为什么，再读它的文件照着做。另一条也合适，而且换用它会明显改变做法或结果时，顺带点出它的名字和区别。
 - 用户什么都没说：把下面的列表（每条的名字和做什么）给用户看，问用哪条。
-- 都不合适就直说，并建议用 copybook，它会在全部 138 条里找。
+- 都不合适就直说，并建议用 copybook，它会在全部 141 条里找。
 
 | 技巧 | 做什么 |
 | --- | --- |
@@ -26,6 +26,7 @@ Copybook 的 31 条「设计」技巧，收藏多的在前。每条要用的文�
 | [按你喜欢的网站写的 DESIGN.md](references/design-md-from-sites-you-like.md) `design-md-from-sites-you-like` | 页面一眼 AI 味，是它没见过你喜欢的样子：3 到 5 张截图写成 DESIGN.md，再装两个设计 skill。 |
 | [TasteSkill v2：AI 痕迹检查](references/tasteskill-v2-ai-look-check.md) `tasteskill-v2-ai-look-check` | 页面一眼就像 AI 做的：按桌面、平板、手机宽度列出每一处痕迹，FAIL 排在 WARN 前，不改代码。 |
 | [仪表盘改版：两个 skill 加两条提示词](references/dashboard-redesign-2-skills.md) `dashboard-redesign-2-skills` | 仪表盘一眼 AI 做的：ui-ux-pro-max 加 frontend-design，改版提示词里点名它们，再从 4 个角度审查。 |
+| [先截图再重做的 UI 提示词](references/screenshot-first-ui-rebuild.md) `screenshot-first-ui-rebuild` | UI 层级和密度有问题：每个页面先截图，再只用一套间距、字号和最多 5 种颜色重做。 |
 | [Codex computer use 当本地 MCP server](references/codex-computer-use-as-mcp-server.md) `codex-computer-use-as-mcp-server` | Claude Code 缺个好浏览器：ChatGPT 的 computer use 当本地 MCP，点页面、截图，对比线上和本地。 |
 | [资深设计师视角的 UI/UX 审查](references/ui-ux-audit-as-a-senior-designer.md) `ui-ux-audit-as-a-senior-designer` | 有实权的设计审查：先定审美基线，正确性直接修，能用但显廉价的地方找出来，大改动只提建议。 |
 | [lemo-opuscar：代码做带旁白的发布短片](references/lemo-opuscar-launch-films.md) `lemo-opuscar-launch-films` | 没有视频模型：TTS 旁白、免费采样库配乐，每一帧按 43 种风格之一用代码渲染，30 到 60 分钟。 |

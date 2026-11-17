@@ -1,26 +1,26 @@
 # Copybook
 
-Copybook 按情景替你的 coding agent 挑技巧。你照常说要做什么，一个会自己加载的 skill 从 138 条技巧里选一条，照着做。你不用记，也不用选。这些提示词、规则和设置，来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子。
+Copybook 按情景替你的 coding agent 挑技巧。你照常说要做什么，一个会自己加载的 skill 从 141 条技巧里选一条，照着做。你不用记，也不用选。这些提示词、规则和设置，来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子。
 
 ```text
-copybook ─────────────────────────
+copybook ──────────────────────────
 
 › 这个网站能上线了吗
   上线推广 · 11 条里选 1 条
   ·····•·····
 
 › 这个页面一股 AI 味，重做
-  设计 · 31 条里选 1 条
-  ············•··················
+  设计 · 32 条里选 1 条
+  ············•···················
 
 › AGENTS.md 太长了，精简一下
-  代码库 · 32 条里选 1 条
-  ·······················•········
+  代码库 · 33 条里选 1 条
+  ·······················•·········
 
 › 合并前审一下这个 PR
   验收 · 15 条里选 1 条
   ···········•···
-──────────────────────────────────
+───────────────────────────────────
   然后说出选了哪条、为什么，
   照它的步骤把事做完
 ```
@@ -120,14 +120,14 @@ npx skills@latest update copybook codebase-tips review-tips design-tips long-run
 
 ## 它从哪里选
 
-138 条提示词、规则、检查清单和设置，按场景自动选用。
+141 条提示词、规则、检查清单和设置，按情景自动选用。
 
 下面是这个 skill 留意的情景，各自排在它先读的那个话题下面。这个列表里没有专为这件事写的技巧时，它会再读一个。
 
 1. **codebase-tips** - 写或精简 AGENTS.md、CLAUDE.md、agent 权限。同一个 bug 修了两次还没好。
-2. **review-tips** - 装技能包或插件。往下做之前审一遍计划、diff 或 PR。
+2. **review-tips** - 装 skill、技能或插件。动手或合并前审一遍方案、计划、diff 或 PR。
 3. **design-tips** - 设计或重做页面、落地页、仪表盘，或去掉 AI 味。
-4. **long-run-tips** - 跨好几个会话或多个 agent 的任务，或长任务做完给你写报告。
+4. **long-run-tips** - 交接、跨好几个会话或多个 agent 的任务，或长任务做完给你写报告。
 5. **model-tips** - 省 Claude Code 或 Codex 的额度，选模型和推理强度。
 6. **launch-tips** - 网站上线前的准备。
 7. **writing-tips** - 为新读者重写整份 README，或写任务说明。
@@ -154,16 +154,17 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 
 ## 里面有什么
 
-按话题分，收藏多的在前；收藏数统计于 2026年7月22日到 11月15日，每条的日期在它的文件里。
+按话题分，收藏多的在前；收藏数统计于 2026年7月22日到 11月17日，每条的日期在它的文件里。
 
 技巧里用到的词在[词汇表](docs/glossary.zh-CN.md)，只留在 copybook.page 上的技巧在[范围](docs/scope.md#范围)。
 
 ### 代码库
 
-`/copybook-zh:codebase-tips` · 32 条：仓库索引和地图、写代码原则、AGENTS.md、改动范围规则。
+`/copybook-zh:codebase-tips` · 33 条：仓库索引和地图、写代码原则、AGENTS.md、改动范围规则。
 
 | 技巧 | 收藏 |
 | :-- | :-: |
+| **[开源侦察员和收尾者提示词](./zh/skills/codebase-tips/references/open-source-scout-and-closer.md)** `open-source-scout-and-closer`<br>不熟的功能从零写、问要不要继续：先搜 GitHub，再把整个活干完，附一份大白话总结。 | 1.2万 |
 | **[codebase-memory 仓库索引](./zh/skills/codebase-tips/references/codebase-memory-repo-index.md)** `codebase-memory-repo-index`<br>每个问题几十轮 grep 和读文件：仓库连成一张函数、文件和依赖的图，顺手找出能安全删的死函数。 | 8,358 |
 | **[Karpathy 的 4 条写代码原则](./zh/skills/codebase-tips/references/karpathys-4-coding-principles.md)** `karpathys-4-coding-principles`<br>过度设计、顺手改旁边的代码：先想再写、简单优先、改动要准、目标驱动，4 行写进 CLAUDE.md。 | 6,741 |
 | **[vibe coding 后的清理：5 条 Codex /goal 提示词](./zh/skills/codebase-tips/references/vibe-coding-cleanup-prompts.md)** `vibe-coding-cleanup-prompts`<br>额度重置时还剩一半：清掉死代码、重复实现和用不上的依赖，给定时任务和旧 worktree 分好类。 | 3,883 |
@@ -177,7 +178,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 | **[Archify：从代码画系统图](./zh/skills/codebase-tips/references/archify-system-diagrams.md)** `archify-system-diagrams`<br>要给人讲清系统结构：从代码生成一张能搜索、能追踪上下游、能对比版本的 HTML 图，可导出 PNG。 | 1,560 |
 | **[REA：拆开别家 app 的功能](./zh/skills/codebase-tips/references/rea-take-apart-a-feature.md)** `rea-take-apart-a-feature`<br>看中别家 app 的功能却不知道怎么做的：一层层拆开，每个结论标出证据，最后拿到自己实现的计划。 | 1,520 |
 | **[少写防御式代码：4 条 AGENTS.md 规则](./zh/skills/codebase-tips/references/less-defensive-code.md)** `less-defensive-code`<br>改一点点也要层层判空：Codex 只在数据进来的地方检查一次，之后直接用。 | 1,409 |
-| **[代码清理提示词：模块更少、更深](./zh/skills/codebase-tips/references/fewer-deeper-modules.md)** `fewer-deeper-modules`<br>功能跑通了，代码却到处重复：重复的删光，核心逻辑归到一处。 | 1,237 |
+| **[代码清理提示词：模块更少、更深](./zh/skills/codebase-tips/references/fewer-deeper-modules.md)** `fewer-deeper-modules`<br>功能跑通了，代码却到处重复：重复的删光，核心逻辑归到一处。 | 1,263 |
 | **[CI 耗时审计：150 次运行，9 项检查](./zh/skills/codebase-tips/references/ci-time-audit.md)** `ci-time-audit`<br>代码几分钟写完，每个 PR 却在等 CI：最慢的 5 个任务拆成排队、准备和运行，每处改动指到哪一行。 | 1,228 |
 | **[agent 工作区清点](./zh/skills/codebase-tips/references/agent-workspace-audit.md)** `agent-workspace-audit`<br>agent 越用越笨先别怪模型：说明、skill、MCP 和记忆列成「保留 / 删除」清单，你批准后再清。 | 887 |
 | **[agent 记忆工具：8 个仓库分 4 类](./zh/skills/codebase-tips/references/agent-memory-tools-8-repos.md)** `agent-memory-tools-8-repos`<br>agent 记不住代码、资料、对话和长任务：8 个仓库分 4 类，每类挑一个装，装前先给你看命令。 | 869 |
@@ -199,7 +200,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 
 ### 验收
 
-`/copybook-zh:review-tips` · 15 条：bug 打分、红队提示词、代码和计划复查、skill 回测。
+`/copybook-zh:review-tips` · 15 条：PR、代码和计划复查、bug 打分、红队提示词、skill 回测。
 
 | 技巧 | 收藏 |
 | :-- | :-: |
@@ -221,7 +222,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 
 ### 设计
 
-`/copybook-zh:design-tips` · 31 条：先出图再写页面、动效库、参考网站、设计 skill。
+`/copybook-zh:design-tips` · 32 条：先出图再写页面、动效库、参考网站、设计 skill。
 
 | 技巧 | 收藏 |
 | :-- | :-: |
@@ -237,6 +238,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 | **[按你喜欢的网站写的 DESIGN.md](./zh/skills/design-tips/references/design-md-from-sites-you-like.md)** `design-md-from-sites-you-like`<br>页面一眼 AI 味，是它没见过你喜欢的样子：3 到 5 张截图写成 DESIGN.md，再装两个设计 skill。 | 1,404 |
 | **[TasteSkill v2：AI 痕迹检查](./zh/skills/design-tips/references/tasteskill-v2-ai-look-check.md)** `tasteskill-v2-ai-look-check`<br>页面一眼就像 AI 做的：按桌面、平板、手机宽度列出每一处痕迹，FAIL 排在 WARN 前，不改代码。 | 1,297 |
 | **[仪表盘改版：两个 skill 加两条提示词](./zh/skills/design-tips/references/dashboard-redesign-2-skills.md)** `dashboard-redesign-2-skills`<br>仪表盘一眼 AI 做的：ui-ux-pro-max 加 frontend-design，改版提示词里点名它们，再从 4 个角度审查。 | 1,295 |
+| **[先截图再重做的 UI 提示词](./zh/skills/design-tips/references/screenshot-first-ui-rebuild.md)** `screenshot-first-ui-rebuild`<br>UI 层级和密度有问题：每个页面先截图，再只用一套间距、字号和最多 5 种颜色重做。 | 1,084 |
 | **[Codex computer use 当本地 MCP server](./zh/skills/design-tips/references/codex-computer-use-as-mcp-server.md)** `codex-computer-use-as-mcp-server`<br>Claude Code 缺个好浏览器：ChatGPT 的 computer use 当本地 MCP，点页面、截图，对比线上和本地。 | 1,059 |
 | **[资深设计师视角的 UI/UX 审查](./zh/skills/design-tips/references/ui-ux-audit-as-a-senior-designer.md)** `ui-ux-audit-as-a-senior-designer`<br>有实权的设计审查：先定审美基线，正确性直接修，能用但显廉价的地方找出来，大改动只提建议。 | 645 |
 | **[lemo-opuscar：代码做带旁白的发布短片](./zh/skills/design-tips/references/lemo-opuscar-launch-films.md)** `lemo-opuscar-launch-films`<br>没有视频模型：TTS 旁白、免费采样库配乐，每一帧按 43 种风格之一用代码渲染，30 到 60 分钟。 | 634 |
@@ -259,7 +261,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 
 ### 长任务
 
-`/copybook-zh:long-run-tips` · 21 条：进度看板、多 agent 分工、会话周历、遗留待办。
+`/copybook-zh:long-run-tips` · 22 条：多 agent 分工、交接、进度看板、会话周历、遗留待办。
 
 | 技巧 | 收藏 |
 | :-- | :-: |
@@ -274,6 +276,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 | **[长报告先列待办：AGENTS.md 规则](./zh/skills/long-run-tips/references/to-dos-first-in-long-reports.md)** `to-dos-first-in-long-reports`<br>要你做的事埋在长报告中间：AGENTS.md 加一节，每份长报告最上面先列编号待办。 | 782 |
 | **[多 agent 时电脑变慢的排查](./zh/skills/long-run-tips/references/slow-computer-audit-for-agents.md)** `slow-computer-audit-for-agents`<br>开着很多 agent 电脑就卡：先 dry run 理清进程树和开机启动项，再只清理你批准的那些。 | 673 |
 | **[最该用动态工作流跑的活](./zh/skills/long-run-tips/references/job-worth-a-dynamic-workflow.md)** `job-worth-a-dynamic-workflow`<br>哪件活值得交给一批 agent：全仓库检查、迁移或修复循环，先在一个目录、10 个 agent 以内排好计划。 | 670 |
+| **[Herdr 通宵：Opus 5.5 写，Sol 审](./zh/skills/long-run-tips/references/herdr-overnight-opus-and-sol.md)** `herdr-overnight-opus-and-sol`<br>一个卡住的步骤吃掉整晚：每步最多 3 次尝试，还不行就记下错误，转去下一个独立步骤。 | 641 |
 | **[睡前报告：今晚能放心跑的任务](./zh/skills/long-run-tips/references/bedtime-report-of-safe-tasks.md)** `bedtime-report-of-safe-tasks`<br>额度每晚用不完：睡前一小时从今天的活里挑 3-5 个可撤回、能验证的，写好提示词，什么都不改。 | 570 |
 | **[Orca：一个任务分给多个 CLI agent](./zh/skills/long-run-tips/references/orca-a-task-across-cli-agents.md)** `orca-a-task-across-cli-agents`<br>几个 CLI agent 同跑没人盯进度：各有目标，reviewer 只读，写代码的各用 worktree，一人整合。 | 495 |
 | **[边做边写给下一个 agent 的 HANDOFF.md](./zh/skills/long-run-tips/references/handoff-md-for-the-next-agent.md)** `handoff-md-for-the-next-agent`<br>任务一个会话做不完：进度、决定、相关文件、验证结果和下一步边做边记，下一个 agent 接得上。 | 429 |
@@ -294,7 +297,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 | **[Luna Max 做 Codex 的 subagent](./zh/skills/model-tips/references/luna-max-as-a-codex-subagent.md)** `luna-max-as-a-codex-subagent`<br>边界清楚的活交给 Luna Max：建一个 max 推理的 luna_worker，按你装的 Codex 版本校验，先看 diff。 | 6,052 |
 | **[/advisor：Opus 5.5 主跑，Fable 待命](./zh/skills/model-tips/references/advisor-fable-on-call.md)** `advisor-fable-on-call`<br>Opus 5.5 主跑后 Fable 闲着：定方案前、错误反复时、说做完前叫 Fable 出主意，代码仍归 Opus。 | 5,478 |
 | **[Astra 旧规则审查：按 OpenAI 指南](./zh/skills/model-tips/references/old-rules-review-for-astra.md)** `old-rules-review-for-astra`<br>旧规则让 Astra 多干活或提前停：按 OpenAI 指南找出该删的 skill 触发、必读文档、检查和确认规则。 | 4,980 |
-| **[设置检查：按 Anthropic 选模型指南](./zh/skills/model-tips/references/setup-review-by-the-model-guide.md)** `setup-review-by-the-model-guide`<br>Explore 每次读文件都在烧大模型额度：查出用错模型的 subagent 和不合适的 effort，各附配置改法。 | 3,339 |
+| **[设置检查：按 Anthropic 选模型指南](./zh/skills/model-tips/references/setup-review-by-the-model-guide.md)** `setup-review-by-the-model-guide`<br>Explore 每次读文件都在烧大模型额度：查出用错模型的 subagent 和不合适的 effort，各附配置改法。 | 3,350 |
 | **[用完 Codex 剩余额度的 5 条 /goal](./zh/skills/model-tips/references/leftover-quota-5-goal-prompts.md)** `leftover-quota-5-goal-prompts`<br>额度重置前还剩一半：完整 UI/UX 审查、能点的代码地图、量得出的提速、清理工作区、清理 Codex。 | 2,633 |
 | **[状态栏缓存倒计时](./zh/skills/model-tips/references/status-line-cache-countdown.md)** `status-line-cache-countdown`<br>缓存什么时候过期平时看不到：状态栏常显还剩几分钟，过期后告诉你下一句要重算多少 token。 | 2,547 |
 | **[Fable 5 管规划，后端给 Codex](./zh/skills/model-tips/references/fable-plans-codex-builds.md)** `fable-plans-codex-builds`<br>Fable 5 烧 token 太快：规划和前端留给它，后端用 /goal 派给 Codex；另附一条前端改版提示词。 | 2,520 |

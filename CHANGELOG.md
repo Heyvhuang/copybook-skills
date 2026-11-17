@@ -4,14 +4,21 @@ What each version of Copybook's skills added, changed and retired, by week (from
 
 每个版本新增、改动和撤下了哪些技巧，按周列出（每周从周一算起，UTC）。复制块或步骤变了才算改动，只更新收藏数或日期的版本不列。
 
-## Week of 16 Nov 2026 · 1.0.2 to 1.0.3
+## Week of 16 Nov 2026 · 1.0.2 to 1.0.5
 
 **Added · 新增**
 
 - [/learn-taste: design corrections as rules](./skills/design-tips/references/learn-taste-design-corrections.md) · [/learn-taste：设计修正变成规则](./zh/skills/design-tips/references/learn-taste-design-corrections.md)
 - [Coordinator skill for Claude Code and Codex](./skills/long-run-tips/references/coordinator-for-claude-and-codex.md) · [Claude Code 和 Codex 的协调者 skill](./zh/skills/long-run-tips/references/coordinator-for-claude-and-codex.md)
+- [Herdr overnight: Opus 5.5 builds, Sol reviews](./skills/long-run-tips/references/herdr-overnight-opus-and-sol.md) · [Herdr 通宵：Opus 5.5 写，Sol 审](./zh/skills/long-run-tips/references/herdr-overnight-opus-and-sol.md)
 - [One-way door rules for AGENTS.md: when to ask](./skills/long-run-tips/references/one-way-door-rules-when-to-ask.md) · [AGENTS.md 单向门规则：什么时候该问](./zh/skills/long-run-tips/references/one-way-door-rules-when-to-ask.md)
+- [Open-Source Scout and Closer prompts](./skills/codebase-tips/references/open-source-scout-and-closer.md) · [开源侦察员和收尾者提示词](./zh/skills/codebase-tips/references/open-source-scout-and-closer.md)
+- [Screenshot-first UI rebuild prompt](./skills/design-tips/references/screenshot-first-ui-rebuild.md) · [先截图再重做的 UI 提示词](./zh/skills/design-tips/references/screenshot-first-ui-rebuild.md)
 - [Tailscale preview links on your phone: a rule](./skills/review-tips/references/tailscale-preview-links.md) · [手机上的 Tailscale 预览链接规则](./zh/skills/review-tips/references/tailscale-preview-links.md)
+
+**Changed · 有改动**
+
+- [/claude-api prompt-audit: skill audit for Fable 5.1](./skills/review-tips/references/claude-api-prompt-audit.md) · [/claude-api prompt-audit：换 Fable 5.1 后的 skill 审查](./zh/skills/review-tips/references/claude-api-prompt-audit.md)
 
 ## 1.0.0 · First public version · 首个公开版本
 

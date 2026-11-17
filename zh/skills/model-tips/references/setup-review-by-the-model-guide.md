@@ -45,4 +45,4 @@ Claude Code 内置的 Explore subagent 以前一直跑在 Haiku 上，现在改�
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/review-your-setup-with-anthropics-model-guide)：@Voxyz_ai 2026年11月10日[发在 X 上](https://x.com/Voxyz_ai/status/2119943123250078141)，截至 2026年11月11日有 3,339 次收藏。适用于 Claude Code。
+来自 [Copybook](https://copybook.page/zh/t/review-your-setup-with-anthropics-model-guide)：@Voxyz_ai 2026年11月10日[发在 X 上](https://x.com/Voxyz_ai/status/2119943123250078141)，截至 2026年11月17日有 3,350 次收藏。适用于 Claude Code。

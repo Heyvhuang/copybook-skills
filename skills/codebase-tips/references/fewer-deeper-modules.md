@@ -30,4 +30,4 @@ The best part is watching the line count drop as all the duplicate code gets wip
 
 ## Source
 
-From [Copybook](https://copybook.page/t/clean-up-code-into-fewer-deeper-modules): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2119777023845417175) on 9 Nov 2026, 1.2K saves as of 10 Nov 2026. For Claude Code and Codex.
+From [Copybook](https://copybook.page/t/clean-up-code-into-fewer-deeper-modules): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2119777023845417175) on 9 Nov 2026, 1.3K saves as of 16 Nov 2026. For Claude Code and Codex.

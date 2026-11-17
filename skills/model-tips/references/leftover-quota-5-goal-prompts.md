@@ -16,7 +16,7 @@ The user chose this tip. The steps above are written for a person; do them for t
 - Fill each bracket or placeholder from what the user said, or ask.
 - Step 3 is what the user should end up with.
 
-## 1. Run a complete UI/UX audit with three skills
+## Prompt: UI/UX audit with three skills
 
 ```text
 /goal Launch the real site for this project and use the three skills below to audit and improve it:
@@ -43,7 +43,7 @@ Finish with:
 → A final version I can open and test
 ```
 
-## 2. Build a clickable map of the entire codebase
+## Prompt: clickable map of the codebase
 
 ```text
 /goal Analyze the current codebase and generate an interactive code map that opens directly in a browser.
@@ -68,7 +68,7 @@ Output:
 When finished, open the map and verify that every path, node, and flow matches the current codebase.
 ```
 
-## 3. Make the app measurably faster
+## Prompt: make the app measurably faster
 
 ```text
 /goal Make this app measurably faster.
@@ -89,7 +89,7 @@ Finish with a simple before/after report:
 → Any bottlenecks you didn’t address
 ```
 
-## 4. Clean up the entire workspace
+## Prompt: clean up the workspace
 
 ```text
 /goal Review every project under [WORKSPACE PATH] and clean up the half-finished work that has piled up.
@@ -117,7 +117,7 @@ Do not delete, merge, push, or deploy anything. Leave those actions in the final
 Finish with an overview of the entire workspace and the 10 most valuable things to work on next.
 ```
 
-## 5. Clean up Codex itself
+## Prompt: clean up Codex itself
 
 ```text
 /goal Audit my current Codex setup, including AGENTS.md, skills, custom agents, commands, plugins, MCP servers, and automations.

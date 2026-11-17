@@ -1,26 +1,26 @@
 # Copybook
 
-Copybook picks a tip for your coding agent by the situation it is in. You ask for the work as usual, and a skill that loads by itself picks one of the 138 tips and follows it. You have nothing to remember and nothing to choose. The tips are the prompts, rules and setups readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai)'s posts on X.
+Copybook picks a tip for your coding agent by the situation it is in. You ask for the work as usual, and a skill that loads by itself picks one of the 141 tips and follows it. You have nothing to remember and nothing to choose. The tips are the prompts, rules and setups readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai)'s posts on X.
 
 ```text
-copybook ─────────────────────────
+copybook ──────────────────────────
 
 › Is this site ready to launch?
   Launch list · picks 1 of 11
   ·····•·····
 
 › This page looks AI-made, redo it
-  Design list · picks 1 of 31
-  ············•··················
+  Design list · picks 1 of 32
+  ············•···················
 
 › Trim our AGENTS.md
-  Codebase list · picks 1 of 32
-  ·······················•········
+  Codebase list · picks 1 of 33
+  ·······················•·········
 
 › Review this PR before I merge
   Review list · picks 1 of 15
   ···········•···
-──────────────────────────────────
+───────────────────────────────────
   then names the tip, and why,
   and works through its steps
 ```
@@ -120,14 +120,14 @@ Members install `copybook` once. ChatGPT syncs the marketplace daily. A ZIP uplo
 
 ## What it picks from
 
-138 prompts, rules, checklists, and setups. Auto-loads one when a task fits, or browse.
+141 prompts, rules, checklists, and setups. Auto-loads one when a task fits, or browse.
 
 These are the situations the skill watches for, each under the shelf whose list it reads first. When that list has no tip made for the job, it reads a second.
 
 1. **codebase-tips** - Writing or trimming AGENTS.md, CLAUDE.md or agent permissions. A fix that still fails after two tries.
 2. **review-tips** - Installing an agent skill or plugin. Reviewing a plan, a diff or a PR before work goes on.
 3. **design-tips** - Designing or redesigning a page, landing page or dashboard, or making it look less AI-made.
-4. **long-run-tips** - A task that spans several sessions or agents, or reporting back to you after a long task.
+4. **long-run-tips** - A handoff, a task that spans several sessions or agents, or reporting back to you after a long task.
 5. **model-tips** - Cutting Claude Code or Codex usage, or choosing models and effort.
 6. **launch-tips** - Getting a site ready to launch.
 7. **writing-tips** - Rewriting an entire README for new readers, or writing a task brief.
@@ -154,16 +154,17 @@ Copybook is written by [@Voxyz_ai](https://x.com/Voxyz_ai).
 
 ## What's inside
 
-Grouped by topic, most saved first; saves counted between 22 Jul and 15 Nov 2026, each tip's date in its file.
+Grouped by topic, most saved first; saves counted between 22 Jul and 17 Nov 2026, each tip's date in its file.
 
 The words the tips use are in the [glossary](docs/glossary.md); the tips that stay on copybook.page are listed in [scope](docs/scope.md).
 
 ### Codebase
 
-`/copybook:codebase-tips` · 32 tips: repo index and map, coding principles, AGENTS.md, scope rules.
+`/copybook:codebase-tips` · 33 tips: repo index and map, coding principles, AGENTS.md, scope rules.
 
 | Tip | Saves |
 | :-- | :-: |
+| **[Open-Source Scout and Closer prompts](./skills/codebase-tips/references/open-source-scout-and-closer.md)** `open-source-scout-and-closer`<br>Unfamiliar features written from scratch, offers to continue: GitHub searched first, then the whole job done and a plain recap. | 12K |
 | **[codebase-memory MCP: an index of your repo](./skills/codebase-tips/references/codebase-memory-repo-index.md)** `codebase-memory-repo-index`<br>Dozens of grep and read turns per question: the repo as one graph of functions, files and dependencies; dead code found too. | 8.4K |
 | **[Karpathy's 4 coding principles for CLAUDE.md](./skills/codebase-tips/references/karpathys-4-coding-principles.md)** `karpathys-4-coding-principles`<br>The agent over-designs and edits what it wasn't asked to: think before coding, simplicity first, surgical edits, goal-driven work. | 6.7K |
 | **[Vibe-coding cleanup: 5 Codex /goal prompts](./skills/codebase-tips/references/vibe-coding-cleanup-prompts.md)** `vibe-coding-cleanup-prompts`<br>Half your quota left at reset: dead code, duplicates and unneeded dependencies cut; scheduled tasks and old worktrees sorted. | 3.9K |
@@ -177,7 +178,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[Archify: system diagrams from code](./skills/codebase-tips/references/archify-system-diagrams.md)** `archify-system-diagrams`<br>A system you have to explain: an HTML diagram you can search, trace up and downstream, compare across versions, export as PNG. | 1.6K |
 | **[REA: take apart another app's feature](./skills/codebase-tips/references/rea-take-apart-a-feature.md)** `rea-take-apart-a-feature`<br>A feature you like and can't see how it's built: taken down layer by layer, each finding with evidence, then a plan for your own. | 1.5K |
 | **[Less defensive code: 4 AGENTS.md rules](./skills/codebase-tips/references/less-defensive-code.md)** `less-defensive-code`<br>Even a tiny change gets null checks at every layer: Codex checks data once where it comes in, then just uses it. | 1.4K |
-| **[Code cleanup prompt: fewer, deeper modules](./skills/codebase-tips/references/fewer-deeper-modules.md)** `fewer-deeper-modules`<br>A feature works, but the code repeats itself: duplicates wiped out and the core logic in one place. | 1.2K |
+| **[Code cleanup prompt: fewer, deeper modules](./skills/codebase-tips/references/fewer-deeper-modules.md)** `fewer-deeper-modules`<br>A feature works, but the code repeats itself: duplicates wiped out and the core logic in one place. | 1.3K |
 | **[CI time audit: 150 runs, 9 checks](./skills/codebase-tips/references/ci-time-audit.md)** `ci-time-audit`<br>Code takes minutes, then each PR waits on CI: the 5 slowest jobs split into queue, setup and run, and the line to change per fix. | 1.2K |
 | **[Agent workspace audit](./skills/codebase-tips/references/agent-workspace-audit.md)** `agent-workspace-audit`<br>Your agent feels dumber over time: every instruction, skill, MCP and memory marked KEEP or REMOVE, cleared on your OK. | 887 |
 | **[Agent memory tools: 8 repos in 4 kinds](./skills/codebase-tips/references/agent-memory-tools-8-repos.md)** `agent-memory-tools-8-repos`<br>No memory of code, notes, sessions or long tasks: 8 repos in those 4 kinds, one of each installed on your OK. | 869 |
@@ -221,7 +222,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 
 ### Design
 
-`/copybook:design-tips` · 31 tips: image-first pages, motion libraries, reference sites, design skills.
+`/copybook:design-tips` · 32 tips: image-first pages, motion libraries, reference sites, design skills.
 
 | Tip | Saves |
 | :-- | :-: |
@@ -237,6 +238,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[DESIGN.md from sites you like](./skills/design-tips/references/design-md-from-sites-you-like.md)** `design-md-from-sites-you-like`<br>Pages look AI-made since Opus hasn't seen what you like: 3-5 screenshots become a DESIGN.md; add taste-skill and Impeccable. | 1.4K |
 | **[TasteSkill v2 AI-look check](./skills/design-tips/references/tasteskill-v2-ai-look-check.md)** `tasteskill-v2-ai-look-check`<br>Pages that look AI-made at a glance: every tell at desktop, tablet and phone widths, FAIL before WARN, code untouched. | 1.3K |
 | **[Dashboard redesign: 2 skills, 2 prompts](./skills/design-tips/references/dashboard-redesign-2-skills.md)** `dashboard-redesign-2-skills`<br>Dashboards that look AI-made on sight: ui-ux-pro-max and frontend-design in one redesign prompt, then a four-angle review. | 1.3K |
+| **[Screenshot-first UI rebuild prompt](./skills/design-tips/references/screenshot-first-ui-rebuild.md)** `screenshot-first-ui-rebuild`<br>UI hierarchy and density problems: every page screenshotted, then rebuilt on only a spacing scale, type scale and up to 5 colors. | 1.1K |
 | **[Codex computer use as a local MCP server](./skills/design-tips/references/codex-computer-use-as-mcp-server.md)** `codex-computer-use-as-mcp-server`<br>A fast browser for Claude Code: ChatGPT's computer use as a local MCP server, clicking pages and comparing live with local. | 1.1K |
 | **[UI/UX audit as a senior designer](./skills/design-tips/references/ui-ux-audit-as-a-senior-designer.md)** `ui-ux-audit-as-a-senior-designer`<br>A review with a designer's authority: taste baseline, correctness fixed, cheap-looking parts found, big changes proposed. | 645 |
 | **[lemo-opuscar: narrated launch films in code](./skills/design-tips/references/lemo-opuscar-launch-films.md)** `lemo-opuscar-launch-films`<br>No video model on hand: narration by TTS, music from free sample libraries, every frame in one of 43 styles, 30 to 60 minutes. | 634 |
@@ -259,7 +261,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 
 ### Long runs
 
-`/copybook:long-run-tips` · 21 tips: multi-agent roles, progress dashboards, handoffs, remote workflows.
+`/copybook:long-run-tips` · 22 tips: multi-agent roles, progress dashboards, handoffs, remote workflows.
 
 | Tip | Saves |
 | :-- | :-: |
@@ -274,6 +276,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[To-dos first in long reports: an AGENTS.md rule](./skills/long-run-tips/references/to-dos-first-in-long-reports.md)** `to-dos-first-in-long-reports`<br>What it needs from you is buried mid-report: one AGENTS.md section puts the to-dos, numbered, at the top of every report. | 782 |
 | **[Slow-computer audit when agents run](./skills/long-run-tips/references/slow-computer-audit-for-agents.md)** `slow-computer-audit-for-agents`<br>Many agents open and the Mac bogs down: a dry-run map of processes and startup items, cleaned only where you approve. | 673 |
 | **[The job worth a dynamic workflow in Claude Code](./skills/long-run-tips/references/job-worth-a-dynamic-workflow.md)** `job-worth-a-dynamic-workflow`<br>Which job is worth many agents: repo-wide checks, migrations or fix loops, planned on one directory with at most 10 agents. | 670 |
+| **[Herdr overnight: Opus 5.5 builds, Sol reviews](./skills/long-run-tips/references/herdr-overnight-opus-and-sol.md)** `herdr-overnight-opus-and-sol`<br>One stuck step eating your whole night: at most 3 attempts per step, then its error recorded and the next independent step begun. | 641 |
 | **[Bedtime report of tasks safe to run overnight](./skills/long-run-tips/references/bedtime-report-of-safe-tasks.md)** `bedtime-report-of-safe-tasks`<br>Unused quota overnight: an hour before bed, 3-5 reversible, verifiable tasks from today, prompts ready, nothing changed. | 570 |
 | **[Orca: one task split across CLI agents](./skills/long-run-tips/references/orca-a-task-across-cli-agents.md)** `orca-a-task-across-cli-agents`<br>Who finished what across several CLI agents: a goal each, read-only reviewers, worktrees for writers, one owner integrates. | 495 |
 | **[HANDOFF.md for the next agent](./skills/long-run-tips/references/handoff-md-for-the-next-agent.md)** `handoff-md-for-the-next-agent`<br>A task longer than one session: progress, decisions, files, checks and next steps kept current for the next agent. | 429 |
@@ -294,7 +297,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[Luna Max as a Codex subagent](./skills/model-tips/references/luna-max-as-a-codex-subagent.md)** `luna-max-as-a-codex-subagent`<br>Bounded delegated work at max reasoning: a luna_worker custom agent, checked against your Codex version, diff shown first. | 6.1K |
 | **[/advisor: Opus 5.5 works, Fable on call](./skills/model-tips/references/advisor-fable-on-call.md)** `advisor-fable-on-call`<br>Fable quota idle while Opus 5.5 does the work: Fable called in before a plan, when an error repeats and before 'done'. | 5.5K |
 | **[Old-rules review for Astra, by OpenAI's guide](./skills/model-tips/references/old-rules-review-for-astra.md)** `old-rules-review-for-astra`<br>Rules from older models make Astra over-read or stop early: the triggers, required reading, checks and stop rules to cut. | 5K |
-| **[Setup review by Anthropic's model guide](./skills/model-tips/references/setup-review-by-the-model-guide.md)** `setup-review-by-the-model-guide`<br>Explore burning big-model quota on every file read: wrong-model subagents and ill-fitting effort found, a config fix each. | 3.3K |
+| **[Setup review by Anthropic's model guide](./skills/model-tips/references/setup-review-by-the-model-guide.md)** `setup-review-by-the-model-guide`<br>Explore burning big-model quota on every file read: wrong-model subagents and ill-fitting effort found, a config fix each. | 3.4K |
 | **[5 /goal prompts for leftover Codex quota](./skills/model-tips/references/leftover-quota-5-goal-prompts.md)** `leftover-quota-5-goal-prompts`<br>Quota unused before it resets: a UI/UX audit, a clickable code map, measurable speedups, a workspace and a Codex cleanup. | 2.6K |
 | **[Cache countdown in the status line](./skills/model-tips/references/status-line-cache-countdown.md)** `status-line-cache-countdown`<br>The cache expires without warning: the status line shows minutes left, then what the next message re-caches. | 2.5K |
 | **[Fable 5 plans, Codex builds the backend](./skills/model-tips/references/fable-plans-codex-builds.md)** `fable-plans-codex-builds`<br>Fable 5 burns tokens fast: planning and frontend stay with it, the backend goes to Codex by /goal; a redesign prompt too. | 2.5K |

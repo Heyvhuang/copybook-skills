@@ -1,6 +1,6 @@
 # Launch · 11 tips
 
-Copybook's 11 tips on launch. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../launch-tips/references/<name>.md`, in its topic's skill.
+Copybook's 11 tips on launch. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../launch-tips/references/<name>.md`.
 
 | Tip | What it does |
 | --- | --- |

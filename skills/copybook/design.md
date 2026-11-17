@@ -1,6 +1,6 @@
-# Design · 31 tips
+# Design · 32 tips
 
-Copybook's 31 tips on design. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../design-tips/references/<name>.md`, in its topic's skill.
+Copybook's 32 tips on design. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../design-tips/references/<name>.md`.
 
 | Tip | What it does |
 | --- | --- |
@@ -16,6 +16,7 @@ Copybook's 31 tips on design. The order is by saves, not by fit: read the whole 
 | design-md-from-sites-you-like | Pages look AI-made since Opus hasn't seen what you like: 3-5 screenshots become a DESIGN.md; add taste-skill and Impeccable. |
 | tasteskill-v2-ai-look-check | Pages that look AI-made at a glance: every tell at desktop, tablet and phone widths, FAIL before WARN, code untouched. |
 | dashboard-redesign-2-skills | Dashboards that look AI-made on sight: ui-ux-pro-max and frontend-design in one redesign prompt, then a four-angle review. |
+| screenshot-first-ui-rebuild | UI hierarchy and density problems: every page screenshotted, then rebuilt on only a spacing scale, type scale and up to 5 colors. |
 | codex-computer-use-as-mcp-server | A fast browser for Claude Code: ChatGPT's computer use as a local MCP server, clicking pages and comparing live with local. |
 | ui-ux-audit-as-a-senior-designer | A review with a designer's authority: taste baseline, correctness fixed, cheap-looking parts found, big changes proposed. |
 | lemo-opuscar-launch-films | No video model on hand: narration by TTS, music from free sample libraries, every frame in one of 43 styles, 30 to 60 minutes. |

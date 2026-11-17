@@ -4,8 +4,8 @@ Skills for older models misfire on Fable 5.1: duplicate rules, dead commands and
 
 ## Steps
 
-1. Copy the Step 1 command, then the Step 3 command.
-2. In Claude Code, run Step 1, install claude-api from /plugin, then run Step 3.
+1. Copy the marketplace command, then the audit command.
+2. In Claude Code, add the marketplace, install claude-api from /plugin, then run the audit.
 3. You get: An audit report and proposed diff for your skills; nothing is edited, and you pick what to apply.
 
 The user chose this tip. The steps above are written for a person; do them for the user.
@@ -16,13 +16,13 @@ The user chose this tip. The steps above are written for a person; do them for t
 - Fill each bracket or placeholder from what the user said, or ask.
 - Step 3 is what the user should end up with.
 
-## Step 1: add the marketplace
+## Command: add the marketplace
 
 ```text
 /plugin marketplace add anthropics/skills
 ```
 
-## Step 3: run the audit
+## Command: run the audit
 
 ```text
 /claude-api prompt-audit

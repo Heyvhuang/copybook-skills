@@ -1,9 +1,10 @@
-# 代码库 · 32 条
+# 代码库 · 33 条
 
-Copybook 的 32 条「代码库」技巧。顺序按收藏数，不按合不合适：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../codebase-tips/references/<名字>.md`，在它所属话题的技能里。
+Copybook 的 33 条「代码库」技巧，按收藏数排序，与合不合适无关：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../codebase-tips/references/<名字>.md`。
 
 | 技巧 | 做什么 |
 | --- | --- |
+| open-source-scout-and-closer | 不熟的功能从零写、问要不要继续：先搜 GitHub，再把整个活干完，附一份大白话总结。 |
 | codebase-memory-repo-index | 每个问题几十轮 grep 和读文件：仓库连成一张函数、文件和依赖的图，顺手找出能安全删的死函数。 |
 | karpathys-4-coding-principles | 过度设计、顺手改旁边的代码：先想再写、简单优先、改动要准、目标驱动，4 行写进 CLAUDE.md。 |
 | vibe-coding-cleanup-prompts | 额度重置时还剩一半：清掉死代码、重复实现和用不上的依赖，给定时任务和旧 worktree 分好类。 |

@@ -1,16 +1,16 @@
 ---
 name: long-run-tips
-description: "长任务 · 21 条：进度看板、多 agent 分工、会话周历、遗留待办。"
+description: "长任务 · 22 条：多 agent 分工、交接、进度看板、会话周历、遗留待办。"
 disable-model-invocation: true
 ---
 
-# 长任务 · 21 条
+# 长任务 · 22 条
 
-Copybook 的 21 条「长任务」技巧，收藏多的在前。每条要用的文字、放到哪里、最后得到什么，都在 references/ 里它自己的文件中。
+Copybook 的 22 条「长任务」技巧，收藏多的在前。每条要用的文字、放到哪里、最后得到什么，都在 references/ 里它自己的文件中。
 
 - 用户点名技巧时，用点名的那条。用户只说了要做什么时，从适用于实际执行者的技巧里，选最符合用户目标和限制的一条。几条同样合适时，选一条即可。选中后，用一句话说明选了哪条、为什么，再读它的文件照着做。另一条也合适，而且换用它会明显改变做法或结果时，顺带点出它的名字和区别。
 - 用户什么都没说：把下面的列表（每条的名字和做什么）给用户看，问用哪条。
-- 都不合适就直说，并建议用 copybook，它会在全部 138 条里找。
+- 都不合适就直说，并建议用 copybook，它会在全部 141 条里找。
 
 | 技巧 | 做什么 |
 | --- | --- |
@@ -25,6 +25,7 @@ Copybook 的 21 条「长任务」技巧，收藏多的在前。每条要用的�
 | [长报告先列待办：AGENTS.md 规则](references/to-dos-first-in-long-reports.md) `to-dos-first-in-long-reports` | 要你做的事埋在长报告中间：AGENTS.md 加一节，每份长报告最上面先列编号待办。 |
 | [多 agent 时电脑变慢的排查](references/slow-computer-audit-for-agents.md) `slow-computer-audit-for-agents` | 开着很多 agent 电脑就卡：先 dry run 理清进程树和开机启动项，再只清理你批准的那些。 |
 | [最该用动态工作流跑的活](references/job-worth-a-dynamic-workflow.md) `job-worth-a-dynamic-workflow` | 哪件活值得交给一批 agent：全仓库检查、迁移或修复循环，先在一个目录、10 个 agent 以内排好计划。 |
+| [Herdr 通宵：Opus 5.5 写，Sol 审](references/herdr-overnight-opus-and-sol.md) `herdr-overnight-opus-and-sol` | 一个卡住的步骤吃掉整晚：每步最多 3 次尝试，还不行就记下错误，转去下一个独立步骤。 |
 | [睡前报告：今晚能放心跑的任务](references/bedtime-report-of-safe-tasks.md) `bedtime-report-of-safe-tasks` | 额度每晚用不完：睡前一小时从今天的活里挑 3-5 个可撤回、能验证的，写好提示词，什么都不改。 |
 | [Orca：一个任务分给多个 CLI agent](references/orca-a-task-across-cli-agents.md) `orca-a-task-across-cli-agents` | 几个 CLI agent 同跑没人盯进度：各有目标，reviewer 只读，写代码的各用 worktree，一人整合。 |
 | [边做边写给下一个 agent 的 HANDOFF.md](references/handoff-md-for-the-next-agent.md) `handoff-md-for-the-next-agent` | 任务一个会话做不完：进度、决定、相关文件、验证结果和下一步边做边记，下一个 agent 接得上。 |

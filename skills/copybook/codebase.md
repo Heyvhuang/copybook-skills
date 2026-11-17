@@ -1,9 +1,10 @@
-# Codebase · 32 tips
+# Codebase · 33 tips
 
-Copybook's 32 tips on codebase. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../codebase-tips/references/<name>.md`, in its topic's skill.
+Copybook's 33 tips on codebase. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../codebase-tips/references/<name>.md`.
 
 | Tip | What it does |
 | --- | --- |
+| open-source-scout-and-closer | Unfamiliar features written from scratch, offers to continue: GitHub searched first, then the whole job done and a plain recap. |
 | codebase-memory-repo-index | Dozens of grep and read turns per question: the repo as one graph of functions, files and dependencies; dead code found too. |
 | karpathys-4-coding-principles | The agent over-designs and edits what it wasn't asked to: think before coding, simplicity first, surgical edits, goal-driven work. |
 | vibe-coding-cleanup-prompts | Half your quota left at reset: dead code, duplicates and unneeded dependencies cut; scheduled tasks and old worktrees sorted. |

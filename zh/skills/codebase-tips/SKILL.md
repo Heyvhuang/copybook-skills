@@ -1,19 +1,20 @@
 ---
 name: codebase-tips
-description: "代码库 · 32 条：仓库索引和地图、写代码原则、AGENTS.md、改动范围规则。"
+description: "代码库 · 33 条：仓库索引和地图、写代码原则、AGENTS.md、改动范围规则。"
 disable-model-invocation: true
 ---
 
-# 代码库 · 32 条
+# 代码库 · 33 条
 
-Copybook 的 32 条「代码库」技巧，收藏多的在前。每条要用的文字、放到哪里、最后得到什么，都在 references/ 里它自己的文件中。
+Copybook 的 33 条「代码库」技巧，收藏多的在前。每条要用的文字、放到哪里、最后得到什么，都在 references/ 里它自己的文件中。
 
 - 用户点名技巧时，用点名的那条。用户只说了要做什么时，从适用于实际执行者的技巧里，选最符合用户目标和限制的一条。几条同样合适时，选一条即可。选中后，用一句话说明选了哪条、为什么，再读它的文件照着做。另一条也合适，而且换用它会明显改变做法或结果时，顺带点出它的名字和区别。
 - 用户什么都没说：把下面的列表（每条的名字和做什么）给用户看，问用哪条。
-- 都不合适就直说，并建议用 copybook，它会在全部 138 条里找。
+- 都不合适就直说，并建议用 copybook，它会在全部 141 条里找。
 
 | 技巧 | 做什么 |
 | --- | --- |
+| [开源侦察员和收尾者提示词](references/open-source-scout-and-closer.md) `open-source-scout-and-closer` | 不熟的功能从零写、问要不要继续：先搜 GitHub，再把整个活干完，附一份大白话总结。 |
 | [codebase-memory 仓库索引](references/codebase-memory-repo-index.md) `codebase-memory-repo-index` | 每个问题几十轮 grep 和读文件：仓库连成一张函数、文件和依赖的图，顺手找出能安全删的死函数。 |
 | [Karpathy 的 4 条写代码原则](references/karpathys-4-coding-principles.md) `karpathys-4-coding-principles` | 过度设计、顺手改旁边的代码：先想再写、简单优先、改动要准、目标驱动，4 行写进 CLAUDE.md。 |
 | [vibe coding 后的清理：5 条 Codex /goal 提示词](references/vibe-coding-cleanup-prompts.md) `vibe-coding-cleanup-prompts` | 额度重置时还剩一半：清掉死代码、重复实现和用不上的依赖，给定时任务和旧 worktree 分好类。 |

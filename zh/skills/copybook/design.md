@@ -1,6 +1,6 @@
-# 设计 · 31 条
+# 设计 · 32 条
 
-Copybook 的 31 条「设计」技巧。顺序按收藏数，不按合不合适：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../design-tips/references/<名字>.md`，在它所属话题的技能里。
+Copybook 的 32 条「设计」技巧，按收藏数排序，与合不合适无关：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../design-tips/references/<名字>.md`。
 
 | 技巧 | 做什么 |
 | --- | --- |
@@ -16,6 +16,7 @@ Copybook 的 31 条「设计」技巧。顺序按收藏数，不按合不合适�
 | design-md-from-sites-you-like | 页面一眼 AI 味，是它没见过你喜欢的样子：3 到 5 张截图写成 DESIGN.md，再装两个设计 skill。 |
 | tasteskill-v2-ai-look-check | 页面一眼就像 AI 做的：按桌面、平板、手机宽度列出每一处痕迹，FAIL 排在 WARN 前，不改代码。 |
 | dashboard-redesign-2-skills | 仪表盘一眼 AI 做的：ui-ux-pro-max 加 frontend-design，改版提示词里点名它们，再从 4 个角度审查。 |
+| screenshot-first-ui-rebuild | UI 层级和密度有问题：每个页面先截图，再只用一套间距、字号和最多 5 种颜色重做。 |
 | codex-computer-use-as-mcp-server | Claude Code 缺个好浏览器：ChatGPT 的 computer use 当本地 MCP，点页面、截图，对比线上和本地。 |
 | ui-ux-audit-as-a-senior-designer | 有实权的设计审查：先定审美基线，正确性直接修，能用但显廉价的地方找出来，大改动只提建议。 |
 | lemo-opuscar-launch-films | 没有视频模型：TTS 旁白、免费采样库配乐，每一帧按 43 种风格之一用代码渲染，30 到 60 分钟。 |

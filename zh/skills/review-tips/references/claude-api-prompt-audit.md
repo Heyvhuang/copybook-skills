@@ -4,8 +4,8 @@ skill 里还留着旧模型名和失效命令：官方 skill 审一遍，列出�
 
 ## 步骤
 
-1. 复制第 1 步和第 3 步的命令。
-2. Claude Code 里跑第 1 步，/plugin 装 claude-api，再跑第 3 步。
+1. 复制添加 marketplace 和运行审查的两条命令。
+2. Claude Code 里加 marketplace，装 claude-api，再跑审查。
 3. 得到：一份 skill 审查报告和建议的 diff，不改任何文件，改哪些由你决定。
 
 用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
@@ -16,13 +16,13 @@ skill 里还留着旧模型名和失效命令：官方 skill 审一遍，列出�
 - 方括号或占位符，从用户说的话里填，没有就问。
 - 第 3 步是用户最后应该得到的。
 
-## 第 1 步：添加 marketplace
+## 命令：添加 marketplace
 
 ```text
 /plugin marketplace add anthropics/skills
 ```
 
-## 第 3 步：运行审查
+## 命令：运行审查
 
 ```text
 /claude-api prompt-audit

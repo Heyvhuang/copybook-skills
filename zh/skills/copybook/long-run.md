@@ -1,6 +1,6 @@
-# 长任务 · 21 条
+# 长任务 · 22 条
 
-Copybook 的 21 条「长任务」技巧。顺序按收藏数，不按合不合适：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../long-run-tips/references/<名字>.md`，在它所属话题的技能里。
+Copybook 的 22 条「长任务」技巧，按收藏数排序，与合不合适无关：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../long-run-tips/references/<名字>.md`。
 
 | 技巧 | 做什么 |
 | --- | --- |
@@ -15,6 +15,7 @@ Copybook 的 21 条「长任务」技巧。顺序按收藏数，不按合不合�
 | to-dos-first-in-long-reports | 要你做的事埋在长报告中间：AGENTS.md 加一节，每份长报告最上面先列编号待办。 |
 | slow-computer-audit-for-agents | 开着很多 agent 电脑就卡：先 dry run 理清进程树和开机启动项，再只清理你批准的那些。 |
 | job-worth-a-dynamic-workflow | 哪件活值得交给一批 agent：全仓库检查、迁移或修复循环，先在一个目录、10 个 agent 以内排好计划。 |
+| herdr-overnight-opus-and-sol | 一个卡住的步骤吃掉整晚：每步最多 3 次尝试，还不行就记下错误，转去下一个独立步骤。 |
 | bedtime-report-of-safe-tasks | 额度每晚用不完：睡前一小时从今天的活里挑 3-5 个可撤回、能验证的，写好提示词，什么都不改。 |
 | orca-a-task-across-cli-agents | 几个 CLI agent 同跑没人盯进度：各有目标，reviewer 只读，写代码的各用 worktree，一人整合。 |
 | handoff-md-for-the-next-agent | 任务一个会话做不完：进度、决定、相关文件、验证结果和下一步边做边记，下一个 agent 接得上。 |

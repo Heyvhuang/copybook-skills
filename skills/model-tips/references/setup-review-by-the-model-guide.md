@@ -45,4 +45,4 @@ Send this prompt to Fable 5.2.
 
 ## Source
 
-From [Copybook](https://copybook.page/t/review-your-setup-with-anthropics-model-guide): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2119943123250078141) on 10 Nov 2026, 3.3K saves as of 11 Nov 2026. For Claude Code.
+From [Copybook](https://copybook.page/t/review-your-setup-with-anthropics-model-guide): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2119943123250078141) on 10 Nov 2026, 3.4K saves as of 17 Nov 2026. For Claude Code.

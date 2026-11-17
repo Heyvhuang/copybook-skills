@@ -1,16 +1,16 @@
 ---
 name: long-run-tips
-description: "Long runs · 21 tips: multi-agent roles, progress dashboards, handoffs, remote workflows."
+description: "Long runs · 22 tips: multi-agent roles, progress dashboards, handoffs, remote workflows."
 disable-model-invocation: true
 ---
 
-# Long runs · 21 tips
+# Long runs · 22 tips
 
-Copybook's 21 tips on long runs, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
+Copybook's 22 tips on long runs, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
 
 - If the user names a tip, use that tip. If they describe a task, choose the tip that best meets their goal and constraints from those that work with the agent doing the work. If several fit equally well, choose one. Tell the user in one sentence which tip you picked and why, then read its file and follow it. If another tip also fits and would materially change the approach or result, name it and say how it differs.
 - If the user said nothing, show them the list below (each tip's name and what it does) and ask which to use.
-- If none fits, say so and suggest copybook, which looks through all 138 tips.
+- If none fits, say so and suggest copybook, which looks through all 141 tips.
 
 | Tip | What it does |
 | --- | --- |
@@ -25,6 +25,7 @@ Copybook's 21 tips on long runs, most saved first. Each tip's text, where it goe
 | [To-dos first in long reports: an AGENTS.md rule](references/to-dos-first-in-long-reports.md) `to-dos-first-in-long-reports` | What it needs from you is buried mid-report: one AGENTS.md section puts the to-dos, numbered, at the top of every report. |
 | [Slow-computer audit when agents run](references/slow-computer-audit-for-agents.md) `slow-computer-audit-for-agents` | Many agents open and the Mac bogs down: a dry-run map of processes and startup items, cleaned only where you approve. |
 | [The job worth a dynamic workflow in Claude Code](references/job-worth-a-dynamic-workflow.md) `job-worth-a-dynamic-workflow` | Which job is worth many agents: repo-wide checks, migrations or fix loops, planned on one directory with at most 10 agents. |
+| [Herdr overnight: Opus 5.5 builds, Sol reviews](references/herdr-overnight-opus-and-sol.md) `herdr-overnight-opus-and-sol` | One stuck step eating your whole night: at most 3 attempts per step, then its error recorded and the next independent step begun. |
 | [Bedtime report of tasks safe to run overnight](references/bedtime-report-of-safe-tasks.md) `bedtime-report-of-safe-tasks` | Unused quota overnight: an hour before bed, 3-5 reversible, verifiable tasks from today, prompts ready, nothing changed. |
 | [Orca: one task split across CLI agents](references/orca-a-task-across-cli-agents.md) `orca-a-task-across-cli-agents` | Who finished what across several CLI agents: a goal each, read-only reviewers, worktrees for writers, one owner integrates. |
 | [HANDOFF.md for the next agent](references/handoff-md-for-the-next-agent.md) `handoff-md-for-the-next-agent` | A task longer than one session: progress, decisions, files, checks and next steps kept current for the next agent. |

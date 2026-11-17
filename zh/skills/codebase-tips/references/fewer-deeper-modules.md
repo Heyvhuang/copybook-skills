@@ -30,4 +30,4 @@
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/clean-up-code-into-fewer-deeper-modules)：@Voxyz_ai 2026年11月9日[发在 X 上](https://x.com/Voxyz_ai/status/2119777023845417175)，截至 2026年11月10日有 1,237 次收藏。适用于 Claude Code 和 Codex。
+来自 [Copybook](https://copybook.page/zh/t/clean-up-code-into-fewer-deeper-modules)：@Voxyz_ai 2026年11月9日[发在 X 上](https://x.com/Voxyz_ai/status/2119777023845417175)，截至 2026年11月16日有 1,263 次收藏。适用于 Claude Code 和 Codex。

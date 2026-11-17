@@ -1,6 +1,6 @@
-# Long runs · 21 tips
+# Long runs · 22 tips
 
-Copybook's 21 tips on long runs. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../long-run-tips/references/<name>.md`, in its topic's skill.
+Copybook's 22 tips on long runs. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../long-run-tips/references/<name>.md`.
 
 | Tip | What it does |
 | --- | --- |
@@ -15,6 +15,7 @@ Copybook's 21 tips on long runs. The order is by saves, not by fit: read the who
 | to-dos-first-in-long-reports | What it needs from you is buried mid-report: one AGENTS.md section puts the to-dos, numbered, at the top of every report. |
 | slow-computer-audit-for-agents | Many agents open and the Mac bogs down: a dry-run map of processes and startup items, cleaned only where you approve. |
 | job-worth-a-dynamic-workflow | Which job is worth many agents: repo-wide checks, migrations or fix loops, planned on one directory with at most 10 agents. |
+| herdr-overnight-opus-and-sol | One stuck step eating your whole night: at most 3 attempts per step, then its error recorded and the next independent step begun. |
 | bedtime-report-of-safe-tasks | Unused quota overnight: an hour before bed, 3-5 reversible, verifiable tasks from today, prompts ready, nothing changed. |
 | orca-a-task-across-cli-agents | Who finished what across several CLI agents: a goal each, read-only reviewers, worktrees for writers, one owner integrates. |
 | handoff-md-for-the-next-agent | A task longer than one session: progress, decisions, files, checks and next steps kept current for the next agent. |

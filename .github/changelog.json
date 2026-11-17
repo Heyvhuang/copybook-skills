@@ -55,6 +55,43 @@
         }
       ],
       "retired": []
+    },
+    {
+      "version": "1.0.5",
+      "date": "2026-11-17",
+      "added": [
+        {
+          "slug": "run-opus-5-5-overnight-with-a-sol-reviewer-in-herdr",
+          "title": {
+            "en": "Herdr overnight: Opus 5.5 builds, Sol reviews",
+            "zh": "Herdr 通宵：Opus 5.5 写，Sol 审"
+          }
+        },
+        {
+          "slug": "screenshot-every-page-then-rebuild-the-ui",
+          "title": {
+            "en": "Screenshot-first UI rebuild prompt",
+            "zh": "先截图再重做的 UI 提示词"
+          }
+        },
+        {
+          "slug": "search-github-first-and-finish-the-whole-job",
+          "title": {
+            "en": "Open-Source Scout and Closer prompts",
+            "zh": "开源侦察员和收尾者提示词"
+          }
+        }
+      ],
+      "changed": [
+        {
+          "slug": "audit-your-skills-with-claude-api-prompt-audit",
+          "title": {
+            "en": "/claude-api prompt-audit: skill audit for Fable 5.1",
+            "zh": "/claude-api prompt-audit：换 Fable 5.1 后的 skill 审查"
+          }
+        }
+      ],
+      "retired": []
     }
   ],
   "tips": {
@@ -171,8 +208,8 @@
       }
     },
     "audit-your-skills-with-claude-api-prompt-audit": {
-      "en": "924f77623cb49335",
-      "zh": "307a28438adab310",
+      "en": "58069b87f3fc48cf",
+      "zh": "5cf7ab092693f65f",
       "title": {
         "en": "/claude-api prompt-audit: skill audit for Fable 5.1",
         "zh": "/claude-api prompt-audit：换 Fable 5.1 后的 skill 审查"
@@ -898,6 +935,14 @@
         "zh": "Herdr：Claude 和 Codex 同跑一个任务"
       }
     },
+    "run-opus-5-5-overnight-with-a-sol-reviewer-in-herdr": {
+      "en": "6aef061e7d43a9e0",
+      "zh": "7b55734bd177a759",
+      "title": {
+        "en": "Herdr overnight: Opus 5.5 builds, Sol reviews",
+        "zh": "Herdr 通宵：Opus 5.5 写，Sol 审"
+      }
+    },
     "schedule-a-bedtime-report-of-overnight-tasks": {
       "en": "d024fc1f3a67fcf9",
       "zh": "6706e9ec829f3f34",
@@ -928,6 +973,22 @@
       "title": {
         "en": "Awwwards scoring loop",
         "zh": "Awwwards 评分表自评循环"
+      }
+    },
+    "screenshot-every-page-then-rebuild-the-ui": {
+      "en": "c2c6f505af2a2153",
+      "zh": "1bb710b0c3d5705e",
+      "title": {
+        "en": "Screenshot-first UI rebuild prompt",
+        "zh": "先截图再重做的 UI 提示词"
+      }
+    },
+    "search-github-first-and-finish-the-whole-job": {
+      "en": "2f0f91943cd6b5d5",
+      "zh": "92c7720d91442e15",
+      "title": {
+        "en": "Open-Source Scout and Closer prompts",
+        "zh": "开源侦察员和收尾者提示词"
       }
     },
     "send-4-subagents-to-break-your-app-before-shipping": {

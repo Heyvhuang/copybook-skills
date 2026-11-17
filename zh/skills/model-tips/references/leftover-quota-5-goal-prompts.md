@@ -16,7 +16,7 @@
 - 方括号或占位符，从用户说的话里填，没有就问。
 - 第 3 步是用户最后应该得到的。
 
-## 1. 用三个 skill 做一次完整的 UI/UX 审查
+## 提示词：用三个 skill 做 UI/UX 审查
 
 ```text
 /goal Launch the real site for this project and use the three skills below to audit and improve it:
@@ -43,7 +43,7 @@ Finish with:
 → A final version I can open and test
 ```
 
-## 2. 给整个代码库做一张能点的地图
+## 提示词：给代码库做一张能点的地图
 
 ```text
 /goal Analyze the current codebase and generate an interactive code map that opens directly in a browser.
@@ -68,7 +68,7 @@ Output:
 When finished, open the map and verify that every path, node, and flow matches the current codebase.
 ```
 
-## 3. 让 app 变快，并量出快了多少
+## 提示词：让 app 变快，并量出快了多少
 
 ```text
 /goal Make this app measurably faster.
@@ -89,7 +89,7 @@ Finish with a simple before/after report:
 → Any bottlenecks you didn’t address
 ```
 
-## 4. 清理整个工作区
+## 提示词：清理工作区
 
 ```text
 /goal Review every project under [WORKSPACE PATH] and clean up the half-finished work that has piled up.
@@ -117,7 +117,7 @@ Do not delete, merge, push, or deploy anything. Leave those actions in the final
 Finish with an overview of the entire workspace and the 10 most valuable things to work on next.
 ```
 
-## 5. 清理 Codex 本身
+## 提示词：清理 Codex 本身
 
 ```text
 /goal Audit my current Codex setup, including AGENTS.md, skills, custom agents, commands, plugins, MCP servers, and automations.

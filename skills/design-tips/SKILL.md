@@ -1,16 +1,16 @@
 ---
 name: design-tips
-description: "Design · 31 tips: image-first pages, motion libraries, reference sites, design skills."
+description: "Design · 32 tips: image-first pages, motion libraries, reference sites, design skills."
 disable-model-invocation: true
 ---
 
-# Design · 31 tips
+# Design · 32 tips
 
-Copybook's 31 tips on design, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
+Copybook's 32 tips on design, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
 
 - If the user names a tip, use that tip. If they describe a task, choose the tip that best meets their goal and constraints from those that work with the agent doing the work. If several fit equally well, choose one. Tell the user in one sentence which tip you picked and why, then read its file and follow it. If another tip also fits and would materially change the approach or result, name it and say how it differs.
 - If the user said nothing, show them the list below (each tip's name and what it does) and ask which to use.
-- If none fits, say so and suggest copybook, which looks through all 138 tips.
+- If none fits, say so and suggest copybook, which looks through all 141 tips.
 
 | Tip | What it does |
 | --- | --- |
@@ -26,6 +26,7 @@ Copybook's 31 tips on design, most saved first. Each tip's text, where it goes a
 | [DESIGN.md from sites you like](references/design-md-from-sites-you-like.md) `design-md-from-sites-you-like` | Pages look AI-made since Opus hasn't seen what you like: 3-5 screenshots become a DESIGN.md; add taste-skill and Impeccable. |
 | [TasteSkill v2 AI-look check](references/tasteskill-v2-ai-look-check.md) `tasteskill-v2-ai-look-check` | Pages that look AI-made at a glance: every tell at desktop, tablet and phone widths, FAIL before WARN, code untouched. |
 | [Dashboard redesign: 2 skills, 2 prompts](references/dashboard-redesign-2-skills.md) `dashboard-redesign-2-skills` | Dashboards that look AI-made on sight: ui-ux-pro-max and frontend-design in one redesign prompt, then a four-angle review. |
+| [Screenshot-first UI rebuild prompt](references/screenshot-first-ui-rebuild.md) `screenshot-first-ui-rebuild` | UI hierarchy and density problems: every page screenshotted, then rebuilt on only a spacing scale, type scale and up to 5 colors. |
 | [Codex computer use as a local MCP server](references/codex-computer-use-as-mcp-server.md) `codex-computer-use-as-mcp-server` | A fast browser for Claude Code: ChatGPT's computer use as a local MCP server, clicking pages and comparing live with local. |
 | [UI/UX audit as a senior designer](references/ui-ux-audit-as-a-senior-designer.md) `ui-ux-audit-as-a-senior-designer` | A review with a designer's authority: taste baseline, correctness fixed, cheap-looking parts found, big changes proposed. |
 | [lemo-opuscar: narrated launch films in code](references/lemo-opuscar-launch-films.md) `lemo-opuscar-launch-films` | No video model on hand: narration by TTS, music from free sample libraries, every frame in one of 43 styles, 30 to 60 minutes. |

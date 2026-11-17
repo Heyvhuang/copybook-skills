@@ -1,6 +1,6 @@
 # Review · 15 tips
 
-Copybook's 15 tips on review. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../review-tips/references/<name>.md`, in its topic's skill.
+Copybook's 15 tips on review. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../review-tips/references/<name>.md`.
 
 | Tip | What it does |
 | --- | --- |
