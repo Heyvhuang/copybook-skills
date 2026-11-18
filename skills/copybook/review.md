@@ -1,12 +1,13 @@
-# Review · 15 tips
+# Review · 16 tips
 
-Copybook's 15 tips on review. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../review-tips/references/<name>.md`.
+Copybook's 16 tips on review. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../review-tips/references/<name>.md`.
 
 | Tip | What it does |
 | --- | --- |
 | tailscale-preview-links | Agent links that say localhost: Tailscale links to previews, review pages and dashboards that open right on your phone. |
 | bug-score-rule-for-astra | Astra flags bugs that almost never happen and Opus fixes each one: bugs scored, low scores filed as issues, code left alone. |
 | blast-radius-and-4-more-prompts | 'Fix this bug' hands you defaults: what your diff touches, an end-to-end goal, a red-teamed plan, a user walk, a thinking budget. |
+| ios-simulator-ui-bug-check | UI bugs in your iOS app: main screens tapped through, Duo poses checked if its simulator exists, smallest changes suggested. |
 | perf-review-the-5-slowest-spots | Ask for faster code and you probably get a cache: timings from a profile, one matching fix each, its lines and expected speedup. |
 | one-question-before-it-answers | Ten questions at once get ignored: assumptions, missing info, the usual mistake, then the one question that changes its approach. |
 | skill-backtest-on-codex-sessions | A skill written from memory drifts from how you work: compared with your past sessions, a dry-run diff, a recurring review. |

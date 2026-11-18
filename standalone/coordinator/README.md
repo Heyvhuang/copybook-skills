@@ -31,8 +31,8 @@ What the bundled scripts do: `heavy.sh` queues heavy checks into a few machine-w
 
 - Herdr 0.9.5 or later
 - Claude Code CLI and Codex CLI, both signed in; git and the GitHub CLI (`gh`)
-- Workers run on your own Claude and Codex accounts and count against your plans' limits. Check your plan's terms before long unattended runs, and don't run it on a shared login.
-- Models in the default table: Claude Opus 5.5 and Sonnet 5.5, Codex gpt-6.1-sol and gpt-6-astra. To use others, change the model IDs in `skills/coordinator/SKILL.md`, `skills/coordinator/references/models.md`, `skills/coordinator/references/herdr.md`, `skills/parallel-goal-fleet/SKILL.md` and `skills/parallel-goal-fleet/references/herdr.md`.
+- Workers run on your own Claude and Codex accounts and count against your plans' limits. Check your plan's terms before long unattended runs, and don't run it on a shared login. If your plan keeps going on paid credits after its quota, tell the coordinator before an unattended run whether it may use them and where to stop.
+- Models: the example run used Claude Opus 5.5 and Sonnet 5.5 and Codex gpt-6.1-sol and gpt-6-astra (16 Nov 2026). Any models your account offers work. The coordinator takes its IDs and efforts from `skills/coordinator/references/models.md`; `parallel-goal-fleet` on its own starts from the two in its `SKILL.md`. Or name a model in your prompt: your choice wins, and the run record shows what each lane ran on.
 - Optional: [T3 Code](https://github.com/pingdotgg/t3code), an open-source desktop app for Claude Code and Codex, as a fallback runtime (`skills/coordinator/references/t3.md`); a Vercel AI Gateway key and Node 18+ for the Gemini second reader
 
 ## Install
@@ -62,14 +62,14 @@ For a single task that only needs a few workers and no gates, `parallel-goal-fle
 
 ## Defaults you will probably change
 
-- Model table: Opus for front end, Codex Sol for back end, gates and shipping, Codex Astra for risky reviews, Sonnet for lists. Codex reviews front-end files but never edits them. Fable is left out to save quota; `max` effort only when you ask.
+- Model table (`skills/coordinator/references/models.md`): Opus for front end, Codex Sol for back end, gates and shipping, Codex Astra for risky reviews, Sonnet for lists. Codex reviews front-end files but never edits them. Fable is left out to save quota; `max` effort only when you ask.
 - Heavy checks share 2 machine-wide slots (`HEAVY_SLOTS`).
 - Overnight runs stop new work at a quota threshold you give (40% left on the original run).
 
 ## Known gaps
 
 - Measured on one Mac with Herdr 0.9.5, Codex CLI 0.169 and Claude Code 2.1.28x. Herdr and both CLIs change fast; check `--help` when a flag fails.
-- Whether a busy Claude worker queues a new prompt reliably is not confirmed.
+- Steering and queueing a busy worker follow each CLI's documented keys (`skills/coordinator/references/herdr.md` §3, read 18 Nov 2026). Sending Claude Code's Ctrl+X chords through Herdr, and whether `agent prompt` to a busy Claude worker queues every time, were not tested; read the pane after each send.
 - T3 Code behaviour past about 10 concurrent lanes, and long lanes that compact, were not tested.
 - The release-packet template assumes a Postgres-style database with migrations; adapt it to your stack.
 

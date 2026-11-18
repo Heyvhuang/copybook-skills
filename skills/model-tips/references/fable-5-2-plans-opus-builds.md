@@ -28,4 +28,4 @@ Fable 5.2 burns tokens fast, but write the prompt like this and it's totally wor
 
 ## Source
 
-From [Copybook](https://copybook.page/t/keep-fable-5-2-on-planning-and-hand-builds-to-opus): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2120260216046727370) on 10 Nov 2026, 886 saves as of 11 Nov 2026. For Claude Code and Codex.
+From [Copybook](https://copybook.page/t/keep-fable-5-2-on-planning-and-hand-builds-to-opus): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2120260216046727370) on 10 Nov 2026, 893 saves as of 17 Nov 2026. For Claude Code and Codex.

@@ -61,4 +61,4 @@ Split useful work. Don't spawn every role.
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/orchestrate-opus-and-haiku-subagents-with-fable-5-2)：@Voxyz_ai 2026年11月10日[发在 X 上](https://x.com/Voxyz_ai/status/2120199820887593304)，截至 2026年11月11日有 1,267 次收藏。适用于 Claude Code。
+来自 [Copybook](https://copybook.page/zh/t/orchestrate-opus-and-haiku-subagents-with-fable-5-2)：@Voxyz_ai 2026年11月10日[发在 X 上](https://x.com/Voxyz_ai/status/2120199820887593304)，截至 2026年11月17日有 1,338 次收藏。适用于 Claude Code。

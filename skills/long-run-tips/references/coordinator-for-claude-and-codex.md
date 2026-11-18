@@ -34,6 +34,8 @@ Two skills turn one Claude Code or Codex session into a coordinator for a fleet 
 
 It was distilled from a three-day production run: about 160 PRs, 107 lane briefs, 118 hand-overs and 166 batch test runs. It needs Herdr 0.9.5 or later, Claude Code and Codex CLI signed in, and a git repo with the GitHub CLI. The source is in [Heyvhuang/copybook-skills](https://github.com/Heyvhuang/copybook-skills/tree/main/standalone/coordinator), with a README on what each script does.
 
+The model choices it ships with are an example from that run. Swap in the models your account offers and keep the same workflow.
+
 Workers run with full access: they start without permission prompts and can edit any file and run any command your user account can. Use it only on a machine and repositories where you accept that.
 
 ## Source

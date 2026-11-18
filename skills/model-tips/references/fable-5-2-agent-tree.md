@@ -61,4 +61,4 @@ Original is in an image, transcribed verbatim.
 
 ## Source
 
-From [Copybook](https://copybook.page/t/orchestrate-opus-and-haiku-subagents-with-fable-5-2): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2120199820887593304) on 10 Nov 2026, 1.3K saves as of 11 Nov 2026. For Claude Code.
+From [Copybook](https://copybook.page/t/orchestrate-opus-and-haiku-subagents-with-fable-5-2): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2120199820887593304) on 10 Nov 2026, 1.3K saves as of 17 Nov 2026. For Claude Code.

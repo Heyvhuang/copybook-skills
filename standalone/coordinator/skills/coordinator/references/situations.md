@@ -18,7 +18,7 @@ First moves, from the example run.
 
 **Machine overload** (load 300–900 on 10 cores). Heavy checks through `scripts/heavy.sh`, one full suite per machine, close finished lanes. Waiting for the load to drop doesn't work; a lane once waited 2 h 45 m that way.
 
-**Overnight.** The user hands over with a grant before sleeping. Write a checklist file with their words, the finish line and their usage threshold (40% of the weekly quota on the example run). Decide routine design and product choices yourself, judging from the pattern of their earlier messages, with a second reader when it helps, and log each with its reason. Spending, production data and live charging still wait. Morning list: their yeses first, then inputs only they can give, then decisions to confirm.
+**Overnight.** The user hands over with a grant before sleeping. Write a checklist file with their words, the finish line and their usage threshold (40% of the weekly quota on the example run). If their plan keeps running on paid credits once the quota is used up, the checklist also says whether lanes may use credits and where they stop (`references/models.md`, Quota). Decide routine design and product choices yourself, judging from the pattern of their earlier messages, with a second reader when it helps, and log each with its reason. Spending, production data and live charging still wait. Morning list: their yeses first, then inputs only they can give, then decisions to confirm.
 
 **The user adds items mid-run.** Route each item to its lane in the same tick; new items go in the next batch, never the frozen one. When asked how it's going, answer with what shipped, what's in the gate and when the next ship lands.
 

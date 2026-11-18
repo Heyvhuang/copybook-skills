@@ -1,6 +1,6 @@
 # Copybook
 
-Copybook picks a tip for your coding agent by the situation it is in. You ask for the work as usual, and a skill that loads by itself picks one of the 141 tips and follows it. You have nothing to remember and nothing to choose. The tips are the prompts, rules and setups readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai)'s posts on X.
+Copybook picks a tip for your coding agent by the situation it is in. You ask for the work as usual, and a skill that loads by itself picks one of the 142 tips and follows it. You have nothing to remember and nothing to choose. The tips are the prompts, rules and setups readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai)'s posts on X.
 
 ```text
 copybook ──────────────────────────
@@ -18,8 +18,8 @@ copybook ───────────────────────�
   ·······················•·········
 
 › Review this PR before I merge
-  Review list · picks 1 of 15
-  ···········•···
+  Review list · picks 1 of 16
+  ···········•····
 ───────────────────────────────────
   then names the tip, and why,
   and works through its steps
@@ -120,7 +120,7 @@ Members install `copybook` once. ChatGPT syncs the marketplace daily. A ZIP uplo
 
 ## What it picks from
 
-141 prompts, rules, checklists, and setups. Auto-loads one when a task fits, or browse.
+142 prompts, rules, checklists, and setups. Auto-loads one when a task fits, or browse.
 
 These are the situations the skill watches for, each under the shelf whose list it reads first. When that list has no tip made for the job, it reads a second.
 
@@ -200,13 +200,14 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 
 ### Review
 
-`/copybook:review-tips` · 15 tips: PR, code, and plan reviews, bug scoring, skill audits and backtests.
+`/copybook:review-tips` · 16 tips: PR, code, and plan reviews, bug scoring, skill audits and backtests.
 
 | Tip | Saves |
 | :-- | :-: |
 | **[Tailscale preview links on your phone: a rule](./skills/review-tips/references/tailscale-preview-links.md)** `tailscale-preview-links`<br>Agent links that say localhost: Tailscale links to previews, review pages and dashboards that open right on your phone. | 3.8K |
 | **[Bug-score rule for Astra's code reviews](./skills/review-tips/references/bug-score-rule-for-astra.md)** `bug-score-rule-for-astra`<br>Astra flags bugs that almost never happen and Opus fixes each one: bugs scored, low scores filed as issues, code left alone. | 3.2K |
 | **[Blast radius, red team and 3 more prompts](./skills/review-tips/references/blast-radius-and-4-more-prompts.md)** `blast-radius-and-4-more-prompts`<br>'Fix this bug' hands you defaults: what your diff touches, an end-to-end goal, a red-teamed plan, a user walk, a thinking budget. | 1.4K |
+| **[iOS simulator UI bug check with iPhone Duo](./skills/review-tips/references/ios-simulator-ui-bug-check.md)** `ios-simulator-ui-bug-check`<br>UI bugs in your iOS app: main screens tapped through, Duo poses checked if its simulator exists, smallest changes suggested. | 956 |
 | **[Perf review: the 5 slowest spots](./skills/review-tips/references/perf-review-the-5-slowest-spots.md)** `perf-review-the-5-slowest-spots`<br>Ask for faster code and you probably get a cache: timings from a profile, one matching fix each, its lines and expected speedup. | 849 |
 | **[One question before it answers](./skills/review-tips/references/one-question-before-it-answers.md)** `one-question-before-it-answers`<br>Ten questions at once get ignored: assumptions, missing info, the usual mistake, then the one question that changes its approach. | 631 |
 | **[Skill backtest against past Codex sessions](./skills/review-tips/references/skill-backtest-on-codex-sessions.md)** `skill-backtest-on-codex-sessions`<br>A skill written from memory drifts from how you work: compared with your past sessions, a dry-run diff, a recurring review. | 554 |
@@ -307,7 +308,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[Fable 5.2 agent tree with Opus 5.5 and Haiku](./skills/model-tips/references/fable-5-2-agent-tree.md)** `fable-5-2-agent-tree`<br>Picking a model and effort per role: Haiku 5.5 finds files and runs tests, Opus 5.5 edits code, Fable on high only if stuck. | 1.3K |
 | **[Codex: GPT-6.1 Sol main, medium subagents, Astra review](./skills/model-tips/references/gpt-6-1-sol-main-astra-reviews.md)** `gpt-6-1-sol-main-astra-reviews`<br>Astra eats a week's quota: 6.1 Sol on high as orchestrator, on medium for 3 subagents, Astra only to review big changes. | 1.1K |
 | **[/advisor: Sonnet 5.5 works, Opus on call](./skills/model-tips/references/advisor-opus-on-call.md)** `advisor-opus-on-call`<br>$20 plan on Opus 5.5 by default: Haiku reads code, looks up docs; Opus advises before plans, on repeat errors, before 'done'. | 968 |
-| **[Fable 5.2 plans, Opus 5.5 or Codex builds](./skills/model-tips/references/fable-5-2-plans-opus-builds.md)** `fable-5-2-plans-opus-builds`<br>Fable 5.2 burns tokens fast: planning stays with it, the hardest parts may too, the rest goes to an Opus 5.5 subagent or Codex. | 886 |
+| **[Fable 5.2 plans, Opus 5.5 or Codex builds](./skills/model-tips/references/fable-5-2-plans-opus-builds.md)** `fable-5-2-plans-opus-builds`<br>Fable 5.2 burns tokens fast: planning stays with it, the hardest parts may too, the rest goes to an Opus 5.5 subagent or Codex. | 893 |
 | **[Old-rules review for Fable 5.2](./skills/model-tips/references/old-rules-review-for-fable-5-2.md)** `old-rules-review-for-fable-5-2`<br>Rules hard-coded for older models work against Fable 5.2: delegation, think-less, style-limit and 'never' lines quoted with a fix. | 843 |
 | **[3 habits burning your Claude Code usage](./skills/model-tips/references/3-habits-burning-your-usage.md)** `3-habits-burning-your-usage`<br>Keep hitting the usage limit: 7 days of session logs scanned, the 3 costliest habits and their share, rules to plug them. | 730 |
 | **[Fable main, Opus subagents: 3 settings](./skills/model-tips/references/fable-main-opus-subagents.md)** `fable-main-opus-subagents`<br>Fable quota going fast: 3 settings send reading and lookups to half-price Opus subagents; Fable keeps the judgment. | 715 |

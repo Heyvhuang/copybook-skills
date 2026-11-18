@@ -28,4 +28,4 @@ Fable 5.2 烧 token 很快，但 prompt 这样写就完全用得起。
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/keep-fable-5-2-on-planning-and-hand-builds-to-opus)：@Voxyz_ai 2026年11月10日[发在 X 上](https://x.com/Voxyz_ai/status/2120260216046727370)，截至 2026年11月11日有 886 次收藏。适用于 Claude Code 和 Codex。
+来自 [Copybook](https://copybook.page/zh/t/keep-fable-5-2-on-planning-and-hand-builds-to-opus)：@Voxyz_ai 2026年11月10日[发在 X 上](https://x.com/Voxyz_ai/status/2120260216046727370)，截至 2026年11月17日有 893 次收藏。适用于 Claude Code 和 Codex。

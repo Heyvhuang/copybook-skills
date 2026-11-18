@@ -1,11 +1,11 @@
 ---
 name: copybook
-description: "Load unasked: plan, multi-file PR review (no tiny edits); repeat mistakes; 2 failed fixes; handoffs; ready-made prompts, rules; usage or models; site launch prep. A one- or two-line edit, one small new file or a single question, such as explaining one error: just do it, unless the user is correcting the same mistake a second time. When the user names Copybook or one of its tips, always load. Also: long-run reports; multi-session or multi-agent work; page design, redesign or de-AI look; AGENTS.md, CLAUDE.md or agent permissions; installing a skill or plugin; rewriting a whole README for new readers, or a task brief. Handle one README section or a small wording fix directly. Also when the user asks for a checklist or a setup, or what Copybook has. 141 prompts, rules, checklists and setups, picked by situation."
+description: "Load unasked: plan, multi-file PR review (no tiny edits); repeat mistakes; 2 failed fixes; handoffs; ready-made prompts, rules; usage or models; site launch prep. A one- or two-line edit, one small new file or a single question, such as explaining one error: just do it, unless the user is correcting the same mistake a second time. When the user names Copybook or one of its tips, always load. Also: long-run reports; multi-session or multi-agent work; page design, redesign or de-AI look; AGENTS.md, CLAUDE.md or agent permissions; installing a skill or plugin; rewriting a whole README for new readers, or a task brief. Handle one README section or a small wording fix directly. Also when the user asks for a checklist or a setup, or what Copybook has. 142 prompts, rules, checklists and setups, picked by situation."
 ---
 
 # Copybook
 
-Copybook has 141 tips for coding agents: prompts, rules, checklists and setups, each from a post readers saved on X. They are filed under the 7 topics below. Each topic's list is a file beside this one; each tip's text is a file in its topic skill's references/.
+Copybook has 142 tips for coding agents: prompts, rules, checklists and setups, each from a post readers saved on X. They are filed under the 7 topics below. Each topic's list is a file beside this one; each tip's text is a file in its topic skill's references/.
 
 Pick the tip for the user and use it: they want the right one used, not a list to choose from.
 
@@ -26,11 +26,11 @@ Repo index and map, coding principles, AGENTS.md, scope rules. List: [codebase.m
 
 Tips: 3-slimmer-agents-md-plans, agent-memory-tools-8-repos, agent-workspace-audit, archify-system-diagrams, ask-before-edge-case-code, bug-fix-loop-rules, ci-time-audit, clickable-repo-map, codebase-memory-repo-index, codex-and-claude-sorted, deny-ask-and-allow-permissions, disk-map-of-dev-leftovers, fewer-deeper-modules, instructions-from-your-sessions, investigate-and-plan-prompt, karpathys-4-coding-principles, less-defensive-code, mod-ideas-from-20-sessions, mod-request-for-claude-code, no-compatibility-code-yet, one-agents-md-for-both-agents, open-source-scout-and-closer, pr-comments-as-agents-md-rules, rea-take-apart-a-feature, repeat-mistakes-as-lint-rules, repo-map-words-vs-names, scope-guard-rules, situation-routing-for-skills, teach-strategic-programming, ub-mode-clean-code-agent-rules, untangle-goal, vibe-coding-cleanup-prompts, whole-project-audit.
 
-### Review · 15 tips
+### Review · 16 tips
 
 PR, code, and plan reviews, bug scoring, skill audits and backtests. List: [review.md](review.md)
 
-Tips: 3-checks-before-a-skill-install, blast-radius-and-4-more-prompts, bug-score-rule-for-astra, claude-api-prompt-audit, code-and-direction-review, fake-busy-check, logging-plan-and-daily-fix-list, nightly-push-review-routine, one-question-before-it-answers, perf-review-the-5-slowest-spots, plan-review-5-methods, skill-backtest-on-codex-sessions, skill-score-by-yes-no-questions, state-machine-check, tailscale-preview-links.
+Tips: 3-checks-before-a-skill-install, blast-radius-and-4-more-prompts, bug-score-rule-for-astra, claude-api-prompt-audit, code-and-direction-review, fake-busy-check, ios-simulator-ui-bug-check, logging-plan-and-daily-fix-list, nightly-push-review-routine, one-question-before-it-answers, perf-review-the-5-slowest-spots, plan-review-5-methods, skill-backtest-on-codex-sessions, skill-score-by-yes-no-questions, state-machine-check, tailscale-preview-links.
 
 ### Design · 32 tips
 

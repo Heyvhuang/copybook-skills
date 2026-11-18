@@ -34,6 +34,8 @@ npx skills@latest add https://copybook.page --skill coordinator --skill parallel
 
 它提炼自一次为期三天的真实运行：大约 160 个 PR、107 份 lane 任务说明、118 份交接和 166 次按批测试。需要 Herdr 0.9.5 或更高版本、已登录的 Claude Code 和 Codex CLI，以及带 GitHub CLI 的 git 仓库。源码在 [Heyvhuang/copybook-skills](https://github.com/Heyvhuang/copybook-skills/tree/main/standalone/coordinator)，README 写了每个脚本做什么。
 
+自带的模型选择是那次运行的例子。换成你账号里能用的模型，流程照旧。
+
 执行者以全权限运行：启动时没有权限弹窗，能改你的用户账号能改的任何文件、跑任何命令。只在你接受这一点的机器和仓库上用。
 
 ## 来源

@@ -1,12 +1,13 @@
-# 验收 · 15 条
+# 验收 · 16 条
 
-Copybook 的 15 条「验收」技巧，按收藏数排序，与合不合适无关：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../review-tips/references/<名字>.md`。
+Copybook 的 16 条「验收」技巧，按收藏数排序，与合不合适无关：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../review-tips/references/<名字>.md`。
 
 | 技巧 | 做什么 |
 | --- | --- |
 | tailscale-preview-links | agent 给的链接是 localhost：预览、审查页面、看板都换成 Tailscale 链接，手机上直接打开。 |
 | bug-score-rule-for-astra | Astra 总挑几乎不会发生的 bug，Opus 一条条去修：给 bug 打分，分低的记成 issue，代码不动。 |
 | blast-radius-and-4-more-prompts | 只说「修这个 bug」只拿到默认答案：影响范围、并行目标、红队计划、真实用户走查、思考预算。 |
+| ios-simulator-ui-bug-check | iOS app 里的 UI 问题：主要页面都点一遍，有 Duo 模拟器就查各形态，建议最小改法。 |
 | perf-review-the-5-slowest-spots | 想让代码变快，多半换来一层缓存：profile 测出的耗时，每处对上的改法，要改的行和预计提速。 |
 | one-question-before-it-answers | 一次问 10 个你就不想答：先摆出没说的假设、缺的信息和常见错误，再只问最可能改变做法的那个。 |
 | skill-backtest-on-codex-sessions | 凭记忆写的 skill 和实际做法对不上：拿过去的 Codex 会话回测，先出 dry run 的 diff，再定期复查。 |

@@ -15,10 +15,10 @@ Every lane is a Herdr worker, whichever harness coordinates. Claude Code in a te
 
 > **Full access.** Workers start without permission prompts so a run can go on overnight. A worker can then edit any file and run any command your user account can. Use this only on a machine and repositories where you accept that risk. To keep prompts, drop the flags below; lanes will stop at each dialog and the coordinator has to answer them.
 
-- Claude: `--kind claude -- --session-id <uuid> --model <id> --effort <e> --permission-mode bypassPermissions` (record the uuid: it resumes the worker after a server restart)
+- Claude: `--kind claude -- --session-id <uuid> --model <id> --effort <e> --permission-mode bypassPermissions` (record the uuid: it resumes the worker after a server restart; `<id>` and `<e>` come from `references/models.md`)
 - Codex: `--kind codex -- -m <id> -c model_reasoning_effort=<e> -s danger-full-access -a never` (flags on the launch, so your other Codex sessions keep their own sandbox)
 
-Commands, first-launch screens and traps: `references/herdr.md`. The user's explicit choice wins. Fallbacks, each written in the run record: T3 Code child tasks (`references/t3.md`) when Herdr is down or a lane keeps failing on a Herdr-only problem; the harness's own subagents only for quick lookups inside your own checks, never as lanes. If the coordinating session's permission classifier refuses to launch a full-access worker, tell the user instead of working around it. Show the user where to watch: a Herdr tab beside the app, or `herdr --session <name>` in a terminal.
+Commands, first-launch screens and traps: `references/herdr.md`. The user's explicit choice wins. Fallbacks, each written in the run record: T3 Code child tasks (`references/t3.md`) when Herdr is down or a lane keeps failing on a Herdr-only problem; the harness's own subagents only for quick lookups inside your own checks, never as lanes. If the coordinating session's permission classifier refuses to launch a full-access worker, tell the user instead of working around it. Showing the user the workers: Starting or resuming.
 
 ## Role
 
@@ -28,26 +28,20 @@ Coordinate; don't build. Heavy work goes to lanes, never to your own session. Yo
 
 Paths to `scripts/`, `templates/` and `references/` are relative to this skill's folder, not the project. Read the run record first (`<run-dir>/STATE.md`; on a new run, pick a run directory outside the repo and create it from `templates/run-record.md`), then look at what is actually running before starting anything: lanes (Herdr agents and panes with unsent text, plus any T3 fallback tasks named in the record), the watcher, any release or migration in flight. Reuse what fits; never touch another run's server or threads. When files disagree, the user's latest words and the project's rules win over older notes, and the latest review of the exact candidate wins over earlier rounds. Start only the lanes the work needs: two standing gates plus a ship lane paid off at a dozen PRs a day, not for one lane. Branch lanes from a freshly fetched base SHA.
 
-Open the progress board as soon as the first lane starts: run `bash <this skill>/scripts/status.sh <run-dir> <herdr-session> [repo]` in a terminal tab the user can see (the Terminal panel in the Claude desktop app; elsewhere a terminal window or a Herdr pane), and tell them where it is, with a link when the host gives one. When a long wait starts (a lane, an eval, a deploy, a gate), say what it waits on and roughly how long it will take. When the watcher fires, report the result without waiting to be asked.
+Show the workers as soon as the first lane starts, and again on resume when the user can't see them: attach the Herdr TUI (`herdr --session <herdr-session>`) in a terminal the user can see (the host's terminal panel, else a terminal window), focus the running worker's tab, and check the screen shows that session and that worker's live conversation; if the host says opening the terminal is queued, check once it appears. Starting the server or pasting the attach command doesn't count, and a browser or status view doesn't replace it. If the host can't open or check a terminal, leave the session running and give the one attach command and the worker's tab. Where it sits and when it closes are the user's call. Then open the progress board beside it: `bash <this skill>/scripts/status.sh <run-dir> <herdr-session> [repo]` in another visible terminal tab, and tell them where both are, with a link when the host gives one. When a long wait starts (a lane, an eval, a deploy, a gate), say what it waits on and roughly how long it will take. When the watcher fires, report the result without waiting to be asked.
 
-## Models and effort (reasons and fallbacks in references/models.md)
+## Models and effort
 
-| Work | Worker |
-| --- | --- |
-| Front end, design, UI polish | Claude Opus 5.5 (`claude-opus-5-5`), high (xhigh for design drafts) |
-| Back end, data, migrations, payments | Codex gpt-6.1-sol, xhigh when hard or risky, else high |
-| Pre-merge review of risky changes | Codex gpt-6-astra, xhigh |
-| Routine review, scans; gates and ship | Codex gpt-6.1-sol, high; medium for gates and ship |
-| Lists, extraction, formatting | Claude Sonnet 5.5 (`claude-sonnet-5-5`), medium |
-| Second reader for design and copy (finds faults, never writes code) | optional: Gemini 4 Argon through `scripts/gemini.mjs`, only when the user turned it on for this run; else a second Claude reviewer |
+`references/models.md` is the one place for exact model IDs and effort by kind of work: the example run's defaults, dated, with the reasons and fallbacks. Read it before the first lane. In a coordinator run it replaces parallel-goal-fleet's model and effort defaults.
 
-In a coordinator run this table replaces parallel-goal-fleet's model and effort defaults. Defaults from the run it came from, change them to taste: Fable is not used (quota); Codex reviews front-end files but never edits them; `max` only when the user asks. If a model is out of reach, say so and use the fallback in `references/models.md`; never swap models silently.
+The user's explicit choice wins, for one lane or as a policy for the run. Write the model and effort each lane actually runs on in the run record's Lanes table. If a model is out of reach, say so, take the fallback in `references/models.md` and write why in the record; never swap models silently. Don't pick a model because it is the newest: change the table when a run has shown how a model does.
 
 ## A lane
 
 - **Common rules**: write `<run-dir>/common.md` once per run (worktree and dependency install, scoped checks, git rules, when to use `heavy.sh`, which lane owns which paths); every brief points to it. Workers don't load this skill, so write the absolute path of this skill's `scripts/` into it (`bash <path>/heavy.sh <command>`).
-- **Brief** (`templates/lane-brief.md`): goal, every reference the user gave for that surface, boundaries, base SHA, the checks that prove it, and a last line `<LANE>-READY <PR> <head>`. Reviews go in `<run-dir>/review-<lane>.md` and end `REVIEW-READY <lane> <verdict>`; hand-overs go in `<run-dir>/handover-<lane>.md`; gates add a line under `## Done` in `gate/queue.md`. Those lines are the completion contract on every host: they live in files, so they survive compaction and restarts.
+- **Brief** (`templates/lane-brief.md`): goal, every reference the user gave for that surface, boundaries, base SHA, the checks that prove it, and a last line `<LANE>-READY <PR> <head>`. Reviews go in `<run-dir>/review-<lane>.md`: they open with whether the candidate can merge and every blocking finding (or "none"), then the scope actually covered (heads, paths, checks run) and what was left unchecked, and end `REVIEW-READY <lane> <verdict>`; hand-overs go in `<run-dir>/handover-<lane>.md`; gates add a line under `## Done` in `gate/queue.md`. Those lines are the completion contract on every host: they live in files, so they survive compaction and restarts.
 - **Watch** with `bash <this skill>/scripts/watch-ready.sh <run-dir> <timeout-seconds> <herdr-session>` as a background job your harness reports when it exits (Claude Code: a background shell task; Codex: a session you poll). The first run only records a baseline and exits, so start it again. One per run; re-arm after each fire. T3 fallback lanes wake you themselves. Pass the Herdr session: the watcher then also prints `STOPPED` when a lane it saw working stops without a new READY line, which usually means the lane is waiting on a question or has crashed, so read its pane.
+- **Follow-ups** to a running lane: decide what the message is before sending it. A correction to the work in progress steers the current turn. A follow-up that doesn't change that work queues for after the turn. An operation that depends on evidence or a yes you don't have yet (a merge after its gate, a push after the user's approval) is held: write it under Holds in the run record and send it only once the evidence or the yes is there. Keys for each CLI, checking that the pane took the message, and stopping a lane: `references/herdr.md` §3.
 - **Collect**: a hand-over is a claim. Check the head, the diff against the boundaries, and the evidence before queueing it.
 - **Close** Herdr workspaces once their PRs ship (T3 fallback lanes: settle the thread, remove its worktree).
 
@@ -73,4 +67,4 @@ Never print a secret or ask for one in chat; the user writes credential files th
 
 ## Reporting
 
-Follow the user's own reply rules. For coordination: one decision per question with your recommendation; a morning list that starts with what needs their yes; "shipped" and "live" only after a readback.
+Follow the user's own reply rules. For coordination: one decision per question with your recommendation; a review reported to the user leads with can or cannot merge and any blocking finding, then what it covered and what it left unchecked; a morning list that starts with what needs their yes; "shipped" and "live" only after a readback.

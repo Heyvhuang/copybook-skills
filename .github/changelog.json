@@ -92,6 +92,21 @@
         }
       ],
       "retired": []
+    },
+    {
+      "version": "1.0.6",
+      "date": "2026-11-18",
+      "added": [
+        {
+          "slug": "find-ios-app-bugs-in-the-claude-code-simulator",
+          "title": {
+            "en": "iOS simulator UI bug check with iPhone Duo",
+            "zh": "iOS 模拟器 UI bug 检查，含 iPhone Duo"
+          }
+        }
+      ],
+      "changed": [],
+      "retired": []
     }
   ],
   "tips": {
@@ -437,6 +452,14 @@
       "title": {
         "en": "Fake busy check from today's git history",
         "zh": "瞎忙检查：今天的 git 历史"
+      }
+    },
+    "find-ios-app-bugs-in-the-claude-code-simulator": {
+      "en": "3681e1e53a12f90f",
+      "zh": "7b6df0ed71ad083d",
+      "title": {
+        "en": "iOS simulator UI bug check with iPhone Duo",
+        "zh": "iOS 模拟器 UI bug 检查，含 iPhone Duo"
       }
     },
     "find-the-3-habits-burning-your-claude-code-usage": {

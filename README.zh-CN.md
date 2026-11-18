@@ -1,6 +1,6 @@
 # Copybook
 
-Copybook 按情景替你的 coding agent 挑技巧。你照常说要做什么，一个会自己加载的 skill 从 141 条技巧里选一条，照着做。你不用记，也不用选。这些提示词、规则和设置，来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子。
+Copybook 按情景替你的 coding agent 挑技巧。你照常说要做什么，一个会自己加载的 skill 从 142 条技巧里选一条，照着做。你不用记，也不用选。这些提示词、规则和设置，来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子。
 
 ```text
 copybook ──────────────────────────
@@ -18,8 +18,8 @@ copybook ───────────────────────�
   ·······················•·········
 
 › 合并前审一下这个 PR
-  验收 · 15 条里选 1 条
-  ···········•···
+  验收 · 16 条里选 1 条
+  ···········•····
 ───────────────────────────────────
   然后说出选了哪条、为什么，
   照它的步骤把事做完
@@ -120,7 +120,7 @@ npx skills@latest update copybook codebase-tips review-tips design-tips long-run
 
 ## 它从哪里选
 
-141 条提示词、规则、检查清单和设置，按情景自动选用。
+142 条提示词、规则、检查清单和设置，按情景自动选用。
 
 下面是这个 skill 留意的情景，各自排在它先读的那个话题下面。这个列表里没有专为这件事写的技巧时，它会再读一个。
 
@@ -200,13 +200,14 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 
 ### 验收
 
-`/copybook-zh:review-tips` · 15 条：PR、代码和计划复查、bug 打分、红队提示词、skill 回测。
+`/copybook-zh:review-tips` · 16 条：PR、代码和计划复查、bug 打分、红队提示词、skill 回测。
 
 | 技巧 | 收藏 |
 | :-- | :-: |
 | **[手机上的 Tailscale 预览链接规则](./zh/skills/review-tips/references/tailscale-preview-links.md)** `tailscale-preview-links`<br>agent 给的链接是 localhost：预览、审查页面、看板都换成 Tailscale 链接，手机上直接打开。 | 3,819 |
 | **[Astra 审查的 bug 打分规则](./zh/skills/review-tips/references/bug-score-rule-for-astra.md)** `bug-score-rule-for-astra`<br>Astra 总挑几乎不会发生的 bug，Opus 一条条去修：给 bug 打分，分低的记成 issue，代码不动。 | 3,241 |
 | **[影响范围、红队等 5 条让模型判断的提示词](./zh/skills/review-tips/references/blast-radius-and-4-more-prompts.md)** `blast-radius-and-4-more-prompts`<br>只说「修这个 bug」只拿到默认答案：影响范围、并行目标、红队计划、真实用户走查、思考预算。 | 1,411 |
+| **[iOS 模拟器 UI bug 检查，含 iPhone Duo](./zh/skills/review-tips/references/ios-simulator-ui-bug-check.md)** `ios-simulator-ui-bug-check`<br>iOS app 里的 UI 问题：主要页面都点一遍，有 Duo 模拟器就查各形态，建议最小改法。 | 956 |
 | **[性能审查：最慢的 5 处](./zh/skills/review-tips/references/perf-review-the-5-slowest-spots.md)** `perf-review-the-5-slowest-spots`<br>想让代码变快，多半换来一层缓存：profile 测出的耗时，每处对上的改法，要改的行和预计提速。 | 849 |
 | **[回答前先问一个问题](./zh/skills/review-tips/references/one-question-before-it-answers.md)** `one-question-before-it-answers`<br>一次问 10 个你就不想答：先摆出没说的假设、缺的信息和常见错误，再只问最可能改变做法的那个。 | 631 |
 | **[skill 回测：过去的 Codex 会话](./zh/skills/review-tips/references/skill-backtest-on-codex-sessions.md)** `skill-backtest-on-codex-sessions`<br>凭记忆写的 skill 和实际做法对不上：拿过去的 Codex 会话回测，先出 dry run 的 diff，再定期复查。 | 554 |
@@ -304,10 +305,10 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 | **[设置检查：按 Opus 5.5 成本指南](./zh/skills/model-tips/references/setup-review-by-the-cost-guide.md)** `setup-review-by-the-cost-guide`<br>Opus 5 的老设置在 5.5 上更贵：照 Anthropic 指南查 effort、subagent、MCP、CLAUDE.md，各附改法。 | 2,167 |
 | **[换 Opus 5.5 后的「think carefully」清理](./zh/skills/model-tips/references/think-carefully-cleanup.md)** `think-carefully-cleanup`<br>换了 Opus 5.5，CLAUDE.md 里催它多想、一步步派活、无谓确认的老规则：逐条找出，引原文给改法。 | 2,130 |
 | **[hillclimb：Claude API 功能降本](./zh/skills/model-tips/references/hillclimb-a-cheaper-feature.md)** `hillclimb-a-cheaper-feature`<br>最花钱的 Claude API 调用：先搭测试集，再一档档换便宜模型、降 effort，准确率不掉才算数。 | 1,710 |
-| **[Fable 5.2 agent 树：Opus 5.5 和 Haiku](./zh/skills/model-tips/references/fable-5-2-agent-tree.md)** `fable-5-2-agent-tree`<br>每个角色选哪个模型和 effort：Haiku 5.5 找文件、跑测试，Opus 5.5 改代码，Fable 卡住才上 high。 | 1,267 |
+| **[Fable 5.2 agent 树：Opus 5.5 和 Haiku](./zh/skills/model-tips/references/fable-5-2-agent-tree.md)** `fable-5-2-agent-tree`<br>每个角色选哪个模型和 effort：Haiku 5.5 找文件、跑测试，Opus 5.5 改代码，Fable 卡住才上 high。 | 1,338 |
 | **[Codex：GPT-6.1 Sol 主跑，medium subagent，Astra 终审](./zh/skills/model-tips/references/gpt-6-1-sol-main-astra-reviews.md)** `gpt-6-1-sol-main-astra-reviews`<br>Astra 一周吃光额度：6.1 Sol 用 high 调度、medium 跑 subagent，Astra 只审上线前的大改动。 | 1,061 |
 | **[/advisor：Sonnet 5.5 主跑，Opus 待命](./zh/skills/model-tips/references/advisor-opus-on-call.md)** `advisor-opus-on-call`<br>$20 套餐默认跑 Opus 5.5：Haiku 读代码、查文档，定方案前、错误反复时、说做完前叫 Opus 出主意。 | 968 |
-| **[Fable 5.2 管规划，实现给 Opus 5.5 或 Codex](./zh/skills/model-tips/references/fable-5-2-plans-opus-builds.md)** `fable-5-2-plans-opus-builds`<br>Fable 5.2 烧 token 太快：规划留在主会话，最难的部分也可留下，其余交给 Opus 5.5 subagent 或 Codex。 | 886 |
+| **[Fable 5.2 管规划，实现给 Opus 5.5 或 Codex](./zh/skills/model-tips/references/fable-5-2-plans-opus-builds.md)** `fable-5-2-plans-opus-builds`<br>Fable 5.2 烧 token 太快：规划留在主会话，最难的部分也可留下，其余交给 Opus 5.5 subagent 或 Codex。 | 893 |
 | **[Fable 5.2 旧规则审查](./zh/skills/model-tips/references/old-rules-review-for-fable-5-2.md)** `old-rules-review-for-fable-5-2`<br>给老模型写死的规则拖累 Fable 5.2：派活、少想、文风限制和「never」的句子，引原文给改法。 | 843 |
 | **[Claude Code 里最耗额度的 3 个习惯](./zh/skills/model-tips/references/3-habits-burning-your-usage.md)** `3-habits-burning-your-usage`<br>总撞额度上限：扫最近 7 天的会话日志，算出每个习惯各占多少额度，再写规则把它们堵上。 | 730 |
 | **[Fable 做主、Opus 做 subagent 的 3 个设置](./zh/skills/model-tips/references/fable-main-opus-subagents.md)** `fable-main-opus-subagents`<br>Fable 额度不够用：3 行设置，读代码、查文档交给半价的 Opus subagent，判断留给 Fable。 | 715 |

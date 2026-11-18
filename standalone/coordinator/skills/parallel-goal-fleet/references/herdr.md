@@ -16,18 +16,18 @@ For subsequent local commands, keep the session explicit:
 H=(env -u HERDR_SESSION herdr --session <session>)
 "${H[@]}" workspace create --cwd <absolute_path> --label <worker> --no-focus
 "${H[@]}" agent start <worker> --kind claude --pane <returned_pane_id> \
-  -- --session-id <task_owned_uuid> --model claude-opus-5-5 --effort <effort> --permission-mode bypassPermissions
+  -- --session-id <task_owned_uuid> --model <claude_model> --effort <effort> --permission-mode bypassPermissions
 "${H[@]}" agent start <worker> --kind codex --pane <returned_pane_id> \
-  -- -m gpt-6.1-sol -c model_reasoning_effort=<effort> -s danger-full-access -a never
+  -- -m <codex_model> -c model_reasoning_effort=<effort> -s danger-full-access -a never
 ```
 
-Use the defaults in `SKILL.md` unless the user requests another model. `<effort>` and the Claude model follow the role rule there; the quick text review below is a review role, so its Claude example runs Opus 5.5 at `high`. Pin `claude-opus-5-5` for Opus 5.5 instead of relying on a floating `opus` alias. Opus 5.5 worked on Claude Code 2.1.280 here; a running 2.1.278 worker rejected it. Fable 5.2 ran on 2.1.319 here but logged `unrecognized_model`; the docs list it from 2.1.321. If a worker rejects the model, upgrade its CLI and restart it with its saved conversation ID. Generate the initial Claude UUID and record it with the task; record the Codex session ID before stopping a Codex worker. To resume in a fresh shell pane after a restart:
+`<claude_model>`, `<codex_model>` and `<effort>` come from, in this order: the user's explicit choice; the lane assignment of a coordinator running this fleet; otherwise `SKILL.md` step 3, whose role rule also sets effort (the quick text review below is a review role, so its Claude example runs at `high`). Pin an exact model ID instead of a floating alias such as `opus`. Opus 5.5 worked on Claude Code 2.1.280 here; a running 2.1.278 worker rejected it. Fable 5.2 ran on 2.1.319 here but logged `unrecognized_model`; the docs list it from 2.1.321. If a worker rejects the model, upgrade its CLI and restart it with its saved conversation ID. Generate the initial Claude UUID and record it with the task, together with the exact model and effort the worker started on; record the Codex session ID before stopping a Codex worker. To resume in a fresh shell pane after a restart, pass the recorded model and effort again, unless you are deliberately changing the worker's assignment or taking a recorded fallback:
 
 ```bash
 "${H[@]}" agent start <resumed_worker> --kind claude --pane <fresh_pane_id> \
-  -- --resume <claude_session_id> --model claude-opus-5-5 --effort <effort> --permission-mode bypassPermissions
+  -- --resume <claude_session_id> --model <claude_model> --effort <effort> --permission-mode bypassPermissions
 "${H[@]}" agent start <resumed_worker> --kind codex --pane <fresh_pane_id> \
-  -- resume <codex_session_id> -m gpt-6.1-sol -c model_reasoning_effort=<effort> -s danger-full-access -a never
+  -- resume <codex_session_id> -m <codex_model> -c model_reasoning_effort=<effort> -s danger-full-access -a never
 ```
 
 Each start command targets its own returned pane. `agent start` reports agent detection and readiness; normal work needs no additional UI proof. If dispatch encounters an update, trust, or permission prompt, inspect and handle that prompt within the task scope.
@@ -64,13 +64,13 @@ Without `--until`, `agent wait` returns on idle, done, or blocked. A timeout doe
 For a self-contained second opinion, create a task-owned directory, put the context packet in `context.txt`, and create a Herdr workspace there. Retain the directory for an ongoing discussion. Run a CLI turn via `pane run` using the returned pane ID. A Claude example (check installed help if flags differ):
 
 ```bash
-"${H[@]}" pane run <pane_id> 'claude -p --model claude-opus-5-5 --effort high --tools "" --strict-mcp-config --disable-slash-commands --output-format json --system-prompt "Give an independent, concise second opinion using only the supplied context." < /absolute/task-dir/context.txt > /absolute/task-dir/result.json 2> /absolute/task-dir/stderr.log; echo $? > /absolute/task-dir/exit-1.txt'
+"${H[@]}" pane run <pane_id> 'claude -p --model <claude_model> --effort high --tools "" --strict-mcp-config --disable-slash-commands --output-format json --system-prompt "Give an independent, concise second opinion using only the supplied context." < /absolute/task-dir/context.txt > /absolute/task-dir/result.json 2> /absolute/task-dir/stderr.log; echo $? > /absolute/task-dir/exit-1.txt'
 ```
 
 Save the successful result's `session_id` as the model conversation ID, separately from the Herdr session name and pane. For the next revision, use the same host and working directory and resume that exact ID; do not use an unqualified `--continue` that might select another conversation. For example:
 
 ```bash
-"${H[@]}" pane run <pane_id> 'claude -p --resume <model_session_id> --model claude-opus-5-5 --effort high --tools "" --strict-mcp-config --disable-slash-commands --output-format json --system-prompt "Give an independent, concise second opinion using only the supplied context." < /absolute/task-dir/followup.txt > /absolute/task-dir/result-2.json 2> /absolute/task-dir/stderr-2.log; echo $? > /absolute/task-dir/exit-2.txt'
+"${H[@]}" pane run <pane_id> 'claude -p --resume <model_session_id> --model <claude_model> --effort high --tools "" --strict-mcp-config --disable-slash-commands --output-format json --system-prompt "Give an independent, concise second opinion using only the supplied context." < /absolute/task-dir/followup.txt > /absolute/task-dir/result-2.json 2> /absolute/task-dir/stderr-2.log; echo $? > /absolute/task-dir/exit-2.txt'
 ```
 
 `followup.txt` carries only the revision, latest feedback, and next question; do not prepend the initial packet again. Submit after the previous turn has completed. Check the returned session ID and actual answer before claiming continuity. Preserve separate round outputs. If resumption fails, diagnose it before falling back to a fresh conversation and disclose any context reconstruction.

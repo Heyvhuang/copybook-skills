@@ -8,10 +8,10 @@ Workers start without permission prompts (read the warning in SKILL.md, Runtime)
 
 | Provider | Start | Checked |
 | --- | --- | --- |
-| Claude | `H agent start <w> --kind claude --pane <p> -- --session-id <uuid> --model claude-opus-5-5 --effort <e> --permission-mode bypassPermissions` | status line `bypass permissions on`; wrote outside its cwd without a prompt |
-| Codex | `H agent start <w> --kind codex --pane <p> -- -m gpt-6.1-sol -c model_reasoning_effort=<e> -s danger-full-access -a never` | fresh pane ran its task in 10.2 s from workspace create, no dialog |
+| Claude | `H agent start <w> --kind claude --pane <p> -- --session-id <uuid> --model <claude-id> --effort <e> --permission-mode bypassPermissions` | status line `bypass permissions on`; wrote outside its cwd without a prompt |
+| Codex | `H agent start <w> --kind codex --pane <p> -- -m <codex-id> -c model_reasoning_effort=<e> -s danger-full-access -a never` | fresh pane ran its task in 10.2 s from workspace create, no dialog |
 
-The first bypass launch of Claude Code asks you to confirm once; answer it in that pane. To keep permission prompts, leave out `--permission-mode bypassPermissions`, `-s danger-full-access` and `-a never`. Lanes then wait at each dialog: read panes on every tick and answer within the brief's scope.
+`<claude-id>`, `<codex-id>` and `<e>` come from `references/models.md`; these checks ran with `claude-opus-5-5` and `gpt-6.1-sol`. The first bypass launch of Claude Code asks you to confirm once; answer it in that pane. To keep permission prompts, leave out `--permission-mode bypassPermissions`, `-s danger-full-access` and `-a never`. Lanes then wait at each dialog: read panes on every tick and answer within the brief's scope.
 
 ## 1. Host-aware startup
 
@@ -34,14 +34,21 @@ Record `BASE` in the brief and run record. Keep a deliberately frozen base when 
 
 ## 3. Talking to a running lane
 
-| Lane state | What worked |
+Decide first whether the message steers, queues or is held (SKILL.md, A lane). A held message isn't sent at all: it waits under Holds in the run record until its evidence or the user's yes is there.
+
+| Lane state | How to send |
 | --- | --- |
 | Idle | `H agent prompt <name or pane> "<text>"` |
-| Busy Codex (queue for after its turn) | `H pane send-text <pane> "<text>" && sleep 1 && H pane send-keys <pane> Tab` |
-| Busy Claude | `agent prompt` was used; whether it queues reliably is not confirmed. Read the pane after the turn ends |
-| Text left in the input box | `H pane send-keys <pane> Enter` |
-| Change of course | `H pane send-keys <pane> escape; sleep 3; H agent prompt <name> "STOP … read <new brief>"` |
+| Busy Codex, steer | `H pane send-text <pane> "<text>"`, then `H pane send-keys <pane> Enter`: it joins the current turn |
+| Busy Codex, queue | `H pane send-text <pane> "<text>" && sleep 1 && H pane send-keys <pane> Tab`: it waits for the next turn |
+| Busy Claude Code | paste with `send-text`, then `Enter`: it queues and reaches the worker once the running tool calls finish, inside the same turn, so it acts as a correction. `Ctrl+X` then `Enter` (v2.1.247+) marks it to wait its turn without interrupting; `Ctrl+X` then `Ctrl+S` (v2.1.275+) sends the draft and everything queued at once |
 | Dialog or menu | read with `pane read --source visible`, then `send-keys Down` / `Enter` within scope |
+
+Sources, read 18 Nov 2026: Codex CLI [developer commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli) (Enter steers, Tab queues; Codex CLI 0.169 here) and Claude Code [queued messages](https://code.claude.com/docs/en/interactive-mode#queue-messages-while-claude-works) and [chat keys](https://code.claude.com/docs/en/keybindings#chat-actions). On the example run the Codex Tab queue and the Escape stop were used; `agent prompt` was sent to busy Claude workers without confirming that it queues every time, and the Claude Ctrl+X chords were not sent through Herdr. Herdr 0.9.5's `pane send-keys --help` names `esc` but not how to write a Ctrl chord, so check the pane after trying one.
+
+**Check it landed.** Read the pane (`pane read --source visible`) after every send. The message landed when it shows in the conversation or in the CLI's queue (Claude Code shows queued messages in grey until it starts on them) and the input box is empty. Text still in the box was not sent: press the key for the mode you meant, once. A busy `agent prompt --wait` can return on the current turn ending, which proves nothing about your message.
+
+**Stopping a lane.** When work must stop now (wrong target, a held action about to run): `H pane send-keys <pane> esc`, read the pane until the turn shows as interrupted, and check the effect you were stopping did not happen (no push, no migration, no deploy) before sending anything new. Claude Code sends what was queued as soon as Esc interrupts, so look at the queue first and take back anything stale. Then `H agent prompt <name> "Coordinator: STOP … read <new brief>"`. A lane that stopped by itself (crash, quota, a dialog) is a stalled lane: read the pane, log it, and answer the dialog or resume the worker from its recorded session id.
 
 Messages start `Coordinator:` and name files, PRs and heads, not chat context.
 
