@@ -10,7 +10,7 @@ Copybook 的 33 条「代码库」技巧，收藏多的在前。每条要用的�
 
 - 用户点名技巧时，用点名的那条。用户只说了要做什么时，从适用于实际执行者的技巧里，选最符合用户目标和限制的一条。几条同样合适时，选一条即可。选中后，用一句话说明选了哪条、为什么，再读它的文件照着做。另一条也合适，而且换用它会明显改变做法或结果时，顺带点出它的名字和区别。
 - 用户什么都没说：把下面的列表（每条的名字和做什么）给用户看，问用哪条。
-- 都不合适就直说，并建议用 copybook，它会在全部 143 条里找。
+- 都不合适就直说，并建议用 copybook，它会在全部 144 条里找。
 
 | 技巧 | 做什么 |
 | --- | --- |
@@ -32,8 +32,8 @@ Copybook 的 33 条「代码库」技巧，收藏多的在前。每条要用的�
 | [CI 耗时审计：150 次运行，9 项检查](references/ci-time-audit.md) `ci-time-audit` | 代码几分钟写完，每个 PR 却在等 CI：最慢的 5 个任务拆成排队、准备和运行，每处改动指到哪一行。 |
 | [agent 工作区清点](references/agent-workspace-audit.md) `agent-workspace-audit` | agent 越用越笨先别怪模型：说明、skill、MCP 和记忆列成「保留 / 删除」清单，你批准后再清。 |
 | [agent 记忆工具：8 个仓库分 4 类](references/agent-memory-tools-8-repos.md) `agent-memory-tools-8-repos` | agent 记不住代码、资料、对话和长任务：8 个仓库分 4 类，每类挑一个装，装前先给你看命令。 |
-| [AGENTS.md 瘦身：3 套方案并排](references/3-slimmer-agents-md-plans.md) `3-slimmer-agents-md-plans` | AGENTS.md 超过 200 行就不照做了：3 版更精简的并排，一版比一版激进，不丢规则，改前先给你看。 |
 | [带 ASCII 图的全项目审查](references/whole-project-audit.md) `whole-project-audit` | 坏的、不一致或用不上的代码：改动前先讲清它怎么连起来，有把握的修掉，其余列出来。 |
+| [AGENTS.md 瘦身：3 套方案并排](references/3-slimmer-agents-md-plans.md) `3-slimmer-agents-md-plans` | AGENTS.md 超过 200 行就不照做了：3 版更精简的并排，一版比一版激进，不丢规则，改前先给你看。 |
 | [还没用户就不写兼容代码：AGENTS.md 规则](references/no-compatibility-code-yet.md) `no-compatibility-code-yet` | 项目还没人用，agent 却在写兼容代码：跳过兼容和迁移，每次改动走文档、测试、最小实现、清理。 |
 | [deny、ask、allow 权限规则](references/deny-ask-and-allow-permissions.md) `deny-ask-and-allow-permissions` | 顺手删过「看起来没用」的配置：危险命令直接拦，push 和发布前先问，日常放行，deny 永远优先。 |
 | [加边界代码前先问：AGENTS.md 一行](references/ask-before-edge-case-code.md) `ask-before-edge-case-code` | agent 总为几乎不会发生的边界情况加代码：一行规则让它先说会出什么问题、概率多大，等你点头。 |

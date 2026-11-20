@@ -1,6 +1,6 @@
-# Models and cost · 23 tips
+# Models and cost · 24 tips
 
-Copybook's 23 tips on models and cost. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../model-tips/references/<name>.md`.
+Copybook's 24 tips on models and cost. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../model-tips/references/<name>.md`.
 
 | Tip | What it does |
 | --- | --- |
@@ -13,6 +13,7 @@ Copybook's 23 tips on models and cost. The order is by saves, not by fit: read t
 | fable-plans-codex-builds | Fable 5 burns tokens fast: planning and frontend stay with it, the backend goes to Codex by /goal; a redesign prompt too. |
 | setup-review-by-the-cost-guide | Settings carried over from Opus 5 cost more on 5.5: effort, subagents, MCP servers and CLAUDE.md checked, a small fix each. |
 | think-carefully-cleanup | Opus 5.5 already thinks before it answers: rules that push extra thinking, dole out steps or stop to confirm, quoted with a fix. |
+| codex-setup-vs-the-gpt-6-2-guide | Maxing out Astra when Sol would do: model, effort, subagent and AGENTS.md problems found, each with a config fix to paste. |
 | hillclimb-a-cheaper-feature | Your costliest Claude API feature: a test set first, then cheaper models and lower effort step by step while accuracy holds. |
 | fable-5-2-agent-tree | Picking a model and effort per role: Haiku 5.5 finds files and runs tests, Opus 5.5 edits code, Fable on high only if stuck. |
 | gpt-6-1-sol-main-astra-reviews | Astra eats a week's quota: 6.1 Sol on high as orchestrator, on medium for 3 subagents, Astra only to review big changes. |

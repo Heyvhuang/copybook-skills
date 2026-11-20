@@ -1,16 +1,16 @@
 ---
 name: model-tips
-description: "Models and cost · 23 tips: model pairings, effort, cache timing, leftover quota."
+description: "Models and cost · 24 tips: model pairings, effort, cache timing, leftover quota."
 disable-model-invocation: true
 ---
 
-# Models and cost · 23 tips
+# Models and cost · 24 tips
 
-Copybook's 23 tips on models and cost, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
+Copybook's 24 tips on models and cost, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
 
 - If the user names a tip, use that tip. If they describe a task, choose the tip that best meets their goal and constraints from those that work with the agent doing the work. If several fit equally well, choose one. Tell the user in one sentence which tip you picked and why, then read its file and follow it. If another tip also fits and would materially change the approach or result, name it and say how it differs.
 - If the user said nothing, show them the list below (each tip's name and what it does) and ask which to use.
-- If none fits, say so and suggest copybook, which looks through all 143 tips.
+- If none fits, say so and suggest copybook, which looks through all 144 tips.
 
 | Tip | What it does |
 | --- | --- |
@@ -23,6 +23,7 @@ Copybook's 23 tips on models and cost, most saved first. Each tip's text, where 
 | [Fable 5 plans, Codex builds the backend](references/fable-plans-codex-builds.md) `fable-plans-codex-builds` | Fable 5 burns tokens fast: planning and frontend stay with it, the backend goes to Codex by /goal; a redesign prompt too. |
 | [Setup review by the Opus 5.5 cost guide](references/setup-review-by-the-cost-guide.md) `setup-review-by-the-cost-guide` | Settings carried over from Opus 5 cost more on 5.5: effort, subagents, MCP servers and CLAUDE.md checked, a small fix each. |
 | [Think-carefully cleanup for Opus 5.5](references/think-carefully-cleanup.md) `think-carefully-cleanup` | Opus 5.5 already thinks before it answers: rules that push extra thinking, dole out steps or stop to confirm, quoted with a fix. |
+| [Codex setup review by OpenAI's GPT-6.2 guide](references/codex-setup-vs-the-gpt-6-2-guide.md) `codex-setup-vs-the-gpt-6-2-guide` | Maxing out Astra when Sol would do: model, effort, subagent and AGENTS.md problems found, each with a config fix to paste. |
 | [hillclimb: a cheaper Claude API feature](references/hillclimb-a-cheaper-feature.md) `hillclimb-a-cheaper-feature` | Your costliest Claude API feature: a test set first, then cheaper models and lower effort step by step while accuracy holds. |
 | [Fable 5.2 agent tree with Opus 5.5 and Haiku](references/fable-5-2-agent-tree.md) `fable-5-2-agent-tree` | Picking a model and effort per role: Haiku 5.5 finds files and runs tests, Opus 5.5 edits code, Fable on high only if stuck. |
 | [Codex: GPT-6.1 Sol main, medium subagents, Astra review](references/gpt-6-1-sol-main-astra-reviews.md) `gpt-6-1-sol-main-astra-reviews` | Astra eats a week's quota: 6.1 Sol on high as orchestrator, on medium for 3 subagents, Astra only to review big changes. |

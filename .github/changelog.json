@@ -130,6 +130,21 @@
         }
       ],
       "retired": []
+    },
+    {
+      "version": "1.0.8",
+      "date": "2026-11-20",
+      "added": [
+        {
+          "slug": "review-your-codex-setup-with-openais-gpt-6-2-guide",
+          "title": {
+            "en": "Codex setup review by OpenAI's GPT-6.2 guide",
+            "zh": "Codex 设置检查：按 GPT-6.2 指南"
+          }
+        }
+      ],
+      "changed": [],
+      "retired": []
     }
   ],
   "tips": {
@@ -939,6 +954,14 @@
       "title": {
         "en": "Nightly routine reviewing the day's pushes",
         "zh": "每晚审查当天推送的 routine"
+      }
+    },
+    "review-your-codex-setup-with-openais-gpt-6-2-guide": {
+      "en": "ff0f05437cf61ce7",
+      "zh": "674fd7efa5cdf062",
+      "title": {
+        "en": "Codex setup review by OpenAI's GPT-6.2 guide",
+        "zh": "Codex 设置检查：按 GPT-6.2 指南"
       }
     },
     "review-your-scheduled-agents-against-anthropics-guide": {

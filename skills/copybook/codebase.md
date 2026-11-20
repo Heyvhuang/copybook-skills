@@ -22,8 +22,8 @@ Copybook's 33 tips on codebase. The order is by saves, not by fit: read the whol
 | ci-time-audit | Code takes minutes, then each PR waits on CI: the 5 slowest jobs split into queue, setup and run, and the line to change per fix. |
 | agent-workspace-audit | Your agent feels dumber over time: every instruction, skill, MCP and memory marked KEEP or REMOVE, cleared on your OK. |
 | agent-memory-tools-8-repos | No memory of code, notes, sessions or long tasks: 8 repos in those 4 kinds, one of each installed on your OK. |
-| 3-slimmer-agents-md-plans | AGENTS.md past 200 lines gets followed less: 3 slimmer versions, each more aggressive, nothing lost, shown before changes. |
 | whole-project-audit | Broken, inconsistent or unneeded code: how it connects explained before any change, what it's sure about fixed, the rest listed. |
+| 3-slimmer-agents-md-plans | AGENTS.md past 200 lines gets followed less: 3 slimmer versions, each more aggressive, nothing lost, shown before changes. |
 | no-compatibility-code-yet | No users yet, but the agent adds compatibility code and migrations: skip both, then docs, tests, smallest change and cleanup. |
 | deny-ask-and-allow-permissions | Claude deleted a config that 'looked unused': risky commands blocked, pushes ask first, routine ones run, deny always wins. |
 | ask-before-edge-case-code | The agent codes for races that never happen: one line makes it state the risk and the odds, then wait for your OK. |

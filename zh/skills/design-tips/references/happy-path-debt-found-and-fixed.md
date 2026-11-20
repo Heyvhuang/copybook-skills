@@ -30,4 +30,4 @@ agent 做东西是为了 demo，demo 里一切顺利。真用起来，并不是�
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/fix-happy-path-debt-across-your-app)：@Voxyz_ai 2026年11月12日[发在 X 上](https://x.com/Voxyz_ai/status/2120864199324889469)，截至 2026年11月13日有 252 次收藏。适用于 Claude Code 和 Codex。
+来自 [Copybook](https://copybook.page/zh/t/fix-happy-path-debt-across-your-app)：@Voxyz_ai 2026年11月12日[发在 X 上](https://x.com/Voxyz_ai/status/2120864199324889469)，截至 2026年11月19日有 260 次收藏。适用于 Claude Code 和 Codex。

@@ -30,4 +30,4 @@ Vibecoders, I'm begging you, add these two lines to your AGENTS.md.
 
 ## Source
 
-From [Copybook](https://copybook.page/t/two-agents-md-lines-for-vibecoders): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2113254050170843418) on 22 Oct 2026, 15K saves as of 29 Oct 2026. For Claude Code and Codex.
+From [Copybook](https://copybook.page/t/two-agents-md-lines-for-vibecoders): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2113254050170843418) on 22 Oct 2026, 15K saves as of 19 Nov 2026. For Claude Code and Codex.

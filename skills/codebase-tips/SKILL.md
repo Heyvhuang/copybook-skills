@@ -10,7 +10,7 @@ Copybook's 33 tips on codebase, most saved first. Each tip's text, where it goes
 
 - If the user names a tip, use that tip. If they describe a task, choose the tip that best meets their goal and constraints from those that work with the agent doing the work. If several fit equally well, choose one. Tell the user in one sentence which tip you picked and why, then read its file and follow it. If another tip also fits and would materially change the approach or result, name it and say how it differs.
 - If the user said nothing, show them the list below (each tip's name and what it does) and ask which to use.
-- If none fits, say so and suggest copybook, which looks through all 143 tips.
+- If none fits, say so and suggest copybook, which looks through all 144 tips.
 
 | Tip | What it does |
 | --- | --- |
@@ -32,8 +32,8 @@ Copybook's 33 tips on codebase, most saved first. Each tip's text, where it goes
 | [CI time audit: 150 runs, 9 checks](references/ci-time-audit.md) `ci-time-audit` | Code takes minutes, then each PR waits on CI: the 5 slowest jobs split into queue, setup and run, and the line to change per fix. |
 | [Agent workspace audit](references/agent-workspace-audit.md) `agent-workspace-audit` | Your agent feels dumber over time: every instruction, skill, MCP and memory marked KEEP or REMOVE, cleared on your OK. |
 | [Agent memory tools: 8 repos in 4 kinds](references/agent-memory-tools-8-repos.md) `agent-memory-tools-8-repos` | No memory of code, notes, sessions or long tasks: 8 repos in those 4 kinds, one of each installed on your OK. |
-| [3 slimmer AGENTS.md plans side by side](references/3-slimmer-agents-md-plans.md) `3-slimmer-agents-md-plans` | AGENTS.md past 200 lines gets followed less: 3 slimmer versions, each more aggressive, nothing lost, shown before changes. |
 | [Whole-project audit with ASCII diagrams](references/whole-project-audit.md) `whole-project-audit` | Broken, inconsistent or unneeded code: how it connects explained before any change, what it's sure about fixed, the rest listed. |
+| [3 slimmer AGENTS.md plans side by side](references/3-slimmer-agents-md-plans.md) `3-slimmer-agents-md-plans` | AGENTS.md past 200 lines gets followed less: 3 slimmer versions, each more aggressive, nothing lost, shown before changes. |
 | [No compatibility code yet: AGENTS.md rules](references/no-compatibility-code-yet.md) `no-compatibility-code-yet` | No users yet, but the agent adds compatibility code and migrations: skip both, then docs, tests, smallest change and cleanup. |
 | [Claude Code permissions: deny, ask and allow commands](references/deny-ask-and-allow-permissions.md) `deny-ask-and-allow-permissions` | Claude deleted a config that 'looked unused': risky commands blocked, pushes ask first, routine ones run, deny always wins. |
 | [Ask before edge-case code: one AGENTS.md line](references/ask-before-edge-case-code.md) `ask-before-edge-case-code` | The agent codes for races that never happen: one line makes it state the risk and the odds, then wait for your OK. |

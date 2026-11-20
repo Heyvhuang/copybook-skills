@@ -1,16 +1,16 @@
 ---
 name: model-tips
-description: "模型和额度 · 23 条：模型搭配、推理强度、缓存倒计时、剩余额度。"
+description: "模型和额度 · 24 条：模型搭配、推理强度、缓存倒计时、剩余额度。"
 disable-model-invocation: true
 ---
 
-# 模型和额度 · 23 条
+# 模型和额度 · 24 条
 
-Copybook 的 23 条「模型和额度」技巧，收藏多的在前。每条要用的文字、放到哪里、最后得到什么，都在 references/ 里它自己的文件中。
+Copybook 的 24 条「模型和额度」技巧，收藏多的在前。每条要用的文字、放到哪里、最后得到什么，都在 references/ 里它自己的文件中。
 
 - 用户点名技巧时，用点名的那条。用户只说了要做什么时，从适用于实际执行者的技巧里，选最符合用户目标和限制的一条。几条同样合适时，选一条即可。选中后，用一句话说明选了哪条、为什么，再读它的文件照着做。另一条也合适，而且换用它会明显改变做法或结果时，顺带点出它的名字和区别。
 - 用户什么都没说：把下面的列表（每条的名字和做什么）给用户看，问用哪条。
-- 都不合适就直说，并建议用 copybook，它会在全部 143 条里找。
+- 都不合适就直说，并建议用 copybook，它会在全部 144 条里找。
 
 | 技巧 | 做什么 |
 | --- | --- |
@@ -23,6 +23,7 @@ Copybook 的 23 条「模型和额度」技巧，收藏多的在前。每条要�
 | [Fable 5 管规划，后端给 Codex](references/fable-plans-codex-builds.md) `fable-plans-codex-builds` | Fable 5 烧 token 太快：规划和前端留给它，后端用 /goal 派给 Codex；另附一条前端改版提示词。 |
 | [设置检查：按 Opus 5.5 成本指南](references/setup-review-by-the-cost-guide.md) `setup-review-by-the-cost-guide` | Opus 5 的老设置在 5.5 上更贵：照 Anthropic 指南查 effort、subagent、MCP、CLAUDE.md，各附改法。 |
 | [换 Opus 5.5 后的「think carefully」清理](references/think-carefully-cleanup.md) `think-carefully-cleanup` | 换了 Opus 5.5，CLAUDE.md 里催它多想、一步步派活、无谓确认的老规则：逐条找出，引原文给改法。 |
+| [Codex 设置检查：按 GPT-6.2 指南](references/codex-setup-vs-the-gpt-6-2-guide.md) `codex-setup-vs-the-gpt-6-2-guide` | Sol 够用却把 Astra 开满：查出模型、effort、subagent 和 AGENTS.md 的问题，各附能粘贴的配置。 |
 | [hillclimb：Claude API 功能降本](references/hillclimb-a-cheaper-feature.md) `hillclimb-a-cheaper-feature` | 最花钱的 Claude API 调用：先搭测试集，再一档档换便宜模型、降 effort，准确率不掉才算数。 |
 | [Fable 5.2 agent 树：Opus 5.5 和 Haiku](references/fable-5-2-agent-tree.md) `fable-5-2-agent-tree` | 每个角色选哪个模型和 effort：Haiku 5.5 找文件、跑测试，Opus 5.5 改代码，Fable 卡住才上 high。 |
 | [Codex：GPT-6.1 Sol 主跑，medium subagent，Astra 终审](references/gpt-6-1-sol-main-astra-reviews.md) `gpt-6-1-sol-main-astra-reviews` | Astra 一周吃光额度：6.1 Sol 用 high 调度、medium 跑 subagent，Astra 只审上线前的大改动。 |

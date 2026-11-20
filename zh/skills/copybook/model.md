@@ -1,6 +1,6 @@
-# 模型和额度 · 23 条
+# 模型和额度 · 24 条
 
-Copybook 的 23 条「模型和额度」技巧，按收藏数排序，与合不合适无关：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../model-tips/references/<名字>.md`。
+Copybook 的 24 条「模型和额度」技巧，按收藏数排序，与合不合适无关：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../model-tips/references/<名字>.md`。
 
 | 技巧 | 做什么 |
 | --- | --- |
@@ -13,6 +13,7 @@ Copybook 的 23 条「模型和额度」技巧，按收藏数排序，与合不�
 | fable-plans-codex-builds | Fable 5 烧 token 太快：规划和前端留给它，后端用 /goal 派给 Codex；另附一条前端改版提示词。 |
 | setup-review-by-the-cost-guide | Opus 5 的老设置在 5.5 上更贵：照 Anthropic 指南查 effort、subagent、MCP、CLAUDE.md，各附改法。 |
 | think-carefully-cleanup | 换了 Opus 5.5，CLAUDE.md 里催它多想、一步步派活、无谓确认的老规则：逐条找出，引原文给改法。 |
+| codex-setup-vs-the-gpt-6-2-guide | Sol 够用却把 Astra 开满：查出模型、effort、subagent 和 AGENTS.md 的问题，各附能粘贴的配置。 |
 | hillclimb-a-cheaper-feature | 最花钱的 Claude API 调用：先搭测试集，再一档档换便宜模型、降 effort，准确率不掉才算数。 |
 | fable-5-2-agent-tree | 每个角色选哪个模型和 effort：Haiku 5.5 找文件、跑测试，Opus 5.5 改代码，Fable 卡住才上 high。 |
 | gpt-6-1-sol-main-astra-reviews | Astra 一周吃光额度：6.1 Sol 用 high 调度、medium 跑 subagent，Astra 只审上线前的大改动。 |

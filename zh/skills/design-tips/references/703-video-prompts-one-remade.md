@@ -39,4 +39,4 @@
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/remake-an-opus-5-5-video-prompt-for-your-product)：@Voxyz_ai 2026年10月22日[发在 X 上](https://x.com/Voxyz_ai/status/2113284251386851617)，截至 2026年10月29日有 214 次收藏。适用于 Claude Code。
+来自 [Copybook](https://copybook.page/zh/t/remake-an-opus-5-5-video-prompt-for-your-product)：@Voxyz_ai 2026年10月22日[发在 X 上](https://x.com/Voxyz_ai/status/2113284251386851617)，截至 2026年11月19日有 212 次收藏。适用于 Claude Code。

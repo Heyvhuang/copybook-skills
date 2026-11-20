@@ -4,11 +4,12 @@ What each version of Copybook's skills added, changed and retired, by week (from
 
 每个版本新增、改动和撤下了哪些技巧，按周列出（每周从周一算起，UTC）。复制块或步骤变了才算改动，只更新收藏数或日期的版本不列。
 
-## Week of 16 Nov 2026 · 1.0.2 to 1.0.7
+## Week of 16 Nov 2026 · 1.0.2 to 1.0.8
 
 **Added · 新增**
 
 - [/learn-taste: design corrections as rules](./skills/design-tips/references/learn-taste-design-corrections.md) · [/learn-taste：设计修正变成规则](./zh/skills/design-tips/references/learn-taste-design-corrections.md)
+- [Codex setup review by OpenAI's GPT-6.2 guide](./skills/model-tips/references/codex-setup-vs-the-gpt-6-2-guide.md) · [Codex 设置检查：按 GPT-6.2 指南](./zh/skills/model-tips/references/codex-setup-vs-the-gpt-6-2-guide.md)
 - [Coordinator skill for Claude Code and Codex](./skills/long-run-tips/references/coordinator-for-claude-and-codex.md) · [Claude Code 和 Codex 的协调者 skill](./zh/skills/long-run-tips/references/coordinator-for-claude-and-codex.md)
 - [Herdr overnight: Opus 5.5 builds, Sol reviews](./skills/long-run-tips/references/herdr-overnight-opus-and-sol.md) · [Herdr 通宵：Opus 5.5 写，Sol 审](./zh/skills/long-run-tips/references/herdr-overnight-opus-and-sol.md)
 - [iOS simulator UI bug check with iPhone Duo](./skills/review-tips/references/ios-simulator-ui-bug-check.md) · [iOS 模拟器 UI bug 检查，含 iPhone Duo](./zh/skills/review-tips/references/ios-simulator-ui-bug-check.md)

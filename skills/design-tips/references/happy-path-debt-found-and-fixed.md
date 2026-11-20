@@ -30,4 +30,4 @@ Agents build for the demo, where everything goes right. In real use, it doesn't.
 
 ## Source
 
-From [Copybook](https://copybook.page/t/fix-happy-path-debt-across-your-app): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2120864199324889469) on 12 Nov 2026, 252 saves as of 13 Nov 2026. For Claude Code and Codex.
+From [Copybook](https://copybook.page/t/fix-happy-path-debt-across-your-app): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2120864199324889469) on 12 Nov 2026, 260 saves as of 19 Nov 2026. For Claude Code and Codex.

@@ -1,8 +1,8 @@
 # Copybook
 
-Copybook 是给用 Claude Code 或 Codex 写代码的人准备的一套 skill。你照常说要做什么，它从 143 条技巧里挑出合适的提示词、规则或检查清单，照着做。你不用记，也不用选。
+Copybook 是给用 Claude Code 或 Codex 写代码的人准备的一套 skill。你照常说要做什么，它从 144 条技巧里挑出合适的提示词、规则或检查清单，照着做。你不用记，也不用选。
 
-这些技巧来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子，合计 22.2万次收藏，统计于 2026年7月22日到 11月18日。
+这些技巧来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子，合计 22.4万次收藏，统计于 2026年7月22日到 11月19日。
 
 [copybook.page](https://copybook.page/zh/) · [用邮件收新技巧（英文）](https://copybook.page/zh/about#email-about-title) · [更新记录](CHANGELOG.md) · [English](README.md)
 
@@ -94,13 +94,13 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 - **[验收](#验收)** · 16 条：PR、代码和计划复查、bug 打分、红队提示词、skill 回测。
 - **[设计](#设计)** · 33 条：先出图再写页面、动效库、参考网站、设计 skill。
 - **[长任务](#长任务)** · 22 条：多 agent 分工、交接、进度看板、会话周历、遗留待办。
-- **[模型和额度](#模型和额度)** · 23 条：模型搭配、推理强度、缓存倒计时、剩余额度。
+- **[模型和额度](#模型和额度)** · 24 条：模型搭配、推理强度、缓存倒计时、剩余额度。
 - **[上线推广](#上线推广)** · 11 条：上线前检查清单、搜索引流小工具、VPS 加固。
 - **[写作](#写作)** · 5 条：Orwell 写作规则、去 AI 腔、README 改写、任务说明。
 
 要自己打开 Copybook，输入 `/copybook-zh:copybook` 或 `/copybook`，在 Codex 里输入 `$copybook`。输入 `/copybook-zh:design-tips` 可以浏览设计技巧，命令后加上技巧名即可使用。
 
-按话题分，收藏多的在前；收藏数统计于 2026年7月22日到 11月18日，每条的日期在它的文件里。
+按话题分，收藏多的在前；收藏数统计于 2026年7月22日到 11月19日，每条的日期在它的文件里。
 
 技巧里用到的词在[词汇表](docs/glossary.zh-CN.md)，只留在 copybook.page 上的技巧在[范围](docs/scope.md#范围)。
 
@@ -128,8 +128,8 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | **[CI 耗时审计：150 次运行，9 项检查](./zh/skills/codebase-tips/references/ci-time-audit.md)** `ci-time-audit`<br>代码几分钟写完，每个 PR 却在等 CI：最慢的 5 个任务拆成排队、准备和运行，每处改动指到哪一行。 | 1,228 |
 | **[agent 工作区清点](./zh/skills/codebase-tips/references/agent-workspace-audit.md)** `agent-workspace-audit`<br>agent 越用越笨先别怪模型：说明、skill、MCP 和记忆列成「保留 / 删除」清单，你批准后再清。 | 887 |
 | **[agent 记忆工具：8 个仓库分 4 类](./zh/skills/codebase-tips/references/agent-memory-tools-8-repos.md)** `agent-memory-tools-8-repos`<br>agent 记不住代码、资料、对话和长任务：8 个仓库分 4 类，每类挑一个装，装前先给你看命令。 | 869 |
+| **[带 ASCII 图的全项目审查](./zh/skills/codebase-tips/references/whole-project-audit.md)** `whole-project-audit`<br>坏的、不一致或用不上的代码：改动前先讲清它怎么连起来，有把握的修掉，其余列出来。 | 785 |
 | **[AGENTS.md 瘦身：3 套方案并排](./zh/skills/codebase-tips/references/3-slimmer-agents-md-plans.md)** `3-slimmer-agents-md-plans`<br>AGENTS.md 超过 200 行就不照做了：3 版更精简的并排，一版比一版激进，不丢规则，改前先给你看。 | 781 |
-| **[带 ASCII 图的全项目审查](./zh/skills/codebase-tips/references/whole-project-audit.md)** `whole-project-audit`<br>坏的、不一致或用不上的代码：改动前先讲清它怎么连起来，有把握的修掉，其余列出来。 | 770 |
 | **[还没用户就不写兼容代码：AGENTS.md 规则](./zh/skills/codebase-tips/references/no-compatibility-code-yet.md)** `no-compatibility-code-yet`<br>项目还没人用，agent 却在写兼容代码：跳过兼容和迁移，每次改动走文档、测试、最小实现、清理。 | 756 |
 | **[deny、ask、allow 权限规则](./zh/skills/codebase-tips/references/deny-ask-and-allow-permissions.md)** `deny-ask-and-allow-permissions`<br>顺手删过「看起来没用」的配置：危险命令直接拦，push 和发布前先问，日常放行，deny 永远优先。 | 662 |
 | **[加边界代码前先问：AGENTS.md 一行](./zh/skills/codebase-tips/references/ask-before-edge-case-code.md)** `ask-before-edge-case-code`<br>agent 总为几乎不会发生的边界情况加代码：一行规则让它先说会出什么问题、概率多大，等你点头。 | 601 |
@@ -199,9 +199,9 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | **[视频提示词里的运镜名称](./zh/skills/design-tips/references/camera-moves-for-video-prompts.md)** `camera-moves-for-video-prompts`<br>Opus 5.5 做的视频像幻灯片：6 种运镜的名字和各自效果，外加要写的秒数和速度。 | 354 |
 | **[/learn-taste：设计修正变成规则](./zh/skills/design-tips/references/learn-taste-design-corrections.md)** `learn-taste-design-corrections`<br>你总在改同样的设计错误：一次会话里的每个修正，都变成一条带理由的严格规则。 | 314 |
 | **[CLAUDE.md 像素画渲染规则](./zh/skills/design-tips/references/pixel-art-rendering-rules.md)** `pixel-art-rendering-rules`<br>精灵图里清晰的像素到屏幕上变糊：纹理用 Nearest，整数倍缩放，镜头和精灵按同一方式取整。 | 306 |
-| **[happy-path 债务排查和修复](./zh/skills/design-tips/references/happy-path-debt-found-and-fixed.md)** `happy-path-debt-found-and-fixed`<br>界面只在数据加载快、什么都不出错时才正常：缺的状态和布局错乱逐个组件修好，设计不变。 | 252 |
+| **[happy-path 债务排查和修复](./zh/skills/design-tips/references/happy-path-debt-found-and-fixed.md)** `happy-path-debt-found-and-fixed`<br>界面只在数据加载快、什么都不出错时才正常：缺的状态和布局错乱逐个组件修好，设计不变。 | 260 |
 | **[Unslop 提示词：去掉页面 AI 味](./zh/skills/design-tips/references/unslop-prompt.md)** `unslop-prompt`<br>页面第一眼就像 AI 做的：列出每处 AI 味的痕迹，先写 5 行方向等你点头，再一轮一轮改。 | 240 |
-| **[703 条 Opus 5.5 视频提示词，重做一条](./zh/skills/design-tips/references/703-video-prompts-one-remade.md)** `703-video-prompts-one-remade`<br>给产品做一支爆款那样的视频：703 条提示词里最适合你的 5 条，你选的那条重做成一个 HTML 文件。 | 214 |
+| **[703 条 Opus 5.5 视频提示词，重做一条](./zh/skills/design-tips/references/703-video-prompts-one-remade.md)** `703-video-prompts-one-remade`<br>给产品做一支爆款那样的视频：703 条提示词里最适合你的 5 条，你选的那条重做成一个 HTML 文件。 | 212 |
 | **[Hallmark：审查和重做 AI 味页面](./zh/skills/design-tips/references/hallmark-audit-and-redesign.md)** `hallmark-audit-and-redesign`<br>标题上方的小标签一眼暴露是 AI 做的：一条命令列出页面的问题，另一条整页重做，内容和表单保留。 | 188 |
 | **[Internet Archive 的公有领域素材](./zh/skills/design-tips/references/internet-archive-clips-and-music.md)** `internet-archive-clips-and-music`<br>镜头需要老电影或老唱片：自动搜 Internet Archive 的免费 API，只用公有领域条目，每条记下来源。 | 162 |
 | **[设计师开源的落地页 skill](./zh/skills/design-tips/references/designers-landing-page-skill.md)** `designers-landing-page-skill`<br>想要有设计感的落地页：一轮问题问完，布局、文案、字体和间距都替你定。 | 159 |
@@ -251,6 +251,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | **[Fable 5 管规划，后端给 Codex](./zh/skills/model-tips/references/fable-plans-codex-builds.md)** `fable-plans-codex-builds`<br>Fable 5 烧 token 太快：规划和前端留给它，后端用 /goal 派给 Codex；另附一条前端改版提示词。 | 2,520 |
 | **[设置检查：按 Opus 5.5 成本指南](./zh/skills/model-tips/references/setup-review-by-the-cost-guide.md)** `setup-review-by-the-cost-guide`<br>Opus 5 的老设置在 5.5 上更贵：照 Anthropic 指南查 effort、subagent、MCP、CLAUDE.md，各附改法。 | 2,167 |
 | **[换 Opus 5.5 后的「think carefully」清理](./zh/skills/model-tips/references/think-carefully-cleanup.md)** `think-carefully-cleanup`<br>换了 Opus 5.5，CLAUDE.md 里催它多想、一步步派活、无谓确认的老规则：逐条找出，引原文给改法。 | 2,130 |
+| **[Codex 设置检查：按 GPT-6.2 指南](./zh/skills/model-tips/references/codex-setup-vs-the-gpt-6-2-guide.md)** `codex-setup-vs-the-gpt-6-2-guide`<br>Sol 够用却把 Astra 开满：查出模型、effort、subagent 和 AGENTS.md 的问题，各附能粘贴的配置。 | 1,929 |
 | **[hillclimb：Claude API 功能降本](./zh/skills/model-tips/references/hillclimb-a-cheaper-feature.md)** `hillclimb-a-cheaper-feature`<br>最花钱的 Claude API 调用：先搭测试集，再一档档换便宜模型、降 effort，准确率不掉才算数。 | 1,710 |
 | **[Fable 5.2 agent 树：Opus 5.5 和 Haiku](./zh/skills/model-tips/references/fable-5-2-agent-tree.md)** `fable-5-2-agent-tree`<br>每个角色选哪个模型和 effort：Haiku 5.5 找文件、跑测试，Opus 5.5 改代码，Fable 卡住才上 high。 | 1,338 |
 | **[Codex：GPT-6.1 Sol 主跑，medium subagent，Astra 终审](./zh/skills/model-tips/references/gpt-6-1-sol-main-astra-reviews.md)** `gpt-6-1-sol-main-astra-reviews`<br>Astra 一周吃光额度：6.1 Sol 用 high 调度、medium 跑 subagent，Astra 只审上线前的大改动。 | 1,061 |

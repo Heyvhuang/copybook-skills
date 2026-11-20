@@ -22,8 +22,8 @@ Copybook 的 33 条「代码库」技巧，按收藏数排序，与合不合适�
 | ci-time-audit | 代码几分钟写完，每个 PR 却在等 CI：最慢的 5 个任务拆成排队、准备和运行，每处改动指到哪一行。 |
 | agent-workspace-audit | agent 越用越笨先别怪模型：说明、skill、MCP 和记忆列成「保留 / 删除」清单，你批准后再清。 |
 | agent-memory-tools-8-repos | agent 记不住代码、资料、对话和长任务：8 个仓库分 4 类，每类挑一个装，装前先给你看命令。 |
-| 3-slimmer-agents-md-plans | AGENTS.md 超过 200 行就不照做了：3 版更精简的并排，一版比一版激进，不丢规则，改前先给你看。 |
 | whole-project-audit | 坏的、不一致或用不上的代码：改动前先讲清它怎么连起来，有把握的修掉，其余列出来。 |
+| 3-slimmer-agents-md-plans | AGENTS.md 超过 200 行就不照做了：3 版更精简的并排，一版比一版激进，不丢规则，改前先给你看。 |
 | no-compatibility-code-yet | 项目还没人用，agent 却在写兼容代码：跳过兼容和迁移，每次改动走文档、测试、最小实现、清理。 |
 | deny-ask-and-allow-permissions | 顺手删过「看起来没用」的配置：危险命令直接拦，push 和发布前先问，日常放行，deny 永远优先。 |
 | ask-before-edge-case-code | agent 总为几乎不会发生的边界情况加代码：一行规则让它先说会出什么问题、概率多大，等你点头。 |

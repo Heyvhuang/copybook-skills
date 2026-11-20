@@ -1,11 +1,11 @@
 ---
 name: copybook
-description: "Load unasked: plan, multi-file PR review (no tiny edits); repeat mistakes; 2 failed fixes; handoffs; ready-made prompts, rules; usage or models; site launch prep. A one- or two-line edit, one small new file or a single question, such as explaining one error: just do it, unless the user is correcting the same mistake a second time. When the user names Copybook or one of its tips, always load. Also: long-run reports; multi-session or multi-agent work; page design, redesign or de-AI look; AGENTS.md, CLAUDE.md or agent permissions; installing a skill or plugin; rewriting a whole README for new readers, or a task brief. Handle one README section or a small wording fix directly. Also when the user asks for a checklist or a setup, or what Copybook has. 143 prompts, rules, checklists and setups, picked by situation."
+description: "Load unasked: plan, multi-file PR review (no tiny edits); repeat mistakes; 2 failed fixes; handoffs; ready-made prompts, rules; usage or models; site launch prep. A one- or two-line edit, one small new file or a single question, such as explaining one error: just do it, unless the user is correcting the same mistake a second time. When the user names Copybook or one of its tips, always load. Also: long-run reports; multi-session or multi-agent work; page design, redesign or de-AI look; AGENTS.md, CLAUDE.md or agent permissions; installing a skill or plugin; rewriting a whole README for new readers, or a task brief. Handle one README section or a small wording fix directly. Also when the user asks for a checklist or a setup, or what Copybook has. 144 prompts, rules, checklists and setups, picked by situation."
 ---
 
 # Copybook
 
-Copybook has 143 tips for coding agents: prompts, rules, checklists and setups, each from a post readers saved on X. They are filed under the 7 topics below. Each topic's list is a file beside this one; each tip's text is a file in its topic skill's references/.
+Copybook has 144 tips for coding agents: prompts, rules, checklists and setups, each from a post readers saved on X. They are filed under the 7 topics below. Each topic's list is a file beside this one; each tip's text is a file in its topic skill's references/.
 
 Pick the tip for the user and use it: they want the right one used, not a list to choose from.
 
@@ -44,11 +44,11 @@ Multi-agent roles, progress dashboards, handoffs, remote workflows. List: [long-
 
 Tips: 7-role-prompts-from-idea-to-done, bedtime-report-of-safe-tasks, codex-remote-workflow, coordinator-for-claude-and-codex, decision-page-for-long-tasks, goal-wrapper-and-5-prompts, grok-bot-team-of-6-roles, handoff-md-for-the-next-agent, herdr-app-opus-5-5-coordinates, herdr-astra-coordinates-workers, herdr-claude-and-codex-panes, herdr-overnight-opus-and-sol, job-worth-a-dynamic-workflow, later-items-from-20-sessions, one-way-door-rules-when-to-ask, orca-a-task-across-cli-agents, overnight-goal-for-open-issues, progress-dashboard-subagent, scheduled-agents-review, slow-computer-audit-for-agents, to-dos-first-in-long-reports, week-calendar-from-sessions.
 
-### Models and cost · 23 tips
+### Models and cost · 24 tips
 
 Model pairings, effort, cache timing, leftover quota. List: [model.md](model.md)
 
-Tips: 3-habits-burning-your-usage, advisor-fable-on-call, advisor-opus-on-call, astra-without-default-subagents, claude-code-token-waste-audit, fable-5-2-agent-tree, fable-5-2-plans-opus-builds, fable-main-opus-subagents, fable-plans-codex-builds, gpt-6-1-sol-main-astra-reviews, gpt-6-pro-plan-handed-to-codex, hillclimb-a-cheaper-feature, leftover-quota-5-goal-prompts, luna-max-as-a-codex-subagent, old-rules-review-for-astra, old-rules-review-for-fable-5-2, openais-5-cheap-harness-rules, opus-5-5-main-medium-subagents, rules-check-for-sol-and-luna, setup-review-by-the-cost-guide, setup-review-by-the-model-guide, status-line-cache-countdown, think-carefully-cleanup.
+Tips: 3-habits-burning-your-usage, advisor-fable-on-call, advisor-opus-on-call, astra-without-default-subagents, claude-code-token-waste-audit, codex-setup-vs-the-gpt-6-2-guide, fable-5-2-agent-tree, fable-5-2-plans-opus-builds, fable-main-opus-subagents, fable-plans-codex-builds, gpt-6-1-sol-main-astra-reviews, gpt-6-pro-plan-handed-to-codex, hillclimb-a-cheaper-feature, leftover-quota-5-goal-prompts, luna-max-as-a-codex-subagent, old-rules-review-for-astra, old-rules-review-for-fable-5-2, openais-5-cheap-harness-rules, opus-5-5-main-medium-subagents, rules-check-for-sol-and-luna, setup-review-by-the-cost-guide, setup-review-by-the-model-guide, status-line-cache-countdown, think-carefully-cleanup.
 
 ### Launch · 11 tips
 

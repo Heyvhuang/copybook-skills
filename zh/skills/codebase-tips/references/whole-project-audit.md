@@ -28,4 +28,4 @@
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/audit-your-messiest-project-on-fable-5-2)：@Voxyz_ai 2026年11月12日[发在 X 上](https://x.com/Voxyz_ai/status/2120954788762255438)，截至 2026年11月13日有 770 次收藏。适用于 Claude Code。
+来自 [Copybook](https://copybook.page/zh/t/audit-your-messiest-project-on-fable-5-2)：@Voxyz_ai 2026年11月12日[发在 X 上](https://x.com/Voxyz_ai/status/2120954788762255438)，截至 2026年11月19日有 785 次收藏。适用于 Claude Code。

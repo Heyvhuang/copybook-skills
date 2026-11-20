@@ -1,8 +1,8 @@
 # Copybook
 
-Copybook is a skill pack for people who code with Claude Code or Codex. You ask for the work as usual, and it picks the prompt, rule or checklist that fits the task from the 143 tips, then follows it. You have nothing to remember and nothing to choose.
+Copybook is a skill pack for people who code with Claude Code or Codex. You ask for the work as usual, and it picks the prompt, rule or checklist that fits the task from the 144 tips, then follows it. You have nothing to remember and nothing to choose.
 
-The tips are the posts readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai) on X: 222K saves in all, counted between 22 Jul and 18 Nov 2026.
+The tips are the posts readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai) on X: 224K saves in all, counted between 22 Jul and 19 Nov 2026.
 
 [copybook.page](https://copybook.page) · [New tips by email](https://copybook.page/about#email-about-title) · [Changelog](CHANGELOG.md) · [中文](README.zh-CN.md)
 
@@ -94,13 +94,13 @@ When no tip fits, it leaves Copybook out of it and carries on with your task. If
 - **[Review](#review)** · 16 tips: PR, code, and plan reviews, bug scoring, skill audits and backtests.
 - **[Design](#design)** · 33 tips: image-first pages, motion libraries, reference sites, design skills.
 - **[Long runs](#long-runs)** · 22 tips: multi-agent roles, progress dashboards, handoffs, remote workflows.
-- **[Models and cost](#models-and-cost)** · 23 tips: model pairings, effort, cache timing, leftover quota.
+- **[Models and cost](#models-and-cost)** · 24 tips: model pairings, effort, cache timing, leftover quota.
 - **[Launch](#launch)** · 11 tips: pre-launch, speed, and legal checks, SEO tool pages, VPS lockdown.
 - **[Writing](#writing)** · 5 tips: Orwell's rules, one-line de-AI prompt, README rewrites, task briefs.
 
 To open Copybook yourself, type `/copybook:copybook` (or `/copybook`). In Codex, type `$copybook`. To browse a topic, use a command such as `/copybook:design-tips`. Add the tip's name to use it.
 
-Grouped by topic, most saved first; saves counted between 22 Jul and 18 Nov 2026, each tip's date in its file.
+Grouped by topic, most saved first; saves counted between 22 Jul and 19 Nov 2026, each tip's date in its file.
 
 The words the tips use are in the [glossary](docs/glossary.md); the tips that stay on copybook.page are listed in [scope](docs/scope.md).
 
@@ -128,8 +128,8 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[CI time audit: 150 runs, 9 checks](./skills/codebase-tips/references/ci-time-audit.md)** `ci-time-audit`<br>Code takes minutes, then each PR waits on CI: the 5 slowest jobs split into queue, setup and run, and the line to change per fix. | 1.2K |
 | **[Agent workspace audit](./skills/codebase-tips/references/agent-workspace-audit.md)** `agent-workspace-audit`<br>Your agent feels dumber over time: every instruction, skill, MCP and memory marked KEEP or REMOVE, cleared on your OK. | 887 |
 | **[Agent memory tools: 8 repos in 4 kinds](./skills/codebase-tips/references/agent-memory-tools-8-repos.md)** `agent-memory-tools-8-repos`<br>No memory of code, notes, sessions or long tasks: 8 repos in those 4 kinds, one of each installed on your OK. | 869 |
+| **[Whole-project audit with ASCII diagrams](./skills/codebase-tips/references/whole-project-audit.md)** `whole-project-audit`<br>Broken, inconsistent or unneeded code: how it connects explained before any change, what it's sure about fixed, the rest listed. | 785 |
 | **[3 slimmer AGENTS.md plans side by side](./skills/codebase-tips/references/3-slimmer-agents-md-plans.md)** `3-slimmer-agents-md-plans`<br>AGENTS.md past 200 lines gets followed less: 3 slimmer versions, each more aggressive, nothing lost, shown before changes. | 781 |
-| **[Whole-project audit with ASCII diagrams](./skills/codebase-tips/references/whole-project-audit.md)** `whole-project-audit`<br>Broken, inconsistent or unneeded code: how it connects explained before any change, what it's sure about fixed, the rest listed. | 770 |
 | **[No compatibility code yet: AGENTS.md rules](./skills/codebase-tips/references/no-compatibility-code-yet.md)** `no-compatibility-code-yet`<br>No users yet, but the agent adds compatibility code and migrations: skip both, then docs, tests, smallest change and cleanup. | 756 |
 | **[Claude Code permissions: deny, ask and allow commands](./skills/codebase-tips/references/deny-ask-and-allow-permissions.md)** `deny-ask-and-allow-permissions`<br>Claude deleted a config that 'looked unused': risky commands blocked, pushes ask first, routine ones run, deny always wins. | 662 |
 | **[Ask before edge-case code: one AGENTS.md line](./skills/codebase-tips/references/ask-before-edge-case-code.md)** `ask-before-edge-case-code`<br>The agent codes for races that never happen: one line makes it state the risk and the odds, then wait for your OK. | 601 |
@@ -199,9 +199,9 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[Camera moves to name in video prompts](./skills/design-tips/references/camera-moves-for-video-prompts.md)** `camera-moves-for-video-prompts`<br>Opus 5.5 videos that look like a slideshow: six camera moves by name with what each one does, plus seconds and speed to add. | 354 |
 | **[/learn-taste: design corrections as rules](./skills/design-tips/references/learn-taste-design-corrections.md)** `learn-taste-design-corrections`<br>You keep fixing the same design mistakes: each correction in a session turned into a strict rule with reasoning. | 314 |
 | **[Pixel art rendering rules for CLAUDE.md](./skills/design-tips/references/pixel-art-rendering-rules.md)** `pixel-art-rendering-rules`<br>Pixels crisp in your sprites but blurry on screen: textures on Nearest, whole-number scaling, camera and sprites rounded alike. | 306 |
-| **[Happy-path debt, found and fixed](./skills/design-tips/references/happy-path-debt-found-and-fixed.md)** `happy-path-debt-found-and-fixed`<br>Screens that only work when data loads fast and nothing fails: missing states and layout breaks fixed per component, design kept. | 252 |
+| **[Happy-path debt, found and fixed](./skills/design-tips/references/happy-path-debt-found-and-fixed.md)** `happy-path-debt-found-and-fixed`<br>Screens that only work when data loads fast and nothing fails: missing states and layout breaks fixed per component, design kept. | 260 |
 | **[Unslop prompt for pages that look AI-made](./skills/design-tips/references/unslop-prompt.md)** `unslop-prompt`<br>Pages that scream AI at first glance: every slop sign listed, a five-line direction for your OK, then fixes pass by pass. | 240 |
-| **[703 Opus 5.5 video prompts, one remade for you](./skills/design-tips/references/703-video-prompts-one-remade.md)** `703-video-prompts-one-remade`<br>A product video like the viral ones: the 5 of 703 prompts that fit your product, your pick remade as one HTML file. | 214 |
+| **[703 Opus 5.5 video prompts, one remade for you](./skills/design-tips/references/703-video-prompts-one-remade.md)** `703-video-prompts-one-remade`<br>A product video like the viral ones: the 5 of 703 prompts that fit your product, your pick remade as one HTML file. | 212 |
 | **[Hallmark: audit and redesign AI-looking pages](./skills/design-tips/references/hallmark-audit-and-redesign.md)** `hallmark-audit-and-redesign`<br>A tiny label above every heading gives AI away: one command lists what's wrong with a page, another rebuilds it, content kept. | 188 |
 | **[Internet Archive public-domain clips and music](./skills/design-tips/references/internet-archive-clips-and-music.md)** `internet-archive-clips-and-music`<br>A shot needing old film or old records: the Internet Archive's free API searched, public-domain items only, each one logged. | 162 |
 | **[A designer's landing-page skill](./skills/design-tips/references/designers-landing-page-skill.md)** `designers-landing-page-skill`<br>A landing page that looks designed: layout, copy, fonts and spacing handled after one round of questions. | 159 |
@@ -251,6 +251,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[Fable 5 plans, Codex builds the backend](./skills/model-tips/references/fable-plans-codex-builds.md)** `fable-plans-codex-builds`<br>Fable 5 burns tokens fast: planning and frontend stay with it, the backend goes to Codex by /goal; a redesign prompt too. | 2.5K |
 | **[Setup review by the Opus 5.5 cost guide](./skills/model-tips/references/setup-review-by-the-cost-guide.md)** `setup-review-by-the-cost-guide`<br>Settings carried over from Opus 5 cost more on 5.5: effort, subagents, MCP servers and CLAUDE.md checked, a small fix each. | 2.2K |
 | **[Think-carefully cleanup for Opus 5.5](./skills/model-tips/references/think-carefully-cleanup.md)** `think-carefully-cleanup`<br>Opus 5.5 already thinks before it answers: rules that push extra thinking, dole out steps or stop to confirm, quoted with a fix. | 2.1K |
+| **[Codex setup review by OpenAI's GPT-6.2 guide](./skills/model-tips/references/codex-setup-vs-the-gpt-6-2-guide.md)** `codex-setup-vs-the-gpt-6-2-guide`<br>Maxing out Astra when Sol would do: model, effort, subagent and AGENTS.md problems found, each with a config fix to paste. | 1.9K |
 | **[hillclimb: a cheaper Claude API feature](./skills/model-tips/references/hillclimb-a-cheaper-feature.md)** `hillclimb-a-cheaper-feature`<br>Your costliest Claude API feature: a test set first, then cheaper models and lower effort step by step while accuracy holds. | 1.7K |
 | **[Fable 5.2 agent tree with Opus 5.5 and Haiku](./skills/model-tips/references/fable-5-2-agent-tree.md)** `fable-5-2-agent-tree`<br>Picking a model and effort per role: Haiku 5.5 finds files and runs tests, Opus 5.5 edits code, Fable on high only if stuck. | 1.3K |
 | **[Codex: GPT-6.1 Sol main, medium subagents, Astra review](./skills/model-tips/references/gpt-6-1-sol-main-astra-reviews.md)** `gpt-6-1-sol-main-astra-reviews`<br>Astra eats a week's quota: 6.1 Sol on high as orchestrator, on medium for 3 subagents, Astra only to review big changes. | 1.1K |

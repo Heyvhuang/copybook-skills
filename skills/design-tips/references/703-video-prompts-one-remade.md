@@ -39,4 +39,4 @@ The repo: https://github.com/yihui-dev/awesome-opus5-5-videos
 
 ## Source
 
-From [Copybook](https://copybook.page/t/remake-an-opus-5-5-video-prompt-for-your-product): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2113284251386851617) on 22 Oct 2026, 214 saves as of 29 Oct 2026. For Claude Code.
+From [Copybook](https://copybook.page/t/remake-an-opus-5-5-video-prompt-for-your-product): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2113284251386851617) on 22 Oct 2026, 212 saves as of 19 Nov 2026. For Claude Code.

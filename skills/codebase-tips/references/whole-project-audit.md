@@ -28,4 +28,4 @@ Open your messiest project in Claude Code, type `/model` and pick Fable 5.2.
 
 ## Source
 
-From [Copybook](https://copybook.page/t/audit-your-messiest-project-on-fable-5-2): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2120954788762255438) on 12 Nov 2026, 770 saves as of 13 Nov 2026. For Claude Code.
+From [Copybook](https://copybook.page/t/audit-your-messiest-project-on-fable-5-2): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2120954788762255438) on 12 Nov 2026, 785 saves as of 19 Nov 2026. For Claude Code.
