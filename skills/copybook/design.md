@@ -1,6 +1,6 @@
-# Design · 32 tips
+# Design · 33 tips
 
-Copybook's 32 tips on design. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../design-tips/references/<name>.md`.
+Copybook's 33 tips on design. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../design-tips/references/<name>.md`.
 
 | Tip | What it does |
 | --- | --- |
@@ -29,6 +29,7 @@ Copybook's 32 tips on design. The order is by saves, not by fit: read the whole 
 | image-options-in-one-grid | Image options drawn one at a time burn your limits: a global rule puts them all in one numbered grid, then builds your pick. |
 | camera-moves-for-video-prompts | Opus 5.5 videos that look like a slideshow: six camera moves by name with what each one does, plus seconds and speed to add. |
 | learn-taste-design-corrections | You keep fixing the same design mistakes: each correction in a session turned into a strict rule with reasoning. |
+| pixel-art-rendering-rules | Pixels crisp in your sprites but blurry on screen: textures on Nearest, whole-number scaling, camera and sprites rounded alike. |
 | happy-path-debt-found-and-fixed | Screens that only work when data loads fast and nothing fails: missing states and layout breaks fixed per component, design kept. |
 | unslop-prompt | Pages that scream AI at first glance: every slop sign listed, a five-line direction for your OK, then fixes pass by pass. |
 | 703-video-prompts-one-remade | A product video like the viral ones: the 5 of 703 prompts that fit your product, your pick remade as one HTML file. |

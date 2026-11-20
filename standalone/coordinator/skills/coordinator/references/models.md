@@ -18,7 +18,7 @@ The one place for exact model IDs and effort in a coordinator run; in that run i
 | Routine review, scans, audits | Codex `gpt-6.1-sol`, high | Codex may review front-end lanes; it never edits them. |
 | Gates, ship lane, mechanical follow-ups | Codex `gpt-6.1-sol`, medium (Opus 5.5 medium for front-end files) | Long, mechanical work. |
 | Lists, extraction, formatting | Claude Sonnet 5.5 (`claude-sonnet-5-5`), medium | Cheap volume. |
-| Second reader for design and copy (optional) | Gemini 4 Argon through `scripts/gemini.mjs`, or a second Claude reviewer | Finds faults and proposes; never writes code. |
+| Second reader for design and copy (optional) | Gemini 4 Argon through `scripts/gemini.mjs`, or a second Claude reviewer | Read-only feedback on the proposed work. |
 
 Fable was left out to save quota. `max` only when the user asks; an Opus max round took over an hour on a loaded machine.
 
@@ -43,7 +43,9 @@ When a model is out of reach (quota, outage, provider disabled): Codex Astra rev
 
 ## Gemini (optional)
 
-`scripts/gemini.mjs` sends text and images to Gemini 4 Argon through the Vercel AI Gateway, with no tools: `node <skill>/scripts/gemini.mjs <prompt.md> <out.md> [images…]`, model `google/gemini-4-argon` (or `GEMINI_MODEL`), key in `AI_GATEWAY_API_KEY`. Each call costs a few cents, so use it only where the user agreed to the cost. Give it the options, the rules that apply and the run's taste notes (`<run-dir>/taste.md`), and ask what the user would dislike in each. It finds faults and proposes; it never writes code.
+Use the optional second reader for feedback. For copy, ask it to check wording and tone in the languages used. For visual review, give it the screenshots and the brief, and choose a model that accepts images. Give either reviewer the applicable rules and the run's taste notes (`<run-dir>/taste.md`).
+
+Run `node <skill>/scripts/gemini.mjs <prompt.md> <out.md> [images…]` to send text and images through the Vercel AI Gateway, with no tools. Set `GEMINI_MODEL` to an available Gateway model ID for the review and use `AI_GATEWAY_API_KEY` for access. Use the helper only where the user agreed to the cost.
 
 ## Images
 

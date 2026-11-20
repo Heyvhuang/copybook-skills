@@ -1,6 +1,10 @@
 # Copybook
 
-Copybook picks a tip for your coding agent by the situation it is in. You ask for the work as usual, and a skill that loads by itself picks one of the 142 tips and follows it. You have nothing to remember and nothing to choose. The tips are the prompts, rules and setups readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai)'s posts on X.
+Copybook is a skill pack for people who code with Claude Code or Codex. You ask for the work as usual, and it picks the prompt, rule or checklist that fits the task from the 143 tips, then follows it. You have nothing to remember and nothing to choose.
+
+The tips are the posts readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai) on X: 222K saves in all, counted between 22 Jul and 18 Nov 2026.
+
+[copybook.page](https://copybook.page) · [New tips by email](https://copybook.page/about#email-about-title) · [Changelog](CHANGELOG.md) · [中文](README.zh-CN.md)
 
 ```text
 copybook ──────────────────────────
@@ -10,59 +14,20 @@ copybook ───────────────────────�
   ·····•·····
 
 › This page looks AI-made, redo it
-  Design list · picks 1 of 32
-  ············•···················
+  Design list · picks 1 of 33
+  ············•····················
 
 › Trim our AGENTS.md
   Codebase list · picks 1 of 33
   ·······················•·········
-
-› Review this PR before I merge
-  Review list · picks 1 of 16
-  ···········•····
 ───────────────────────────────────
   then names the tip, and why,
   and works through its steps
 ```
 
-[copybook.page](https://copybook.page) · [New tips by email](https://copybook.page/#email-bottom-title) · [Changelog](CHANGELOG.md) · [中文](README.zh-CN.md)
-
-First public release: [1.0.0](CHANGELOG.md), 14 Nov 2026, 134 tips.
-
-## Table of contents
-
-- [How it works](#how-it-works)
-- [Install](#install)
-  - [Claude Code](#claude-code)
-  - [Codex](#codex)
-  - [Cursor, Copilot, Gemini CLI and others](#cursor-copilot-gemini-cli-and-others)
-  - [ChatGPT workspace](#chatgpt-workspace)
-- [What it picks from](#what-it-picks-from)
-- [When something goes wrong](#when-something-goes-wrong)
-- [Community](#community)
-- [What's inside](#whats-inside)
-- [Philosophy](#philosophy)
-- [Contributing](#contributing)
-- [Updating](#updating)
-- [License](#license)
-
-## How it works
-
-It starts when you ask your coding agent for something Copybook has a tip for: review a PR, get a site ready to launch, trim an AGENTS.md. Before it starts on the work, the agent opens the list for that topic and reads all of it, because a tip's name doesn't say what the tip does. Then it picks one.
-
-It tells you in one sentence which tip it picked and why. If a second tip would change the result, it names that one too and says how the two differ.
-
-Then it follows the tip's steps. The prompt or rule inside is the post's own text. Anything a tip adds to your files, the agent shows you first. Any command a tip runs, it asks before running.
-
-When no tip fits, it leaves Copybook out of it and carries on with your task. If you opened Copybook yourself, it tells you that nothing fits.
-
-Because the skill loads by itself when a task fits, you don't need to remember that a tip exists.
-
 ## Install
 
 The plugin holds only Markdown, YAML, JSON and PNG files, with no scripts, hooks or MCP server. It adds 8 skills to your agent's list: one that loads by itself and 7 topic menus you open yourself.
-
-Install it one way per agent: the plugin and the skills.sh copy together list every skill twice.
 
 ### Claude Code
 
@@ -92,25 +57,13 @@ codex plugin marketplace add Heyvhuang/copybook-skills
 codex plugin add copybook@copybook
 ```
 
-To refresh the marketplace and install the updated Copybook plugin, run:
-
-```bash
-codex plugin marketplace upgrade copybook
-codex plugin add copybook@copybook
-codex plugin list --json
-```
-
 ### Cursor, Copilot, Gemini CLI and others
 
 ```bash
 npx skills@latest add Heyvhuang/copybook-skills
 ```
 
-To update the Copybook skills you installed, run this in the same project, or choose the global scope for a global install.
-
-```bash
-npx skills@latest update copybook codebase-tips review-tips design-tips long-run-tips model-tips launch-tips writing-tips
-```
+Install it one way per agent: the plugin and the skills.sh copy together list every skill twice.
 
 ### ChatGPT workspace
 
@@ -118,49 +71,42 @@ A workspace admin opens **Admin → Plugins → Add → Import marketplace**. En
 
 Members install `copybook` once. ChatGPT syncs the marketplace daily. A ZIP uploaded through **Skills** stays at the uploaded version.
 
-## What it picks from
+## How it works
 
-142 prompts, rules, checklists, and setups. Auto-loads one when a task fits, or browse.
+It starts when you ask your coding agent for something Copybook has a tip for: review a PR, get a site ready to launch, trim an AGENTS.md. Before it starts on the work, the agent opens the list for that topic and reads all of it, because a tip's name doesn't say what the tip does. Then it picks one.
 
-These are the situations the skill watches for, each under the shelf whose list it reads first. When that list has no tip made for the job, it reads a second.
+It tells you in one sentence which tip it picked and why. If a second tip would change the result, it names that one too and says how the two differ.
 
-1. **codebase-tips** - Writing or trimming AGENTS.md, CLAUDE.md or agent permissions. A fix that still fails after two tries.
-2. **review-tips** - Installing an agent skill or plugin. Reviewing a plan, a diff or a PR before work goes on.
-3. **design-tips** - Designing or redesigning a page, landing page or dashboard, or making it look less AI-made.
-4. **long-run-tips** - A handoff, a task that spans several sessions or agents, or reporting back to you after a long task.
-5. **model-tips** - Cutting Claude Code or Codex usage, or choosing models and effort.
-6. **launch-tips** - Getting a site ready to launch.
-7. **writing-tips** - Rewriting an entire README for new readers, or writing a task brief.
+Then it follows the tip's steps. The prompt or rule inside is the post's own text. Anything a tip adds to your files, the agent shows you first. Any command a tip runs, it asks before running.
 
-**The agent picks one tip and names it.**
+When no tip fits, it leaves Copybook out of it and carries on with your task. If you opened Copybook yourself, it tells you that nothing fits.
 
-To open Copybook yourself, type `/copybook:copybook` (or `/copybook`). In Codex, type `$copybook`. To browse a topic, use a command such as `/copybook:design-tips`. Add the tip's name to use it.
+## Philosophy
 
-## When something goes wrong
-
-Sometimes a tip misbehaves: on a new model it no longer does what its steps say, or a line in the Chinese edition reads wrong. [Open an issue](https://github.com/Heyvhuang/copybook-skills/issues/new/choose) and choose "Tip stopped working" or "Translation fix". Say which tip, which agent and model, and what happened.
-
-The tip goes into the weekly check. One that stops working comes off the list.
-
-## Community
-
-Copybook is written by [@Voxyz_ai](https://x.com/Voxyz_ai).
-
-- **X**: [@Voxyz_ai](https://x.com/Voxyz_ai), where each tip was first posted
-- **Site**: [copybook.page](https://copybook.page), every tip with copy buttons and its original post
-- **Issues**: https://github.com/Heyvhuang/copybook-skills/issues
-- **Star**: [Star this repository](https://github.com/Heyvhuang/copybook-skills) to keep it in your stars. To hear when tips are added, changed or retired, choose **Watch** → **Custom** → **Releases**
-- **New tips by email**: [Sign up](https://copybook.page/#email-bottom-title)
+- **Picked by saves.** Only posts people saved most on X.
+- **Word for word.** The prompts and rules are the post's own text, checked by a script.
+- **Re-tested on new models.** A tip that stops working comes off the list.
+- **In two languages.** The Chinese version keeps every command, path and number of the English.
 
 ## What's inside
 
-Grouped by topic, most saved first; saves counted between 22 Jul and 17 Nov 2026, each tip's date in its file.
+- **[Codebase](#codebase)** · 33 tips: repo index and map, coding principles, AGENTS.md, scope rules.
+- **[Review](#review)** · 16 tips: PR, code, and plan reviews, bug scoring, skill audits and backtests.
+- **[Design](#design)** · 33 tips: image-first pages, motion libraries, reference sites, design skills.
+- **[Long runs](#long-runs)** · 22 tips: multi-agent roles, progress dashboards, handoffs, remote workflows.
+- **[Models and cost](#models-and-cost)** · 23 tips: model pairings, effort, cache timing, leftover quota.
+- **[Launch](#launch)** · 11 tips: pre-launch, speed, and legal checks, SEO tool pages, VPS lockdown.
+- **[Writing](#writing)** · 5 tips: Orwell's rules, one-line de-AI prompt, README rewrites, task briefs.
+
+To open Copybook yourself, type `/copybook:copybook` (or `/copybook`). In Codex, type `$copybook`. To browse a topic, use a command such as `/copybook:design-tips`. Add the tip's name to use it.
+
+Grouped by topic, most saved first; saves counted between 22 Jul and 18 Nov 2026, each tip's date in its file.
 
 The words the tips use are in the [glossary](docs/glossary.md); the tips that stay on copybook.page are listed in [scope](docs/scope.md).
 
 ### Codebase
 
-`/copybook:codebase-tips` · 33 tips: repo index and map, coding principles, AGENTS.md, scope rules.
+`/copybook:codebase-tips`
 
 | Tip | Saves |
 | :-- | :-: |
@@ -200,7 +146,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 
 ### Review
 
-`/copybook:review-tips` · 16 tips: PR, code, and plan reviews, bug scoring, skill audits and backtests.
+`/copybook:review-tips`
 
 | Tip | Saves |
 | :-- | :-: |
@@ -223,7 +169,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 
 ### Design
 
-`/copybook:design-tips` · 32 tips: image-first pages, motion libraries, reference sites, design skills.
+`/copybook:design-tips`
 
 | Tip | Saves |
 | :-- | :-: |
@@ -252,6 +198,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[Image options in one grid: an AGENTS.md rule](./skills/design-tips/references/image-options-in-one-grid.md)** `image-options-in-one-grid`<br>Image options drawn one at a time burn your limits: a global rule puts them all in one numbered grid, then builds your pick. | 379 |
 | **[Camera moves to name in video prompts](./skills/design-tips/references/camera-moves-for-video-prompts.md)** `camera-moves-for-video-prompts`<br>Opus 5.5 videos that look like a slideshow: six camera moves by name with what each one does, plus seconds and speed to add. | 354 |
 | **[/learn-taste: design corrections as rules](./skills/design-tips/references/learn-taste-design-corrections.md)** `learn-taste-design-corrections`<br>You keep fixing the same design mistakes: each correction in a session turned into a strict rule with reasoning. | 314 |
+| **[Pixel art rendering rules for CLAUDE.md](./skills/design-tips/references/pixel-art-rendering-rules.md)** `pixel-art-rendering-rules`<br>Pixels crisp in your sprites but blurry on screen: textures on Nearest, whole-number scaling, camera and sprites rounded alike. | 306 |
 | **[Happy-path debt, found and fixed](./skills/design-tips/references/happy-path-debt-found-and-fixed.md)** `happy-path-debt-found-and-fixed`<br>Screens that only work when data loads fast and nothing fails: missing states and layout breaks fixed per component, design kept. | 252 |
 | **[Unslop prompt for pages that look AI-made](./skills/design-tips/references/unslop-prompt.md)** `unslop-prompt`<br>Pages that scream AI at first glance: every slop sign listed, a five-line direction for your OK, then fixes pass by pass. | 240 |
 | **[703 Opus 5.5 video prompts, one remade for you](./skills/design-tips/references/703-video-prompts-one-remade.md)** `703-video-prompts-one-remade`<br>A product video like the viral ones: the 5 of 703 prompts that fit your product, your pick remade as one HTML file. | 214 |
@@ -262,7 +209,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 
 ### Long runs
 
-`/copybook:long-run-tips` · 22 tips: multi-agent roles, progress dashboards, handoffs, remote workflows.
+`/copybook:long-run-tips`
 
 | Tip | Saves |
 | :-- | :-: |
@@ -287,11 +234,11 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[Overnight /goal for open issues and TODOs](./skills/long-run-tips/references/overnight-goal-for-open-issues.md)** `overnight-goal-for-open-issues`<br>Before bed: each issue and TODO taken as far as it can go without you, then one HTML board of what's done, stuck or your call. | 315 |
 | **[Goal wrapper and 5 prompts built on it](./skills/long-run-tips/references/goal-wrapper-and-5-prompts.md)** `goal-wrapper-and-5-prompts`<br>One preference typed in three places: a goal wrapper, plus prompts for components, parallel runs, review, states and corrections. | 309 |
 | **[One-way door rules for AGENTS.md: when to ask](./skills/long-run-tips/references/one-way-door-rules-when-to-ask.md)** `one-way-door-rules-when-to-ask`<br>Questions you'd only rubber-stamp: work you can undo done and shown after, a stop at anything you can't undo. | 247 |
-| **[Coordinator skill for Claude Code and Codex](./skills/long-run-tips/references/coordinator-for-claude-and-codex.md)** `coordinator-for-claude-and-codex`<br>Too much for one agent session: a coordinator that never codes runs Claude and Codex workers in Herdr and ships tested batches. |  |
+| **[Coordinator skill for Claude Code and Codex](./skills/long-run-tips/references/coordinator-for-claude-and-codex.md)** `coordinator-for-claude-and-codex`<br>For work that takes several agent sessions, a coordinator runs Claude and Codex in Herdr and checks changes before release. |  |
 
 ### Models and cost
 
-`/copybook:model-tips` · 23 tips: model pairings, effort, cache timing, leftover quota.
+`/copybook:model-tips`
 
 | Tip | Saves |
 | :-- | :-: |
@@ -309,7 +256,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[Codex: GPT-6.1 Sol main, medium subagents, Astra review](./skills/model-tips/references/gpt-6-1-sol-main-astra-reviews.md)** `gpt-6-1-sol-main-astra-reviews`<br>Astra eats a week's quota: 6.1 Sol on high as orchestrator, on medium for 3 subagents, Astra only to review big changes. | 1.1K |
 | **[/advisor: Sonnet 5.5 works, Opus on call](./skills/model-tips/references/advisor-opus-on-call.md)** `advisor-opus-on-call`<br>$20 plan on Opus 5.5 by default: Haiku reads code, looks up docs; Opus advises before plans, on repeat errors, before 'done'. | 968 |
 | **[Fable 5.2 plans, Opus 5.5 or Codex builds](./skills/model-tips/references/fable-5-2-plans-opus-builds.md)** `fable-5-2-plans-opus-builds`<br>Fable 5.2 burns tokens fast: planning stays with it, the hardest parts may too, the rest goes to an Opus 5.5 subagent or Codex. | 893 |
-| **[Old-rules review for Fable 5.2](./skills/model-tips/references/old-rules-review-for-fable-5-2.md)** `old-rules-review-for-fable-5-2`<br>Rules hard-coded for older models work against Fable 5.2: delegation, think-less, style-limit and 'never' lines quoted with a fix. | 843 |
+| **[Old-rules review for Fable 5.2](./skills/model-tips/references/old-rules-review-for-fable-5-2.md)** `old-rules-review-for-fable-5-2`<br>Rules hard-coded for older models work against Fable 5.2: delegation, think-less, style-limit and 'never' lines quoted with a fix. | 863 |
 | **[3 habits burning your Claude Code usage](./skills/model-tips/references/3-habits-burning-your-usage.md)** `3-habits-burning-your-usage`<br>Keep hitting the usage limit: 7 days of session logs scanned, the 3 costliest habits and their share, rules to plug them. | 730 |
 | **[Fable main, Opus subagents: 3 settings](./skills/model-tips/references/fable-main-opus-subagents.md)** `fable-main-opus-subagents`<br>Fable quota going fast: 3 settings send reading and lookups to half-price Opus subagents; Fable keeps the judgment. | 715 |
 | **[Setup check: OpenAI's 5 cheap-harness rules](./skills/model-tips/references/openais-5-cheap-harness-rules.md)** `openais-5-cheap-harness-rules`<br>Is your setup as cheap as OpenAI's harness: pass or fail on each of its 5 rules, with the file and the one thing to change. | 715 |
@@ -321,7 +268,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 
 ### Launch
 
-`/copybook:launch-tips` · 11 tips: pre-launch, speed, and legal checks, SEO tool pages, VPS lockdown.
+`/copybook:launch-tips`
 
 | Tip | Saves |
 | :-- | :-: |
@@ -339,7 +286,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 
 ### Writing
 
-`/copybook:writing-tips` · 5 tips: Orwell's rules, one-line de-AI prompt, README rewrites, task briefs.
+`/copybook:writing-tips`
 
 | Tip | Saves |
 | :-- | :-: |
@@ -349,12 +296,21 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[README rewrite prompt and Impeccable polish](./skills/writing-tips/references/readme-rewrite-and-polish.md)** `readme-rewrite-and-polish`<br>Rewrite the whole README for first-time readers when a full rewrite is requested. Single-section edits stay local. | 235 |
 | **[Content team of 9 skill sets in Claude Code](./skills/writing-tips/references/content-team-of-9-skill-sets.md)** `content-team-of-9-skill-sets`<br>Making content solo: skills for topics, writing, visuals, video, sound and scheduling, installed and tried on one topic. | 176 |
 
-## Philosophy
+## When something goes wrong
 
-- **Picked by saves.** Only posts people saved most on X.
-- **Word for word.** The prompts and rules are the post's own text, checked by a script.
-- **Re-tested on new models.** A tip that stops working comes off the list.
-- **In two languages.** The Chinese version keeps every command, path and number of the English.
+Sometimes a tip misbehaves: on a new model it no longer does what its steps say, or a line in the Chinese edition reads wrong. [Open an issue](https://github.com/Heyvhuang/copybook-skills/issues/new/choose) and choose "Tip stopped working" or "Translation fix". Say which tip, which agent and model, and what happened.
+
+The tip goes into the weekly check. One that stops working comes off the list.
+
+## Community
+
+Copybook is written by [@Voxyz_ai](https://x.com/Voxyz_ai).
+
+- **X**: [@Voxyz_ai](https://x.com/Voxyz_ai), where each tip was first posted
+- **Site**: [copybook.page](https://copybook.page), every tip with copy buttons and its original post
+- **Issues**: https://github.com/Heyvhuang/copybook-skills/issues
+- **Star**: [Star this repository](https://github.com/Heyvhuang/copybook-skills) to keep it in your stars. To hear when tips are added, changed or retired, choose **Watch** → **Custom** → **Releases**
+- **New tips by email**: [Sign up](https://copybook.page/about#email-about-title)
 
 ## Contributing
 
@@ -364,7 +320,9 @@ To suggest a tip, open "Suggest a tip" with a link to the post. Copybook takes t
 
 ## Updating
 
-Refresh the marketplace and update the plugin using the commands below for a user install; use the recorded scope for another install. Start a new session, check the installed version and compare its router and one reference file with the same language in the published tag. For a skills.sh copy, use [its update command](#cursor-copilot-gemini-cli-and-others) and verify the refreshed commit and files. For ChatGPT, use Sync now and inspect the import report; upload a new ZIP for a ZIP install. What changed is in the [changelog](CHANGELOG.md).
+First public release: [1.0.0](CHANGELOG.md), 14 Nov 2026, 134 tips.
+
+Refresh the marketplace and update the plugin using the commands below for a user install; use the recorded scope for another install. Start a new session, check the installed version and compare its router and one reference file with the same language in the published tag. For a skills.sh copy, use [its update command](#skillssh) and verify the refreshed commit and files. For ChatGPT, use Sync now and inspect the import report; upload a new ZIP for a ZIP install. What changed is in the [changelog](CHANGELOG.md).
 
 ### Claude Code
 
@@ -380,6 +338,14 @@ claude plugin list --json
 codex plugin marketplace upgrade copybook
 codex plugin add copybook@copybook
 codex plugin list --json
+```
+
+### skills.sh
+
+To update the Copybook skills you installed, run this in the same project, or choose the global scope for a global install.
+
+```bash
+npx skills@latest update copybook codebase-tips review-tips design-tips long-run-tips model-tips launch-tips writing-tips
 ```
 
 If an older install cannot refresh after the first public release, back up local changes and record every Copybook plugin and its scope. Remove the Copybook marketplace, add it again from the same repository and reinstall each intended plugin. Removing a marketplace can remove its plugins. Then start a new session and verify the installed version and files.

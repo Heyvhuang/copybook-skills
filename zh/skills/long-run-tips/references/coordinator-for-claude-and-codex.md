@@ -1,12 +1,12 @@
 # Claude Code 和 Codex 的协调者 skill
 
-一个会话做不完的活：不写代码的协调者在 Herdr 里分派 Claude 和 Codex 执行者，按批验收后再推。
+一个会话做不完的活，由协调者在 Herdr 里分派 Claude 和 Codex，按项目流程验收和发布。
 
 ## 步骤
 
 1. 复制安装命令和第一句提示词。
 2. 在终端里跑安装命令，再在项目里把提示词发给 Claude Code 或 Codex。
-3. 得到：不写代码的协调者：Herdr 里的 Claude 和 Codex 执行者，按批验收，一批推一次。
+3. 得到：在 Herdr 里分派 Claude 和 Codex 执行者，按项目流程验收和发布。
 
 用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
 
@@ -30,7 +30,7 @@ npx skills@latest add https://copybook.page --skill coordinator --skill parallel
 
 ## 背景
 
-两个 skill 把一个 Claude Code 或 Codex 会话变成协调者，指挥一组在 [Herdr](https://herdr.dev) 里运行的执行者。协调者自己从不写代码：它把工作拆成 lane（一个执行者、一个分支、一份任务说明），给每条 lane 选模型和推理强度，检查交回来的结果，把准备好的 PR 按批一起测试，每批只推一次，只把该你拍板的事交给你。
+两个 skill 把一个 Claude Code 或 Codex 会话变成协调者，指挥一组在 [Herdr](https://herdr.dev) 里运行的执行者。协调者自己从不写代码：它把工作拆成 lane（一个执行者、一个分支、一份任务说明），给每条 lane 选模型和推理强度，检查交回来的结果，按项目流程验收和发布，只把该你拍板的事交给你。项目按批发布时，把准备好的 PR 一起测试，每批只推一次。
 
 它提炼自一次为期三天的真实运行：大约 160 个 PR、107 份 lane 任务说明、118 份交接和 166 次按批测试。需要 Herdr 0.9.5 或更高版本、已登录的 Claude Code 和 Codex CLI，以及带 GitHub CLI 的 git 仓库。源码在 [Heyvhuang/copybook-skills](https://github.com/Heyvhuang/copybook-skills/tree/main/standalone/coordinator)，README 写了每个脚本做什么。
 

@@ -4,7 +4,7 @@ The terms these tips use, in plain words, each with an example.
 
 [copybook.page/glossary](https://copybook.page/glossary) · [中文](glossary.zh-CN.md)
 
-[A](#agent) · [B](#backend) · [C](#cache) · [D](#diff) · [E](#effort) · [F](#frontend) · [G](#git) · [L](#lint-rule) · [M](#mcp) · [P](#plugin) · [Q](#quota) · [R](#repo) · [S](#seo) · [T](#terminal) · [V](#vibe-coding)
+[A](#agent) · [B](#backend) · [C](#cache) · [D](#diff) · [E](#effort) · [F](#frontend) · [G](#git) · [L](#lint-rule) · [M](#mcp) · [P](#playbook) · [Q](#quota) · [R](#repo) · [S](#saves) · [T](#terminal) · [V](#vibe-coding)
 
 ## Agent
 
@@ -78,6 +78,12 @@ Everything the model can see at once while it works: your messages, the files it
 
 For example: Every rule file, skill and message an agent reads takes up room in its context.
 
+## Cursor
+
+A code editor with a coding agent built in. Its agent reads rules you give it, and it can use MCP servers.
+
+For example: Paste a rule into Cursor's rules and its agent reads it in that project.
+
 ## Diff
 
 A view of exactly what changed: the lines taken out and the lines added.
@@ -128,7 +134,7 @@ For example: codebase-memory shows its map of your repo at localhost:9749.
 
 ## MCP
 
-Model Context Protocol: a standard plug that connects an agent to an outside tool or service. On copybook.page, these tips are Connectors.
+Model Context Protocol: a standard plug between an agent and an outside tool. Tips that are MCP servers are under Connectors; Copybook is one too.
 
 For example: codebase-memory is an MCP server. Once it is set up, the agent asks it about your repo instead of opening files one by one.
 
@@ -138,9 +144,15 @@ The AI itself, the part that reads and writes, such as Opus 5.5, Fable 5.1 or GP
 
 For example: One tip makes Opus 5.5 do the work and calls Fable in before a plan, on a repeat error and before it says done.
 
+## Playbook
+
+A few tips for one task, some meant in order.
+
+For example: Pre-launch checks gathers the checks to run on a site before it goes live, in the order to run them.
+
 ## Plugin
 
-A bundle you add to Claude Code or Codex in one step. It can bring skills, commands, helper agents and connectors together.
+A bundle you add to Claude Code or Codex in one step. It can bring skills, commands, subagents and connectors together.
 
 For example: One /plugin install command adds Epic's Unreal Engine plugin, and Claude Code can then edit Blueprints in your open editor.
 
@@ -174,6 +186,12 @@ Standing instructions an agent reads at the start of every session, kept in a fi
 
 For example: A Scope Guard in AGENTS.md is a set of rules: from then on the agent keeps small tasks small.
 
+## Saves
+
+How many people bookmarked the post on X, counted on the date shown.
+
+For example: 2.1K saves on X, as of 27 Sep 2026: that many people had bookmarked the post by then.
+
 ## SEO
 
 Search engine optimisation: making pages that Google can find and rank, so people arrive from a search.
@@ -200,7 +218,7 @@ For example: Add a cache countdown to the status line to see how many minutes th
 
 ## Subagent
 
-A helper the main agent sends off with its own fresh context to do one part of the job, reporting back when done. On copybook.page, these tips are Helper agents.
+A helper the main agent sends off with its own fresh context to do one part of the job, reporting back when done.
 
 For example: Before shipping, four subagents can each try to break a different part of your app while the main agent waits for their reports.
 
@@ -221,3 +239,9 @@ For example: codebase-memory answers structural questions about your repo with 1
 Building software by describing what you want to an AI and keeping what it writes, without reading the code closely.
 
 For example: Before you ship a vibe-coded site, have five subagents check it for 20 things.
+
+## Vox's pick
+
+A tip Vox chose himself, whatever its saves.
+
+For example: A tip marked Vox's pick can have fewer saves than the tips around it.

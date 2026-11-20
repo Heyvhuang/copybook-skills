@@ -107,6 +107,29 @@
       ],
       "changed": [],
       "retired": []
+    },
+    {
+      "version": "1.0.7",
+      "date": "2026-11-20",
+      "added": [
+        {
+          "slug": "pixel-art-rendering-rules-for-claude-md",
+          "title": {
+            "en": "Pixel art rendering rules for CLAUDE.md",
+            "zh": "CLAUDE.md 像素画渲染规则"
+          }
+        }
+      ],
+      "changed": [
+        {
+          "slug": "coordinator-skill-for-claude-code-and-codex",
+          "title": {
+            "en": "Coordinator skill for Claude Code and Codex",
+            "zh": "Claude Code 和 Codex 的协调者 skill"
+          }
+        }
+      ],
+      "retired": []
     }
   ],
   "tips": {
@@ -407,8 +430,8 @@
       }
     },
     "coordinator-skill-for-claude-code-and-codex": {
-      "en": "93b07e42ab657e6c",
-      "zh": "b59226c73c1c0cb0",
+      "en": "19a0cbe8d200e127",
+      "zh": "c5e09bdb82a8d6b8",
       "title": {
         "en": "Coordinator skill for Claude Code and Codex",
         "zh": "Claude Code 和 Codex 的协调者 skill"
@@ -804,6 +827,14 @@
       "title": {
         "en": "Clickable library of 120 motion samples",
         "zh": "120 个可点选的动效样例库"
+      }
+    },
+    "pixel-art-rendering-rules-for-claude-md": {
+      "en": "33138d76431a26a9",
+      "zh": "8bae2de080a1f18d",
+      "title": {
+        "en": "Pixel art rendering rules for CLAUDE.md",
+        "zh": "CLAUDE.md 像素画渲染规则"
       }
     },
     "plan-with-gpt-6-pro-in-chat-then-hand-off-to-codex": {

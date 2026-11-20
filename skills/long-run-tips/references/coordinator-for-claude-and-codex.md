@@ -1,12 +1,12 @@
 # Coordinator skill for Claude Code and Codex
 
-Too much for one agent session: a coordinator that never codes runs Claude and Codex workers in Herdr and ships tested batches.
+For work that takes several agent sessions, a coordinator runs Claude and Codex in Herdr and checks changes before release.
 
 ## Steps
 
 1. Copy the install command and the first prompt.
 2. In a terminal, run the install, then send the prompt to Claude Code or Codex in your project.
-3. You get: A coordinator that never writes code: Claude and Codex workers in Herdr, batches tested, one push.
+3. You get: A coordinator runs Claude and Codex in Herdr and follows your project's checks and release process.
 
 The user chose this tip. The steps above are written for a person; do them for the user.
 
@@ -30,7 +30,7 @@ You are the coordinator for this run. Goal: <what done means, and the check that
 
 ## Background
 
-Two skills turn one Claude Code or Codex session into a coordinator for a fleet of workers running in [Herdr](https://herdr.dev). The coordinator never writes code itself. It splits the work into lanes (one worker, one branch, one brief), picks a model and effort for each, checks what comes back, tests ready PRs together in batches, ships each batch with one push, and brings you only the decisions that are yours.
+Two skills turn one Claude Code or Codex session into a coordinator for a fleet of workers running in [Herdr](https://herdr.dev). The coordinator never writes code itself. It splits the work into lanes (one worker, one branch, one brief), picks a model and effort for each, checks what comes back, follows the project's gate and release process, and brings you only the decisions that are yours. For batch releases it tests the ready PRs together and pushes each batch once.
 
 It was distilled from a three-day production run: about 160 PRs, 107 lane briefs, 118 hand-overs and 166 batch test runs. It needs Herdr 0.9.5 or later, Claude Code and Codex CLI signed in, and a git repo with the GitHub CLI. The source is in [Heyvhuang/copybook-skills](https://github.com/Heyvhuang/copybook-skills/tree/main/standalone/coordinator), with a README on what each script does.
 

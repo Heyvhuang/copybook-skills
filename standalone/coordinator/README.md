@@ -1,6 +1,6 @@
 # Coordinator skill for Claude Code and Codex
 
-Two skills that turn one agent session into a coordinator for a fleet of Claude Code and Codex workers running in [Herdr](https://herdr.dev). The coordinator never writes code itself. It splits the work into lanes (one worker, one branch, one brief), picks a model and effort for each, checks what comes back, tests ready PRs together in batches, ships each batch with one push, and brings you only the decisions that are yours.
+Two skills that turn one agent session into a coordinator for a fleet of Claude Code and Codex workers running in [Herdr](https://herdr.dev). The coordinator never writes code itself. It splits the work into lanes (one worker, one branch, one brief), picks a model and effort for each, checks what comes back, follows the project's gate and release process, and brings you only the decisions that are yours. For batch releases it tests the ready PRs together and pushes each batch once.
 
 It was distilled from a three-day production run: about 160 PRs, 107 lane briefs, 118 hand-overs, 166 batch test runs and a 1,484-line run record. Every rule in `skills/coordinator/references/lessons.md` comes from something that went wrong on that run. Made by [@Voxyz_ai](https://x.com/Voxyz_ai); the sanitized run is in `skills/coordinator/references/example-run.md`. Not affiliated with Anthropic, OpenAI or Herdr.
 
@@ -14,7 +14,7 @@ Workers run with full access. Read the next section before the first run.
 
 | Skill | What it does |
 | --- | --- |
-| `skills/coordinator/` | The coordinator role: runtime, model table, lane briefs, READY lines, batch gates, shipping, permissions, overnight runs, release packets |
+| `skills/coordinator/` | The coordinator role: runtime, model table, lane briefs, READY lines, project gates, shipping, permissions, overnight runs, release packets |
 | `skills/parallel-goal-fleet/` | The Herdr mechanics underneath: sessions, starting and resuming workers, dispatch, quick second opinions, remote machines, cleanup |
 
 ## Read this first: workers run with full access

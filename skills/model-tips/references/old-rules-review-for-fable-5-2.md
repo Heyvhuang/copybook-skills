@@ -34,4 +34,4 @@ Send this prompt and the guide to Fable 5.2: https://platform.claude.com/docs/en
 
 ## Source
 
-From [Copybook](https://copybook.page/t/review-old-rules-with-anthropics-fable-5-2-guide): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2120501801313267818) on 11 Nov 2026, 843 saves as of 12 Nov 2026. For Claude Code.
+From [Copybook](https://copybook.page/t/review-old-rules-with-anthropics-fable-5-2-guide): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2120501801313267818) on 11 Nov 2026, 863 saves as of 18 Nov 2026. For Claude Code.

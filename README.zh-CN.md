@@ -1,6 +1,10 @@
 # Copybook
 
-Copybook 按情景替你的 coding agent 挑技巧。你照常说要做什么，一个会自己加载的 skill 从 142 条技巧里选一条，照着做。你不用记，也不用选。这些提示词、规则和设置，来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子。
+Copybook 是给用 Claude Code 或 Codex 写代码的人准备的一套 skill。你照常说要做什么，它从 143 条技巧里挑出合适的提示词、规则或检查清单，照着做。你不用记，也不用选。
+
+这些技巧来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子，合计 22.2万次收藏，统计于 2026年7月22日到 11月18日。
+
+[copybook.page](https://copybook.page/zh/) · [用邮件收新技巧（英文）](https://copybook.page/zh/about#email-about-title) · [更新记录](CHANGELOG.md) · [English](README.md)
 
 ```text
 copybook ──────────────────────────
@@ -10,59 +14,20 @@ copybook ───────────────────────�
   ·····•·····
 
 › 这个页面一股 AI 味，重做
-  设计 · 32 条里选 1 条
-  ············•···················
+  设计 · 33 条里选 1 条
+  ············•····················
 
 › AGENTS.md 太长了，精简一下
   代码库 · 33 条里选 1 条
   ·······················•·········
-
-› 合并前审一下这个 PR
-  验收 · 16 条里选 1 条
-  ···········•····
 ───────────────────────────────────
   然后说出选了哪条、为什么，
   照它的步骤把事做完
 ```
 
-[copybook.page](https://copybook.page/zh/) · [用邮件收新技巧（英文）](https://copybook.page/zh/#email-bottom-title) · [更新记录](CHANGELOG.md) · [English](README.md)
-
-首个公开版本：[1.0.0](CHANGELOG.md)，2026年11月14日，134 条技巧。
-
-## 目录
-
-- [工作方式](#工作方式)
-- [安装](#安装)
-  - [Claude Code](#claude-code)
-  - [Codex](#codex)
-  - [Cursor、Copilot、Gemini CLI 等](#cursorcopilotgemini-cli-等)
-  - [ChatGPT 工作区](#chatgpt-工作区)
-- [它从哪里选](#它从哪里选)
-- [出问题时](#出问题时)
-- [社区](#社区)
-- [里面有什么](#里面有什么)
-- [理念](#理念)
-- [参与贡献](#参与贡献)
-- [更新](#更新)
-- [许可](#许可)
-
-## 工作方式
-
-你让 coding agent 审一个 PR、检查网站能否上线，或者精简 AGENTS.md，这些事 Copybook 都有对应的技巧。动手之前，agent 先打开这个话题的列表，从头读到尾，因为光看名字看不出一条技巧做什么。然后它选一条。
-
-它用一句话告诉你选了哪条、为什么。另一条也合适、换用它会改变结果时，它会点出那条的名字和两者的区别。
-
-接着它照这条技巧的步骤做。里面的提示词和规则是原帖原文。技巧要往你的文件里加内容，agent 先给你看；技巧要运行命令，它先问你。
-
-没有合适的技巧时，它不提 Copybook，接着做你的事。你自己打开 Copybook 时，它会直说没有合适的。
-
-skill 会在任务对得上时自己加载，你不用记得有哪条技巧。
-
 ## 安装
 
 插件里只有 Markdown、YAML、JSON 和 PNG 文件，没有脚本、hook 或 MCP server。装好后 agent 的 skill 列表里多 8 个 skill：1 个会自己加载，7 个话题菜单由你自己打开。
-
-每个 agent 只选一种装法：插件和 skills.sh 版都装上，每个 skill 会出现两次。
 
 ### Claude Code
 
@@ -92,25 +57,13 @@ codex plugin marketplace add Heyvhuang/copybook-skills
 codex plugin add copybook-zh@copybook
 ```
 
-刷新插件市场并安装更新后的 Copybook 插件，运行：
-
-```bash
-codex plugin marketplace upgrade copybook
-codex plugin add copybook-zh@copybook
-codex plugin list --json
-```
-
 ### Cursor、Copilot、Gemini CLI 等
 
 ```bash
 npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 ```
 
-更新已装的 Copybook 技巧时，在原项目里运行下面的命令。装在全局的，选 global。
-
-```bash
-npx skills@latest update copybook codebase-tips review-tips design-tips long-run-tips model-tips launch-tips writing-tips
-```
+每个 agent 只选一种装法：插件和 skills.sh 版都装上，每个 skill 会出现两次。
 
 ### ChatGPT 工作区
 
@@ -118,49 +71,42 @@ npx skills@latest update copybook codebase-tips review-tips design-tips long-run
 
 成员装一次 `copybook-zh`，之后 ChatGPT 每天同步。通过 **Skills** 上传的 ZIP 只保留上传时的版本。
 
-## 它从哪里选
+## 工作方式
 
-142 条提示词、规则、检查清单和设置，按情景自动选用。
+你让 coding agent 审一个 PR、检查网站能否上线，或者精简 AGENTS.md，这些事 Copybook 都有对应的技巧。动手之前，agent 先打开这个话题的列表，从头读到尾，因为光看名字看不出一条技巧做什么。然后它选一条。
 
-下面是这个 skill 留意的情景，各自排在它先读的那个话题下面。这个列表里没有专为这件事写的技巧时，它会再读一个。
+它用一句话告诉你选了哪条、为什么。另一条也合适、换用它会改变结果时，它会点出那条的名字和两者的区别。
 
-1. **codebase-tips** - 写或精简 AGENTS.md、CLAUDE.md、agent 权限。同一个 bug 修了两次还没好。
-2. **review-tips** - 装 skill、技能或插件。动手或合并前审一遍方案、计划、diff 或 PR。
-3. **design-tips** - 设计或重做页面、落地页、仪表盘，或去掉 AI 味。
-4. **long-run-tips** - 交接、跨好几个会话或多个 agent 的任务，或长任务做完给你写报告。
-5. **model-tips** - 省 Claude Code 或 Codex 的额度，选模型和推理强度。
-6. **launch-tips** - 网站上线前的准备。
-7. **writing-tips** - 为新读者重写整份 README，或写任务说明。
+接着它照这条技巧的步骤做。里面的提示词和规则是原帖原文。技巧要往你的文件里加内容，agent 先给你看；技巧要运行命令，它先问你。
 
-**agent 选一条，并说出它的名字。**
+没有合适的技巧时，它不提 Copybook，接着做你的事。你自己打开 Copybook 时，它会直说没有合适的。
 
-要自己打开 Copybook，输入 `/copybook-zh:copybook` 或 `/copybook`，在 Codex 里输入 `$copybook`。输入 `/copybook-zh:design-tips` 可以浏览设计技巧，命令后加上技巧名即可使用。
+## 理念
 
-## 出问题时
-
-技巧有时会失灵：换了新模型，照着步骤做结果不对；或者中文版里有一句读着不对。请[开 issue](https://github.com/Heyvhuang/copybook-skills/issues/new/choose)，选「Tip stopped working · 技巧不灵了」或「Translation fix · 译文修正」，写清哪条技巧、哪个 agent 和模型、发生了什么。
-
-这条技巧会排进每周的检查，失效的会撤下。
-
-## 社区
-
-Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
-
-- **X**：[@Voxyz_ai](https://x.com/Voxyz_ai)，每条技巧最早发在这里
-- **网站**：[copybook.page](https://copybook.page/zh/)，每条技巧都有复制按钮和原帖
-- **Issues**：https://github.com/Heyvhuang/copybook-skills/issues
-- **Star**：[给这个仓库点 Star](https://github.com/Heyvhuang/copybook-skills)，收进你的 Star 列表。想在技巧新增、改动或撤下时收到通知，选 **Watch** → **Custom** → **Releases**
-- **用邮件收新技巧（英文）**：[订阅](https://copybook.page/zh/#email-bottom-title)
+- **按收藏量挑**：只选读者收藏多的 X 帖子。
+- **一字不差**：提示词和规则就是原帖原文，脚本逐字对过。
+- **会重测**：新模型出来会重跑，失效的撤下。
+- **中英两版**：中文版的命令、路径和数字都对过英文版。
 
 ## 里面有什么
 
-按话题分，收藏多的在前；收藏数统计于 2026年7月22日到 11月17日，每条的日期在它的文件里。
+- **[代码库](#代码库)** · 33 条：仓库索引和地图、写代码原则、AGENTS.md、改动范围规则。
+- **[验收](#验收)** · 16 条：PR、代码和计划复查、bug 打分、红队提示词、skill 回测。
+- **[设计](#设计)** · 33 条：先出图再写页面、动效库、参考网站、设计 skill。
+- **[长任务](#长任务)** · 22 条：多 agent 分工、交接、进度看板、会话周历、遗留待办。
+- **[模型和额度](#模型和额度)** · 23 条：模型搭配、推理强度、缓存倒计时、剩余额度。
+- **[上线推广](#上线推广)** · 11 条：上线前检查清单、搜索引流小工具、VPS 加固。
+- **[写作](#写作)** · 5 条：Orwell 写作规则、去 AI 腔、README 改写、任务说明。
+
+要自己打开 Copybook，输入 `/copybook-zh:copybook` 或 `/copybook`，在 Codex 里输入 `$copybook`。输入 `/copybook-zh:design-tips` 可以浏览设计技巧，命令后加上技巧名即可使用。
+
+按话题分，收藏多的在前；收藏数统计于 2026年7月22日到 11月18日，每条的日期在它的文件里。
 
 技巧里用到的词在[词汇表](docs/glossary.zh-CN.md)，只留在 copybook.page 上的技巧在[范围](docs/scope.md#范围)。
 
 ### 代码库
 
-`/copybook-zh:codebase-tips` · 33 条：仓库索引和地图、写代码原则、AGENTS.md、改动范围规则。
+`/copybook-zh:codebase-tips`
 
 | 技巧 | 收藏 |
 | :-- | :-: |
@@ -200,7 +146,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 
 ### 验收
 
-`/copybook-zh:review-tips` · 16 条：PR、代码和计划复查、bug 打分、红队提示词、skill 回测。
+`/copybook-zh:review-tips`
 
 | 技巧 | 收藏 |
 | :-- | :-: |
@@ -223,7 +169,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 
 ### 设计
 
-`/copybook-zh:design-tips` · 32 条：先出图再写页面、动效库、参考网站、设计 skill。
+`/copybook-zh:design-tips`
 
 | 技巧 | 收藏 |
 | :-- | :-: |
@@ -252,6 +198,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 | **[图片方案并成一张网格图：AGENTS.md 规则](./zh/skills/design-tips/references/image-options-in-one-grid.md)** `image-options-in-one-grid`<br>图片方案一张张生成太烧额度：一条全局规则让所有方案进同一张带编号的网格图，再做你挑中的。 | 379 |
 | **[视频提示词里的运镜名称](./zh/skills/design-tips/references/camera-moves-for-video-prompts.md)** `camera-moves-for-video-prompts`<br>Opus 5.5 做的视频像幻灯片：6 种运镜的名字和各自效果，外加要写的秒数和速度。 | 354 |
 | **[/learn-taste：设计修正变成规则](./zh/skills/design-tips/references/learn-taste-design-corrections.md)** `learn-taste-design-corrections`<br>你总在改同样的设计错误：一次会话里的每个修正，都变成一条带理由的严格规则。 | 314 |
+| **[CLAUDE.md 像素画渲染规则](./zh/skills/design-tips/references/pixel-art-rendering-rules.md)** `pixel-art-rendering-rules`<br>精灵图里清晰的像素到屏幕上变糊：纹理用 Nearest，整数倍缩放，镜头和精灵按同一方式取整。 | 306 |
 | **[happy-path 债务排查和修复](./zh/skills/design-tips/references/happy-path-debt-found-and-fixed.md)** `happy-path-debt-found-and-fixed`<br>界面只在数据加载快、什么都不出错时才正常：缺的状态和布局错乱逐个组件修好，设计不变。 | 252 |
 | **[Unslop 提示词：去掉页面 AI 味](./zh/skills/design-tips/references/unslop-prompt.md)** `unslop-prompt`<br>页面第一眼就像 AI 做的：列出每处 AI 味的痕迹，先写 5 行方向等你点头，再一轮一轮改。 | 240 |
 | **[703 条 Opus 5.5 视频提示词，重做一条](./zh/skills/design-tips/references/703-video-prompts-one-remade.md)** `703-video-prompts-one-remade`<br>给产品做一支爆款那样的视频：703 条提示词里最适合你的 5 条，你选的那条重做成一个 HTML 文件。 | 214 |
@@ -262,7 +209,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 
 ### 长任务
 
-`/copybook-zh:long-run-tips` · 22 条：多 agent 分工、交接、进度看板、会话周历、遗留待办。
+`/copybook-zh:long-run-tips`
 
 | 技巧 | 收藏 |
 | :-- | :-: |
@@ -287,11 +234,11 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 | **[通宵 /goal：未关闭的 issue 和 TODO](./zh/skills/long-run-tips/references/overnight-goal-for-open-issues.md)** `overnight-goal-for-open-issues`<br>睡前：每个 issue 和 TODO 不靠你推进到最远，最后一张 HTML 看板列出完成、卡住和等你拍板的。 | 315 |
 | **[目标外壳和 5 条配套提示词](./zh/skills/long-run-tips/references/goal-wrapper-and-5-prompts.md)** `goal-wrapper-and-5-prompts`<br>一个偏好写了 3 处还要说第四遍：一个目标外壳，加组件库、并行、互审、交互状态、纠正清单 5 条。 | 309 |
 | **[AGENTS.md 单向门规则：什么时候该问](./zh/skills/long-run-tips/references/one-way-door-rules-when-to-ask.md)** `one-way-door-rules-when-to-ask`<br>只需要你走个过场的提问：撤得回的先做完再给你看，撤不回的先停下。 | 247 |
-| **[Claude Code 和 Codex 的协调者 skill](./zh/skills/long-run-tips/references/coordinator-for-claude-and-codex.md)** `coordinator-for-claude-and-codex`<br>一个会话做不完的活：不写代码的协调者在 Herdr 里分派 Claude 和 Codex 执行者，按批验收后再推。 |  |
+| **[Claude Code 和 Codex 的协调者 skill](./zh/skills/long-run-tips/references/coordinator-for-claude-and-codex.md)** `coordinator-for-claude-and-codex`<br>一个会话做不完的活，由协调者在 Herdr 里分派 Claude 和 Codex，按项目流程验收和发布。 |  |
 
 ### 模型和额度
 
-`/copybook-zh:model-tips` · 23 条：模型搭配、推理强度、缓存倒计时、剩余额度。
+`/copybook-zh:model-tips`
 
 | 技巧 | 收藏 |
 | :-- | :-: |
@@ -309,7 +256,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 | **[Codex：GPT-6.1 Sol 主跑，medium subagent，Astra 终审](./zh/skills/model-tips/references/gpt-6-1-sol-main-astra-reviews.md)** `gpt-6-1-sol-main-astra-reviews`<br>Astra 一周吃光额度：6.1 Sol 用 high 调度、medium 跑 subagent，Astra 只审上线前的大改动。 | 1,061 |
 | **[/advisor：Sonnet 5.5 主跑，Opus 待命](./zh/skills/model-tips/references/advisor-opus-on-call.md)** `advisor-opus-on-call`<br>$20 套餐默认跑 Opus 5.5：Haiku 读代码、查文档，定方案前、错误反复时、说做完前叫 Opus 出主意。 | 968 |
 | **[Fable 5.2 管规划，实现给 Opus 5.5 或 Codex](./zh/skills/model-tips/references/fable-5-2-plans-opus-builds.md)** `fable-5-2-plans-opus-builds`<br>Fable 5.2 烧 token 太快：规划留在主会话，最难的部分也可留下，其余交给 Opus 5.5 subagent 或 Codex。 | 893 |
-| **[Fable 5.2 旧规则审查](./zh/skills/model-tips/references/old-rules-review-for-fable-5-2.md)** `old-rules-review-for-fable-5-2`<br>给老模型写死的规则拖累 Fable 5.2：派活、少想、文风限制和「never」的句子，引原文给改法。 | 843 |
+| **[Fable 5.2 旧规则审查](./zh/skills/model-tips/references/old-rules-review-for-fable-5-2.md)** `old-rules-review-for-fable-5-2`<br>给老模型写死的规则拖累 Fable 5.2：派活、少想、文风限制和「never」的句子，引原文给改法。 | 863 |
 | **[Claude Code 里最耗额度的 3 个习惯](./zh/skills/model-tips/references/3-habits-burning-your-usage.md)** `3-habits-burning-your-usage`<br>总撞额度上限：扫最近 7 天的会话日志，算出每个习惯各占多少额度，再写规则把它们堵上。 | 730 |
 | **[Fable 做主、Opus 做 subagent 的 3 个设置](./zh/skills/model-tips/references/fable-main-opus-subagents.md)** `fable-main-opus-subagents`<br>Fable 额度不够用：3 行设置，读代码、查文档交给半价的 Opus subagent，判断留给 Fable。 | 715 |
 | **[设置检查：OpenAI 的 5 条 harness 省钱规则](./zh/skills/model-tips/references/openais-5-cheap-harness-rules.md)** `openais-5-cheap-harness-rules`<br>agent 配置省不省钱：对照 OpenAI 自己用的 5 条规则逐条判过不过，给出文件和要改的那一件事。 | 715 |
@@ -321,7 +268,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 
 ### 上线推广
 
-`/copybook-zh:launch-tips` · 11 条：上线前检查清单、搜索引流小工具、VPS 加固。
+`/copybook-zh:launch-tips`
 
 | 技巧 | 收藏 |
 | :-- | :-: |
@@ -339,7 +286,7 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 
 ### 写作
 
-`/copybook-zh:writing-tips` · 5 条：Orwell 写作规则、去 AI 腔、README 改写、任务说明。
+`/copybook-zh:writing-tips`
 
 | 技巧 | 收藏 |
 | :-- | :-: |
@@ -349,12 +296,21 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 | **[README 改写提示词和 Impeccable 打磨](./zh/skills/writing-tips/references/readme-rewrite-and-polish.md)** `readme-rewrite-and-polish`<br>用户明确要为新读者重写整份 README 时使用。只补安装步骤或改单段时，直接做局部修改。 | 235 |
 | **[内容团队：9 套 skill](./zh/skills/writing-tips/references/content-team-of-9-skill-sets.md)** `content-team-of-9-skill-sets`<br>一个人做内容：装好选题、写作、配图、视频、声音和排期的 skill，再拿一个选题试跑。 | 176 |
 
-## 理念
+## 出问题时
 
-- **按收藏量挑**：只选读者收藏多的 X 帖子。
-- **一字不差**：提示词和规则就是原帖原文，脚本逐字对过。
-- **会重测**：新模型出来会重跑，失效的撤下。
-- **中英两版**：中文版的命令、路径和数字都对过英文版。
+技巧有时会失灵：换了新模型，照着步骤做结果不对；或者中文版里有一句读着不对。请[开 issue](https://github.com/Heyvhuang/copybook-skills/issues/new/choose)，选「Tip stopped working · 技巧不灵了」或「Translation fix · 译文修正」，写清哪条技巧、哪个 agent 和模型、发生了什么。
+
+这条技巧会排进每周的检查，失效的会撤下。
+
+## 社区
+
+Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
+
+- **X**：[@Voxyz_ai](https://x.com/Voxyz_ai)，每条技巧最早发在这里
+- **网站**：[copybook.page](https://copybook.page/zh/)，每条技巧都有复制按钮和原帖
+- **Issues**：https://github.com/Heyvhuang/copybook-skills/issues
+- **Star**：[给这个仓库点 Star](https://github.com/Heyvhuang/copybook-skills)，收进你的 Star 列表。想在技巧新增、改动或撤下时收到通知，选 **Watch** → **Custom** → **Releases**
+- **用邮件收新技巧（英文）**：[订阅](https://copybook.page/zh/about#email-about-title)
 
 ## 参与贡献
 
@@ -364,7 +320,9 @@ Copybook 由 [@Voxyz_ai](https://x.com/Voxyz_ai) 撰写。
 
 ## 更新
 
-下面的命令用于 user 范围的安装；其他范围按原安装范围更新。刷新后新开会话，检查已装版本，并把 router 和一条技巧的文件与已发布 tag 中同语言的文件对照。skills.sh 版运行[更新命令](#cursorcopilotgemini-cli-等)，检查更新后的 commit 和文件。ChatGPT 用 Sync now 并检查导入报告；ZIP 版要重新上传。改了什么见[更新记录](CHANGELOG.md)。
+首个公开版本：[1.0.0](CHANGELOG.md)，2026年11月14日，134 条技巧。
+
+下面的命令用于 user 范围的安装；其他范围按原安装范围更新。刷新后新开会话，检查已装版本，并把 router 和一条技巧的文件与已发布 tag 中同语言的文件对照。skills.sh 版运行[更新命令](#skillssh)，检查更新后的 commit 和文件。ChatGPT 用 Sync now 并检查导入报告；ZIP 版要重新上传。改了什么见[更新记录](CHANGELOG.md)。
 
 ### Claude Code
 
@@ -380,6 +338,14 @@ claude plugin list --json
 codex plugin marketplace upgrade copybook
 codex plugin add copybook-zh@copybook
 codex plugin list --json
+```
+
+### skills.sh
+
+更新已装的 Copybook 技巧时，在原项目里运行下面的命令。装在全局的，选 global。
+
+```bash
+npx skills@latest update copybook codebase-tips review-tips design-tips long-run-tips model-tips launch-tips writing-tips
 ```
 
 旧安装在首个公开版本发布后无法刷新时，先备份本地改动，记下每个 Copybook 插件及其安装范围。移除 Copybook 插件市场，从同一仓库重新添加，再装回需要的插件。移除插件市场可能会卸载其中的插件。然后新开会话，核对已装版本和文件。

@@ -1,6 +1,6 @@
-# 设计 · 32 条
+# 设计 · 33 条
 
-Copybook 的 32 条「设计」技巧，按收藏数排序，与合不合适无关：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../design-tips/references/<名字>.md`。
+Copybook 的 33 条「设计」技巧，按收藏数排序，与合不合适无关：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../design-tips/references/<名字>.md`。
 
 | 技巧 | 做什么 |
 | --- | --- |
@@ -29,6 +29,7 @@ Copybook 的 32 条「设计」技巧，按收藏数排序，与合不合适无�
 | image-options-in-one-grid | 图片方案一张张生成太烧额度：一条全局规则让所有方案进同一张带编号的网格图，再做你挑中的。 |
 | camera-moves-for-video-prompts | Opus 5.5 做的视频像幻灯片：6 种运镜的名字和各自效果，外加要写的秒数和速度。 |
 | learn-taste-design-corrections | 你总在改同样的设计错误：一次会话里的每个修正，都变成一条带理由的严格规则。 |
+| pixel-art-rendering-rules | 精灵图里清晰的像素到屏幕上变糊：纹理用 Nearest，整数倍缩放，镜头和精灵按同一方式取整。 |
 | happy-path-debt-found-and-fixed | 界面只在数据加载快、什么都不出错时才正常：缺的状态和布局错乱逐个组件修好，设计不变。 |
 | unslop-prompt | 页面第一眼就像 AI 做的：列出每处 AI 味的痕迹，先写 5 行方向等你点头，再一轮一轮改。 |
 | 703-video-prompts-one-remade | 给产品做一支爆款那样的视频：703 条提示词里最适合你的 5 条，你选的那条重做成一个 HTML 文件。 |

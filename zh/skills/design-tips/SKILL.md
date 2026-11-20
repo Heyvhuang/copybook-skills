@@ -1,16 +1,16 @@
 ---
 name: design-tips
-description: "设计 · 32 条：先出图再写页面、动效库、参考网站、设计 skill。"
+description: "设计 · 33 条：先出图再写页面、动效库、参考网站、设计 skill。"
 disable-model-invocation: true
 ---
 
-# 设计 · 32 条
+# 设计 · 33 条
 
-Copybook 的 32 条「设计」技巧，收藏多的在前。每条要用的文字、放到哪里、最后得到什么，都在 references/ 里它自己的文件中。
+Copybook 的 33 条「设计」技巧，收藏多的在前。每条要用的文字、放到哪里、最后得到什么，都在 references/ 里它自己的文件中。
 
 - 用户点名技巧时，用点名的那条。用户只说了要做什么时，从适用于实际执行者的技巧里，选最符合用户目标和限制的一条。几条同样合适时，选一条即可。选中后，用一句话说明选了哪条、为什么，再读它的文件照着做。另一条也合适，而且换用它会明显改变做法或结果时，顺带点出它的名字和区别。
 - 用户什么都没说：把下面的列表（每条的名字和做什么）给用户看，问用哪条。
-- 都不合适就直说，并建议用 copybook，它会在全部 142 条里找。
+- 都不合适就直说，并建议用 copybook，它会在全部 143 条里找。
 
 | 技巧 | 做什么 |
 | --- | --- |
@@ -39,6 +39,7 @@ Copybook 的 32 条「设计」技巧，收藏多的在前。每条要用的文�
 | [图片方案并成一张网格图：AGENTS.md 规则](references/image-options-in-one-grid.md) `image-options-in-one-grid` | 图片方案一张张生成太烧额度：一条全局规则让所有方案进同一张带编号的网格图，再做你挑中的。 |
 | [视频提示词里的运镜名称](references/camera-moves-for-video-prompts.md) `camera-moves-for-video-prompts` | Opus 5.5 做的视频像幻灯片：6 种运镜的名字和各自效果，外加要写的秒数和速度。 |
 | [/learn-taste：设计修正变成规则](references/learn-taste-design-corrections.md) `learn-taste-design-corrections` | 你总在改同样的设计错误：一次会话里的每个修正，都变成一条带理由的严格规则。 |
+| [CLAUDE.md 像素画渲染规则](references/pixel-art-rendering-rules.md) `pixel-art-rendering-rules` | 精灵图里清晰的像素到屏幕上变糊：纹理用 Nearest，整数倍缩放，镜头和精灵按同一方式取整。 |
 | [happy-path 债务排查和修复](references/happy-path-debt-found-and-fixed.md) `happy-path-debt-found-and-fixed` | 界面只在数据加载快、什么都不出错时才正常：缺的状态和布局错乱逐个组件修好，设计不变。 |
 | [Unslop 提示词：去掉页面 AI 味](references/unslop-prompt.md) `unslop-prompt` | 页面第一眼就像 AI 做的：列出每处 AI 味的痕迹，先写 5 行方向等你点头，再一轮一轮改。 |
 | [703 条 Opus 5.5 视频提示词，重做一条](references/703-video-prompts-one-remade.md) `703-video-prompts-one-remade` | 给产品做一支爆款那样的视频：703 条提示词里最适合你的 5 条，你选的那条重做成一个 HTML 文件。 |

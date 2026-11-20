@@ -1,11 +1,11 @@
 ---
 name: copybook
-description: "开工前先加载（没提 Copybook 也加载）：审方案、计划，跨文件 diff、PR；bug 修两次没好；交接、长任务报告；额度、选模型；上线前；现成提示词或规则；设计或重做页面、仪表盘；AGENTS.md。一两行、小文件、单问单答直接做，重复纠正除外。点名 Copybook 或某条技巧时一定加载。也在这些时候加载：跨会话或多 agent；落地页、去 AI 味；精简 AGENTS.md、CLAUDE.md、agent 权限；装 skill、技能或插件；为新读者重写整份 README、写任务说明。仅改单个 README 章节、补安装说明、修错字，或只解释一个报错、回答一个问题时直接处理。用户要现成的检查清单或设置，或问 Copybook 有什么时也加载。142 条提示词、规则、检查清单和设置，按情景自动选用。"
+description: "开工前先加载（没提 Copybook 也加载）：审方案、计划，跨文件 diff、PR；bug 修两次没好；交接、长任务报告；额度、选模型；上线前；现成提示词或规则；设计或重做页面、仪表盘；AGENTS.md。一两行、小文件、单问单答直接做，重复纠正除外。点名 Copybook 或某条技巧时一定加载。也在这些时候加载：跨会话或多 agent；落地页、去 AI 味；精简 AGENTS.md、CLAUDE.md、agent 权限；装 skill、技能或插件；为新读者重写整份 README、写任务说明。仅改单个 README 章节、补安装说明、修错字，或只解释一个报错、回答一个问题时直接处理。用户要现成的检查清单或设置，或问 Copybook 有什么时也加载。143 条提示词、规则、检查清单和设置，按情景自动选用。"
 ---
 
 # Copybook
 
-Copybook 有 142 条写给 coding agent 的技巧：提示词、规则、检查清单和设置，每条都来自读者在 X 上收藏过的帖子，分在下面 7 个话题里。每个话题有一个列表文件，就在这个文件旁边；每条技巧的正文在它所属话题技能的 references/ 里。
+Copybook 有 143 条写给 coding agent 的技巧：提示词、规则、检查清单和设置，每条都来自读者在 X 上收藏过的帖子，分在下面 7 个话题里。每个话题有一个列表文件，就在这个文件旁边；每条技巧的正文在它所属话题技能的 references/ 里。
 
 替用户挑一条直接用：用户要的是用上对的那条，不是一张自己去选的清单。
 
@@ -32,11 +32,11 @@ PR、代码和计划复查、bug 打分、红队提示词、skill 回测。列�
 
 技巧：3-checks-before-a-skill-install、blast-radius-and-4-more-prompts、bug-score-rule-for-astra、claude-api-prompt-audit、code-and-direction-review、fake-busy-check、ios-simulator-ui-bug-check、logging-plan-and-daily-fix-list、nightly-push-review-routine、one-question-before-it-answers、perf-review-the-5-slowest-spots、plan-review-5-methods、skill-backtest-on-codex-sessions、skill-score-by-yes-no-questions、state-machine-check、tailscale-preview-links。
 
-### 设计 · 32 条
+### 设计 · 33 条
 
 先出图再写页面、动效库、参考网站、设计 skill。列表：[design.md](design.md)
 
-技巧：120-sample-motion-library、4-person-motion-video-team、4-starts-for-code-only-animation、6-chatgpt-photo-prompts、703-video-prompts-one-remade、8-frontend-reference-sites、awesome-design-md-shadcn-skill、awwwards-scoring-loop、camera-moves-for-video-prompts、claude-motion-project-animation、codex-computer-use-as-mcp-server、component-stress-test、dashboard-redesign-2-skills、design-md-from-sites-you-like、designers-landing-page-skill、every-ui-state-with-design、good-css-css-check、hallmark-audit-and-redesign、happy-path-debt-found-and-fixed、huashu-art-motion-35-art-styles、image-options-in-one-grid、internet-archive-clips-and-music、learn-taste-design-corrections、lemo-opuscar-launch-films、page-design-as-an-image-first、refero-style-prompt、screenshot-first-ui-rebuild、tasteskill-v2-ai-look-check、two-agents-md-lines、ui-ux-audit-as-a-senior-designer、unslop-prompt、video-sound-by-measurement。
+技巧：120-sample-motion-library、4-person-motion-video-team、4-starts-for-code-only-animation、6-chatgpt-photo-prompts、703-video-prompts-one-remade、8-frontend-reference-sites、awesome-design-md-shadcn-skill、awwwards-scoring-loop、camera-moves-for-video-prompts、claude-motion-project-animation、codex-computer-use-as-mcp-server、component-stress-test、dashboard-redesign-2-skills、design-md-from-sites-you-like、designers-landing-page-skill、every-ui-state-with-design、good-css-css-check、hallmark-audit-and-redesign、happy-path-debt-found-and-fixed、huashu-art-motion-35-art-styles、image-options-in-one-grid、internet-archive-clips-and-music、learn-taste-design-corrections、lemo-opuscar-launch-films、page-design-as-an-image-first、pixel-art-rendering-rules、refero-style-prompt、screenshot-first-ui-rebuild、tasteskill-v2-ai-look-check、two-agents-md-lines、ui-ux-audit-as-a-senior-designer、unslop-prompt、video-sound-by-measurement。
 
 ### 长任务 · 22 条
 

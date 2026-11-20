@@ -1,20 +1,22 @@
 # Gate and ship
 
-How the example run did it, with the reason behind each habit. Adapt freely.
+Use the project's gate, batch or per PR. Adapt the habits below from the example run.
 
 ## Gate
 
-- **Batches, not single PRs.** One train per PR was too slow. Merge the ready PRs in order onto current main in a local branch, test once, verdict per PR. A conflict drops only that PR from the train; the owning lane merges main and comes back.
+- **Fresh base first.** Confirm the PR head contains the required base before dispatching the gate. Send stale heads back to the owning lane to merge the base.
+- **Split build from the formal gate.** Builders run scoped checks. A separate gate lane runs the full gate and records its verdict for the tested head. On a per-PR gate, publish it on the pushed PR head. Recheck head and base before merge.
+- **Batch gate.** One train per PR was too slow. Merge the ready PRs in order onto current main in a local branch, test once, verdict per PR. A conflict drops only that PR from the train; the owning lane merges main and comes back.
 - **Narrow scope.** Changed tests plus tests beside changed source, typecheck, and the project's design/migration checks when those areas change. A 639-file run for an 11-file change took 12 minutes for nothing.
 - **Callers of shared gates.** If a PR changes a function many routes depend on (admission, credits, auth), test its callers too (`rg` the function). One train missed those suites and 27 failures surfaced only at ship time.
 - **Check the checks ran.** A "check changed files" script that reads uncommitted files checks nothing on a committed merge and passes; name filters once skipped every control assertion and still exited 0. Look at what executed, not the exit code.
 - **Whose failure is it?** Rerun the file alone: timeouts that pass alone are load. Run it on main: if main fails too, it is a baseline problem; decide whether the test is out of date (an intended change) or the product is wrong, and fix the right one. Otherwise it is the batch's: attribute by files touched, or leave one PR out at a time, and ship the rest.
-- **Moved heads.** A head that changed after its PASS gets re-gated; if the change is only a main merge, a quick check of that delta is enough.
+- **Moved heads.** Re-gate changed heads under the project's rules. Use a check of just the change where those rules allow it.
 
 ## Ship
 
 - **Freeze, then check, then one push.** A batch that kept growing went 40 minutes without shipping; main took 136 pushes in 32 hours before batching, each a paid production build. Docs ride the next batch instead of pushing alone: a docs-only lane appends `DOCS-RIDE <branch> <head>` to the run record and the ship lane picks it up.
-- **Exact heads only.** Ship the head the gate tested, merged `--no-ff` in gate order; read the remote back after the push.
+- **Exact heads only.** Ship the heads the gate tested and read the remote back. For batches, merge `--no-ff` in gate order.
 - **Held work.** High-risk PRs sit on a never-batch list and ship only as their own batch after the user's yes. Before freezing, check no candidate contains a held head (`git merge-base --is-ancestor <held> <candidate>`): a UI branch often contains its back-end PR.
 - **Urgent fixes** take a faster path only if the run has granted one (the example run did: the lane's own checks, gate afterwards). Otherwise they go first in the normal queue.
 

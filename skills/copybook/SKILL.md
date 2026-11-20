@@ -1,11 +1,11 @@
 ---
 name: copybook
-description: "Load unasked: plan, multi-file PR review (no tiny edits); repeat mistakes; 2 failed fixes; handoffs; ready-made prompts, rules; usage or models; site launch prep. A one- or two-line edit, one small new file or a single question, such as explaining one error: just do it, unless the user is correcting the same mistake a second time. When the user names Copybook or one of its tips, always load. Also: long-run reports; multi-session or multi-agent work; page design, redesign or de-AI look; AGENTS.md, CLAUDE.md or agent permissions; installing a skill or plugin; rewriting a whole README for new readers, or a task brief. Handle one README section or a small wording fix directly. Also when the user asks for a checklist or a setup, or what Copybook has. 142 prompts, rules, checklists and setups, picked by situation."
+description: "Load unasked: plan, multi-file PR review (no tiny edits); repeat mistakes; 2 failed fixes; handoffs; ready-made prompts, rules; usage or models; site launch prep. A one- or two-line edit, one small new file or a single question, such as explaining one error: just do it, unless the user is correcting the same mistake a second time. When the user names Copybook or one of its tips, always load. Also: long-run reports; multi-session or multi-agent work; page design, redesign or de-AI look; AGENTS.md, CLAUDE.md or agent permissions; installing a skill or plugin; rewriting a whole README for new readers, or a task brief. Handle one README section or a small wording fix directly. Also when the user asks for a checklist or a setup, or what Copybook has. 143 prompts, rules, checklists and setups, picked by situation."
 ---
 
 # Copybook
 
-Copybook has 142 tips for coding agents: prompts, rules, checklists and setups, each from a post readers saved on X. They are filed under the 7 topics below. Each topic's list is a file beside this one; each tip's text is a file in its topic skill's references/.
+Copybook has 143 tips for coding agents: prompts, rules, checklists and setups, each from a post readers saved on X. They are filed under the 7 topics below. Each topic's list is a file beside this one; each tip's text is a file in its topic skill's references/.
 
 Pick the tip for the user and use it: they want the right one used, not a list to choose from.
 
@@ -32,11 +32,11 @@ PR, code, and plan reviews, bug scoring, skill audits and backtests. List: [revi
 
 Tips: 3-checks-before-a-skill-install, blast-radius-and-4-more-prompts, bug-score-rule-for-astra, claude-api-prompt-audit, code-and-direction-review, fake-busy-check, ios-simulator-ui-bug-check, logging-plan-and-daily-fix-list, nightly-push-review-routine, one-question-before-it-answers, perf-review-the-5-slowest-spots, plan-review-5-methods, skill-backtest-on-codex-sessions, skill-score-by-yes-no-questions, state-machine-check, tailscale-preview-links.
 
-### Design · 32 tips
+### Design · 33 tips
 
 Image-first pages, motion libraries, reference sites, design skills. List: [design.md](design.md)
 
-Tips: 120-sample-motion-library, 4-person-motion-video-team, 4-starts-for-code-only-animation, 6-chatgpt-photo-prompts, 703-video-prompts-one-remade, 8-frontend-reference-sites, awesome-design-md-shadcn-skill, awwwards-scoring-loop, camera-moves-for-video-prompts, claude-motion-project-animation, codex-computer-use-as-mcp-server, component-stress-test, dashboard-redesign-2-skills, design-md-from-sites-you-like, designers-landing-page-skill, every-ui-state-with-design, good-css-css-check, hallmark-audit-and-redesign, happy-path-debt-found-and-fixed, huashu-art-motion-35-art-styles, image-options-in-one-grid, internet-archive-clips-and-music, learn-taste-design-corrections, lemo-opuscar-launch-films, page-design-as-an-image-first, refero-style-prompt, screenshot-first-ui-rebuild, tasteskill-v2-ai-look-check, two-agents-md-lines, ui-ux-audit-as-a-senior-designer, unslop-prompt, video-sound-by-measurement.
+Tips: 120-sample-motion-library, 4-person-motion-video-team, 4-starts-for-code-only-animation, 6-chatgpt-photo-prompts, 703-video-prompts-one-remade, 8-frontend-reference-sites, awesome-design-md-shadcn-skill, awwwards-scoring-loop, camera-moves-for-video-prompts, claude-motion-project-animation, codex-computer-use-as-mcp-server, component-stress-test, dashboard-redesign-2-skills, design-md-from-sites-you-like, designers-landing-page-skill, every-ui-state-with-design, good-css-css-check, hallmark-audit-and-redesign, happy-path-debt-found-and-fixed, huashu-art-motion-35-art-styles, image-options-in-one-grid, internet-archive-clips-and-music, learn-taste-design-corrections, lemo-opuscar-launch-films, page-design-as-an-image-first, pixel-art-rendering-rules, refero-style-prompt, screenshot-first-ui-rebuild, tasteskill-v2-ai-look-check, two-agents-md-lines, ui-ux-audit-as-a-senior-designer, unslop-prompt, video-sound-by-measurement.
 
 ### Long runs · 22 tips
 

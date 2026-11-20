@@ -10,7 +10,7 @@ Copybook's 22 tips on long runs, most saved first. Each tip's text, where it goe
 
 - If the user names a tip, use that tip. If they describe a task, choose the tip that best meets their goal and constraints from those that work with the agent doing the work. If several fit equally well, choose one. Tell the user in one sentence which tip you picked and why, then read its file and follow it. If another tip also fits and would materially change the approach or result, name it and say how it differs.
 - If the user said nothing, show them the list below (each tip's name and what it does) and ask which to use.
-- If none fits, say so and suggest copybook, which looks through all 142 tips.
+- If none fits, say so and suggest copybook, which looks through all 143 tips.
 
 | Tip | What it does |
 | --- | --- |
@@ -35,4 +35,4 @@ Copybook's 22 tips on long runs, most saved first. Each tip's text, where it goe
 | [Overnight /goal for open issues and TODOs](references/overnight-goal-for-open-issues.md) `overnight-goal-for-open-issues` | Before bed: each issue and TODO taken as far as it can go without you, then one HTML board of what's done, stuck or your call. |
 | [Goal wrapper and 5 prompts built on it](references/goal-wrapper-and-5-prompts.md) `goal-wrapper-and-5-prompts` | One preference typed in three places: a goal wrapper, plus prompts for components, parallel runs, review, states and corrections. |
 | [One-way door rules for AGENTS.md: when to ask](references/one-way-door-rules-when-to-ask.md) `one-way-door-rules-when-to-ask` | Questions you'd only rubber-stamp: work you can undo done and shown after, a stop at anything you can't undo. |
-| [Coordinator skill for Claude Code and Codex](references/coordinator-for-claude-and-codex.md) `coordinator-for-claude-and-codex` | Too much for one agent session: a coordinator that never codes runs Claude and Codex workers in Herdr and ships tested batches. |
+| [Coordinator skill for Claude Code and Codex](references/coordinator-for-claude-and-codex.md) `coordinator-for-claude-and-codex` | For work that takes several agent sessions, a coordinator runs Claude and Codex in Herdr and checks changes before release. |

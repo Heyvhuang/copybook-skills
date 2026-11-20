@@ -25,4 +25,4 @@ Copybook 的 22 条「长任务」技巧，按收藏数排序，与合不合适�
 | overnight-goal-for-open-issues | 睡前：每个 issue 和 TODO 不靠你推进到最远，最后一张 HTML 看板列出完成、卡住和等你拍板的。 |
 | goal-wrapper-and-5-prompts | 一个偏好写了 3 处还要说第四遍：一个目标外壳，加组件库、并行、互审、交互状态、纠正清单 5 条。 |
 | one-way-door-rules-when-to-ask | 只需要你走个过场的提问：撤得回的先做完再给你看，撤不回的先停下。 |
-| coordinator-for-claude-and-codex | 一个会话做不完的活：不写代码的协调者在 Herdr 里分派 Claude 和 Codex 执行者，按批验收后再推。 |
+| coordinator-for-claude-and-codex | 一个会话做不完的活，由协调者在 Herdr 里分派 Claude 和 Codex，按项目流程验收和发布。 |
