@@ -30,4 +30,4 @@ If you edit videos with Claude Code, it'll go find footage or music on archive.o
 
 ## Source
 
-From [Copybook](https://copybook.page/t/pull-public-domain-footage-and-music-from-the-internet-archive): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2113732191209365933) on 23 Oct 2026, 162 saves as of 30 Oct 2026. For Claude Code.
+From [Copybook](https://copybook.page/t/pull-public-domain-footage-and-music-from-the-internet-archive): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2113732191209365933) on 23 Oct 2026, 160 saves as of 20 Nov 2026. For Claude Code.

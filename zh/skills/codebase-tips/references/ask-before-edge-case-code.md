@@ -28,4 +28,4 @@ agent 总为几乎不会发生的边界情况加代码：一行规则让它先�
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/ask-before-adding-code-for-unlikely-edge-cases)：@Voxyz_ai 2026年10月23日[发在 X 上](https://x.com/Voxyz_ai/status/2113632785759973649)，截至 2026年10月30日有 601 次收藏。适用于 Claude Code 和 Codex。
+来自 [Copybook](https://copybook.page/zh/t/ask-before-adding-code-for-unlikely-edge-cases)：@Voxyz_ai 2026年10月23日[发在 X 上](https://x.com/Voxyz_ai/status/2113632785759973649)，截至 2026年11月20日有 598 次收藏。适用于 Claude Code 和 Codex。

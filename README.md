@@ -2,7 +2,7 @@
 
 Copybook is a skill pack for people who code with Claude Code or Codex. You ask for the work as usual, and it picks the prompt, rule or checklist that fits the task from the 144 tips, then follows it. You have nothing to remember and nothing to choose.
 
-The tips are the posts readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai) on X: 224K saves in all, counted between 22 Jul and 19 Nov 2026.
+The tips are the posts readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai) on X: 224K saves in all, counted between 22 Jul and 20 Nov 2026.
 
 [copybook.page](https://copybook.page) · [New tips by email](https://copybook.page/about#email-about-title) · [Changelog](CHANGELOG.md) · [中文](README.zh-CN.md)
 
@@ -100,7 +100,7 @@ When no tip fits, it leaves Copybook out of it and carries on with your task. If
 
 To open Copybook yourself, type `/copybook:copybook` (or `/copybook`). In Codex, type `$copybook`. To browse a topic, use a command such as `/copybook:design-tips`. Add the tip's name to use it.
 
-Grouped by topic, most saved first; saves counted between 22 Jul and 19 Nov 2026, each tip's date in its file.
+Grouped by topic, most saved first; saves counted between 22 Jul and 20 Nov 2026, each tip's date in its file.
 
 The words the tips use are in the [glossary](docs/glossary.md); the tips that stay on copybook.page are listed in [scope](docs/scope.md).
 
@@ -132,7 +132,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[3 slimmer AGENTS.md plans side by side](./skills/codebase-tips/references/3-slimmer-agents-md-plans.md)** `3-slimmer-agents-md-plans`<br>AGENTS.md past 200 lines gets followed less: 3 slimmer versions, each more aggressive, nothing lost, shown before changes. | 781 |
 | **[No compatibility code yet: AGENTS.md rules](./skills/codebase-tips/references/no-compatibility-code-yet.md)** `no-compatibility-code-yet`<br>No users yet, but the agent adds compatibility code and migrations: skip both, then docs, tests, smallest change and cleanup. | 756 |
 | **[Claude Code permissions: deny, ask and allow commands](./skills/codebase-tips/references/deny-ask-and-allow-permissions.md)** `deny-ask-and-allow-permissions`<br>Claude deleted a config that 'looked unused': risky commands blocked, pushes ask first, routine ones run, deny always wins. | 662 |
-| **[Ask before edge-case code: one AGENTS.md line](./skills/codebase-tips/references/ask-before-edge-case-code.md)** `ask-before-edge-case-code`<br>The agent codes for races that never happen: one line makes it state the risk and the odds, then wait for your OK. | 601 |
+| **[Ask before edge-case code: one AGENTS.md line](./skills/codebase-tips/references/ask-before-edge-case-code.md)** `ask-before-edge-case-code`<br>The agent codes for races that never happen: one line makes it state the risk and the odds, then wait for your OK. | 598 |
 | **[Claude Code project instructions from your sessions](./skills/codebase-tips/references/instructions-from-your-sessions.md)** `instructions-from-your-sessions`<br>Background you re-explain every new session: pulled from your last 20 sessions and written up as project instructions. | 490 |
 | **[Mod request for Claude Code itself](./skills/codebase-tips/references/mod-request-for-claude-code.md)** `mod-request-for-claude-code`<br>Something in Claude Code's interface you want changed: a prompt that finds an existing Mod or proposes the smallest one. | 395 |
 | **[\~/.codex and \~/.claude sorted before cleanup](./skills/codebase-tips/references/codex-and-claude-sorted.md)** `codex-and-claude-sorted`<br>A cleanup that could delete your chats: items sorted Keep, History, Work, Clearable or Unknown, each command approved by you. | 367 |
@@ -197,13 +197,13 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[Every UI state mocked up with Claude Design](./skills/design-tips/references/every-ui-state-with-design.md)** `every-ui-state-with-design`<br>Before any app code changes: default, loading, empty, error and success on separate artboards, from a design reference repo. | 386 |
 | **[Image options in one grid: an AGENTS.md rule](./skills/design-tips/references/image-options-in-one-grid.md)** `image-options-in-one-grid`<br>Image options drawn one at a time burn your limits: a global rule puts them all in one numbered grid, then builds your pick. | 379 |
 | **[Camera moves to name in video prompts](./skills/design-tips/references/camera-moves-for-video-prompts.md)** `camera-moves-for-video-prompts`<br>Opus 5.5 videos that look like a slideshow: six camera moves by name with what each one does, plus seconds and speed to add. | 354 |
-| **[/learn-taste: design corrections as rules](./skills/design-tips/references/learn-taste-design-corrections.md)** `learn-taste-design-corrections`<br>You keep fixing the same design mistakes: each correction in a session turned into a strict rule with reasoning. | 314 |
+| **[/learn-taste: design corrections as rules](./skills/design-tips/references/learn-taste-design-corrections.md)** `learn-taste-design-corrections`<br>You keep fixing the same design mistakes: each correction in a session turned into a strict rule with reasoning. | 340 |
 | **[Pixel art rendering rules for CLAUDE.md](./skills/design-tips/references/pixel-art-rendering-rules.md)** `pixel-art-rendering-rules`<br>Pixels crisp in your sprites but blurry on screen: textures on Nearest, whole-number scaling, camera and sprites rounded alike. | 306 |
 | **[Happy-path debt, found and fixed](./skills/design-tips/references/happy-path-debt-found-and-fixed.md)** `happy-path-debt-found-and-fixed`<br>Screens that only work when data loads fast and nothing fails: missing states and layout breaks fixed per component, design kept. | 260 |
 | **[Unslop prompt for pages that look AI-made](./skills/design-tips/references/unslop-prompt.md)** `unslop-prompt`<br>Pages that scream AI at first glance: every slop sign listed, a five-line direction for your OK, then fixes pass by pass. | 240 |
 | **[703 Opus 5.5 video prompts, one remade for you](./skills/design-tips/references/703-video-prompts-one-remade.md)** `703-video-prompts-one-remade`<br>A product video like the viral ones: the 5 of 703 prompts that fit your product, your pick remade as one HTML file. | 212 |
 | **[Hallmark: audit and redesign AI-looking pages](./skills/design-tips/references/hallmark-audit-and-redesign.md)** `hallmark-audit-and-redesign`<br>A tiny label above every heading gives AI away: one command lists what's wrong with a page, another rebuilds it, content kept. | 188 |
-| **[Internet Archive public-domain clips and music](./skills/design-tips/references/internet-archive-clips-and-music.md)** `internet-archive-clips-and-music`<br>A shot needing old film or old records: the Internet Archive's free API searched, public-domain items only, each one logged. | 162 |
+| **[Internet Archive public-domain clips and music](./skills/design-tips/references/internet-archive-clips-and-music.md)** `internet-archive-clips-and-music`<br>A shot needing old film or old records: the Internet Archive's free API searched, public-domain items only, each one logged. | 160 |
 | **[A designer's landing-page skill](./skills/design-tips/references/designers-landing-page-skill.md)** `designers-landing-page-skill`<br>A landing page that looks designed: layout, copy, fonts and spacing handled after one round of questions. | 159 |
 | **[Refero style prompt: design plan before code](./skills/design-tips/references/refero-style-prompt.md)** `refero-style-prompt`<br>Pages that could fit any startup: a Refero style as reference, a design plan you approve, then DESIGN.md and screenshot checks. | 141 |
 
@@ -366,4 +366,4 @@ codex plugin add copybook@copybook
 
 ## License
 
-Copybook’s original skill text, instructions and translations are licensed under [CC BY 4.0](LICENSE-CONTENT). Credit Copybook (@Voxyz_ai), link to the source and license, and indicate any changes. Third-party quotations are excluded from this grant. See the [Orwell quotation notice](LICENSE-NOTICES.md). Manifests, configuration and other original non-text assets use the [MIT License](LICENSE). Keep its copyright and permission notice with copies.
+Copybook’s original skill text, instructions and translations are licensed under [CC BY 4.0](LICENSE-CONTENT). Credit Copybook (@Voxyz_ai), link to the source and license, and indicate any changes. The credit we’d like is a link to the tip’s page on copybook.page, given in its file’s Source line. Third-party quotations are excluded from this grant; the [third-party notices](LICENSE-NOTICES.md) list them. Manifests, configuration and other original non-text assets use the [MIT License](LICENSE). Keep its copyright and permission notice with copies. Neither license covers the Copybook name or mark.

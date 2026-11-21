@@ -2,7 +2,7 @@
 
 Copybook 是给用 Claude Code 或 Codex 写代码的人准备的一套 skill。你照常说要做什么，它从 144 条技巧里挑出合适的提示词、规则或检查清单，照着做。你不用记，也不用选。
 
-这些技巧来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子，合计 22.4万次收藏，统计于 2026年7月22日到 11月19日。
+这些技巧来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子，合计 22.4万次收藏，统计于 2026年7月22日到 11月20日。
 
 [copybook.page](https://copybook.page/zh/) · [用邮件收新技巧（英文）](https://copybook.page/zh/about#email-about-title) · [更新记录](CHANGELOG.md) · [English](README.md)
 
@@ -100,7 +100,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 
 要自己打开 Copybook，输入 `/copybook-zh:copybook` 或 `/copybook`，在 Codex 里输入 `$copybook`。输入 `/copybook-zh:design-tips` 可以浏览设计技巧，命令后加上技巧名即可使用。
 
-按话题分，收藏多的在前；收藏数统计于 2026年7月22日到 11月19日，每条的日期在它的文件里。
+按话题分，收藏多的在前；收藏数统计于 2026年7月22日到 11月20日，每条的日期在它的文件里。
 
 技巧里用到的词在[词汇表](docs/glossary.zh-CN.md)，只留在 copybook.page 上的技巧在[范围](docs/scope.md#范围)。
 
@@ -132,7 +132,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | **[AGENTS.md 瘦身：3 套方案并排](./zh/skills/codebase-tips/references/3-slimmer-agents-md-plans.md)** `3-slimmer-agents-md-plans`<br>AGENTS.md 超过 200 行就不照做了：3 版更精简的并排，一版比一版激进，不丢规则，改前先给你看。 | 781 |
 | **[还没用户就不写兼容代码：AGENTS.md 规则](./zh/skills/codebase-tips/references/no-compatibility-code-yet.md)** `no-compatibility-code-yet`<br>项目还没人用，agent 却在写兼容代码：跳过兼容和迁移，每次改动走文档、测试、最小实现、清理。 | 756 |
 | **[deny、ask、allow 权限规则](./zh/skills/codebase-tips/references/deny-ask-and-allow-permissions.md)** `deny-ask-and-allow-permissions`<br>顺手删过「看起来没用」的配置：危险命令直接拦，push 和发布前先问，日常放行，deny 永远优先。 | 662 |
-| **[加边界代码前先问：AGENTS.md 一行](./zh/skills/codebase-tips/references/ask-before-edge-case-code.md)** `ask-before-edge-case-code`<br>agent 总为几乎不会发生的边界情况加代码：一行规则让它先说会出什么问题、概率多大，等你点头。 | 601 |
+| **[加边界代码前先问：AGENTS.md 一行](./zh/skills/codebase-tips/references/ask-before-edge-case-code.md)** `ask-before-edge-case-code`<br>agent 总为几乎不会发生的边界情况加代码：一行规则让它先说会出什么问题、概率多大，等你点头。 | 598 |
 | **[从会话里写出的项目说明](./zh/skills/codebase-tips/references/instructions-from-your-sessions.md)** `instructions-from-your-sessions`<br>每开新会话都要重讲一遍背景：从最近 20 个会话里捞出来，写成一份项目说明，以后不用再说。 | 490 |
 | **[让 Claude Code 给自己做 Mod 的提示词](./zh/skills/codebase-tips/references/mod-request-for-claude-code.md)** `mod-request-for-claude-code`<br>想改 Claude Code 自己的界面或行为：这段提示词先找现成的 Mod，没有就提一个最小的方案。 | 395 |
 | **[清理前的 \~/.codex 和 \~/.claude 分类](./zh/skills/codebase-tips/references/codex-and-claude-sorted.md)** `codex-and-claude-sorted`<br>怕清理时把聊天记录也删了：每项分到 Keep、History、Work、Clearable 或 Unknown，命令逐条批准。 | 367 |
@@ -197,13 +197,13 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | **[/design 画出的每个界面状态](./zh/skills/design-tips/references/every-ui-state-with-design.md)** `every-ui-state-with-design`<br>功能做之前先看到每个状态：/design 配一个设计参考仓库，默认、加载、空、出错、成功都画成稿。 | 386 |
 | **[图片方案并成一张网格图：AGENTS.md 规则](./zh/skills/design-tips/references/image-options-in-one-grid.md)** `image-options-in-one-grid`<br>图片方案一张张生成太烧额度：一条全局规则让所有方案进同一张带编号的网格图，再做你挑中的。 | 379 |
 | **[视频提示词里的运镜名称](./zh/skills/design-tips/references/camera-moves-for-video-prompts.md)** `camera-moves-for-video-prompts`<br>Opus 5.5 做的视频像幻灯片：6 种运镜的名字和各自效果，外加要写的秒数和速度。 | 354 |
-| **[/learn-taste：设计修正变成规则](./zh/skills/design-tips/references/learn-taste-design-corrections.md)** `learn-taste-design-corrections`<br>你总在改同样的设计错误：一次会话里的每个修正，都变成一条带理由的严格规则。 | 314 |
+| **[/learn-taste：设计修正变成规则](./zh/skills/design-tips/references/learn-taste-design-corrections.md)** `learn-taste-design-corrections`<br>你总在改同样的设计错误：一次会话里的每个修正，都变成一条带理由的严格规则。 | 340 |
 | **[CLAUDE.md 像素画渲染规则](./zh/skills/design-tips/references/pixel-art-rendering-rules.md)** `pixel-art-rendering-rules`<br>精灵图里清晰的像素到屏幕上变糊：纹理用 Nearest，整数倍缩放，镜头和精灵按同一方式取整。 | 306 |
 | **[happy-path 债务排查和修复](./zh/skills/design-tips/references/happy-path-debt-found-and-fixed.md)** `happy-path-debt-found-and-fixed`<br>界面只在数据加载快、什么都不出错时才正常：缺的状态和布局错乱逐个组件修好，设计不变。 | 260 |
 | **[Unslop 提示词：去掉页面 AI 味](./zh/skills/design-tips/references/unslop-prompt.md)** `unslop-prompt`<br>页面第一眼就像 AI 做的：列出每处 AI 味的痕迹，先写 5 行方向等你点头，再一轮一轮改。 | 240 |
 | **[703 条 Opus 5.5 视频提示词，重做一条](./zh/skills/design-tips/references/703-video-prompts-one-remade.md)** `703-video-prompts-one-remade`<br>给产品做一支爆款那样的视频：703 条提示词里最适合你的 5 条，你选的那条重做成一个 HTML 文件。 | 212 |
 | **[Hallmark：审查和重做 AI 味页面](./zh/skills/design-tips/references/hallmark-audit-and-redesign.md)** `hallmark-audit-and-redesign`<br>标题上方的小标签一眼暴露是 AI 做的：一条命令列出页面的问题，另一条整页重做，内容和表单保留。 | 188 |
-| **[Internet Archive 的公有领域素材](./zh/skills/design-tips/references/internet-archive-clips-and-music.md)** `internet-archive-clips-and-music`<br>镜头需要老电影或老唱片：自动搜 Internet Archive 的免费 API，只用公有领域条目，每条记下来源。 | 162 |
+| **[Internet Archive 的公有领域素材](./zh/skills/design-tips/references/internet-archive-clips-and-music.md)** `internet-archive-clips-and-music`<br>镜头需要老电影或老唱片：自动搜 Internet Archive 的免费 API，只用公有领域条目，每条记下来源。 | 160 |
 | **[设计师开源的落地页 skill](./zh/skills/design-tips/references/designers-landing-page-skill.md)** `designers-landing-page-skill`<br>想要有设计感的落地页：一轮问题问完，布局、文案、字体和间距都替你定。 | 159 |
 | **[Refero 风格提示词：先出设计方案](./zh/skills/design-tips/references/refero-style-prompt.md)** `refero-style-prompt`<br>页面换哪家创业公司都一样：以 Refero 风格为参考，先批方案，再写进 DESIGN.md，截图对照它检查。 | 141 |
 
@@ -366,4 +366,4 @@ codex plugin add copybook-zh@copybook
 
 ## 许可
 
-Copybook 原创的技巧正文、说明和译文采用 [CC BY 4.0](LICENSE-CONTENT)。使用时请注明 Copybook（@Voxyz_ai），附上来源和许可链接，并标明所作修改。第三方引文不在这份授权范围内，详见 [Orwell 引文许可说明](LICENSE-NOTICES.md)。清单、配置和其他原创非文字素材采用 [MIT 许可](LICENSE)，分发副本时请保留版权和许可声明。
+Copybook 原创的技巧正文、说明和译文采用 [CC BY 4.0](LICENSE-CONTENT)。使用时请注明 Copybook（@Voxyz_ai），附上来源和许可链接，并标明所作修改。注明来源时，最好链接到这条技巧在 copybook.page 上的页面，每条技巧文件的「来源」一行里有。第三方引文不在这份授权范围内，[第三方许可说明](LICENSE-NOTICES.md)列出了它们。清单、配置和其他原创非文字素材采用 [MIT 许可](LICENSE)，分发副本时请保留版权和许可声明。Copybook 的名称和标志不在这两份许可之内。

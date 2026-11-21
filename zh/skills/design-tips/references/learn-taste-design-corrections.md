@@ -38,4 +38,4 @@ npx skills@latest add emilkowalski/skills --skill learn-taste
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/turn-design-corrections-into-rules-with-learn-taste)：@Voxyz_ai 2026年11月13日[发在 X 上](https://x.com/Voxyz_ai/status/2121286973067522492)，截至 2026年11月14日有 314 次收藏。适用于 Claude Code。
+来自 [Copybook](https://copybook.page/zh/t/turn-design-corrections-into-rules-with-learn-taste)：@Voxyz_ai 2026年11月13日[发在 X 上](https://x.com/Voxyz_ai/status/2121286973067522492)，截至 2026年11月20日有 340 次收藏。适用于 Claude Code。

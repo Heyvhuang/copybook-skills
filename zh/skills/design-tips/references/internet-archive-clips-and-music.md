@@ -30,4 +30,4 @@ Internet Archive 有 17M+ 个视频条目和 14M+ 个音频条目，搜索 API �
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/pull-public-domain-footage-and-music-from-the-internet-archive)：@Voxyz_ai 2026年10月23日[发在 X 上](https://x.com/Voxyz_ai/status/2113732191209365933)，截至 2026年10月30日有 162 次收藏。适用于 Claude Code。
+来自 [Copybook](https://copybook.page/zh/t/pull-public-domain-footage-and-music-from-the-internet-archive)：@Voxyz_ai 2026年10月23日[发在 X 上](https://x.com/Voxyz_ai/status/2113732191209365933)，截至 2026年11月20日有 160 次收藏。适用于 Claude Code。

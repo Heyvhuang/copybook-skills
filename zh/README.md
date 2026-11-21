@@ -12,7 +12,7 @@
 
 装好后输入 `/copybook-zh:copybook`，说你要做什么，它会从全部 144 条技巧里挑一条直接用上；你做的事对得上某条时，agent 也会自己用上。全部技巧和其他 agent 的装法见[中文说明](https://github.com/Heyvhuang/copybook-skills/blob/main/README.zh-CN.md)。
 
-Copybook 原创的技巧正文、说明和译文采用 [CC BY 4.0](LICENSE-CONTENT)。使用时请注明 Copybook（@Voxyz_ai），附上来源和许可链接，并标明所作修改。第三方引文不在这份授权范围内，详见 [Orwell 引文许可说明](LICENSE-NOTICES.md)。清单、配置和其他原创非文字素材采用 [MIT 许可](LICENSE)，分发副本时请保留版权和许可声明。
+Copybook 原创的技巧正文、说明和译文采用 [CC BY 4.0](LICENSE-CONTENT)。使用时请注明 Copybook（@Voxyz_ai），附上来源和许可链接，并标明所作修改。注明来源时，最好链接到这条技巧在 copybook.page 上的页面，每条技巧文件的「来源」一行里有。第三方引文不在这份授权范围内，[第三方许可说明](LICENSE-NOTICES.md)列出了它们。清单、配置和其他原创非文字素材采用 [MIT 许可](LICENSE)，分发副本时请保留版权和许可声明。Copybook 的名称和标志不在这两份许可之内。
 
 ## 更新
 
@@ -55,4 +55,4 @@ First public release: [1.0.0](../CHANGELOG.md), 14 Nov 2026, 134 tips.
 
 This is the Chinese edition of Copybook's skills: the same 144 tips as the `copybook` plugin, with their steps and text in Chinese and their commands, paths and numbers checked against the English. Install it in place of `copybook`, then type `/copybook-zh:copybook` and say what you want to do. Every tip and the other ways to install are in the [README](https://github.com/Heyvhuang/copybook-skills/blob/main/README.md).
 
-Copybook’s original skill text, instructions and translations are licensed under [CC BY 4.0](LICENSE-CONTENT). Credit Copybook (@Voxyz_ai), link to the source and license, and indicate any changes. Third-party quotations are excluded from this grant. See the [Orwell quotation notice](LICENSE-NOTICES.md). Manifests, configuration and other original non-text assets use the [MIT License](LICENSE). Keep its copyright and permission notice with copies.
+Copybook’s original skill text, instructions and translations are licensed under [CC BY 4.0](LICENSE-CONTENT). Credit Copybook (@Voxyz_ai), link to the source and license, and indicate any changes. The credit we’d like is a link to the tip’s page on copybook.page, given in its file’s Source line. Third-party quotations are excluded from this grant; the [third-party notices](LICENSE-NOTICES.md) list them. Manifests, configuration and other original non-text assets use the [MIT License](LICENSE). Keep its copyright and permission notice with copies. Neither license covers the Copybook name or mark.

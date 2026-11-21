@@ -38,4 +38,4 @@ Install it, then run one line at the end of a session.
 
 ## Source
 
-From [Copybook](https://copybook.page/t/turn-design-corrections-into-rules-with-learn-taste): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2121286973067522492) on 13 Nov 2026, 314 saves as of 14 Nov 2026. For Claude Code.
+From [Copybook](https://copybook.page/t/turn-design-corrections-into-rules-with-learn-taste): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2121286973067522492) on 13 Nov 2026, 340 saves as of 20 Nov 2026. For Claude Code.

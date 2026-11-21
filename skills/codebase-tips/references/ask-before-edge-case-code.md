@@ -28,4 +28,4 @@ Add this line to your AGENTS.md so your agent stops reflexively adding code for 
 
 ## Source
 
-From [Copybook](https://copybook.page/t/ask-before-adding-code-for-unlikely-edge-cases): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2113632785759973649) on 23 Oct 2026, 601 saves as of 30 Oct 2026. For Claude Code and Codex.
+From [Copybook](https://copybook.page/t/ask-before-adding-code-for-unlikely-edge-cases): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2113632785759973649) on 23 Oct 2026, 598 saves as of 20 Nov 2026. For Claude Code and Codex.

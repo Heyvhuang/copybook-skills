@@ -1,6 +1,6 @@
 {
   "name": "copybook-zh",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "按情景替你的 coding agent 挑技巧（中文版）：一个会自己加载的 skill 从 144 条提示词、规则和设置里选一条，照着做。来自 @Voxyz_ai 在 X 上被读者收藏最多的帖子。",
   "author": {
     "name": "Vox",
