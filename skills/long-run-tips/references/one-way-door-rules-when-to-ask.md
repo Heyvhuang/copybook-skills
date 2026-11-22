@@ -33,4 +33,4 @@ Vibecoders, I'm begging you, add this to your AGENTS.md.
 
 ## Source
 
-From [Copybook](https://copybook.page/t/walk-through-two-way-doors-stop-at-one-way-doors): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2121672008421568810) on 14 Nov 2026, 247 saves as of 15 Nov 2026. For Claude Code and Codex.
+From [Copybook](https://copybook.page/t/walk-through-two-way-doors-stop-at-one-way-doors): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2121672008421568810) on 14 Nov 2026, 257 saves as of 21 Nov 2026. For Claude Code and Codex.

@@ -31,4 +31,4 @@ Any time you give me a link to something running on this computer (a preview, a 
 
 ## Source
 
-From [Copybook](https://copybook.page/t/open-preview-links-on-your-phone-with-tailscale): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2121702208546967753) on 14 Nov 2026, 3.8K saves as of 15 Nov 2026. For Claude Code and Codex.
+From [Copybook](https://copybook.page/t/open-preview-links-on-your-phone-with-tailscale): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2121702208546967753) on 14 Nov 2026, 4.2K saves as of 21 Nov 2026. For Claude Code and Codex.

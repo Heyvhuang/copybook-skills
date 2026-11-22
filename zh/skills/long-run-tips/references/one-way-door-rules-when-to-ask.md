@@ -33,4 +33,4 @@
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/walk-through-two-way-doors-stop-at-one-way-doors)：@Voxyz_ai 2026年11月14日[发在 X 上](https://x.com/Voxyz_ai/status/2121672008421568810)，截至 2026年11月15日有 247 次收藏。适用于 Claude Code 和 Codex。
+来自 [Copybook](https://copybook.page/zh/t/walk-through-two-way-doors-stop-at-one-way-doors)：@Voxyz_ai 2026年11月14日[发在 X 上](https://x.com/Voxyz_ai/status/2121672008421568810)，截至 2026年11月21日有 257 次收藏。适用于 Claude Code 和 Codex。

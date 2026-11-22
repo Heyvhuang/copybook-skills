@@ -28,6 +28,8 @@
 
 Anthropic 刚发布了一份 Fable 5.2 的 prompt 写法指南。你可以让 Fable 5.2 照着它审查项目里的旧规则。
 
+在指南自己的测试里，Fable 5.2 的上下文里有十几条之前会话留下的笔记，只有一条写着「never retry」。就这一行，让它在工具繁忙后的重试从几乎每次都试，降到 10 次里大约 4 次。
+
 当初为了不让老模型犯蠢写死的那些规则，现在反过来拖累新模型，还白白烧 token。
 
 把这段提示词和指南一起发给 Fable 5.2：https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2

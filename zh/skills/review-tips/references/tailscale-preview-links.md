@@ -31,4 +31,4 @@ agent 给的链接是 localhost：预览、审查页面、看板都换成 Tailsc
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/open-preview-links-on-your-phone-with-tailscale)：@Voxyz_ai 2026年11月14日[发在 X 上](https://x.com/Voxyz_ai/status/2121702208546967753)，截至 2026年11月15日有 3,819 次收藏。适用于 Claude Code 和 Codex。
+来自 [Copybook](https://copybook.page/zh/t/open-preview-links-on-your-phone-with-tailscale)：@Voxyz_ai 2026年11月14日[发在 X 上](https://x.com/Voxyz_ai/status/2121702208546967753)，截至 2026年11月21日有 4,182 次收藏。适用于 Claude Code 和 Codex。

@@ -110,23 +110,15 @@ Copyright 2014 The Caveat Project Authors (https://github.com/googlefonts/caveat
 
 ## Noto Sans SC
 
-Chinese body text uses this local fallback font; Chinese share images and the skills social preview use its rendered lettering.
+Chinese characters an English tip quotes fall back to this local font; the share images and the skills social preview use its rendered lettering.
 
 Source: `@fontsource/noto-sans-sc` 5.3.1. Licence: SIL Open Font License, Version 1.1. [Full package licence](https://cdn.jsdelivr.net/npm/@fontsource/noto-sans-sc@5.3.1/LICENSE). The full shared font licence text is reproduced below.
 
 Google Inc.
 
-## Noto Serif SC
-
-Chinese headings use local per-page subsets named Copybook Songti; Chinese share images use its rendered lettering. Copybook subsets the font and converts the subsets to WOFF.
-
-Source: `@fontsource/noto-serif-sc` 5.3.1. Licence: SIL Open Font License, Version 1.1. [Full package licence](https://cdn.jsdelivr.net/npm/@fontsource/noto-serif-sc@5.3.1/LICENSE). The full shared font licence text is reproduced below.
-
-Google Inc.
-
 ## Geist Serif
 
-English titles and headings, Latin text in Chinese headings, and share-image titles use the vendored Latin subsets of Geist Serif Regular. The recorded source is the `geist` 1.9.0 package; Copybook subsets it to Latin and serves WOFF2, with WOFF used to render share images.
+Titles and headings and share-image titles use the vendored Latin subsets of Geist Serif Regular. The recorded source is the `geist` 1.9.0 package; Copybook subsets it to Latin and serves WOFF2, with WOFF used to render share images.
 
 Licence: SIL Open Font License, Version 1.1. [Full licence text in the public notice](https://copybook.page/licenses.txt). The full text supplied with the vendored font is reproduced below.
 

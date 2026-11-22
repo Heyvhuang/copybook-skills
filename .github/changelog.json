@@ -145,6 +145,21 @@
       ],
       "changed": [],
       "retired": []
+    },
+    {
+      "version": "1.0.10",
+      "date": "2026-11-22",
+      "added": [],
+      "changed": [
+        {
+          "slug": "build-a-progress-dashboard-before-a-long-task",
+          "title": {
+            "en": "Progress dashboard subagent for long tasks",
+            "zh": "长任务的进度看板 subagent"
+          }
+        }
+      ],
+      "retired": []
     }
   ],
   "tips": {
@@ -309,8 +324,8 @@
       }
     },
     "build-a-progress-dashboard-before-a-long-task": {
-      "en": "115ddcfa1344dbeb",
-      "zh": "414adfe45d8b9d20",
+      "en": "45d9c278c8c68975",
+      "zh": "64814fd7c12a4c2c",
       "title": {
         "en": "Progress dashboard subagent for long tasks",
         "zh": "长任务的进度看板 subagent"

@@ -48,4 +48,4 @@ Claude Code 做的页面，每个标题上方都有一个小标签。一眼就�
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/audit-and-redesign-ai-looking-pages-with-hallmark)：@Voxyz_ai 2026年10月24日[发在 X 上](https://x.com/Voxyz_ai/status/2114039214660850098)，截至 2026年10月31日有 188 次收藏。适用于 Claude Code 和 Codex。
+来自 [Copybook](https://copybook.page/zh/t/audit-and-redesign-ai-looking-pages-with-hallmark)：@Voxyz_ai 2026年10月24日[发在 X 上](https://x.com/Voxyz_ai/status/2114039214660850098)，截至 2026年11月21日有 185 次收藏。适用于 Claude Code 和 Codex。

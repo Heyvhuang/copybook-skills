@@ -28,6 +28,8 @@ For each issue, quote the original instruction, explain its potential impact, an
 
 Anthropic just published a prompting guide for Fable 5.2. You can ask Fable 5.2 to use it to review the old rules in your project.
 
+In the guide's own test, Fable 5.2 had a dozen notes from earlier sessions in context, and just one of them said "never retry." That one line cut its retries after a busy tool from nearly every time to about 4 in 10.
+
 The rules you hard-coded to stop older models from doing dumb things now work against the new one and burn tokens for nothing.
 
 Send this prompt and the guide to Fable 5.2: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2

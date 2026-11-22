@@ -14,13 +14,13 @@ Copybook 的 22 条「长任务」技巧，收藏多的在前。每条要用的�
 
 | 技巧 | 做什么 |
 | --- | --- |
-| [长任务的进度看板 subagent](references/progress-dashboard-subagent.md) `progress-dashboard-subagent` | 长任务跑着不知道进展：后台搭一个 HTML 看板，显示进度、卡点和等你拍板的问题，主会话不停。 |
 | [Claude Code 会话做的周日历](references/week-calendar-from-sessions.md) `week-calendar-from-sessions` | 一周的会话多到记不清：本机记录做成 HTML 周日历，标出没提交就停的会话，顺手写好 3 行周报。 |
 | [6 个角色的 Grok Bot 团队](references/grok-bot-team-of-6-roles.md) `grok-bot-team-of-6-roles` | 哪些活该有自己的 Bot：6 个角色各有职责、交接和边界，其余留作 Skill 或 routine。 |
 | [最近 20 个会话里的「以后再弄」](references/later-items-from-20-sessions.md) `later-items-from-20-sessions` | 说过「以后再弄」就忘了的事：从过去的会话翻出来，排好优先级，每件变成能直接开新会话的卡片。 |
 | [Herdr 桌面版：Opus 5.5 协调执行者](references/herdr-app-opus-5-5-coordinates.md) `herdr-app-opus-5-5-coordinates` | 不离开 Claude Code 也能多开 agent：Opus 5.5 通过 Herdr 协调最多 10 个执行者，Codex 负责审查。 |
 | [从想法到成品的 7 个角色提示词](references/7-role-prompts-from-idea-to-done.md) `7-role-prompts-from-idea-to-done` | 还把资深 AI 当实习生带：技术负责人、需求负责人、调试、性能、前端、后端、reviewer，各一条。 |
 | [Herdr：Astra 协调 Claude Code 执行者](references/herdr-astra-coordinates-workers.md) `herdr-astra-coordinates-workers` | Codex 里也能用你的 Claude Code 订阅：Astra 通过 Herdr 协调最多 10 个 Opus 执行者，重活交给它们。 |
+| [长任务的进度看板 subagent](references/progress-dashboard-subagent.md) `progress-dashboard-subagent` | 长任务跑着不知道进展：后台搭一个 HTML 看板，显示进度、卡点和等你拍板的问题，主会话不停。 |
 | [Herdr：Claude 和 Codex 同跑一个任务](references/herdr-claude-and-codex-panes.md) `herdr-claude-and-codex-panes` | 结论靠你在窗口间搬来搬去：拆任务，每个 agent 自己的 worktree 和目标，一个执行、一个审查。 |
 | [长报告先列待办：AGENTS.md 规则](references/to-dos-first-in-long-reports.md) `to-dos-first-in-long-reports` | 要你做的事埋在长报告中间：AGENTS.md 加一节，每份长报告最上面先列编号待办。 |
 | [多 agent 时电脑变慢的排查](references/slow-computer-audit-for-agents.md) `slow-computer-audit-for-agents` | 开着很多 agent 电脑就卡：先 dry run 理清进程树和开机启动项，再只清理你批准的那些。 |

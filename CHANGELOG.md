@@ -4,7 +4,7 @@ What each version of Copybook's skills added, changed and retired, by week (from
 
 每个版本新增、改动和撤下了哪些技巧，按周列出（每周从周一算起，UTC）。复制块或步骤变了才算改动，只更新收藏数或日期的版本不列。
 
-## Week of 16 Nov 2026 · 1.0.2 to 1.0.8
+## Week of 16 Nov 2026 · 1.0.2 to 1.0.10
 
 **Added · 新增**
 
@@ -22,6 +22,7 @@ What each version of Copybook's skills added, changed and retired, by week (from
 **Changed · 有改动**
 
 - [/claude-api prompt-audit: skill audit for Fable 5.1](./skills/review-tips/references/claude-api-prompt-audit.md) · [/claude-api prompt-audit：换 Fable 5.1 后的 skill 审查](./zh/skills/review-tips/references/claude-api-prompt-audit.md)
+- [Progress dashboard subagent for long tasks](./skills/long-run-tips/references/progress-dashboard-subagent.md) · [长任务的进度看板 subagent](./zh/skills/long-run-tips/references/progress-dashboard-subagent.md)
 
 ## 1.0.0 · First public version · 首个公开版本
 

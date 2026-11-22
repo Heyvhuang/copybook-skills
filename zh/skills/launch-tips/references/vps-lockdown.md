@@ -30,4 +30,4 @@
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/lock-down-a-vps-behind-cloudflare-and-tailscale)：@Voxyz_ai 2026年10月24日[发在 X 上](https://x.com/Voxyz_ai/status/2114009025528426980)，截至 2026年10月31日有 1,226 次收藏。适用于 Claude Code 和 Codex。
+来自 [Copybook](https://copybook.page/zh/t/lock-down-a-vps-behind-cloudflare-and-tailscale)：@Voxyz_ai 2026年10月24日[发在 X 上](https://x.com/Voxyz_ai/status/2114009025528426980)，截至 2026年11月21日有 1,213 次收藏。适用于 Claude Code 和 Codex。

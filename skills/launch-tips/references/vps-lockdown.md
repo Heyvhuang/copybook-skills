@@ -30,4 +30,4 @@ If your domain already goes through Cloudflare's proxy, open Claude Code or Code
 
 ## Source
 
-From [Copybook](https://copybook.page/t/lock-down-a-vps-behind-cloudflare-and-tailscale): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2114009025528426980) on 24 Oct 2026, 1.2K saves as of 31 Oct 2026. For Claude Code and Codex.
+From [Copybook](https://copybook.page/t/lock-down-a-vps-behind-cloudflare-and-tailscale): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2114009025528426980) on 24 Oct 2026, 1.2K saves as of 21 Nov 2026. For Claude Code and Codex.

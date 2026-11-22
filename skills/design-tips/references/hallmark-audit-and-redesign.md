@@ -48,4 +48,4 @@ Swap in your own file or folder path. In Codex, replace the leading / with $.
 
 ## Source
 
-From [Copybook](https://copybook.page/t/audit-and-redesign-ai-looking-pages-with-hallmark): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2114039214660850098) on 24 Oct 2026, 188 saves as of 31 Oct 2026. For Claude Code and Codex.
+From [Copybook](https://copybook.page/t/audit-and-redesign-ai-looking-pages-with-hallmark): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2114039214660850098) on 24 Oct 2026, 185 saves as of 21 Nov 2026. For Claude Code and Codex.

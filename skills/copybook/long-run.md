@@ -4,13 +4,13 @@ Copybook's 22 tips on long runs. The order is by saves, not by fit: read the who
 
 | Tip | What it does |
 | --- | --- |
-| progress-dashboard-subagent | Where a long task stands while you wait: an HTML dashboard of progress, blockers and open questions, built by a side subagent. |
 | week-calendar-from-sessions | A week of sessions you can't recall: local logs as an HTML calendar, no-commit sessions flagged, and a 3-line weekly report. |
 | grok-bot-team-of-6-roles | Which work deserves its own Bot: six roles with ownership, handoffs and limits, and what stays a Skill or a routine. |
 | later-items-from-20-sessions | What you said you'd do later and forgot: past sessions searched, items ranked, each one a card that opens its own session. |
 | herdr-app-opus-5-5-coordinates | Running more agents without leaving Claude Code: Opus 5.5 coordinates up to 10 workers through Herdr, and a Codex worker reviews. |
 | 7-role-prompts-from-idea-to-done | Still walking a senior AI through every step: tech lead, requirements, debugging, performance, frontend, backend, reviewer. |
 | herdr-astra-coordinates-workers | Your Claude Code subscription, used from Codex: Astra runs up to 10 Opus workers through Herdr and hands them the heavy work. |
+| progress-dashboard-subagent | Where a long task stands while you wait: an HTML dashboard of progress, blockers and open questions, built by a side subagent. |
 | herdr-claude-and-codex-panes | Relaying conclusions between windows by hand: the task split, a worktree and outcome per agent, one executes, one reviews. |
 | to-dos-first-in-long-reports | What it needs from you is buried mid-report: one AGENTS.md section puts the to-dos, numbered, at the top of every report. |
 | slow-computer-audit-for-agents | Many agents open and the Mac bogs down: a dry-run map of processes and startup items, cleaned only where you approve. |

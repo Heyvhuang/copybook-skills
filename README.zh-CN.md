@@ -2,7 +2,7 @@
 
 Copybook 是给用 Claude Code 或 Codex 写代码的人准备的一套 skill。你照常说要做什么，它从 144 条技巧里挑出合适的提示词、规则或检查清单，照着做。你不用记，也不用选。
 
-这些技巧来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子，合计 22.4万次收藏，统计于 2026年7月22日到 11月20日。
+这些技巧来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子，合计 21.6万次收藏，统计于 2026年7月22日到 11月21日。
 
 [copybook.page](https://copybook.page/zh/) · [用邮件收新技巧（英文）](https://copybook.page/zh/about#email-about-title) · [更新记录](CHANGELOG.md) · [English](README.md)
 
@@ -100,7 +100,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 
 要自己打开 Copybook，输入 `/copybook-zh:copybook` 或 `/copybook`，在 Codex 里输入 `$copybook`。输入 `/copybook-zh:design-tips` 可以浏览设计技巧，命令后加上技巧名即可使用。
 
-按话题分，收藏多的在前；收藏数统计于 2026年7月22日到 11月20日，每条的日期在它的文件里。
+按话题分，收藏多的在前；收藏数统计于 2026年7月22日到 11月21日，每条的日期在它的文件里。
 
 技巧里用到的词在[词汇表](docs/glossary.zh-CN.md)，只留在 copybook.page 上的技巧在[范围](docs/scope.md#范围)。
 
@@ -150,7 +150,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 
 | 技巧 | 收藏 |
 | :-- | :-: |
-| **[手机上的 Tailscale 预览链接规则](./zh/skills/review-tips/references/tailscale-preview-links.md)** `tailscale-preview-links`<br>agent 给的链接是 localhost：预览、审查页面、看板都换成 Tailscale 链接，手机上直接打开。 | 3,819 |
+| **[手机上的 Tailscale 预览链接规则](./zh/skills/review-tips/references/tailscale-preview-links.md)** `tailscale-preview-links`<br>agent 给的链接是 localhost：预览、审查页面、看板都换成 Tailscale 链接，手机上直接打开。 | 4,182 |
 | **[Astra 审查的 bug 打分规则](./zh/skills/review-tips/references/bug-score-rule-for-astra.md)** `bug-score-rule-for-astra`<br>Astra 总挑几乎不会发生的 bug，Opus 一条条去修：给 bug 打分，分低的记成 issue，代码不动。 | 3,241 |
 | **[影响范围、红队等 5 条让模型判断的提示词](./zh/skills/review-tips/references/blast-radius-and-4-more-prompts.md)** `blast-radius-and-4-more-prompts`<br>只说「修这个 bug」只拿到默认答案：影响范围、并行目标、红队计划、真实用户走查、思考预算。 | 1,411 |
 | **[iOS 模拟器 UI bug 检查，含 iPhone Duo](./zh/skills/review-tips/references/ios-simulator-ui-bug-check.md)** `ios-simulator-ui-bug-check`<br>iOS app 里的 UI 问题：主要页面都点一遍，有 Duo 模拟器就查各形态，建议最小改法。 | 956 |
@@ -202,7 +202,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | **[happy-path 债务排查和修复](./zh/skills/design-tips/references/happy-path-debt-found-and-fixed.md)** `happy-path-debt-found-and-fixed`<br>界面只在数据加载快、什么都不出错时才正常：缺的状态和布局错乱逐个组件修好，设计不变。 | 260 |
 | **[Unslop 提示词：去掉页面 AI 味](./zh/skills/design-tips/references/unslop-prompt.md)** `unslop-prompt`<br>页面第一眼就像 AI 做的：列出每处 AI 味的痕迹，先写 5 行方向等你点头，再一轮一轮改。 | 240 |
 | **[703 条 Opus 5.5 视频提示词，重做一条](./zh/skills/design-tips/references/703-video-prompts-one-remade.md)** `703-video-prompts-one-remade`<br>给产品做一支爆款那样的视频：703 条提示词里最适合你的 5 条，你选的那条重做成一个 HTML 文件。 | 212 |
-| **[Hallmark：审查和重做 AI 味页面](./zh/skills/design-tips/references/hallmark-audit-and-redesign.md)** `hallmark-audit-and-redesign`<br>标题上方的小标签一眼暴露是 AI 做的：一条命令列出页面的问题，另一条整页重做，内容和表单保留。 | 188 |
+| **[Hallmark：审查和重做 AI 味页面](./zh/skills/design-tips/references/hallmark-audit-and-redesign.md)** `hallmark-audit-and-redesign`<br>标题上方的小标签一眼暴露是 AI 做的：一条命令列出页面的问题，另一条整页重做，内容和表单保留。 | 185 |
 | **[Internet Archive 的公有领域素材](./zh/skills/design-tips/references/internet-archive-clips-and-music.md)** `internet-archive-clips-and-music`<br>镜头需要老电影或老唱片：自动搜 Internet Archive 的免费 API，只用公有领域条目，每条记下来源。 | 160 |
 | **[设计师开源的落地页 skill](./zh/skills/design-tips/references/designers-landing-page-skill.md)** `designers-landing-page-skill`<br>想要有设计感的落地页：一轮问题问完，布局、文案、字体和间距都替你定。 | 159 |
 | **[Refero 风格提示词：先出设计方案](./zh/skills/design-tips/references/refero-style-prompt.md)** `refero-style-prompt`<br>页面换哪家创业公司都一样：以 Refero 风格为参考，先批方案，再写进 DESIGN.md，截图对照它检查。 | 141 |
@@ -213,13 +213,13 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 
 | 技巧 | 收藏 |
 | :-- | :-: |
-| **[长任务的进度看板 subagent](./zh/skills/long-run-tips/references/progress-dashboard-subagent.md)** `progress-dashboard-subagent`<br>长任务跑着不知道进展：后台搭一个 HTML 看板，显示进度、卡点和等你拍板的问题，主会话不停。 | 9,832 |
 | **[Claude Code 会话做的周日历](./zh/skills/long-run-tips/references/week-calendar-from-sessions.md)** `week-calendar-from-sessions`<br>一周的会话多到记不清：本机记录做成 HTML 周日历，标出没提交就停的会话，顺手写好 3 行周报。 | 2,014 |
 | **[6 个角色的 Grok Bot 团队](./zh/skills/long-run-tips/references/grok-bot-team-of-6-roles.md)** `grok-bot-team-of-6-roles`<br>哪些活该有自己的 Bot：6 个角色各有职责、交接和边界，其余留作 Skill 或 routine。 | 1,542 |
 | **[最近 20 个会话里的「以后再弄」](./zh/skills/long-run-tips/references/later-items-from-20-sessions.md)** `later-items-from-20-sessions`<br>说过「以后再弄」就忘了的事：从过去的会话翻出来，排好优先级，每件变成能直接开新会话的卡片。 | 1,422 |
 | **[Herdr 桌面版：Opus 5.5 协调执行者](./zh/skills/long-run-tips/references/herdr-app-opus-5-5-coordinates.md)** `herdr-app-opus-5-5-coordinates`<br>不离开 Claude Code 也能多开 agent：Opus 5.5 通过 Herdr 协调最多 10 个执行者，Codex 负责审查。 | 1,200 |
 | **[从想法到成品的 7 个角色提示词](./zh/skills/long-run-tips/references/7-role-prompts-from-idea-to-done.md)** `7-role-prompts-from-idea-to-done`<br>还把资深 AI 当实习生带：技术负责人、需求负责人、调试、性能、前端、后端、reviewer，各一条。 | 1,103 |
 | **[Herdr：Astra 协调 Claude Code 执行者](./zh/skills/long-run-tips/references/herdr-astra-coordinates-workers.md)** `herdr-astra-coordinates-workers`<br>Codex 里也能用你的 Claude Code 订阅：Astra 通过 Herdr 协调最多 10 个 Opus 执行者，重活交给它们。 | 1,065 |
+| **[长任务的进度看板 subagent](./zh/skills/long-run-tips/references/progress-dashboard-subagent.md)** `progress-dashboard-subagent`<br>长任务跑着不知道进展：后台搭一个 HTML 看板，显示进度、卡点和等你拍板的问题，主会话不停。 | 887 |
 | **[Herdr：Claude 和 Codex 同跑一个任务](./zh/skills/long-run-tips/references/herdr-claude-and-codex-panes.md)** `herdr-claude-and-codex-panes`<br>结论靠你在窗口间搬来搬去：拆任务，每个 agent 自己的 worktree 和目标，一个执行、一个审查。 | 884 |
 | **[长报告先列待办：AGENTS.md 规则](./zh/skills/long-run-tips/references/to-dos-first-in-long-reports.md)** `to-dos-first-in-long-reports`<br>要你做的事埋在长报告中间：AGENTS.md 加一节，每份长报告最上面先列编号待办。 | 782 |
 | **[多 agent 时电脑变慢的排查](./zh/skills/long-run-tips/references/slow-computer-audit-for-agents.md)** `slow-computer-audit-for-agents`<br>开着很多 agent 电脑就卡：先 dry run 理清进程树和开机启动项，再只清理你批准的那些。 | 673 |
@@ -233,7 +233,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | **[定时 agent 检查：按 Anthropic 指南](./zh/skills/long-run-tips/references/scheduled-agents-review.md)** `scheduled-agents-review`<br>定时任务写「最近 24 小时」会漏会重：固定时间窗口、读取失败不报和发帖风险，各附最小改法。 | 380 |
 | **[通宵 /goal：未关闭的 issue 和 TODO](./zh/skills/long-run-tips/references/overnight-goal-for-open-issues.md)** `overnight-goal-for-open-issues`<br>睡前：每个 issue 和 TODO 不靠你推进到最远，最后一张 HTML 看板列出完成、卡住和等你拍板的。 | 315 |
 | **[目标外壳和 5 条配套提示词](./zh/skills/long-run-tips/references/goal-wrapper-and-5-prompts.md)** `goal-wrapper-and-5-prompts`<br>一个偏好写了 3 处还要说第四遍：一个目标外壳，加组件库、并行、互审、交互状态、纠正清单 5 条。 | 309 |
-| **[AGENTS.md 单向门规则：什么时候该问](./zh/skills/long-run-tips/references/one-way-door-rules-when-to-ask.md)** `one-way-door-rules-when-to-ask`<br>只需要你走个过场的提问：撤得回的先做完再给你看，撤不回的先停下。 | 247 |
+| **[AGENTS.md 单向门规则：什么时候该问](./zh/skills/long-run-tips/references/one-way-door-rules-when-to-ask.md)** `one-way-door-rules-when-to-ask`<br>只需要你走个过场的提问：撤得回的先做完再给你看，撤不回的先停下。 | 257 |
 | **[Claude Code 和 Codex 的协调者 skill](./zh/skills/long-run-tips/references/coordinator-for-claude-and-codex.md)** `coordinator-for-claude-and-codex`<br>一个会话做不完的活，由协调者在 Herdr 里分派 Claude 和 Codex，按项目流程验收和发布。 |  |
 
 ### 模型和额度
@@ -278,7 +278,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | **[上线前检查：4 个测试 subagent](./zh/skills/launch-tips/references/pre-launch-4-test-subagents.md)** `pre-launch-4-test-subagents`<br>自己先往坏里试：4 个只测不改的 subagent 用 16 个问题查安全、数据、操作、环境，按轻重修。 | 2,132 |
 | **[拉 Google 搜索用户的免费小工具](./zh/skills/launch-tips/references/free-tool-page-for-google-search.md)** `free-tool-page-for-google-search`<br>想从 Google 搜索拉用户：3 个有人搜的免费小工具，你挑的做成独立 SEO 页，结果下面只放你的按钮。 | 1,487 |
 | **[上线前检查：25 项页面背后](./zh/skills/launch-tips/references/pre-launch-25-behind-page-items.md)** `pre-launch-25-behind-page-items`<br>页面背后也会出事：密钥、账单、收钱、监控和上线当天查完一次修好，要你做的列在最后。 | 1,415 |
-| **[VPS 加固：只走 Cloudflare，SSH 走 Tailscale](./zh/skills/launch-tips/references/vps-lockdown.md)** `vps-lockdown`<br>用了 Docker，ufw 拦不住：访客只能经 Cloudflare 进来，SSH 只有你能经 Tailscale 登录。 | 1,226 |
+| **[VPS 加固：只走 Cloudflare，SSH 走 Tailscale](./zh/skills/launch-tips/references/vps-lockdown.md)** `vps-lockdown`<br>用了 Docker，ufw 拦不住：访客只能经 Cloudflare 进来，SSH 只有你能经 Tailscale 登录。 | 1,213 |
 | **[上线前检查：6 个法律坑](./zh/skills/launch-tips/references/pre-launch-check-6-legal-traps.md)** `pre-launch-check-6-legal-traps`<br>按产品实际业务和适用法规，核查数据收集、字体、会话录屏、营销邮件、续费和用户上传。 | 1,184 |
 | **[Google 搜索检查：已上线网站 12 项](./zh/skills/launch-tips/references/google-search-check-12-items.md)** `google-search-check-12-items`<br>拿名字在 Google 上搜不到你用 AI 做的网站：抓取、每个页面和全站，一次修好。 | 829 |
 | **[low effort 写、high effort 验的两个 subagent](./zh/skills/launch-tips/references/builder-and-verifier-subagents.md)** `builder-and-verifier-subagents`<br>high 多花的 token 主要买到验证：builder 用 low、verifier 用 high，一条规则让新功能都走一遍。 | 740 |

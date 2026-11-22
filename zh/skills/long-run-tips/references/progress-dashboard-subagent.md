@@ -22,26 +22,26 @@
 帮我配一个专门做进度看板的 subagent：
 
 1. 在 ~/.claude/agents 新建 dashboard-builder：model 用 opus，effort 设 medium，memory 设 user；我装过的设计 skill（比如 impeccable）预装给它；它只能读写 .dashboard/ 目录和自己的记忆。
-2. 它第一次先问我喜欢什么风格：深色还是浅色、密一点还是松一点、用哪个主色，记进记忆，以后每次照着做。面板按当前任务来定，别套模板。
+2. 现在就问我喜欢什么风格：深色还是浅色、密一点还是松一点、用哪个主色。把我的回答记进它的记忆，以后每次照着做。面板由它按当前任务来定，不套模板。
 3. 看板用一个 HTML 文件，放任务和状态、等我回答的问题和默认做法、最新产出、卡住的地方。时间一律用真实时钟。双击就能打开，每 10 秒自动刷新。
-4. 在 ~/.claude/CLAUDE.md 加一条规则：超过 5 步或预计超过 30 分钟的任务，开工前先让 dashboard-builder 搭好看板；每做完一步更新一次；需要我拍板的事写进问题列表，先按默认做法往下做。
+4. 在 ~/.claude/CLAUDE.md 加一条规则：超过 5 步或预计超过 30 分钟的任务，开工前先让 dashboard-builder 搭好看板；每做完一步更新一次；需要我拍板的事写进问题列表，先按默认做法往下做；删除、发布这类撤不回的操作，等我回复再做。
 
 先把要新建和修改的文件内容给我看，再用 10 岁小孩都能听懂的话讲一遍整个流程。我确认之前什么都别写。
 ```
 
 ## 背景
 
-让 Opus 5.5 自己跑长任务的时候，每次都该先让它随手 vibe 一个 HTML 看板。
+让 Fable 5.2 自己跑长任务的时候，每次都该先让它随手 vibe 一个 HTML 看板。
 
 再单独给它配一个只做看板的 subagent：
 
-- 名字叫 dashboard-builder，effort 设 medium，再预装一个设计 skill
+- 名字叫 dashboard-builder，用 Opus 5.5 跑、effort 设 medium，再预装一个设计 skill
 - 第一次先问清你喜欢的风格，记进它的记忆，以后每次按你的口味和手上的任务来设计
-- 每个长任务开工前先叫它，它在后台两分钟左右搭好，主会话不用停下来，继续用 high 写代码
+- 每个长任务开工前先叫它，它在后台一两分钟搭好，主会话不用停下来，继续写代码
 - 看板上放四样东西：任务进度、卡住的地方、等你拍板的问题，还有你没回时它先怎么做
 
 把这段 prompt 发给 Claude Code。
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/build-a-progress-dashboard-before-a-long-task)：@Voxyz_ai 2026年9月26日[发在 X 上](https://x.com/Voxyz_ai/status/2103946635831050740)，截至 2026年10月24日有 9,832 次收藏。适用于 Claude Code。
+来自 [Copybook](https://copybook.page/zh/t/build-a-progress-dashboard-before-a-long-task)：@Voxyz_ai 2026年11月10日[发在 X 上](https://x.com/Voxyz_ai/status/2120141188304965959)，截至 2026年11月17日有 887 次收藏。适用于 Claude Code。

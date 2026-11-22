@@ -2,7 +2,7 @@
 
 Copybook is a skill pack for people who code with Claude Code or Codex. You ask for the work as usual, and it picks the prompt, rule or checklist that fits the task from the 144 tips, then follows it. You have nothing to remember and nothing to choose.
 
-The tips are the posts readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai) on X: 224K saves in all, counted between 22 Jul and 20 Nov 2026.
+The tips are the posts readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai) on X: 216K saves in all, counted between 22 Jul and 21 Nov 2026.
 
 [copybook.page](https://copybook.page) · [New tips by email](https://copybook.page/about#email-about-title) · [Changelog](CHANGELOG.md) · [中文](README.zh-CN.md)
 
@@ -100,7 +100,7 @@ When no tip fits, it leaves Copybook out of it and carries on with your task. If
 
 To open Copybook yourself, type `/copybook:copybook` (or `/copybook`). In Codex, type `$copybook`. To browse a topic, use a command such as `/copybook:design-tips`. Add the tip's name to use it.
 
-Grouped by topic, most saved first; saves counted between 22 Jul and 20 Nov 2026, each tip's date in its file.
+Grouped by topic, most saved first; saves counted between 22 Jul and 21 Nov 2026, each tip's date in its file.
 
 The words the tips use are in the [glossary](docs/glossary.md); the tips that stay on copybook.page are listed in [scope](docs/scope.md).
 
@@ -150,7 +150,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 
 | Tip | Saves |
 | :-- | :-: |
-| **[Tailscale preview links on your phone: a rule](./skills/review-tips/references/tailscale-preview-links.md)** `tailscale-preview-links`<br>Agent links that say localhost: Tailscale links to previews, review pages and dashboards that open right on your phone. | 3.8K |
+| **[Tailscale preview links on your phone: a rule](./skills/review-tips/references/tailscale-preview-links.md)** `tailscale-preview-links`<br>Agent links that say localhost: Tailscale links to previews, review pages and dashboards that open right on your phone. | 4.2K |
 | **[Bug-score rule for Astra's code reviews](./skills/review-tips/references/bug-score-rule-for-astra.md)** `bug-score-rule-for-astra`<br>Astra flags bugs that almost never happen and Opus fixes each one: bugs scored, low scores filed as issues, code left alone. | 3.2K |
 | **[Blast radius, red team and 3 more prompts](./skills/review-tips/references/blast-radius-and-4-more-prompts.md)** `blast-radius-and-4-more-prompts`<br>'Fix this bug' hands you defaults: what your diff touches, an end-to-end goal, a red-teamed plan, a user walk, a thinking budget. | 1.4K |
 | **[iOS simulator UI bug check with iPhone Duo](./skills/review-tips/references/ios-simulator-ui-bug-check.md)** `ios-simulator-ui-bug-check`<br>UI bugs in your iOS app: main screens tapped through, Duo poses checked if its simulator exists, smallest changes suggested. | 956 |
@@ -202,7 +202,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[Happy-path debt, found and fixed](./skills/design-tips/references/happy-path-debt-found-and-fixed.md)** `happy-path-debt-found-and-fixed`<br>Screens that only work when data loads fast and nothing fails: missing states and layout breaks fixed per component, design kept. | 260 |
 | **[Unslop prompt for pages that look AI-made](./skills/design-tips/references/unslop-prompt.md)** `unslop-prompt`<br>Pages that scream AI at first glance: every slop sign listed, a five-line direction for your OK, then fixes pass by pass. | 240 |
 | **[703 Opus 5.5 video prompts, one remade for you](./skills/design-tips/references/703-video-prompts-one-remade.md)** `703-video-prompts-one-remade`<br>A product video like the viral ones: the 5 of 703 prompts that fit your product, your pick remade as one HTML file. | 212 |
-| **[Hallmark: audit and redesign AI-looking pages](./skills/design-tips/references/hallmark-audit-and-redesign.md)** `hallmark-audit-and-redesign`<br>A tiny label above every heading gives AI away: one command lists what's wrong with a page, another rebuilds it, content kept. | 188 |
+| **[Hallmark: audit and redesign AI-looking pages](./skills/design-tips/references/hallmark-audit-and-redesign.md)** `hallmark-audit-and-redesign`<br>A tiny label above every heading gives AI away: one command lists what's wrong with a page, another rebuilds it, content kept. | 185 |
 | **[Internet Archive public-domain clips and music](./skills/design-tips/references/internet-archive-clips-and-music.md)** `internet-archive-clips-and-music`<br>A shot needing old film or old records: the Internet Archive's free API searched, public-domain items only, each one logged. | 160 |
 | **[A designer's landing-page skill](./skills/design-tips/references/designers-landing-page-skill.md)** `designers-landing-page-skill`<br>A landing page that looks designed: layout, copy, fonts and spacing handled after one round of questions. | 159 |
 | **[Refero style prompt: design plan before code](./skills/design-tips/references/refero-style-prompt.md)** `refero-style-prompt`<br>Pages that could fit any startup: a Refero style as reference, a design plan you approve, then DESIGN.md and screenshot checks. | 141 |
@@ -213,13 +213,13 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 
 | Tip | Saves |
 | :-- | :-: |
-| **[Progress dashboard subagent for long tasks](./skills/long-run-tips/references/progress-dashboard-subagent.md)** `progress-dashboard-subagent`<br>Where a long task stands while you wait: an HTML dashboard of progress, blockers and open questions, built by a side subagent. | 9.8K |
 | **[Week calendar from Claude Code sessions](./skills/long-run-tips/references/week-calendar-from-sessions.md)** `week-calendar-from-sessions`<br>A week of sessions you can't recall: local logs as an HTML calendar, no-commit sessions flagged, and a 3-line weekly report. | 2K |
 | **[Grok Bot team of 6 roles](./skills/long-run-tips/references/grok-bot-team-of-6-roles.md)** `grok-bot-team-of-6-roles`<br>Which work deserves its own Bot: six roles with ownership, handoffs and limits, and what stays a Skill or a routine. | 1.5K |
 | **[Later items from your last 20 Claude Code sessions](./skills/long-run-tips/references/later-items-from-20-sessions.md)** `later-items-from-20-sessions`<br>What you said you'd do later and forgot: past sessions searched, items ranked, each one a card that opens its own session. | 1.4K |
 | **[Herdr app: Opus 5.5 coordinating workers](./skills/long-run-tips/references/herdr-app-opus-5-5-coordinates.md)** `herdr-app-opus-5-5-coordinates`<br>Running more agents without leaving Claude Code: Opus 5.5 coordinates up to 10 workers through Herdr, and a Codex worker reviews. | 1.2K |
 | **[7 role prompts from idea to done](./skills/long-run-tips/references/7-role-prompts-from-idea-to-done.md)** `7-role-prompts-from-idea-to-done`<br>Still walking a senior AI through every step: tech lead, requirements, debugging, performance, frontend, backend, reviewer. | 1.1K |
 | **[Herdr: Astra coordinating Claude Code workers](./skills/long-run-tips/references/herdr-astra-coordinates-workers.md)** `herdr-astra-coordinates-workers`<br>Your Claude Code subscription, used from Codex: Astra runs up to 10 Opus workers through Herdr and hands them the heavy work. | 1.1K |
+| **[Progress dashboard subagent for long tasks](./skills/long-run-tips/references/progress-dashboard-subagent.md)** `progress-dashboard-subagent`<br>Where a long task stands while you wait: an HTML dashboard of progress, blockers and open questions, built by a side subagent. | 887 |
 | **[Herdr: one task across Claude and Codex panes](./skills/long-run-tips/references/herdr-claude-and-codex-panes.md)** `herdr-claude-and-codex-panes`<br>Relaying conclusions between windows by hand: the task split, a worktree and outcome per agent, one executes, one reviews. | 884 |
 | **[To-dos first in long reports: an AGENTS.md rule](./skills/long-run-tips/references/to-dos-first-in-long-reports.md)** `to-dos-first-in-long-reports`<br>What it needs from you is buried mid-report: one AGENTS.md section puts the to-dos, numbered, at the top of every report. | 782 |
 | **[Slow-computer audit when agents run](./skills/long-run-tips/references/slow-computer-audit-for-agents.md)** `slow-computer-audit-for-agents`<br>Many agents open and the Mac bogs down: a dry-run map of processes and startup items, cleaned only where you approve. | 673 |
@@ -233,7 +233,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[Scheduled-agents review by Anthropic's guide](./skills/long-run-tips/references/scheduled-agents-review.md)** `scheduled-agents-review`<br>'The last 24 hours' in a scheduled task skips or repeats work: fixed windows, silent read failures and risky posting flagged. | 380 |
 | **[Overnight /goal for open issues and TODOs](./skills/long-run-tips/references/overnight-goal-for-open-issues.md)** `overnight-goal-for-open-issues`<br>Before bed: each issue and TODO taken as far as it can go without you, then one HTML board of what's done, stuck or your call. | 315 |
 | **[Goal wrapper and 5 prompts built on it](./skills/long-run-tips/references/goal-wrapper-and-5-prompts.md)** `goal-wrapper-and-5-prompts`<br>One preference typed in three places: a goal wrapper, plus prompts for components, parallel runs, review, states and corrections. | 309 |
-| **[One-way door rules for AGENTS.md: when to ask](./skills/long-run-tips/references/one-way-door-rules-when-to-ask.md)** `one-way-door-rules-when-to-ask`<br>Questions you'd only rubber-stamp: work you can undo done and shown after, a stop at anything you can't undo. | 247 |
+| **[One-way door rules for AGENTS.md: when to ask](./skills/long-run-tips/references/one-way-door-rules-when-to-ask.md)** `one-way-door-rules-when-to-ask`<br>Questions you'd only rubber-stamp: work you can undo done and shown after, a stop at anything you can't undo. | 257 |
 | **[Coordinator skill for Claude Code and Codex](./skills/long-run-tips/references/coordinator-for-claude-and-codex.md)** `coordinator-for-claude-and-codex`<br>For work that takes several agent sessions, a coordinator runs Claude and Codex in Herdr and checks changes before release. |  |
 
 ### Models and cost
