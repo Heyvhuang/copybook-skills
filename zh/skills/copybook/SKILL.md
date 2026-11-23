@@ -1,11 +1,11 @@
 ---
 name: copybook
-description: "开工前先加载（没提 Copybook 也加载）：审方案、计划，跨文件 diff、PR；bug 修两次没好；交接、长任务报告；额度、选模型；上线前；现成提示词或规则；设计或重做页面、仪表盘；AGENTS.md。一两行、小文件、单问单答直接做，重复纠正除外。点名 Copybook 或某条技巧时一定加载。也在这些时候加载：跨会话或多 agent；落地页、去 AI 味；精简 AGENTS.md、CLAUDE.md、agent 权限；装 skill、技能或插件；为新读者重写整份 README、写任务说明。仅改单个 README 章节、补安装说明、修错字，或只解释一个报错、回答一个问题时直接处理。用户要现成的检查清单或设置，或问 Copybook 有什么时也加载。144 条提示词、规则、检查清单和设置，按情景自动选用。"
+description: "开工前先加载（没提 Copybook 也加载）：审方案、计划，跨文件 diff、PR；bug 修两次没好；交接、长任务报告；额度、选模型；上线前；现成提示词或规则；设计或重做页面、仪表盘；AGENTS.md。一两行、小文件、单问单答直接做，重复纠正除外。点名 Copybook 或某条技巧时一定加载。也在这些时候加载：跨会话或多 agent；落地页、去 AI 味；精简 AGENTS.md、CLAUDE.md、agent 权限；装 skill、技能或插件；为新读者重写整份 README、写任务说明。仅改单个 README 章节、补安装说明、修错字，或只解释一个报错、回答一个问题时直接处理。用户要现成的检查清单或设置，或问 Copybook 有什么时也加载。146 条提示词、规则、检查清单和设置，按情景自动选用。"
 ---
 
 # Copybook
 
-Copybook 有 144 条写给 coding agent 的技巧：提示词、规则、检查清单和设置，每条都来自读者在 X 上收藏过的帖子，分在下面 7 个话题里。每个话题有一个列表文件，就在这个文件旁边；每条技巧的正文在它所属话题技能的 references/ 里。
+Copybook 有 146 条写给 coding agent 的技巧：提示词、规则、检查清单和设置，每条都来自读者在 X 上收藏过的帖子，分在下面 7 个话题里。每个话题有一个列表文件，就在这个文件旁边；每条技巧的正文在它所属话题技能的 references/ 里。
 
 替用户挑一条直接用：用户要的是用上对的那条，不是一张自己去选的清单。
 
@@ -26,11 +26,11 @@ Copybook 有 144 条写给 coding agent 的技巧：提示词、规则、检查�
 
 技巧：3-slimmer-agents-md-plans、agent-memory-tools-8-repos、agent-workspace-audit、archify-system-diagrams、ask-before-edge-case-code、bug-fix-loop-rules、ci-time-audit、clickable-repo-map、codebase-memory-repo-index、codex-and-claude-sorted、deny-ask-and-allow-permissions、disk-map-of-dev-leftovers、fewer-deeper-modules、instructions-from-your-sessions、investigate-and-plan-prompt、karpathys-4-coding-principles、less-defensive-code、mod-ideas-from-20-sessions、mod-request-for-claude-code、no-compatibility-code-yet、one-agents-md-for-both-agents、open-source-scout-and-closer、pr-comments-as-agents-md-rules、rea-take-apart-a-feature、repeat-mistakes-as-lint-rules、repo-map-words-vs-names、scope-guard-rules、situation-routing-for-skills、teach-strategic-programming、ub-mode-clean-code-agent-rules、untangle-goal、vibe-coding-cleanup-prompts、whole-project-audit。
 
-### 验收 · 16 条
+### 验收 · 17 条
 
 PR、代码和计划复查、bug 打分、红队提示词、skill 回测。列表：[review.md](review.md)
 
-技巧：3-checks-before-a-skill-install、blast-radius-and-4-more-prompts、bug-score-rule-for-astra、claude-api-prompt-audit、code-and-direction-review、fake-busy-check、ios-simulator-ui-bug-check、logging-plan-and-daily-fix-list、nightly-push-review-routine、one-question-before-it-answers、perf-review-the-5-slowest-spots、plan-review-5-methods、skill-backtest-on-codex-sessions、skill-score-by-yes-no-questions、state-machine-check、tailscale-preview-links。
+技巧：1-1-on-your-week-from-git-log、3-checks-before-a-skill-install、blast-radius-and-4-more-prompts、bug-score-rule-for-astra、claude-api-prompt-audit、code-and-direction-review、fake-busy-check、ios-simulator-ui-bug-check、logging-plan-and-daily-fix-list、nightly-push-review-routine、one-question-before-it-answers、perf-review-the-5-slowest-spots、plan-review-5-methods、skill-backtest-on-codex-sessions、skill-score-by-yes-no-questions、state-machine-check、tailscale-preview-links。
 
 ### 设计 · 33 条
 
@@ -50,11 +50,11 @@ PR、代码和计划复查、bug 打分、红队提示词、skill 回测。列�
 
 技巧：3-habits-burning-your-usage、advisor-fable-on-call、advisor-opus-on-call、astra-without-default-subagents、claude-code-token-waste-audit、codex-setup-vs-the-gpt-6-2-guide、fable-5-2-agent-tree、fable-5-2-plans-opus-builds、fable-main-opus-subagents、fable-plans-codex-builds、gpt-6-1-sol-main-astra-reviews、gpt-6-pro-plan-handed-to-codex、hillclimb-a-cheaper-feature、leftover-quota-5-goal-prompts、luna-max-as-a-codex-subagent、old-rules-review-for-astra、old-rules-review-for-fable-5-2、openais-5-cheap-harness-rules、opus-5-5-main-medium-subagents、rules-check-for-sol-and-luna、setup-review-by-the-cost-guide、setup-review-by-the-model-guide、status-line-cache-countdown、think-carefully-cleanup。
 
-### 上线推广 · 11 条
+### 上线推广 · 12 条
 
 上线前检查清单、搜索引流小工具、VPS 加固。列表：[launch.md](launch.md)
 
-技巧：builder-and-verifier-subagents、free-tool-page-for-google-search、google-search-check-12-items、market-read-before-you-build、pre-launch-25-behind-page-items、pre-launch-4-test-subagents、pre-launch-check-6-legal-traps、pre-launch-check-site-speed、pre-launch-site-check-20-items、scaling-check、vps-lockdown。
+技巧：builder-and-verifier-subagents、free-tool-page-for-google-search、google-search-check-12-items、market-read-before-you-build、overnight-startup-idea-research、pre-launch-25-behind-page-items、pre-launch-4-test-subagents、pre-launch-check-6-legal-traps、pre-launch-check-site-speed、pre-launch-site-check-20-items、scaling-check、vps-lockdown。
 
 ### 写作 · 5 条
 

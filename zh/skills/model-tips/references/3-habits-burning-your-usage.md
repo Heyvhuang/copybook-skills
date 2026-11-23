@@ -32,4 +32,4 @@
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/find-the-3-habits-burning-your-claude-code-usage)：@Voxyz_ai 2026年10月25日[发在 X 上](https://x.com/Voxyz_ai/status/2114416707385073819)，截至 2026年11月1日有 730 次收藏。适用于 Claude Code 和 Codex。
+来自 [Copybook](https://copybook.page/zh/t/find-the-3-habits-burning-your-claude-code-usage)：@Voxyz_ai 2026年10月25日[发在 X 上](https://x.com/Voxyz_ai/status/2114416707385073819)，截至 2026年11月22日有 722 次收藏。适用于 Claude Code 和 Codex。

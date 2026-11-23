@@ -1,16 +1,16 @@
 ---
 name: launch-tips
-description: "Launch · 11 tips: pre-launch, speed, and legal checks, SEO tool pages, VPS lockdown."
+description: "Launch · 12 tips: pre-launch, speed, and legal checks, SEO tool pages, VPS lockdown."
 disable-model-invocation: true
 ---
 
-# Launch · 11 tips
+# Launch · 12 tips
 
-Copybook's 11 tips on launch, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
+Copybook's 12 tips on launch, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
 
 - If the user names a tip, use that tip. If they describe a task, choose the tip that best meets their goal and constraints from those that work with the agent doing the work. If several fit equally well, choose one. Tell the user in one sentence which tip you picked and why, then read its file and follow it. If another tip also fits and would materially change the approach or result, name it and say how it differs.
 - If the user said nothing, show them the list below (each tip's name and what it does) and ask which to use.
-- If none fits, say so and suggest copybook, which looks through all 144 tips.
+- If none fits, say so and suggest copybook, which looks through all 146 tips.
 
 | Tip | What it does |
 | --- | --- |
@@ -23,5 +23,6 @@ Copybook's 11 tips on launch, most saved first. Each tip's text, where it goes a
 | [Pre-launch check: 6 legal traps](references/pre-launch-check-6-legal-traps.md) `pre-launch-check-6-legal-traps` | Review the product’s data collection, fonts, session replay, marketing email, renewals and user uploads against the rules that apply to it. |
 | [Google search check: 12 items for a live site](references/google-search-check-12-items.md) `google-search-check-12-items` | You can't find your AI-built site by Googling its name: crawling, every page and the whole site, fixed in one pass. |
 | [Builder on low effort, verifier on high](references/builder-and-verifier-subagents.md) `builder-and-verifier-subagents` | High effort mostly buys verification: a builder on low, a verifier on high, one CLAUDE.md rule runs each feature through both. |
+| [Overnight market research for startup ideas](references/overnight-startup-idea-research.md) `overnight-startup-idea-research` | Looking for a startup idea people would pay for: a night of quoted, linked complaints, then 3 scored ideas nobody covers yet. |
 | [Market read before you build](references/market-read-before-you-build.md) `market-read-before-you-build` | Advice with no research behind it: 25-40 competitors indexed, recurring complaints ranked, then where your direction will die. |
 | [Scaling check: cache, queue, load balancer](references/scaling-check.md) `scaling-check` | Whether your app needs them yet: six scaling fixes judged from your code, the file behind each answer, the monthly cost of each. |

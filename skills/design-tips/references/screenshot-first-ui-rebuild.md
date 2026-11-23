@@ -30,4 +30,4 @@ Launch `claude --chrome`, run `/advisor fable` (Opus builds, Fable reviews), the
 
 ## Source
 
-From [Copybook](https://copybook.page/t/screenshot-every-page-then-rebuild-the-ui): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2121981549713457427) on 15 Nov 2026, 1.1K saves as of 16 Nov 2026. For Claude Code.
+From [Copybook](https://copybook.page/t/screenshot-every-page-then-rebuild-the-ui): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2121981549713457427) on 15 Nov 2026, 1.1K saves as of 22 Nov 2026. For Claude Code.

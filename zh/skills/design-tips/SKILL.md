@@ -10,7 +10,7 @@ Copybook 的 33 条「设计」技巧，收藏多的在前。每条要用的文�
 
 - 用户点名技巧时，用点名的那条。用户只说了要做什么时，从适用于实际执行者的技巧里，选最符合用户目标和限制的一条。几条同样合适时，选一条即可。选中后，用一句话说明选了哪条、为什么，再读它的文件照着做。另一条也合适，而且换用它会明显改变做法或结果时，顺带点出它的名字和区别。
 - 用户什么都没说：把下面的列表（每条的名字和做什么）给用户看，问用哪条。
-- 都不合适就直说，并建议用 copybook，它会在全部 144 条里找。
+- 都不合适就直说，并建议用 copybook，它会在全部 146 条里找。
 
 | 技巧 | 做什么 |
 | --- | --- |
@@ -44,6 +44,6 @@ Copybook 的 33 条「设计」技巧，收藏多的在前。每条要用的文�
 | [Unslop 提示词：去掉页面 AI 味](references/unslop-prompt.md) `unslop-prompt` | 页面第一眼就像 AI 做的：列出每处 AI 味的痕迹，先写 5 行方向等你点头，再一轮一轮改。 |
 | [703 条 Opus 5.5 视频提示词，重做一条](references/703-video-prompts-one-remade.md) `703-video-prompts-one-remade` | 给产品做一支爆款那样的视频：703 条提示词里最适合你的 5 条，你选的那条重做成一个 HTML 文件。 |
 | [Hallmark：审查和重做 AI 味页面](references/hallmark-audit-and-redesign.md) `hallmark-audit-and-redesign` | 标题上方的小标签一眼暴露是 AI 做的：一条命令列出页面的问题，另一条整页重做，内容和表单保留。 |
-| [Internet Archive 的公有领域素材](references/internet-archive-clips-and-music.md) `internet-archive-clips-and-music` | 镜头需要老电影或老唱片：自动搜 Internet Archive 的免费 API，只用公有领域条目，每条记下来源。 |
 | [设计师开源的落地页 skill](references/designers-landing-page-skill.md) `designers-landing-page-skill` | 想要有设计感的落地页：一轮问题问完，布局、文案、字体和间距都替你定。 |
+| [Internet Archive 的公有领域素材](references/internet-archive-clips-and-music.md) `internet-archive-clips-and-music` | 镜头需要老电影或老唱片：自动搜 Internet Archive 的免费 API，只用公有领域条目，每条记下来源。 |
 | [Refero 风格提示词：先出设计方案](references/refero-style-prompt.md) `refero-style-prompt` | 页面换哪家创业公司都一样：以 Refero 风格为参考，先批方案，再写进 DESIGN.md，截图对照它检查。 |

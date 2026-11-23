@@ -34,6 +34,6 @@ Copybook 的 33 条「设计」技巧，按收藏数排序，与合不合适无�
 | unslop-prompt | 页面第一眼就像 AI 做的：列出每处 AI 味的痕迹，先写 5 行方向等你点头，再一轮一轮改。 |
 | 703-video-prompts-one-remade | 给产品做一支爆款那样的视频：703 条提示词里最适合你的 5 条，你选的那条重做成一个 HTML 文件。 |
 | hallmark-audit-and-redesign | 标题上方的小标签一眼暴露是 AI 做的：一条命令列出页面的问题，另一条整页重做，内容和表单保留。 |
-| internet-archive-clips-and-music | 镜头需要老电影或老唱片：自动搜 Internet Archive 的免费 API，只用公有领域条目，每条记下来源。 |
 | designers-landing-page-skill | 想要有设计感的落地页：一轮问题问完，布局、文案、字体和间距都替你定。 |
+| internet-archive-clips-and-music | 镜头需要老电影或老唱片：自动搜 Internet Archive 的免费 API，只用公有领域条目，每条记下来源。 |
 | refero-style-prompt | 页面换哪家创业公司都一样：以 Refero 风格为参考，先批方案，再写进 DESIGN.md，截图对照它检查。 |

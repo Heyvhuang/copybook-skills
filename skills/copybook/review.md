@@ -1,6 +1,6 @@
-# Review · 16 tips
+# Review · 17 tips
 
-Copybook's 16 tips on review. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../review-tips/references/<name>.md`.
+Copybook's 17 tips on review. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../review-tips/references/<name>.md`.
 
 | Tip | What it does |
 | --- | --- |
@@ -19,4 +19,5 @@ Copybook's 16 tips on review. The order is by saves, not by fit: read the whole 
 | plan-review-5-methods | Plan written, no code yet: one message for first principles, adversarial review, ablation, Occam's razor and loose coupling. |
 | skill-score-by-yes-no-questions | Did the skill edit help: 10 real tasks, 8 yes/no questions, a blind judge subagent; keep only a fix that raises the score. |
 | 3-checks-before-a-skill-install | Someone put 314 malicious skills on ClawHub: check the source, scan the code, question the permissions, in under five minutes. |
+| 1-1-on-your-week-from-git-log | Moving this week or just busy: 7 days of git log and sessions, every judgment backed by a commit or conversation, 3 commitments. |
 | state-machine-check | Bugs between a feature's states: every state from UI to server on one HTML page, then a numbered list with file, line and why. |

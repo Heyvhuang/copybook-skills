@@ -34,6 +34,6 @@ Copybook's 33 tips on design. The order is by saves, not by fit: read the whole 
 | unslop-prompt | Pages that scream AI at first glance: every slop sign listed, a five-line direction for your OK, then fixes pass by pass. |
 | 703-video-prompts-one-remade | A product video like the viral ones: the 5 of 703 prompts that fit your product, your pick remade as one HTML file. |
 | hallmark-audit-and-redesign | A tiny label above every heading gives AI away: one command lists what's wrong with a page, another rebuilds it, content kept. |
-| internet-archive-clips-and-music | A shot needing old film or old records: the Internet Archive's free API searched, public-domain items only, each one logged. |
 | designers-landing-page-skill | A landing page that looks designed: layout, copy, fonts and spacing handled after one round of questions. |
+| internet-archive-clips-and-music | A shot needing old film or old records: the Internet Archive's free API searched, public-domain items only, each one logged. |
 | refero-style-prompt | Pages that could fit any startup: a Refero style as reference, a design plan you approve, then DESIGN.md and screenshot checks. |

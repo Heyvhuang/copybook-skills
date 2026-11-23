@@ -38,4 +38,4 @@ In your project, paste the prompt into Claude Code or Codex. It uses your code a
 
 ## Source
 
-From [Copybook](https://copybook.page/t/check-whether-your-app-needs-a-cache-queue-or-load-balancer): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2114386505603137620) on 25 Oct 2026, 79 saves as of 1 Nov 2026. For Claude Code and Codex.
+From [Copybook](https://copybook.page/t/check-whether-your-app-needs-a-cache-queue-or-load-balancer): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2114386505603137620) on 25 Oct 2026, 79 saves as of 22 Nov 2026. For Claude Code and Codex.

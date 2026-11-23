@@ -10,7 +10,7 @@ Copybook 的 22 条「长任务」技巧，收藏多的在前。每条要用的�
 
 - 用户点名技巧时，用点名的那条。用户只说了要做什么时，从适用于实际执行者的技巧里，选最符合用户目标和限制的一条。几条同样合适时，选一条即可。选中后，用一句话说明选了哪条、为什么，再读它的文件照着做。另一条也合适，而且换用它会明显改变做法或结果时，顺带点出它的名字和区别。
 - 用户什么都没说：把下面的列表（每条的名字和做什么）给用户看，问用哪条。
-- 都不合适就直说，并建议用 copybook，它会在全部 144 条里找。
+- 都不合适就直说，并建议用 copybook，它会在全部 146 条里找。
 
 | 技巧 | 做什么 |
 | --- | --- |
@@ -35,4 +35,4 @@ Copybook 的 22 条「长任务」技巧，收藏多的在前。每条要用的�
 | [通宵 /goal：未关闭的 issue 和 TODO](references/overnight-goal-for-open-issues.md) `overnight-goal-for-open-issues` | 睡前：每个 issue 和 TODO 不靠你推进到最远，最后一张 HTML 看板列出完成、卡住和等你拍板的。 |
 | [目标外壳和 5 条配套提示词](references/goal-wrapper-and-5-prompts.md) `goal-wrapper-and-5-prompts` | 一个偏好写了 3 处还要说第四遍：一个目标外壳，加组件库、并行、互审、交互状态、纠正清单 5 条。 |
 | [AGENTS.md 单向门规则：什么时候该问](references/one-way-door-rules-when-to-ask.md) `one-way-door-rules-when-to-ask` | 只需要你走个过场的提问：撤得回的先做完再给你看，撤不回的先停下。 |
-| [Claude Code 和 Codex 的协调者 skill](references/coordinator-for-claude-and-codex.md) `coordinator-for-claude-and-codex` | 一个会话做不完的活，由协调者在 Herdr 里分派 Claude 和 Codex，按项目流程验收和发布。 |
+| [Claude Code 和 Codex 的协调者 skill](references/coordinator-for-claude-and-codex.md) `coordinator-for-claude-and-codex` | 一个会话做不完的活：每条 lane 一份带边界和完成检查的任务说明，再在 Herdr 里跑 Claude 和 Codex。 |

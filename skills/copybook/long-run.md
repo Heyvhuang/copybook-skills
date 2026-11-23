@@ -25,4 +25,4 @@ Copybook's 22 tips on long runs. The order is by saves, not by fit: read the who
 | overnight-goal-for-open-issues | Before bed: each issue and TODO taken as far as it can go without you, then one HTML board of what's done, stuck or your call. |
 | goal-wrapper-and-5-prompts | One preference typed in three places: a goal wrapper, plus prompts for components, parallel runs, review, states and corrections. |
 | one-way-door-rules-when-to-ask | Questions you'd only rubber-stamp: work you can undo done and shown after, a stop at anything you can't undo. |
-| coordinator-for-claude-and-codex | For work that takes several agent sessions, a coordinator runs Claude and Codex in Herdr and checks changes before release. |
+| coordinator-for-claude-and-codex | A job too big for one agent session: a brief per lane with boundaries and a done check, then Claude and Codex lanes run in Herdr. |

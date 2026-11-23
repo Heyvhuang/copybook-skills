@@ -32,4 +32,4 @@ On Codex, swap Claude Code for Codex in the prompt, use ~/.codex/sessions as the
 
 ## Source
 
-From [Copybook](https://copybook.page/t/find-the-3-habits-burning-your-claude-code-usage): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2114416707385073819) on 25 Oct 2026, 730 saves as of 1 Nov 2026. For Claude Code and Codex.
+From [Copybook](https://copybook.page/t/find-the-3-habits-burning-your-claude-code-usage): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2114416707385073819) on 25 Oct 2026, 722 saves as of 22 Nov 2026. For Claude Code and Codex.

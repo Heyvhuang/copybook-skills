@@ -4,6 +4,17 @@ What each version of Copybook's skills added, changed and retired, by week (from
 
 每个版本新增、改动和撤下了哪些技巧，按周列出（每周从周一算起，UTC）。复制块或步骤变了才算改动，只更新收藏数或日期的版本不列。
 
+## Week of 23 Nov 2026 · 1.0.11
+
+**Added · 新增**
+
+- [1:1 on your week from git log and sessions](./skills/review-tips/references/1-1-on-your-week-from-git-log.md) · [1:1 on your week from git log and sessions](./zh/skills/review-tips/references/1-1-on-your-week-from-git-log.md)
+- [Overnight market research for startup ideas](./skills/launch-tips/references/overnight-startup-idea-research.md) · [Overnight market research for startup ideas](./zh/skills/launch-tips/references/overnight-startup-idea-research.md)
+
+**Changed · 有改动**
+
+- [Coordinator skill for Claude Code and Codex](./skills/long-run-tips/references/coordinator-for-claude-and-codex.md) · [Claude Code 和 Codex 的协调者 skill](./zh/skills/long-run-tips/references/coordinator-for-claude-and-codex.md)
+
 ## Week of 16 Nov 2026 · 1.0.2 to 1.0.10
 
 **Added · 新增**

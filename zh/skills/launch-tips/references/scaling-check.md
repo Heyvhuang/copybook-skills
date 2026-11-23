@@ -38,4 +38,4 @@
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/check-whether-your-app-needs-a-cache-queue-or-load-balancer)：@Voxyz_ai 2026年10月25日[发在 X 上](https://x.com/Voxyz_ai/status/2114386505603137620)，截至 2026年11月1日有 79 次收藏。适用于 Claude Code 和 Codex。
+来自 [Copybook](https://copybook.page/zh/t/check-whether-your-app-needs-a-cache-queue-or-load-balancer)：@Voxyz_ai 2026年10月25日[发在 X 上](https://x.com/Voxyz_ai/status/2114386505603137620)，截至 2026年11月22日有 79 次收藏。适用于 Claude Code 和 Codex。

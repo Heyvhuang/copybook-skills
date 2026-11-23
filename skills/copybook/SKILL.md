@@ -1,11 +1,11 @@
 ---
 name: copybook
-description: "Load unasked: plan, multi-file PR review (no tiny edits); repeat mistakes; 2 failed fixes; handoffs; ready-made prompts, rules; usage or models; site launch prep. A one- or two-line edit, one small new file or a single question, such as explaining one error: just do it, unless the user is correcting the same mistake a second time. When the user names Copybook or one of its tips, always load. Also: long-run reports; multi-session or multi-agent work; page design, redesign or de-AI look; AGENTS.md, CLAUDE.md or agent permissions; installing a skill or plugin; rewriting a whole README for new readers, or a task brief. Handle one README section or a small wording fix directly. Also when the user asks for a checklist or a setup, or what Copybook has. 144 prompts, rules, checklists and setups, picked by situation."
+description: "Load unasked: plan, multi-file PR review (no tiny edits); repeat mistakes; 2 failed fixes; handoffs; ready-made prompts, rules; usage or models; site launch prep. A one- or two-line edit, one small new file or a single question, such as explaining one error: just do it, unless the user is correcting the same mistake a second time. When the user names Copybook or one of its tips, always load. Also: long-run reports; multi-session or multi-agent work; page design, redesign or de-AI look; AGENTS.md, CLAUDE.md or agent permissions; installing a skill or plugin; rewriting a whole README for new readers, or a task brief. Handle one README section or a small wording fix directly. Also when the user asks for a checklist or a setup, or what Copybook has. 146 prompts, rules, checklists and setups, picked by situation."
 ---
 
 # Copybook
 
-Copybook has 144 tips for coding agents: prompts, rules, checklists and setups, each from a post readers saved on X. They are filed under the 7 topics below. Each topic's list is a file beside this one; each tip's text is a file in its topic skill's references/.
+Copybook has 146 tips for coding agents: prompts, rules, checklists and setups, each from a post readers saved on X. They are filed under the 7 topics below. Each topic's list is a file beside this one; each tip's text is a file in its topic skill's references/.
 
 Pick the tip for the user and use it: they want the right one used, not a list to choose from.
 
@@ -26,11 +26,11 @@ Repo index and map, coding principles, AGENTS.md, scope rules. List: [codebase.m
 
 Tips: 3-slimmer-agents-md-plans, agent-memory-tools-8-repos, agent-workspace-audit, archify-system-diagrams, ask-before-edge-case-code, bug-fix-loop-rules, ci-time-audit, clickable-repo-map, codebase-memory-repo-index, codex-and-claude-sorted, deny-ask-and-allow-permissions, disk-map-of-dev-leftovers, fewer-deeper-modules, instructions-from-your-sessions, investigate-and-plan-prompt, karpathys-4-coding-principles, less-defensive-code, mod-ideas-from-20-sessions, mod-request-for-claude-code, no-compatibility-code-yet, one-agents-md-for-both-agents, open-source-scout-and-closer, pr-comments-as-agents-md-rules, rea-take-apart-a-feature, repeat-mistakes-as-lint-rules, repo-map-words-vs-names, scope-guard-rules, situation-routing-for-skills, teach-strategic-programming, ub-mode-clean-code-agent-rules, untangle-goal, vibe-coding-cleanup-prompts, whole-project-audit.
 
-### Review · 16 tips
+### Review · 17 tips
 
 PR, code, and plan reviews, bug scoring, skill audits and backtests. List: [review.md](review.md)
 
-Tips: 3-checks-before-a-skill-install, blast-radius-and-4-more-prompts, bug-score-rule-for-astra, claude-api-prompt-audit, code-and-direction-review, fake-busy-check, ios-simulator-ui-bug-check, logging-plan-and-daily-fix-list, nightly-push-review-routine, one-question-before-it-answers, perf-review-the-5-slowest-spots, plan-review-5-methods, skill-backtest-on-codex-sessions, skill-score-by-yes-no-questions, state-machine-check, tailscale-preview-links.
+Tips: 1-1-on-your-week-from-git-log, 3-checks-before-a-skill-install, blast-radius-and-4-more-prompts, bug-score-rule-for-astra, claude-api-prompt-audit, code-and-direction-review, fake-busy-check, ios-simulator-ui-bug-check, logging-plan-and-daily-fix-list, nightly-push-review-routine, one-question-before-it-answers, perf-review-the-5-slowest-spots, plan-review-5-methods, skill-backtest-on-codex-sessions, skill-score-by-yes-no-questions, state-machine-check, tailscale-preview-links.
 
 ### Design · 33 tips
 
@@ -50,11 +50,11 @@ Model pairings, effort, cache timing, leftover quota. List: [model.md](model.md)
 
 Tips: 3-habits-burning-your-usage, advisor-fable-on-call, advisor-opus-on-call, astra-without-default-subagents, claude-code-token-waste-audit, codex-setup-vs-the-gpt-6-2-guide, fable-5-2-agent-tree, fable-5-2-plans-opus-builds, fable-main-opus-subagents, fable-plans-codex-builds, gpt-6-1-sol-main-astra-reviews, gpt-6-pro-plan-handed-to-codex, hillclimb-a-cheaper-feature, leftover-quota-5-goal-prompts, luna-max-as-a-codex-subagent, old-rules-review-for-astra, old-rules-review-for-fable-5-2, openais-5-cheap-harness-rules, opus-5-5-main-medium-subagents, rules-check-for-sol-and-luna, setup-review-by-the-cost-guide, setup-review-by-the-model-guide, status-line-cache-countdown, think-carefully-cleanup.
 
-### Launch · 11 tips
+### Launch · 12 tips
 
 Pre-launch, speed, and legal checks, SEO tool pages, VPS lockdown. List: [launch.md](launch.md)
 
-Tips: builder-and-verifier-subagents, free-tool-page-for-google-search, google-search-check-12-items, market-read-before-you-build, pre-launch-25-behind-page-items, pre-launch-4-test-subagents, pre-launch-check-6-legal-traps, pre-launch-check-site-speed, pre-launch-site-check-20-items, scaling-check, vps-lockdown.
+Tips: builder-and-verifier-subagents, free-tool-page-for-google-search, google-search-check-12-items, market-read-before-you-build, overnight-startup-idea-research, pre-launch-25-behind-page-items, pre-launch-4-test-subagents, pre-launch-check-6-legal-traps, pre-launch-check-site-speed, pre-launch-site-check-20-items, scaling-check, vps-lockdown.
 
 ### Writing · 5 tips
 

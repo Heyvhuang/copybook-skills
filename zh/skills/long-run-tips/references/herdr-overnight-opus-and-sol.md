@@ -45,4 +45,4 @@ Opus 5.5 + GPT-6.1 Sol 跑通宵任务强得离谱。
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/run-opus-5-5-overnight-with-a-sol-reviewer-in-herdr)：@Voxyz_ai 2026年11月15日[发在 X 上](https://x.com/Voxyz_ai/status/2122072146411438294)，截至 2026年11月16日有 641 次收藏。适用于 Claude Code 和 Codex。
+来自 [Copybook](https://copybook.page/zh/t/run-opus-5-5-overnight-with-a-sol-reviewer-in-herdr)：@Voxyz_ai 2026年11月15日[发在 X 上](https://x.com/Voxyz_ai/status/2122072146411438294)，截至 2026年11月22日有 661 次收藏。适用于 Claude Code 和 Codex。

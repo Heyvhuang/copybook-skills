@@ -36,4 +36,4 @@
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/search-github-first-and-finish-the-whole-job)：@Voxyz_ai 2026年11月15日[发在 X 上](https://x.com/Voxyz_ai/status/2122011755240984607)，截至 2026年11月16日有 1.2万次收藏。适用于 Claude Code。
+来自 [Copybook](https://copybook.page/zh/t/search-github-first-and-finish-the-whole-job)：@Voxyz_ai 2026年11月15日[发在 X 上](https://x.com/Voxyz_ai/status/2122011755240984607)，截至 2026年11月22日有 1.5万次收藏。适用于 Claude Code。

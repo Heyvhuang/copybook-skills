@@ -10,7 +10,7 @@ Copybook's 33 tips on design, most saved first. Each tip's text, where it goes a
 
 - If the user names a tip, use that tip. If they describe a task, choose the tip that best meets their goal and constraints from those that work with the agent doing the work. If several fit equally well, choose one. Tell the user in one sentence which tip you picked and why, then read its file and follow it. If another tip also fits and would materially change the approach or result, name it and say how it differs.
 - If the user said nothing, show them the list below (each tip's name and what it does) and ask which to use.
-- If none fits, say so and suggest copybook, which looks through all 144 tips.
+- If none fits, say so and suggest copybook, which looks through all 146 tips.
 
 | Tip | What it does |
 | --- | --- |
@@ -44,6 +44,6 @@ Copybook's 33 tips on design, most saved first. Each tip's text, where it goes a
 | [Unslop prompt for pages that look AI-made](references/unslop-prompt.md) `unslop-prompt` | Pages that scream AI at first glance: every slop sign listed, a five-line direction for your OK, then fixes pass by pass. |
 | [703 Opus 5.5 video prompts, one remade for you](references/703-video-prompts-one-remade.md) `703-video-prompts-one-remade` | A product video like the viral ones: the 5 of 703 prompts that fit your product, your pick remade as one HTML file. |
 | [Hallmark: audit and redesign AI-looking pages](references/hallmark-audit-and-redesign.md) `hallmark-audit-and-redesign` | A tiny label above every heading gives AI away: one command lists what's wrong with a page, another rebuilds it, content kept. |
-| [Internet Archive public-domain clips and music](references/internet-archive-clips-and-music.md) `internet-archive-clips-and-music` | A shot needing old film or old records: the Internet Archive's free API searched, public-domain items only, each one logged. |
 | [A designer's landing-page skill](references/designers-landing-page-skill.md) `designers-landing-page-skill` | A landing page that looks designed: layout, copy, fonts and spacing handled after one round of questions. |
+| [Internet Archive public-domain clips and music](references/internet-archive-clips-and-music.md) `internet-archive-clips-and-music` | A shot needing old film or old records: the Internet Archive's free API searched, public-domain items only, each one logged. |
 | [Refero style prompt: design plan before code](references/refero-style-prompt.md) `refero-style-prompt` | Pages that could fit any startup: a Refero style as reference, a design plan you approve, then DESIGN.md and screenshot checks. |

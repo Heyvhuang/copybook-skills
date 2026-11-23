@@ -1,6 +1,6 @@
-# Launch · 11 tips
+# Launch · 12 tips
 
-Copybook's 11 tips on launch. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../launch-tips/references/<name>.md`.
+Copybook's 12 tips on launch. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../launch-tips/references/<name>.md`.
 
 | Tip | What it does |
 | --- | --- |
@@ -13,5 +13,6 @@ Copybook's 11 tips on launch. The order is by saves, not by fit: read the whole 
 | pre-launch-check-6-legal-traps | Review the product’s data collection, fonts, session replay, marketing email, renewals and user uploads against the rules that apply to it. |
 | google-search-check-12-items | You can't find your AI-built site by Googling its name: crawling, every page and the whole site, fixed in one pass. |
 | builder-and-verifier-subagents | High effort mostly buys verification: a builder on low, a verifier on high, one CLAUDE.md rule runs each feature through both. |
+| overnight-startup-idea-research | Looking for a startup idea people would pay for: a night of quoted, linked complaints, then 3 scored ideas nobody covers yet. |
 | market-read-before-you-build | Advice with no research behind it: 25-40 competitors indexed, recurring complaints ranked, then where your direction will die. |
 | scaling-check | Whether your app needs them yet: six scaling fixes judged from your code, the file behind each answer, the monthly cost of each. |

@@ -160,6 +160,36 @@
         }
       ],
       "retired": []
+    },
+    {
+      "version": "1.0.11",
+      "date": "2026-11-23",
+      "added": [
+        {
+          "slug": "find-startup-ideas-with-overnight-market-research",
+          "title": {
+            "en": "Overnight market research for startup ideas",
+            "zh": "Overnight market research for startup ideas"
+          }
+        },
+        {
+          "slug": "run-a-1-1-on-your-week-from-git-log-and-sessions",
+          "title": {
+            "en": "1:1 on your week from git log and sessions",
+            "zh": "1:1 on your week from git log and sessions"
+          }
+        }
+      ],
+      "changed": [
+        {
+          "slug": "coordinator-skill-for-claude-code-and-codex",
+          "title": {
+            "en": "Coordinator skill for Claude Code and Codex",
+            "zh": "Claude Code 和 Codex 的协调者 skill"
+          }
+        }
+      ],
+      "retired": []
     }
   ],
   "tips": {
@@ -460,8 +490,8 @@
       }
     },
     "coordinator-skill-for-claude-code-and-codex": {
-      "en": "19a0cbe8d200e127",
-      "zh": "c5e09bdb82a8d6b8",
+      "en": "a822cccccc6f3d73",
+      "zh": "c51e296cdb07987c",
       "title": {
         "en": "Coordinator skill for Claude Code and Codex",
         "zh": "Claude Code 和 Codex 的协调者 skill"
@@ -513,6 +543,14 @@
       "title": {
         "en": "iOS simulator UI bug check with iPhone Duo",
         "zh": "iOS 模拟器 UI bug 检查，含 iPhone Duo"
+      }
+    },
+    "find-startup-ideas-with-overnight-market-research": {
+      "en": "421f14c204c20bee",
+      "zh": "421f14c204c20bee",
+      "title": {
+        "en": "Overnight market research for startup ideas",
+        "zh": "Overnight market research for startup ideas"
       }
     },
     "find-the-3-habits-burning-your-claude-code-usage": {
@@ -1017,6 +1055,14 @@
       "title": {
         "en": "3 checks before installing a skill",
         "zh": "装 skill 前的 3 项检查"
+      }
+    },
+    "run-a-1-1-on-your-week-from-git-log-and-sessions": {
+      "en": "24a396fed771e13c",
+      "zh": "24a396fed771e13c",
+      "title": {
+        "en": "1:1 on your week from git log and sessions",
+        "zh": "1:1 on your week from git log and sessions"
       }
     },
     "run-one-task-across-claude-and-codex-with-herdr": {

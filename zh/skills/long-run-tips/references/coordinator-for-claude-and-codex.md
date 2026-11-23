@@ -1,12 +1,12 @@
 # Claude Code 和 Codex 的协调者 skill
 
-一个会话做不完的活，由协调者在 Herdr 里分派 Claude 和 Codex，按项目流程验收和发布。
+一个会话做不完的活：每条 lane 一份带边界和完成检查的任务说明，再在 Herdr 里跑 Claude 和 Codex。
 
 ## 步骤
 
-1. 复制安装命令和第一句提示词。
-2. 在终端里跑安装命令，再在项目里把提示词发给 Claude Code 或 Codex。
-3. 得到：在 Herdr 里分派 Claude 和 Codex 执行者，按项目流程验收和发布。
+1. 复制提示词；要跑执行者，再复制安装命令和执行者提示词。
+2. 带上目标，在项目里把提示词发给 Claude Code 或 Codex。
+3. 得到：开工前先审这些任务说明；lane 可以自己跑，也可以交给 Herdr 里的协调者。
 
 用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
 
@@ -16,13 +16,25 @@
 - 方括号或占位符，从用户说的话里填，没有就问。
 - 第 3 步是用户最后应该得到的。
 
+## 提示词
+
+```text
+动代码之前，以协调者的身份规划这件事。目标：<完成是什么样，以及证明它完成的检查>。
+1. 读仓库，用一句话复述目标。
+2. 把工作拆成能分开跑的 lane：一条 lane、一个分支、一份任务说明。写明每条 lane 负责哪些文件，不让两条 lane 改同一个文件。
+3. 给每条 lane 写任务说明：目标、需要的参考、不能碰的地方、基准提交、证明完成的检查，以及完成时最后一行写什么。
+4. 说清每条 lane 交回来时你要检查什么，用这个项目自己的测试和发布步骤。
+5. 列出该我拍板的事：花钱、发布、改生产环境或无法撤回的事。
+到这里停下，在任何 lane 开始之前把任务说明给我看。
+```
+
 ## 安装命令
 
 ```bash
 npx skills@latest add https://copybook.page --skill coordinator --skill parallel-goal-fleet
 ```
 
-## 第一句提示词
+## 执行者提示词
 
 ```text
 你是这次运行的协调者。目标：<完成是什么样，以及证明它完成的检查>。用 Herdr 开 lane。运行目录：../<project>-fleet
@@ -30,11 +42,13 @@ npx skills@latest add https://copybook.page --skill coordinator --skill parallel
 
 ## 背景
 
-两个 skill 把一个 Claude Code 或 Codex 会话变成协调者，指挥一组在 [Herdr](https://herdr.dev) 里运行的执行者。协调者自己从不写代码：它把工作拆成 lane（一个执行者、一个分支、一份任务说明），给每条 lane 选模型和推理强度，检查交回来的结果，按项目流程验收和发布，只把该你拍板的事交给你。项目按批发布时，把准备好的 PR 一起测试，每批只推一次。
+这句提示词在一个 Claude Code 或 Codex 对话里就能用，什么都不用装。动代码之前，它先读仓库，把你的目标拆成 lane，每条 lane 有任务说明、归它改的文件、不能碰的地方和证明它完成的检查，再列出该你拍板的事。
 
-它提炼自一次为期三天的真实运行：大约 160 个 PR、107 份 lane 任务说明、118 份交接和 166 次按批测试。需要 Herdr 0.9.5 或更高版本、已登录的 Claude Code 和 Codex CLI，以及带 GitHub CLI 的 git 仓库。源码在 [Heyvhuang/copybook-skills](https://github.com/Heyvhuang/copybook-skills/tree/main/standalone/coordinator)，README 写了每个脚本做什么。
+两个 skill 把同一套计划往前推一步：把一个会话变成协调者，指挥一组在 [Herdr](https://herdr.dev) 里运行的执行者。协调者自己从不写代码：它把工作拆成 lane（一个执行者、一个分支、一份任务说明），给每条 lane 选模型和推理强度，检查交回来的结果，按项目流程验收和发布，只把该你拍板的事交给你。项目按批发布时，把准备好的 PR 一起测试，每批只推一次。
 
-自带的模型选择是那次运行的例子。换成你账号里能用的模型，流程照旧。
+它提炼自一次为期三天的真实运行：大约 160 个 PR、107 份 lane 任务说明、118 份交接和 166 次按批测试。源码在 [Heyvhuang/copybook-skills](https://github.com/Heyvhuang/copybook-skills/tree/main/standalone/coordinator)，README 写了每个脚本做什么。自带的模型选择是那次运行的例子。换成你账号里能用的模型，流程照旧。
+
+跑执行者需要 Herdr 0.9.5 或更高版本、已登录的 Claude Code 和 Codex CLI，以及带 GitHub CLI 的 git 仓库。
 
 执行者以全权限运行：启动时没有权限弹窗，能改你的用户账号能改的任何文件、跑任何命令。只在你接受这一点的机器和仓库上用。
 

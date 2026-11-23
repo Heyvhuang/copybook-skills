@@ -32,4 +32,4 @@ On Codex, change "into this project's .claude/skills" to "by appending its SKILL
 
 ## Source
 
-From [Copybook](https://copybook.page/t/build-a-landing-page-with-a-designers-skill): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2114477103617835355) on 25 Oct 2026, 159 saves as of 1 Nov 2026. For Claude Code and Codex.
+From [Copybook](https://copybook.page/t/build-a-landing-page-with-a-designers-skill): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2114477103617835355) on 25 Oct 2026, 161 saves as of 22 Nov 2026. For Claude Code and Codex.

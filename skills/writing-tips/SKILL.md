@@ -10,7 +10,7 @@ Copybook's 5 tips on writing, most saved first. Each tip's text, where it goes a
 
 - If the user names a tip, use that tip. If they describe a task, choose the tip that best meets their goal and constraints from those that work with the agent doing the work. If several fit equally well, choose one. Tell the user in one sentence which tip you picked and why, then read its file and follow it. If another tip also fits and would materially change the approach or result, name it and say how it differs.
 - If the user said nothing, show them the list below (each tip's name and what it does) and ask which to use.
-- If none fits, say so and suggest copybook, which looks through all 144 tips.
+- If none fits, say so and suggest copybook, which looks through all 146 tips.
 
 | Tip | What it does |
 | --- | --- |

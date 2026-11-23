@@ -45,4 +45,4 @@ Opus 5.5 + GPT-6.1 Sol is insane for overnight work.
 
 ## Source
 
-From [Copybook](https://copybook.page/t/run-opus-5-5-overnight-with-a-sol-reviewer-in-herdr): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2122072146411438294) on 15 Nov 2026, 641 saves as of 16 Nov 2026. For Claude Code and Codex.
+From [Copybook](https://copybook.page/t/run-opus-5-5-overnight-with-a-sol-reviewer-in-herdr): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2122072146411438294) on 15 Nov 2026, 661 saves as of 22 Nov 2026. For Claude Code and Codex.

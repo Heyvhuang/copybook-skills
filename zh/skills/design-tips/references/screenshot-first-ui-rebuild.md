@@ -30,4 +30,4 @@ Fable 5.2 + Opus 5.5 做 UI 好得吓人。动代码之前，先让它把你的�
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/screenshot-every-page-then-rebuild-the-ui)：@Voxyz_ai 2026年11月15日[发在 X 上](https://x.com/Voxyz_ai/status/2121981549713457427)，截至 2026年11月16日有 1,084 次收藏。适用于 Claude Code。
+来自 [Copybook](https://copybook.page/zh/t/screenshot-every-page-then-rebuild-the-ui)：@Voxyz_ai 2026年11月15日[发在 X 上](https://x.com/Voxyz_ai/status/2121981549713457427)，截至 2026年11月22日有 1,103 次收藏。适用于 Claude Code。

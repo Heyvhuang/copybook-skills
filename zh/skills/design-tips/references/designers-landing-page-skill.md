@@ -32,4 +32,4 @@
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/build-a-landing-page-with-a-designers-skill)：@Voxyz_ai 2026年10月25日[发在 X 上](https://x.com/Voxyz_ai/status/2114477103617835355)，截至 2026年11月1日有 159 次收藏。适用于 Claude Code 和 Codex。
+来自 [Copybook](https://copybook.page/zh/t/build-a-landing-page-with-a-designers-skill)：@Voxyz_ai 2026年10月25日[发在 X 上](https://x.com/Voxyz_ai/status/2114477103617835355)，截至 2026年11月22日有 161 次收藏。适用于 Claude Code 和 Codex。

@@ -1,8 +1,8 @@
 # Copybook
 
-Copybook 是给用 Claude Code 或 Codex 写代码的人准备的一套 skill。你照常说要做什么，它从 144 条技巧里挑出合适的提示词、规则或检查清单，照着做。你不用记，也不用选。
+Copybook 是给用 Claude Code 或 Codex 写代码的人准备的一套 skill。你照常说要做什么，它从 146 条技巧里挑出合适的提示词、规则或检查清单，照着做。你不用记，也不用选。
 
-这些技巧来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子，合计 21.6万次收藏，统计于 2026年7月22日到 11月21日。
+这些技巧来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子，合计 21.9万次收藏，统计于 2026年7月22日到 11月22日。
 
 [copybook.page](https://copybook.page/zh/) · [用邮件收新技巧（英文）](https://copybook.page/zh/about#email-about-title) · [更新记录](CHANGELOG.md) · [English](README.md)
 
@@ -10,8 +10,8 @@ Copybook 是给用 Claude Code 或 Codex 写代码的人准备的一套 skill。
 copybook ──────────────────────────
 
 › 这个网站能上线了吗
-  上线推广 · 11 条里选 1 条
-  ·····•·····
+  上线推广 · 12 条里选 1 条
+  ·····•······
 
 › 这个页面一股 AI 味，重做
   设计 · 33 条里选 1 条
@@ -91,16 +91,16 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 ## 里面有什么
 
 - **[代码库](#代码库)** · 33 条：仓库索引和地图、写代码原则、AGENTS.md、改动范围规则。
-- **[验收](#验收)** · 16 条：PR、代码和计划复查、bug 打分、红队提示词、skill 回测。
+- **[验收](#验收)** · 17 条：PR、代码和计划复查、bug 打分、红队提示词、skill 回测。
 - **[设计](#设计)** · 33 条：先出图再写页面、动效库、参考网站、设计 skill。
 - **[长任务](#长任务)** · 22 条：多 agent 分工、交接、进度看板、会话周历、遗留待办。
 - **[模型和额度](#模型和额度)** · 24 条：模型搭配、推理强度、缓存倒计时、剩余额度。
-- **[上线推广](#上线推广)** · 11 条：上线前检查清单、搜索引流小工具、VPS 加固。
+- **[上线推广](#上线推广)** · 12 条：上线前检查清单、搜索引流小工具、VPS 加固。
 - **[写作](#写作)** · 5 条：Orwell 写作规则、去 AI 腔、README 改写、任务说明。
 
 要自己打开 Copybook，输入 `/copybook-zh:copybook` 或 `/copybook`，在 Codex 里输入 `$copybook`。输入 `/copybook-zh:design-tips` 可以浏览设计技巧，命令后加上技巧名即可使用。
 
-按话题分，收藏多的在前；收藏数统计于 2026年7月22日到 11月21日，每条的日期在它的文件里。
+按话题分，收藏多的在前；收藏数统计于 2026年7月22日到 11月22日，每条的日期在它的文件里。
 
 技巧里用到的词在[词汇表](docs/glossary.zh-CN.md)，只留在 copybook.page 上的技巧在[范围](docs/scope.md#范围)。
 
@@ -110,7 +110,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 
 | 技巧 | 收藏 |
 | :-- | :-: |
-| **[开源侦察员和收尾者提示词](./zh/skills/codebase-tips/references/open-source-scout-and-closer.md)** `open-source-scout-and-closer`<br>不熟的功能从零写、问要不要继续：先搜 GitHub，再把整个活干完，附一份大白话总结。 | 1.2万 |
+| **[开源侦察员和收尾者提示词](./zh/skills/codebase-tips/references/open-source-scout-and-closer.md)** `open-source-scout-and-closer`<br>不熟的功能从零写、问要不要继续：先搜 GitHub，再把整个活干完，附一份大白话总结。 | 1.5万 |
 | **[codebase-memory 仓库索引](./zh/skills/codebase-tips/references/codebase-memory-repo-index.md)** `codebase-memory-repo-index`<br>每个问题几十轮 grep 和读文件：仓库连成一张函数、文件和依赖的图，顺手找出能安全删的死函数。 | 8,358 |
 | **[Karpathy 的 4 条写代码原则](./zh/skills/codebase-tips/references/karpathys-4-coding-principles.md)** `karpathys-4-coding-principles`<br>过度设计、顺手改旁边的代码：先想再写、简单优先、改动要准、目标驱动，4 行写进 CLAUDE.md。 | 6,741 |
 | **[vibe coding 后的清理：5 条 Codex /goal 提示词](./zh/skills/codebase-tips/references/vibe-coding-cleanup-prompts.md)** `vibe-coding-cleanup-prompts`<br>额度重置时还剩一半：清掉死代码、重复实现和用不上的依赖，给定时任务和旧 worktree 分好类。 | 3,883 |
@@ -165,6 +165,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | **[一条消息里的 5 种计划复查方法](./zh/skills/review-tips/references/plan-review-5-methods.md)** `plan-review-5-methods`<br>计划写完代码还没动：一条消息要第一性原理、对抗性审查、消融测试、奥卡姆剃刀和高内聚低耦合。 | 361 |
 | **[skill 的是非题评分](./zh/skills/review-tips/references/skill-score-by-yes-no-questions.md)** `skill-score-by-yes-no-questions`<br>skill 改了一版有没有变好：10 个真实任务、8 道是非题、不知情的评分 subagent，只留提分的那版。 | 315 |
 | **[装 skill 前的 3 项检查](./zh/skills/review-tips/references/3-checks-before-a-skill-install.md)** `3-checks-before-a-skill-install`<br>有人在 ClawHub 上放了 314 个恶意 skill：装之前查来源、扫代码、问清权限，不到 5 分钟。 | 308 |
+| **[1:1 on your week from git log and sessions](./zh/skills/review-tips/references/1-1-on-your-week-from-git-log.md)** `1-1-on-your-week-from-git-log`<br>Moving this week or just busy: 7 days of git log and sessions, every judgment backed by a commit or conversation, 3 commitments. | 184 |
 | **[状态机检查：错误的转换标红](./zh/skills/review-tips/references/state-machine-check.md)** `state-machine-check`<br>功能状态间的 bug：从 UI 到服务端的每个状态画在一页 HTML 上，附编号清单，写明文件、行号和原因。 | 143 |
 
 ### 设计
@@ -185,7 +186,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | **[按你喜欢的网站写的 DESIGN.md](./zh/skills/design-tips/references/design-md-from-sites-you-like.md)** `design-md-from-sites-you-like`<br>页面一眼 AI 味，是它没见过你喜欢的样子：3 到 5 张截图写成 DESIGN.md，再装两个设计 skill。 | 1,404 |
 | **[TasteSkill v2：AI 痕迹检查](./zh/skills/design-tips/references/tasteskill-v2-ai-look-check.md)** `tasteskill-v2-ai-look-check`<br>页面一眼就像 AI 做的：按桌面、平板、手机宽度列出每一处痕迹，FAIL 排在 WARN 前，不改代码。 | 1,297 |
 | **[仪表盘改版：两个 skill 加两条提示词](./zh/skills/design-tips/references/dashboard-redesign-2-skills.md)** `dashboard-redesign-2-skills`<br>仪表盘一眼 AI 做的：ui-ux-pro-max 加 frontend-design，改版提示词里点名它们，再从 4 个角度审查。 | 1,295 |
-| **[先截图再重做的 UI 提示词](./zh/skills/design-tips/references/screenshot-first-ui-rebuild.md)** `screenshot-first-ui-rebuild`<br>UI 层级和密度有问题：每个页面先截图，再只用一套间距、字号和最多 5 种颜色重做。 | 1,084 |
+| **[先截图再重做的 UI 提示词](./zh/skills/design-tips/references/screenshot-first-ui-rebuild.md)** `screenshot-first-ui-rebuild`<br>UI 层级和密度有问题：每个页面先截图，再只用一套间距、字号和最多 5 种颜色重做。 | 1,103 |
 | **[Codex computer use 当本地 MCP server](./zh/skills/design-tips/references/codex-computer-use-as-mcp-server.md)** `codex-computer-use-as-mcp-server`<br>Claude Code 缺个好浏览器：ChatGPT 的 computer use 当本地 MCP，点页面、截图，对比线上和本地。 | 1,059 |
 | **[资深设计师视角的 UI/UX 审查](./zh/skills/design-tips/references/ui-ux-audit-as-a-senior-designer.md)** `ui-ux-audit-as-a-senior-designer`<br>有实权的设计审查：先定审美基线，正确性直接修，能用但显廉价的地方找出来，大改动只提建议。 | 645 |
 | **[lemo-opuscar：代码做带旁白的发布短片](./zh/skills/design-tips/references/lemo-opuscar-launch-films.md)** `lemo-opuscar-launch-films`<br>没有视频模型：TTS 旁白、免费采样库配乐，每一帧按 43 种风格之一用代码渲染，30 到 60 分钟。 | 634 |
@@ -203,8 +204,8 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | **[Unslop 提示词：去掉页面 AI 味](./zh/skills/design-tips/references/unslop-prompt.md)** `unslop-prompt`<br>页面第一眼就像 AI 做的：列出每处 AI 味的痕迹，先写 5 行方向等你点头，再一轮一轮改。 | 240 |
 | **[703 条 Opus 5.5 视频提示词，重做一条](./zh/skills/design-tips/references/703-video-prompts-one-remade.md)** `703-video-prompts-one-remade`<br>给产品做一支爆款那样的视频：703 条提示词里最适合你的 5 条，你选的那条重做成一个 HTML 文件。 | 212 |
 | **[Hallmark：审查和重做 AI 味页面](./zh/skills/design-tips/references/hallmark-audit-and-redesign.md)** `hallmark-audit-and-redesign`<br>标题上方的小标签一眼暴露是 AI 做的：一条命令列出页面的问题，另一条整页重做，内容和表单保留。 | 185 |
+| **[设计师开源的落地页 skill](./zh/skills/design-tips/references/designers-landing-page-skill.md)** `designers-landing-page-skill`<br>想要有设计感的落地页：一轮问题问完，布局、文案、字体和间距都替你定。 | 161 |
 | **[Internet Archive 的公有领域素材](./zh/skills/design-tips/references/internet-archive-clips-and-music.md)** `internet-archive-clips-and-music`<br>镜头需要老电影或老唱片：自动搜 Internet Archive 的免费 API，只用公有领域条目，每条记下来源。 | 160 |
-| **[设计师开源的落地页 skill](./zh/skills/design-tips/references/designers-landing-page-skill.md)** `designers-landing-page-skill`<br>想要有设计感的落地页：一轮问题问完，布局、文案、字体和间距都替你定。 | 159 |
 | **[Refero 风格提示词：先出设计方案](./zh/skills/design-tips/references/refero-style-prompt.md)** `refero-style-prompt`<br>页面换哪家创业公司都一样：以 Refero 风格为参考，先批方案，再写进 DESIGN.md，截图对照它检查。 | 141 |
 
 ### 长任务
@@ -224,7 +225,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | **[长报告先列待办：AGENTS.md 规则](./zh/skills/long-run-tips/references/to-dos-first-in-long-reports.md)** `to-dos-first-in-long-reports`<br>要你做的事埋在长报告中间：AGENTS.md 加一节，每份长报告最上面先列编号待办。 | 782 |
 | **[多 agent 时电脑变慢的排查](./zh/skills/long-run-tips/references/slow-computer-audit-for-agents.md)** `slow-computer-audit-for-agents`<br>开着很多 agent 电脑就卡：先 dry run 理清进程树和开机启动项，再只清理你批准的那些。 | 673 |
 | **[最该用动态工作流跑的活](./zh/skills/long-run-tips/references/job-worth-a-dynamic-workflow.md)** `job-worth-a-dynamic-workflow`<br>哪件活值得交给一批 agent：全仓库检查、迁移或修复循环，先在一个目录、10 个 agent 以内排好计划。 | 670 |
-| **[Herdr 通宵：Opus 5.5 写，Sol 审](./zh/skills/long-run-tips/references/herdr-overnight-opus-and-sol.md)** `herdr-overnight-opus-and-sol`<br>一个卡住的步骤吃掉整晚：每步最多 3 次尝试，还不行就记下错误，转去下一个独立步骤。 | 641 |
+| **[Herdr 通宵：Opus 5.5 写，Sol 审](./zh/skills/long-run-tips/references/herdr-overnight-opus-and-sol.md)** `herdr-overnight-opus-and-sol`<br>一个卡住的步骤吃掉整晚：每步最多 3 次尝试，还不行就记下错误，转去下一个独立步骤。 | 661 |
 | **[睡前报告：今晚能放心跑的任务](./zh/skills/long-run-tips/references/bedtime-report-of-safe-tasks.md)** `bedtime-report-of-safe-tasks`<br>额度每晚用不完：睡前一小时从今天的活里挑 3-5 个可撤回、能验证的，写好提示词，什么都不改。 | 570 |
 | **[Orca：一个任务分给多个 CLI agent](./zh/skills/long-run-tips/references/orca-a-task-across-cli-agents.md)** `orca-a-task-across-cli-agents`<br>几个 CLI agent 同跑没人盯进度：各有目标，reviewer 只读，写代码的各用 worktree，一人整合。 | 495 |
 | **[边做边写给下一个 agent 的 HANDOFF.md](./zh/skills/long-run-tips/references/handoff-md-for-the-next-agent.md)** `handoff-md-for-the-next-agent`<br>任务一个会话做不完：进度、决定、相关文件、验证结果和下一步边做边记，下一个 agent 接得上。 | 429 |
@@ -234,7 +235,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | **[通宵 /goal：未关闭的 issue 和 TODO](./zh/skills/long-run-tips/references/overnight-goal-for-open-issues.md)** `overnight-goal-for-open-issues`<br>睡前：每个 issue 和 TODO 不靠你推进到最远，最后一张 HTML 看板列出完成、卡住和等你拍板的。 | 315 |
 | **[目标外壳和 5 条配套提示词](./zh/skills/long-run-tips/references/goal-wrapper-and-5-prompts.md)** `goal-wrapper-and-5-prompts`<br>一个偏好写了 3 处还要说第四遍：一个目标外壳，加组件库、并行、互审、交互状态、纠正清单 5 条。 | 309 |
 | **[AGENTS.md 单向门规则：什么时候该问](./zh/skills/long-run-tips/references/one-way-door-rules-when-to-ask.md)** `one-way-door-rules-when-to-ask`<br>只需要你走个过场的提问：撤得回的先做完再给你看，撤不回的先停下。 | 257 |
-| **[Claude Code 和 Codex 的协调者 skill](./zh/skills/long-run-tips/references/coordinator-for-claude-and-codex.md)** `coordinator-for-claude-and-codex`<br>一个会话做不完的活，由协调者在 Herdr 里分派 Claude 和 Codex，按项目流程验收和发布。 |  |
+| **[Claude Code 和 Codex 的协调者 skill](./zh/skills/long-run-tips/references/coordinator-for-claude-and-codex.md)** `coordinator-for-claude-and-codex`<br>一个会话做不完的活：每条 lane 一份带边界和完成检查的任务说明，再在 Herdr 里跑 Claude 和 Codex。 |  |
 
 ### 模型和额度
 
@@ -258,7 +259,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | **[/advisor：Sonnet 5.5 主跑，Opus 待命](./zh/skills/model-tips/references/advisor-opus-on-call.md)** `advisor-opus-on-call`<br>$20 套餐默认跑 Opus 5.5：Haiku 读代码、查文档，定方案前、错误反复时、说做完前叫 Opus 出主意。 | 968 |
 | **[Fable 5.2 管规划，实现给 Opus 5.5 或 Codex](./zh/skills/model-tips/references/fable-5-2-plans-opus-builds.md)** `fable-5-2-plans-opus-builds`<br>Fable 5.2 烧 token 太快：规划留在主会话，最难的部分也可留下，其余交给 Opus 5.5 subagent 或 Codex。 | 893 |
 | **[Fable 5.2 旧规则审查](./zh/skills/model-tips/references/old-rules-review-for-fable-5-2.md)** `old-rules-review-for-fable-5-2`<br>给老模型写死的规则拖累 Fable 5.2：派活、少想、文风限制和「never」的句子，引原文给改法。 | 863 |
-| **[Claude Code 里最耗额度的 3 个习惯](./zh/skills/model-tips/references/3-habits-burning-your-usage.md)** `3-habits-burning-your-usage`<br>总撞额度上限：扫最近 7 天的会话日志，算出每个习惯各占多少额度，再写规则把它们堵上。 | 730 |
+| **[Claude Code 里最耗额度的 3 个习惯](./zh/skills/model-tips/references/3-habits-burning-your-usage.md)** `3-habits-burning-your-usage`<br>总撞额度上限：扫最近 7 天的会话日志，算出每个习惯各占多少额度，再写规则把它们堵上。 | 722 |
 | **[Fable 做主、Opus 做 subagent 的 3 个设置](./zh/skills/model-tips/references/fable-main-opus-subagents.md)** `fable-main-opus-subagents`<br>Fable 额度不够用：3 行设置，读代码、查文档交给半价的 Opus subagent，判断留给 Fable。 | 715 |
 | **[设置检查：OpenAI 的 5 条 harness 省钱规则](./zh/skills/model-tips/references/openais-5-cheap-harness-rules.md)** `openais-5-cheap-harness-rules`<br>agent 配置省不省钱：对照 OpenAI 自己用的 5 条规则逐条判过不过，给出文件和要改的那一件事。 | 715 |
 | **[Astra 默认不开 subagent](./zh/skills/model-tips/references/astra-without-default-subagents.md)** `astra-without-default-subagents`<br>Astra 烧额度比 Sol 还快：删掉默认开 subagent 的规则，AGENTS.md 加一句，让它自己做、自己验。 | 686 |
@@ -282,6 +283,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | **[上线前检查：6 个法律坑](./zh/skills/launch-tips/references/pre-launch-check-6-legal-traps.md)** `pre-launch-check-6-legal-traps`<br>按产品实际业务和适用法规，核查数据收集、字体、会话录屏、营销邮件、续费和用户上传。 | 1,184 |
 | **[Google 搜索检查：已上线网站 12 项](./zh/skills/launch-tips/references/google-search-check-12-items.md)** `google-search-check-12-items`<br>拿名字在 Google 上搜不到你用 AI 做的网站：抓取、每个页面和全站，一次修好。 | 829 |
 | **[low effort 写、high effort 验的两个 subagent](./zh/skills/launch-tips/references/builder-and-verifier-subagents.md)** `builder-and-verifier-subagents`<br>high 多花的 token 主要买到验证：builder 用 low、verifier 用 high，一条规则让新功能都走一遍。 | 740 |
+| **[Overnight market research for startup ideas](./zh/skills/launch-tips/references/overnight-startup-idea-research.md)** `overnight-startup-idea-research`<br>Looking for a startup idea people would pay for: a night of quoted, linked complaints, then 3 scored ideas nobody covers yet. | 191 |
 | **[动手前的市场判断](./zh/skills/launch-tips/references/market-read-before-you-build.md)** `market-read-before-you-build`<br>还没调研就给建议：25-40 家竞争对手逐家记下，反复出现的抱怨排好序，再看你的方向会死在哪。 | 173 |
 | **[扩容检查：缓存、队列、负载均衡](./zh/skills/launch-tips/references/scaling-check.md)** `scaling-check`<br>应用现在真需要扩容吗：6 种方案对照你的代码逐一判断，每条附文件证据和每月大概多花多少钱。 | 79 |
 
