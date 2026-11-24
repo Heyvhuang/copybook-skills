@@ -2,7 +2,7 @@
 
 Copybook 是给用 Claude Code 或 Codex 写代码的人准备的一套 skill。你照常说要做什么，它从 146 条技巧里挑出合适的提示词、规则或检查清单，照着做。你不用记，也不用选。
 
-这些技巧来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子，合计 21.9万次收藏，统计于 2026年7月22日到 11月22日。
+这些技巧来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子，合计 21.9万次收藏，统计于 2026年7月22日到 11月23日。
 
 [copybook.page](https://copybook.page/zh/) · [用邮件收新技巧（英文）](https://copybook.page/zh/about#email-about-title) · [更新记录](CHANGELOG.md) · [English](README.md)
 
@@ -100,7 +100,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 
 要自己打开 Copybook，输入 `/copybook-zh:copybook` 或 `/copybook`，在 Codex 里输入 `$copybook`。输入 `/copybook-zh:design-tips` 可以浏览设计技巧，命令后加上技巧名即可使用。
 
-按话题分，收藏多的在前；收藏数统计于 2026年7月22日到 11月22日，每条的日期在它的文件里。
+按话题分，收藏多的在前；收藏数统计于 2026年7月22日到 11月23日，每条的日期在它的文件里。
 
 技巧里用到的词在[词汇表](docs/glossary.zh-CN.md)，只留在 copybook.page 上的技巧在[范围](docs/scope.md#范围)。
 
@@ -139,7 +139,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | **[最近 20 个会话里的 mod 点子](./zh/skills/codebase-tips/references/mod-ideas-from-20-sessions.md)** `mod-ideas-from-20-sessions`<br>反复提的要求、中途叫停或撤销的命令、检查改动的方式：按帮助大小排好，引用你的原话。 | 359 |
 | **[/teach：拿自己的项目学战略型编程](./zh/skills/codebase-tips/references/teach-strategic-programming.md)** `teach-strategic-programming`<br>贵的 token 花在 AI 替代不了的事上：先问你代码库的 3 个问题，写出 MISSION.md 和课程，拿项目教你。 | 326 |
 | **[写进 CLAUDE.md 或 AGENTS.md 里的修 bug 循环规则](./zh/skills/codebase-tips/references/bug-fix-loop-rules.md)** `bug-fix-loop-rules`<br>agent 既修又审，就会一直来回拉扯：修两次不好就停，只审这一轮的改动。 | 325 |
-| **[ub-mode：Clean Code 作者的 agent 规则](./zh/skills/codebase-tips/references/ub-mode-clean-code-agent-rules.md)** `ub-mode-clean-code-agent-rules`<br>agent 的代码藏着 bug，测试骗你：每次改动都照这个 skill 来，自带 crapper、dryer、mutator 检查。 | 313 |
+| **[ub-mode：Clean Code 作者的 agent 规则](./zh/skills/codebase-tips/references/ub-mode-clean-code-agent-rules.md)** `ub-mode-clean-code-agent-rules`<br>agent 的代码藏着 bug，测试骗你：每次改动都照这个 skill 来，自带 crapper、dryer、mutator 检查。 | 312 |
 | **[能点的仓库地图：叫法 vs 代码名](./zh/skills/codebase-tips/references/repo-map-words-vs-names.md)** `repo-map-words-vs-names`<br>你怎么叫一个模块，和代码里怎么叫它对不上：每一处都标红，最容易导致改错的排在最前。 | 303 |
 | **[反复犯的错变成 helper 函数和 lint 规则](./zh/skills/codebase-tips/references/repeat-mistakes-as-lint-rules.md)** `repeat-mistakes-as-lint-rules`<br>老犯同一个错：正确写法封装成 helper，lint 禁掉旧写法，报错写明该用哪个，它跑检查时自己改。 | 184 |
 | **[skill 按场景路由的规则](./zh/skills/codebase-tips/references/situation-routing-for-skills.md)** `situation-routing-for-skills`<br>agent 常常忘了用装好的，你只好一个个点名：每个任务挑最合适的，一句话说明哪个、为什么。 | 116 |
@@ -153,7 +153,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | **[手机上的 Tailscale 预览链接规则](./zh/skills/review-tips/references/tailscale-preview-links.md)** `tailscale-preview-links`<br>agent 给的链接是 localhost：预览、审查页面、看板都换成 Tailscale 链接，手机上直接打开。 | 4,182 |
 | **[Astra 审查的 bug 打分规则](./zh/skills/review-tips/references/bug-score-rule-for-astra.md)** `bug-score-rule-for-astra`<br>Astra 总挑几乎不会发生的 bug，Opus 一条条去修：给 bug 打分，分低的记成 issue，代码不动。 | 3,241 |
 | **[影响范围、红队等 5 条让模型判断的提示词](./zh/skills/review-tips/references/blast-radius-and-4-more-prompts.md)** `blast-radius-and-4-more-prompts`<br>只说「修这个 bug」只拿到默认答案：影响范围、并行目标、红队计划、真实用户走查、思考预算。 | 1,411 |
-| **[iOS 模拟器 UI bug 检查，含 iPhone Duo](./zh/skills/review-tips/references/ios-simulator-ui-bug-check.md)** `ios-simulator-ui-bug-check`<br>iOS app 里的 UI 问题：主要页面都点一遍，有 Duo 模拟器就查各形态，建议最小改法。 | 956 |
+| **[iOS 模拟器 UI bug 检查，含 iPhone Duo](./zh/skills/review-tips/references/ios-simulator-ui-bug-check.md)** `ios-simulator-ui-bug-check`<br>iOS app 里的 UI 问题：主要页面都点一遍，有 Duo 模拟器就查各形态，建议最小改法。 | 984 |
 | **[性能审查：最慢的 5 处](./zh/skills/review-tips/references/perf-review-the-5-slowest-spots.md)** `perf-review-the-5-slowest-spots`<br>想让代码变快，多半换来一层缓存：profile 测出的耗时，每处对上的改法，要改的行和预计提速。 | 849 |
 | **[回答前先问一个问题](./zh/skills/review-tips/references/one-question-before-it-answers.md)** `one-question-before-it-answers`<br>一次问 10 个你就不想答：先摆出没说的假设、缺的信息和常见错误，再只问最可能改变做法的那个。 | 631 |
 | **[skill 回测：过去的 Codex 会话](./zh/skills/review-tips/references/skill-backtest-on-codex-sessions.md)** `skill-backtest-on-codex-sessions`<br>凭记忆写的 skill 和实际做法对不上：拿过去的 Codex 会话回测，先出 dry run 的 diff，再定期复查。 | 554 |

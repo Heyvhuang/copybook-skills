@@ -37,4 +37,4 @@ Install it and your agent's code **can't hide bugs, and its tests can't fool you
 
 ## Source
 
-From [Copybook](https://copybook.page/t/install-ub-mode-the-clean-code-authors-rules-for-agents): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2114724983297528249) on 26 Oct 2026, 313 saves as of 2 Nov 2026. For Claude Code, Cursor and Grok.
+From [Copybook](https://copybook.page/t/install-ub-mode-the-clean-code-authors-rules-for-agents): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2114724983297528249) on 26 Oct 2026, 312 saves as of 23 Nov 2026. For Claude Code, Cursor and Grok.

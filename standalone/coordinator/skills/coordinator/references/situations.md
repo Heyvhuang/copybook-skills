@@ -6,9 +6,13 @@ First moves, from the example run.
 
 **A bug reported twice.** Stop guessing. Get evidence (logs, events, a reproduction) before a third fix, and reply with what was tried and what the evidence says.
 
+**Review fails twice.** Use the focused recheck in `references/pipeline.md` under Gate. Keep the affected work held and move ready work along.
+
 **Error-tracker issue.** One issue, one small PR: front end to Opus, back end to Codex. Noise gets a reporting fix, not an app fix. Resolve it when the fix ships.
 
 **High-risk release** (money, privacy, migrations, deletion). Plan and runbook reviewed by Astra before building; build in test mode; gate; Astra again on the exact heads; packet; the user's yes; ship alone. Pricing, subscriptions, refunds and tax are the user's calls; bring them with a recommendation.
+
+**A decision that is hard to undo.** For an open choice about a new paid offer, a storage or privacy boundary, or an interface several lanes share, give a fresh planner the user's words, verified facts and fixed constraints. Ask for a short read-only proposal and keep your draft and preference out of the brief. Compare both proposals against code or data. Record what you agreed on, what you adopted, what you rejected and why, and what remains open.
 
 **Gate failure.** Work out whose failure it is (pipeline.md) and send the owning lane the file, the assertion and your reading. Ship the PRs that passed.
 

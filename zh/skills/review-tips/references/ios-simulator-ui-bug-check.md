@@ -36,4 +36,4 @@ Anthropic 刚发了一份 [Claude Code 里 iOS 模拟器的指南](https://code.
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/find-ios-app-bugs-in-the-claude-code-simulator)：@Voxyz_ai 2026年11月16日[发在 X 上](https://x.com/Voxyz_ai/status/2122465585984332276)，截至 2026年11月17日有 956 次收藏。适用于 Claude Code。
+来自 [Copybook](https://copybook.page/zh/t/find-ios-app-bugs-in-the-claude-code-simulator)：@Voxyz_ai 2026年11月16日[发在 X 上](https://x.com/Voxyz_ai/status/2122465585984332276)，截至 2026年11月23日有 984 次收藏。适用于 Claude Code。

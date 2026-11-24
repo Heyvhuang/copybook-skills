@@ -17,9 +17,10 @@ Read <run-dir>/common.md (the rules every lane shares) first.
 
 ## Delivery
 - Branch <branch>, draft PR, never merge.
-- Hand-over <run-dir>/handover-<name>.md: what changed, checks with commands and real results, evidence paths, open questions.
+- Hand-over <run-dir>/handover-<name>.md: what changed, checks with commands and real results, evidence paths, open questions. For each missing input, unavailable tool or skipped check, say what remains unverified.
 - Its last line, at the start of a line: `<NAME>-READY <PR> <head>` (add URGENT only if the run has an urgent-release grant and users are hit now).
 
 ## Delivery (review lanes, instead of the above)
-- No branch or PR. Review file <run-dir>/review-<name>.md, in this order: can merge or cannot merge, with every blocking finding (or "no blocking finding"); the scope actually reviewed (heads, paths, checks run); what was left unchecked; other findings, most serious first.
+- State what blocks this review (`references/pipeline.md`, Gate) and which checks the project requires. Put other findings under Later.
+- No branch or PR. Review file <run-dir>/review-<name>.md, in this order: can merge or cannot merge, with every blocking finding (or "no blocking finding"); the scope actually reviewed (heads, paths, checks run); what was left unchecked; other findings under Later, most serious first.
 - Its last line, at the start of a line: `REVIEW-READY <name> <verdict>`.

@@ -37,4 +37,4 @@ Clean Code 的作者刚刚公开了**他自己的 agent 写代码时遵守的规
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/install-ub-mode-the-clean-code-authors-rules-for-agents)：@Voxyz_ai 2026年10月26日[发在 X 上](https://x.com/Voxyz_ai/status/2114724983297528249)，截至 2026年11月2日有 313 次收藏。适用于 Claude Code、Cursor 和 Grok。
+来自 [Copybook](https://copybook.page/zh/t/install-ub-mode-the-clean-code-authors-rules-for-agents)：@Voxyz_ai 2026年10月26日[发在 X 上](https://x.com/Voxyz_ai/status/2114724983297528249)，截至 2026年11月23日有 312 次收藏。适用于 Claude Code、Cursor 和 Grok。

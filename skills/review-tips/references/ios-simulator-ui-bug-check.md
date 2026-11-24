@@ -36,4 +36,4 @@ Send this prompt and the guide's link to Claude Code on desktop.
 
 ## Source
 
-From [Copybook](https://copybook.page/t/find-ios-app-bugs-in-the-claude-code-simulator): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2122465585984332276) on 16 Nov 2026, 956 saves as of 17 Nov 2026. For Claude Code.
+From [Copybook](https://copybook.page/t/find-ios-app-bugs-in-the-claude-code-simulator): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2122465585984332276) on 16 Nov 2026, 984 saves as of 23 Nov 2026. For Claude Code.

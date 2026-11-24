@@ -2,7 +2,7 @@
 
 Copybook is a skill pack for people who code with Claude Code or Codex. You ask for the work as usual, and it picks the prompt, rule or checklist that fits the task from the 146 tips, then follows it. You have nothing to remember and nothing to choose.
 
-The tips are the posts readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai) on X: 219K saves in all, counted between 22 Jul and 22 Nov 2026.
+The tips are the posts readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai) on X: 219K saves in all, counted between 22 Jul and 23 Nov 2026.
 
 [copybook.page](https://copybook.page) · [New tips by email](https://copybook.page/about#email-about-title) · [Changelog](CHANGELOG.md) · [中文](README.zh-CN.md)
 
@@ -100,7 +100,7 @@ When no tip fits, it leaves Copybook out of it and carries on with your task. If
 
 To open Copybook yourself, type `/copybook:copybook` (or `/copybook`). In Codex, type `$copybook`. To browse a topic, use a command such as `/copybook:design-tips`. Add the tip's name to use it.
 
-Grouped by topic, most saved first; saves counted between 22 Jul and 22 Nov 2026, each tip's date in its file.
+Grouped by topic, most saved first; saves counted between 22 Jul and 23 Nov 2026, each tip's date in its file.
 
 The words the tips use are in the [glossary](docs/glossary.md); the tips that stay on copybook.page are listed in [scope](docs/scope.md).
 
@@ -139,7 +139,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[Mod ideas from your last 20 sessions](./skills/codebase-tips/references/mod-ideas-from-20-sessions.md)** `mod-ideas-from-20-sessions`<br>Requests you repeat, commands you stop or undo, how you check changes: ranked by how much each would help, your words quoted. | 359 |
 | **[/teach: strategic programming on your project](./skills/codebase-tips/references/teach-strategic-programming.md)** `teach-strategic-programming`<br>Spend tokens learning what AI can't replace: 3 questions about your codebase, then MISSION.md, a curriculum and lessons on it. | 326 |
 | **[Bug-fix loop rules for CLAUDE.md or AGENTS.md](./skills/codebase-tips/references/bug-fix-loop-rules.md)** `bug-fix-loop-rules`<br>Agents that both fix and review can't stop going back and forth: stop after two failed fixes, review only this round's changes. | 325 |
-| **[ub-mode: the Clean Code author's agent rules](./skills/codebase-tips/references/ub-mode-clean-code-agent-rules.md)** `ub-mode-clean-code-agent-rules`<br>Your agent's code hides bugs and its tests fool you: a skill it follows on every change, with crapper, dryer and mutator checks. | 313 |
+| **[ub-mode: the Clean Code author's agent rules](./skills/codebase-tips/references/ub-mode-clean-code-agent-rules.md)** `ub-mode-clean-code-agent-rules`<br>Your agent's code hides bugs and its tests fool you: a skill it follows on every change, with crapper, dryer and mutator checks. | 312 |
 | **[Clickable repo map with words vs names](./skills/codebase-tips/references/repo-map-words-vs-names.md)** `repo-map-words-vs-names`<br>What you call a module isn't what the code calls it: every mismatch marked in red, those likeliest to cause a wrong edit first. | 303 |
 | **[Repeat mistakes as helpers and lint rules](./skills/codebase-tips/references/repeat-mistakes-as-lint-rules.md)** `repeat-mistakes-as-lint-rules`<br>The agent keeps making one mistake: the right way in a helper, the old way banned by lint, an error that names the helper to use. | 184 |
 | **[Situation routing rules for skills](./skills/codebase-tips/references/situation-routing-for-skills.md)** `situation-routing-for-skills`<br>Your agent often forgets to use what you install, so you call each by name: the best fit per task, with one line on which and why. | 116 |
@@ -153,7 +153,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[Tailscale preview links on your phone: a rule](./skills/review-tips/references/tailscale-preview-links.md)** `tailscale-preview-links`<br>Agent links that say localhost: Tailscale links to previews, review pages and dashboards that open right on your phone. | 4.2K |
 | **[Bug-score rule for Astra's code reviews](./skills/review-tips/references/bug-score-rule-for-astra.md)** `bug-score-rule-for-astra`<br>Astra flags bugs that almost never happen and Opus fixes each one: bugs scored, low scores filed as issues, code left alone. | 3.2K |
 | **[Blast radius, red team and 3 more prompts](./skills/review-tips/references/blast-radius-and-4-more-prompts.md)** `blast-radius-and-4-more-prompts`<br>'Fix this bug' hands you defaults: what your diff touches, an end-to-end goal, a red-teamed plan, a user walk, a thinking budget. | 1.4K |
-| **[iOS simulator UI bug check with iPhone Duo](./skills/review-tips/references/ios-simulator-ui-bug-check.md)** `ios-simulator-ui-bug-check`<br>UI bugs in your iOS app: main screens tapped through, Duo poses checked if its simulator exists, smallest changes suggested. | 956 |
+| **[iOS simulator UI bug check with iPhone Duo](./skills/review-tips/references/ios-simulator-ui-bug-check.md)** `ios-simulator-ui-bug-check`<br>UI bugs in your iOS app: main screens tapped through, Duo poses checked if its simulator exists, smallest changes suggested. | 984 |
 | **[Perf review: the 5 slowest spots](./skills/review-tips/references/perf-review-the-5-slowest-spots.md)** `perf-review-the-5-slowest-spots`<br>Ask for faster code and you probably get a cache: timings from a profile, one matching fix each, its lines and expected speedup. | 849 |
 | **[One question before it answers](./skills/review-tips/references/one-question-before-it-answers.md)** `one-question-before-it-answers`<br>Ten questions at once get ignored: assumptions, missing info, the usual mistake, then the one question that changes its approach. | 631 |
 | **[Skill backtest against past Codex sessions](./skills/review-tips/references/skill-backtest-on-codex-sessions.md)** `skill-backtest-on-codex-sessions`<br>A skill written from memory drifts from how you work: compared with your past sessions, a dry-run diff, a recurring review. | 554 |

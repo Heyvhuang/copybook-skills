@@ -14,8 +14,8 @@ The one place for exact model IDs and effort in a coordinator run; in that run i
 | --- | --- | --- |
 | Front end, design drafts, UI polish, logo, motion | Claude Opus 5.5 (`claude-opus-5-5`), high; xhigh for design drafts or the judging lane | Opus writes the design directly from the first step; Codex never edits front-end files. |
 | Back end, SQL, migrations, payments, MCP | Codex `gpt-6.1-sol`; xhigh when hard or risky, else high | Strong at back-end work, and the GPT quota went further. |
-| Pre-merge review of risky changes | Codex `gpt-6-astra`, xhigh | It found the defects that mattered on payments and privacy; it spends quota much faster than Sol, so save it for these. |
-| Routine review, scans, audits | Codex `gpt-6.1-sol`, high | Codex may review front-end lanes; it never edits them. |
+| Review of risky changes or difficult cross-module diagnosis | Codex `gpt-6-astra`, xhigh when warranted | Raise effort for money, sign-in or permissions, outbound messages, durable writes to external systems or production, privacy, or costly cross-module failures. Name the exact head, affected paths and shared callers, and why they need deeper review. |
+| Routine review, test-only follow-ups, scans, audits | Codex `gpt-6.1-sol`, high | Start here. Apply the risk row if a test change alters the evidence for a required check on a sensitive path. Codex may review front-end lanes; it never edits them. |
 | Gates, ship lane, mechanical follow-ups | Codex `gpt-6.1-sol`, medium (Opus 5.5 medium for front-end files) | Long, mechanical work. |
 | Lists, extraction, formatting | Claude Sonnet 5.5 (`claude-sonnet-5-5`), medium | Cheap volume. |
 | Second reader for design and copy (optional) | Gemini 4 Argon through `scripts/gemini.mjs`, or a second Claude reviewer | Read-only feedback on the proposed work. |
