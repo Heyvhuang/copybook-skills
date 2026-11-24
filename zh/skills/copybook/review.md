@@ -1,6 +1,6 @@
-# 验收 · 17 条
+# 验收 · 18 条
 
-Copybook 的 17 条「验收」技巧，按收藏数排序，与合不合适无关：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../review-tips/references/<名字>.md`。
+Copybook 的 18 条「验收」技巧，按收藏数排序，与合不合适无关：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../review-tips/references/<名字>.md`。
 
 | 技巧 | 做什么 |
 | --- | --- |
@@ -21,3 +21,4 @@ Copybook 的 17 条「验收」技巧，按收藏数排序，与合不合适无�
 | 3-checks-before-a-skill-install | 有人在 ClawHub 上放了 314 个恶意 skill：装之前查来源、扫代码、问清权限，不到 5 分钟。 |
 | 1-1-on-your-week-from-git-log | Moving this week or just busy: 7 days of git log and sessions, every judgment backed by a commit or conversation, 3 commitments. |
 | state-machine-check | 功能状态间的 bug：从 UI 到服务端的每个状态画在一页 HTML 上，附编号清单，写明文件、行号和原因。 |
+| parallel-cloud-pr-checks | PRs wait their turn for one machine's checks: each head runs your gate in its own cloud session and gets a PASS or FAIL comment. |

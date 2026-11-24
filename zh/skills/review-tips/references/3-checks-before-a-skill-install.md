@@ -24,6 +24,45 @@
 3. 权限：它需要文件系统权限吗？shell？为什么？
 ```
 
+## Check: skill scan script
+
+```bash
+#!/bin/sh
+dir=$1
+if [ -z "$dir" ] || [ ! -d "$dir" ] || [ ! -r "$dir" ]; then
+  echo "Can't scan '$dir': it is not a folder you can read." >&2
+  exit 2
+fi
+st=$(mktemp) || exit 2
+find "$dir" \( -type f -o -type l \) -exec sh -c '
+  st=$1; shift
+  for f; do
+    case "${f##*/}" in
+      .env*|*.pem|*.key|*.p12|id_*|*credentials*|*secret*) echo "$f: skipped, may hold secrets; read it yourself"; echo hit >> "$st"; continue ;;
+    esac
+    if [ -L "$f" ]; then echo "$f: a symlink, not followed; read it yourself"; echo hit >> "$st"; continue; fi
+    lines=$(grep -naE "(curl|wget|exec)|https?://" "$f")
+    case $? in
+      0) echo "$f: line $(printf "%s\n" "$lines" | cut -d: -f1 | paste -sd, -)"; echo hit >> "$st" ;;
+      1) ;;
+      *) echo "$f: could not read it" >&2; echo error >> "$st" ;;
+    esac
+  done' sh "$st" {} + || echo error >> "$st"
+if grep -q error "$st"; then
+  echo "Scan incomplete: fix the errors above and run it again." >&2; r=2
+elif grep -q hit "$st"; then r=1
+else echo "No curl, wget, exec or external URLs in $dir."; r=0
+fi
+rm -f "$st"
+exit $r
+```
+
+这块检查是 Copybook 为这条技巧写的，2026年11月24日在 macOS 26.6 上测过。它做什么、加到哪里，按下面这段英文说明：
+
+> Lists the file and line number of each place in a skill that calls curl, wget or exec or names an external URL, without printing the line. It also lists files it skips because they may hold secrets (`.env`, keys, credentials) and symlinks it does not follow, exits 1 when there is something to read, and exits 2 when it cannot read the folder or a file in it. Save it as `scan-skill.sh` and run `sh scan-skill.sh path/to/skill` before you install. Copybook wrote and tested it on macOS 26.6, 24 Nov 2026.
+
+这块检查是 Copybook 写的，不属于这条技巧，加上后会在用户电脑上运行。技巧用上之后再提出来，先给用户看，用户同意才加。
+
 ## 背景
 
 有人在 ClawHub 上发了 314 个 skill。每一个都是恶意的。装上之后，它们会读你的 MEMORY.md、SOUL.md，你的 agent 记得的一切，全部泄露。

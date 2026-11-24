@@ -27,6 +27,30 @@ One-way door: anything you can't. Prod data, deploys to users, force-pushing a s
 If my answer would be a rubber stamp, don't ask. If running something could answer the question, run it instead. Save questions for taste and product calls only I can make. Ask one at a time, with your recommendation, using your built-in question tool.
 ```
 
+## Check: PreToolUse hook
+
+```json
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "command -v jq >/dev/null || { echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"This check needs jq to read the command, so it asks every time.\"}}'; exit 0; }; jq -sc 'if length != 1 then {hookSpecificOutput: {hookEventName: \"PreToolUse\", permissionDecision: \"ask\", permissionDecisionReason: \"This check could not read the command, so it asks.\"}} else .[0] | if (.tool_name | type) != \"string\" then {hookSpecificOutput: {hookEventName: \"PreToolUse\", permissionDecision: \"ask\", permissionDecisionReason: \"This check could not read the command, so it asks.\"}} elif .tool_name != \"Bash\" then empty elif (.tool_input.command | type) != \"string\" or (.tool_input.command | test(\"\\\\S\") | not) then {hookSpecificOutput: {hookEventName: \"PreToolUse\", permissionDecision: \"ask\", permissionDecisionReason: \"This check could not read the command, so it asks.\"}} elif (.tool_input.command | test(\"(?:^|[\\\\s;&|(`/])git(?:\\\\s+(?:-[cC]\\\\s+\\\\S+|--?[A-Za-z][\\\\w-]*(?:=\\\\S+)?))*\\\\s+push(?:\\\\s[^;&|\\\\n]*?)?\\\\s[\\\"\\\\x27]?(?:--force(?:-with-lease|-if-includes)?(?:=\\\\S*)?|-[A-Za-z]*f[A-Za-z]*|\\\\+\\\\S+)(?=$|[\\\\s;&|)\\\"\\\\x27])|(?:^|[\\\\s;&|(`/])vercel(?:@\\\\S*)?(?:\\\\s[^;&|\\\\n]*?)?\\\\s[\\\"\\\\x27]?(?:--prod(?:=\\\\S*)?|--target(?:=|\\\\s+)[\\\"\\\\x27]?production|promote)(?=$|[\\\\s;&|)\\\"\\\\x27])\")) then {hookSpecificOutput: {hookEventName: \"PreToolUse\", permissionDecision: \"ask\", permissionDecisionReason: \"One-way door: a force push or a production deploy. Asking first.\"}} else empty end end' || echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"This check could not read the command, so it asks.\"}}'"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+Claude Code asks you before a Bash command force-pushes (`--force`, `-f`, `--force-with-lease`, `--force-if-includes` or a `+` refspec such as `origin +main`) or deploys to production with Vercel (`--prod`, `--target production` or `vercel promote`), and also when it cannot read the command it is given. It reads only the command Claude Code runs, so a push or deploy inside a script or a git alias goes through, and so does deleting a branch; those still rest on the rules. Needs `jq` (built into macOS 15 and later); without it, it asks before every command. Merge it into `.claude/settings.json`. Copybook wrote and tested it on Claude Code 2.1.331, 24 Nov 2026.
+
+This check is Copybook's, not part of the tip, and runs on the user's machine once added. Offer it once the tip is in place, show it, and add it only if the user says yes.
+
 ## Background
 
 Vibecoders, I'm begging you, add this to your AGENTS.md.

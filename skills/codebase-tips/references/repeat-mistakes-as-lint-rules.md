@@ -26,6 +26,19 @@ Go through the corrections in AGENTS.md or CLAUDE.md and the last 50 commits in 
 Finally, add a line to AGENTS.md or CLAUDE.md (whichever the project uses): after writing code, run lint and switch to the helper the error points to. If the project has no lint tool, tell me first. Show me the list first, with where each pattern came from and how many current violations it has. Change nothing until I confirm.
 ```
 
+## Check: pre-commit hook
+
+```bash
+#!/bin/sh
+npm run lint --silent && exit 0
+echo "Lint failed. Switch to the helper the error names, then commit again." >&2
+exit 1
+```
+
+A commit stops while `npm run lint` fails, so the agent reads the error and switches to the helper it names. Save it as `.git/hooks/pre-commit` and make it executable with `chmod +x`. Copybook wrote and tested it on git 2.50.1, 24 Nov 2026.
+
+This check is Copybook's, not part of the tip, and runs on the user's machine once added. Offer it once the tip is in place, show it, and add it only if the user says yes.
+
 ## Background
 
 The better AI gets at writing code, the more abstractions you should write.

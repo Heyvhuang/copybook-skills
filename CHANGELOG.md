@@ -4,16 +4,25 @@ What each version of Copybook's skills added, changed and retired, by week (from
 
 每个版本新增、改动和撤下了哪些技巧，按周列出（每周从周一算起，UTC）。复制块或步骤变了才算改动，只更新收藏数或日期的版本不列。
 
-## Week of 23 Nov 2026 · 1.0.11
+## Week of 23 Nov 2026 · 1.0.11 to 1.0.13
 
 **Added · 新增**
 
 - [1:1 on your week from git log and sessions](./skills/review-tips/references/1-1-on-your-week-from-git-log.md) · [1:1 on your week from git log and sessions](./zh/skills/review-tips/references/1-1-on-your-week-from-git-log.md)
+- [Delete-first prompt for your messiest project](./skills/codebase-tips/references/delete-first-project-prompt.md) · [Delete-first prompt for your messiest project](./zh/skills/codebase-tips/references/delete-first-project-prompt.md)
 - [Overnight market research for startup ideas](./skills/launch-tips/references/overnight-startup-idea-research.md) · [Overnight market research for startup ideas](./zh/skills/launch-tips/references/overnight-startup-idea-research.md)
+- [Parallel PR checks with claude --cloud](./skills/review-tips/references/parallel-cloud-pr-checks.md) · [Parallel PR checks with claude --cloud](./zh/skills/review-tips/references/parallel-cloud-pr-checks.md)
+- [STATE.md and new-session rules for CLAUDE.md](./skills/model-tips/references/state-md-and-new-session-rules.md) · [STATE.md and new-session rules for CLAUDE.md](./zh/skills/model-tips/references/state-md-and-new-session-rules.md)
 
 **Changed · 有改动**
 
+- [3 checks before installing a skill](./skills/review-tips/references/3-checks-before-a-skill-install.md) · [装 skill 前的 3 项检查](./zh/skills/review-tips/references/3-checks-before-a-skill-install.md)
 - [Coordinator skill for Claude Code and Codex](./skills/long-run-tips/references/coordinator-for-claude-and-codex.md) · [Claude Code 和 Codex 的协调者 skill](./zh/skills/long-run-tips/references/coordinator-for-claude-and-codex.md)
+- [Less defensive code: 4 AGENTS.md rules](./skills/codebase-tips/references/less-defensive-code.md) · [少写防御式代码：4 条 AGENTS.md 规则](./zh/skills/codebase-tips/references/less-defensive-code.md)
+- [One AGENTS.md for Claude Code and Codex](./skills/codebase-tips/references/one-agents-md-for-both-agents.md) · [Claude Code 和 Codex 共用的 AGENTS.md](./zh/skills/codebase-tips/references/one-agents-md-for-both-agents.md)
+- [One-way door rules for AGENTS.md: when to ask](./skills/long-run-tips/references/one-way-door-rules-when-to-ask.md) · [AGENTS.md 单向门规则：什么时候该问](./zh/skills/long-run-tips/references/one-way-door-rules-when-to-ask.md)
+- [Repeat mistakes as helpers and lint rules](./skills/codebase-tips/references/repeat-mistakes-as-lint-rules.md) · [反复犯的错变成 helper 函数和 lint 规则](./zh/skills/codebase-tips/references/repeat-mistakes-as-lint-rules.md)
+- [Tailscale preview links on your phone: a rule](./skills/review-tips/references/tailscale-preview-links.md) · [手机上的 Tailscale 预览链接规则](./zh/skills/review-tips/references/tailscale-preview-links.md)
 
 ## Week of 16 Nov 2026 · 1.0.2 to 1.0.10
 

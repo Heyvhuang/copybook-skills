@@ -30,4 +30,4 @@
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/two-agents-md-lines-for-vibecoders)：@Voxyz_ai 2026年10月22日[发在 X 上](https://x.com/Voxyz_ai/status/2113254050170843418)，截至 2026年11月19日有 1.5万次收藏。适用于 Claude Code 和 Codex。
+来自 [Copybook](https://copybook.page/zh/t/two-agents-md-lines-for-vibecoders)：@Voxyz_ai 2026年10月22日[发在 X 上](https://x.com/Voxyz_ai/status/2113254050170843418)，截至 2026年11月19日有 1.5万次收藏。最近一次检查：2026年11月19日，Opus 5.5，可用。适用于 Claude Code 和 Codex。

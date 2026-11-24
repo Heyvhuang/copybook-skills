@@ -65,4 +65,4 @@ What it does to a sentence. Before: "Comprehensive error handling has been imple
 
 ## Source
 
-From [Copybook](https://copybook.page/t/orwell-writing-rules-for-claude-md-and-agents-md): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2078857039116156978) on 19 Jul 2026, 12K saves as of 16 Aug 2026. For Claude Code and Codex.
+From [Copybook](https://copybook.page/t/orwell-writing-rules-for-claude-md-and-agents-md): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2078857039116156978) on 19 Jul 2026, 12K saves as of 16 Aug 2026. Last check: works on Opus 5.5, 19 Nov 2026. For Claude Code and Codex.

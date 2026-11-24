@@ -24,6 +24,43 @@ The user chose this tip. The steps above are written for a person; do them for t
 3. permissions: does it need file system access? shell? why?
 ```
 
+## Check: skill scan script
+
+```bash
+#!/bin/sh
+dir=$1
+if [ -z "$dir" ] || [ ! -d "$dir" ] || [ ! -r "$dir" ]; then
+  echo "Can't scan '$dir': it is not a folder you can read." >&2
+  exit 2
+fi
+st=$(mktemp) || exit 2
+find "$dir" \( -type f -o -type l \) -exec sh -c '
+  st=$1; shift
+  for f; do
+    case "${f##*/}" in
+      .env*|*.pem|*.key|*.p12|id_*|*credentials*|*secret*) echo "$f: skipped, may hold secrets; read it yourself"; echo hit >> "$st"; continue ;;
+    esac
+    if [ -L "$f" ]; then echo "$f: a symlink, not followed; read it yourself"; echo hit >> "$st"; continue; fi
+    lines=$(grep -naE "(curl|wget|exec)|https?://" "$f")
+    case $? in
+      0) echo "$f: line $(printf "%s\n" "$lines" | cut -d: -f1 | paste -sd, -)"; echo hit >> "$st" ;;
+      1) ;;
+      *) echo "$f: could not read it" >&2; echo error >> "$st" ;;
+    esac
+  done' sh "$st" {} + || echo error >> "$st"
+if grep -q error "$st"; then
+  echo "Scan incomplete: fix the errors above and run it again." >&2; r=2
+elif grep -q hit "$st"; then r=1
+else echo "No curl, wget, exec or external URLs in $dir."; r=0
+fi
+rm -f "$st"
+exit $r
+```
+
+Lists the file and line number of each place in a skill that calls curl, wget or exec or names an external URL, without printing the line. It also lists files it skips because they may hold secrets (`.env`, keys, credentials) and symlinks it does not follow, exits 1 when there is something to read, and exits 2 when it cannot read the folder or a file in it. Save it as `scan-skill.sh` and run `sh scan-skill.sh path/to/skill` before you install. Copybook wrote and tested it on macOS 26.6, 24 Nov 2026.
+
+This check is Copybook's, not part of the tip, and runs on the user's machine once added. Offer it once the tip is in place, show it, and add it only if the user says yes.
+
 ## Background
 
 Someone published 314 skills on ClawHub. Every single one was malicious. Once installed, they read your MEMORY.md, SOUL.md, everything your agent remembers, leaked.

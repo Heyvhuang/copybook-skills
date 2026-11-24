@@ -65,4 +65,4 @@ Orwell 在 1946 年就写好了办法：六条规则。把它们贴进全局 CLA
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/orwell-writing-rules-for-claude-md-and-agents-md)：@Voxyz_ai 2026年7月19日[发在 X 上](https://x.com/Voxyz_ai/status/2078857039116156978)，截至 2026年8月16日有 1.2万次收藏。适用于 Claude Code 和 Codex。
+来自 [Copybook](https://copybook.page/zh/t/orwell-writing-rules-for-claude-md-and-agents-md)：@Voxyz_ai 2026年7月19日[发在 X 上](https://x.com/Voxyz_ai/status/2078857039116156978)，截至 2026年8月16日有 1.2万次收藏。最近一次检查：2026年11月19日，Opus 5.5，可用。适用于 Claude Code 和 Codex。

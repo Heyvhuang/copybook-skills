@@ -68,4 +68,4 @@ effort 照 Anthropic 的成本指南来：范围清楚的日常活用 medium，�
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/check-20-things-before-shipping-a-vibe-coded-site)：@Voxyz_ai 2026年9月26日[发在 X 上](https://x.com/Voxyz_ai/status/2103977414711767244)，截至 2026年10月24日有 6,939 次收藏。适用于 Claude Code。
+来自 [Copybook](https://copybook.page/zh/t/check-20-things-before-shipping-a-vibe-coded-site)：@Voxyz_ai 2026年9月26日[发在 X 上](https://x.com/Voxyz_ai/status/2103977414711767244)，截至 2026年10月24日有 6,939 次收藏。最近一次检查：2026年11月19日，Opus 5.5，可用。适用于 Claude Code。

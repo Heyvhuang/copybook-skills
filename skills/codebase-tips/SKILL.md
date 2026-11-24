@@ -1,21 +1,22 @@
 ---
 name: codebase-tips
-description: "Codebase · 33 tips: repo index and map, coding principles, AGENTS.md, scope rules."
+description: "Codebase · 34 tips: repo index and map, coding principles, AGENTS.md, scope rules."
 disable-model-invocation: true
 ---
 
-# Codebase · 33 tips
+# Codebase · 34 tips
 
-Copybook's 33 tips on codebase, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
+Copybook's 34 tips on codebase, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
 
 - If the user names a tip, use that tip. If they describe a task, choose the tip that best meets their goal and constraints from those that work with the agent doing the work. If several fit equally well, choose one. Tell the user in one sentence which tip you picked and why, then read its file and follow it. If another tip also fits and would materially change the approach or result, name it and say how it differs.
 - If the user said nothing, show them the list below (each tip's name and what it does) and ask which to use.
-- If none fits, say so and suggest copybook, which looks through all 146 tips.
+- If none fits, say so and suggest copybook, which looks through all 149 tips.
 
 | Tip | What it does |
 | --- | --- |
 | [Open-Source Scout and Closer prompts](references/open-source-scout-and-closer.md) `open-source-scout-and-closer` | Unfamiliar features written from scratch, offers to continue: GitHub searched first, then the whole job done and a plain recap. |
 | [codebase-memory MCP: an index of your repo](references/codebase-memory-repo-index.md) `codebase-memory-repo-index` | Dozens of grep and read turns per question: the repo as one graph of functions, files and dependencies; dead code found too. |
+| [Delete-first prompt for your messiest project](references/delete-first-project-prompt.md) `delete-first-project-prompt` | Broken or unneeded code, pages with hierarchy problems: deleting preferred, what it's sure about fixed, the rest listed. |
 | [Karpathy's 4 coding principles for CLAUDE.md](references/karpathys-4-coding-principles.md) `karpathys-4-coding-principles` | The agent over-designs and edits what it wasn't asked to: think before coding, simplicity first, surgical edits, goal-driven work. |
 | [Vibe-coding cleanup: 5 Codex /goal prompts](references/vibe-coding-cleanup-prompts.md) `vibe-coding-cleanup-prompts` | Half your quota left at reset: dead code, duplicates and unneeded dependencies cut; scheduled tasks and old worktrees sorted. |
 | [Clickable repo map](references/clickable-repo-map.md) `clickable-repo-map` | Before you change a repo: click any module for its callers, dependencies, tests and source evidence; a rule keeps it current. |

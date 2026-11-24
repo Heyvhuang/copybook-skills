@@ -68,6 +68,29 @@ Shared by Codex and Claude Code. Every line here should change what you do.
 /plugin install claude-code-setup@claude-plugins-official
 ```
 
+## Check: Stop hook
+
+```json
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "grep -q 'stop_hook_active.: *true' && exit 0; npm test >/dev/null 2>&1 && exit 0; echo 'npm test fails. Run it, read the output, then fix it or say it fails before you say done.' >&2; exit 2"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+When Claude Code stops while `npm test` fails, it is sent back once to run the tests, then fix them or say they fail. Merge it into `.claude/settings.json` and put your test command in place of `npm test`. Copybook wrote and tested it on Claude Code 2.1.331, 24 Nov 2026.
+
+This check is Copybook's, not part of the tip, and runs on the user's machine once added. Offer it once the tip is in place, show it, and add it only if the user says yes.
+
 ## Background
 
 Codex reads AGENTS.md natively. Recent versions of Claude Code read it too when there's no CLAUDE.md. Already have a CLAUDE.md? Add the line `@AGENTS.md` to it.

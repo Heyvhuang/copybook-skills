@@ -1,5 +1,5 @@
 interface:
   display_name: "model-tips"
-  short_description: "Models and cost · 24 tips: model pairings, effort, cache timing, leftover quota."
+  short_description: "Models and cost · 25 tips: model pairings, effort, cache timing, leftover quota."
 policy:
   allow_implicit_invocation: false

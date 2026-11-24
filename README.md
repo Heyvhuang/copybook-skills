@@ -1,13 +1,13 @@
 # Copybook
 
-Copybook is a skill pack for people who code with Claude Code or Codex. You ask for the work as usual, and it picks the prompt, rule or checklist that fits the task from the 146 tips, then follows it. You have nothing to remember and nothing to choose.
+Copybook is a skill pack for people who code with Claude Code or Codex. You ask for the work as usual, and it picks the prompt, rule or checklist that fits the task from the 149 tips, then follows it. You have nothing to remember and nothing to choose.
 
-The tips are the posts readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai) on X: 219K saves in all, counted between 22 Jul and 23 Nov 2026.
+The tips are the posts readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai) on X: 227K saves in all, counted between 22 Jul and 23 Nov 2026.
 
 [copybook.page](https://copybook.page) · [New tips by email](https://copybook.page/about#email-about-title) · [Changelog](CHANGELOG.md) · [中文](README.zh-CN.md)
 
 ```text
-copybook ──────────────────────────
+copybook ───────────────────────────
 
 › Is this site ready to launch?
   Launch list · picks 1 of 12
@@ -18,16 +18,16 @@ copybook ───────────────────────�
   ············•····················
 
 › Trim our AGENTS.md
-  Codebase list · picks 1 of 33
-  ·······················•·········
-───────────────────────────────────
+  Codebase list · picks 1 of 34
+  ························•·········
+────────────────────────────────────
   then names the tip, and why,
   and works through its steps
 ```
 
 ## Install
 
-The plugin holds only Markdown, YAML, JSON and PNG files, with no scripts, hooks or MCP server. It adds 8 skills to your agent's list: one that loads by itself and 7 topic menus you open yourself.
+The plugin holds only Markdown, YAML, JSON and PNG files and installs no scripts, hooks or MCP server. Some rules tips carry a check, a hook or script Copybook ran, which you add yourself if you want it. It adds 8 skills to your agent's list: one that loads by itself and 7 topic menus you open yourself.
 
 ### Claude Code
 
@@ -90,11 +90,11 @@ When no tip fits, it leaves Copybook out of it and carries on with your task. If
 
 ## What's inside
 
-- **[Codebase](#codebase)** · 33 tips: repo index and map, coding principles, AGENTS.md, scope rules.
-- **[Review](#review)** · 17 tips: PR, code, and plan reviews, bug scoring, skill audits and backtests.
+- **[Codebase](#codebase)** · 34 tips: repo index and map, coding principles, AGENTS.md, scope rules.
+- **[Review](#review)** · 18 tips: PR, code, and plan reviews, bug scoring, skill audits and backtests.
 - **[Design](#design)** · 33 tips: image-first pages, motion libraries, reference sites, design skills.
 - **[Long runs](#long-runs)** · 22 tips: multi-agent roles, progress dashboards, handoffs, remote workflows.
-- **[Models and cost](#models-and-cost)** · 24 tips: model pairings, effort, cache timing, leftover quota.
+- **[Models and cost](#models-and-cost)** · 25 tips: model pairings, effort, cache timing, leftover quota.
 - **[Launch](#launch)** · 12 tips: pre-launch, speed, and legal checks, SEO tool pages, VPS lockdown.
 - **[Writing](#writing)** · 5 tips: Orwell's rules, one-line de-AI prompt, README rewrites, task briefs.
 
@@ -112,6 +112,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | :-- | :-: |
 | **[Open-Source Scout and Closer prompts](./skills/codebase-tips/references/open-source-scout-and-closer.md)** `open-source-scout-and-closer`<br>Unfamiliar features written from scratch, offers to continue: GitHub searched first, then the whole job done and a plain recap. | 15K |
 | **[codebase-memory MCP: an index of your repo](./skills/codebase-tips/references/codebase-memory-repo-index.md)** `codebase-memory-repo-index`<br>Dozens of grep and read turns per question: the repo as one graph of functions, files and dependencies; dead code found too. | 8.4K |
+| **[Delete-first prompt for your messiest project](./skills/codebase-tips/references/delete-first-project-prompt.md)** `delete-first-project-prompt`<br>Broken or unneeded code, pages with hierarchy problems: deleting preferred, what it's sure about fixed, the rest listed. | 7.3K |
 | **[Karpathy's 4 coding principles for CLAUDE.md](./skills/codebase-tips/references/karpathys-4-coding-principles.md)** `karpathys-4-coding-principles`<br>The agent over-designs and edits what it wasn't asked to: think before coding, simplicity first, surgical edits, goal-driven work. | 6.7K |
 | **[Vibe-coding cleanup: 5 Codex /goal prompts](./skills/codebase-tips/references/vibe-coding-cleanup-prompts.md)** `vibe-coding-cleanup-prompts`<br>Half your quota left at reset: dead code, duplicates and unneeded dependencies cut; scheduled tasks and old worktrees sorted. | 3.9K |
 | **[Clickable repo map](./skills/codebase-tips/references/clickable-repo-map.md)** `clickable-repo-map`<br>Before you change a repo: click any module for its callers, dependencies, tests and source evidence; a rule keeps it current. | 2.7K |
@@ -167,6 +168,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[3 checks before installing a skill](./skills/review-tips/references/3-checks-before-a-skill-install.md)** `3-checks-before-a-skill-install`<br>Someone put 314 malicious skills on ClawHub: check the source, scan the code, question the permissions, in under five minutes. | 308 |
 | **[1:1 on your week from git log and sessions](./skills/review-tips/references/1-1-on-your-week-from-git-log.md)** `1-1-on-your-week-from-git-log`<br>Moving this week or just busy: 7 days of git log and sessions, every judgment backed by a commit or conversation, 3 commitments. | 184 |
 | **[State machine check: wrong transitions in red](./skills/review-tips/references/state-machine-check.md)** `state-machine-check`<br>Bugs between a feature's states: every state from UI to server on one HTML page, then a numbered list with file, line and why. | 143 |
+| **[Parallel PR checks with claude --cloud](./skills/review-tips/references/parallel-cloud-pr-checks.md)** `parallel-cloud-pr-checks`<br>PRs wait their turn for one machine's checks: each head runs your gate in its own cloud session and gets a PASS or FAIL comment. |  |
 
 ### Design
 
@@ -262,6 +264,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[3 habits burning your Claude Code usage](./skills/model-tips/references/3-habits-burning-your-usage.md)** `3-habits-burning-your-usage`<br>Keep hitting the usage limit: 7 days of session logs scanned, the 3 costliest habits and their share, rules to plug them. | 722 |
 | **[Fable main, Opus subagents: 3 settings](./skills/model-tips/references/fable-main-opus-subagents.md)** `fable-main-opus-subagents`<br>Fable quota going fast: 3 settings send reading and lookups to half-price Opus subagents; Fable keeps the judgment. | 715 |
 | **[Setup check: OpenAI's 5 cheap-harness rules](./skills/model-tips/references/openais-5-cheap-harness-rules.md)** `openais-5-cheap-harness-rules`<br>Is your setup as cheap as OpenAI's harness: pass or fail on each of its 5 rules, with the file and the one thing to change. | 715 |
+| **[STATE.md and new-session rules for CLAUDE.md](./skills/model-tips/references/state-md-and-new-session-rules.md)** `state-md-and-new-session-rules`<br>Using up your Claude Code limit: a STATE.md per task, a summary to switch chats at each approved milestone or 200 thousand tokens. | 697 |
 | **[Codex: Astra without default subagents](./skills/model-tips/references/astra-without-default-subagents.md)** `astra-without-default-subagents`<br>Astra burns quota faster than Sol: default-subagent rules gone, one line so it does the task and the checks itself. | 686 |
 | **[Opus 5.5 main model, medium subagents](./skills/model-tips/references/opus-5-5-main-medium-subagents.md)** `opus-5-5-main-medium-subagents`<br>Usage that lasts longer: Opus 5.5 as main model, Opus 5.5 on medium as default subagent; hard-coded model IDs found first. | 437 |
 | **[GPT-6 Pro plan in Chat, handed to Codex](./skills/model-tips/references/gpt-6-pro-plan-handed-to-codex.md)** `gpt-6-pro-plan-handed-to-codex`<br>Plans made blind to your code and logs: connected to ChatGPT, GPT-6 Pro plans from real PRs and records, then briefs Codex. | 371 |

@@ -61,4 +61,4 @@ Opus 5.5 写前端已经很强，再给它配上这 8 个网站，简直开了�
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/give-opus-5-5-eight-frontend-reference-sites)：@Voxyz_ai 2026年9月27日[发在 X 上](https://x.com/Voxyz_ai/status/2104284941437784139)，截至 2026年10月25日有 1,693 次收藏。适用于 Claude Code。
+来自 [Copybook](https://copybook.page/zh/t/give-opus-5-5-eight-frontend-reference-sites)：@Voxyz_ai 2026年9月27日[发在 X 上](https://x.com/Voxyz_ai/status/2104284941437784139)，截至 2026年10月25日有 1,693 次收藏。最近一次检查：2026年11月19日，Opus 5.5，可用。适用于 Claude Code。

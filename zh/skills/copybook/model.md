@@ -1,6 +1,6 @@
-# 模型和额度 · 24 条
+# 模型和额度 · 25 条
 
-Copybook 的 24 条「模型和额度」技巧，按收藏数排序，与合不合适无关：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../model-tips/references/<名字>.md`。
+Copybook 的 25 条「模型和额度」技巧，按收藏数排序，与合不合适无关：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../model-tips/references/<名字>.md`。
 
 | 技巧 | 做什么 |
 | --- | --- |
@@ -23,6 +23,7 @@ Copybook 的 24 条「模型和额度」技巧，按收藏数排序，与合不�
 | 3-habits-burning-your-usage | 总撞额度上限：扫最近 7 天的会话日志，算出每个习惯各占多少额度，再写规则把它们堵上。 |
 | fable-main-opus-subagents | Fable 额度不够用：3 行设置，读代码、查文档交给半价的 Opus subagent，判断留给 Fable。 |
 | openais-5-cheap-harness-rules | agent 配置省不省钱：对照 OpenAI 自己用的 5 条规则逐条判过不过，给出文件和要改的那一件事。 |
+| state-md-and-new-session-rules | Using up your Claude Code limit: a STATE.md per task, a summary to switch chats at each approved milestone or 200 thousand tokens. |
 | astra-without-default-subagents | Astra 烧额度比 Sol 还快：删掉默认开 subagent 的规则，AGENTS.md 加一句，让它自己做、自己验。 |
 | opus-5-5-main-medium-subagents | 想让额度撑久一点：主模型换成 Opus 5.5，默认 subagent 用 medium，改前先找出写死的模型 ID。 |
 | gpt-6-pro-plan-handed-to-codex | 不看真实数据的计划是空的：仓库和日志接进 ChatGPT，GPT-6 Pro 照真实代码做计划，再交给 Codex。 |

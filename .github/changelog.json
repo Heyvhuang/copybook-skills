@@ -190,6 +190,78 @@
         }
       ],
       "retired": []
+    },
+    {
+      "version": "1.0.13",
+      "date": "2026-11-24",
+      "added": [
+        {
+          "slug": "keep-a-state-md-and-start-new-sessions-to-cut-usage",
+          "title": {
+            "en": "STATE.md and new-session rules for CLAUDE.md",
+            "zh": "STATE.md and new-session rules for CLAUDE.md"
+          }
+        },
+        {
+          "slug": "parallel-pr-checks-with-claude-cloud-sessions",
+          "title": {
+            "en": "Parallel PR checks with claude --cloud",
+            "zh": "Parallel PR checks with claude --cloud"
+          }
+        },
+        {
+          "slug": "run-a-delete-first-pass-when-a-new-model-drops",
+          "title": {
+            "en": "Delete-first prompt for your messiest project",
+            "zh": "Delete-first prompt for your messiest project"
+          }
+        }
+      ],
+      "changed": [
+        {
+          "slug": "one-agents-md-for-claude-code-and-codex",
+          "title": {
+            "en": "One AGENTS.md for Claude Code and Codex",
+            "zh": "Claude Code 和 Codex 共用的 AGENTS.md"
+          }
+        },
+        {
+          "slug": "open-preview-links-on-your-phone-with-tailscale",
+          "title": {
+            "en": "Tailscale preview links on your phone: a rule",
+            "zh": "手机上的 Tailscale 预览链接规则"
+          }
+        },
+        {
+          "slug": "run-3-checks-before-you-install-any-skill",
+          "title": {
+            "en": "3 checks before installing a skill",
+            "zh": "装 skill 前的 3 项检查"
+          }
+        },
+        {
+          "slug": "stop-codex-writing-code-too-defensively",
+          "title": {
+            "en": "Less defensive code: 4 AGENTS.md rules",
+            "zh": "少写防御式代码：4 条 AGENTS.md 规则"
+          }
+        },
+        {
+          "slug": "turn-repeat-agent-mistakes-into-lint-rules",
+          "title": {
+            "en": "Repeat mistakes as helpers and lint rules",
+            "zh": "反复犯的错变成 helper 函数和 lint 规则"
+          }
+        },
+        {
+          "slug": "walk-through-two-way-doors-stop-at-one-way-doors",
+          "title": {
+            "en": "One-way door rules for AGENTS.md: when to ask",
+            "zh": "AGENTS.md 单向门规则：什么时候该问"
+          }
+        }
+      ],
+      "retired": []
     }
   ],
   "tips": {
@@ -721,6 +793,14 @@
         "zh": "边做边写给下一个 agent 的 HANDOFF.md"
       }
     },
+    "keep-a-state-md-and-start-new-sessions-to-cut-usage": {
+      "en": "c1ae8e3f63c1ffd4",
+      "zh": "c1ae8e3f63c1ffd4",
+      "title": {
+        "en": "STATE.md and new-session rules for CLAUDE.md",
+        "zh": "STATE.md and new-session rules for CLAUDE.md"
+      }
+    },
     "keep-fable-5-2-on-planning-and-hand-builds-to-opus": {
       "en": "d9a788d79dfdea8a",
       "zh": "fdb2ed367bda07b7",
@@ -842,16 +922,16 @@
       }
     },
     "one-agents-md-for-claude-code-and-codex": {
-      "en": "61e9a05ae621697c",
-      "zh": "c81d18a5b9d9f561",
+      "en": "2735b5ec46cf7785",
+      "zh": "7c025db1fc407bf0",
       "title": {
         "en": "One AGENTS.md for Claude Code and Codex",
         "zh": "Claude Code 和 Codex 共用的 AGENTS.md"
       }
     },
     "open-preview-links-on-your-phone-with-tailscale": {
-      "en": "702a17f35b3677e9",
-      "zh": "44b3f7fee2184cf2",
+      "en": "e21ecbcf95780ef7",
+      "zh": "729139cee02a4c53",
       "title": {
         "en": "Tailscale preview links on your phone: a rule",
         "zh": "手机上的 Tailscale 预览链接规则"
@@ -879,6 +959,14 @@
       "title": {
         "en": "Overnight /goal for open issues and TODOs",
         "zh": "通宵 /goal：未关闭的 issue 和 TODO"
+      }
+    },
+    "parallel-pr-checks-with-claude-cloud-sessions": {
+      "en": "6a3f65891f95c784",
+      "zh": "6a3f65891f95c784",
+      "title": {
+        "en": "Parallel PR checks with claude --cloud",
+        "zh": "Parallel PR checks with claude --cloud"
       }
     },
     "pick-a-job-for-a-dynamic-workflow-in-claude-code": {
@@ -1050,8 +1138,8 @@
       }
     },
     "run-3-checks-before-you-install-any-skill": {
-      "en": "179e91be778c284b",
-      "zh": "d6d690b4a3330dbb",
+      "en": "0c077a005a30a05d",
+      "zh": "6708cbdb223e4723",
       "title": {
         "en": "3 checks before installing a skill",
         "zh": "装 skill 前的 3 项检查"
@@ -1063,6 +1151,14 @@
       "title": {
         "en": "1:1 on your week from git log and sessions",
         "zh": "1:1 on your week from git log and sessions"
+      }
+    },
+    "run-a-delete-first-pass-when-a-new-model-drops": {
+      "en": "3792621f9a60b519",
+      "zh": "3792621f9a60b519",
+      "title": {
+        "en": "Delete-first prompt for your messiest project",
+        "zh": "Delete-first prompt for your messiest project"
       }
     },
     "run-one-task-across-claude-and-codex-with-herdr": {
@@ -1226,8 +1322,8 @@
       }
     },
     "stop-codex-writing-code-too-defensively": {
-      "en": "1a51f01fde856d03",
-      "zh": "0aa21a1a7439caf9",
+      "en": "190f06e62a3bdb83",
+      "zh": "821bddc95c6911bf",
       "title": {
         "en": "Less defensive code: 4 AGENTS.md rules",
         "zh": "少写防御式代码：4 条 AGENTS.md 规则"
@@ -1290,8 +1386,8 @@
       }
     },
     "turn-repeat-agent-mistakes-into-lint-rules": {
-      "en": "b00acf69b9ba1fec",
-      "zh": "c2ec38310e0c0078",
+      "en": "5799c0756f2e24bb",
+      "zh": "63452847b9b2438c",
       "title": {
         "en": "Repeat mistakes as helpers and lint rules",
         "zh": "反复犯的错变成 helper 函数和 lint 规则"
@@ -1346,8 +1442,8 @@
       }
     },
     "walk-through-two-way-doors-stop-at-one-way-doors": {
-      "en": "8817828bbfe33871",
-      "zh": "f12a0037e840d57d",
+      "en": "448a74abd2da557c",
+      "zh": "b636b29f52b6b909",
       "title": {
         "en": "One-way door rules for AGENTS.md: when to ask",
         "zh": "AGENTS.md 单向门规则：什么时候该问"

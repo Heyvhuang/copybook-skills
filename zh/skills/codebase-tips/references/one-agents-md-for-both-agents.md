@@ -68,6 +68,31 @@ Codex 和 Claude Code 共用。这里的每一行都应该改变你的做法。
 /plugin install claude-code-setup@claude-plugins-official
 ```
 
+## Check: Stop hook
+
+```json
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "grep -q 'stop_hook_active.: *true' && exit 0; npm test >/dev/null 2>&1 && exit 0; echo 'npm test fails. Run it, read the output, then fix it or say it fails before you say done.' >&2; exit 2"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+这块检查是 Copybook 为这条技巧写的，2026年11月24日在 Claude Code 2.1.331 上测过。它做什么、加到哪里，按下面这段英文说明：
+
+> When Claude Code stops while `npm test` fails, it is sent back once to run the tests, then fix them or say they fail. Merge it into `.claude/settings.json` and put your test command in place of `npm test`. Copybook wrote and tested it on Claude Code 2.1.331, 24 Nov 2026.
+
+这块检查是 Copybook 写的，不属于这条技巧，加上后会在用户电脑上运行。技巧用上之后再提出来，先给用户看，用户同意才加。
+
 ## 背景
 
 Codex 直接读 AGENTS.md，Claude Code 新版在没有 CLAUDE.md 时也会读。已经有 CLAUDE.md 的话，在里面加一行 `@AGENTS.md`。

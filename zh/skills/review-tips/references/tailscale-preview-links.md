@@ -22,6 +22,31 @@ agent 给的链接是 localhost：预览、审查页面、看板都换成 Tailsc
 你给我的链接只要指向这台电脑上正在运行的东西（预览、审查页面、看板），都给我 Tailscale 链接，绝不要 localhost。我在好几台电脑和手机之间工作。用 tailscale serve 发布，自己先打开链接确认能用，再发给我。
 ```
 
+## Check: Stop hook
+
+```json
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "command -v jq >/dev/null || { echo 'This check needs jq.' >&2; exit 1; }; jq -c 'if .stop_hook_active == true then empty else [(.last_assistant_message // \"\") | scan(\"(?i)https?://(?:[^\\\\s/?#@]*@)?(\\\\[[0-9A-Fa-f:.]+\\\\]|[A-Za-z0-9._-]+)\") | .[0] | ascii_downcase | ltrimstr(\"[\") | rtrimstr(\"]\") | rtrimstr(\".\") | select(. == \"localhost\" or . == \"127.0.0.1\" or . == \"::1\" or . == \"0.0.0.0\")] | if length > 0 then {decision: \"block\", reason: \"Your reply links to \\(.[0]). Publish it with tailscale serve, open the Tailscale link yourself to check it works, then send that link instead.\"} else empty end end'"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+这块检查是 Copybook 为这条技巧写的，2026年11月24日在 Claude Code 2.1.331 上测过。它做什么、加到哪里，按下面这段英文说明：
+
+> When a reply links to localhost, 127.0.0.1, ::1 or 0.0.0.0, Claude Code is sent back once to publish a Tailscale link instead; it reads only the links in the reply and lets the second stop through. Needs `jq` (built into macOS 15 and later); without it the hook reports an error and blocks nothing. Merge it into `.claude/settings.json`. Copybook wrote and tested it on Claude Code 2.1.331, 24 Nov 2026.
+
+这块检查是 Copybook 写的，不属于这条技巧，加上后会在用户电脑上运行。技巧用上之后再提出来，先给用户看，用户同意才加。
+
 ## 背景
 
 1. 电脑和手机都装上 Tailscale，登录同一个账号（免费）。

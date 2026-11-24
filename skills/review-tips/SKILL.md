@@ -1,16 +1,16 @@
 ---
 name: review-tips
-description: "Review · 17 tips: PR, code, and plan reviews, bug scoring, skill audits and backtests."
+description: "Review · 18 tips: PR, code, and plan reviews, bug scoring, skill audits and backtests."
 disable-model-invocation: true
 ---
 
-# Review · 17 tips
+# Review · 18 tips
 
-Copybook's 17 tips on review, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
+Copybook's 18 tips on review, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
 
 - If the user names a tip, use that tip. If they describe a task, choose the tip that best meets their goal and constraints from those that work with the agent doing the work. If several fit equally well, choose one. Tell the user in one sentence which tip you picked and why, then read its file and follow it. If another tip also fits and would materially change the approach or result, name it and say how it differs.
 - If the user said nothing, show them the list below (each tip's name and what it does) and ask which to use.
-- If none fits, say so and suggest copybook, which looks through all 146 tips.
+- If none fits, say so and suggest copybook, which looks through all 149 tips.
 
 | Tip | What it does |
 | --- | --- |
@@ -31,3 +31,4 @@ Copybook's 17 tips on review, most saved first. Each tip's text, where it goes a
 | [3 checks before installing a skill](references/3-checks-before-a-skill-install.md) `3-checks-before-a-skill-install` | Someone put 314 malicious skills on ClawHub: check the source, scan the code, question the permissions, in under five minutes. |
 | [1:1 on your week from git log and sessions](references/1-1-on-your-week-from-git-log.md) `1-1-on-your-week-from-git-log` | Moving this week or just busy: 7 days of git log and sessions, every judgment backed by a commit or conversation, 3 commitments. |
 | [State machine check: wrong transitions in red](references/state-machine-check.md) `state-machine-check` | Bugs between a feature's states: every state from UI to server on one HTML page, then a numbered list with file, line and why. |
+| [Parallel PR checks with claude --cloud](references/parallel-cloud-pr-checks.md) `parallel-cloud-pr-checks` | PRs wait their turn for one machine's checks: each head runs your gate in its own cloud session and gets a PASS or FAIL comment. |

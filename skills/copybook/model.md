@@ -1,6 +1,6 @@
-# Models and cost · 24 tips
+# Models and cost · 25 tips
 
-Copybook's 24 tips on models and cost. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../model-tips/references/<name>.md`.
+Copybook's 25 tips on models and cost. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../model-tips/references/<name>.md`.
 
 | Tip | What it does |
 | --- | --- |
@@ -23,6 +23,7 @@ Copybook's 24 tips on models and cost. The order is by saves, not by fit: read t
 | 3-habits-burning-your-usage | Keep hitting the usage limit: 7 days of session logs scanned, the 3 costliest habits and their share, rules to plug them. |
 | fable-main-opus-subagents | Fable quota going fast: 3 settings send reading and lookups to half-price Opus subagents; Fable keeps the judgment. |
 | openais-5-cheap-harness-rules | Is your setup as cheap as OpenAI's harness: pass or fail on each of its 5 rules, with the file and the one thing to change. |
+| state-md-and-new-session-rules | Using up your Claude Code limit: a STATE.md per task, a summary to switch chats at each approved milestone or 200 thousand tokens. |
 | astra-without-default-subagents | Astra burns quota faster than Sol: default-subagent rules gone, one line so it does the task and the checks itself. |
 | opus-5-5-main-medium-subagents | Usage that lasts longer: Opus 5.5 as main model, Opus 5.5 on medium as default subagent; hard-coded model IDs found first. |
 | gpt-6-pro-plan-handed-to-codex | Plans made blind to your code and logs: connected to ChatGPT, GPT-6 Pro plans from real PRs and records, then briefs Codex. |

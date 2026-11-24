@@ -1,5 +1,5 @@
 interface:
   display_name: "review-tips"
-  short_description: "验收 · 17 条：PR、代码和计划复查、bug 打分、红队提示词、skill 回测。"
+  short_description: "验收 · 18 条：PR、代码和计划复查、bug 打分、红队提示词、skill 回测。"
 policy:
   allow_implicit_invocation: false

@@ -68,4 +68,4 @@ Send the whole list to Claude Code. When you need it, add the line at the end.
 
 ## Source
 
-From [Copybook](https://copybook.page/t/check-20-things-before-shipping-a-vibe-coded-site): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2103977414711767244) on 26 Sep 2026, 6.9K saves as of 24 Oct 2026. For Claude Code.
+From [Copybook](https://copybook.page/t/check-20-things-before-shipping-a-vibe-coded-site): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2103977414711767244) on 26 Sep 2026, 6.9K saves as of 24 Oct 2026. Last check: works on Opus 5.5, 19 Nov 2026. For Claude Code.

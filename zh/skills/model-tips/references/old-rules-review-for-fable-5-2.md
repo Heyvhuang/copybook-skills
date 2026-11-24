@@ -36,4 +36,4 @@ Anthropic 刚发布了一份 Fable 5.2 的 prompt 写法指南。你可以让 Fa
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/review-old-rules-with-anthropics-fable-5-2-guide)：@Voxyz_ai 2026年11月11日[发在 X 上](https://x.com/Voxyz_ai/status/2120501801313267818)，截至 2026年11月18日有 863 次收藏。适用于 Claude Code。
+来自 [Copybook](https://copybook.page/zh/t/review-old-rules-with-anthropics-fable-5-2-guide)：@Voxyz_ai 2026年11月11日[发在 X 上](https://x.com/Voxyz_ai/status/2120501801313267818)，截至 2026年11月18日有 863 次收藏。最近一次检查：2026年11月19日，Opus 5.5，可用。适用于 Claude Code。

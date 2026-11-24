@@ -54,4 +54,4 @@ npx skills@latest add https://copybook.page --skill coordinator --skill parallel
 
 ## 来源
 
-来自 [Copybook](https://copybook.page/zh/t/coordinator-skill-for-claude-code-and-codex)：@Voxyz_ai 2026年11月16日[发在 X 上](undefined)。适用于 Claude Code 和 Codex。
+来自 [Copybook](https://copybook.page/zh/t/coordinator-skill-for-claude-code-and-codex)，2026年11月16日发布。适用于 Claude Code 和 Codex。

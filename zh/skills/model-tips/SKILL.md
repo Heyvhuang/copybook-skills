@@ -1,16 +1,16 @@
 ---
 name: model-tips
-description: "模型和额度 · 24 条：模型搭配、推理强度、缓存倒计时、剩余额度。"
+description: "模型和额度 · 25 条：模型搭配、推理强度、缓存倒计时、剩余额度。"
 disable-model-invocation: true
 ---
 
-# 模型和额度 · 24 条
+# 模型和额度 · 25 条
 
-Copybook 的 24 条「模型和额度」技巧，收藏多的在前。每条要用的文字、放到哪里、最后得到什么，都在 references/ 里它自己的文件中。
+Copybook 的 25 条「模型和额度」技巧，收藏多的在前。每条要用的文字、放到哪里、最后得到什么，都在 references/ 里它自己的文件中。
 
 - 用户点名技巧时，用点名的那条。用户只说了要做什么时，从适用于实际执行者的技巧里，选最符合用户目标和限制的一条。几条同样合适时，选一条即可。选中后，用一句话说明选了哪条、为什么，再读它的文件照着做。另一条也合适，而且换用它会明显改变做法或结果时，顺带点出它的名字和区别。
 - 用户什么都没说：把下面的列表（每条的名字和做什么）给用户看，问用哪条。
-- 都不合适就直说，并建议用 copybook，它会在全部 146 条里找。
+- 都不合适就直说，并建议用 copybook，它会在全部 149 条里找。
 
 | 技巧 | 做什么 |
 | --- | --- |
@@ -33,6 +33,7 @@ Copybook 的 24 条「模型和额度」技巧，收藏多的在前。每条要�
 | [Claude Code 里最耗额度的 3 个习惯](references/3-habits-burning-your-usage.md) `3-habits-burning-your-usage` | 总撞额度上限：扫最近 7 天的会话日志，算出每个习惯各占多少额度，再写规则把它们堵上。 |
 | [Fable 做主、Opus 做 subagent 的 3 个设置](references/fable-main-opus-subagents.md) `fable-main-opus-subagents` | Fable 额度不够用：3 行设置，读代码、查文档交给半价的 Opus subagent，判断留给 Fable。 |
 | [设置检查：OpenAI 的 5 条 harness 省钱规则](references/openais-5-cheap-harness-rules.md) `openais-5-cheap-harness-rules` | agent 配置省不省钱：对照 OpenAI 自己用的 5 条规则逐条判过不过，给出文件和要改的那一件事。 |
+| [STATE.md and new-session rules for CLAUDE.md](references/state-md-and-new-session-rules.md) `state-md-and-new-session-rules` | Using up your Claude Code limit: a STATE.md per task, a summary to switch chats at each approved milestone or 200 thousand tokens. |
 | [Astra 默认不开 subagent](references/astra-without-default-subagents.md) `astra-without-default-subagents` | Astra 烧额度比 Sol 还快：删掉默认开 subagent 的规则，AGENTS.md 加一句，让它自己做、自己验。 |
 | [Opus 5.5 主模型配 medium subagent](references/opus-5-5-main-medium-subagents.md) `opus-5-5-main-medium-subagents` | 想让额度撑久一点：主模型换成 Opus 5.5，默认 subagent 用 medium，改前先找出写死的模型 ID。 |
 | [Chat 里 GPT-6 Pro 做计划，交给 Codex](references/gpt-6-pro-plan-handed-to-codex.md) `gpt-6-pro-plan-handed-to-codex` | 不看真实数据的计划是空的：仓库和日志接进 ChatGPT，GPT-6 Pro 照真实代码做计划，再交给 Codex。 |

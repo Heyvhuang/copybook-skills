@@ -1,13 +1,13 @@
 # Copybook
 
-Copybook 是给用 Claude Code 或 Codex 写代码的人准备的一套 skill。你照常说要做什么，它从 146 条技巧里挑出合适的提示词、规则或检查清单，照着做。你不用记，也不用选。
+Copybook 是给用 Claude Code 或 Codex 写代码的人准备的一套 skill。你照常说要做什么，它从 149 条技巧里挑出合适的提示词、规则或检查清单，照着做。你不用记，也不用选。
 
-这些技巧来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子，合计 21.9万次收藏，统计于 2026年7月22日到 11月23日。
+这些技巧来自 [@Voxyz_ai](https://x.com/Voxyz_ai) 在 X 上被读者收藏最多的帖子，合计 22.7万次收藏，统计于 2026年7月22日到 11月23日。
 
 [copybook.page](https://copybook.page/zh/) · [用邮件收新技巧（英文）](https://copybook.page/zh/about#email-about-title) · [更新记录](CHANGELOG.md) · [English](README.md)
 
 ```text
-copybook ──────────────────────────
+copybook ───────────────────────────
 
 › 这个网站能上线了吗
   上线推广 · 12 条里选 1 条
@@ -18,16 +18,16 @@ copybook ───────────────────────�
   ············•····················
 
 › AGENTS.md 太长了，精简一下
-  代码库 · 33 条里选 1 条
-  ·······················•·········
-───────────────────────────────────
+  代码库 · 34 条里选 1 条
+  ························•·········
+────────────────────────────────────
   然后说出选了哪条、为什么，
   照它的步骤把事做完
 ```
 
 ## 安装
 
-插件里只有 Markdown、YAML、JSON 和 PNG 文件，没有脚本、hook 或 MCP server。装好后 agent 的 skill 列表里多 8 个 skill：1 个会自己加载，7 个话题菜单由你自己打开。
+插件里只有 Markdown、YAML、JSON 和 PNG 文件，没有脚本、hook 或 MCP server 会被装上。有些规则技巧附带一块检查（hook 或脚本，Copybook 跑过），要用就自己加。装好后 agent 的 skill 列表里多 8 个 skill：1 个会自己加载，7 个话题菜单由你自己打开。
 
 ### Claude Code
 
@@ -90,11 +90,11 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 
 ## 里面有什么
 
-- **[代码库](#代码库)** · 33 条：仓库索引和地图、写代码原则、AGENTS.md、改动范围规则。
-- **[验收](#验收)** · 17 条：PR、代码和计划复查、bug 打分、红队提示词、skill 回测。
+- **[代码库](#代码库)** · 34 条：仓库索引和地图、写代码原则、AGENTS.md、改动范围规则。
+- **[验收](#验收)** · 18 条：PR、代码和计划复查、bug 打分、红队提示词、skill 回测。
 - **[设计](#设计)** · 33 条：先出图再写页面、动效库、参考网站、设计 skill。
 - **[长任务](#长任务)** · 22 条：多 agent 分工、交接、进度看板、会话周历、遗留待办。
-- **[模型和额度](#模型和额度)** · 24 条：模型搭配、推理强度、缓存倒计时、剩余额度。
+- **[模型和额度](#模型和额度)** · 25 条：模型搭配、推理强度、缓存倒计时、剩余额度。
 - **[上线推广](#上线推广)** · 12 条：上线前检查清单、搜索引流小工具、VPS 加固。
 - **[写作](#写作)** · 5 条：Orwell 写作规则、去 AI 腔、README 改写、任务说明。
 
@@ -112,6 +112,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | :-- | :-: |
 | **[开源侦察员和收尾者提示词](./zh/skills/codebase-tips/references/open-source-scout-and-closer.md)** `open-source-scout-and-closer`<br>不熟的功能从零写、问要不要继续：先搜 GitHub，再把整个活干完，附一份大白话总结。 | 1.5万 |
 | **[codebase-memory 仓库索引](./zh/skills/codebase-tips/references/codebase-memory-repo-index.md)** `codebase-memory-repo-index`<br>每个问题几十轮 grep 和读文件：仓库连成一张函数、文件和依赖的图，顺手找出能安全删的死函数。 | 8,358 |
+| **[Delete-first prompt for your messiest project](./zh/skills/codebase-tips/references/delete-first-project-prompt.md)** `delete-first-project-prompt`<br>Broken or unneeded code, pages with hierarchy problems: deleting preferred, what it's sure about fixed, the rest listed. | 7,308 |
 | **[Karpathy 的 4 条写代码原则](./zh/skills/codebase-tips/references/karpathys-4-coding-principles.md)** `karpathys-4-coding-principles`<br>过度设计、顺手改旁边的代码：先想再写、简单优先、改动要准、目标驱动，4 行写进 CLAUDE.md。 | 6,741 |
 | **[vibe coding 后的清理：5 条 Codex /goal 提示词](./zh/skills/codebase-tips/references/vibe-coding-cleanup-prompts.md)** `vibe-coding-cleanup-prompts`<br>额度重置时还剩一半：清掉死代码、重复实现和用不上的依赖，给定时任务和旧 worktree 分好类。 | 3,883 |
 | **[能点的仓库地图](./zh/skills/codebase-tips/references/clickable-repo-map.md)** `clickable-repo-map`<br>改一个仓库前先看清它：点任一模块，看到调用方、依赖、相关测试和源码证据，地图随代码更新。 | 2,670 |
@@ -167,6 +168,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | **[装 skill 前的 3 项检查](./zh/skills/review-tips/references/3-checks-before-a-skill-install.md)** `3-checks-before-a-skill-install`<br>有人在 ClawHub 上放了 314 个恶意 skill：装之前查来源、扫代码、问清权限，不到 5 分钟。 | 308 |
 | **[1:1 on your week from git log and sessions](./zh/skills/review-tips/references/1-1-on-your-week-from-git-log.md)** `1-1-on-your-week-from-git-log`<br>Moving this week or just busy: 7 days of git log and sessions, every judgment backed by a commit or conversation, 3 commitments. | 184 |
 | **[状态机检查：错误的转换标红](./zh/skills/review-tips/references/state-machine-check.md)** `state-machine-check`<br>功能状态间的 bug：从 UI 到服务端的每个状态画在一页 HTML 上，附编号清单，写明文件、行号和原因。 | 143 |
+| **[Parallel PR checks with claude --cloud](./zh/skills/review-tips/references/parallel-cloud-pr-checks.md)** `parallel-cloud-pr-checks`<br>PRs wait their turn for one machine's checks: each head runs your gate in its own cloud session and gets a PASS or FAIL comment. |  |
 
 ### 设计
 
@@ -262,6 +264,7 @@ npx skills@latest add https://github.com/Heyvhuang/copybook-skills/tree/main/zh
 | **[Claude Code 里最耗额度的 3 个习惯](./zh/skills/model-tips/references/3-habits-burning-your-usage.md)** `3-habits-burning-your-usage`<br>总撞额度上限：扫最近 7 天的会话日志，算出每个习惯各占多少额度，再写规则把它们堵上。 | 722 |
 | **[Fable 做主、Opus 做 subagent 的 3 个设置](./zh/skills/model-tips/references/fable-main-opus-subagents.md)** `fable-main-opus-subagents`<br>Fable 额度不够用：3 行设置，读代码、查文档交给半价的 Opus subagent，判断留给 Fable。 | 715 |
 | **[设置检查：OpenAI 的 5 条 harness 省钱规则](./zh/skills/model-tips/references/openais-5-cheap-harness-rules.md)** `openais-5-cheap-harness-rules`<br>agent 配置省不省钱：对照 OpenAI 自己用的 5 条规则逐条判过不过，给出文件和要改的那一件事。 | 715 |
+| **[STATE.md and new-session rules for CLAUDE.md](./zh/skills/model-tips/references/state-md-and-new-session-rules.md)** `state-md-and-new-session-rules`<br>Using up your Claude Code limit: a STATE.md per task, a summary to switch chats at each approved milestone or 200 thousand tokens. | 697 |
 | **[Astra 默认不开 subagent](./zh/skills/model-tips/references/astra-without-default-subagents.md)** `astra-without-default-subagents`<br>Astra 烧额度比 Sol 还快：删掉默认开 subagent 的规则，AGENTS.md 加一句，让它自己做、自己验。 | 686 |
 | **[Opus 5.5 主模型配 medium subagent](./zh/skills/model-tips/references/opus-5-5-main-medium-subagents.md)** `opus-5-5-main-medium-subagents`<br>想让额度撑久一点：主模型换成 Opus 5.5，默认 subagent 用 medium，改前先找出写死的模型 ID。 | 437 |
 | **[Chat 里 GPT-6 Pro 做计划，交给 Codex](./zh/skills/model-tips/references/gpt-6-pro-plan-handed-to-codex.md)** `gpt-6-pro-plan-handed-to-codex`<br>不看真实数据的计划是空的：仓库和日志接进 ChatGPT，GPT-6 Pro 照真实代码做计划，再交给 Codex。 | 371 |

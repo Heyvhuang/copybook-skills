@@ -54,4 +54,4 @@ Workers run with full access: they start without permission prompts and can edit
 
 ## Source
 
-From [Copybook](https://copybook.page/t/coordinator-skill-for-claude-code-and-codex): [posted on X by @Voxyz_ai](undefined) on 16 Nov 2026. For Claude Code and Codex.
+From [Copybook](https://copybook.page/t/coordinator-skill-for-claude-code-and-codex), published on 16 Nov 2026. For Claude Code and Codex.

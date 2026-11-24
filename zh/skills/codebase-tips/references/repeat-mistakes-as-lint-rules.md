@@ -26,6 +26,21 @@
 最后在 AGENTS.md 或 CLAUDE.md（项目用哪个写哪个）里加一行：写完代码先跑 lint，按报错改用对应的 helper。项目没有 lint 工具就先告诉我。先给我看清单，每条附出处和现有违规数量，我确认了再改。
 ```
 
+## Check: pre-commit hook
+
+```bash
+#!/bin/sh
+npm run lint --silent && exit 0
+echo "Lint failed. Switch to the helper the error names, then commit again." >&2
+exit 1
+```
+
+这块检查是 Copybook 为这条技巧写的，2026年11月24日在 git 2.50.1 上测过。它做什么、加到哪里，按下面这段英文说明：
+
+> A commit stops while `npm run lint` fails, so the agent reads the error and switches to the helper it names. Save it as `.git/hooks/pre-commit` and make it executable with `chmod +x`. Copybook wrote and tested it on git 2.50.1, 24 Nov 2026.
+
+这块检查是 Copybook 写的，不属于这条技巧，加上后会在用户电脑上运行。技巧用上之后再提出来，先给用户看，用户同意才加。
+
 ## 背景
 
 AI 写代码越强，代码反而越要写得抽象。

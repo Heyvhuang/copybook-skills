@@ -27,6 +27,32 @@
 如果我的回答只会是走个过场的同意，就别问。如果跑一下就能回答这个问题，就去跑，别问。把问题留给只有我能拍板的品味和产品决定。一次只问一个，带上你的建议，用你内置的提问工具问。
 ```
 
+## Check: PreToolUse hook
+
+```json
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "command -v jq >/dev/null || { echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"This check needs jq to read the command, so it asks every time.\"}}'; exit 0; }; jq -sc 'if length != 1 then {hookSpecificOutput: {hookEventName: \"PreToolUse\", permissionDecision: \"ask\", permissionDecisionReason: \"This check could not read the command, so it asks.\"}} else .[0] | if (.tool_name | type) != \"string\" then {hookSpecificOutput: {hookEventName: \"PreToolUse\", permissionDecision: \"ask\", permissionDecisionReason: \"This check could not read the command, so it asks.\"}} elif .tool_name != \"Bash\" then empty elif (.tool_input.command | type) != \"string\" or (.tool_input.command | test(\"\\\\S\") | not) then {hookSpecificOutput: {hookEventName: \"PreToolUse\", permissionDecision: \"ask\", permissionDecisionReason: \"This check could not read the command, so it asks.\"}} elif (.tool_input.command | test(\"(?:^|[\\\\s;&|(`/])git(?:\\\\s+(?:-[cC]\\\\s+\\\\S+|--?[A-Za-z][\\\\w-]*(?:=\\\\S+)?))*\\\\s+push(?:\\\\s[^;&|\\\\n]*?)?\\\\s[\\\"\\\\x27]?(?:--force(?:-with-lease|-if-includes)?(?:=\\\\S*)?|-[A-Za-z]*f[A-Za-z]*|\\\\+\\\\S+)(?=$|[\\\\s;&|)\\\"\\\\x27])|(?:^|[\\\\s;&|(`/])vercel(?:@\\\\S*)?(?:\\\\s[^;&|\\\\n]*?)?\\\\s[\\\"\\\\x27]?(?:--prod(?:=\\\\S*)?|--target(?:=|\\\\s+)[\\\"\\\\x27]?production|promote)(?=$|[\\\\s;&|)\\\"\\\\x27])\")) then {hookSpecificOutput: {hookEventName: \"PreToolUse\", permissionDecision: \"ask\", permissionDecisionReason: \"One-way door: a force push or a production deploy. Asking first.\"}} else empty end end' || echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"ask\",\"permissionDecisionReason\":\"This check could not read the command, so it asks.\"}}'"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+这块检查是 Copybook 为这条技巧写的，2026年11月24日在 Claude Code 2.1.331 上测过。它做什么、加到哪里，按下面这段英文说明：
+
+> Claude Code asks you before a Bash command force-pushes (`--force`, `-f`, `--force-with-lease`, `--force-if-includes` or a `+` refspec such as `origin +main`) or deploys to production with Vercel (`--prod`, `--target production` or `vercel promote`), and also when it cannot read the command it is given. It reads only the command Claude Code runs, so a push or deploy inside a script or a git alias goes through, and so does deleting a branch; those still rest on the rules. Needs `jq` (built into macOS 15 and later); without it, it asks before every command. Merge it into `.claude/settings.json`. Copybook wrote and tested it on Claude Code 2.1.331, 24 Nov 2026.
+
+这块检查是 Copybook 写的，不属于这条技巧，加上后会在用户电脑上运行。技巧用上之后再提出来，先给用户看，用户同意才加。
+
 ## 背景
 
 做 vibe coding 的朋友，求你们了，把这段加进 AGENTS.md。

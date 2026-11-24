@@ -25,6 +25,27 @@
 - 尽量避免 `try`/`catch`
 ```
 
+## Check: ESLint rule
+
+```js
+export default [
+  {
+    rules: {
+      "no-restricted-syntax": ["error", {
+        selector: "TryStatement[handler]",
+        message: "Avoid try/catch where possible (AGENTS.md). Where this is the boundary that owns the failure, disable the rule on this line and give the reason after --.",
+      }],
+    },
+  },
+];
+```
+
+这块检查是 Copybook 为这条技巧写的，2026年11月24日在 ESLint 10.15.0 上测过。它做什么、加到哪里，按下面这段英文说明：
+
+> ESLint flags every `try` that has a `catch` (`try`/`finally` passes), so a catch stays only where Codex turns the rule off on that line with the reason after `--`; ESLint does not check that the reason is there, so look for it in review. The first three rules have no check. Merge the rule into your `eslint.config.js`. Copybook wrote and tested it on ESLint 10.15.0, 24 Nov 2026.
+
+这块检查是 Copybook 写的，不属于这条技巧，加上后会在用户电脑上运行。技巧用上之后再提出来，先给用户看，用户同意才加。
+
 ## 背景
 
 Codex 写代码防御心太重。哪怕改一点点，也要在每一层加空值检查。

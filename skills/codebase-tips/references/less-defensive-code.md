@@ -25,6 +25,25 @@ The user chose this tip. The steps above are written for a person; do them for t
 - Avoid `try`/`catch` where possible
 ```
 
+## Check: ESLint rule
+
+```js
+export default [
+  {
+    rules: {
+      "no-restricted-syntax": ["error", {
+        selector: "TryStatement[handler]",
+        message: "Avoid try/catch where possible (AGENTS.md). Where this is the boundary that owns the failure, disable the rule on this line and give the reason after --.",
+      }],
+    },
+  },
+];
+```
+
+ESLint flags every `try` that has a `catch` (`try`/`finally` passes), so a catch stays only where Codex turns the rule off on that line with the reason after `--`; ESLint does not check that the reason is there, so look for it in review. The first three rules have no check. Merge the rule into your `eslint.config.js`. Copybook wrote and tested it on ESLint 10.15.0, 24 Nov 2026.
+
+This check is Copybook's, not part of the tip, and runs on the user's machine once added. Offer it once the tip is in place, show it, and add it only if the user says yes.
+
 ## Background
 
 Codex writes code way too defensively. Even a tiny change gets null checks at every layer.

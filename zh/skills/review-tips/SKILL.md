@@ -1,16 +1,16 @@
 ---
 name: review-tips
-description: "验收 · 17 条：PR、代码和计划复查、bug 打分、红队提示词、skill 回测。"
+description: "验收 · 18 条：PR、代码和计划复查、bug 打分、红队提示词、skill 回测。"
 disable-model-invocation: true
 ---
 
-# 验收 · 17 条
+# 验收 · 18 条
 
-Copybook 的 17 条「验收」技巧，收藏多的在前。每条要用的文字、放到哪里、最后得到什么，都在 references/ 里它自己的文件中。
+Copybook 的 18 条「验收」技巧，收藏多的在前。每条要用的文字、放到哪里、最后得到什么，都在 references/ 里它自己的文件中。
 
 - 用户点名技巧时，用点名的那条。用户只说了要做什么时，从适用于实际执行者的技巧里，选最符合用户目标和限制的一条。几条同样合适时，选一条即可。选中后，用一句话说明选了哪条、为什么，再读它的文件照着做。另一条也合适，而且换用它会明显改变做法或结果时，顺带点出它的名字和区别。
 - 用户什么都没说：把下面的列表（每条的名字和做什么）给用户看，问用哪条。
-- 都不合适就直说，并建议用 copybook，它会在全部 146 条里找。
+- 都不合适就直说，并建议用 copybook，它会在全部 149 条里找。
 
 | 技巧 | 做什么 |
 | --- | --- |
@@ -31,3 +31,4 @@ Copybook 的 17 条「验收」技巧，收藏多的在前。每条要用的文�
 | [装 skill 前的 3 项检查](references/3-checks-before-a-skill-install.md) `3-checks-before-a-skill-install` | 有人在 ClawHub 上放了 314 个恶意 skill：装之前查来源、扫代码、问清权限，不到 5 分钟。 |
 | [1:1 on your week from git log and sessions](references/1-1-on-your-week-from-git-log.md) `1-1-on-your-week-from-git-log` | Moving this week or just busy: 7 days of git log and sessions, every judgment backed by a commit or conversation, 3 commitments. |
 | [状态机检查：错误的转换标红](references/state-machine-check.md) `state-machine-check` | 功能状态间的 bug：从 UI 到服务端的每个状态画在一页 HTML 上，附编号清单，写明文件、行号和原因。 |
+| [Parallel PR checks with claude --cloud](references/parallel-cloud-pr-checks.md) `parallel-cloud-pr-checks` | PRs wait their turn for one machine's checks: each head runs your gate in its own cloud session and gets a PASS or FAIL comment. |

@@ -1,16 +1,16 @@
 ---
 name: model-tips
-description: "Models and cost · 24 tips: model pairings, effort, cache timing, leftover quota."
+description: "Models and cost · 25 tips: model pairings, effort, cache timing, leftover quota."
 disable-model-invocation: true
 ---
 
-# Models and cost · 24 tips
+# Models and cost · 25 tips
 
-Copybook's 24 tips on models and cost, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
+Copybook's 25 tips on models and cost, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
 
 - If the user names a tip, use that tip. If they describe a task, choose the tip that best meets their goal and constraints from those that work with the agent doing the work. If several fit equally well, choose one. Tell the user in one sentence which tip you picked and why, then read its file and follow it. If another tip also fits and would materially change the approach or result, name it and say how it differs.
 - If the user said nothing, show them the list below (each tip's name and what it does) and ask which to use.
-- If none fits, say so and suggest copybook, which looks through all 146 tips.
+- If none fits, say so and suggest copybook, which looks through all 149 tips.
 
 | Tip | What it does |
 | --- | --- |
@@ -33,6 +33,7 @@ Copybook's 24 tips on models and cost, most saved first. Each tip's text, where 
 | [3 habits burning your Claude Code usage](references/3-habits-burning-your-usage.md) `3-habits-burning-your-usage` | Keep hitting the usage limit: 7 days of session logs scanned, the 3 costliest habits and their share, rules to plug them. |
 | [Fable main, Opus subagents: 3 settings](references/fable-main-opus-subagents.md) `fable-main-opus-subagents` | Fable quota going fast: 3 settings send reading and lookups to half-price Opus subagents; Fable keeps the judgment. |
 | [Setup check: OpenAI's 5 cheap-harness rules](references/openais-5-cheap-harness-rules.md) `openais-5-cheap-harness-rules` | Is your setup as cheap as OpenAI's harness: pass or fail on each of its 5 rules, with the file and the one thing to change. |
+| [STATE.md and new-session rules for CLAUDE.md](references/state-md-and-new-session-rules.md) `state-md-and-new-session-rules` | Using up your Claude Code limit: a STATE.md per task, a summary to switch chats at each approved milestone or 200 thousand tokens. |
 | [Codex: Astra without default subagents](references/astra-without-default-subagents.md) `astra-without-default-subagents` | Astra burns quota faster than Sol: default-subagent rules gone, one line so it does the task and the checks itself. |
 | [Opus 5.5 main model, medium subagents](references/opus-5-5-main-medium-subagents.md) `opus-5-5-main-medium-subagents` | Usage that lasts longer: Opus 5.5 as main model, Opus 5.5 on medium as default subagent; hard-coded model IDs found first. |
 | [GPT-6 Pro plan in Chat, handed to Codex](references/gpt-6-pro-plan-handed-to-codex.md) `gpt-6-pro-plan-handed-to-codex` | Plans made blind to your code and logs: connected to ChatGPT, GPT-6 Pro plans from real PRs and records, then briefs Codex. |

@@ -61,4 +61,4 @@ Send this to Claude Code so it remembers the list.
 
 ## Source
 
-From [Copybook](https://copybook.page/t/give-opus-5-5-eight-frontend-reference-sites): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2104284941437784139) on 27 Sep 2026, 1.7K saves as of 25 Oct 2026. For Claude Code.
+From [Copybook](https://copybook.page/t/give-opus-5-5-eight-frontend-reference-sites): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2104284941437784139) on 27 Sep 2026, 1.7K saves as of 25 Oct 2026. Last check: works on Opus 5.5, 19 Nov 2026. For Claude Code.
