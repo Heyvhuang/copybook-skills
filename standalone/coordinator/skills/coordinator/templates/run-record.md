@@ -5,7 +5,7 @@ Append-only below the header, one line per event with a real time. On resume, re
 ## Header (keep current)
 
 - Goal and finish line: <what done means> — proved by <check>.
-- Host: <T3 Code (thread id) | Claude desktop | Claude CLI | Codex> · lane runtime: Herdr session <name>, owned by this run · fallback lanes: <T3 child tasks, with the reason, or none> · run dir: <path> · tools root: <skill>/scripts
+- Host: <T3 Code (thread id) | Claude desktop | Claude CLI | Codex | Orca (bot or workspace)> · lane runtime: <Orca Run id | T3 thread | Herdr session name, owned by this run>, and why (SKILL.md, Runtime) · lanes on another runtime: <which, and why, or none> · run dir: <path> · tools root: <skill>/scripts
 - Base: <branch> @ <sha> (fetched <time>, or "freshness unverified").
 - Rule sources in force: <global rules>, <project CLAUDE.md/AGENTS.md>, <design rule file>, <run briefs>.
 
@@ -21,7 +21,7 @@ Append-only below the header, one line per event with a real time. On resume, re
 
 ## Lanes
 
-| Lane | Kind / model / effort | Herdr agent / pane / session id (or T3 taskId + link, fallback) | Worktree / branch | Brief | Hand-over | State |
+| Lane | Kind / model / effort | Herdr agent / pane / session id (or T3 taskId + link, or Orca Task id + dispatch id + workspace) | Worktree / branch | Brief | Hand-over | State |
 | --- | --- | --- | --- | --- | --- | --- |
 
 ## Log

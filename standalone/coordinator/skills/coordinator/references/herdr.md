@@ -1,6 +1,6 @@
 # Herdr in a coordinator run
 
-Herdr is the lane runtime on every host (SKILL.md, Runtime). The mechanics live in the parallel-goal-fleet skill: its `SKILL.md`, `references/herdr.md` (session, worker start, dispatch, waiting, quick reviews) and `references/cleanup.md`. Read the section you need there. This page adds only what the coordinator learned on the example run. Counts from two coordinator transcripts: `agent prompt` 224, `pane read` 126, `agent list` 62, `agent start` 56, `workspace close` 33.
+Herdr lanes: recommended when the coordinator runs in a terminal, Codex or the Claude desktop app, and for any lane that needs mid-turn steering, its own account or Codex speed tier, a cloud gate or a remote machine (SKILL.md, Runtime). The mechanics live in the parallel-goal-fleet skill: its `SKILL.md`, `references/herdr.md` (session, worker start, dispatch, waiting, quick reviews) and `references/cleanup.md`. Read the section you need there. This page adds only what the coordinator learned on the example run. Counts from two coordinator transcripts: `agent prompt` 224, `pane read` 126, `agent list` 62, `agent start` 56, `workspace close` 33.
 
 ## 0. Full access and providers
 

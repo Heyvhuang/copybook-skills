@@ -35,7 +35,7 @@ Each: what happened → the rule. Times are from the run record, gate reports an
 - The SSH agent stopped signing at 03:20. → Per-command HTTPS with the gh credential helper; change no git config.
 - `git add docs/brand` committed 119 local working files (~33 MB). → Add explicit paths; ignore rules for working folders.
 
-## Watching lanes (Herdr runtime; T3 child tasks wake the coordinator themselves)
+## Watching lanes (Herdr runtime; T3 child tasks, and Orca workers under a coordinator hosted in Orca, wake the coordinator themselves)
 
 - Herdr's `done` flickers; a hand-over is a report. → Completion = the READY line plus your own check of the diff and checks.
 - A READY word inside a sentence woke the watcher; two READY lines were missed while no watcher ran; a stray second watcher ran beside the first; reviews ending `VERDICT:` and gate reports ending `GATE-COMPLETE` never woke it at all. → One completion contract that the watcher reads exactly; line-start match; seen state kept; one watcher per run.

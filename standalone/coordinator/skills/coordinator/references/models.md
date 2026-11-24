@@ -1,6 +1,6 @@
 # Models and effort
 
-The one place for exact model IDs and effort in a coordinator run; in that run it replaces parallel-goal-fleet's model and effort defaults. The table holds the defaults the example run used, as written on 16 Nov 2026, with that run's reasons. They are an example, not a ranking: put in the models your account offers, and change a row when a run has shown how a model does, never just because a newer one came out. Herdr launch flags: SKILL.md (Runtime) and `references/herdr.md` §0; T3 option ids: `references/t3.md`.
+The one place for exact model IDs and effort in a coordinator run; in that run it replaces parallel-goal-fleet's model and effort defaults. The table holds the defaults the example run used, as written on 16 Nov 2026, with that run's reasons. They are an example, not a ranking: put in the models your account offers, and change a row when a run has shown how a model does, never just because a newer one came out. Herdr launch flags: SKILL.md (Runtime) and `references/herdr.md` §0; T3 option ids: `references/t3.md`; Orca flags: `references/orca.md`.
 
 ## Overrides
 
@@ -34,10 +34,10 @@ Some plans keep running on paid credits once the quota is used up. Before an una
 
 ## Reaching each model
 
-| Model | Herdr (default) | T3 Code fallback |
-| --- | --- | --- |
-| Claude | `--kind claude`, `--model <id>` | `claudeAgent` child task, option `effort` |
-| Codex | `--kind codex`, `-m <id>` | `codex` child task, option `reasoningEffort` |
+| Model | Herdr | T3 Code | Orca |
+| --- | --- | --- | --- |
+| Claude | `--kind claude`, `--model <id>` | `claudeAgent` child task, option `effort` | `--agent claude --model <id> --effort <e>` |
+| Codex | `--kind codex`, `-m <id>` | `codex` child task, option `reasoningEffort` | `--agent codex --model <id> --effort <e>` (no speed-tier flag: `references/orca.md`) |
 
 When a model is out of reach (quota, outage, provider disabled): Codex Astra review → Codex Sol xhigh plus a second Claude reviewer, flagged in the record; second reader → `scripts/gemini.mjs` if you set it up, else a second Claude reviewer, else decide alone and mark the decision for the user's confirmation; front-end work never falls back to Codex.
 
