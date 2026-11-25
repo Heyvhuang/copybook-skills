@@ -1,36 +1,36 @@
-# Karpathy 的 4 条写代码原则
+# Karpathy's 4 coding principles for CLAUDE.md
 
-过度设计、顺手改旁边的代码：先想再写、简单优先、改动要准、目标驱动，4 行写进 CLAUDE.md。
+The agent over-designs and edits what it wasn't asked to: think before coding, simplicity first, surgical edits, goal-driven work.
 
-## 步骤
+## Steps
 
-1. 复制 CLAUDE.md 原则。
-2. 贴进你的 CLAUDE.md。
-3. 得到：Claude Code 拿不准就问，代码能少就少，只动必须动的地方。
+1. Copy the CLAUDE.md principles.
+2. Paste them into your CLAUDE.md.
+3. You get: Claude Code asks when unsure, keeps code minimal and touches only what the task needs.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## CLAUDE.md 原则
+## CLAUDE.md principles
 
 ```markdown
-- 先想再写：拿不准就问，别自己默默挑一种理解就往下干
-- 简单优先：代码能少就少，任何过度设计一眼就能看出来
-- 改动要准：只动必须动的地方，别顺手改旁边的代码
-- 目标驱动：动手前先把模糊的要求变成能验证的目标
+- think before coding: ask when unsure, don't silently pick one interpretation and run with it
+- simplicity first: minimum code, any overengineering shows at a glance
+- surgical edits: only touch what's required, don't fix up neighboring code on the way by
+- goal-driven: translate fuzzy instructions into verifiable targets before starting
 ```
 
-## 背景
+## Background
 
-那一周 GitHub trending #1 的仓库只有一份 CLAUDE.md，一周新增 44,465 颗星。它是一个 skill，把 Andrej Karpathy 总结的大模型写代码的坑，浓缩成四条原则。
+The #1 repo on GitHub trending that week was a CLAUDE.md file, with 44,465 new stars in a week: a skill distilling Andrej Karpathy's LLM coding pitfalls into four principles.
 
-我把它换进了自己的 CLAUDE.md，跑了几个任务，感觉更利索了。
+Swapped into my CLAUDE.md, a few tasks in, it feels tighter.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/karpathy-coding-principles-for-claude-md)：@Voxyz_ai 2026年4月19日[发在 X 上](https://x.com/Voxyz_ai/status/2045899539526148193)，截至 2026年7月24日有 6,741 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/karpathy-coding-principles-for-claude-md): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2045899539526148193) on 19 Apr 2026, 6.7K saves as of 24 Jul 2026. For Claude Code.

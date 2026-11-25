@@ -1,68 +1,68 @@
-# 上线前检查：20 项网站速度
+# Pre-launch check: 20 things that slow a site
 
-vibe coding 做的网站打开慢：图片字体、前端、数据库接口和服务器各查一遍，一次修好，重新测速。
+A vibe-coded site that loads slowly: images, fonts, frontend, database, APIs and servers, fixed in one pass and re-measured.
 
-## 步骤
+## Steps
 
-1. 复制提示词；需要的话，最后那句告诉它怎么跑。
-2. 在网站项目里把它发给 Claude Code 里的 Opus 5.5。
-3. 得到：4 个 subagent 查完，主会话把问题全部修好，附上修改前后的 Lighthouse 数据。
+1. Copy the prompt; when you need it, the line at the end tells it how to run.
+2. Send it to Opus 5.5 in Claude Code, in your site's project.
+3. You get: 4 subagents check, then the main session fixes everything, with before-and-after Lighthouse numbers.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-vibe coding 做完的网站，上线前让 Opus 5.5 派 4 个 subagent 分头把这 20 件拖慢它的事查一遍，再一次修好：
+Before you ship a vibe-coded site, have Opus 5.5 send out 4 subagents to check these 20 things that slow it down, then fix them all in one pass:
 
-图片和字体
-- 所有图片转成 WebP 或 AVIF，尺寸按它在页面上实际显示的大小来
-- 大图放 Supabase Storage，通过 next/image 按合适尺寸输出。用 Pro 套餐的话，Supabase 自带的图片转换也行
-- 首屏以下的图片和视频懒加载，页面顶部的大图优先加载
-- 字体按框架的方式加载（Next.js 里用 next/font），只用一到两种字体
-- 删掉用不到的第三方脚本，统计和客服聊天组件等页面加载完再运行
+Images and fonts
+- Convert every image to WebP or AVIF, sized to how big it actually shows on the page
+- Serve big images from Supabase Storage through next/image at the right size. On the Pro plan, Supabase's own image transformations work too
+- Lazy-load images and videos below the fold, and load the big image at the top of the page first
+- Load fonts the way your framework does it (next/font in Next.js), and keep it to one or two fonts
+- Remove third-party scripts you don't use, and run analytics and chat widgets after the page has loaded
 
-前端代码
-- 跑一遍 bundle analyzer 找出最大的包，整个库引进来的地方只引用到的部分，比如单个 lodash 函数
-- 首屏用不到的重组件，比如图表、编辑器和地图，用 dynamic import 在需要时再加载
-- 首页数据在服务端取好，页面打开时就带着内容
-- AI 的回答边生成边流式输出
-- 数据还在加载时显示骨架屏
+Frontend code
+- Run a bundle analyzer to find the biggest packages, and where a whole library gets imported, import only the parts you use, like single lodash functions
+- Load heavy components the first screen doesn't need, like charts, editors and maps, with dynamic import when they're needed
+- Fetch the homepage data on the server, so the page opens with content already in it
+- Stream AI answers as they're generated
+- Show skeletons while data is still loading
 
-数据库和接口
-- 给用来筛选和排序的列加索引，包括 RLS 策略里用到的列，比如 user_id
-- RLS 策略里把 auth.uid() 写成 (select auth.uid())，这样每次查询只跑一次
-- 找出 N+1 查询，合并成一条
-- 长列表分页
-- 对所有人都一样的接口响应加缓存，和登录用户相关的一律不缓存
-- 发邮件、处理图片、生成报表这类重活挪到后台任务
+Database and APIs
+- Index the columns you filter and sort by, including the ones your RLS policies use, like user_id
+- In RLS policies, write auth.uid() as (select auth.uid()) so it runs once per query
+- Find N+1 queries and turn them into a single query
+- Paginate long lists
+- Cache API responses that are the same for everyone, and never cache anything tied to a logged-in user
+- Move heavy work like sending emails, processing images and building reports to background jobs
 
-服务器和网络
-- 服务端函数和数据库放在同一个区域。新建的 Vercel 项目默认在 US East 跑函数
-- 内容很少变的页面改成静态页面或 ISR
-- 一个页面接连调用好几个接口时，改成并行，或者合并成一个
-- 在 Chrome 里模拟低端 Android 手机和慢速 4G，把主要流程点一遍
+Servers and network
+- Put your server functions in the same region as your database. New Vercel projects run functions in US East by default
+- Turn pages whose content rarely changes into static pages or ISR
+- When a page calls APIs one after another, run them in parallel or merge them into one
+- In Chrome, emulate a low-end Android phone on slow 4G and click through the main flows
 
-默认的 medium 推理强度就够了。数据库那组要读查询、决定加哪些索引，单独调到 high。
+The default medium effort is enough. The database group has to read queries and decide which indexes to add, so raise that one to high.
 
-把这整条发给 Claude Code，需要的话，最后再加上这句 👇
-「每一组派一个 subagent 去查，只查不改，每个问题写清在哪个文件、影响哪个页面。数据库那组的 subagent 调到 high effort。改动之前，先跑一次生产构建（Next.js 里是 next build && next start）或者用预览链接，在首页和最慢的两三个页面上用手机模式各跑三次 Lighthouse，记下中位数。然后照它们的清单统一修，修完用同样的方法再测一遍，给我修改前后的数字。别为了速度删功能。删依赖、改部署区域、改数据库之前先问我。」
+Send this whole post to Claude Code. If you need to, add this line at the end 👇
+"Send one subagent per group to check it without editing anything, and note which file each issue is in and which page it affects. Run the database subagent at high effort. Before changing anything, run a production build (next build && next start in Next.js) or use a preview link, then run Lighthouse three times in mobile mode on the homepage and the two or three slowest pages and note the median. Then fix everything yourself from their lists, measure again the same way, and give me the before-and-after numbers. Don't remove features to gain speed. Ask me before removing dependencies, changing the deploy region or changing the database."
 ```
 
-## 背景
+## Background
 
-vibe coding 做完的网站，上线前让 Opus 5.5 派 4 个 subagent 分头把这 20 件拖慢网站的事查一遍，再一次修好。
+Before you ship a vibe-coded site, have Opus 5.5 send out 4 subagents to check these 20 things that slow it down, then fix them all in one pass.
 
-默认的 medium 推理强度就够了。数据库那组要读查询、决定加哪些索引，单独调到 high。
+The default medium effort is enough. The database group has to read queries and decide which indexes to add, so raise that one to high.
 
-把整份清单发给 Claude Code。
+Send the whole list to Claude Code.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/check-20-things-that-slow-a-vibe-coded-site-down)：@Voxyz_ai 2026年10月13日[发在 X 上](https://x.com/Voxyz_ai/status/2110083153930920113)，截至 2026年11月10日有 3,202 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/check-20-things-that-slow-a-vibe-coded-site-down): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2110083153930920113) on 13 Oct 2026, 3.2K saves as of 10 Nov 2026. For Claude Code.

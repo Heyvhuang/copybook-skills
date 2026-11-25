@@ -1,68 +1,68 @@
-# 代码和方向复查提示词
+# Code and direction review prompts
 
-代码越来越复杂，或忙了很久不知道通向哪里：一条找出不必存在的代码，一条重新审视方向。
+Code too complicated, or busy a long time with no clear direction: one finds what needn't exist, one rechecks the direction.
 
-## 步骤
+## Steps
 
-1. 复制代码审查提示词、方向审视提示词，或者两条都要。
-2. 代码审查贴进 Codex，方向审视贴进了解你背景的对话。
-3. 得到：一份值得改的短清单，或者对你方向最要紧的事，按轻重排好。
+1. Copy the code review prompt, the direction prompt, or both.
+2. Paste the code review into Codex and the direction review into a chat that knows your background.
+3. You get: A short list of changes worth making, or a ranked view of what matters most for your direction.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词：代码审查
-
-```text
-目标：[这个项目或功能需要解决的问题]
-审查范围：[目录、模块或当前改动]
-
-从第一性原理审查这个实现。从目标和它必须满足的约束出发。不要假设现有设计是正确的。
-
-哪些部分不必要地复杂？哪些决定依赖未经检验的假设？哪些东西可以删掉而不丢失必需的行为，之后又有什么可以简化？
-
-列出最多 5 项值得做的改动。每一项都写明代码位置、支持的证据、改动或删除会让我们失去什么，以及如何验证这项改动。如果你不确定是否还有东西依赖它，标出来等我确认。
-
-先判断某样东西是否需要保留，再考虑简化它。只在确实有性能问题的地方讨论优化。不要为了填满报告而编造改动。
-
-现在只返回清单。不要编辑文件。等我选好要推进的条目后，只在一个单独的 worktree 里做这些改动。保留安全和兼容性要求，验证相关测试和关键用户流程，并报告仍未验证的部分。如果没有值得改的，就直说。
-```
-
-## 提示词：方向审视
+## Prompt: code review
 
 ```text
-我目前的情况：[工作、进行中的项目、主要目标，以及时间和资源上的限制]
+Goal: [the problem this project or feature needs to solve]
+Review scope: [directory, module, or current changes]
 
-根据这段对话、你实际能访问到的过往背景，以及我提供的材料，帮我重新评估未来 3–5 年的方向。
+Review this implementation from first principles. Start with the goal and the constraints it must satisfy. Don’t assume the existing design is correct.
 
-找出对我的进展最重要的 3–5 个瓶颈、风险或机会，按重要性排序。审视我正在花时间的事：哪些值得继续，哪些应该暂停，哪些需要先做个小实验？
+Which parts are unnecessarily complex? Which decisions rely on untested assumptions? What can be removed without losing required behavior, and what could be simplified afterward?
 
-每个判断都要有具体证据支持，并把事实和推断分开。不要把一次性的抱怨当成长期特点，也不要假装读过你访问不到的对话。
+List up to 5 changes worth making. For each, include the code location, supporting evidence, what we would lose by changing or removing it, and how to verify the change. If you’re unsure whether anything still depends on it, flag that for confirmation.
 
-考虑现有的责任、现实约束和机会成本。说明该做什么、我需要放弃什么，以及出现什么结果时我应该重新考虑。
+First decide whether something needs to stay, then consider simplifying it. Discuss optimization only where there is an actual performance problem. Don’t invent changes just to fill a report.
 
-给我未来 30 天的第一步、90 天内应该看到的进展，以及一年后判断这个方向是否奏效的标准。
-
-最后选出现在最值得做的那一个改变。
-
-如果缺少会实质性改变你建议的信息，先只问我最重要的那个问题。等我回答后再继续。
+For now, return the list only. Do not edit files. After I choose the items to proceed with, make only those changes in a separate worktree. Preserve security and compatibility requirements, verify the relevant tests and key user flows, and report anything still unverified. If nothing is worth changing, say so.
 ```
 
-## 背景
+## Prompt: direction review
 
-试试让 Astra 回头再看一遍你已经写好的代码、已经做好的计划。先从一个问题开始：
+```text
+My current situation: [work, active projects, main goals, and limits on time and resources]
 
-「如果今天从头开始，目标不变，你还需要保留什么？」
+Using this conversation, any past context you can actually access, and the material I provide, help me reassess my direction for the next 3–5 years.
 
-代码越来越复杂？检查一下哪些东西根本不需要存在。先填好目标和范围。
+Identify the 3–5 bottlenecks, risks, or opportunities that matter most to my progress, ranked by importance. Review what I’m spending time on: what is worth continuing, what should be paused, and what needs a small experiment first?
 
-忙了很久，却说不清这些工作会把你带到哪里？找一个你已经讲过自己背景的对话，在里面用这段。需要的话，先补充更多背景：
+Support each judgment with specific evidence and separate facts from inferences. Don’t treat a one-off complaint as a lasting trait or pretend you’ve read conversations you cannot access.
 
-## 来源
+Account for existing responsibilities, practical constraints, and opportunity costs. Explain what to do, what I would have to give up, and what results should make me reconsider.
 
-来自 [Copybook](https://copybook.page/zh/t/recheck-your-code-and-direction-from-first-principles)：@Voxyz_ai 2026年9月5日[发在 X 上](https://x.com/Voxyz_ai/status/2096282210148266004)，截至 2026年9月12日有 531 次收藏。适用于 Codex。
+Give me a first step for the next 30 days, the progress I should look for within 90 days, and criteria for judging whether the direction is working after a year.
+
+Finish by choosing the single change most worth making now.
+
+If you’re missing information that would materially change your advice, ask me only the most important question first. Wait for my answer before continuing.
+```
+
+## Background
+
+Try having Astra take another look at code you've already written and plans you've already made. Start with one question:
+
+“If you were starting over today with the same goal, what would you still need to keep?”
+
+Code getting more complicated? Check what doesn't need to exist. Fill in the goal and scope first.
+
+Been busy for a long time, but unsure where all that work is taking you? Use this in a conversation where you've already shared your background. If needed, fill in more context first:
+
+## Source
+
+From [Copybook](https://copybook.page/t/recheck-your-code-and-direction-from-first-principles): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2096282210148266004) on 5 Sep 2026, 531 saves as of 12 Sep 2026. For Codex.

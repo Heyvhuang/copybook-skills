@@ -1,63 +1,63 @@
-# 上线前检查：6 个法律坑
+# Pre-launch check: 6 legal traps
 
-按产品实际业务和适用法规，核查数据收集、字体、会话录屏、营销邮件、续费和用户上传。
+Review the product’s data collection, fonts, session replay, marketing email, renewals and user uploads against the rules that apply to it.
 
-## 步骤
+## Steps
 
-先查产品在哪些地区运营、六项功能实际有哪些。逐项写明查过的文件或服务，标出缺少的证据。建议改动或引用罚款前，核对当地现行的官方规定。面向一般公众的服务并非都要询问访客年龄。登记 DMCA 代理人是部分服务商寻求避风港保护的条件之一。先报告发现，再决定改动。参见 [FTC 儿童隐私指南](https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions)和[美国版权局第 512 条说明](https://www.copyright.gov/512/)。
+Identify where the product operates and which of the six features it has. For each, cite the file or service you checked and mark missing evidence. Check current official sources before suggesting a change or quoting a penalty. General-audience services do not all need to ask a visitor’s age. DMCA agent registration is one condition for certain service providers seeking a safe harbor. Report findings before making changes. See the [FTC’s COPPA guidance](https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions) and the [US Copyright Office’s section 512 guide](https://www.copyright.gov/512/).
 
-这些步骤要求把规则写进 AGENTS.md 这类文件、而你正在做它管的事时，这次就照规则做，并提一次要不要把它加进文件。
+If these steps save a rule in a file such as AGENTS.md and you are doing the work it governs, follow the rule in this task now and offer once to add it to the file.
 
-## 原帖
+## Original post
 
-以下是原帖引文。执行时以上面的适用范围和步骤为准。
+The excerpts below are for reference. Follow the scoped steps above.
 
-### 清单
-
-```text
-Claude Code 技巧：一个 vibe coding 做完的 App，一单没卖也可能被告。上线前，让 Opus 5.5 派 6 个 subagent 分头把这 6 个法律坑查一遍，再一次全部修好：
-
-注册时不查是否未满 13 岁
-→ 未经家长同意收集 13 岁以下儿童的个人信息，违反 COPPA：每次违规最高 $53K
-→ 注册时加年龄检查。13 岁以下需要可验证的家长同意，拿不到就不让注册
-
-字体从 Google 的服务器加载
-→ 欧盟访客一打开页面，IP 就在未经同意的情况下发给了 Google。2022 年，慕尼黑一家法院依据 GDPR 判一个网站赔给一名访客 €100
-→ 把字体下载下来，放在自己的服务器上
-
-默认开着会话录屏（session replay）
-→ 录下访客的输入和点击，在加州可能被告违反窃听法（CIPA）：每次违规赔偿 $5,000
-→ 关掉，或者先征得同意，并遮住用户在输入框里打的字
-
-营销邮件没有退订链接或通信地址
-→ 这违反 CAN-SPAM：每封邮件最高 $53K
-→ 每封营销邮件都放上退订链接和一个有效的通信地址
-
-订阅按钮旁边没写续费条款
-→ 在加州，没有用户明确同意就自动续费，续费的那一期可能被视为免费送给用户
-→ 在按钮旁边写清多久扣一次、扣多少、怎么取消，并让用户勾选同意
-
-用户能上传内容，却没登记 DMCA 代理人
-→ 用户上传了侵权内容，你可能拿不到避风港保护。登记费 $6，有效期 3 年，到期再续
-→ 在美国版权局（US Copyright Office）网站上登记
-
-这些金额大多是按次算的：每个孩子、每段录屏、每封邮件都可能算一次，一单没卖也一样。这里依据的是美国和欧盟的规定，不构成法律建议。拿不准的话，去问律师。
-```
-
-### 加在末尾的一句
+### Checklist
 
 ```text
-每一项派一个 subagent 去查，只查不改，并记下每个问题在哪个文件或哪个后台。然后你根据它们的清单自己统一修，这样不会有两个 agent 改同一个文件。需要我自己做的事，比如登记 DMCA 代理人、改邮件服务的设置，直接给我步骤。只有我知道的信息，比如通信地址或价格，先问我，别编。先给我看问题清单，标出你不确定是否适用于我的项，我确认之前什么都别改，做完告诉我改了什么。
+Claude Code tip: a vibe-coded app can get you sued with zero sales. Before you ship, have Opus 5.5 send out 6 subagents to check these 6 legal traps, then fix them all in one pass:
+
+No under-13 check at signup
+→ Collecting personal info from kids under 13 without parental consent breaks COPPA: up to $53K per violation
+→ Add an age check at signup. Under 13 needs verifiable parental consent, and if you can't get it, don't let them sign up
+
+Fonts loaded from Google's servers
+→ The moment an EU visitor opens a page, their IP goes to Google without their consent. In 2022, a Munich court ordered a site to pay one visitor €100 under GDPR
+→ Download the fonts and host them on your own server
+
+Session replay on by default
+→ Recording what visitors type and click can get you sued for wiretapping in California (CIPA): $5,000 in damages per violation
+→ Turn it off, or ask for consent first and mask what people type into inputs
+
+Marketing emails missing an unsubscribe link or a mailing address
+→ That breaks CAN-SPAM: up to $53K per email
+→ Put an unsubscribe link and a valid mailing address in every marketing email
+
+No renewal terms next to the subscribe button
+→ In California, if you auto-renew without the user's clear consent, the renewal may count as a free gift to them
+→ Next to the button, say how often you charge, how much, and how to cancel, and have users tick a box to agree
+
+User uploads, but no registered DMCA agent
+→ If a user uploads infringing content, you may not get safe harbor protection. Registering costs $6 and lasts 3 years, then you renew
+→ Register on the US Copyright Office website
+
+Most of these amounts are counted per instance: each child, each recording and each email can count as one, even with zero sales. This follows US and EU rules and isn't legal advice. If you're not sure, ask a lawyer.
 ```
 
-### 背景
+### Line to add at the end
 
-一个 vibe coding 做完的 App，一单没卖也可能被告。上线前，让 Opus 5.5 派 6 个 subagent 分头把这 6 个法律坑查一遍，再一次全部修好。
+```text
+Send one subagent per item to check it without editing anything, and note which file or which dashboard each issue is in. Then fix everything yourself from their lists, so no two agents edit the same file. For things I have to do myself, like registering a DMCA agent or changing my email service's settings, just give me the steps. For things only I know, like my mailing address or prices, ask me first and don't make them up. Show me the list of issues first, flag anything you're not sure applies to me, don't change anything until I confirm, and when you're done, tell me what you changed.
+```
 
-这些金额大多是按次算的：每个孩子、每段录屏、每封邮件都可能算一次，一单没卖也一样。这里依据的是美国和欧盟的规定，不构成法律建议。拿不准的话，去问律师。
+### Background
 
-把整份清单发给 Claude Code。需要的话，在末尾加上这一句。
+A vibe-coded app can get you sued with zero sales. Before you ship, have Opus 5.5 send out 6 subagents to check these 6 legal traps, then fix them all in one pass.
 
-## 来源
+Most of these amounts are counted per instance: each child, each recording and each email can count as one, even with zero sales. This follows US and EU rules and isn't legal advice. If you're not sure, ask a lawyer.
 
-来自 [Copybook](https://copybook.page/zh/t/check-6-legal-traps-with-6-subagents-before-shipping)：@Voxyz_ai 2026年10月7日[发在 X 上](https://x.com/Voxyz_ai/status/2107901270719603185)，截至 2026年11月4日有 1,184 次收藏。适用于 Claude Code。
+Send this whole post to Claude Code. If you need to, add this line at the end.
+
+## Source
+
+From [Copybook](https://copybook.page/t/check-6-legal-traps-with-6-subagents-before-shipping): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2107901270719603185) on 7 Oct 2026, 1.2K saves as of 4 Nov 2026. For Claude Code.

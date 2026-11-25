@@ -1,67 +1,67 @@
-# 还没用户就不写兼容代码：AGENTS.md 规则
+# No compatibility code yet: AGENTS.md rules
 
-项目还没人用，agent 却在写兼容代码：跳过兼容和迁移，每次改动走文档、测试、最小实现、清理。
+No users yet, but the agent adds compatibility code and migrations: skip both, then docs, tests, smallest change and cleanup.
 
-## 步骤
+## Steps
 
-1. 复制 AGENTS.md。
-2. 存成项目里的 AGENTS.md，已有 CLAUDE.md 就在里面加一行 @AGENTS.md。
-3. 得到：不写兼容代码，每次改动按先改文档、写测试、最小实现、收尾清理来。
+1. Copy the AGENTS.md.
+2. Save it as AGENTS.md in your project, with an @AGENTS.md line in your CLAUDE.md if you have one.
+3. You get: No compatibility code, and every change runs docs, tests, smallest implementation, then cleanup.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
 ## AGENTS.md
 
 ```markdown
 # AGENTS.md
-只用于还没有真实用户的项目。
+Only for projects with no real users yet.
 
-## 基本规则
-- 不做向后兼容，不写数据迁移
-- 要改的地方直接换成能用的最简单写法，调用的地方在同一次改动里一起改
+## Ground rules
+- No backward compatibility, no data migrations
+- Replace what you change with the simplest code that works, and update every caller in the same change
 
-## 每次改动按这个顺序
-1. 先改相关文档：确认和代码、其他文档不矛盾
-2. 写测试：按行为写，别给每个细节都写，先确认它会失败
-3. 最小实现：只写到测试通过，不多加功能
-4. 收尾清理：删掉这次改动后用不上的代码、文件和文档，拿不准先问我
+## Every change, in this order
+1. Docs first: update the relevant docs and make sure they don't contradict the code or each other
+2. Tests: test behavior, skip the small details, and watch them fail first
+3. Smallest implementation: write only enough to pass the tests, nothing extra
+4. Clean up: delete the code, files and docs this change made unused. Not sure? Ask me
 
-## 别做
-- 「以防万一」留着旧代码
-- 没问我就删数据库或重置数据
+## Don't
+- Keep old code "just in case"
+- Delete a database or reset data without asking me
 
-## 说做完之前
-- 自己跑测试，读完输出
-- 告诉我这次删了什么
-- 没跑的检查就直说没跑
+## Before you say done
+- Run the tests and read the output yourself
+- Tell me what you deleted
+- Didn't run a check? Say so
 
-## 我纠正你的时候
-- 在 Lessons 最上面加一行：「遇到 X，就做 Y」
-- 同一个错犯第二次，说明那条写得不清楚，改写它，不新加
-- Lessons 超过 20 条，先合并重复的、删掉过时的，改完给我看
+## When I correct you
+- Add a line at the top of Lessons: "When X, do Y"
+- Same mistake twice means that lesson is unclear. Rewrite it, don't add another
+- Over 20 lessons? Merge duplicates, delete outdated ones, then show me
 
 ## Lessons
 ```
 
-## 背景
+## Background
 
-这份 AGENTS.md，专治 Codex 和 Claude Code 最烦人的三个毛病：给还没人用的项目写兼容代码，用不上的旧代码和旧文档一直不删，改个按钮颜色也要补一堆测试。
+This AGENTS.md fixes the three most annoying habits of Codex and Claude Code: writing backward-compatible code for a project nobody uses yet, never deleting old code and docs it no longer needs, and adding a pile of tests just to change a button color.
 
-每天用它们写了几个月，我最想早点写进去的是开头这几行：项目还没有真实用户，就别做兼容和迁移，直接改成能用的最简单写法。后面跟一个四步循环：
+After using them every day for months, the lines I'd want in there from day one are the ones at the top: if the project has no real users yet, skip compatibility and migrations, and go straight to the simplest code that works. Then a four-step loop:
 
-1. 先改文档
-2. 写测试
-3. 最小实现
-4. 收尾删干净
+1. Docs first
+2. Tests
+3. Smallest implementation
+4. Clean up
 
-已经有 CLAUDE.md 的话，在里面加一行 `@AGENTS.md`，把它引进来。
+Already have a CLAUDE.md? Import AGENTS.md into it with an `@AGENTS.md` line.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/agents-md-for-projects-with-no-users-yet)：@Voxyz_ai 2026年10月4日[发在 X 上](https://x.com/Voxyz_ai/status/2106783910055006342)，截至 2026年11月1日有 756 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/agents-md-for-projects-with-no-users-yet): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2106783910055006342) on 4 Oct 2026, 756 saves as of 1 Nov 2026. For Claude Code and Codex.

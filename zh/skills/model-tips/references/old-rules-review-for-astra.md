@@ -1,37 +1,37 @@
-# Astra 旧规则审查：按 OpenAI 指南
+# Old-rules review for Astra, by OpenAI's guide
 
-旧规则让 Astra 多干活或提前停：按 OpenAI 指南找出该删的 skill 触发、必读文档、检查和确认规则。
+Rules from older models make Astra over-read or stop early: the triggers, required reading, checks and stop rules to cut.
 
-## 步骤
+## Steps
 
-1. 复制提示词和 OpenAI 指南的链接。
-2. 在项目里把提示词和指南链接一起发给 Codex 里的 Astra。
-3. 得到：每条该改的旧规则都引原文，附影响和最小改法，先不动文件。
+1. Copy the prompt and the link to OpenAI's guide.
+2. Send the prompt and the guide's link to Astra in Codex, in your project.
+3. You get: Each old rule worth changing, quoted with its impact and the smallest fix, before any file changes.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-读这份指南，审查我项目里的 AGENTS.md 和 Skills。找出触发范围过宽的 skill、每个任务都要求你读的文档、多余的检查、互相冲突的指令，以及让你在任务完成前停下来确认的规则。
+Read this guide and review my project’s AGENTS.md and Skills. Identify overly broad skill triggers, documents you’re required to read for every task, redundant checks, conflicting instructions, and rules that make you stop for confirmation before the task is complete.
 
-每个问题都引用原指令，说明可能的影响，给出最小的改法。涉及安全、权限边界或减少验证的建议单独列出来，交给我决定。先给我看建议。现在什么都不要改。
+For each issue, quote the original instruction, explain its potential impact, and suggest the smallest change needed. List any proposals involving safety, permission boundaries, or reduced verification separately for me to decide. Show me the recommendations first. Don’t modify anything yet.
 ```
 
-## 背景
+## Background
 
-OpenAI 刚发布了一份指南，教你为 Astra 更新 skills 和 prompt。你可以让 Astra 照着它审查项目里的旧规则。
+OpenAI just published a guide to updating your skills and prompts for Astra. You can ask Astra to use it to review the old rules in your project.
 
-你只让它改个错别字，AI 却先把架构、数据库、部署文档全读一遍。这是指南里举的例子。模型换了，但你当初为了防早期模型出错加了一些指令，它们现在可能让 Astra 多干活，或者在任务完成前就停下来。
+You ask for a typo fix, but the AI first reads all your architecture, database, and deployment docs. That's an example from the guide. You've changed models, but the instructions you added to keep earlier models from making mistakes may now cause unnecessary work or make Astra stop before the task is finished.
 
-把这段 prompt 和指南一起发给 Astra：https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra
+Send this prompt and the guide to Astra: https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/have-astra-review-your-old-rules-against-openais-guide)：@Voxyz_ai 2026年9月11日[发在 X 上](https://x.com/Voxyz_ai/status/2098537511735750686)，截至 2026年9月18日有 4,980 次收藏。适用于 Codex。
+From [Copybook](https://copybook.page/t/have-astra-review-your-old-rules-against-openais-guide): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2098537511735750686) on 11 Sep 2026, 5K saves as of 18 Sep 2026. For Codex.

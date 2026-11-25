@@ -1,42 +1,42 @@
-# 精简规则后的 Sol、Luna 检查
+# Rules check for Sol and Luna after Astra cleanup
 
-为 Astra 精简规则可能删掉 Sol、Luna 还要用的测试命令：让 Astra 查漏，各模型规则分开放。
+Rules trimmed for Astra can drop checks Sol and Luna still need: Astra finds what was lost, each model's rules kept apart.
 
-## 步骤
+## Steps
 
-1. 复制提示词，在方括号里列出你用的模型。
-2. 在项目里发给 Codex 里的 Astra。
-3. 得到：每处丢掉的测试命令、检查或确认要求都引原文，附影响和最小改法，先不动文件。
+1. Copy the prompt and list the models you use in the brackets.
+2. Send it to Astra in Codex in your project.
+3. You get: Each lost test, check or confirmation quoted, with its impact and the smallest fix; nothing edited.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-读这份指南：https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra
-审查我项目里的 AGENTS.md 和 Skills。我用这些模型：[列出你的模型]。检查为 Astra 精简指令所做的改动，是否删掉了必要的测试命令、验收标准或工作流程信息，或者放宽了必要的确认要求。对已经做过的改动，和之前的版本对比。说明哪里缺少证据。不要因为 Astra 不需要某条指令，就认为其他模型也不需要。
+Read this guide: https://developers.openai.com/blog/rethinking-skills-and-prompts-for-gpt-6-astra
+Review my project’s AGENTS.md and Skills. I use these models: [list your models]. Check whether changes made to streamline instructions for Astra have removed necessary test commands, acceptance criteria, or workflow information, or relaxed necessary confirmation requirements. For changes already made, compare against the previous version. State where evidence is missing. Don’t assume other models don’t need an instruction just because Astra doesn’t.
 
-每个问题都引用相关指令，说明可能的影响，给出最小的改法。不要依赖模型自报身份来选择遵守哪些规则。把针对特定模型的指导单独列出来，并检查当前环境是否支持分开加载；不要假设切换模型会自动切换指令。涉及安全、权限或减少验证的建议单独列出来，交给我决定。先给我看建议。现在什么都不要改。
+For each issue, quote the relevant instruction, explain its potential impact, and suggest the smallest change needed. Don’t rely on models identifying themselves to choose which rules to follow. List model-specific guidance separately and check whether the current environment supports loading it separately; don’t assume switching models automatically switches instructions. List proposals involving safety, permissions, or reduced verification separately for me to decide. Show me the recommendations first. Don’t modify anything yet.
 ```
 
-## 背景
+## Background
 
-OpenAI 新发布的 Astra skills 和 prompt 指南里还有一条提醒：帮 Sol 和 Luna 的指令，可能会把 Astra 限制得太死。
+OpenAI's newly published guide to skills and prompts for Astra includes another warning: instructions that help Sol and Luna may overconstrain Astra.
 
-但如果你为 Astra 调好了 Codex，切回 Sol 或 Luna 的时候会怎样？
+But if you tune Codex for Astra, what happens when you switch back to Sol or Luna?
 
-拿测试来说。指南说早期模型需要提醒才会检查自己的工作，而 Astra 会自己检查。同样的提醒可能导致重复检查。这些指令一删，切回去后 Sol 和 Luna 读到的就是改过的版本。对 Astra 多余的提醒，可能对另一个模型仍然有用。
+Take testing. The guide says earlier models needed reminders to check their work, while Astra does this on its own. The same reminders may lead to repeated checks. If you remove those instructions, Sol and Luna will read the edited version when you switch back. A reminder that's redundant for Astra may still help another model.
 
-所以用多个模型的话，审查指令时要把它们都算上。检查你删掉的只是重复的提醒，还是连具体的测试命令和验收标准也一起丢了。
+So if you use multiple models, include them when reviewing your instructions. Check whether you're removing repeated reminders or also losing specific test commands and acceptance criteria.
 
-把好几套规则放在一个文件里，还有一个顾虑：切换模型后，模型能可靠地分清自己该遵守哪些规则吗？能力弱一点的模型尤其难说。
+Putting several sets of rules in one file raises another concern: after switching models, can the model reliably tell which rules it should follow? Especially a less capable model.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/check-astra-rule-cleanups-still-work-for-sol-and-luna)：@Voxyz_ai 2026年9月12日[发在 X 上](https://x.com/Voxyz_ai/status/2098900224525918697)，截至 2026年10月12日有 318 次收藏。适用于 Codex。
+From [Copybook](https://copybook.page/t/check-astra-rule-cleanups-still-work-for-sol-and-luna): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2098900224525918697) on 12 Sep 2026, 318 saves as of 12 Oct 2026. For Codex.

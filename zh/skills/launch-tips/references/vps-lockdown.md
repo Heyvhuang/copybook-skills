@@ -1,33 +1,33 @@
-# VPS 加固：只走 Cloudflare，SSH 走 Tailscale
+# VPS lockdown: Cloudflare only, SSH over Tailscale
 
-用了 Docker，ufw 拦不住：访客只能经 Cloudflare 进来，SSH 只有你能经 Tailscale 登录。
+With Docker, ufw doesn't help: visitors reach your site only through Cloudflare, and only you SSH in, over Tailscale.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在服务器上把它发给 Claude Code 或 Codex。
-3. 得到：网站只经 Cloudflare 访问，SSH 只有你能经 Tailscale 登录，还能从外部检查。
+1. Copy the prompt.
+2. Send it to Claude Code or Codex on the server.
+3. You get: Your site only through Cloudflare, SSH only for you over Tailscale, and how to check from outside.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-先检查我的域名是否经 Cloudflare 代理，以及这台服务器是否在 443 上提供 HTTPS。然后安装 Tailscale，把这台服务器加入我的 tailnet。把防火墙锁紧：443 只允许来自 Cloudflare 的 IP 段，SSH 22 只允许来自 Tailscale，其他全部关闭，包括 Docker 发布的端口。在我确认能经 Tailscale 登录之前，保留公网 SSH。完成后，告诉我怎么从外部检查它是否生效。
+First check that my domain is proxied through Cloudflare and this server serves HTTPS on 443. Then install Tailscale and join this server to my tailnet. Lock the firewall down: 443 only from Cloudflare's IP ranges, SSH 22 only from Tailscale, everything else closed, including ports Docker publishes. Keep public SSH open until I confirm I can log in over Tailscale. When you're done, show me how to check from outside that it worked.
 ```
 
-## 背景
+## Background
 
-用了 Docker，ufw 就不管用了。容器发布的端口会直接绕过它。只允许密钥登录 SSH 也不够。sshd 本身有漏洞时，攻击者照样能进来。
+With Docker, ufw doesn't help. The ports your containers publish go straight around it. Key-only SSH login isn't enough either. When sshd itself has a vulnerability, attackers still get in.
 
-如果你的域名已经走 Cloudflare 代理，在服务器上打开 Claude Code 或 Codex，把提示词发给它。它做完后，访客只能经 Cloudflare 访问你的网站，SSH 只有你能登录，而且要经 Tailscale。
+If your domain already goes through Cloudflare's proxy, open Claude Code or Codex on the server and send it the prompt. Once it's done, visitors can only reach your site through Cloudflare, and only you can SSH in, over Tailscale.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/lock-down-a-vps-behind-cloudflare-and-tailscale)：@Voxyz_ai 2026年10月24日[发在 X 上](https://x.com/Voxyz_ai/status/2114009025528426980)，截至 2026年11月21日有 1,213 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/lock-down-a-vps-behind-cloudflare-and-tailscale): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2114009025528426980) on 24 Oct 2026, 1.2K saves as of 21 Nov 2026. For Claude Code and Codex.

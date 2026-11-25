@@ -1,53 +1,53 @@
-# 能点的仓库地图：叫法 vs 代码名
+# Clickable repo map with words vs names
 
-你怎么叫一个模块，和代码里怎么叫它对不上：每一处都标红，最容易导致改错的排在最前。
+What you call a module isn't what the code calls it: every mismatch marked in red, those likeliest to cause a wrong edit first.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在项目里把它发给 Claude Code。
-3. 得到：docs/codemap/ 里一张能点的地图，标出你的叫法和代码里名字对不上的地方。
+1. Copy the prompt.
+2. Send it to Claude Code in your project.
+3. You get: A clickable map in docs/codemap/ that marks where your words and the code's names differ.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-分析当前代码库。不要改产品代码，只创建或更新 docs/codemap/ 下的文件。
+Analyze the current codebase. Do not modify product code. Only create or update files under docs/codemap/.
 
-忽略 vendor、build、dist、cache 和其他生成出来的目录。
+Ignore vendor, build, dist, cache, and other generated directories.
 
-如果 docs/codemap/ 已经存在，先拿现有的 codemap.lock 和当前仓库对比，列出改过的模块，再把下面三个文件一起重新生成：
+If docs/codemap/ already exists, first compare the existing codemap.lock with the current repo and list the modules that changed. Then regenerate these three files together:
 
 1. docs/codemap/codemap.html
 
-做一个完全自包含、浏览器直接打开的交互式代码地图，包括：
+Build a fully self-contained interactive code map that opens directly in a browser. Include:
 
-- 主要模块、服务、数据库、队列和外部依赖
-- 主节点不超过 20 个，底层文件归到所属模块下
-- 模块之间的调用和数据流
-- 最重要的 3-5 条端到端流程
-- 默认用清晰的深色主题
-- 第一屏就能看到系统边界和最重要的数据流
-- 按模块类型上色，配一个简单的图例
-- 自动布局，尽量减少连线交叉
-- 点任意模块，高亮它的上游调用方、下游依赖、相关测试和所属流程，并显示我们对它的叫法
-- 选中一条流程，高亮它的完整路径
-- 支持搜索、筛选、缩放和拖动
-- 每个模块旁边写上我们对它的叫法；和代码里模块名对不上的叫法标红
-- 一个「叫法 vs 代码名」面板：左边是我们的叫法，右边是代码里的名字和路径，最可能导致改错的排在最前面
+- major modules, services, databases, queues, and external dependencies
+- no more than 20 primary nodes; group low-level files under their parent module
+- calls and data flows between modules
+- the 3-5 most important end-to-end flows
+- a clear dark theme by default
+- system boundaries and the most important data flows visible on the first screen
+- color-coded module types with a simple legend
+- automatic layout that minimizes crossing edges
+- clicking any module highlights its upstream callers, downstream dependencies, related tests, and the flows it belongs to, and shows the words we use for it
+- selecting a flow highlights its complete path
+- search, filtering, zoom, and drag controls
+- next to every module, the words we use for it; mark in red any word that doesn't match the module's name in the code
+- a "Words vs names" panel: our words on the left, the code's names and paths on the right, the ones most likely to cause a wrong edit first
 
-顶部显示仓库名、生成时间，以及基于哪个 commit 生成。
+At the top, show the repo name, generation time, and the commit it was generated from.
 
 2. docs/codemap/codemap.json
 
-用这个结构：
+Use this structure:
 
 {
   "generated_at": "",
@@ -59,7 +59,7 @@
   "mismatches": []
 }
 
-每个 node 必须包含：
+Each node must include:
 
 - id
 - path
@@ -68,16 +68,16 @@
 - tests
 - constraints
 - evidence
-- aliases：大家怎么叫这个模块，每个叫法都注明出处（README、文档、界面文字、路由、issue 和 commit 标题）
+- aliases: what people call this module, each with its source (README, docs, UI text, routes, issue and commit titles)
 
-每条 edge 必须包含：
+Each edge must include:
 
 - from
 - to
 - type
 - evidence
 
-type 只能是：
+type may only be:
 
 - imports
 - calls
@@ -86,73 +86,73 @@ type 只能是：
 - publishes
 - subscribes
 
-每条 flow 必须包含：
+Each flow must include:
 
 - trigger
 - steps
 - outcome
 
-每个 step 都要引用已存在的 node id。
+Every step must reference an existing node id.
 
-每个 mismatch 必须包含：
+Each mismatch must include:
 
-- word：我们怎么叫它
+- word: what we call it
 - code_name
 - path
-- change：该改哪一边，代码里的名字还是我们的叫法
+- change: which side to change, the code's name or our word
 
-只列出对不上的地方，代码和文档都不要改。
+Only list mismatches. Change neither the code nor the docs.
 
-每个 node 和 edge 都附上对应的源码路径和符号。没有源码证据的关系标成 unknown，不要猜。
+Attach the matching source path and symbol to every node and edge. Mark any relationship without source evidence as unknown. Do not guess.
 
 3. docs/codemap/codemap.lock
 
-用能解析的 JSON 记录：
+Use parseable JSON to record:
 
-- 当前 commit
-- 工作区有没有未提交的改动
-- 生成时间
-- 扫描范围
-- 排除的目录
-- 指纹算法
-- 每个顶层模块的确定性指纹，按它受 git 跟踪的文件路径和当前内容计算
+- the current commit
+- whether the working tree has uncommitted changes
+- generation time
+- scanned scope
+- excluded directories
+- the fingerprint algorithm
+- a deterministic fingerprint for each top-level module, calculated from its tracked file paths and current file contents
 
-找不到现有的 codemap.lock，就把所有模块当成新的，生成完整地图。
+If no existing codemap.lock is found, treat every module as new and generate the full map.
 
-做完后确认：
+When finished, verify that:
 
-- codemap.json 能正常解析
-- 每个 node 的路径都存在，每个 evidence 符号都能在源码里找到
-- 每条 edge 和每个 flow step 都引用已存在的 node
-- codemap.html 和 codemap.json 用的是同一套 nodes、edges 和 flows
-- codemap.lock 和当前 commit、工作区状态、模块指纹一致
-- 每个没有源码证据的关系都标成了 unknown
-- 每个叫法都能在它的出处里找到；找不到的标成 unknown，不要编
+- codemap.json parses successfully
+- every node path exists and every evidence symbol can be found in the source
+- every edge and flow step references an existing node
+- codemap.html and codemap.json use the same nodes, edges, and flows
+- codemap.lock matches the current commit, working tree state, and module fingerprints
+- every relationship without source evidence is marked unknown
+- every alias can be found in its source; mark any alias you can't find as unknown. Do not make them up
 
-这三个文件必须一起从当前仓库生成，永远不要只手动改其中一个。
+These three files must always be generated together from the current repo. Never edit only one of them manually.
 
-最后给我看：
+Finally, show:
 
-- 创建或修改了哪些文件
-- 哪些模块过期了
-- 还剩哪些 unknown
-- 对不上的叫法，最容易搞混的排在最前面
-- 校验结果
-- 完整的 diff
+- files created or modified
+- stale modules
+- remaining unknowns
+- the mismatches, most confusing first
+- validation results
+- the complete diff
 ```
 
-## 背景
+## Background
 
-让 Opus 5.5 给你的仓库做一张能点的地图，再标出你的叫法和代码里的名字，哪些地方对不上。
+Have Opus 5.5 build a clickable map of your repo, then flag every place where the words you use don't match the names in the code.
 
-点任意一个模块，就能看到谁在调用它、它依赖什么、主要流程、相关测试、源码证据，以及你平时怎么叫它。
+Click any module to see its callers, dependencies, major flows, related tests, source evidence, and what you usually call it.
 
-它会生成：
+It generates:
 
 - `docs/codemap/codemap.html`
 - `docs/codemap/codemap.json`
 - `docs/codemap/codemap.lock`
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/clickable-repo-map-with-words-vs-names)：@Voxyz_ai 2026年11月5日[发在 X 上](https://x.com/Voxyz_ai/status/2118418074508710296)，截至 2026年11月12日有 303 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/clickable-repo-map-with-words-vs-names): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2118418074508710296) on 5 Nov 2026, 303 saves as of 12 Nov 2026. For Claude Code.

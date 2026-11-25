@@ -1,39 +1,39 @@
-# 视频配声音：测节拍和响度
+# Video sound by measurement: beats and loudness
 
-Opus 5.5 听不见自己配的声音：librosa 找节拍，120 Hz 以下波形核对，导出的 MP4 上测响度。
+Opus 5.5 can't hear its own soundtrack: beats from librosa, the grid checked below 120 Hz, loudness measured on the MP4.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在放视频的项目里，把它发给 Claude Code 里的 Opus 5.5。
-3. 得到：卡在节拍上的授权音乐和音效，外加 5 个要戴耳机听的时间点。
+1. Copy the prompt.
+2. Send it to Opus 5.5 in Claude Code, in the project with your video.
+3. You get: Sound effects and licensed music on the beat, and 5 timestamps to check with headphones.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-给这段视频配上声音。你听不见，所以每一步都要测量，别凭感觉。没装 ffmpeg 和 librosa 的话先装上。
-1. 用有授权的音乐：我给你的曲子，或者 Mixkit 免费授权的曲子。记下出处和授权。音乐和音效都别用代码合成。
-2. 用 librosa 找节拍。它有时会锁到反拍上，所以把 120 Hz 以下的波形和节拍网格画在一起，放大看几个小节。底鼓对不上，就把整个网格整体平移，对齐底鼓。
-3. 大动作，比如切镜头、标题出现，放在节拍上。能改动画就改动画，改不了就挪音乐开始的位置。
-4. 每个切镜头和大动作配一个现成的音效文件：移动用 whoosh，出现用 pop，点击用 click，打字用打字声。优先用项目里现有的音效库，比如 HyperFrames 自带的那套，没有就问我。
-5. 有旁白的话，旁白最响，有人说话时音乐压低。音效比音乐响。整体响度控制在 -16 LUFS 左右，峰值低于 -4 dBFS，这样经过 AAC 压缩后，或者用手机扬声器单声道外放时，都不会爆音。用 ffmpeg 的 ebur128 测导出的 MP4，别测 WAV。
-6. 用 ffmpeg 从导出的 MP4 里截出每个音效点前后各一帧，再画波形对比。然后挑 5 个时间点让我戴耳机听。别跟我说听起来不错。
+Add sound to this video. You can't hear, so measure every step and don't go by feel. Install ffmpeg and librosa first if they're missing.
+1. Use licensed music: a track I give you, or one under Mixkit's free license. Note the source and the license. Don't synthesize the music or the sound effects in code.
+2. Find the beats with librosa. It sometimes locks onto the off-beat, so plot the waveform below 120 Hz against the beat grid and zoom in on a few bars. If the kick drums don't line up, shift the whole grid.
+3. Put the big moves, like scene cuts and titles appearing, on the beat. If you can change the animation, change it. If you can't, move where the music starts.
+4. Give every cut and big move one ready-made sound effect file: whoosh for movement, pop for things appearing, click for clicks, typing sounds for typing. Use the project's existing sound library first, like the one HyperFrames ships with, and ask me if there isn't one.
+5. If there's a voiceover, it's the loudest thing, and the music drops while someone talks. Sound effects sit above the music. Aim for about -16 LUFS overall with peaks below -4 dBFS, so nothing clips after AAC compression or on a phone speaker in mono. Measure the exported MP4 with ffmpeg's ebur128. Don't measure the WAV.
+6. Use ffmpeg to grab one frame before and after every cue from the exported MP4, and plot a waveform to compare. Then pick 5 timestamps for me to check with headphones. Don't tell me it sounds good.
 ```
 
-## 背景
+## Background
 
-如果你还觉得 Opus 5.5 做的动效视频听起来像廉价的电子哔哔声，试试这条提示词。
+If you still think Opus 5.5's motion videos sound like cheap electronic beeps, try this prompt.
 
-前几天我给一段视频配乐，librosa 锁到了反拍上。整个节拍网格偏了 0.22 秒，我是把 120 Hz 以下的波形和网格叠在一起画出来，才发现的。
+A few days ago I was scoring a video and librosa locked onto the off-beat. The whole beat grid was 0.22 seconds off, and I only caught it by plotting the waveform below 120 Hz against the grid.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/add-sound-to-a-video-by-measuring-not-guessing)：@Voxyz_ai 2026年10月11日[发在 X 上](https://x.com/Voxyz_ai/status/2109358372873183564)，截至 2026年11月8日有 1,499 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/add-sound-to-a-video-by-measuring-not-guessing): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2109358372873183564) on 11 Oct 2026, 1.5K saves as of 8 Nov 2026. For Claude Code.

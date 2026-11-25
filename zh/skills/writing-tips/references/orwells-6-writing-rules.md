@@ -1,24 +1,24 @@
-# Orwell 的 6 条写作规则
+# Orwell's 6 writing rules for CLAUDE.md and AGENTS.md
 
-一个词一个词禁 AI 腔禁不完：1946 年的 6 条规则放进全局规则文件，附重写文档和 PR 的提示词。
+Banning AI words one by one never ends: 6 rules from 1946 for your global rules file, plus prompts for docs, PRs and reports.
 
-## 步骤
+## Steps
 
-1. 复制 6 条写作规则，下面几条提示词按需取用。
-2. 贴进你的全局 CLAUDE.md 或 AGENTS.md。
-3. 得到：每次会话写出的文档、PR 说明和汇报都是大白话，不用再一个个禁词。
+1. Copy the six writing rules; the prompts under them are optional.
+2. Paste the rules into your global CLAUDE.md or AGENTS.md.
+3. You get: Docs, PR text and reports in plain words in every session, without banning words one at a time.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-第一段复制块中的六条编号规则引自 George Orwell 1946 年的文章《Politics and the English Language》。Copybook 的许可不涵盖这段引文。详见[第三方许可说明](../../../LICENSE-NOTICES.md)。
+The six numbered rules in the first block quote George Orwell’s 1946 essay *Politics and the English Language*. Copybook’s licenses exclude this quotation. See the [third-party license notice](../../../LICENSE-NOTICES.md).
 
-## 全局 CLAUDE.md / AGENTS.md 规则
+## Global CLAUDE.md / AGENTS.md rules
 
 ```markdown
 Writing rules, from Orwell, 1946. These govern prose: docs, PR text, messages. Never touch code or technical terms; swap in everyday words only where precision survives.
@@ -31,38 +31,38 @@ Writing rules, from Orwell, 1946. These govern prose: docs, PR text, messages. N
 Review every prose output against these rules before delivering.
 ```
 
-## 提示词：重写规则出现之前写的文字
+## Prompt: rewrite text that existed before the rules
 
 ```text
 Rewrite this text applying the six writing rules in CLAUDE.md. First list every violation: each stale phrase, each long word with its short replacement, each cuttable word, each passive construction. Then give the rewrite. Keep every fact, number and name unchanged.
 ```
 
-## 规则：PR 描述和 commit message
+## Rule: PR descriptions and commit messages
 
 ```markdown
 For every commit message and PR description: state what changed and why in plain words. No achievement language, no comprehensive, no robust. Apply the six writing rules before delivering. A reviewer should know what this does in one read.
 ```
 
-## 提示词：落地页文案
+## Prompt: landing page copy
 
 ```text
 Rewrite this landing page copy under the six writing rules in CLAUDE.md. One concrete claim per line. Short words, active voice. Run the swap test on every line: if a competitor could paste it unchanged onto their page, rewrite it or delete it.
 ```
 
-## 规则：好读的进度汇报
+## Rule: readable progress reports
 
 ```markdown
 Report progress in plain sentences: what changed, what failed, what comes next. No emoji checkmarks, no Successfully, no Perfect, no wall of bullets. Start with three lines; add detail only when it changes the next action.
 ```
 
-## 背景
+## Background
 
-别再对 Claude Code 或 Codex 说「不要用破折号」「别再说 delve」「别写得像 AI」。你从没给过它一套写作规则。每份 README、PR 描述和落地页，写出来都是同一种 AI 腔，你就一个词一个词地禁。
+Stop telling Claude Code or Codex "no em dashes", "stop saying delve" or "don't sound like AI". You never gave it a writing system. Every README, PR description and landing page ships in the same AI voice, and you ban words one at a time.
 
-Orwell 在 1946 年就写好了办法：六条规则。把它们贴进全局 CLAUDE.md / AGENTS.md，每个会话都会读到。全局的意思是对每个仓库都生效。某个项目需要自己的语气时，再给它写一份项目级的 CLAUDE.md。
+Orwell wrote the fix in 1946: six rules. Paste them into your global CLAUDE.md / AGENTS.md and every session picks them up. Global means it applies to every repo. Give one project its own voice with a project-level CLAUDE.md when you need to.
 
-放到一句话上看效果。改之前：「Comprehensive error handling has been implemented across all API endpoints to ensure robust and reliable performance.」改之后：「We added error handling to every API endpoint.」comprehensive、robust、reliable 和 ensure 都没了，被动句改成了主动句，16 个词减到 8 个，事实一个没少。
+What it does to a sentence. Before: "Comprehensive error handling has been implemented across all API endpoints to ensure robust and reliable performance." After: "We added error handling to every API endpoint." Comprehensive, robust, reliable and ensure are gone, the passive turned active, and 16 words went down to 8 with the same facts.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/orwell-writing-rules-for-claude-md-and-agents-md)：@Voxyz_ai 2026年7月19日[发在 X 上](https://x.com/Voxyz_ai/status/2078857039116156978)，截至 2026年8月16日有 1.2万次收藏。最近一次检查：2026年11月19日，Opus 5.5，可用。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/orwell-writing-rules-for-claude-md-and-agents-md): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2078857039116156978) on 19 Jul 2026, 12K saves as of 16 Aug 2026. Last check: works on Opus 5.5, 19 Nov 2026. For Claude Code and Codex.

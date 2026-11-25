@@ -1,115 +1,115 @@
-# 目标外壳和 5 条配套提示词
+# Goal wrapper and 5 prompts built on it
 
-一个偏好写了 3 处还要说第四遍：一个目标外壳，加组件库、并行、互审、交互状态、纠正清单 5 条。
+One preference typed in three places: a goal wrapper, plus prompts for components, parallel runs, review, states and corrections.
 
-## 步骤
+## Steps
 
-1. 先复制目标外壳，再复制对应任务的提示词。
-2. 换上你的任务，在项目里发给 Claude Code 或 Codex。
-3. 得到：端到端跑完，再加一份你反复纠正过的问题清单，下一次从这里开始。
+1. Copy the goal wrapper first, then the prompt for the job.
+2. Swap in your task and send it to Claude Code or Codex in your project.
+3. You get: End-to-end runs, plus a list of your repeated corrections that the next run starts from.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词：目标外壳
-
-```text
-任务：{你的任务}。先给自己写一个完整的端到端目标，然后一直做下去，直到架构和结果都达到标准。
-拆分：把这个目标拆成相互独立的部分，只在工作确实允许的范围内并行。每个执行者的目标都写明自己的交付物、怎么验证、怎样算完成，以及可以改哪些文件。
-每完成一个有意义的步骤：真正地测试真实的东西，完整端到端，加上 computer use、浏览器、按键，需要什么用什么。自动审查，然后 commit，然后把进度写到项目里合适的地方。
-收尾：对所有内容做一次专门的审查。
-完成 = 生产级别，真实用户可以直接上手使用。
-```
-
-## 提示词：组件库
+## Prompt: goal wrapper
 
 ```text
-任务：把散落的 UI 组件、样式 token 和重复的交互收进一个组件库。手写的一次性组件全部替换，所有新 UI 都走组件库，不许绕过。这是一次重构，所以先在 worktree 里开始。
-然后：在组件库这一层修好无障碍。对比度、字号缩放、键盘（Tab / Enter / Space / Esc）、焦点状态，以及图片、图标按钮、表单和状态的语义。
-验证：从当前 commit 在本地启动应用，在桌面、平板和手机上走一遍核心路径。重叠、溢出、截断、横向滚动，逐个修好。
-收尾：记录改了什么、还剩什么风险，然后写一个 review skill，下次动 UI 之前先跑它。
-完成 = 低视力、只用键盘和使用不同设备的用户都能完成核心操作。
+task: {your task}. write yourself a full end-to-end goal first, then keep going until the architecture and the result both meet the bar.
+split: break that goal into independent pieces and run in parallel only as far as the work genuinely allows. every worker's goal carries its own deliverable, how to verify it, what counts as done, and which files it may touch.
+after every meaningful step: test the real thing for real, full end to end, plus computer use, browser, keystrokes, whatever it needs. auto review, then commit, then write progress somewhere sensible in the project.
+finish: one dedicated review pass over everything.
+done = production grade, a real user can walk in and use it.
 ```
 
-## 提示词：用 Herdr 跑多个 agent
+## Prompt: component library
 
 ```text
-安装：brew install herdr。终端里的 agent 多路复用器。worktree、窗格和 agent 状态集中在一个地方。
-worktree：每个会写文件的 agent 一个，只读的 agent 可以共用。herdr worktree create --branch <name> --base <base ref> --json
-启动：在一个窗格里启动它，模型家族自己选。herdr agent start <name> --kind claude --pane <pane id>，或者 --kind codex
-运行：派发任务，然后等待状态。herdr agent prompt <target> "<its own full goal>" --wait --timeout 600000
-完成 = 没有 agent 还在工作，每个 worktree 都已 commit。
+task: pull the scattered UI components, style tokens and repeated interactions into one component library. hand-rolled one-offs get replaced, all new UI goes through the library, no bypassing. this is a refactor, so start in a worktree.
+then: fix accessibility at the library layer. contrast, font scaling, keyboard (Tab / Enter / Space / Esc), focus states, and the semantics of images, icon buttons, forms and status.
+verify: start the app locally from the current commit and walk the core paths at desktop, tablet and phone. overlap, overflow, truncation, horizontal scroll, fix them one by one.
+finish: record what changed and what risk is left, then write a review skill you run before touching UI next time.
+done = low-vision, keyboard-only and different-device users can complete the core actions.
 ```
 
-## 提示词：跨家族审查
+## Prompt: several agents with Herdr
 
 ```text
-commit：谁写的代码谁 commit，并报告短 hash。git rev-parse --short HEAD
-审查：把这个 hash 交给另一个家族。herdr agent prompt <the other one> "review commit <short hash> in <path>. run git show --stat <short hash> first and quote the hash back to me. then go item by item: what is wrong, what the evidence is, whether a test can prove it wrong. write the test when it can. judgement only, do not touch the code." --wait --timeout 600000
-规则：不审自己的工作，不审同一家族的工作，不审没 commit 的工作。
-完成 = 每个分歧都有结论。能测试的就写测试，测试结果高于双方意见。品味问题由你决定，并记录被否决的方案和原因。
+install: brew install herdr. an agent multiplexer in your terminal. worktrees, panes and agent state in one place.
+worktree: one per agent that writes files, read-only agents can share. herdr worktree create --branch <name> --base <base ref> --json
+start: start it in a pane and pick the model family yourself. herdr agent start <name> --kind claude --pane <pane id>, or --kind codex
+run: dispatch, then wait on state. herdr agent prompt <target> "<its own full goal>" --wait --timeout 600000
+done = no agent is still working and each worktree is committed.
 ```
 
-## 提示词：状态排查
+## Prompt: cross-family review
 
 ```text
-任务：把下面三张表当作检查清单，找出这个项目缺了哪些状态，按影响大小补上。不新增抽象，不改现有的视觉语言。不适用的标为 N/A，不要硬编一个出来。
-每个视图五种状态：空白 / 加载中 / 部分数据 / 出错 / 有数据。搜索和筛选再加一个无结果状态，首次使用再加一个零状态。
-每个控件七种状态：默认 / 悬停 / 焦点 / 按下 / 加载中 / 禁用 / 选中。焦点是键盘用户知道自己在哪里的唯一方式，也最常缺失。
-每个异步操作四种状态：空闲 / 进行中 / 成功 / 出错。凡是立即更新 UI 的操作，都要有失败时的回滚路径。
-验证：每修一处，先在真实设备上走一遍那条路径，再做下一处。
-完成 = 每一格都有答案或 N/A。
+commit: whoever wrote the code commits and reports the short hash. git rev-parse --short HEAD
+review: hand that hash to the other family. herdr agent prompt <the other one> "review commit <short hash> in <path>. run git show --stat <short hash> first and quote the hash back to me. then go item by item: what is wrong, what the evidence is, whether a test can prove it wrong. write the test when it can. judgement only, do not touch the code." --wait --timeout 600000
+rule: never review your own work, never review same-family work, never review uncommitted work.
+done = every disagreement has a resolution. testable ones get a test and the test outranks both opinions. taste calls are yours, and you record the rejected option and why.
 ```
 
-## 提示词：这一轮学到的
+## Prompt: state sweep
 
 ```text
-任务：结束时，列出这一轮里我纠正过你两次或以上的所有事项，每行一条。
-每行包含三项：我两次纠正分别在哪里、什么时候应该触发、用一句话写出规则。
-规则：只列清单。不建文件，不改配置。等我报出编号。
-规则：只纠正过一次的不要列。一次是偶然，会变成噪音。
-完成 = 清单已交出，没有动任何配置文件。
+task: use the three tables below as a checklist, find which state this project is missing, and fill them in by impact. no new abstractions, no changes to the existing visual language. mark anything that does not apply as N/A instead of inventing one.
+five states per view: blank / loading / partial / error / populated. search and filters add a no-results state, first run adds a zero state.
+seven states per control: default / hover / focus / pressed / loading / disabled / selected. focus is the only way a keyboard user can tell where they are, and it goes missing most.
+four states per async action: idle / pending / success / error. anything that updates the UI immediately needs a rollback path for the failure.
+verify: after each fix, walk that path on a real device before moving to the next.
+done = every cell has an answer or an N/A.
 ```
 
-## 背景
+## Prompt: what this run taught
 
-别再跟 Claude Code 或 Codex 说「做这个」「写代码」「修这个 bug」了。
+```text
+task: at the end, list everything i corrected you on twice or more this run, one per line.
+each line carries three things: where my two corrections were, when this should trigger, and the rule in one sentence.
+rule: list only. no files, no config changes. wait for me to name the numbers.
+rule: nothing that was corrected once. once is a fluke and it turns into noise.
+done = the list is handed over and no config file was touched.
+```
 
-你把同一个偏好写进 CLAUDE.md，又写进一个 skill，下一个会话里还要再打一遍。写了三个地方，它还是要你说第四遍。这 6 条提示词越用越好用。
+## Background
 
-1. 并行的端到端目标
+Stop telling Claude Code or Codex “do this,” “write code” or “fix this bug.”
 
-把 {你的任务} 换掉就能跑。新功能、重构，都一样。不要写死进度文件的路径：让它写到合适的地方，它自己会找到位置。两个会写文件的执行者，各用一个 worktree。共用一个 checkout 会在文件和 git index 上冲突。只读的执行者可以共用。
+You write the same preference into your CLAUDE.md, then into a skill, then you type it again in the next session. Three places, and it still makes you say it a fourth time. These 6 prompts compound the more you run them.
 
-这就是目标外壳。下面的每一条都通过它来跑。
+1. Parallel end-to-end goal
 
-2. 先做设计系统，再在组件库里做无障碍
+Swap out {your task} and go. New feature, refactor, all the same. Don't hardcode the progress path: tell it to write somewhere sensible and it finds the spot on its own. Two workers that write files get one worktree each. Sharing a checkout collides on files and on the git index. Read-only workers can share.
 
-把这条放进目标外壳里跑。在组件库里修一次，用到它的每个组件都会继承。页面层面还要单独过一遍：标题层级、路由切换后焦点落在哪里、live region、图片 alt。
+This is the goal wrapper. Everything below runs through it.
 
-3. 在一台机器上跑多个 agent
+2. Design system, then accessibility in the library
 
-用目标外壳给每个 agent 写它自己的目标。不加 `--timeout`，就会无限期地等。写 `--until done` 会漏掉 blocked 状态，卡在权限提示上的 agent 就会一直等下去。默认值已经覆盖了 idle、done 和 blocked。
+Run this through the goal wrapper. Fix it in the library and every component using it inherits. Page-level still needs its own pass: heading order, where focus lands after routing, live regions, image alt.
 
-4. 让两个模型家族互相审查
+3. Run several agents on one machine
 
-让它读 commit，别用 `git log -1`，那条命令报的是它自己 worktree 的 HEAD。commit 不可变，并且在各个 worktree 之间共享。你没 commit 的工作正是它看不到、也一直在变的部分。
+Use the goal wrapper to write each agent its own goal. Leave `--timeout` off and the wait is indefinite. Write `--until done` and you drop the blocked state, so an agent sitting on a permission prompt waits forever. The default already matches idle, done and blocked.
 
-「结合两者的优点」不是综合。这句话说明根本没有做比较。
+4. Make two model families review each other
 
-5. 一次排查所有交互状态
+Make it read the commit, not `git log -1`, which reports its own worktree's HEAD. A commit is immutable and shared across worktrees. Your uncommitted work is the part it cannot see, and the part that keeps moving.
 
-把这条放进目标外壳里跑。200ms 以内就能返回的操作，不要显示加载动画。一闪而过比短暂等待观感更差。
+“Combining the best of both” is not synthesis. That sentence means nothing was compared.
 
-6. 让它交回这一轮学到的东西
+5. Sweep every interaction state at once
 
-在目标外壳的收尾步骤之后跑这条。这样做十次，你批准过的规则就积累起来了。到第十一次，它会在写目标之前先读这些规则，起点就比第一次高。
+Run this through the goal wrapper. Skip the spinner for anything that returns inside 200ms. A flash on and off reads worse than a short wait.
 
-## 来源
+6. Make it hand back what this run taught it
 
-来自 [Copybook](https://copybook.page/zh/t/six-prompts-that-compound-the-more-you-run-them)：@Voxyz_ai 2026年7月30日[发在 X 上](https://x.com/Voxyz_ai/status/2082863936836116797)，截至 2026年8月27日有 309 次收藏。适用于 Claude Code 和 Codex。
+Run this after the goal wrapper's finish step. Do that ten times and the rules you approved pile up. On run eleven it reads those before it writes its goal, so it starts higher than it did on run one.
+
+## Source
+
+From [Copybook](https://copybook.page/t/six-prompts-that-compound-the-more-you-run-them): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2082863936836116797) on 30 Jul 2026, 309 saves as of 27 Aug 2026. For Claude Code and Codex.

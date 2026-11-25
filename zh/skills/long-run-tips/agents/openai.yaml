@@ -1,5 +1,5 @@
 interface:
   display_name: "long-run-tips"
-  short_description: "长任务 · 22 条：多 agent 分工、交接、进度看板、会话周历、遗留待办。"
+  short_description: "Long runs · 22 tips: multi-agent roles, progress dashboards, handoffs, remote workflows."
 policy:
   allow_implicit_invocation: false

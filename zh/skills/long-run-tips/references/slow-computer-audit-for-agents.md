@@ -1,22 +1,22 @@
-# 多 agent 时电脑变慢的排查
+# Slow-computer audit when agents run
 
-开着很多 agent 电脑就卡：先 dry run 理清进程树和开机启动项，再只清理你批准的那些。
+Many agents open and the Mac bogs down: a dry-run map of processes and startup items, cleaned only where you approve.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在要检查的电脑上把它发给 Codex，macOS 或 Windows 都行。
-3. 得到：一份 dry run 清单列出拖慢电脑的东西，只清理你逐项批准的。
+1. Copy the prompt.
+2. Send it to Codex on the computer you want to check, macOS or Windows.
+3. You get: A dry-run table of what slows the machine; nothing is cleaned up until you approve each item.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
 Run a coding-agent performance audit on this computer. Detect macOS or Windows and record the hardware configuration first. Use only built-in, read-only tools. Do not spawn subagents or modify anything on the first pass.
@@ -83,14 +83,14 @@ Do not disable FileVault, BitLocker, firewalls, Defender, or other system securi
 After I approve the plan, handle one group at a time and remeasure after each. Once done, reboot, wait 5-10 minutes, and measure again. Use the computer normally for a day, then repeat the audit. Show the before / after results and flag any processes or services that returned.
 ```
 
-## 背景
+## Background
 
-我同时开着更多会话和 subagent，Mac 被拖慢了。它是一台 64GB 统一内存的 M1 Max。内存小的机器在同样的负载下，会更早遇到内存压力和 swap。
+I kept more sessions and subagents running at once. My Mac bogged down. It's an M1 Max with 64GB of unified memory. Lower-memory machines will hit memory pressure and swap sooner under the same load.
 
-我让 Sol 理出完整的进程树。它查了没关的开发服务、重复的 MCP server、headless 浏览器、登录项、VPN 和网络扩展、浏览器辅助进程和更新程序。我把多余的项分批清掉，重启，正常用了一天，再查一次。现在同样的多 agent 负载很少再卡，我还能多开几个会话。
+I asked Sol to map the full process tree. It checked for stale dev services, duplicate MCP servers, headless browsers, login items, VPN and network extensions, browser helpers and updaters. I cleaned up the redundant items in batches, rebooted, used the Mac normally for a day, then checked again. The same multi-agent workload now rarely stutters, and I can keep more sessions open.
 
-我把这次排查写成了一条 macOS 和 Windows 都能用的 prompt。第一轮只做 dry run。
+I turned the audit into a prompt for macOS and Windows. The first pass is dry-run only.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/audit-what-slows-your-computer-when-agents-run)：@Voxyz_ai 2026年7月13日[发在 X 上](https://x.com/Voxyz_ai/status/2076773589429141806)，截至 2026年8月10日有 673 次收藏。适用于 Codex。
+From [Copybook](https://copybook.page/t/audit-what-slows-your-computer-when-agents-run): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2076773589429141806) on 13 Jul 2026, 673 saves as of 10 Aug 2026. For Codex.

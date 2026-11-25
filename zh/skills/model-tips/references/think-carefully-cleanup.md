@@ -1,37 +1,37 @@
-# 换 Opus 5.5 后的「think carefully」清理
+# Think-carefully cleanup for Opus 5.5
 
-换了 Opus 5.5，CLAUDE.md 里催它多想、一步步派活、无谓确认的老规则：逐条找出，引原文给改法。
+Opus 5.5 already thinks before it answers: rules that push extra thinking, dole out steps or stop to confirm, quoted with a fix.
 
-## 步骤
+## Steps
 
-1. 复制提示词和 Anthropic 指南的链接。
-2. 在项目里把提示词和指南链接一起发给 Claude Code 里的 Opus 5.5。
-3. 得到：每条该改的旧规则都引原文、给最小改法，先给你看，不动文件。
+1. Copy the prompt and the link to Anthropic's guide.
+2. Send the prompt and the guide's link to Opus 5.5 in Claude Code, in your project.
+3. You get: Each old rule to fix, quoted with the smallest change, shown to you before any file changes.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-读这份指南，检查我项目里的 CLAUDE.md、AGENTS.md、skills 和常用 prompt，找出三类问题：催你多想的句子，比如 think carefully、take a deep breath；要求一步一步下达任务、或者没写完成标准的规则和 prompt；让任务无谓停下来确认的规则。
+Read this guide and review my project's CLAUDE.md, AGENTS.md, skills, and saved prompts. Find three kinds of problems: lines that push you to think more, like 'think carefully' or 'take a deep breath'; rules and prompts that hand out tasks one step at a time or don't define what done looks like; and rules that make you stop for confirmation when you don't need to.
 
-每一条都引用原文，说明影响，给出最小的改法。涉及安全、权限或破坏性操作的审批要求单独列出来，交给我决定。再建议加一条：每次长任务结束，用三个标题汇报：需要我决定的、改了什么、发现了什么。
+For each issue, quote the original instruction, explain its impact, and suggest the smallest change needed. List any approval rules involving safety, permissions, or destructive actions separately for me to decide. Also suggest adding one rule: at the end of every long run, report under three headings: Blocked on me, Changed, Found.
 
-先给我看建议，别动文件。
+Show me the recommendations first. Don't modify anything yet.
 ```
 
-## 背景
+## Background
 
-Anthropic 发了一份 Opus 5.5 用法指南，让你把 prompt 里的「think carefully」删掉。它回答前本来就会先想，想多少它自己定。直接把这句删掉，回复来得更快，质量不打折。CLAUDE.md 里还留着「take a deep breath」「IMPORTANT: think hard」的，也一起删。
+Anthropic published a guide to using Opus 5.5. It tells you to delete "think carefully" from your prompts. Opus 5.5 already thinks before every reply, and it decides how much. Delete that line and replies start sooner, with no drop in quality. If your CLAUDE.md still says "take a deep breath" or "IMPORTANT: think hard", delete those too.
 
-把这段 prompt 和这份指南一起发给 Opus 5.5，让它照着指南把项目里的旧规则过一遍：https://claude.dev/blog/getting-the-most-out-of-opus-5-5/
+Send this prompt and the guide to Opus 5.5 so it reviews the old rules in your project: https://claude.dev/blog/getting-the-most-out-of-opus-5-5/
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/have-opus-5-5-clean-up-think-carefully-rules)：@Voxyz_ai 2026年9月23日[发在 X 上](https://x.com/Voxyz_ai/status/2102850122497368464)，截至 2026年10月22日有 2,130 次收藏。最近一次检查：发帖当天，Opus 5.5，可用。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/have-opus-5-5-clean-up-think-carefully-rules): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2102850122497368464) on 23 Sep 2026, 2.1K saves as of 22 Oct 2026. Last check: works on Opus 5.5, the day it was posted. For Claude Code.

@@ -1,34 +1,34 @@
-# /advisor：Sonnet 5.5 主跑，Opus 待命
+# /advisor: Sonnet 5.5 works, Opus on call
 
-$20 套餐默认跑 Opus 5.5：Haiku 读代码、查文档，定方案前、错误反复时、说做完前叫 Opus 出主意。
+$20 plan on Opus 5.5 by default: Haiku reads code, looks up docs; Opus advises before plans, on repeat errors, before 'done'.
 
-## 步骤
+## Steps
 
-1. 复制提示词和 Agent 树。
-2. 提示词和 Agent 树都发给 Claude Code。
-3. 得到：先看改动再动文件，之后 Sonnet 5.5 干活，Opus 待命。
+1. Copy the prompt and the agent tree.
+2. Send the prompt and the agent tree to Claude Code.
+3. You get: The changes before any edit, then Sonnet 5.5 doing the work with Opus on call.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-照这棵树配置我的 Claude Code：
-1. 树里这三个 subagent，先查 ~/.claude/agents 和 .claude/agents。有合适的就复用，缺的角色再提议新建。读代码和查文档的设成 model: haiku，改代码跑测试的设成 model: sonnet。已经指定了别的模型的 subagent 别动，列出来就行。
-2. 在 ~/.claude/settings.json 里，把 model 设成 sonnet，advisorModel 设成 opus。
-3. 检查这些环境变量，只报告，什么都别改：CLAUDE_CODE_DISABLE_ADVISOR_TOOL 会关掉 advisor，DISABLE_TELEMETRY 或其他关掉 flag 拉取的设置也一样。CLAUDE_CODE_SUBAGENT_MODEL_FORCE 会把每个 subagent 强制成同一个模型。然后查版本：Claude Code 低于 2.1.293 就告诉我（更早的版本里，haiku 还是指 Haiku 4.5）。别自己升级。
-4. 在 ~/.claude/CLAUDE.md 里加一条：定大方案前、同一个错误出现第二次、长任务说做完之前，先问 advisor。
+Set up my Claude Code to match this tree:
+1. For the three subagents in the tree, check ~/.claude/agents and .claude/agents first. Reuse fitting ones, and propose new ones only for missing roles. Set the ones that read code and look up docs to model: haiku, and the one that edits code and runs tests to model: sonnet. Leave any subagent that already sets a different model alone, and list it.
+2. In ~/.claude/settings.json, set model to sonnet and advisorModel to opus.
+3. Check these environment variables and report them without changing anything: CLAUDE_CODE_DISABLE_ADVISOR_TOOL turns the advisor off, and so does DISABLE_TELEMETRY or anything else that stops flag fetching. CLAUDE_CODE_SUBAGENT_MODEL_FORCE forces every subagent onto one model. Then check the version: if Claude Code is older than 2.1.293, tell me (in earlier versions, haiku still meant Haiku 4.5). Don't upgrade it yourself.
+4. Add one rule to ~/.claude/CLAUDE.md: ask the advisor before committing to a big plan, when the same error shows up a second time, and before calling a long task done.
 
-先给我看要改什么，别直接动文件。
+Show me the changes first. Don't edit any files yet.
 ```
 
-## Agent 树
+## Agent tree
 
 ```text
          CLAUDE CODE AGENT TREE
@@ -52,22 +52,22 @@ read code     edits + tests   look up docs
            Keep Opus on call.
 ```
 
-## 背景
+## Background
 
-$20 套餐现在默认整场会话都跑 Opus 5.5。想让额度撑久一点，就把主会话换成 Sonnet 5.5，用 `/advisor` 让 Opus 待命。
+The $20 plan now runs your whole session on Opus 5.5 by default. To make your quota last longer, switch the main session to Sonnet 5.5 and keep Opus on call with `/advisor`.
 
-用 `claude --model sonnet --advisor opus` 启动，让 Opus 当场外军师。Sonnet 5.5 照常干活，会在这三个时刻把 Opus 叫过来：
+Launch with `claude --model sonnet --advisor opus` to make Opus an advisor on the sidelines. Sonnet 5.5 keeps doing the work and calls Opus in at three moments:
 
-- 定方案前：这个方案行不行？
-- 同一个错误反复出现：是不是方向错了？
-- 说「做完了」之前：还有没有漏的？
+- Before committing to a plan: is it right?
+- When the same error keeps coming back: am I heading the wrong way?
+- Before saying "done": did I miss anything?
 
-Opus 读完整段对话给意见，代码还是 Sonnet 来写。
+Opus reads the whole session and gives advice. Sonnet still writes the code.
 
-advisor 文档：https://code.claude.com/docs/en/advisor
+The advisor docs: https://code.claude.com/docs/en/advisor
 
-原文在图片里，已逐字转录。
+Original is in an image, transcribed verbatim.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/switch-to-sonnet-5-5-with-opus-on-call)：@Voxyz_ai 2026年11月7日[发在 X 上](https://x.com/Voxyz_ai/status/2119082454120337491)，截至 2026年11月14日有 968 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/switch-to-sonnet-5-5-with-opus-on-call): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2119082454120337491) on 7 Nov 2026, 968 saves as of 14 Nov 2026. For Claude Code.

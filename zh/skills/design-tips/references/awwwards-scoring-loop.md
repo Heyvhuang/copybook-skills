@@ -1,29 +1,29 @@
-# Awwwards 评分表自评循环
+# Awwwards scoring loop
 
-只在用户明确想用 Awwwards 评分探索视觉方向时使用，分数用于讨论设计。
+Only on an explicit request for Awwwards scoring during visual exploration. Scores guide design discussion.
 
-## 步骤
+## Steps
 
-用户点名要用 Awwwards 评分做视觉探索时，截一张图，评一轮，每项都指出画面里的依据。由用户决定是否再迭代。功能验收、无障碍检查和上线检查各自按实际行为验证，不用自评分数放行。
+Use this exercise only when the user asks for Awwwards scoring as a visual exploration. Take a screenshot, score one round and point to a visible detail behind each score. Let the user decide whether to iterate. For feature acceptance, accessibility checks or release readiness, use the relevant functional checks instead. A self-score cannot pass those checks.
 
-这些步骤要求把规则写进 AGENTS.md 这类文件、而你正在做它管的事时，这次就照规则做，并提一次要不要把它加进文件。
+If these steps save a rule in a file such as AGENTS.md and you are doing the work it governs, follow the rule in this task now and offer once to add it to the file.
 
-## 原帖
+## Original post
 
-以下是原帖引文。执行时以上面的适用范围和步骤为准。
+The excerpts below are for reference. Follow the scoped steps above.
 
-### 提示词
+### Prompt
 
 ```text
-质量要求：按 Awwwards 评分表给自己打分。设计 40%，可用性 30%，创意 20%，内容 10%，每项满分 10 分，像真正的评委一样严格。每轮改完，先把页面跑起来截图，再看着截图打分。写下最低那一项被什么拖了后腿，一直改到每一项都在 7.5 或以上。
+Quality bar: score yourself on the Awwwards scoring sheet. Design 40%, usability 30%, creativity 20%, content 10%, each out of 10, as strictly as a real jury would. After every round of changes, run the page and take a screenshot first, then score while looking at it. Write down what's holding back the lowest category, and keep going until every category is at 7.5 or higher.
 ```
 
-### 背景
+### Background
 
-让 Opus 5.5 做网站时，最好用的质量线可能是 Awwwards。它的评分表是公开的：设计 40，可用性 30，创意 20，内容 10。就连拿到 Site of the Day 的网站，评委也只给到 7 分出头。
+When Opus 5.5 builds a website, the most useful quality bar might be Awwwards. Its scoring sheet is public: design 40, usability 30, creativity 20, content 10. Even the sites that win Site of the Day only get a little over 7 from the jury.
 
-把评分表给它。每轮改完，让它把页面跑起来截图，看着截图给自己打分，一直改到每一项都过 7.5。
+Give it the sheet. After every round of changes, have it run the page and take a screenshot, score itself while looking at the screenshot, and keep going until every category clears 7.5.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/score-sites-on-the-awwwards-sheet-until-7-5)：@Voxyz_ai 2026年10月3日[发在 X 上](https://x.com/Voxyz_ai/status/2106429069516751081)，截至 2026年10月31日有 536 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/score-sites-on-the-awwwards-sheet-until-7-5): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2106429069516751081) on 3 Oct 2026, 536 saves as of 31 Oct 2026. For Claude Code.

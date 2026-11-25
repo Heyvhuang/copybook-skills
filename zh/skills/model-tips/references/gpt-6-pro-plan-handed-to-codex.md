@@ -1,41 +1,41 @@
-# Chat 里 GPT-6 Pro 做计划，交给 Codex
+# GPT-6 Pro plan in Chat, handed to Codex
 
-不看真实数据的计划是空的：仓库和日志接进 ChatGPT，GPT-6 Pro 照真实代码做计划，再交给 Codex。
+Plans made blind to your code and logs: connected to ChatGPT, GPT-6 Pro plans from real PRs and records, then briefs Codex.
 
-## 步骤
+## Steps
 
-1. 复制提示词，填好方括号。
-2. 接入 GitHub，需要时再接一个只读 MCP，然后在普通 Chat 里发给 GPT-6 Pro。
-3. 得到：一份对应到具体文件或记录的计划，再加一份带验收标准的 Codex 任务说明。
+1. Copy the prompt and fill in the brackets.
+2. Connect GitHub, and a read-only MCP if needed, then send it to GPT-6 Pro in regular Chat.
+3. You get: A plan tied to specific files or records, then a task brief for Codex with acceptance criteria.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-我想解决 [具体问题]。使用已接入的 [GitHub 仓库和分支 / 日志 / 数据库]，阅读相关代码、最近的 PR 和记录。回复开头先简要列出你实际读过的文件和来源。如果你无法访问或核实指定的分支，就直说。对照 [我的目标和约束] 分析问题，提出计划，并把结论对应到具体的文件或记录。缺少信息时标出来，不要用猜测填补空白。
+I want to solve [specific problem]. Use the connected [GitHub repository and branch / logs / database] to read the relevant code, recent PRs, and records. Start your response with a brief list of the files and sources you actually read. If you can’t access or verify the requested branch, say so. Analyze the problem against [my goals and constraints], propose a plan, and tie your conclusions to specific files or records. Flag missing information rather than filling the gaps with guesses.
 
-需要我决定的事项单独列出。我们商定计划后，把它整理成给 Codex 的任务说明，包括改动范围、支持证据和验收标准。暂时不要修改代码或数据。
+List decisions that need my input separately. Once we agree on the plan, turn it into a task brief for Codex with the scope of changes, supporting evidence, and acceptance criteria. Don’t modify code or data yet.
 ```
 
-## 背景
+## Background
 
-普通 Chat 里的 GPT-6 Pro 不占用 Work 和 Codex 共享的额度。但它有自己的上限：目前 $100 Pro 每周 50 条消息，和 GPT-5.6 Sol Pro 共享；$200 Pro 每周 200 条 GPT-6 Pro 消息。OpenAI 的说明在 <https://help.openai.com/en/articles/20001354-gpt-5-6>。
+GPT-6 Pro in regular Chat doesn't use the shared Work and Codex allowance. But it has its own limits: currently, $100 Pro gets 50 messages per week shared with GPT-5.6 Sol Pro, while $200 Pro gets 200 GPT-6 Pro messages per week. OpenAI's notes are at https://help.openai.com/en/articles/20001354-gpt-5-6.
 
-如果我只问「怎么改进我的项目？」，它不知道我最近改了什么、用户卡在哪里，也不知道服务器在报什么错。要让 Pro 帮我做计划和方案设计，我就得把做这些决定要用的信息给它。比如某个功能很慢，就要给它相关代码、最近的 PR 和真实日志。
+If I just ask “How can I improve my project?”, it doesn't know what I recently changed, where users get stuck, or what errors the server is logging. If I want Pro to help with planning and solution design, I need to give it the information those decisions depend on. For a slow feature, that means the relevant code, recent PRs and actual logs.
 
-把这些来源直接接入 ChatGPT：仓库用现成的 GitHub connector，自己的日志或数据库需要时接一个只读 MCP。我想试试这样分工：让 Pro 在 Chat 里看着真实项目数据把计划想清楚，商定要做什么，再交给 Codex 去实现和验证。
+Connect those sources directly to ChatGPT: use the existing GitHub connector for your repository, and a read-only MCP for your own logs or database where needed. That's the division of work I want to try: let Pro work through the plan in Chat using real project data, agree on what needs doing, then hand it to Codex to implement and verify.
 
-来源接好之后，拿一个真实问题试试。
+Once your sources are connected, try it with a real problem.
 
-Plus 用户也可以先在普通 Chat 里和可用的模型讨论计划，再交给 Codex。Chat 有单独的额度；切换到 Work 就又回到和 Codex 共享的额度。
+Plus users can also discuss a plan with a model available in regular Chat before handing it to Codex. Chat has a separate allowance; switching to Work puts you back on the allowance shared with Codex.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/plan-with-gpt-6-pro-in-chat-then-hand-off-to-codex)：@Voxyz_ai 2026年9月15日[发在 X 上](https://x.com/Voxyz_ai/status/2099982409701753229)，截至 2026年10月13日有 371 次收藏。适用于 Codex。
+From [Copybook](https://copybook.page/t/plan-with-gpt-6-pro-in-chat-then-hand-off-to-codex): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2099982409701753229) on 15 Sep 2026, 371 saves as of 13 Oct 2026. For Codex.

@@ -1,33 +1,33 @@
-# Codex 页面设计：先画成一张图，再照着做
+# Page design as an image first, in Codex
 
-直接让 Codex 写页面，设计总很烂：一句话让内置图像模型先画出页面，再交给写代码的模型照着做。
+Pages designed from text come out plain: Codex's image model draws the page first, then the coding model builds it, one line.
 
-## 步骤
+## Steps
 
-1. 复制这一句提示词。
-2. 在项目里对着要重做的页面，把它发给 Codex。
-3. 得到：Codex 先用 Images 2.5 把页面画成图，再由 Sol 或 Astra 实现出来。
+1. Copy the one-line prompt.
+2. Send it to Codex in the project, with the page you want redone.
+3. You get: Codex designs the page as an image with Images 2.5, then Sol or Astra builds it.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-用 imagegen 重新设计这个页面，然后把它实现出来。
+Use imagegen to reimagine this page, then implement it.
 ```
 
-## 背景
+## Background
 
-如果你还觉得 Sol 和 Astra 做设计很烂，试试这样用。Codex 现在内置了 Images 2.5。先让它把视觉效果做出来，再交给 Sol 或 Astra 实现。
+If you still think Sol and Astra are bad at design, try this. Codex now has Images 2.5 built in. Let it create the visuals first, then have Sol or Astra implement them.
 
-很多帖子展示的 3D 游戏场景、角色和动作，都是以这个思路为核心制作的。
+Many of the 3D game scenes, characters and animations shared in posts are built around this same approach.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/have-codex-design-the-page-as-an-image-first)：@Voxyz_ai 2026年9月19日[发在 X 上](https://x.com/Voxyz_ai/status/2101295246659182978)，截至 2026年10月17日有 4,196 次收藏。最近一次检查：发帖当天，Images 2.5，可用。适用于 Codex。
+From [Copybook](https://copybook.page/t/have-codex-design-the-page-as-an-image-first): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2101295246659182978) on 19 Sep 2026, 4.2K saves as of 17 Oct 2026. Last check: works on Images 2.5, the day it was posted. For Codex.

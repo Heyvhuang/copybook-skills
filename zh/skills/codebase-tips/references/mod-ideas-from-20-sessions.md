@@ -1,42 +1,42 @@
-# 最近 20 个会话里的 mod 点子
+# Mod ideas from your last 20 sessions
 
-反复提的要求、中途叫停或撤销的命令、检查改动的方式：按帮助大小排好，引用你的原话。
+Requests you repeat, commands you stop or undo, how you check changes: ranked by how much each would help, your words quoted.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在常用的项目里，把它发给 Claude Code 里的 Opus 5.5。
-3. 得到：mod 点子，每个附上该显示什么；你选之前一个都不做。
+1. Copy the prompt.
+2. Send it to Opus 5.5 in Claude Code, in a project you use a lot.
+3. You get: Mod ideas, each with what it should show; nothing is built until you pick.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-读这份指南：https://claude.dev/blog/getting-started-with-claude-code-mods/
+Read this guide: https://claude.dev/blog/getting-started-with-claude-code-mods/
 
-然后用它翻一遍我最近 20 个会话（这个项目在 ~/.claude/projects/ 下的 .jsonl 日志），看看我平时怎么用你。找出三类值得做成 mod 的东西：
-1. 我一直问你、或一直让你做的事。指南里每个 mod 回答一个问题，比如上下文用了多少。挑出我在不同会话里重复问的问题和提的要求，附次数和我的原话，再判断每一条适合做成输入框上方的一行读数、对话旁边的一个面板，还是一个斜杠命令。
-2. 让我紧张的命令：我中途叫停、拒绝，或事后让你撤销的那些。
-3. 我怎么检查你的改动：让你列出改过的文件、贴出 diff，或解释某处改动。
+Then use it to go through my last 20 sessions (this project's .jsonl logs under ~/.claude/projects/) and see how I use you day to day. Find three kinds of things worth turning into a mod:
+1. Things I keep asking you, or asking you to do. Each mod in the guide answers one question, like how full the context is. Pick out the questions and requests I repeat across sessions, with counts and my exact words, then decide whether each fits a readout above the prompt, a pane beside the conversation, or a /command.
+2. Commands that make me nervous: ones I stopped partway, rejected, or had you undo afterwards.
+3. How I check your changes: asking you to list the files you changed, paste the diff, or explain a change.
 
-每个点子起个名字，引用我的原话，再仿照指南里 token-weather 那段提示词的写法，写几行 'What it should show'。如果状态栏或某个设置已经能做到，就直接说，别硬做成 mod。按对我帮助的大小给点子排序，再告诉我 mod 做好之后怎么一直留着用。
+For each idea, give it a name, quote my words, and write a few 'What it should show' lines in the style of the guide's token-weather prompt. If a status line or a setting can already do it, say so, and don't force it into a mod. Rank the ideas by how much they'd help me, and tell me how to keep a mod around once it's built.
 
-先把点子给我看。我选定之前一个都别做。
+Show me the ideas first. Don't build anything until I pick.
 ```
 
-## 背景
+## Background
 
-让 Opus 5.5 翻一遍你最近 20 个 Claude Code 会话，它能告诉你**最需要给自己做哪个 mod**。
+Have Opus 5.5 go through your last 20 Claude Code sessions, and it can tell you **which mod you most need** to build for yourself.
 
-mod 是你自己给 Claude Code 加的小功能，不用写任何代码。说出你想看到什么，Claude **一轮就写好**。比如上下文用了多少、它刚改了哪些文件，直接显示在你屏幕上。
+A mod is a small feature you add to Claude Code yourself, and you don't need to write any code. Describe what you want to see and Claude writes it **in one turn**. For example, showing how full your context is, or which files it just changed, right on your screen.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/mod-ideas-from-your-last-20-sessions)：@Voxyz_ai 2026年10月28日[发在 X 上](https://x.com/Voxyz_ai/status/2115549175110676753)，截至 2026年11月4日有 359 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/mod-ideas-from-your-last-20-sessions): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2115549175110676753) on 28 Oct 2026, 359 saves as of 4 Nov 2026. For Claude Code.

@@ -1,150 +1,150 @@
-# 从想法到成品的 7 个角色提示词
+# 7 role prompts from idea to done
 
-还把资深 AI 当实习生带：技术负责人、需求负责人、调试、性能、前端、后端、reviewer，各一条。
+Still walking a senior AI through every step: tech lead, requirements, debugging, performance, frontend, backend, reviewer.
 
-## 步骤
+## Steps
 
-1. 复制你需要的那个角色的提示词。
-2. 把方括号换成你的任务，发给 Claude Code 或 Codex。
-3. 得到：agent 以这个角色从头做到尾，不用你每一步都盯着。
+1. Copy the prompt for the role you need.
+2. Swap in your task where the brackets are and send it to Claude Code or Codex.
+3. You get: The agent works in that role from start to finish instead of waiting for every step.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词：技术负责人
-
-```text
-我想完成这件事：[任务或已商定的计划]。
-
-从当前状态接手，一直做下去，直到 [我能看到、用到或检查的最终结果]。
-
-阅读相关文件来理解项目。查找你需要的信息。使用你能用的工具。
-
-从头到尾负责这项工作：理解任务、实现、运行、检查，并修复失败的地方。不要每做一步就停下来问要不要继续。
-
-凡是涉及页面的，用可用的浏览器工具（包括内置浏览器）打开它并真正去用。点按钮、填表单，走完用户会走的流程。修好你发现的问题，然后回头再检查一遍。
-
-对于较大的任务，你可以把独立的部分委派给其他可用的 agent。你负责把结果整合起来，确保整体能正常工作。
-
-在商定的范围内持续推进。需要我做决定、需要额外权限或范围要变时，再来问我。
-
-最后，给我看完成的结果。告诉我怎么用、你检查了什么、还有什么没完成。
-```
-
-## 提示词：需求负责人
+## Prompt: tech lead
 
 ```text
-我想做 [想法]。我目前有这些：[笔记、截图、参考或项目]。
+I want to complete this: [TASK OR AGREED PLAN].
 
-首先，帮我理清谁会用它、它解决什么问题、用户从哪里开始，以及最后应该得到什么。
+Pick up from the current state and keep going until [THE FINAL RESULT I CAN SEE, USE, OR CHECK].
 
-找出我没考虑到、可能影响结果的地方。能从材料里自己找到答案的，就自己去查。需要我做的决定，先问最重要的那个问题。不要甩给我一份问卷。
+Read the relevant files to understand the project. Look up information you need. Use the tools available to you.
 
-讨论清楚之后，写一份我可以直接交给另一位工程师的任务说明。他们不用读我们的对话，就能明白要做什么、什么不在范围内、有哪些约束，以及“完成”是什么样子。
+Own the work from start to finish: understand the task, implement it, run it, check it, and fix what fails. Don’t stop after every step to ask whether you should continue.
 
-标出我们还没定下来的事。不要把你的假设变成已确认的需求。
+For anything involving a page, use the available browser tools, including the built-in browser, to open it and actually use it. Click the buttons, fill in the forms, and complete the flows a user would follow. Fix any problems you find, then go back and check again.
 
-实现上的决定留给工程师。先把任务说明给我看，等我批准。
+For larger tasks, you can delegate independent parts to other available agents. You are responsible for bringing the results together and making sure the whole thing works.
+
+Keep moving within the agreed scope. Ask me when you need a decision, additional access, or a change in scope.
+
+At the end, show me the finished result. Tell me how to use it, what you checked, and what remains unfinished.
 ```
 
-## 提示词：调试工程师
+## Prompt: requirements lead
 
 ```text
-问题是：[问题]。
+I want to build [IDEA]. Here’s what I have so far: [NOTES, SCREENSHOTS, REFERENCES, OR PROJECT].
 
-我做的步骤：[步骤]。
-预期结果：[结果]。
-截图或报错：[材料]。
+First, help me clarify who will use it, what problem it solves, where the user starts, and what they should get at the end.
 
-首先，按我的步骤复现它。找到原因，然后修好。修完后，重复同样的步骤，确认问题已经消失，附近的功能也还正常。
+Find the things I haven’t considered that could affect the result. Look up anything you can answer from the materials yourself. For decisions I need to make, ask the most important question first. Don’t dump a questionnaire on me.
 
-告诉我原因是什么、你改了什么、怎么验证修复的。
+Once we’ve worked through it, write a task brief I can hand directly to another engineer. They should understand what to do, what is out of scope, what constraints apply, and what “done” looks like without reading our conversation.
 
-如果还没找到原因，就继续查。如果按我的步骤复现不了，告诉我你还需要什么。不要只是把报错藏起来。
+Flag anything we haven’t settled. Don’t turn your assumptions into confirmed requirements.
+
+Leave implementation decisions to the engineer. Show me the brief for approval first.
 ```
 
-## 提示词：性能工程师
+## Prompt: debugging engineer
 
 ```text
-[页面或功能] 在 [使用场景] 时很慢。
+Here’s the problem: [PROBLEM].
 
-改动任何东西之前，先找出时间花在哪里。不要把更简单的代码误当成更快的代码。
+Steps I took: [STEPS].
+Expected result: [RESULT].
+Screenshots or errors: [MATERIALS].
 
-用同样的操作和数据对比改动前后，并确认结果仍然正确。告诉我改了什么，以及这些改动有没有带来其他问题。
+First, follow my steps to reproduce it. Find the cause, then fix it. After the fix, repeat the same steps to confirm the problem is gone and that nearby functionality still works.
 
-没测量过的提升，不要声称有。
+Tell me what caused it, what you changed, and how you verified the fix.
+
+If you haven’t found the cause, keep investigating. If you can’t reproduce it from my steps, tell me what else you need. Don’t just hide the error.
 ```
 
-## 提示词：前端工程师
+## Prompt: performance engineer
 
 ```text
-按照 [参考图或设计要求] 做出 [页面]，并和项目其他部分保持一致。
+[PAGE OR FEATURE] is slow when [USAGE SCENARIO].
 
-不只检查正常状态。没有数据、加载中、出错、文字特别长时会怎样？在手机上还能用吗？
+Find out where the time is going before changing anything. Don’t mistake simpler code for faster code.
 
-打开做好的页面，先检查 UI：布局、字体、颜色和间距和参考一致吗？
+Compare before and after using the same actions and data, and confirm the results are still correct. Tell me what changed and whether the changes introduced any other problems.
 
-再检查 UX：用户能找到按钮、轻松填好表单、看出操作是否成功，出问题时知道下一步该做什么吗？
-
-修好你实际发现的问题，给我看结果的截图。
-
-不要因为代码能跑，就认为页面做完了。
+Don’t claim an improvement you haven’t measured.
 ```
 
-## 提示词：后端工程师
+## Prompt: frontend engineer
 
 ```text
-让 [功能] 完整跑通。
+Build [PAGE] using [REFERENCE IMAGE OR DESIGN REQUIREMENTS], keeping it consistent with the rest of the project.
 
-当用户做 [操作] 时，应该得到 [结果]。沿用项目现有的做法，把需要读取、保存或更新的数据接起来。
+Check more than the normal state. What happens with no data, while loading, when something fails, or when the text is unusually long? Does it still work on a phone?
 
-真正试一下。正常流程能成功吗？输入无效、缺少权限、中途失败或者点第二次时会怎样？
+Open the finished page and check the UI first: do the layout, fonts, colors, and spacing match the reference?
 
-确认页面显示的内容和实际保存的数据一致，现有功能也还正常。
+Then check the UX: can users find the buttons, fill in the forms easily, tell whether an action worked, and understand what to do next when something goes wrong?
 
-告诉我怎么试，以及你测了哪些场景。
+Fix the problems you actually find and show me screenshots of the result.
 
-也考虑一下开发者体验（DX）：怎么调用 API、要传哪些参数、出错时怎么排查。给下一个人一个能直接运行的例子。
+Don’t assume the page is finished just because the code runs.
 ```
 
-## 提示词：reviewer
+## Prompt: backend engineer
 
 ```text
-独立审查这次改动：[改动或任务位置]。
-最初的需求是：[需求]。
+Make [FEATURE] work all the way through.
 
-不要依赖实现者对自己完成内容的总结。自己检查结果。找出漏掉的需求、可能导致失败的用户操作，以及破坏了原本正常功能的改动。
+When the user does [ACTION], they should get [RESULT]. Follow the project’s existing approach and connect the data that needs to be read, saved, or updated.
 
-能跑的检查都跑一遍。每个问题都说明它怎么发生、有什么影响、问题在哪里。
+Actually try it. Does the normal flow succeed? What happens with invalid input, missing permissions, a failure halfway through, or a second click?
 
-改动任何东西之前，先报告问题。如果没发现值得修的，就直说。不要为了凑清单而编造问题。
+Confirm that what the page shows matches the data actually saved, and that existing features still work.
+
+Tell me how to try it and which scenarios you tested.
+
+Consider the developer experience (DX), too: how to call the API, what parameters to send, and how to investigate errors. Give the next person an example they can run directly.
 ```
 
-## 背景
+## Prompt: reviewer
 
-别再跟 Claude Code 或 Codex 说「做这个」「写代码」「修这个 bug」了。你还在把一个资深 AI 当成实习生，每一步都要你手把手带。让它把需求和技术交付也一起接过去。
+```text
+Independently review this change: [CHANGE OR TASK LOCATION].
+The original requirement was: [REQUIREMENT].
 
-这 7 条提示词覆盖了从想法到成品的关键角色。复制、粘贴，换上你的任务。
+Don’t rely on the implementer’s summary of what they completed. Inspect the result yourself. Look for missed requirements, user actions that could cause failures, and changes that break previously working features.
 
-技术负责人：端到端（E2E）交付。
+Run whatever checks you can. For each issue, explain how it occurs, what impact it has, and where the problem is.
 
-需求负责人：先想清楚要做什么，再动手做。
+Report the issues before changing anything. If you find nothing worth fixing, say so. Don’t invent findings to fill a list.
+```
 
-调试工程师：找出为什么会坏，然后修好。
+## Background
 
-性能工程师：找出时间花在哪里。
+Stop telling Claude Code or Codex “do this,” “write code” or “fix this bug.” You're still treating a senior AI like an intern who needs you to walk it through every step. Let it handle requirements and technical delivery, too.
 
-前端工程师：把 UI 做对，把 UX 做通。
+These 7 prompts cover the key roles from idea to finished work. Copy, paste, and swap in your task.
 
-后端工程师：让按钮背后的事真正跑通。
+Tech lead: end-to-end (E2E) delivery.
 
-Reviewer：用新的眼光找出被漏掉的问题。这一条交给单独的对话或 review agent。
+Requirements lead: figure out what to build before building it.
 
-## 来源
+Debugging engineer: find out why it breaks, then fix it.
 
-来自 [Copybook](https://copybook.page/zh/t/seven-prompts-for-senior-roles-from-idea-to-done)：@Voxyz_ai 2026年9月19日[发在 X 上](https://x.com/Voxyz_ai/status/2101355643882065971)，截至 2026年10月17日有 1,103 次收藏。适用于 Claude Code 和 Codex。
+Performance engineer: find out where the time is going.
+
+Frontend engineer: get the UI right and the UX working.
+
+Backend engineer: make what happens behind the button actually work.
+
+Reviewer: take a fresh look for problems that were missed. Give this one to a separate conversation or review agent.
+
+## Source
+
+From [Copybook](https://copybook.page/t/seven-prompts-for-senior-roles-from-idea-to-done): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2101355643882065971) on 19 Sep 2026, 1.1K saves as of 17 Oct 2026. For Claude Code and Codex.

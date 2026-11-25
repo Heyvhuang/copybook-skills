@@ -1,46 +1,46 @@
-# README 改写提示词和 Impeccable 打磨
+# README rewrite prompt and Impeccable polish
 
-用户明确要为新读者重写整份 README 时使用。只补安装步骤或改单段时，直接做局部修改。
+Rewrite the whole README for first-time readers when a full rewrite is requested. Single-section edits stay local.
 
-## 步骤
+## Steps
 
-仅在用户要求为新读者重写整份 README 时使用这条技巧，先说项目是什么、给谁用，再列功能和安装步骤，保留已有的有效信息。只有用户明确要求整理版本历史时，才把它移到 CHANGELOG.md。需要另装工具时先征得同意。只补安装步骤、修错字或改某一段时跳过本条，只改指定范围，不迁移版本历史，也不安装工具。
+Use this tip only for an explicitly requested rewrite of the entire README for newcomers. Start with what the project is and who it serves, then list its capabilities and installation steps. Preserve useful facts. Move version history to CHANGELOG.md only when the user asks to organize it. Confirm before installing any optional tools. For an installation section, a typo, or another limited edit, skip this tip and edit only the requested part. Leave the changelog and tooling alone on those tasks.
 
-这些步骤要求把规则写进 AGENTS.md 这类文件、而你正在做它管的事时，这次就照规则做，并提一次要不要把它加进文件。
+If these steps save a rule in a file such as AGENTS.md and you are doing the work it governs, follow the rule in this task now and offer once to add it to the file.
 
-## 原帖
+## Original post
 
-以下是原帖引文。执行时以上面的适用范围和步骤为准。
+The excerpts below are for reference. Follow the scoped steps above.
 
-### 提示词
+### Prompt
 
 ```text
-给从没见过这个项目的人重写 README.md。
-第一句：它是什么、给谁用。
-然后用简短的要点列出它能做什么。
-最后写安装步骤，把环境要求放进表格。
-把所有版本历史移进 CHANGELOG.md。
+Rewrite README.md for someone who has never seen this project.
+First sentence: what it is and who it's for.
+Then list what it can do in short bullets.
+End with the install steps, and put the requirements in a table.
+Move all version history into CHANGELOG.md.
 ```
 
-### 安装命令
+### Install command
 
 ```bash
 npx impeccable install
 ```
 
-### Impeccable 命令
+### Impeccable commands
 
 ```text
 /impeccable clarify README.md
 /impeccable distill README.md
 ```
 
-### 背景
+### Background
 
-UI/UX skill 也能用在仓库的 README 上，还能让 Codex 和 Claude Code 不再慢慢把它写成更新日志。模型会自己往你需要的方向延伸。这就是我爱 LLM 的原因。
+UI/UX skills work on your repo's README too, and keep Codex and Claude Code from slowly turning it into a changelog. The model branches out on its own toward whatever you need. That's why I love LLMs.
 
-然后用一个前端设计 skill 打磨它：
+Then polish it with a frontend design skill:
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/readme-rewrite-prompt-and-impeccable-polish)：@Voxyz_ai 2026年10月30日[发在 X 上](https://x.com/Voxyz_ai/status/2116183356496830536)，截至 2026年11月6日有 235 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/readme-rewrite-prompt-and-impeccable-polish): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2116183356496830536) on 30 Oct 2026, 235 saves as of 6 Nov 2026. For Claude Code and Codex.

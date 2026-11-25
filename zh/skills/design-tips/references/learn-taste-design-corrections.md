@@ -1,41 +1,41 @@
-# /learn-taste：设计修正变成规则
+# /learn-taste: design corrections as rules
 
-你总在改同样的设计错误：一次会话里的每个修正，都变成一条带理由的严格规则。
+You keep fixing the same design mistakes: each correction in a session turned into a strict rule with reasoning.
 
-## 步骤
+## Steps
 
-1. 复制安装命令，再复制提示词。
-2. 在项目里运行命令，会话结束时再把提示词贴进 Claude Code。
-3. 得到：这次会话和最近 3 次会话里的每个设计修正，各提一条带理由的严格规则。
+1. Copy the install command, then the prompt.
+2. Run the command in your project, then paste the prompt into Claude Code at the end of a session.
+3. You get: Each design correction from this session and your last 3, proposed as a strict rule with reasoning.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 安装 learn-taste
+## Install learn-taste
 
 ```bash
 npx skills@latest add emilkowalski/skills --skill learn-taste
 ```
 
-## 提示词
+## Prompt
 
 ```text
-/learn-taste 把我最近 3 次会话也看一遍，我老是在改同样的东西
+/learn-taste look at my last 3 sessions too, I keep fixing the same things
 ```
 
-## 背景
+## Background
 
-强烈推荐在 Claude Code 里装上 `/learn-taste`。
+Highly recommend installing `/learn-taste` in Claude Code.
 
-简单说，它会收集你在一次会话里做的每一个设计修正，把每一条都变成一条带理由的严格规则，这样下一个 agent 就不会再犯同样的错。如果你经常纠正你的 agent，它很省时间。
+Simply put, it collects every design correction you made during a session and turns each one into a strict rule with reasoning, so the next agent doesn't make the same mistake. A great time saver if you correct your agent often.
 
-装好它，然后在会话结束时跑一行。
+Install it, then run one line at the end of a session.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/turn-design-corrections-into-rules-with-learn-taste)：@Voxyz_ai 2026年11月13日[发在 X 上](https://x.com/Voxyz_ai/status/2121286973067522492)，截至 2026年11月20日有 340 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/turn-design-corrections-into-rules-with-learn-taste): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2121286973067522492) on 13 Nov 2026, 340 saves as of 20 Nov 2026. For Claude Code.

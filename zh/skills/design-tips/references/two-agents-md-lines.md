@@ -1,33 +1,33 @@
-# AGENTS.md 两行：删多余文字，兼顾 UX、DX、AX
+# Two AGENTS.md lines: less text, UX/DX/AX
 
-清理页面上重复的标语、眉题等装饰文案，保留功能标签和操作说明。
+Clean up decorative page copy such as a redundant tagline or eyebrow. Keep functional labels and instructions.
 
-## 步骤
+## Steps
 
-在用户指定的页面找出重复标题意思的装饰文字，只删这些重复内容。保留字段标签、输入格式、错误提示、无障碍名称和完成操作所需的说明。只改这个页面，不把原帖里的两条规则写进项目或全局指令文件。
+On the requested screen, identify decorative text that repeats what the heading already says. Remove only that repetition. Preserve field labels, input formats, validation messages, accessible names and the instructions needed to finish the task. Keep the change on this screen. Do not install either quoted rule in an instructions file.
 
-这些步骤要求把规则写进 AGENTS.md 这类文件、而你正在做它管的事时，这次就照规则做，并提一次要不要把它加进文件。
+If these steps save a rule in a file such as AGENTS.md and you are doing the work it governs, follow the rule in this task now and offer once to add it to the file.
 
-## 原帖
+## Original post
 
-以下是原帖引文。执行时以上面的适用范围和步骤为准。
+The excerpts below are for reference. Follow the scoped steps above.
 
-### AGENTS.md 规则：页面
-
-```text
-删掉标语、提示文字和次要标签。如果一个页面要靠它们才能看懂，就去改布局。
-```
-
-### AGENTS.md 规则：决定
+### AGENTS.md rule: screens
 
 ```text
-始终做出能同时提升这三样的最佳决定：用户体验（UX）、开发者体验（DX）和 agent 体验（AX），而且不弄坏任何东西。
+Cut taglines, helper text and secondary labels. If a screen needs them to make sense, fix the layout.
 ```
 
-### 背景
+### AGENTS.md rule: decisions
 
-做 vibe coding 的朋友，求你们了，把这两行加进 AGENTS.md。
+```text
+Make the best decision that will elevate all three: the user experience (UX), developer experience (DX), and agent experience (AX) always, without breaking anything.
+```
 
-## 来源
+### Background
 
-来自 [Copybook](https://copybook.page/zh/t/two-agents-md-lines-for-vibecoders)：@Voxyz_ai 2026年10月22日[发在 X 上](https://x.com/Voxyz_ai/status/2113254050170843418)，截至 2026年11月19日有 1.5万次收藏。最近一次检查：2026年11月19日，Opus 5.5，可用。适用于 Claude Code 和 Codex。
+Vibecoders, I'm begging you, add these two lines to your AGENTS.md.
+
+## Source
+
+From [Copybook](https://copybook.page/t/two-agents-md-lines-for-vibecoders): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2113254050170843418) on 22 Oct 2026, 15K saves as of 19 Nov 2026. Last check: works on Opus 5.5, 19 Nov 2026. For Claude Code and Codex.

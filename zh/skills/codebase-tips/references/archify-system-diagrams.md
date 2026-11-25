@@ -1,34 +1,34 @@
-# Archify：从代码画系统图
+# Archify: system diagrams from code
 
-要给人讲清系统结构：从代码生成一张能搜索、能追踪上下游、能对比版本的 HTML 图，可导出 PNG。
+A system you have to explain: an HTML diagram you can search, trace up and downstream, compare across versions, export as PNG.
 
-## 步骤
+## Steps
 
-1. 复制全局安装 Archify 的命令，再复制模板或完整系统图提示词。
-2. 在终端里运行命令，再在仓库里把模板或提示词发给 Codex 或 Grok Bot。
-3. 得到：一张能搜索、能追踪上下游的 HTML 系统图，导出成 PNG。
+1. Copy the install command, then the template or the full system diagram prompt.
+2. Run the command in a terminal, then give Codex or Grok Bot the template or prompt in your repo.
+3. You get: A searchable HTML diagram of your system that traces paths up and downstream, exported as PNG.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 命令：全局安装 Archify
+## Install Archify globally
 
 ```bash
 npx skills add tt-a1i/archify -g
 ```
 
-## 模板
+## Template
 
 ```text
 Turn [CODEBASE / FEATURE / WORKFLOW] into a [DIAGRAM TYPE] diagram. Choose from Architecture, Workflow, Sequence, Data Flow, or Lifecycle.
 ```
 
-## 提示词：完整系统图
+## Prompt: full system diagram
 
 ```text
 Then read this repo and use Archify to generate a system diagram.
@@ -40,16 +40,16 @@ Keep the 8-12 most important components and one primary path. Label external ser
 Generate and verify a standalone HTML file. Confirm that component search and upstream/downstream tracing work, then export a high-resolution 2400 × 1260 PNG.
 ```
 
-## 背景
+## Background
 
-如果只能给 Codex 或 Grok Bot 一个画系统图的 skill，我选 Archify。它在 GitHub 上已经有 29K+ 颗星，现在我要画系统图时默认就用它。
+If I could give Codex or Grok Bot just one skill for drawing system diagrams, I'd pick Archify. It already has 29K+ stars on GitHub, and I now use it by default whenever I need to map a system.
 
-装好以后，你的 agent 可以：
+Once installed, your agent can:
 
-- 生成一个自包含的 HTML 文件，导出成 PNG、SVG 或视频
-- 搜索任意组件，追踪它的上下游路径
-- 把前后两个版本并排对比，看哪些加了、删了或重新排了
+- Create one self-contained HTML file and export it as PNG, SVG or video
+- Search for any component and trace its upstream and downstream paths
+- Compare before and after versions side by side to see what was added, removed or rearranged
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/draw-system-diagrams-with-the-archify-skill)：@Voxyz_ai 2026年8月29日[发在 X 上](https://x.com/Voxyz_ai/status/2093677504179400946)，截至 2026年9月26日有 1,560 次收藏。适用于 Codex 和 Grok。
+From [Copybook](https://copybook.page/t/draw-system-diagrams-with-the-archify-skill): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2093677504179400946) on 29 Aug 2026, 1.6K saves as of 26 Sep 2026. For Codex and Grok.

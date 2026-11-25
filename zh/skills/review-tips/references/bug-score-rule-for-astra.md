@@ -1,45 +1,45 @@
-# Astra 审查的 bug 打分规则
+# Bug-score rule for Astra's code reviews
 
-Astra 总挑几乎不会发生的 bug，Opus 一条条去修：给 bug 打分，分低的记成 issue，代码不动。
+Astra flags bugs that almost never happen and Opus fixes each one: bugs scored, low scores filed as issues, code left alone.
 
-## 步骤
+## Steps
 
-1. 复制审查规则和 Opus 规则。
-2. 审查规则加进审查 prompt，Opus 规则加进 CLAUDE.md 或 AGENTS.md。
-3. 得到：得分低于 5 的 bug 记成 issue，代码不动。
+1. Copy the review rule and the Opus rule.
+2. Add the review rule to your review prompt, the Opus rule to CLAUDE.md or AGENTS.md.
+3. You get: Bugs that score below 5 filed as issues, with the code left alone.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 审查规则
-
-```text
-每个 bug 按发生得有多频繁、会有多严重，各打 1 到 10 分。两个分数相乘如果低于 5，就只记成一个 issue，代码不要动。
-```
-
-## Opus 规则
+## Review rule
 
 ```text
-不要为没人问过的罕见情况或未来情况做设计。
+Rate each bug from 1 to 10 on how often it would happen and how bad it would be. If the two scores multiplied are below 5, just file it as an issue and leave the code alone.
 ```
 
-## 背景
+## Opus rule
 
-和很多人一样，我用 Opus 5.5 写代码，用 Codex Astra 审查。
+```text
+Do not design for rare or future cases nobody asked about.
+```
 
-但 Astra 有个坏习惯：总挑出一些技术上可能、实际上几乎不会发生的 bug。Opus 看逻辑说得通就去修，接着 Astra 又挑出下一个，循环永远停不下来。
+## Background
 
-在你的审查 prompt、skill 或 AGENTS.md 里加一行。
+Like a lot of you, I use Opus 5.5 to write code and Codex Astra to review it.
 
-把阈值 5 调成适合你项目的数。
+But Astra has a bad habit of flagging bugs that are technically possible but almost never happen in practice. Opus sees the logic checks out and fixes it, then Astra flags the next one, and the loop never stops.
 
-修代码的是 Opus，给它在 CLAUDE.md 或 AGENTS.md 里再加一行：
+Add one line to your review prompt, skill, or AGENTS.md.
 
-## 来源
+Tune the threshold of 5 to your project.
 
-来自 [Copybook](https://copybook.page/zh/t/bug-score-rule-for-astras-code-reviews)：@Voxyz_ai 2026年10月28日[发在 X 上](https://x.com/Voxyz_ai/status/2115518965443076573)，截至 2026年11月4日有 3,241 次收藏。适用于 Claude Code 和 Codex。
+For Opus, the one fixing the code, add one more line to CLAUDE.md or AGENTS.md:
+
+## Source
+
+From [Copybook](https://copybook.page/t/bug-score-rule-for-astras-code-reviews): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2115518965443076573) on 28 Oct 2026, 3.2K saves as of 4 Nov 2026. For Claude Code and Codex.

@@ -2,21 +2,19 @@
 
 PRs wait their turn for one machine's checks: each head runs your gate in its own cloud session and gets a PASS or FAIL comment.
 
-这条技巧只有英文版。
-
-## 步骤
+## Steps
 
 1. Copy the task template, then the start command.
 2. In your repo, save the template as cloud-check.md and run the start command in your terminal.
-3. 得到：A PASS or FAIL comment on each PR, naming the head and the main commit it was checked against.
+3. You get: A PASS or FAIL comment on each PR, naming the head and the main commit it was checked against.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
 ## Task template
 
@@ -54,7 +52,7 @@ done
 gh pr view 123 --json comments --jq '.comments[].body | select(startswith("Cloud check"))'
 ```
 
-## 背景
+## Background
 
 Your gate script checks one PR at a time on your machine, and every other PR waits. `claude --cloud` starts a Claude Code session on a fresh cloud VM, so each open PR can have its own session: it checks out that exact head, runs your gate and posts the result as a PR comment. The sessions run side by side and your machine stays free for other work.
 
@@ -68,6 +66,6 @@ A check counts only for the head its first line names, and only while that head 
 
 The sessions run without asking before each command. Each session runs the PR's code with your GitHub access and the cloud environment's variables. Claude's GitHub proxy refuses branch deletions and tag pushes but lets a push update any branch, so protect main and require a review to merge: that is what stops a push or merge there. The loop skips PRs from forks; check one of those only after you have read its code. Sessions share your plan's usage limits, so ten at once spend ten checks' worth. A small model is enough to run a script and report; move up a size only if it misreads failures.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/parallel-pr-checks-with-claude-cloud-sessions)，2026年11月24日发布。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/parallel-pr-checks-with-claude-cloud-sessions), published on 24 Nov 2026. For Claude Code.

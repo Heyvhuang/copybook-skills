@@ -1,45 +1,45 @@
-# 做动效视频的 4 人小组
+# 4-person motion video team
 
-Claude Code 里做动效视频：拆片、分镜、审片 3 个 subagent 配合主会话做片，你只管像导演一样拍板。
+A motion video in Claude Code: breakdown, storyboard and review subagents around a main session on HyperFrames; you direct.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 发给 Claude Code。
-3. 得到：~/.claude/agents 里一个做动效视频的小组。
+1. Copy the prompt.
+2. Send it to Claude Code.
+3. You get: A motion video team in ~/.claude/agents.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-帮我在 ~/.claude/agents 配一个做动效视频的小组，以后做产品视频都用它。没装 HyperFrames 就先照 hyperframes.dev 装好。
+Set up a motion video team in ~/.claude/agents that I can use for every product video. If HyperFrames isn't installed, install it first following hyperframes.dev.
 
-1. reference-breaker（effort medium）：用 ffmpeg 把我给的参考视频每秒抽一帧，拼成一张图来看，拆出节奏、字体、配色和转场，写成一份镜头表和 HyperFrames 起始代码。只拆不做。
-2. storyboarder（effort medium）：按镜头表出 3 版分镜，每版几个关键画面，拼在一张图里给我挑；我挑中后，用 npx hyperframes snapshot 给每个场景出一张静帧。
-3. 做片交给主会话：用 HyperFrames 写每个场景，没有音乐素材就用 Python 合成一段配乐；先用 npx hyperframes render --quality draft 出草稿，我确认后再出正式版。
-4. film-reviewer（effort high）：用 ffmpeg 每秒抽一帧逐秒看，按 P0、P1、P2 列问题（P0 是必须修的），只看不改；主会话修完 P0 再给我看。
+1. reference-breaker (effort: medium): use ffmpeg to pull one frame per second from the reference video I give you, tile them into one image to look at, and break down the pacing, type, colors and transitions into a shot list plus HyperFrames starter code. Break down only; don't build.
+2. storyboarder (effort: medium): from the shot list, make 3 storyboard options with a few key frames each, tiled into one image for me to pick from. After I pick one, use npx hyperframes snapshot to make one still per scene.
+3. The main session builds the video: write each scene in HyperFrames, and if there's no music, synthesize a track with Python. Render a draft with npx hyperframes render --quality draft first, and render the final only after I approve.
+4. film-reviewer (effort: high): use ffmpeg to pull one frame per second and review it second by second. List problems as P0, P1 and P2 (P0 must be fixed). Review only; don't edit. The main session fixes every P0 before showing me.
 
-每个 subagent 都要能用 Bash 和看图片。开工前先问我要参考视频、logo、颜色、字体和产品截图。先把要新建的文件内容给我看，再用 10 岁小孩都能听懂的话讲一遍流程。我确认之前什么都别写。
+Every subagent needs Bash and must be able to view images. Before starting, ask me for the reference video, logo, colors, fonts and product screenshots. Show me the contents of the files you'll create, then explain the flow in words a 10-year-old could follow. Don't write anything until I confirm.
 ```
 
-## 背景
+## Background
 
-大家都在晒 Opus 5.5 做的动效视频。想在 Claude Code 里自己做一条，可以给它配一个 4 人小组，每个 subagent 打通一个部分：
+Everyone's posting motion videos made with Opus 5.5. To make one yourself in Claude Code, give it a 4-person team, with each subagent owning one part end to end:
 
-- 拆片（medium）：把你喜欢的参考视频抽帧拼成一张图，拆出节奏、字体和转场，写成 HyperFrames 代码。参考可以去 [whatships.com](https://whatships.com) 找，上面有 2,000+ 条产品发布视频
-- 分镜（medium）：先出 3 版分镜拼在一张图里给你挑，挑中后每个场景出一张静帧
-- 做片（主会话，high）：用 HyperFrames 把每个场景写成代码，配上音乐，先出草稿再出正式版
-- 审片（high）：渲染完一秒一秒地看，按轻重列出问题，只看不改
+- Breakdown (medium): tile frames from a reference video you love into one image, pull out its pacing, type and transitions, and write them up as HyperFrames code. Find references on [whatships.com](https://whatships.com), which has 2,000+ product launch videos
+- Storyboard (medium): lay out 3 storyboard options in one image for you to pick from, then make one still per scene for the one you choose
+- Build (main session, high): write every scene as HyperFrames code, add music, and render a draft before the final
+- Review (high): watch the render second by second and list the problems by severity, without touching anything
 
-你只管像导演一样拍板：「这段放慢一半」「这里直接切」「镜头推到按钮上」。
+You just call the shots like a director: "slow this part down by half", "cut right here", "zoom in on the button".
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/make-motion-videos-with-a-4-subagent-team)：@Voxyz_ai 2026年9月27日[发在 X 上](https://x.com/Voxyz_ai/status/2104194355556671987)，截至 2026年10月25日有 1,441 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/make-motion-videos-with-a-4-subagent-team): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2104194355556671987) on 27 Sep 2026, 1.4K saves as of 25 Oct 2026. For Claude Code.

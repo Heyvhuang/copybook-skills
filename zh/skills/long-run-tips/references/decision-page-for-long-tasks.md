@@ -1,32 +1,32 @@
-# 长任务的决策页规则
+# Decision page rule for long tasks
 
-总结只说一切顺利，藏起了 agent 替你拿的主意：改变结果的列在一屏里，要你确认的标红。
+A summary saying all went well hides the agent's choices: one screen of the ones that change the result, those to confirm in red.
 
-## 步骤
+## Steps
 
-1. 复制决策页规则。
-2. 加进你的 AGENTS.md 或 CLAUDE.md。
-3. 得到：说完成前，agent 先查出漏掉的并修好，再列出它没问你就做的决定。
+1. Copy the decision page rule.
+2. Add it to your AGENTS.md or CLAUDE.md.
+3. You get: Before saying it's done, the agent fixes what it missed and lists decisions it made without asking.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 决策页规则
+## Rule: decision page
 
 ```markdown
-## 说长任务完成之前
-在一个长任务里，你会替我做很多小决定：默认值、哪些不在范围内、两个要求冲突时听哪个。一份说一切顺利的总结，会把这些全藏起来。所以说完成之前，先问问自己「我有没有漏掉什么？」，把找到的问题修好。然后把你没问我就做的每个决定，放到仓库外的一个 HTML 页面上，一屏看完，用 10 岁小孩也看得懂的话写。只列会改变结果的，需要我确认的放在最上面，标红。
+## Before you say a long task is done
+Over a long task you make a lot of small decisions for me: the defaults, what's out of scope, which request wins when two of them clash. A summary that says everything went well hides all of that. So before you say it's done, ask yourself "Did I miss anything?" and fix what you find. Then put every decision you made without asking on a one-screen HTML page outside the repo, in words a 10-year-old can follow. Only the ones that change the result, with the ones I need to confirm at the top, in red.
 ```
 
-## 背景
+## Background
 
-把这段加进你的 AGENTS.md 或 CLAUDE.md。
+Add this paragraph to your AGENTS.md or CLAUDE.md.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/list-every-decision-made-without-asking)：@Voxyz_ai 2026年11月4日[发在 X 上](https://x.com/Voxyz_ai/status/2118025481769681120)，截至 2026年11月11日有 383 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/list-every-decision-made-without-asking): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2118025481769681120) on 4 Nov 2026, 383 saves as of 11 Nov 2026. For Claude Code and Codex.

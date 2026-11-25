@@ -1,50 +1,50 @@
-# REA：拆开别家 app 的功能
+# REA: take apart another app's feature
 
-看中别家 app 的功能却不知道怎么做的：一层层拆开，每个结论标出证据，最后拿到自己实现的计划。
+A feature you like and can't see how it's built: taken down layer by layer, each finding with evidence, then a plan for your own.
 
-## 步骤
+## Steps
 
-1. 复制安装命令，再复制提示词。
-2. 在终端跑安装命令，选好 agent 并重启，再把提示词发给 Opus 5.5。
-3. 得到：agent 讲清一个功能是怎么做的，每条都有出处，再给你自己做的计划。
+1. Copy the install command, then the prompt.
+2. Run the command in a terminal, pick your agent, restart it, then send the prompt to Opus 5.5.
+3. You get: Your agent works out how a feature is built, with evidence, and plans your own version.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 安装命令
+## Install command
 
 ```bash
 npx rea-agents setup
 ```
 
-## 提示词
+## Prompt
 
 ```text
-我想用 REA 弄明白一个软件的某个功能是怎么做的。
-1. 先问我想研究哪个 app、哪个功能，再让我说明它是我自己的、开源的，还是条款允许逆向的。我说明不了就别开始。
-2. 先判断它是哪类程序。要是得用 Hopper、Ghidra 或 IDA，告诉我缺哪个、去哪装，别自己装。
-3. 每个结论都标出证据：哪个文件、哪个函数或地址。看到的和猜的分开说。最后用 10 岁小孩能听懂的话讲一遍。
-4. 弄清楚以后，说说在我的项目里自己写个类似的功能，最少要写哪几块，别照搬它的代码。先给计划，我同意了再写。
+I want to use REA to figure out how a feature in some software works.
+1. First ask me which app and which feature I want to study, then have me say whether it's my own, open source, or software whose terms allow reverse engineering. If I can't say, don't start.
+2. Work out what kind of program it is first. If you need Hopper, Ghidra or IDA, tell me which one is missing and where to get it. Don't install it yourself.
+3. Back every finding with evidence: which file, which function or address. Keep what you saw separate from what you're guessing. At the end, explain it all in words a 10-year-old could follow.
+4. Once it's clear, tell me the minimum pieces I'd need to write to build something similar in my own project, without copying its code. Show me the plan first, and only start writing after I agree.
 ```
 
-## 背景
+## Background
 
-强烈建议给 Claude Code 或 Codex 装上 REA，全名 Reverse Engineer Anything，逆向一切。看中哪个 app 的功能，就让 agent 拆开看看是怎么做的，再在你的项目里自己写个类似的。这两天它连着冲上 GitHub 日榜 #1，star 已经过 60K：https://github.com/morluto/rea
+Highly recommend adding REA to Claude Code or Codex. The name stands for Reverse Engineer Anything. See a feature you like in another app? Have your agent take it apart to see how it's built, then build your own version in your project. It's been #1 on GitHub's daily trending two days running and is past 60K stars: https://github.com/morluto/rea
 
-你电脑上装的软件都是做好的成品，像一块烤好的蛋糕，吃得出味道，看不到配方。REA 把专门拆软件的工具交给 agent，它一层层往下拆，每一步都指给你看是从哪儿看出来的，最后把配方讲给你听。电脑软件、网页、安卓 app 都能拆。比如问它：
+The apps on your computer are finished products. Think of a baked cake: you can taste it, but you can't see the recipe. REA hands your agent the tools made for taking software apart. It works down layer by layer, shows you where each finding comes from, and then walks you through the recipe. You can point it at desktop apps, websites and Android apps. Ask it things like:
 
-- 「这个笔记软件的搜索，怎么一打字就出结果？」
-- 「从 Notion 复制一段贴到别处，格式为什么还在？」
-- 「老游戏里那一圈子弹是怎么算出来的？」
-- 「公司 10 年前留下的小工具，源码早没了，它到底在干嘛？」
+- "How does this notes app show search results the moment I start typing?"
+- "Why does text copied from Notion keep its formatting when I paste it somewhere else?"
+- "How does this old game work out that ring of bullets?"
+- "Our company's 10-year-old internal tool lost its source code years ago. What is it actually doing?"
 
-自己的、开源的随便拆。别人家的软件先看条款，很多写明了不许逆向；破解、绕授权的活别找它，模型多半也会拒。在终端跑一下安装命令，按提示选好你用的 agent，重启就能用。装好以后把这段 prompt 发给 Opus 5.5。
+Take apart your own software and open-source code as much as you like. For anyone else's, check the terms first, since many forbid reverse engineering. Don't bring it cracking or license-bypass jobs; the model will most likely refuse anyway. Run the install command in your terminal, pick your agent when it asks, and restart it. Then send the prompt to Opus 5.5.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/reverse-engineer-a-feature-with-rea)：@Voxyz_ai 2026年10月11日[发在 X 上](https://x.com/Voxyz_ai/status/2109297975013081587)，截至 2026年11月8日有 1,520 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/reverse-engineer-a-feature-with-rea): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2109297975013081587) on 11 Oct 2026, 1.5K saves as of 8 Nov 2026. For Claude Code and Codex.

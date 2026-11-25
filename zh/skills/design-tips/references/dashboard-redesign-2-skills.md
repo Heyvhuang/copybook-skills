@@ -1,61 +1,61 @@
-# 仪表盘改版：两个 skill 加两条提示词
+# Dashboard redesign: 2 skills, 2 prompts
 
-仪表盘一眼 AI 做的：ui-ux-pro-max 加 frontend-design，改版提示词里点名它们，再从 4 个角度审查。
+Dashboards that look AI-made on sight: ui-ux-pro-max and frontend-design in one redesign prompt, then a four-angle review.
 
-## 步骤
+## Steps
 
-1. 复制两段安装命令，再复制改版和并行审查两条提示词。
-2. 在 Claude Code 里跑安装，把 {} 换成你的页面发改版提示词，再发审查。
-3. 得到：改版后的页面，从 4 个角度在真实浏览器里查过，修到过关为止。
+1. Copy both install blocks, then the redesign prompt and the parallel review prompt.
+2. Run the installs in Claude Code, send the redesign prompt with your pages in {}, then the review.
+3. You get: A redesigned page, checked from four angles in a real browser and fixed until it clears the bar.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 安装 ui-ux-pro-max
+## Install ui-ux-pro-max
 
 ```text
 /plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill
 /plugin install ui-ux-pro-max@ui-ux-pro-max-skill
 ```
 
-## 安装 frontend-design
+## Install frontend-design
 
 ```text
 /plugin marketplace add anthropics/skills
 /plugin install example-skills@anthropic-agent-skills
 ```
 
-## 提示词：改版
+## Prompt: redesign
 
 ```text
 Using /ui-ux-pro-max and /frontend-design, redesign {these new pages} for this project. Full creative freedom, but it must be visually striking and interactive, with motion and hidden easter eggs. First search for 2026 design trends and apply them.
 ```
 
-## 提示词：并行审查
+## Prompt: parallel review
 
 ```text
 Treat making {these pages} not look AI-made as one complete goal, not the next small fix. Split it into independent pieces and spawn a parallel agent for each, every agent with its own goal, deliverable, and pass bar. 1, does it look AI-made: the three templates, purple gradient, emoji icons. 2, detail: spacing, contrast 4.5:1, hover, cursor. 3, typography: a real point of view or default system fonts. 4, responsive plus keyboard focus and reduced motion. Run them at once, merge the results, resolve conflicts, render it in a real browser and check the screenshots, fix, pass again, and don't stop until it clears the bar.
 ```
 
-## 背景
+## Background
 
-我让 Claude Code 或 Codex 做仪表盘，结果一眼就看得出是 AI 做的。毛病出在两处。一是千篇一律：来回就是那三套模板。二是细节粗糙：图标用 emoji，按钮没有 hover，到处是 AI 紫色渐变。
+I ask Claude Code or Codex for a dashboard and it comes out looking AI-made on sight. It goes wrong two ways. One is sameness: the same three templates on rotation. Two is sloppy detail: emoji for icons, buttons with no hover, AI purple gradient on everything.
 
-解法是两个免费的 skill 加两条 prompt。
+The fix is two free skills and two prompts.
 
-ui-ux-pro-max 拿到你的需求，返回一整套设计系统：带 hex 值的颜色、带 Google Fonts 链接的字体，以及一份交付前检查清单（图标不用 emoji，能点的都加 cursor-pointer，hover 过渡 150-300ms，文字对比度 4.5:1，不用 AI 紫色渐变）。
+ui-ux-pro-max takes your requirements and returns a full design system: colors with hex, fonts with Google Fonts links and a pre-delivery checklist (no emoji as icons, cursor-pointer on anything clickable, 150-300ms hover transitions, 4.5:1 text contrast, no AI purple gradients).
 
-frontend-design 是 Anthropic 自己的 skill。它把 AI 从模板默认值里拉出来，还点出了这些默认值最后都会变成的三种样子。装好以后，它先选一个方向，批评自己的方案，扔掉任何换个项目也会照做的东西，再写代码。
+frontend-design is Anthropic's own skill. It pulls the AI off its template defaults and names the three looks they all fall into. Once installed it picks a direction first, critiques its own plan, throws out anything it would do for any other project, then writes code.
 
-prompt 里要点名这两个 skill，不然它们不会触发。把 `{}` 换成你的页面。
+Name both skills in the prompt or they won't fire. Swap `{}` for your pages.
 
-做完以后，把审查拆给几个并行的 agent，每个只看一个角度。一遍看全部，只会看得很浅。
+Once it's built, split the review across parallel agents, each on one angle. One pass over everything stays shallow.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/stop-ai-looking-dashboards-with-two-design-skills)：@Voxyz_ai 2026年6月30日[发在 X 上](https://x.com/Voxyz_ai/status/2071928115052335364)，截至 2026年7月28日有 1,295 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/stop-ai-looking-dashboards-with-two-design-skills): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2071928115052335364) on 30 Jun 2026, 1.3K saves as of 28 Jul 2026. For Claude Code and Codex.

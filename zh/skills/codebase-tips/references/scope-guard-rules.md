@@ -1,22 +1,22 @@
-# Scope Guard：不让小任务越做越大的规则
+# Scope Guard: AGENTS.md rules for small tasks
 
-改个配置就搭框架、修个 bug 就加一层：够用的最小改动，复用现有代码，扩大范围先问你。
+Asked to change a config, it builds a framework: minimum sufficient change, reuse first, ask before widening, test narrowly.
 
-## 步骤
+## Steps
 
-1. 复制 Scope Guard 规则。
-2. 贴进项目最上层的 AGENTS.md。
-3. 得到：agent 用最小的改动做完小任务，要扩大范围先问你。
+1. Copy the Scope Guard rules.
+2. Paste them into the AGENTS.md at the top of your project.
+3. You get: The agent finishes small tasks with the smallest change and asks before it grows the scope.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## AGENTS.md 规则
+## AGENTS.md rules
 
 ```markdown
 # Scope Guard
@@ -78,12 +78,12 @@ and confirm the new scope.
 - Assumptions, limitations, and unverified runtime behavior are stated plainly
 ```
 
-## 背景
+## Background
 
-Codex Sol 有个坏习惯：把小任务做成大系统。让它改个配置，它搭了一个框架。让它修个 bug，它又加了一层 adapter。
+Codex Sol has one bad habit: it turns small tasks into big systems. Ask it to make a config change, and it builds a framework. Ask it to fix a bug, and it adds a new adapter layer.
 
-把这些规则加进你的 AGENTS.md。
+Add these rules to your AGENTS.md.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/scope-guard-rules-for-agents-md)：@Voxyz_ai 2026年8月30日[发在 X 上](https://x.com/Voxyz_ai/status/2094039936475484393)，截至 2026年9月27日有 2,058 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/scope-guard-rules-for-agents-md): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2094039936475484393) on 30 Aug 2026, 2.1K saves as of 27 Sep 2026. For Claude Code and Codex.

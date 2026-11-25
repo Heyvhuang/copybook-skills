@@ -2,9 +2,9 @@
 
 Copybook is a skill pack for people who code with Claude Code or Codex. You ask for the work as usual, and it picks the prompt, rule or checklist that fits the task from the 149 tips, then follows it. You have nothing to remember and nothing to choose.
 
-The tips are the posts readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai) on X: 227K saves in all, counted between 22 Jul and 23 Nov 2026.
+The tips are the posts readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai) on X: 227K saves in all, counted between 22 Jul and 25 Nov 2026.
 
-[copybook.page](https://copybook.page) · [New tips by email](https://copybook.page/about#email-about-title) · [Changelog](CHANGELOG.md) · [中文](README.zh-CN.md)
+[copybook.page](https://copybook.page) · [New tips by email](https://copybook.page/about#email-about-title) · [Changelog](CHANGELOG.md)
 
 ```text
 copybook ───────────────────────────
@@ -86,7 +86,6 @@ When no tip fits, it leaves Copybook out of it and carries on with your task. If
 - **Picked by saves.** Only posts people saved most on X.
 - **Word for word.** The prompts and rules are the post's own text, checked by a script.
 - **Re-tested on new models.** A tip that stops working comes off the list.
-- **In two languages.** The Chinese version keeps every command, path and number of the English.
 
 ## What's inside
 
@@ -100,7 +99,7 @@ When no tip fits, it leaves Copybook out of it and carries on with your task. If
 
 To open Copybook yourself, type `/copybook:copybook` (or `/copybook`). In Codex, type `$copybook`. To browse a topic, use a command such as `/copybook:design-tips`. Add the tip's name to use it.
 
-Grouped by topic, most saved first; saves counted between 22 Jul and 23 Nov 2026, each tip's date in its file.
+Grouped by topic, most saved first; saves counted between 22 Jul and 25 Nov 2026, each tip's date in its file.
 
 The words the tips use are in the [glossary](docs/glossary.md); the tips that stay on copybook.page are listed in [scope](docs/scope.md).
 
@@ -162,7 +161,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[/claude-api prompt-audit: skill audit for Fable 5.1](./skills/review-tips/references/claude-api-prompt-audit.md)** `claude-api-prompt-audit`<br>Skills for older models misfire on Fable 5.1: duplicate rules, dead commands and old model names listed, with a diff. | 479 |
 | **[Fake busy check from today's git history](./skills/review-tips/references/fake-busy-check.md)** `fake-busy-check`<br>A pile of sessions and nothing done: today's merges told apart from busywork, then one sentence on tomorrow's first task. | 394 |
 | **[Nightly routine reviewing the day's pushes](./skills/review-tips/references/nightly-push-review-routine.md)** `nightly-push-review-routine`<br>Today's pushes to main, reviewed while you sleep: a draft PR per bug with a test that fails first, in the cloud, laptop closed. | 387 |
-| **[Logging plan and daily fix list](./skills/review-tips/references/logging-plan-and-daily-fix-list.md)** `logging-plan-and-daily-fix-list`<br>Broken features, stuck users, slow steps: ranked by users affected, with log lines; the worst one already has a test. | 366 |
+| **[Logging plan and daily fix list](./skills/review-tips/references/logging-plan-and-daily-fix-list.md)** `logging-plan-and-daily-fix-list`<br>Broken features, stuck users, slow steps: ranked by users affected, with log lines; the worst one already has a test. | 363 |
 | **[Plan review: 5 methods in one message](./skills/review-tips/references/plan-review-5-methods.md)** `plan-review-5-methods`<br>Plan written, no code yet: one message for first principles, adversarial review, ablation, Occam's razor and loose coupling. | 361 |
 | **[Skill score with yes/no questions](./skills/review-tips/references/skill-score-by-yes-no-questions.md)** `skill-score-by-yes-no-questions`<br>Did the skill edit help: 10 real tasks, 8 yes/no questions, a blind judge subagent; keep only a fix that raises the score. | 315 |
 | **[3 checks before installing a skill](./skills/review-tips/references/3-checks-before-a-skill-install.md)** `3-checks-before-a-skill-install`<br>Someone put 314 malicious skills on ClawHub: check the source, scan the code, question the permissions, in under five minutes. | 308 |
@@ -201,7 +200,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[Image options in one grid: an AGENTS.md rule](./skills/design-tips/references/image-options-in-one-grid.md)** `image-options-in-one-grid`<br>Image options drawn one at a time burn your limits: a global rule puts them all in one numbered grid, then builds your pick. | 379 |
 | **[Camera moves to name in video prompts](./skills/design-tips/references/camera-moves-for-video-prompts.md)** `camera-moves-for-video-prompts`<br>Opus 5.5 videos that look like a slideshow: six camera moves by name with what each one does, plus seconds and speed to add. | 354 |
 | **[/learn-taste: design corrections as rules](./skills/design-tips/references/learn-taste-design-corrections.md)** `learn-taste-design-corrections`<br>You keep fixing the same design mistakes: each correction in a session turned into a strict rule with reasoning. | 340 |
-| **[Pixel art rendering rules for CLAUDE.md](./skills/design-tips/references/pixel-art-rendering-rules.md)** `pixel-art-rendering-rules`<br>Pixels crisp in your sprites but blurry on screen: textures on Nearest, whole-number scaling, camera and sprites rounded alike. | 306 |
+| **[Pixel art rendering rules for CLAUDE.md](./skills/design-tips/references/pixel-art-rendering-rules.md)** `pixel-art-rendering-rules`<br>Pixels crisp in your sprites but blurry on screen: textures on Nearest, whole-number scaling, camera and sprites rounded alike. | 310 |
 | **[Happy-path debt, found and fixed](./skills/design-tips/references/happy-path-debt-found-and-fixed.md)** `happy-path-debt-found-and-fixed`<br>Screens that only work when data loads fast and nothing fails: missing states and layout breaks fixed per component, design kept. | 260 |
 | **[Unslop prompt for pages that look AI-made](./skills/design-tips/references/unslop-prompt.md)** `unslop-prompt`<br>Pages that scream AI at first glance: every slop sign listed, a five-line direction for your OK, then fixes pass by pass. | 240 |
 | **[703 Opus 5.5 video prompts, one remade for you](./skills/design-tips/references/703-video-prompts-one-remade.md)** `703-video-prompts-one-remade`<br>A product video like the viral ones: the 5 of 703 prompts that fit your product, your pick remade as one HTML file. | 212 |
@@ -304,7 +303,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 
 ## When something goes wrong
 
-Sometimes a tip misbehaves: on a new model it no longer does what its steps say, or a line in the Chinese edition reads wrong. [Open an issue](https://github.com/Heyvhuang/copybook-skills/issues/new/choose) and choose "Tip stopped working" or "Translation fix". Say which tip, which agent and model, and what happened.
+Sometimes a tip misbehaves: on a new model it no longer does what its steps say. [Open an issue](https://github.com/Heyvhuang/copybook-skills/issues/new/choose) and choose "Tip stopped working". Say which tip, which agent and model, and what happened.
 
 The tip goes into the weekly check. One that stops working comes off the list.
 
@@ -328,7 +327,7 @@ To suggest a tip, open "Suggest a tip" with a link to the post. Copybook takes t
 
 First public release: [1.0.0](CHANGELOG.md), 14 Nov 2026, 134 tips.
 
-Refresh the marketplace and update the plugin using the commands below for a user install; use the recorded scope for another install. Start a new session, check the installed version and compare its router and one reference file with the same language in the published tag. For a skills.sh copy, use [its update command](#skillssh) and verify the refreshed commit and files. For ChatGPT, use Sync now and inspect the import report; upload a new ZIP for a ZIP install. What changed is in the [changelog](CHANGELOG.md).
+Refresh the marketplace and update the plugin using the commands below for a user install; use the recorded scope for another install. Start a new session, check the installed version and compare its router and one reference file with the same files in the published tag. For a skills.sh copy, use [its update command](#skillssh) and verify the refreshed commit and files. For ChatGPT, use Sync now and inspect the import report; upload a new ZIP for a ZIP install. What changed is in the [changelog](CHANGELOG.md).
 
 ### Claude Code
 
@@ -371,4 +370,4 @@ codex plugin add copybook@copybook
 
 ## License
 
-Copybook’s original skill text, instructions and translations are licensed under [CC BY 4.0](LICENSE-CONTENT). Credit Copybook (@Voxyz_ai), link to the source and license, and indicate any changes. The credit we’d like is a link to the tip’s page on copybook.page, given in its file’s Source line. Third-party quotations are excluded from this grant; the [third-party notices](LICENSE-NOTICES.md) list them. Manifests, configuration and other original non-text assets use the [MIT License](LICENSE). Keep its copyright and permission notice with copies. Neither license covers the Copybook name or mark.
+Copybook’s original skill text and instructions are licensed under [CC BY 4.0](LICENSE-CONTENT). Credit Copybook (@Voxyz_ai), link to the source and license, and indicate any changes. The credit we’d like is a link to the tip’s page on copybook.page, given in its file’s Source line. Third-party quotations are excluded from this grant; the [third-party notices](LICENSE-NOTICES.md) list them. Manifests, configuration and other original non-text assets use the [MIT License](LICENSE). Keep its copyright and permission notice with copies. Neither license covers the Copybook name or mark.

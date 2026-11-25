@@ -1,39 +1,39 @@
-# CI 耗时审计：150 次运行，9 项检查
+# CI time audit: 150 runs, 9 checks
 
-代码几分钟写完，每个 PR 却在等 CI：最慢的 5 个任务拆成排队、准备和运行，每处改动指到哪一行。
+Code takes minutes, then each PR waits on CI: the 5 slowest jobs split into queue, setup and run, and the line to change per fix.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在仓库里把它发给 Claude Code 或 Codex。
-3. 得到：一份报告：CI 时间花在哪里、每处改动能省多少，先不改任何东西。
+1. Copy the prompt.
+2. Send it to Claude Code or Codex in your repo.
+3. You get: A report of where your CI time goes and what each fix would save, with nothing changed yet.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-审计这个仓库的 CI：
-1. 用 gh 拉取最近 150 次 CI 运行，把每个任务的时间拆成三段：排队等机器、准备（checkout、安装依赖、恢复缓存）、真正执行任务。列出最慢的 5 个任务，以及每段各花多少秒。
-2. 逐一检查这 9 项：在默认 runner 上排队；lint 慢；类型检查慢；测试没有分片，或机器太小；每个测试文件都重新加载整个应用；准备慢（缓存未命中、clone 不是 blobless、并行任务比核数多）；任务没有并行跑；每个 PR 都跑完整套测试；推送前没有本地检查。
-3. 对每个问题，告诉我它现在花多少秒、要改哪个文件的哪一行、大概能省多少。要多花钱的（新的 runner、更大的机器）或少跑测试的，单独列出来让我决定。
-先给我报告。不要改任何东西。
+Audit this repo's CI:
+1. Use gh to pull the last 150 CI runs and split each job's time into three parts: waiting in the queue for a machine, setup (checkout, installing dependencies, restoring the cache), and actually running the task. List the 5 slowest jobs and how many seconds each part takes.
+2. Check these 9 things one by one: queueing on the default runners; slow lint; slow typechecking; tests that aren't sharded, or machines that are too small; every test file reloading the whole app; slow setup (cache misses, clones that aren't blobless, more parallel tasks than cores); jobs that don't run in parallel; every PR running the full test suite; no local checks before push.
+3. For each problem, tell me how many seconds it costs now, which line of which file to change, and roughly how much it would save. List the ones that cost more money (new runners, bigger machines) or run fewer tests separately for me to decide.
+Give me the report first. Don't change anything.
 ```
 
-## 背景
+## Background
 
-Claude Code 和 Codex 现在一天能推几十个 PR。写代码只要几分钟，剩下的时间都花在等 CI 上，也就是每次推送 GitHub 都要跑的检查和测试。
+Claude Code and Codex can push dozens of PRs a day now. Writing the code takes minutes, and the rest of the time goes to waiting on CI, the checks and tests GitHub runs every time you push.
 
-九处改动让每个 PR 的 CI 从最长 40 分钟降到 2 分钟。其中一步是让 agent 拉取最近 150 次 CI 运行，把每个任务拆成三段：等机器、准备、真正运行。光这一步就发现一半的测试任务根本没用上依赖缓存，这个 bug 已经在那里待了整整一年。
+Nine changes took each PR's CI from up to 40 minutes down to 2. One step was having an agent pull the last 150 CI runs and split every job into three parts: waiting for a machine, setup, and actually running. That alone showed that half the test jobs weren't using the dependency cache at all, a bug that had been sitting there for a whole year.
 
-先弄清 CI 的时间花在哪里，再一块一块往下砍。
+Find out where your CI time goes first, then cut it down one piece at a time.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/audit-where-your-ci-time-goes)：@Voxyz_ai 2026年10月31日[发在 X 上](https://x.com/Voxyz_ai/status/2116636332344889391)，截至 2026年11月7日有 1,228 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/audit-where-your-ci-time-goes): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2116636332344889391) on 31 Oct 2026, 1.2K saves as of 7 Nov 2026. For Claude Code and Codex.

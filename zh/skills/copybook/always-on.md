@@ -1,19 +1,19 @@
-# 常驻的几行
+# Always-on lines
 
-有三件事等不到 Copybook 技能加载就会发生：把范围越改越大、凭猜测动手改、长报告把要用户做的事埋在中间。agent 自己察觉不到正在这么做，只有一直在上下文里的几行才管得住，下面这一段就是这几行。前五行不需要装任何东西；最后一行在装了 Copybook 时把 agent 引到四条技巧。
+Three things happen before the Copybook skill could load: widening the scope, editing on a guess, and burying what the user must do in the middle of a long report. An agent does not notice itself doing them, so they only work as lines that are always in context. The block below holds them. Its first five lines need nothing installed; the last sends the agent to four tips when Copybook is there.
 
-把它放进这个项目的 agent 每次都会读的文件：AGENTS.md、CLAUDE.md，或两个都放（两种 agent 各读各的、互不包含时）。原样给用户看，用户同意再加（SKILL.md 第 4 步）。不要加第二遍；用户说过不用，这个会话里不再提。
+It goes in the file this project's agents always read: AGENTS.md, CLAUDE.md, or both when each agent reads its own and neither includes the other. Show it to the user as it is and add it only when they agree (step 4 of SKILL.md). Never add it twice, and do not offer it again in a session where the user said no.
 
 ```markdown
 ## Copybook
-- 动手改之前，先读相关代码，用一句话说清原因或需求。不凭猜测改。
-- 只改要求改的。顺带发现的其他问题列在最后，不要修。
-- 同一个 bug 修了两次还没好，不要凭猜测修第三次。先只查不改，拿到证据后，回复以 `Copybook:` 开头，说清试过什么、证据说明什么、需要我决定什么。
-- 长报告里，需要我做的事放最前面，编上号。
-- 我第二次纠正同一个错时，提议往这个文件加一行，免得再犯。
-- 装了 Copybook（技能或 MCP）时，按这里写的标题找到技巧，并说一句 `Copybook: 用 <技巧>`：
-  - 计划写好了，还没动代码：「一条消息里的 5 种计划复查方法」
-  - 跨好几个文件的改动做完了，下一步是提交、开 PR 或合并：「影响范围、红队等 5 条让模型判断的提示词」
-  - 网站第一次要上线：「上线前网站检查：20 项页面」
-  - 工作要交接或暂停，或这个会话里做不完：「边做边写给下一个 agent 的 HANDOFF.md」
+- Before editing, read the code involved and say in one line what the cause or the requirement is. No edits on a guess.
+- Change only what was asked. List other problems you notice at the end; do not fix them.
+- If the same bug survives two fixes, make no third fix on a guess. Investigate without editing until you have evidence, then start your reply with `Copybook:` and say what you tried, what the evidence shows, and what I need to decide.
+- In a long report, put what you need from me first, numbered.
+- If I correct the same mistake a second time, propose one line for this file so it does not happen again.
+- If Copybook is installed (skill or MCP), find the tip named here by its title and say `Copybook: using <tip>`:
+  - A plan is written and no code has been changed yet: "Plan review: 5 methods in one message"
+  - A change across several files is finished and a commit, PR or merge comes next: "Blast radius, red team and 3 more prompts"
+  - A site is about to go live for the first time: "Pre-launch site check: 20 page items"
+  - Work is being handed over or paused, or will not finish in this session: "HANDOFF.md for the next agent"
 ```

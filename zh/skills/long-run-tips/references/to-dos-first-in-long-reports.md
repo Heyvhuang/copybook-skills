@@ -1,34 +1,34 @@
-# 长报告先列待办：AGENTS.md 规则
+# To-dos first in long reports: an AGENTS.md rule
 
-要你做的事埋在长报告中间：AGENTS.md 加一节，每份长报告最上面先列编号待办。
+What it needs from you is buried mid-report: one AGENTS.md section puts the to-dos, numbered, at the top of every report.
 
-## 步骤
+## Steps
 
-1. 复制这一节 AGENTS.md。
-2. 作为新的一节加进你的 AGENTS.md。
-3. 得到：长报告开头就是编号的待办，最卡它的排第一。
+1. Copy the AGENTS.md section.
+2. Add it to your AGENTS.md as a new section.
+3. You get: Long reports open with numbered to-dos for you, the most blocking first.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## AGENTS.md 段落
+## AGENTS.md section
 
 ```markdown
-## 7. 先写需要我做什么
-长任务做完，或者你卡住了需要我做点什么时，在回复的最上面列出需要我做的事。一项一件事，编号。写清楚我要做什么、在哪里做、做完要把什么发回给你，例如 "登录 Stripe，导出九月退款的 CSV，放进 inbox/"。最卡你的排第一。如果不需要我做什么，直接说一声。
+## 7. Lead with what you need from me
+When a long task is done, or you're stuck and need me to do something, list what you need from me at the very top of your reply. One thing per item, numbered. Spell out what I should do, where, and what to send back to you when I'm done, e.g. "Log into Stripe, export the September refunds CSV, put it in inbox/". Whatever's blocking you most goes first. If you don't need anything from me, just say so.
 ```
 
-## 背景
+## Background
 
-AGENTS.md 里加一条规则，Claude 的长报告一下子好读了。
+One rule in AGENTS.md and Claude's long reports are suddenly easy to read.
 
-以前它跑完一个长任务，会甩给我一大段文字。需要我做的事经常埋在中间某处，我得一直往下翻才找得到。
+It used to finish a long task and send me a wall of text. What it needed me to do was often buried somewhere in the middle, and I'd scroll forever to find it.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/lead-with-what-you-need-from-me-in-long-reports)：@Voxyz_ai 2026年10月5日[发在 X 上](https://x.com/Voxyz_ai/status/2107123654219743712)，截至 2026年11月2日有 782 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/lead-with-what-you-need-from-me-in-long-reports): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2107123654219743712) on 5 Oct 2026, 782 saves as of 2 Nov 2026. For Claude Code and Codex.

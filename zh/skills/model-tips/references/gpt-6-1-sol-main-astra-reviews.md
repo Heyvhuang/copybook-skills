@@ -1,46 +1,46 @@
-# Codex：GPT-6.1 Sol 主跑，medium subagent，Astra 终审
+# Codex: GPT-6.1 Sol main, medium subagents, Astra review
 
-Astra 一周吃光额度：6.1 Sol 用 high 调度、medium 跑 subagent，Astra 只审上线前的大改动。
+Astra eats a week's quota: 6.1 Sol on high as orchestrator, on medium for 3 subagents, Astra only to review big changes.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在项目里发给 Codex。
-3. 得到：6.1 Sol 用 high 调度，subagent 都用 medium，Astra 只审大改。
+1. Copy the prompt.
+2. Send it to Codex in your project.
+3. You get: 6.1 Sol leads on high, three subagents run on medium, and Astra only reviews big changes.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-照这个目录树来设置我的 Codex：
-→ 主会话：默认用 `gpt-6.1-sol`，推理强度 high。负责拆任务、派活、整合和验证。简单的活自己做，别派出去。
-→ 三个项目级自定义 agent，model 都设成 `gpt-6.1-sol`，model_reasoning_effort 设成 `medium`：explorer 读代码，worker 改代码、跑测试，researcher 查文档。已有合适的就复用，只新建缺的。
-→ reviewer：同样是项目级自定义 agent，model 设成 `gpt-6-astra`，model_reasoning_effort 设成 `xhigh`。只在大改动上线前调用。它只报告问题，不改代码。
-→ 把派活规则写进 AGENTS.md：派 subagent 时，把 `fork_turns` 设成 `"none"`，或者只传最近几轮。`fork_turns` 不写或设成 `"all"`，subagent 会继承主会话的模型和推理强度，而且改不了，整套分工就失效了。
+Set up my Codex to match this tree:
+→ Main session: default to `gpt-6.1-sol` on high reasoning effort. It breaks down tasks, delegates, integrates, and verifies. Handle simple tasks directly; don't delegate them.
+→ Three project-level custom agents, each with model `gpt-6.1-sol` and model_reasoning_effort `medium`: explorer reads code, worker edits code and runs tests, researcher looks up docs. Reuse fitting ones if they exist, and create only the missing ones.
+→ reviewer: also a project-level custom agent, with model `gpt-6-astra` and model_reasoning_effort `xhigh`. Call it only before a big change ships. It reports problems and doesn't edit code.
+→ Put the delegation rule in AGENTS.md: when spawning a subagent, set `fork_turns` to `"none"` or pass only the last few turns. If `fork_turns` is omitted or set to `"all"`, the subagent inherits the main session's model and effort and can't override them, and the tree stops working.
 
-改之前先检查：
-→ 除了 reviewer 以外，还在用 `gpt-6-astra` 或旧版 Sol（比如 `gpt-6-sol`、`gpt-5.6-sol`）的角色，列出来。
-→ 要换到 6.1 Sol、但推理强度设成 `none` 或 `minimal` 的角色：改成 `low`（这两个 6.1 Sol 都不支持），再对比结果。
-→ 只写在 AGENTS.md 里的模型分工：查最近的 subagent 会话日志，确认每个角色实际跑的是哪个模型。
+Before changing anything, check:
+→ Roles other than the reviewer that still use `gpt-6-astra` or an older Sol (like `gpt-6-sol` or `gpt-5.6-sol`). List them.
+→ Roles moving to 6.1 Sol with effort set to `none` or `minimal`: change them to `low` (6.1 Sol supports neither), then compare the results.
+→ Model assignments written only in AGENTS.md: check recent subagent session logs to confirm which model each role actually ran.
 
-这里列的模型有选不了的，就停下来问我。先给我看要改什么，等我同意再写。
+If you can't select a model in the tree, stop and ask me. Show me the changes first, and wait for my OK before writing anything.
 ```
 
-## 背景
+## Background
 
-OpenAI 发布了 GPT-6.1 Sol，写代码可以直接替掉 Astra，价格只有 1/5。OpenAI 同一天还宣布，20x 的 Pro 要降到 10x。说实话我已经不敢再用 Astra 了。趁 Astra 还没吃掉你一整周的额度，换成 6.1 Sol。
+OpenAI launched GPT-6.1 Sol, and for coding it can replace Astra outright at 1/5 the price. OpenAI also announced the same day that 20x Pro is being cut to 10x. I honestly don't dare use Astra anymore. Switch to 6.1 Sol before Astra eats your whole week.
 
-6.1 Sol 已经上了 Codex。照这样配：6.1 Sol 跑总调度和全部三个 subagent，Astra 只在大改动上线前做一次独立审查。推理强度按 OpenAI 的 DeepSWE 图来定：6.1 Sol 在 high 上分数最高，往上开到 xhigh 或 max 分数反而更低，所以总调度用 high。medium 只比 high 低 2 分左右，每个任务的成本却少 30% 以上，所以 subagent 用 medium。
+6.1 Sol is already in Codex. Set it up like this: 6.1 Sol runs the root orchestrator and all three subagents, and Astra only does an independent review before a big change ships. Reasoning effort comes from OpenAI's DeepSWE chart: 6.1 Sol scores highest on high, and going up to xhigh or max actually scores lower, so the orchestrator runs on high. Medium scores only about 2 points lower than high and costs over 30% less per task, so the subagents run on medium.
 
-把这段 prompt 发给 Codex。
+Send this prompt to Codex.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/switch-codex-to-gpt-6-1-sol-with-an-astra-reviewer)：@Voxyz_ai 2026年9月29日[发在 X 上](https://x.com/Voxyz_ai/status/2105012597796057438)，截至 2026年10月27日有 1,061 次收藏。适用于 Codex。
+From [Copybook](https://copybook.page/t/switch-codex-to-gpt-6-1-sol-with-an-astra-reviewer): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2105012597796057438) on 29 Sep 2026, 1.1K saves as of 27 Oct 2026. For Codex.

@@ -1,50 +1,50 @@
-# TasteSkill v2：AI 痕迹检查
+# TasteSkill v2 AI-look check
 
-页面一眼就像 AI 做的：按桌面、平板、手机宽度列出每一处痕迹，FAIL 排在 WARN 前，不改代码。
+Pages that look AI-made at a glance: every tell at desktop, tablet and phone widths, FAIL before WARN, code untouched.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在网站项目里，把它发给 Claude Code 或 Codex 里的 Opus 5.5。
-3. 得到：每个问题对应的页面、宽度、元素和最小改法，代码一行不改。
+1. Copy the prompt.
+2. Send it to Opus 5.5 in Claude Code or Codex, in your site's project.
+3. You get: Every issue with its page, width and element, and the smallest fix, with no code changed.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-先照 https://github.com/Leonxlnx/taste-skill 的 README 装好 taste-skill（安装名是 design-taste-frontend），然后读它的 skill 文件和脚本。
+Install taste-skill by following the README at https://github.com/Leonxlnx/taste-skill (the install name is design-taste-frontend), then read its skill file and scripts.
 
-然后在本地把这个项目跑起来，在首页和主要落地页上各跑一次 inspect.mjs：inspect.mjs <local URL> --out .taste-skill/inspect/<page name>。看看它存下的截图。只查面向用户公开的页面，跳过仪表盘和表格页。缺 Node 22 或 Chrome 的话，先告诉我。
+Then run this project locally and run inspect.mjs once each on the homepage and the main landing pages: inspect.mjs <local URL> --out .taste-skill/inspect/<page name>. Look at the screenshots it saves. Only check public-facing pages; skip dashboards and table pages. If Node 22 or Chrome is missing, tell me first.
 
-每个问题都写明是哪个页面、哪个宽度、哪个元素（引用报告原文），并给出最小的改法。FAIL 排在 WARN 前面。
+For each issue, say which page, which width and which element (quote the report), and give the smallest fix. List FAIL items before WARN items.
 
-先给我看清单，别改代码。
+Show me the list first. Don't change any code.
 ```
 
-## 背景
+## Background
 
-强烈推荐在 Claude Code 或 Codex 里装上新出的 TasteSkill v2，再让 Opus 5.5 用它给你 vibe coding 出来的网站做个体检。它两天前刚发布，会按桌面、平板和手机宽度打开你的页面，列出页面上每一处一眼像 AI 做的地方。
+Highly recommend installing the new TasteSkill v2 in Claude Code or Codex, then having Opus 5.5 use it to give the site you vibe-coded a checkup. It came out two days ago. It opens your pages at desktop, tablet and phone widths and lists every AI-website tell they hit.
 
-清单里有几条你现在就能自查：
+A few on the list you can check right away:
 
-- 标题上方一行小号全大写字，比如 FEATURES
-- 板块编号写成 01 / 02 / 03
-- 代码以外的正文和按钮用了等宽字体
-- 渐变、细线边框，还有不悬停也一直在的阴影
-- 奶油色背景配赤陶色，或者用了任何紫罗兰色、靛蓝色
-- 真实图片少于 4 张（SVG 绘图不算），或者会动的东西少于 8 个
+- A small all-caps line above the headline, like FEATURES
+- Sections numbered 01 / 02 / 03
+- Monospace body text and buttons, anywhere outside code
+- Gradients, hairline borders, and shadows that sit there even without hover
+- Cream backgrounds with terracotta, or any violet or indigo
+- Fewer than 4 real pictures (SVG drawings don't count), or fewer than 8 things that move
 
-新测试：盲评评委给用了它的页面打 7.7 分，没用的打 7.8 分，几乎打平。不过 3 个设计题目里，它还是有 2 个拿了第一。
+New tests: blind judges gave pages built with it 7.7 and pages without it 7.8, nearly a tie. It still came first on 2 of the 3 briefs.
 
-把这段发给 Opus 5.5，它会列出每个问题，以及问题出在哪个页面、哪个元素上。
+Send this to Opus 5.5 and it'll list every issue with the page and element it's on.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/check-your-vibe-coded-site-with-tasteskill-v2)：@Voxyz_ai 2026年10月15日[发在 X 上](https://x.com/Voxyz_ai/status/2110777729658581409)，截至 2026年11月12日有 1,297 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/check-your-vibe-coded-site-with-tasteskill-v2): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2110777729658581409) on 15 Oct 2026, 1.3K saves as of 12 Nov 2026. For Claude Code and Codex.

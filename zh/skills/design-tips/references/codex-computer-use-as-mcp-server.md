@@ -1,40 +1,40 @@
-# Codex computer use 当本地 MCP server
+# Codex computer use as a local MCP server
 
-Claude Code 缺个好浏览器：ChatGPT 的 computer use 当本地 MCP，点页面、截图，对比线上和本地。
+A fast browser for Claude Code: ChatGPT's computer use as a local MCP server, clicking pages and comparing live with local.
 
-## 步骤
+## Steps
 
-1. 复制提示词，填上线上网址和本地网址。
-2. 在 Mac 上发给 Claude Code，它让你重开会话后再发一次。
-3. 得到：Claude Code 里的 Opus 5.5 能点页面、截图，对比线上和本地。
+1. Copy the prompt, and fill in your live URL and local URL.
+2. Send it to Claude Code on your Mac, then again in the new session it asks for.
+3. You get: Opus 5.5 in Claude Code clicks through pages and compares live and local screenshots.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-在我的 Mac 上把 Codex 的 computer use 接成你的 MCP server：
-1. 如果已经有叫 codex-cu 的 MCP server 而且能用，直接做第 3 步。
-2. 否则打开 ~/.codex/plugins/cache/openai-bundled/unified-computer-use/ 里最新版本的 .mcp.json（找不到就在 ~/.codex 下搜含 cua_repl 的 .mcp.json），把 cua_repl 的 command、args、env 原样照抄，用 claude mcp add-json --scope user 注册成 codex-cu。注册完就停下，告诉我重开一个会话，我再把这段发一次。
-3. 它只能操作我在 Codex 里授权过的 app。遇到 not approved，告诉我该去 Codex 里授权哪个 app，别换别的 app 绕过去。别用 chrome、in-app browser 这类浏览器后端，把浏览器当普通 app 来操作。
-4. 测试：在我授权过的浏览器里新开一个标签页，依次打开 [线上网址] 和 [本地网址，比如 http://localhost:3000]，各截一张图，列出两边哪里不一样。网址没填或本地服务没起来，先问我。不输入密码和 token，不点提交、付款、发送这类按钮，不动我已经打开的其他标签，测完关掉你开的标签。
-5. 我确认这些差异后，你去改本地代码，改完再截图对比一次。
+Set up Codex's computer use as an MCP server for you on my Mac:
+1. If there's already an MCP server called codex-cu and it works, skip to step 3.
+2. Otherwise, open the .mcp.json in the newest version folder under ~/.codex/plugins/cache/openai-bundled/unified-computer-use/ (if it's not there, search ~/.codex for a .mcp.json that contains cua_repl). Copy cua_repl's command, args and env exactly, and register it as codex-cu with claude mcp add-json --scope user. Then stop and tell me to start a new session, and I'll send this again.
+3. It can only control apps I've approved in Codex. If you hit "not approved", tell me which app to approve in Codex, and don't switch to another app to get around it. Don't use browser backends like chrome or the in-app browser. Control the browser as a normal app.
+4. Test: in a browser I've approved, open a new tab and load [live URL] and then [local URL, e.g. http://localhost:3000]. Take a screenshot of each and list what's different. If a URL is missing or the local server isn't running, ask me first. Don't type passwords or tokens, don't click submit, pay or send buttons, don't touch tabs I already have open, and close the tab you opened when you're done.
+5. Once I confirm the differences, fix the local code and compare screenshots again.
 ```
 
-## 背景
+## Background
 
-说个暴论，Opus 5.5 最好用的浏览器，是 Codex 的 computer use。我一直以为它只能在 Codex 里用，结果它就是 ChatGPT Mac 版里的一个本地 MCP server，Claude Code 就能接上：Opus 5.5 写代码，顺手用它点页面、截图。
+Hot take: the best browser for Opus 5.5 is Codex's computer use. I always thought it only worked inside Codex. Turns out it's just a local MCP server in the ChatGPT Mac app, and Claude Code can connect to it: Opus 5.5 writes the code and uses it to click through pages and take screenshots.
 
-Codex 的 computer use 是我现在最常用的东西之一，速度非常快。我经常拿它做浏览器测试：线上和本地各开一遍，对比哪里不一样，再让它去修。Claude 自带的浏览器我一直用得不顺，现在 Claude Code 里也能用它了。
+Codex's computer use is one of the things I use most right now, and it's really fast. I use it all the time for browser testing: open the live site and the local version, compare what's different, then have it fix things. Claude's built-in browser has never worked well for me, and now I can use this from Claude Code too.
 
-只能操作在 Codex 里授权过的 app，Terminal 会被直接拦掉。非官方用法，ChatGPT 哪次更新可能就失效了，但现在是真的好用极了。把这段发给 Claude Code。
+It can only control apps you've approved in Codex, and Terminal is blocked outright. It's unofficial, so a ChatGPT update could break it any time, but right now it's ridiculously good. Send this to Claude Code.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/use-codex-computer-use-in-claude-code)：@Voxyz_ai 2026年10月4日[发在 X 上](https://x.com/Voxyz_ai/status/2106866954908635425)，截至 2026年11月1日有 1,059 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/use-codex-computer-use-in-claude-code): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2106866954908635425) on 4 Oct 2026, 1.1K saves as of 1 Nov 2026. For Claude Code and Codex.

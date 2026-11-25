@@ -1,71 +1,71 @@
-# 上线前网站检查：20 项页面
+# Pre-launch site check: 20 page items
 
-vibe coding 做的网站要上线：设计、手机、各种状态、真实流程和上线细节，查完一次修好。
+A vibe-coded site about to go live: design, mobile, every state, real-user flows and launch details, fixed in one pass.
 
-## 步骤
+## Steps
 
-1. 复制提示词；需要时把下面那句也复制上，加在最后。
-2. 在网站项目里把它发给 Claude Code 里的 Opus 5.5。
-3. 得到：5 个 subagent 分头查这 20 件事，再一次修好。
+1. Copy the prompt; when you need it, copy the line below too and add it at the end.
+2. Send it to Opus 5.5 in Claude Code, in your site's project.
+3. You get: 5 subagents check the 20 things, then the main session fixes everything in one pass.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
-
-```text
-vibe coding 做完的网站，上线前让 Opus 5.5 派 5 个 subagent 分头把这 20 件事查一遍，再一次修好：
-
-设计统一
-- 先写一份 DESIGN.md，颜色、字号、间距、圆角都照它来
-- 配色克制，字号分清主次
-- 按钮、卡片、输入框，同一种组件长一个样
-- 太平淡就加重点，太挤就做减法
-- 深色、浅色背景上的字都看得清
-
-手机上
-- 去掉左右乱滑，内容别撑出屏幕
-- 加一个手机菜单
-- 按钮够大，手指点得准
-- 字放大以后排版也不乱
-
-每种状态
-- 加载中、没有数据、出错，都有像样的画面
-- 按钮点下去有反馈，悬停、按下、禁用各有样子
-- 表单填错当场说哪里错，提交中、成功、失败都有提示
-- 弹窗、下拉、切换加上过渡动画
-
-像真用户一样走一遍
-- 注册、下单这些核心流程从头点到尾
-- 找出点了没反应的按钮和坏链接
-- 只用键盘也能走完
-
-上线前的细节
-- 首页一句话说清你是做什么的
-- 每页只留一个最想让人点的按钮
-- 每页的标题、描述和网站小图标
-- 删掉占位文字
-```
-
-## 需要时加在最后的那句
+## Prompt
 
 ```text
-每一组派一个 subagent 去查，只查不改；主会话照它们的清单统一修，免得两个人改同一个文件；哪一组更复杂，就给那一组的 subagent 调高 effort。先给我问题清单，我确认后再动手，修完给我修前修后的截图。
+Before you ship a vibe-coded site, have Opus 5.5 send out 5 subagents to check these 20 things, then fix them all in one pass:
+
+Consistent design
+- Write a DESIGN.md first, and make every color, font size, spacing and corner radius follow it
+- Keep the palette restrained and the type hierarchy clear
+- Make every button, card and input of the same kind look alike
+- Too flat? Add emphasis. Too crowded? Cut
+- Keep text readable on both dark and light backgrounds
+
+On mobile
+- No sideways scrolling, and nothing spilling off the screen
+- Add a mobile menu
+- Make buttons big enough to tap
+- Keep the layout intact when the text is enlarged
+
+Every state
+- Give loading, empty and error states a proper screen
+- Give every button feedback, with its own hover, pressed and disabled look
+- Show form errors right where they happen, plus submitting, success and failure messages
+- Add transitions to modals, dropdowns and tab switches
+
+Use it like a real user
+- Click through the core flows, like sign-up and checkout, from start to finish
+- Find buttons that do nothing and links that are broken
+- Make sure the whole thing works with just a keyboard
+
+Before launch
+- Say what you do in one line on the home page
+- Give each page one main button you want people to click
+- Give every page a title, a description and a favicon
+- Delete all placeholder text
 ```
 
-## 背景
+## Line to add at the end
 
-vibe coding 做完的网站，上线前让 Opus 5.5 派 5 个 subagent 分头把这 20 件事查一遍，再一次修好。
+```text
+Send one subagent per group to check it without editing anything. Then fix everything yourself from their lists, so no two agents edit the same file. If a group is more complex, raise that subagent's effort. Show me the list of issues first, don't change anything until I confirm, and when you're done, give me before-and-after screenshots.
+```
 
-effort 照 Anthropic 的成本指南来：范围清楚的日常活用 medium，修这 20 件事用默认的 medium 就够，碰到难的再调高。Thariq 测过，调高 effort 换来的主要是更多验证和边界测试。
+## Background
 
-把整份清单发给 Claude Code。需要时再把那句加在最后。
+Before you ship a vibe-coded site, have Opus 5.5 send out 5 subagents to check these 20 things, then fix them all in one pass.
 
-## 来源
+For effort, follow Anthropic's cost guide: medium is for well-scoped daily work. The default medium is enough for these 20 fixes; raise it for the harder ones. Thariq tested it: turning effort up mostly buys more verification and edge-case testing.
 
-来自 [Copybook](https://copybook.page/zh/t/check-20-things-before-shipping-a-vibe-coded-site)：@Voxyz_ai 2026年9月26日[发在 X 上](https://x.com/Voxyz_ai/status/2103977414711767244)，截至 2026年10月24日有 6,939 次收藏。最近一次检查：2026年11月19日，Opus 5.5，可用。适用于 Claude Code。
+Send the whole list to Claude Code. When you need it, add the line at the end.
+
+## Source
+
+From [Copybook](https://copybook.page/t/check-20-things-before-shipping-a-vibe-coded-site): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2103977414711767244) on 26 Sep 2026, 6.9K saves as of 24 Oct 2026. Last check: works on Opus 5.5, 19 Nov 2026. For Claude Code.

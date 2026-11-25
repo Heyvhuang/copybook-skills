@@ -1,57 +1,57 @@
-# Claude Code 和 Codex 的协调者 skill
+# Coordinator skill for Claude Code and Codex
 
-一个会话做不完的活：每条 lane 一份带边界和完成检查的任务说明，再在 Herdr 里跑 Claude 和 Codex。
+A job too big for one agent session: a brief per lane with boundaries and a done check, then Claude and Codex lanes run in Herdr.
 
-## 步骤
+## Steps
 
-1. 复制提示词；要跑执行者，再复制安装命令和执行者提示词。
-2. 带上目标，在项目里把提示词发给 Claude Code 或 Codex。
-3. 得到：开工前先审这些任务说明；lane 可以自己跑，也可以交给 Herdr 里的协调者。
+1. Copy the prompt. For the fleet, copy the install command and the fleet prompt too.
+2. Send the prompt with your goal to Claude Code or Codex in your repo.
+3. You get: Briefs to approve before a lane starts; run them yourself or hand them to the coordinator in Herdr.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-动代码之前，以协调者的身份规划这件事。目标：<完成是什么样，以及证明它完成的检查>。
-1. 读仓库，用一句话复述目标。
-2. 把工作拆成能分开跑的 lane：一条 lane、一个分支、一份任务说明。写明每条 lane 负责哪些文件，不让两条 lane 改同一个文件。
-3. 给每条 lane 写任务说明：目标、需要的参考、不能碰的地方、基准提交、证明完成的检查，以及完成时最后一行写什么。
-4. 说清每条 lane 交回来时你要检查什么，用这个项目自己的测试和发布步骤。
-5. 列出该我拍板的事：花钱、发布、改生产环境或无法撤回的事。
-到这里停下，在任何 lane 开始之前把任务说明给我看。
+Before anyone writes code, plan this job as its coordinator. Goal: <what done means, and the check that proves it>.
+1. Read the repo and restate the goal in one line.
+2. Split the work into lanes that can run apart: one lane, one branch, one brief. Name the files each lane owns, so no two lanes edit the same file.
+3. Write each lane's brief: its goal, the references it needs, what it must not touch, the base commit, the checks that prove it done, and the line it ends on when ready.
+4. Say what you will check when each lane comes back, using this project's own tests and release steps.
+5. List the decisions that are mine: anything that spends money, publishes, changes production or can't be undone.
+Stop there and show me the briefs before any lane starts.
 ```
 
-## 安装命令
+## Install command
 
 ```bash
 npx skills@latest add https://copybook.page --skill coordinator --skill parallel-goal-fleet
 ```
 
-## 执行者提示词
+## Fleet prompt
 
 ```text
-你是这次运行的协调者。目标：<完成是什么样，以及证明它完成的检查>。用 Herdr 开 lane。运行目录：../<project>-fleet
+You are the coordinator for this run. Goal: <what done means, and the check that proves it>. Use Herdr for the lanes. Run directory: ../<project>-fleet
 ```
 
-## 背景
+## Background
 
-这句提示词在一个 Claude Code 或 Codex 对话里就能用，什么都不用装。动代码之前，它先读仓库，把你的目标拆成 lane，每条 lane 有任务说明、归它改的文件、不能碰的地方和证明它完成的检查，再列出该你拍板的事。
+The prompt works in one Claude Code or Codex chat with nothing installed. Before anyone writes code, it reads the repo and turns your goal into lanes, each with a brief, the files it owns, what it must not touch and the check that proves it done, then lists the decisions that are yours.
 
-两个 skill 把同一套计划往前推一步：把一个会话变成协调者，指挥一组在 [Herdr](https://herdr.dev) 里运行的执行者。协调者自己从不写代码：它把工作拆成 lane（一个执行者、一个分支、一份任务说明），给每条 lane 选模型和推理强度，检查交回来的结果，按项目流程验收和发布，只把该你拍板的事交给你。项目按批发布时，把准备好的 PR 一起测试，每批只推一次。
+Two skills take the same plan further: they turn one session into a coordinator for a fleet of workers running in [Herdr](https://herdr.dev). The coordinator never writes code itself. It splits the work into lanes (one worker, one branch, one brief), picks a model and effort for each, checks what comes back, follows the project's gate and release process, and brings you only the decisions that are yours. For batch releases it tests the ready PRs together and pushes each batch once.
 
-它提炼自一次为期三天的真实运行：大约 160 个 PR、107 份 lane 任务说明、118 份交接和 166 次按批测试。源码在 [Heyvhuang/copybook-skills](https://github.com/Heyvhuang/copybook-skills/tree/main/standalone/coordinator)，README 写了每个脚本做什么。自带的模型选择是那次运行的例子。换成你账号里能用的模型，流程照旧。
+It was distilled from a three-day production run: about 160 PRs, 107 lane briefs, 118 hand-overs and 166 batch test runs. The source is in [Heyvhuang/copybook-skills](https://github.com/Heyvhuang/copybook-skills/tree/main/standalone/coordinator), with a README on what each script does. The model choices it ships with are an example from that run. Swap in the models your account offers and keep the same workflow.
 
-跑执行者需要 Herdr 0.9.5 或更高版本、已登录的 Claude Code 和 Codex CLI，以及带 GitHub CLI 的 git 仓库。
+The fleet needs Herdr 0.9.5 or later, Claude Code and Codex CLI signed in, and a git repo with the GitHub CLI.
 
-执行者以全权限运行：启动时没有权限弹窗，能改你的用户账号能改的任何文件、跑任何命令。只在你接受这一点的机器和仓库上用。
+Workers run with full access: they start without permission prompts and can edit any file and run any command your user account can. Use it only on a machine and repositories where you accept that.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/coordinator-skill-for-claude-code-and-codex)，2026年11月16日发布。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/coordinator-skill-for-claude-code-and-codex), published on 16 Nov 2026. For Claude Code and Codex.

@@ -1,86 +1,86 @@
-# Opus 5.5 上的 Claude Code token 审计
+# Token waste audit for Claude Code on Opus 5.5
 
-配置里还有什么在每一轮浪费 token：先测量，每行指令标成 Keep、Move 或 Cut，你批准才改。
+Where your setup wastes tokens each turn: measured, each instruction line marked Keep, Move or Cut, applied on your OK.
 
-## 步骤
+## Steps
 
-1. 复制这条 token 审计提示词。
-2. 在项目里贴进 Claude Code，有 /context 或 /usage 输出就一起贴上。
-3. 得到：一份基线、按省下多少排序的改动，具体修改等你批准才做。
+1. Copy the token audit prompt.
+2. Paste it into Claude Code in your project, with /context or /usage output if you have it.
+3. You get: A baseline, changes ranked by saving, and exact edits applied only after you approve.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-Opus 5.5 的每 token 价格已经很低了。找出这个 Claude Code 配置里还有什么在每一轮都浪费 token。目标：每完成一个任务的成本最低。它必须和现在一样细致，并且继续接大任务。如果单次请求变小了，但任务要多跑几轮，那不算赢。
+Opus 5.5 is already priced low per token. Find what in this Claude Code setup still wastes tokens on every turn. Goal: the lowest cost per finished task. It must stay as thorough as it is now and keep taking on big tasks. Smaller requests don't count as a win if the task then takes more turns.
 
-1. 先测量，什么都不改
+1. Measure first, change nothing
 
-列出会话启动时加载的所有内容：
+List everything that loads when a session starts:
 
-- 加载的每个 CLAUDE.md（全局、项目、嵌套）以及它导入的文件
-- Skill 列表：模型看到的每个名称和描述
-- MCP server：哪些已连接，哪些工具在一开始就加载
-- 往对话里注入文本的 hook 或脚本
-- 设置：model、modelSettings、CLAUDE_CODE_EFFORT_LEVEL、CLAUDE_CODE_SUBAGENT_MODEL
+- Every CLAUDE.md that loads (global, project, nested) and the files it imports
+- Skill listings: every name and description the model sees
+- MCP servers: which are connected, and which tools load upfront
+- Hooks or scripts that inject text into the conversation
+- Settings: model, modelSettings, CLAUDE_CODE_EFFORT_LEVEL, CLAUDE_CODE_SUBAGENT_MODEL
 
-如果我贴了 /context 或 /usage 的输出，就用那些数字。否则问我一次，然后自己数行数和字节数。每个文件都完整读一遍。重复、冲突和过时的规则，在摘要里很容易漏掉。
+If I paste /context or /usage output, use those numbers. Otherwise ask once, then count lines and bytes yourself. Read each file in full. Repeated, conflicting and outdated rules are easy to miss in a summary.
 
-2. 检查 Opus 5.5 的设置
+2. Check the Opus 5.5 settings
 
-Effort：报告 Opus 5.5 实际运行的级别和它的来源。它默认是 medium，~/.claude/settings.json 里顶层的 effortLevel 对它不算数。
-检查：列出这个仓库已有的测试、构建和类型检查命令。跑一次测试只花一轮。更高的 effort 会给每一轮都加上思考。
-Subagent：逐个列出 model、effort，以及它是写代码还是只读。没有 model 这一行时，它跟随 CLAUDE_CODE_SUBAGENT_MODEL，如果没设置就用主模型。
-输出：一个输出 token 的成本是缓存读取的 100x，思考也算输出。标出让它写得比任务需要更多的规则。
+Effort: report the level Opus 5.5 actually runs at and where it comes from. It starts at medium, and a top-level effortLevel in ~/.claude/settings.json doesn't count for it.
+Checks: list the test, build and typecheck commands this repo already has. A test run costs one turn. Higher effort adds thinking to every turn.
+Subagents: for each one, model, effort, and whether it writes code or only reads. With no model line it follows CLAUDE_CODE_SUBAGENT_MODEL, or the main model if that's unset.
+Output: an output token costs 100x a cache read, and thinking counts as output. Flag rules that make it write more than the task needs.
 
-3. 给每一行指令打标签
+3. Label every instruction line
 
-Keep：它没法从仓库里自己弄明白的东西，比如这个项目怎么发布、我喜欢怎么工作，以及针对它在这个项目里犯过的错的修正。
-Move：只用于某一个工作流的操作手册移到 skill 里，这样只在用到时才加载。
-Cut：它默认就会做的事，以及相互矛盾的规则。
+Keep: what it can't work out from the repo, like how this project ships and how I like to work, plus fixes for mistakes it has made in this project.
+Move: playbooks for one workflow into a skill, so they load only when used.
+Cut: what it already does by default, and rules that contradict each other.
 
-每个 CLAUDE.md 控制在 ~200 行以内。
+Keep each CLAUDE.md under ~200 lines.
 
-4. 保护缓存
+4. Protect the cache
 
-下面这些会让下一次请求在没有缓存的情况下重读整个会话：切换 /model、打开 fast mode、连接一个工具在一开始就加载的 MCP server，以及固定使用另一个模型的 skill。
+These make the next request re-read the whole session uncached: switching /model, turning on fast mode, connecting an MCP server whose tools load upfront, and a skill that pins another model.
 
-- 如果需要另一个模型的意见，把这个任务交给 subagent，这样主会话能保住缓存。
-- 在任务之间压缩上下文。开始不相关的工作时，先用 /clear.
+- If you need another model's opinion, hand that task to a subagent so the main session keeps its cache.
+- Compact between tasks. Start unrelated work with /clear.
 
-5. 把长输出挡在对话之外
+5. Keep long output out of the conversation
 
-- 测试运行、构建、日志：返回失败项和最后几行，把完整日志写进一个它可以 grep 的文件。按固定长度截断输出，可能会把它需要的那行报错丢掉。
-- 进度笔记：只保留一个短文件并覆盖写入。如果它一直变长，之后每次读取都更贵。
+- Test runs, builds, logs: return the failures plus the last few lines, and write the full log to a file it can grep. Cutting output at a fixed length can drop the error line it needed.
+- Progress notes: keep one short file and overwrite it. If it keeps growing, every later read costs more.
 
-6. 禁止事项
+6. Off-limits
 
-- 在任何提示词里加“简洁一点”或“节省 token”。被要求省 token 的 agent 可能会开始回避大任务。
-- 为了降低账单，在难的任务上降低 effort，或者在任务中途换模型。
-- 用每次请求的 token 数来评判。要衡量每完成一个任务的成本。
+- Adding "be concise" or "save tokens" to any prompt. An agent told to save tokens can start shying away from big tasks.
+- Dropping effort on hard tasks, or changing models halfway through a task, to cut the bill.
+- Judging by tokens per request. Measure cost per finished task.
 
-7. 先报告，然后等待
+7. Report, then wait
 
-1. 基线：每个来源、它的大小、什么时候加载
-2. 改动，节省最大的排在前面：能省多少、你是怎么算出来的、什么可能变差、怎么撤销
-3. 对每个指令文件的具体修改，每一项都标上 Keep、Move 或 Cut
+1. Baseline: each source, its size, when it loads
+2. Changes, biggest saving first: what it saves and how you worked that out, what could get worse, how to reverse it
+3. The exact edits to each instruction file, each one tagged Keep, Move or Cut
 
-动任何文件之前先备份。我批准之前什么都不要应用。
+Back up every file before touching it. Apply nothing until I approve.
 ```
 
-## 背景
+## Background
 
-这条 Claude Code 提示词就是 Opus 5.5 的 token 审计员。它找出你的配置里还有什么在每一轮都浪费 token，目标是做完每个任务的成本最低，agent 还要和现在一样细致。
+This Claude Code prompt is a token auditor for Opus 5.5. It looks for what in your setup still wastes tokens on every turn. The goal is the lowest cost per finished task, and the agent must stay as thorough as it is now.
 
-它先测量、不做任何改动，动每个文件之前先备份，你批准之前一处都不改。
+It measures first and changes nothing, backs up every file before touching it, and applies nothing until you approve.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/audit-claude-code-token-waste-on-opus-5-5)：@Voxyz_ai 2026年9月25日[发在 X 上](https://x.com/Voxyz_ai/status/2103469567964254587)，截至 2026年10月23日有 348 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/audit-claude-code-token-waste-on-opus-5-5): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2103469567964254587) on 25 Sep 2026, 348 saves as of 23 Oct 2026. For Claude Code.

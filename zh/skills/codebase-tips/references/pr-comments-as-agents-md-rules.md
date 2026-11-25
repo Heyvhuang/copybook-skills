@@ -1,31 +1,31 @@
-# 反复的 PR 意见写成 AGENTS.md 规则
+# Repeated PR comments as AGENTS.md rules
 
-同一个 reviewer 反复提的问题：gh 扫最近 50 个 PR 排出来，选中的写成全局规则，不用再靠人提醒。
+A reviewer keeps flagging the same things: 50 recent PRs scanned, issues ranked by count, your picks written into AGENTS.md.
 
-## 步骤
+## Steps
 
-1. 复制提示词，填上代码目录和 reviewer 的 GitHub 用户名。
-2. 发给 Codex，再挑出要加的规则。
-3. 得到：reviewer 反复提的问题排好序，选中的规则进 ~/.codex/AGENTS.md。
+1. Copy the prompt, and fill in your code folder and the reviewer's GitHub username.
+2. Send it to Codex, then choose which rules to add.
+3. You get: That reviewer's repeat issues, ranked, and the rules you pick added to ~/.codex/AGENTS.md.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-用 gh 扫一遍 [代码目录] 下每个 GitHub 仓库最近的 50 个 PR，找出 [reviewer 的 GitHub 用户名] 反复指出的问题，按出现次数排序，附上相关的 PR。等我确认后，只把我选中的规则加进 ~/.codex/AGENTS.md。
+Use gh to scan the 50 most recent PRs in each GitHub repo under [CODE DIRECTORY]. Find the issues [REVIEWER GITHUB USERNAME] keeps flagging. Rank them by frequency and link the relevant PRs. Wait for my approval, then add only the rules I choose to ~/.codex/AGENTS.md.
 ```
 
-## 背景
+## Background
 
-在 Codex 里跑一下这段。Codex 每次开始运行都会先读 `~/.codex/AGENTS.md`，这些规则以后就不用再靠 reviewer 一遍遍提了。
+Run this in Codex. Codex reads `~/.codex/AGENTS.md` at the start of every run, so those rules no longer depend on the reviewer repeating them.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/turn-repeated-pr-review-comments-into-agents-md-rules)：@Voxyz_ai 2026年9月4日[发在 X 上](https://x.com/Voxyz_ai/status/2095951726452847071)，截至 2026年10月2日有 1,596 次收藏。适用于 Codex。
+From [Copybook](https://copybook.page/t/turn-repeated-pr-review-comments-into-agents-md-rules): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2095951726452847071) on 4 Sep 2026, 1.6K saves as of 2 Oct 2026. For Codex.

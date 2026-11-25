@@ -267,1194 +267,896 @@
   "tips": {
     "add-a-cache-countdown-to-the-status-line": {
       "en": "315126c5dd22c066",
-      "zh": "26765d9d1f47ac7b",
       "title": {
-        "en": "Cache countdown in the status line",
-        "zh": "状态栏缓存倒计时"
+        "en": "Cache countdown in the status line"
       }
     },
     "add-sound-to-a-video-by-measuring-not-guessing": {
       "en": "1cbe9f50178ec5a4",
-      "zh": "6caa0cc59eb7bdfd",
       "title": {
-        "en": "Video sound by measurement: beats and loudness",
-        "zh": "视频配声音：测节拍和响度"
+        "en": "Video sound by measurement: beats and loudness"
       }
     },
     "agents-md-for-projects-with-no-users-yet": {
       "en": "437ccfaed5adab8d",
-      "zh": "b2afe948498645f1",
       "title": {
-        "en": "No compatibility code yet: AGENTS.md rules",
-        "zh": "还没用户就不写兼容代码：AGENTS.md 规则"
+        "en": "No compatibility code yet: AGENTS.md rules"
       }
     },
     "animate-in-35-art-styles-with-huashu-art-motion": {
       "en": "580fa7cf1f5674fb",
-      "zh": "386200e8375343dc",
       "title": {
-        "en": "huashu-art-motion: animation in 35 art styles",
-        "zh": "huashu-art-motion：35 种画风动画"
+        "en": "huashu-art-motion: animation in 35 art styles"
       }
     },
     "animate-your-project-the-claude-motion-way": {
       "en": "20bd682a31715c7e",
-      "zh": "c7a1859583244520",
       "title": {
-        "en": "Project animation by the Claude Motion guide",
-        "zh": "项目动画：Claude Motion 指南"
+        "en": "Project animation by the Claude Motion guide"
       }
     },
     "ask-before-adding-code-for-unlikely-edge-cases": {
       "en": "adff56c30cabca63",
-      "zh": "6761df3c2ffde46b",
       "title": {
-        "en": "Ask before edge-case code: one AGENTS.md line",
-        "zh": "加边界代码前先问：AGENTS.md 一行"
+        "en": "Ask before edge-case code: one AGENTS.md line"
       }
     },
     "ask-claude-code-to-build-a-mod-for-itself": {
       "en": "f860890d8fd752a4",
-      "zh": "170d02ae9697cfef",
       "title": {
-        "en": "Mod request for Claude Code itself",
-        "zh": "让 Claude Code 给自己做 Mod 的提示词"
+        "en": "Mod request for Claude Code itself"
       }
     },
     "ask-gpt-6-pro-for-an-engineer-task-brief": {
       "en": "b7abb90cb503e665",
-      "zh": "0dca8e9625bc9631",
       "title": {
-        "en": "Engineer's task brief from GPT-6 Pro",
-        "zh": "GPT-6 Pro 写的给工程师的任务说明"
+        "en": "Engineer's task brief from GPT-6 Pro"
       }
     },
     "audit-and-redesign-ai-looking-pages-with-hallmark": {
       "en": "fcc85981c243b72a",
-      "zh": "14c17b734ea18adb",
       "title": {
-        "en": "Hallmark: audit and redesign AI-looking pages",
-        "zh": "Hallmark：审查和重做 AI 味页面"
+        "en": "Hallmark: audit and redesign AI-looking pages"
       }
     },
     "audit-claude-code-token-waste-on-opus-5-5": {
       "en": "f6c0ce224641dd92",
-      "zh": "26495e017c6ed4f0",
       "title": {
-        "en": "Token waste audit for Claude Code on Opus 5.5",
-        "zh": "Opus 5.5 上的 Claude Code token 审计"
+        "en": "Token waste audit for Claude Code on Opus 5.5"
       }
     },
     "audit-what-slows-your-computer-when-agents-run": {
       "en": "a319d231b4e54796",
-      "zh": "8c3b173e88f4ae55",
       "title": {
-        "en": "Slow-computer audit when agents run",
-        "zh": "多 agent 时电脑变慢的排查"
+        "en": "Slow-computer audit when agents run"
       }
     },
     "audit-where-your-ci-time-goes": {
       "en": "a3ae8c6e1a38770b",
-      "zh": "ea8b67b335a5d866",
       "title": {
-        "en": "CI time audit: 150 runs, 9 checks",
-        "zh": "CI 耗时审计：150 次运行，9 项检查"
+        "en": "CI time audit: 150 runs, 9 checks"
       }
     },
     "audit-your-agent-workspace-before-blaming-the-model": {
       "en": "80d23bbb0b030148",
-      "zh": "b768205bf7b5d239",
       "title": {
-        "en": "Agent workspace audit",
-        "zh": "agent 工作区清点"
+        "en": "Agent workspace audit"
       }
     },
     "audit-your-messiest-project-on-fable-5-2": {
       "en": "70e7421c605e0038",
-      "zh": "53921da4ce1d99cd",
       "title": {
-        "en": "Whole-project audit with ASCII diagrams",
-        "zh": "带 ASCII 图的全项目审查"
+        "en": "Whole-project audit with ASCII diagrams"
       }
     },
     "audit-your-skills-with-claude-api-prompt-audit": {
       "en": "58069b87f3fc48cf",
-      "zh": "5cf7ab092693f65f",
       "title": {
-        "en": "/claude-api prompt-audit: skill audit for Fable 5.1",
-        "zh": "/claude-api prompt-audit：换 Fable 5.1 后的 skill 审查"
+        "en": "/claude-api prompt-audit: skill audit for Fable 5.1"
       }
     },
     "backtest-a-skill-against-your-past-sessions": {
       "en": "432761d407ef43f1",
-      "zh": "4f3514008e1f3153",
       "title": {
-        "en": "Skill backtest against past Codex sessions",
-        "zh": "skill 回测：过去的 Codex 会话"
+        "en": "Skill backtest against past Codex sessions"
       }
     },
     "before-implementing-prompt-for-codex": {
       "en": "ac7243678eaaf237",
-      "zh": "0a72571d049dae6d",
       "title": {
-        "en": "Investigate-and-plan prompt for Codex",
-        "zh": "Codex 动手前先调查和计划的提示词"
+        "en": "Investigate-and-plan prompt for Codex"
       }
     },
     "bug-score-rule-for-astras-code-reviews": {
       "en": "f9ef424c8857c0ce",
-      "zh": "306d7381aaa5f759",
       "title": {
-        "en": "Bug-score rule for Astra's code reviews",
-        "zh": "Astra 审查的 bug 打分规则"
+        "en": "Bug-score rule for Astra's code reviews"
       }
     },
     "build-a-free-tool-that-brings-users-from-google": {
       "en": "399fc51c6060fe45",
-      "zh": "103b14232b4372b3",
       "title": {
-        "en": "A free tool page for users from Google search",
-        "zh": "拉 Google 搜索用户的免费小工具"
+        "en": "A free tool page for users from Google search"
       }
     },
     "build-a-landing-page-with-a-designers-skill": {
       "en": "4dc869eeb9c67eb0",
-      "zh": "a27e0e7284c47e02",
       "title": {
-        "en": "A designer's landing-page skill",
-        "zh": "设计师开源的落地页 skill"
+        "en": "A designer's landing-page skill"
       }
     },
     "build-a-progress-dashboard-before-a-long-task": {
       "en": "45d9c278c8c68975",
-      "zh": "64814fd7c12a4c2c",
       "title": {
-        "en": "Progress dashboard subagent for long tasks",
-        "zh": "长任务的进度看板 subagent"
+        "en": "Progress dashboard subagent for long tasks"
       }
     },
     "build-a-second-brain-from-eight-github-repos": {
       "en": "9b19a98d168e3c74",
-      "zh": "b5396d10eb67bf53",
       "title": {
-        "en": "Agent memory tools: 8 repos in 4 kinds",
-        "zh": "agent 记忆工具：8 个仓库分 4 类"
+        "en": "Agent memory tools: 8 repos in 4 kinds"
       }
     },
     "build-on-low-effort-and-verify-on-high-effort": {
       "en": "e796a6ecef4acaf9",
-      "zh": "43fa989b89342d85",
       "title": {
-        "en": "Builder on low effort, verifier on high",
-        "zh": "low effort 写、high effort 验的两个 subagent"
+        "en": "Builder on low effort, verifier on high"
       }
     },
     "camera-moves-to-name-in-video-prompts": {
       "en": "d20f308273bfe038",
-      "zh": "2f89a1fa9bf8402b",
       "title": {
-        "en": "Camera moves to name in video prompts",
-        "zh": "视频提示词里的运镜名称"
+        "en": "Camera moves to name in video prompts"
       }
     },
     "check-20-things-before-shipping-a-vibe-coded-site": {
       "en": "ff6b9e3fd9d055cf",
-      "zh": "9eaa9ce205f4261d",
       "title": {
-        "en": "Pre-launch site check: 20 page items",
-        "zh": "上线前网站检查：20 项页面"
+        "en": "Pre-launch site check: 20 page items"
       }
     },
     "check-20-things-that-slow-a-vibe-coded-site-down": {
       "en": "3420681b5c30e967",
-      "zh": "a0a85c028727856b",
       "title": {
-        "en": "Pre-launch check: 20 things that slow a site",
-        "zh": "上线前检查：20 项网站速度"
+        "en": "Pre-launch check: 20 things that slow a site"
       }
     },
     "check-25-things-behind-the-scenes-before-shipping": {
       "en": "92efd6b7b5f736db",
-      "zh": "d759475aa0229501",
       "title": {
-        "en": "Pre-launch check: 25 behind-the-page items",
-        "zh": "上线前检查：25 项页面背后"
+        "en": "Pre-launch check: 25 behind-the-page items"
       }
     },
     "check-6-legal-traps-with-6-subagents-before-shipping": {
       "en": "98d6800dcc595559",
-      "zh": "9be358ceed56eee5",
       "title": {
-        "en": "Pre-launch check: 6 legal traps",
-        "zh": "上线前检查：6 个法律坑"
+        "en": "Pre-launch check: 6 legal traps"
       }
     },
     "check-astra-rule-cleanups-still-work-for-sol-and-luna": {
       "en": "d7b5fd881aebed44",
-      "zh": "547fa607e86bdfde",
       "title": {
-        "en": "Rules check for Sol and Luna after Astra cleanup",
-        "zh": "精简规则后的 Sol、Luna 检查"
+        "en": "Rules check for Sol and Luna after Astra cleanup"
       }
     },
     "check-whether-your-app-needs-a-cache-queue-or-load-balancer": {
       "en": "0c7778bfd4115627",
-      "zh": "da8b3f340a236914",
       "title": {
-        "en": "Scaling check: cache, queue, load balancer",
-        "zh": "扩容检查：缓存、队列、负载均衡"
+        "en": "Scaling check: cache, queue, load balancer"
       }
     },
     "check-your-agent-setup-against-openais-five-cache-rules": {
       "en": "7af4b6e213fa60ea",
-      "zh": "b7af88a0d3ff4137",
       "title": {
-        "en": "Setup check: OpenAI's 5 cheap-harness rules",
-        "zh": "设置检查：OpenAI 的 5 条 harness 省钱规则"
+        "en": "Setup check: OpenAI's 5 cheap-harness rules"
       }
     },
     "check-your-vibe-coded-site-with-good-css": {
       "en": "d39d4f7e2bf9ce6b",
-      "zh": "86fa97380edc39ef",
       "title": {
-        "en": "good-css: CSS check for a vibe-coded site",
-        "zh": "good-css：vibe coding 网站的 CSS 检查"
+        "en": "good-css: CSS check for a vibe-coded site"
       }
     },
     "check-your-vibe-coded-site-with-tasteskill-v2": {
       "en": "745beb89bbb889a3",
-      "zh": "f9f3e9240d2bd264",
       "title": {
-        "en": "TasteSkill v2 AI-look check",
-        "zh": "TasteSkill v2：AI 痕迹检查"
+        "en": "TasteSkill v2 AI-look check"
       }
     },
     "clean-up-code-into-fewer-deeper-modules": {
       "en": "2be30ea4bb1de285",
-      "zh": "9f82a0ae2333e4c9",
       "title": {
-        "en": "Code cleanup prompt: fewer, deeper modules",
-        "zh": "代码清理提示词：模块更少、更深"
+        "en": "Code cleanup prompt: fewer, deeper modules"
       }
     },
     "clickable-repo-map-with-words-vs-names": {
       "en": "bc288ca57e7976f6",
-      "zh": "6f887830df67c392",
       "title": {
-        "en": "Clickable repo map with words vs names",
-        "zh": "能点的仓库地图：叫法 vs 代码名"
+        "en": "Clickable repo map with words vs names"
       }
     },
     "configure-luna-max-as-a-codex-subagent": {
       "en": "a1a6951ad658ea88",
-      "zh": "593fad1ca03e6829",
       "title": {
-        "en": "Luna Max as a Codex subagent",
-        "zh": "Luna Max 做 Codex 的 subagent"
+        "en": "Luna Max as a Codex subagent"
       }
     },
     "content-team-of-9-skill-sets-in-claude-code": {
       "en": "d380f7b3f492bb90",
-      "zh": "7ca4ea5469f71b9d",
       "title": {
-        "en": "Content team of 9 skill sets in Claude Code",
-        "zh": "内容团队：9 套 skill"
+        "en": "Content team of 9 skill sets in Claude Code"
       }
     },
     "coordinator-skill-for-claude-code-and-codex": {
       "en": "a822cccccc6f3d73",
-      "zh": "c51e296cdb07987c",
       "title": {
-        "en": "Coordinator skill for Claude Code and Codex",
-        "zh": "Claude Code 和 Codex 的协调者 skill"
+        "en": "Coordinator skill for Claude Code and Codex"
       }
     },
     "daily-fix-list-from-your-apps-logs": {
       "en": "92fe78189633517f",
-      "zh": "d83e8090405bea6a",
       "title": {
-        "en": "Logging plan and daily fix list",
-        "zh": "日志方案和每天的待修清单"
+        "en": "Logging plan and daily fix list"
       }
     },
     "design-a-codex-remote-workflow-from-openais-guide": {
       "en": "bd91f485561f859c",
-      "zh": "070afdb4a10750ad",
       "title": {
-        "en": "Codex remote workflow from OpenAI's guide",
-        "zh": "按 OpenAI 指南设计的 Codex 远程工作流"
+        "en": "Codex remote workflow from OpenAI's guide"
       }
     },
     "draw-system-diagrams-with-the-archify-skill": {
       "en": "9956affffb6e7f4f",
-      "zh": "90e36af22cda27ed",
       "title": {
-        "en": "Archify: system diagrams from code",
-        "zh": "Archify：从代码画系统图"
+        "en": "Archify: system diagrams from code"
       }
     },
     "end-bug-fix-loops-with-4-rules": {
       "en": "0ff13315fd99aea1",
-      "zh": "fc71611671aca9f9",
       "title": {
-        "en": "Bug-fix loop rules for CLAUDE.md or AGENTS.md",
-        "zh": "写进 CLAUDE.md 或 AGENTS.md 里的修 bug 循环规则"
+        "en": "Bug-fix loop rules for CLAUDE.md or AGENTS.md"
       }
     },
     "fake-busy-check-from-todays-git-history": {
       "en": "75ae544e5fb3a1ca",
-      "zh": "9abf8cd35d8afd7d",
       "title": {
-        "en": "Fake busy check from today's git history",
-        "zh": "瞎忙检查：今天的 git 历史"
+        "en": "Fake busy check from today's git history"
       }
     },
     "find-ios-app-bugs-in-the-claude-code-simulator": {
       "en": "3681e1e53a12f90f",
-      "zh": "7b6df0ed71ad083d",
       "title": {
-        "en": "iOS simulator UI bug check with iPhone Duo",
-        "zh": "iOS 模拟器 UI bug 检查，含 iPhone Duo"
+        "en": "iOS simulator UI bug check with iPhone Duo"
       }
     },
     "find-startup-ideas-with-overnight-market-research": {
       "en": "421f14c204c20bee",
-      "zh": "421f14c204c20bee",
       "title": {
-        "en": "Overnight market research for startup ideas",
-        "zh": "Overnight market research for startup ideas"
+        "en": "Overnight market research for startup ideas"
       }
     },
     "find-the-3-habits-burning-your-claude-code-usage": {
       "en": "ce6fa897fe176235",
-      "zh": "be48bcd18b4909cf",
       "title": {
-        "en": "3 habits burning your Claude Code usage",
-        "zh": "Claude Code 里最耗额度的 3 个习惯"
+        "en": "3 habits burning your Claude Code usage"
       }
     },
     "find-the-later-items-in-your-last-20-sessions": {
       "en": "bb946067d07f4a18",
-      "zh": "87626d1e9cd4f1d8",
       "title": {
-        "en": "Later items from your last 20 Claude Code sessions",
-        "zh": "最近 20 个会话里的「以后再弄」"
+        "en": "Later items from your last 20 Claude Code sessions"
       }
     },
     "five-goal-prompts-for-leftover-codex-quota": {
       "en": "b9679dbeb25fbcf2",
-      "zh": "c4fa743ceb658413",
       "title": {
-        "en": "5 /goal prompts for leftover Codex quota",
-        "zh": "用完 Codex 剩余额度的 5 条 /goal"
+        "en": "5 /goal prompts for leftover Codex quota"
       }
     },
     "five-goal-prompts-to-clean-up-after-vibe-coding": {
       "en": "0afd39974cd9d032",
-      "zh": "b7620aa190093dcf",
       "title": {
-        "en": "Vibe-coding cleanup: 5 Codex /goal prompts",
-        "zh": "vibe coding 后的清理：5 条 Codex /goal 提示词"
+        "en": "Vibe-coding cleanup: 5 Codex /goal prompts"
       }
     },
     "five-prompts-that-let-the-model-judge": {
       "en": "a1ada30440263bf0",
-      "zh": "f4f3edff8158bef7",
       "title": {
-        "en": "Blast radius, red team and 3 more prompts",
-        "zh": "影响范围、红队等 5 条让模型判断的提示词"
+        "en": "Blast radius, red team and 3 more prompts"
       }
     },
     "five-thinking-shortcuts-to-send-after-the-plan": {
       "en": "d6dc669f3e15aeea",
-      "zh": "b191fd9f0b556232",
       "title": {
-        "en": "Plan review: 5 methods in one message",
-        "zh": "一条消息里的 5 种计划复查方法"
+        "en": "Plan review: 5 methods in one message"
       }
     },
     "fix-happy-path-debt-across-your-app": {
       "en": "4162da9219c5f896",
-      "zh": "9e16ab0f2313ddc5",
       "title": {
-        "en": "Happy-path debt, found and fixed",
-        "zh": "happy-path 债务排查和修复"
+        "en": "Happy-path debt, found and fixed"
       }
     },
     "four-ways-to-make-a-code-only-animation": {
       "en": "536b08e933ca8de2",
-      "zh": "179dc06fd3bda3df",
       "title": {
-        "en": "4 starting points for a code-only animation",
-        "zh": "纯代码动画的 4 个起点"
+        "en": "4 starting points for a code-only animation"
       }
     },
     "give-opus-5-5-eight-frontend-reference-sites": {
       "en": "8fef77f7eeeac60d",
-      "zh": "bc3a206f4ffcaf66",
       "title": {
-        "en": "8 frontend reference sites for CLAUDE.md",
-        "zh": "写进 CLAUDE.md 的 8 个前端参考网站"
+        "en": "8 frontend reference sites for CLAUDE.md"
       }
     },
     "google-search-check-for-a-live-site": {
       "en": "35e6df5632f5e897",
-      "zh": "28551b8d1dfef690",
       "title": {
-        "en": "Google search check: 12 items for a live site",
-        "zh": "Google 搜索检查：已上线网站 12 项"
+        "en": "Google search check: 12 items for a live site"
       }
     },
     "have-astra-review-your-old-rules-against-openais-guide": {
       "en": "de258cf47fb7a344",
-      "zh": "136f4c2bf573f66e",
       "title": {
-        "en": "Old-rules review for Astra, by OpenAI's guide",
-        "zh": "Astra 旧规则审查：按 OpenAI 指南"
+        "en": "Old-rules review for Astra, by OpenAI's guide"
       }
     },
     "have-codex-build-a-clickable-map-of-your-repo": {
       "en": "1455a8c23b0c6e16",
-      "zh": "f0cd52a9b51a1281",
       "title": {
-        "en": "Clickable repo map",
-        "zh": "能点的仓库地图"
+        "en": "Clickable repo map"
       }
     },
     "have-codex-design-the-page-as-an-image-first": {
       "en": "31c0e8c694de5922",
-      "zh": "dca2ab5ed1022fd2",
       "title": {
-        "en": "Page design as an image first, in Codex",
-        "zh": "Codex 页面设计：先画成一张图，再照着做"
+        "en": "Page design as an image first, in Codex"
       }
     },
     "have-codex-put-image-options-in-one-grid": {
       "en": "370bb24bf7908cb6",
-      "zh": "49339e3b82a05d4b",
       "title": {
-        "en": "Image options in one grid: an AGENTS.md rule",
-        "zh": "图片方案并成一张网格图：AGENTS.md 规则"
+        "en": "Image options in one grid: an AGENTS.md rule"
       }
     },
     "have-opus-5-5-clean-up-think-carefully-rules": {
       "en": "a6b5fc7e16f90c1d",
-      "zh": "21e165b50ba716c1",
       "title": {
-        "en": "Think-carefully cleanup for Opus 5.5",
-        "zh": "换 Opus 5.5 后的「think carefully」清理"
+        "en": "Think-carefully cleanup for Opus 5.5"
       }
     },
     "herdr-app-with-opus-5-5-coordinating-workers": {
       "en": "9ced17dabee44d71",
-      "zh": "543ac4d963d900ea",
       "title": {
-        "en": "Herdr app: Opus 5.5 coordinating workers",
-        "zh": "Herdr 桌面版：Opus 5.5 协调执行者"
+        "en": "Herdr app: Opus 5.5 coordinating workers"
       }
     },
     "hillclimb-a-claude-api-feature-to-cut-its-cost": {
       "en": "e3995b5fca1fed1e",
-      "zh": "7b9bc3d6f037a095",
       "title": {
-        "en": "hillclimb: a cheaper Claude API feature",
-        "zh": "hillclimb：Claude API 功能降本"
+        "en": "hillclimb: a cheaper Claude API feature"
       }
     },
     "index-your-repo-with-codebase-memory": {
       "en": "5e386ad5130600c2",
-      "zh": "0a8e4bb1decbe898",
       "title": {
-        "en": "codebase-memory MCP: an index of your repo",
-        "zh": "codebase-memory 仓库索引"
+        "en": "codebase-memory MCP: an index of your repo"
       }
     },
     "install-ub-mode-the-clean-code-authors-rules-for-agents": {
       "en": "f930c0371d1c99b7",
-      "zh": "11cc6707bbc5ebce",
       "title": {
-        "en": "ub-mode: the Clean Code author's agent rules",
-        "zh": "ub-mode：Clean Code 作者的 agent 规则"
+        "en": "ub-mode: the Clean Code author's agent rules"
       }
     },
     "karpathy-coding-principles-for-claude-md": {
       "en": "45b0869e5addaf20",
-      "zh": "3734e229a6718056",
       "title": {
-        "en": "Karpathy's 4 coding principles for CLAUDE.md",
-        "zh": "Karpathy 的 4 条写代码原则"
+        "en": "Karpathy's 4 coding principles for CLAUDE.md"
       }
     },
     "keep-a-handoff-md-while-the-agent-works": {
       "en": "a99a653112f3d065",
-      "zh": "87760a7ed7d2a5de",
       "title": {
-        "en": "HANDOFF.md for the next agent",
-        "zh": "边做边写给下一个 agent 的 HANDOFF.md"
+        "en": "HANDOFF.md for the next agent"
       }
     },
     "keep-a-state-md-and-start-new-sessions-to-cut-usage": {
       "en": "c1ae8e3f63c1ffd4",
-      "zh": "c1ae8e3f63c1ffd4",
       "title": {
-        "en": "STATE.md and new-session rules for CLAUDE.md",
-        "zh": "STATE.md and new-session rules for CLAUDE.md"
+        "en": "STATE.md and new-session rules for CLAUDE.md"
       }
     },
     "keep-fable-5-2-on-planning-and-hand-builds-to-opus": {
       "en": "d9a788d79dfdea8a",
-      "zh": "fdb2ed367bda07b7",
       "title": {
-        "en": "Fable 5.2 plans, Opus 5.5 or Codex builds",
-        "zh": "Fable 5.2 管规划，实现给 Opus 5.5 或 Codex"
+        "en": "Fable 5.2 plans, Opus 5.5 or Codex builds"
       }
     },
     "keep-fable-as-main-and-delegate-to-opus-subagents": {
       "en": "def057feb798cca4",
-      "zh": "3cbe9ccad9c6261d",
       "title": {
-        "en": "Fable main, Opus subagents: 3 settings",
-        "zh": "Fable 做主、Opus 做 subagent 的 3 个设置"
+        "en": "Fable main, Opus subagents: 3 settings"
       }
     },
     "keep-fable-on-planning-and-send-backend-to-codex": {
       "en": "349567a7fbf99162",
-      "zh": "cdfbc639a08bfc1c",
       "title": {
-        "en": "Fable 5 plans, Codex builds the backend",
-        "zh": "Fable 5 管规划，后端给 Codex"
+        "en": "Fable 5 plans, Codex builds the backend"
       }
     },
     "lead-with-what-you-need-from-me-in-long-reports": {
       "en": "6ec9b40b313d5db4",
-      "zh": "2d2d91965a568ad1",
       "title": {
-        "en": "To-dos first in long reports: an AGENTS.md rule",
-        "zh": "长报告先列待办：AGENTS.md 规则"
+        "en": "To-dos first in long reports: an AGENTS.md rule"
       }
     },
     "learn-strategic-programming-with-the-teach-skill": {
       "en": "168b517d802d6a65",
-      "zh": "1051ec855b47ed9d",
       "title": {
-        "en": "/teach: strategic programming on your project",
-        "zh": "/teach：拿自己的项目学战略型编程"
+        "en": "/teach: strategic programming on your project"
       }
     },
     "let-codex-astra-run-claude-code-workers-with-herdr": {
       "en": "4b5df8bd7601dd35",
-      "zh": "cd36545d6b4709cc",
       "title": {
-        "en": "Herdr: Astra coordinating Claude Code workers",
-        "zh": "Herdr：Astra 协调 Claude Code 执行者"
+        "en": "Herdr: Astra coordinating Claude Code workers"
       }
     },
     "list-every-decision-made-without-asking": {
       "en": "02e118e58486f1f0",
-      "zh": "aae4db43b624a4fb",
       "title": {
-        "en": "Decision page rule for long tasks",
-        "zh": "长任务的决策页规则"
+        "en": "Decision page rule for long tasks"
       }
     },
     "lock-down-a-vps-behind-cloudflare-and-tailscale": {
       "en": "1cf8cc18822014ac",
-      "zh": "baedce17ac0ac4b5",
       "title": {
-        "en": "VPS lockdown: Cloudflare only, SSH over Tailscale",
-        "zh": "VPS 加固：只走 Cloudflare，SSH 走 Tailscale"
+        "en": "VPS lockdown: Cloudflare only, SSH over Tailscale"
       }
     },
     "make-a-launch-film-in-code-with-lemo-opuscar": {
       "en": "cd37a661fe0aa75c",
-      "zh": "3562ec944c39cf95",
       "title": {
-        "en": "lemo-opuscar: narrated launch films in code",
-        "zh": "lemo-opuscar：代码做带旁白的发布短片"
+        "en": "lemo-opuscar: narrated launch films in code"
       }
     },
     "make-motion-videos-with-a-4-subagent-team": {
       "en": "9727dcb9695ca0d2",
-      "zh": "9cecfd9975176e2a",
       "title": {
-        "en": "4-person motion video team",
-        "zh": "做动效视频的 4 人小组"
+        "en": "4-person motion video team"
       }
     },
     "make-the-agent-ask-one-question-before-answering": {
       "en": "807fdb15fd3e0658",
-      "zh": "512b5487afdd6a67",
       "title": {
-        "en": "One question before it answers",
-        "zh": "回答前先问一个问题"
+        "en": "One question before it answers"
       }
     },
     "map-your-disk-before-cleaning-up-dev-leftovers": {
       "en": "2e07867377e0db36",
-      "zh": "c2bd748866e18e2a",
       "title": {
-        "en": "Disk map of dev leftovers",
-        "zh": "开发遗留文件的磁盘地图"
+        "en": "Disk map of dev leftovers"
       }
     },
     "market-read-before-you-build": {
       "en": "264d47b639d43c53",
-      "zh": "24026cdd36522df3",
       "title": {
-        "en": "Market read before you build",
-        "zh": "动手前的市场判断"
+        "en": "Market read before you build"
       }
     },
     "mock-up-every-ui-state-with-claude-design-in-claude-code": {
       "en": "69b94f0790dd5380",
-      "zh": "31b5aa8ee0755d64",
       "title": {
-        "en": "Every UI state mocked up with Claude Design",
-        "zh": "/design 画出的每个界面状态"
+        "en": "Every UI state mocked up with Claude Design"
       }
     },
     "mod-ideas-from-your-last-20-sessions": {
       "en": "e62f61b402af623c",
-      "zh": "2f41759d98f9de44",
       "title": {
-        "en": "Mod ideas from your last 20 sessions",
-        "zh": "最近 20 个会话里的 mod 点子"
+        "en": "Mod ideas from your last 20 sessions"
       }
     },
     "one-agents-md-for-claude-code-and-codex": {
       "en": "2735b5ec46cf7785",
-      "zh": "7c025db1fc407bf0",
       "title": {
-        "en": "One AGENTS.md for Claude Code and Codex",
-        "zh": "Claude Code 和 Codex 共用的 AGENTS.md"
+        "en": "One AGENTS.md for Claude Code and Codex"
       }
     },
     "open-preview-links-on-your-phone-with-tailscale": {
       "en": "e21ecbcf95780ef7",
-      "zh": "729139cee02a4c53",
       "title": {
-        "en": "Tailscale preview links on your phone: a rule",
-        "zh": "手机上的 Tailscale 预览链接规则"
+        "en": "Tailscale preview links on your phone: a rule"
       }
     },
     "orchestrate-opus-and-haiku-subagents-with-fable-5-2": {
       "en": "bc59f65817419397",
-      "zh": "267331516c11ad6e",
       "title": {
-        "en": "Fable 5.2 agent tree with Opus 5.5 and Haiku",
-        "zh": "Fable 5.2 agent 树：Opus 5.5 和 Haiku"
+        "en": "Fable 5.2 agent tree with Opus 5.5 and Haiku"
       }
     },
     "orwell-writing-rules-for-claude-md-and-agents-md": {
       "en": "8e74cbc8ff59452d",
-      "zh": "5c3044eb7982689e",
       "title": {
-        "en": "Orwell's 6 writing rules for CLAUDE.md and AGENTS.md",
-        "zh": "Orwell 的 6 条写作规则"
+        "en": "Orwell's 6 writing rules for CLAUDE.md and AGENTS.md"
       }
     },
     "overnight-goal-for-open-issues-and-todos": {
       "en": "b1b40edf083ebfeb",
-      "zh": "dbff8a5b160928f8",
       "title": {
-        "en": "Overnight /goal for open issues and TODOs",
-        "zh": "通宵 /goal：未关闭的 issue 和 TODO"
+        "en": "Overnight /goal for open issues and TODOs"
       }
     },
     "parallel-pr-checks-with-claude-cloud-sessions": {
       "en": "6a3f65891f95c784",
-      "zh": "6a3f65891f95c784",
       "title": {
-        "en": "Parallel PR checks with claude --cloud",
-        "zh": "Parallel PR checks with claude --cloud"
+        "en": "Parallel PR checks with claude --cloud"
       }
     },
     "pick-a-job-for-a-dynamic-workflow-in-claude-code": {
       "en": "e7bc27cdbe467906",
-      "zh": "0db57eba1886b411",
       "title": {
-        "en": "The job worth a dynamic workflow in Claude Code",
-        "zh": "最该用动态工作流跑的活"
+        "en": "The job worth a dynamic workflow in Claude Code"
       }
     },
     "pick-moves-from-a-120-sample-motion-prompt-library": {
       "en": "25da8574ba53b7a6",
-      "zh": "553e1e1ebd1a483b",
       "title": {
-        "en": "Clickable library of 120 motion samples",
-        "zh": "120 个可点选的动效样例库"
+        "en": "Clickable library of 120 motion samples"
       }
     },
     "pixel-art-rendering-rules-for-claude-md": {
       "en": "33138d76431a26a9",
-      "zh": "8bae2de080a1f18d",
       "title": {
-        "en": "Pixel art rendering rules for CLAUDE.md",
-        "zh": "CLAUDE.md 像素画渲染规则"
+        "en": "Pixel art rendering rules for CLAUDE.md"
       }
     },
     "plan-with-gpt-6-pro-in-chat-then-hand-off-to-codex": {
       "en": "c223275ec235ead8",
-      "zh": "c9e0a439a0289523",
       "title": {
-        "en": "GPT-6 Pro plan in Chat, handed to Codex",
-        "zh": "Chat 里 GPT-6 Pro 做计划，交给 Codex"
+        "en": "GPT-6 Pro plan in Chat, handed to Codex"
       }
     },
     "profile-the-5-slowest-spots-instead-of-adding-a-cache": {
       "en": "f2e3c1fe1179f119",
-      "zh": "60973bf66bf95b75",
       "title": {
-        "en": "Perf review: the 5 slowest spots",
-        "zh": "性能审查：最慢的 5 处"
+        "en": "Perf review: the 5 slowest spots"
       }
     },
     "pull-public-domain-footage-and-music-from-the-internet-archive": {
       "en": "533bf75bc5447c43",
-      "zh": "ab57d75c076e939e",
       "title": {
-        "en": "Internet Archive public-domain clips and music",
-        "zh": "Internet Archive 的公有领域素材"
+        "en": "Internet Archive public-domain clips and music"
       }
     },
     "put-fable-on-call-with-advisor": {
       "en": "9a2a67f033f98a00",
-      "zh": "508169348328ab1b",
       "title": {
-        "en": "/advisor: Opus 5.5 works, Fable on call",
-        "zh": "/advisor：Opus 5.5 主跑，Fable 待命"
+        "en": "/advisor: Opus 5.5 works, Fable on call"
       }
     },
     "readme-rewrite-prompt-and-impeccable-polish": {
       "en": "a658f344b75b0cbb",
-      "zh": "ef41fe27b58414b8",
       "title": {
-        "en": "README rewrite prompt and Impeccable polish",
-        "zh": "README 改写提示词和 Impeccable 打磨"
+        "en": "README rewrite prompt and Impeccable polish"
       }
     },
     "recheck-your-code-and-direction-from-first-principles": {
       "en": "bacb1def23a40e66",
-      "zh": "6316dbc907397766",
       "title": {
-        "en": "Code and direction review prompts",
-        "zh": "代码和方向复查提示词"
+        "en": "Code and direction review prompts"
       }
     },
     "refero-style-prompt-with-a-design-plan-first": {
       "en": "f5378c4f3fa90651",
-      "zh": "1bbd50e5f8b18270",
       "title": {
-        "en": "Refero style prompt: design plan before code",
-        "zh": "Refero 风格提示词：先出设计方案"
+        "en": "Refero style prompt: design plan before code"
       }
     },
     "remake-an-opus-5-5-video-prompt-for-your-product": {
       "en": "d58922b766120882",
-      "zh": "94b78cfdccfeb2c7",
       "title": {
-        "en": "703 Opus 5.5 video prompts, one remade for you",
-        "zh": "703 条 Opus 5.5 视频提示词，重做一条"
+        "en": "703 Opus 5.5 video prompts, one remade for you"
       }
     },
     "remove-mannered-prose-with-one-line": {
       "en": "2091d245e7cc4741",
-      "zh": "a055385b18a3de32",
       "title": {
-        "en": "One line against AI prose",
-        "zh": "去 AI 腔的一句话"
+        "en": "One line against AI prose"
       }
     },
     "restyle-shadcn-from-a-design-md": {
       "en": "e4b8f7a8023592d6",
-      "zh": "e1670bb60cee9e4f",
       "title": {
-        "en": "awesome-design-md and the shadcn skill",
-        "zh": "awesome-design-md 和 shadcn skill"
+        "en": "awesome-design-md and the shadcn skill"
       }
     },
     "reverse-engineer-a-feature-with-rea": {
       "en": "e4a60b0a6cd9486d",
-      "zh": "60d044626cc71d7a",
       "title": {
-        "en": "REA: take apart another app's feature",
-        "zh": "REA：拆开别家 app 的功能"
+        "en": "REA: take apart another app's feature"
       }
     },
     "review-old-rules-with-anthropics-fable-5-2-guide": {
       "en": "04a01648a125be0d",
-      "zh": "a9844f44bf745b87",
       "title": {
-        "en": "Old-rules review for Fable 5.2",
-        "zh": "Fable 5.2 旧规则审查"
+        "en": "Old-rules review for Fable 5.2"
       }
     },
     "review-the-days-pushes-with-a-nightly-claude-code-routine": {
       "en": "77244bcd448c159f",
-      "zh": "21ab22b9c7252f48",
       "title": {
-        "en": "Nightly routine reviewing the day's pushes",
-        "zh": "每晚审查当天推送的 routine"
+        "en": "Nightly routine reviewing the day's pushes"
       }
     },
     "review-your-codex-setup-with-openais-gpt-6-2-guide": {
       "en": "ff0f05437cf61ce7",
-      "zh": "674fd7efa5cdf062",
       "title": {
-        "en": "Codex setup review by OpenAI's GPT-6.2 guide",
-        "zh": "Codex 设置检查：按 GPT-6.2 指南"
+        "en": "Codex setup review by OpenAI's GPT-6.2 guide"
       }
     },
     "review-your-scheduled-agents-against-anthropics-guide": {
       "en": "f7dd17b8b9527ebf",
-      "zh": "53fd9c42ec438aff",
       "title": {
-        "en": "Scheduled-agents review by Anthropic's guide",
-        "zh": "定时 agent 检查：按 Anthropic 指南"
+        "en": "Scheduled-agents review by Anthropic's guide"
       }
     },
     "review-your-setup-with-anthropics-model-guide": {
       "en": "60e08eff4ec04efb",
-      "zh": "5daa65ac5e0e9ce5",
       "title": {
-        "en": "Setup review by Anthropic's model guide",
-        "zh": "设置检查：按 Anthropic 选模型指南"
+        "en": "Setup review by Anthropic's model guide"
       }
     },
     "review-your-setup-with-the-opus-5-5-cost-guide": {
       "en": "258dc48592e5d1eb",
-      "zh": "b47c24858b8ca7cf",
       "title": {
-        "en": "Setup review by the Opus 5.5 cost guide",
-        "zh": "设置检查：按 Opus 5.5 成本指南"
+        "en": "Setup review by the Opus 5.5 cost guide"
       }
     },
     "route-every-skill-by-situation": {
       "en": "c1658cc9df48bfe1",
-      "zh": "a89bf2a693084c3e",
       "title": {
-        "en": "Situation routing rules for skills",
-        "zh": "skill 按场景路由的规则"
+        "en": "Situation routing rules for skills"
       }
     },
     "run-3-checks-before-you-install-any-skill": {
       "en": "0c077a005a30a05d",
-      "zh": "6708cbdb223e4723",
       "title": {
-        "en": "3 checks before installing a skill",
-        "zh": "装 skill 前的 3 项检查"
+        "en": "3 checks before installing a skill"
       }
     },
     "run-a-1-1-on-your-week-from-git-log-and-sessions": {
       "en": "24a396fed771e13c",
-      "zh": "24a396fed771e13c",
       "title": {
-        "en": "1:1 on your week from git log and sessions",
-        "zh": "1:1 on your week from git log and sessions"
+        "en": "1:1 on your week from git log and sessions"
       }
     },
     "run-a-delete-first-pass-when-a-new-model-drops": {
       "en": "3792621f9a60b519",
-      "zh": "3792621f9a60b519",
       "title": {
-        "en": "Delete-first prompt for your messiest project",
-        "zh": "Delete-first prompt for your messiest project"
+        "en": "Delete-first prompt for your messiest project"
       }
     },
     "run-one-task-across-claude-and-codex-with-herdr": {
       "en": "07bc11d4af9bd978",
-      "zh": "0159142a227d61ce",
       "title": {
-        "en": "Herdr: one task across Claude and Codex panes",
-        "zh": "Herdr：Claude 和 Codex 同跑一个任务"
+        "en": "Herdr: one task across Claude and Codex panes"
       }
     },
     "run-opus-5-5-overnight-with-a-sol-reviewer-in-herdr": {
       "en": "6aef061e7d43a9e0",
-      "zh": "7b55734bd177a759",
       "title": {
-        "en": "Herdr overnight: Opus 5.5 builds, Sol reviews",
-        "zh": "Herdr 通宵：Opus 5.5 写，Sol 审"
+        "en": "Herdr overnight: Opus 5.5 builds, Sol reviews"
       }
     },
     "schedule-a-bedtime-report-of-overnight-tasks": {
       "en": "d024fc1f3a67fcf9",
-      "zh": "6706e9ec829f3f34",
       "title": {
-        "en": "Bedtime report of tasks safe to run overnight",
-        "zh": "睡前报告：今晚能放心跑的任务"
+        "en": "Bedtime report of tasks safe to run overnight"
       }
     },
     "scope-guard-rules-for-agents-md": {
       "en": "6b31e803a755815a",
-      "zh": "be549bf5df11da16",
       "title": {
-        "en": "Scope Guard: AGENTS.md rules for small tasks",
-        "zh": "Scope Guard：不让小任务越做越大的规则"
+        "en": "Scope Guard: AGENTS.md rules for small tasks"
       }
     },
     "score-a-skill-with-yes-no-questions-and-improve-it": {
       "en": "bcd09f7f58c53083",
-      "zh": "be43c3eb553887d3",
       "title": {
-        "en": "Skill score with yes/no questions",
-        "zh": "skill 的是非题评分"
+        "en": "Skill score with yes/no questions"
       }
     },
     "score-sites-on-the-awwwards-sheet-until-7-5": {
       "en": "f9266845f6b6d60f",
-      "zh": "a56541262a15bbb2",
       "title": {
-        "en": "Awwwards scoring loop",
-        "zh": "Awwwards 评分表自评循环"
+        "en": "Awwwards scoring loop"
       }
     },
     "screenshot-every-page-then-rebuild-the-ui": {
       "en": "c2c6f505af2a2153",
-      "zh": "1bb710b0c3d5705e",
       "title": {
-        "en": "Screenshot-first UI rebuild prompt",
-        "zh": "先截图再重做的 UI 提示词"
+        "en": "Screenshot-first UI rebuild prompt"
       }
     },
     "search-github-first-and-finish-the-whole-job": {
       "en": "2f0f91943cd6b5d5",
-      "zh": "92c7720d91442e15",
       "title": {
-        "en": "Open-Source Scout and Closer prompts",
-        "zh": "开源侦察员和收尾者提示词"
+        "en": "Open-Source Scout and Closer prompts"
       }
     },
     "send-4-subagents-to-break-your-app-before-shipping": {
       "en": "707446f09c8ad3d5",
-      "zh": "c01078e292c1dd75",
       "title": {
-        "en": "Pre-launch check: 4 test subagents",
-        "zh": "上线前检查：4 个测试 subagent"
+        "en": "Pre-launch check: 4 test subagents"
       }
     },
     "seven-prompts-for-senior-roles-from-idea-to-done": {
       "en": "88473b14cf259c7e",
-      "zh": "4739488879132f49",
       "title": {
-        "en": "7 role prompts from idea to done",
-        "zh": "从想法到成品的 7 个角色提示词"
+        "en": "7 role prompts from idea to done"
       }
     },
     "show-opus-5-5-sites-you-like-before-it-designs": {
       "en": "05dab06b6cc2d47b",
-      "zh": "e44175ed3e9e34b7",
       "title": {
-        "en": "DESIGN.md from sites you like",
-        "zh": "按你喜欢的网站写的 DESIGN.md"
+        "en": "DESIGN.md from sites you like"
       }
     },
     "six-chatgpt-prompts-for-professional-looking-photos": {
       "en": "a818349cc56d354f",
-      "zh": "c0303af5321a3272",
       "title": {
-        "en": "6 ChatGPT photo prompts",
-        "zh": "6 条 ChatGPT 改照片提示词"
+        "en": "6 ChatGPT photo prompts"
       }
     },
     "six-prompts-that-compound-the-more-you-run-them": {
       "en": "c6ae094c3029ca6e",
-      "zh": "11612918ea494540",
       "title": {
-        "en": "Goal wrapper and 5 prompts built on it",
-        "zh": "目标外壳和 5 条配套提示词"
+        "en": "Goal wrapper and 5 prompts built on it"
       }
     },
     "slim-your-agents-md-with-three-restructure-plans": {
       "en": "ab75bbfc3d0c5937",
-      "zh": "65016a6e421d9269",
       "title": {
-        "en": "3 slimmer AGENTS.md plans side by side",
-        "zh": "AGENTS.md 瘦身：3 套方案并排"
+        "en": "3 slimmer AGENTS.md plans side by side"
       }
     },
     "sort-codex-and-claude-folders-before-a-cleanup": {
       "en": "51d02a6a1ec2682c",
-      "zh": "97043bed58020aaa",
       "title": {
-        "en": "~/.codex and ~/.claude sorted before cleanup",
-        "zh": "清理前的 ~/.codex 和 ~/.claude 分类"
+        "en": "~/.codex and ~/.claude sorted before cleanup"
       }
     },
     "split-a-task-across-cli-agents-with-orca": {
       "en": "46004d7de38a9594",
-      "zh": "db568679077f72da",
       "title": {
-        "en": "Orca: one task split across CLI agents",
-        "zh": "Orca：一个任务分给多个 CLI agent"
+        "en": "Orca: one task split across CLI agents"
       }
     },
     "start-a-grok-bot-team-with-six-roles": {
       "en": "aec17e7993600c17",
-      "zh": "04256de6e3e6db66",
       "title": {
-        "en": "Grok Bot team of 6 roles",
-        "zh": "6 个角色的 Grok Bot 团队"
+        "en": "Grok Bot team of 6 roles"
       }
     },
     "state-machine-check-for-wrong-transitions": {
       "en": "bf0ecbd78acfb41a",
-      "zh": "506f566298703e46",
       "title": {
-        "en": "State machine check: wrong transitions in red",
-        "zh": "状态机检查：错误的转换标红"
+        "en": "State machine check: wrong transitions in red"
       }
     },
     "stop-ai-looking-dashboards-with-two-design-skills": {
       "en": "f12f37826ec75bf9",
-      "zh": "1daba1a91abb9aed",
       "title": {
-        "en": "Dashboard redesign: 2 skills, 2 prompts",
-        "zh": "仪表盘改版：两个 skill 加两条提示词"
+        "en": "Dashboard redesign: 2 skills, 2 prompts"
       }
     },
     "stop-codex-astra-spawning-subagents-by-default": {
       "en": "2601274fd5528ca8",
-      "zh": "3daba45b4281779b",
       "title": {
-        "en": "Codex: Astra without default subagents",
-        "zh": "Astra 默认不开 subagent"
+        "en": "Codex: Astra without default subagents"
       }
     },
     "stop-codex-writing-code-too-defensively": {
       "en": "190f06e62a3bdb83",
-      "zh": "821bddc95c6911bf",
       "title": {
-        "en": "Less defensive code: 4 AGENTS.md rules",
-        "zh": "少写防御式代码：4 条 AGENTS.md 规则"
+        "en": "Less defensive code: 4 AGENTS.md rules"
       }
     },
     "stress-test-a-component-in-every-state": {
       "en": "c5485918ffb81fd2",
-      "zh": "4b5730cdc5aadd71",
       "title": {
-        "en": "Component stress test in every state",
-        "zh": "组件每种状态的压力测试"
+        "en": "Component stress test in every state"
       }
     },
     "switch-claude-code-to-opus-5-5-with-medium-subagents": {
       "en": "7e6240883bbf096d",
-      "zh": "37c2db1677a73eb5",
       "title": {
-        "en": "Opus 5.5 main model, medium subagents",
-        "zh": "Opus 5.5 主模型配 medium subagent"
+        "en": "Opus 5.5 main model, medium subagents"
       }
     },
     "switch-codex-to-gpt-6-1-sol-with-an-astra-reviewer": {
       "en": "b09b2018d9b40419",
-      "zh": "de6b157404479d6d",
       "title": {
-        "en": "Codex: GPT-6.1 Sol main, medium subagents, Astra review",
-        "zh": "Codex：GPT-6.1 Sol 主跑，medium subagent，Astra 终审"
+        "en": "Codex: GPT-6.1 Sol main, medium subagents, Astra review"
       }
     },
     "switch-to-sonnet-5-5-with-opus-on-call": {
       "en": "24f91a8ae585946b",
-      "zh": "3e473f91c5132092",
       "title": {
-        "en": "/advisor: Sonnet 5.5 works, Opus on call",
-        "zh": "/advisor：Sonnet 5.5 主跑，Opus 待命"
+        "en": "/advisor: Sonnet 5.5 works, Opus on call"
       }
     },
     "tighten-claude-code-permissions-with-deny-ask-allow": {
       "en": "3993882b740003a6",
-      "zh": "43646abac1ee8807",
       "title": {
-        "en": "Claude Code permissions: deny, ask and allow commands",
-        "zh": "deny、ask、allow 权限规则"
+        "en": "Claude Code permissions: deny, ask and allow commands"
       }
     },
     "turn-a-week-of-sessions-into-a-calendar": {
       "en": "aad7215bf9751195",
-      "zh": "7bee528c4ad04d43",
       "title": {
-        "en": "Week calendar from Claude Code sessions",
-        "zh": "Claude Code 会话做的周日历"
+        "en": "Week calendar from Claude Code sessions"
       }
     },
     "turn-design-corrections-into-rules-with-learn-taste": {
       "en": "c491601615b7c763",
-      "zh": "875a8add5aef6b93",
       "title": {
-        "en": "/learn-taste: design corrections as rules",
-        "zh": "/learn-taste：设计修正变成规则"
+        "en": "/learn-taste: design corrections as rules"
       }
     },
     "turn-repeat-agent-mistakes-into-lint-rules": {
       "en": "5799c0756f2e24bb",
-      "zh": "63452847b9b2438c",
       "title": {
-        "en": "Repeat mistakes as helpers and lint rules",
-        "zh": "反复犯的错变成 helper 函数和 lint 规则"
+        "en": "Repeat mistakes as helpers and lint rules"
       }
     },
     "turn-repeated-pr-review-comments-into-agents-md-rules": {
       "en": "42d244c4b09a09ec",
-      "zh": "253139e43accbed7",
       "title": {
-        "en": "Repeated PR comments as AGENTS.md rules",
-        "zh": "反复的 PR 意见写成 AGENTS.md 规则"
+        "en": "Repeated PR comments as AGENTS.md rules"
       }
     },
     "two-agents-md-lines-for-vibecoders": {
       "en": "53c5fb15c02a0bf7",
-      "zh": "f3e1b7a3b290d346",
       "title": {
-        "en": "Two AGENTS.md lines: less text, UX/DX/AX",
-        "zh": "AGENTS.md 两行：删多余文字，兼顾 UX、DX、AX"
+        "en": "Two AGENTS.md lines: less text, UX/DX/AX"
       }
     },
     "ui-ux-audit-with-a-senior-designer-prompt": {
       "en": "00ddf5de6f9eb6d2",
-      "zh": "1a80842f966caa52",
       "title": {
-        "en": "UI/UX audit as a senior designer",
-        "zh": "资深设计师视角的 UI/UX 审查"
+        "en": "UI/UX audit as a senior designer"
       }
     },
     "unslop-prompt-for-pages-that-look-ai-made": {
       "en": "285d3a1eda86039a",
-      "zh": "5cc3aea3f70bc4ee",
       "title": {
-        "en": "Unslop prompt for pages that look AI-made",
-        "zh": "Unslop 提示词：去掉页面 AI 味"
+        "en": "Unslop prompt for pages that look AI-made"
       }
     },
     "untangle-goal-for-spaghetti-code": {
       "en": "cadeba7b241b12df",
-      "zh": "e719f412cadb7b80",
       "title": {
-        "en": "Untangle /goal for spaghetti code",
-        "zh": "理清面条代码的 /goal"
+        "en": "Untangle /goal for spaghetti code"
       }
     },
     "use-codex-computer-use-in-claude-code": {
       "en": "7768bd87a08572eb",
-      "zh": "aa60dce61098448f",
       "title": {
-        "en": "Codex computer use as a local MCP server",
-        "zh": "Codex computer use 当本地 MCP server"
+        "en": "Codex computer use as a local MCP server"
       }
     },
     "walk-through-two-way-doors-stop-at-one-way-doors": {
       "en": "448a74abd2da557c",
-      "zh": "b636b29f52b6b909",
       "title": {
-        "en": "One-way door rules for AGENTS.md: when to ask",
-        "zh": "AGENTS.md 单向门规则：什么时候该问"
+        "en": "One-way door rules for AGENTS.md: when to ask"
       }
     },
     "write-claude-code-project-instructions-from-your-sessions": {
       "en": "b568d1c59bf61ccd",
-      "zh": "0befe1835c949b9d",
       "title": {
-        "en": "Claude Code project instructions from your sessions",
-        "zh": "从会话里写出的项目说明"
+        "en": "Claude Code project instructions from your sessions"
       }
     }
   }

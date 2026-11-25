@@ -1,44 +1,44 @@
-# 从会话里写出的项目说明
+# Claude Code project instructions from your sessions
 
-每开新会话都要重讲一遍背景：从最近 20 个会话里捞出来，写成一份项目说明，以后不用再说。
+Background you re-explain every new session: pulled from your last 20 sessions and written up as project instructions.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在你的仓库里，把它发给 Claude Code 里的 Opus 5.5。
-3. 得到：一份能直接贴进去的项目说明，写的是你每次都要重讲的背景。
+1. Copy the prompt.
+2. Send it to Opus 5.5 in Claude Code, from the repo you work in.
+3. You get: Project instructions you can paste straight in, built from the background you keep re-explaining.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-读一下这份文档：https://code.claude.com/docs/en/claude-projects
+Read this doc: https://code.claude.com/docs/en/claude-projects
 
-然后对照它翻一遍我最近 20 个会话（~/.claude/projects/ 下这个仓库对应文件夹里的 .jsonl，只看我自己打的字）和最近的提交，找三类东西：
-1. 一直在冒出新任务的工作：同一块代码反复修的 bug，分好几次会话才做完的迁移或功能。按文档 When to use a project 那节，挑最值得建成项目的一条，说明为什么，按它的难度告诉我 Thread model 和 Thread effort 该怎么设，再挑一个小而真实的任务，写成能直接发进项目对话的第一条消息。
-2. 我每开一个新会话都要重讲的背景：目标分支、怎么跑测试、PR 怎么命名、哪些事要先问我。列出次数和原话，照文档 Write project instructions 列的五项，为上面那个项目写一份能直接贴进 Project instructions 的说明。只跟这个仓库有关的，比如构建命令，标出来放进仓库里的 CLAUDE.md。
-3. 我反复纠正你的地方：同一件事我说过两次以上、又没写进说明的。每条引用原话，写成一句能直接发进项目对话的「记住：……」。
+Then check my last 20 sessions (the .jsonl files in this repo's folder under ~/.claude/projects/, only what I typed myself) and my recent commits against it, and find three kinds of things:
+1. Work that keeps producing new tasks: bugs fixed again and again in the same code, or migrations and features that took several sessions to finish. Using the doc's 'When to use a project' section, pick the one most worth turning into a project and explain why. Based on how hard it is, tell me how to set Thread model and Thread effort. Then pick one small, real task and write it as a first message I can send straight into the project conversation.
+2. Background I re-explain every time I start a new session: the target branch, how to run tests, how to name PRs, what to ask me about first. List how often I said each one, with my exact words. Following the five points in the doc's 'Write project instructions' section, write instructions for that project that I can paste straight into Project instructions. Mark anything that only applies to this repo, like build commands, for the repo's CLAUDE.md.
+3. Things I keep correcting you on: anything I've said two or more times that isn't already in the instructions. Quote my exact words and turn each into one line I can send straight into the project conversation: 'Remember: …'
 
-每一条都引用原话或提交，说明放进去以后我能少说什么、少改什么。
+For every item, quote my words or the commit, and say what I'd no longer have to repeat or fix once it's in place.
 
-先给我看清单和项目说明，暂时什么都别改。
+Show me the list and the project instructions first. Don't change anything yet.
 ```
 
-## 背景
+## Background
 
-Anthropic 发了 Claude Code Projects 的完整指南，候补名单上的 Pro 和 Max 用户当天也全放进来了。你可以让 Opus 5.5 照着它翻一遍你最近的会话，把你每次开新会话都要重讲的背景，写成一份项目说明。
+Anthropic shared its full guide to Claude Code Projects, and every Pro and Max user on the waitlist got in the same day. You can have Opus 5.5 follow it to go through your recent sessions and turn the background you re-explain every time you start a new session into a set of project instructions.
 
-新项目里每个 thread 默认都跑 Opus、开 high，额度用得最快。额度用完，thread 也不会结束，会等额度重置后自己接着跑。你没发话，下一段额度就开始用了。所以整批发活之前，先去项目设置看一眼 Thread model 和 Thread effort，用不着 Opus 的活换小模型或调低 effort。
+In a new project, every thread runs on Opus at high effort by default, which uses up your plan fastest. When you hit your limit, a thread doesn't end. It waits for the limit to reset and keeps going on its own. Without a word from you, it starts using your next usage window. So before you send a batch of work, check Thread model and Thread effort in the project settings, and give work that doesn't need Opus a smaller model or lower effort.
 
-把这段 prompt 发给 Opus 5.5。
+Send this prompt to Opus 5.5.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/write-claude-code-project-instructions-from-your-sessions)：@Voxyz_ai 2026年10月9日[发在 X 上](https://x.com/Voxyz_ai/status/2108635045527515434)，截至 2026年11月6日有 490 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/write-claude-code-project-instructions-from-your-sessions): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2108635045527515434) on 9 Oct 2026, 490 saves as of 6 Nov 2026. For Claude Code.

@@ -1,39 +1,39 @@
-# Astra 默认不开 subagent
+# Codex: Astra without default subagents
 
-Astra 烧额度比 Sol 还快：删掉默认开 subagent 的规则，AGENTS.md 加一句，让它自己做、自己验。
+Astra burns quota faster than Sol: default-subagent rules gone, one line so it does the task and the checks itself.
 
-## 步骤
+## Steps
 
-1. 复制这条规则。
-2. 加进项目的 AGENTS.md。
-3. 得到：Astra 自己做任务和验证，只在必要的独立审查或你要求时才开 subagent。
+1. Copy the rule.
+2. Add it to AGENTS.md in your project.
+3. You get: Astra handles the task and checks itself, and only spawns subagents for reviews or when you ask.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 规则
+## Rule
 
 ```text
-默认由你自己完成任务和验证。除了必要的独立审查，或者我明确要求，不要开 subagent。
+Handle the task and verification yourself by default. Do not spawn subagents except for necessary independent reviews or when I explicitly ask you to.
 ```
 
-## 背景
+## Background
 
-Astra 一直在烧我的额度。额度刚重置，我放开用了一把，感觉 Astra 烧得比 Sol 还快。后来试了这个办法，效果特别好。
+Astra has been burning through my quota. My quota reset, so I went all out, and it felt like Astra burned through it even faster than Sol did. Then I tried this, and it worked like a charm.
 
-检查 AGENTS.md、相关 Skills 和记忆里有没有让它默认开 subagent 的指令，有就删掉。
+Check AGENTS.md, relevant Skills, and memory for instructions that tell it to spawn subagents by default, and remove them.
 
-让 Astra 自己把活干完。主 agent 分派任务、传递上下文、反复检查进度，同样要花额度。
+Let Astra finish the work itself. The main agent also uses quota to assign tasks, pass along context, and repeatedly check progress.
 
-挑一个你熟悉的任务，让它单独跑，对比结果和用量。你对这个模型的看法可能会完全不一样。
+Pick a task you know well, let it run solo, and compare the results and usage. You might see this model very differently.
 
-需要并行的时候，明确让它开 subagent。不是每个任务都需要一支 agent 大军。
+When you need parallel work, explicitly ask for subagents. Not every task needs an army of agents.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/stop-codex-astra-spawning-subagents-by-default)：@Voxyz_ai 2026年9月7日[发在 X 上](https://x.com/Voxyz_ai/status/2097025858867429396)，截至 2026年9月14日有 686 次收藏。适用于 Codex。
+From [Copybook](https://copybook.page/t/stop-codex-astra-spawning-subagents-by-default): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2097025858867429396) on 7 Sep 2026, 686 saves as of 14 Sep 2026. For Codex.

@@ -1,47 +1,47 @@
-# 项目动画：Claude Motion 指南
+# Project animation by the Claude Motion guide
 
-哪部分值得做成动画：按 Anthropic 指南挑出候选、写好分镜，你选的那个用 HyperFrames 做出来。
+What in your project is worth animating: storyboards by Anthropic's Motion guide, your pick built in HyperFrames.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在项目里把它发给 Claude Code 里的 Opus 5.5。
-3. 得到：几份值得做成动画的分镜，你挑一个，它用 HyperFrames 做成 1080p MP4。
+1. Copy the prompt.
+2. Send it to Opus 5.5 in Claude Code, in your project.
+3. You get: Storyboards of what's worth animating; the one you pick becomes a 1080p MP4 made with HyperFrames.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-读一下这篇指南：https://support.claude.com/en/articles/17454997-get-started-with-claude-motion
+Read this guide: https://support.claude.com/en/articles/17454997-get-started-with-claude-motion
 
-然后照 Claude Motion 的做法，翻一遍这个项目的 README、落地页、上手流程、最近的发版说明和里面的图表，找三类值得做成动画的地方：
-1. 一张截图讲不清的流程，比如新用户上手要走的几步。
-2. 光看数字没感觉的变化，比如新版和旧版的速度对比。
-3. 最近发版里最值得讲的新功能。
-哪类在项目里找不到就直说，别硬凑。
+Then follow Claude Motion's approach and go through this project's README, landing page, onboarding flow, recent release notes and any charts in it. Find three kinds of things worth turning into an animation:
+1. A flow one screenshot can't explain, like the steps a new user takes to get started.
+2. A change that falls flat as a bare number, like the new version's speed compared with the old one.
+3. The new feature from the latest release that's most worth showing.
+If the project doesn't have one of these, just say so. Don't force it.
 
-每个想法照指南的写法，写清给谁看、在哪放、多长，再写一段分镜：每个镜头几秒，画面上出现哪些字、数字和截图。只用项目里的真实内容。按对我的用处排序。
+For each idea, follow the guide: say who it's for, where it will play and how long it runs, then write a storyboard with how many seconds each scene lasts and which words, numbers and screenshots appear on screen. Use only real content from the project. Rank the ideas by how useful they'd be to me.
 
-我挑好一个之后，用 HyperFrames 写成代码动画（没装就先装上），所有文字、数字和时长集中放在一处。之后我说「第二个镜头放慢」「这个数字改成 18%」，你只改那一处。先渲染一版草稿，每秒截一帧看一遍，改完再出 1080p 的 MP4。
+After I pick one, build it as a code animation with HyperFrames (install it first if it isn't installed), with all the text, numbers and timings kept in one place. Later, when I say 'slow down the second scene' or 'change this number to 18%', change only that one thing. Render a draft first, grab one frame per second and look through them, fix the problems, then export a 1080p MP4.
 
-先给我看分镜，我挑好了再动手。
+Show me the storyboards first. Don't build anything until I pick.
 ```
 
-## 背景
+## Background
 
-Anthropic 完整公开了 Claude Motion 的[上手指南](https://support.claude.com/en/articles/17454997-get-started-with-claude-motion)。因为动画全是代码写的，所以改一个字、一个数字或者一个镜头的时长，其他地方都原样不动。你可以让 Opus 5.5 照着它的做法翻一遍你的项目，找出最该做成动画的几个地方，在 Claude Code 里做出来。
+Anthropic published its full [getting-started guide](https://support.claude.com/en/articles/17454997-get-started-with-claude-motion) for Claude Motion. Because every animation is code, you can change one word, one number or the length of one scene, and everything else stays untouched. You can have Opus 5.5 follow its approach to go through your project, find the things most worth animating, and build them in Claude Code.
 
-Motion 不用视频模型，动的都是你的文字、图表、形状和图片。在 Claude Code 里，Opus 5.5 用 [HyperFrames](https://hyperframes.dev) 一样写成代码，连渲染成 MP4 也是它自己来。指南建议说清给谁看、在哪放、大概多长，再附上你自己的报告、数据或截图。
+Motion doesn't use a video model. It animates only your text, charts, shapes and images. In Claude Code, Opus 5.5 writes the same kind of code with [HyperFrames](https://hyperframes.dev), and it even renders the MP4 on its own. The guide suggests you say who it's for, where it will play and roughly how long it should run, and attach your own report, data or screenshots.
 
-把这段 prompt 发给 Opus 5.5。
+Send this prompt to Opus 5.5.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/animate-your-project-the-claude-motion-way)：@Voxyz_ai 2026年10月9日[发在 X 上](https://x.com/Voxyz_ai/status/2108543002830360775)，截至 2026年11月7日有 1,412 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/animate-your-project-the-claude-motion-way): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2108543002830360775) on 9 Oct 2026, 1.4K saves as of 7 Nov 2026. For Claude Code.

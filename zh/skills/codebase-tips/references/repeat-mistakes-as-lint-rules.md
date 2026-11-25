@@ -1,29 +1,29 @@
-# 反复犯的错变成 helper 函数和 lint 规则
+# Repeat mistakes as helpers and lint rules
 
-老犯同一个错：正确写法封装成 helper，lint 禁掉旧写法，报错写明该用哪个，它跑检查时自己改。
+The agent keeps making one mistake: the right way in a helper, the old way banned by lint, an error that names the helper to use.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在仓库里发给 Claude Code 或 Codex，看过清单再确认。
-3. 得到：最多 3 个反复犯的错有了 helper 和 lint 规则，agent 看报错就自己改。
+1. Copy the prompt.
+2. Send it to Claude Code or Codex in your repo, then confirm the list it shows you.
+3. You get: Helpers and lint rules for up to 3 repeat mistakes, so the agent fixes its own code from the error.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-翻一下 AGENTS.md 或 CLAUDE.md 里写过的纠正，和这个仓库最近 50 次提交（重点看修复和回滚），找出 agent 反复写错、并且能用 lint 查出来的写法，最多 3 个，凑不够就少报。每个做三件事：
-1. 写一个 helper 函数或类型，把正确的写法封装好
-2. 用项目已经在用的 lint 工具加一条规则，禁掉原来的写法，报错信息里写清楚该改用哪个 helper，优先用工具自带的禁用规则
-3. 把现有代码里的旧写法改掉，跑 lint 和测试确认通过
-最后在 AGENTS.md 或 CLAUDE.md（项目用哪个写哪个）里加一行：写完代码先跑 lint，按报错改用对应的 helper。项目没有 lint 工具就先告诉我。先给我看清单，每条附出处和现有违规数量，我确认了再改。
+Go through the corrections in AGENTS.md or CLAUDE.md and the last 50 commits in this repo (focus on fixes and reverts). Find patterns the agent keeps getting wrong that lint can catch, up to 3. If you find fewer, report fewer. For each one:
+1. Write a helper function or type that wraps the right way to do it
+2. Add a rule in the lint tool the project already uses that bans the old pattern, with an error message that names the helper to use. Prefer the tool's built-in ban rules
+3. Replace the old pattern in existing code, then run lint and the tests to confirm they pass
+Finally, add a line to AGENTS.md or CLAUDE.md (whichever the project uses): after writing code, run lint and switch to the helper the error points to. If the project has no lint tool, tell me first. Show me the list first, with where each pattern came from and how many current violations it has. Change nothing until I confirm.
 ```
 
 ## Check: pre-commit hook
@@ -35,20 +35,18 @@ echo "Lint failed. Switch to the helper the error names, then commit again." >&2
 exit 1
 ```
 
-这块检查是 Copybook 为这条技巧写的，2026年11月24日在 git 2.50.1 上测过。它做什么、加到哪里，按下面这段英文说明：
+A commit stops while `npm run lint` fails, so the agent reads the error and switches to the helper it names. Save it as `.git/hooks/pre-commit` and make it executable with `chmod +x`. Copybook wrote and tested it on git 2.50.1, 24 Nov 2026.
 
-> A commit stops while `npm run lint` fails, so the agent reads the error and switches to the helper it names. Save it as `.git/hooks/pre-commit` and make it executable with `chmod +x`. Copybook wrote and tested it on git 2.50.1, 24 Nov 2026.
+This check is Copybook's, not part of the tip, and runs on the user's machine once added. Offer it once the tip is in place, show it, and add it only if the user says yes.
 
-这块检查是 Copybook 写的，不属于这条技巧，加上后会在用户电脑上运行。技巧用上之后再提出来，先给用户看，用户同意才加。
+## Background
 
-## 背景
+The better AI gets at writing code, the more abstractions you should write.
 
-AI 写代码越强，代码反而越要写得抽象。
+Turn the way you want things done into ready-made functions for the agent, then use lint to block the other ways. The only option it has left is the one you want.
 
-把你想要的写法做成现成的函数交给 agent，再用 lint 堵掉别的写法，它能选的就只剩你要的那种。
+Start with the mistakes your agent keeps making. Give each one a lint rule whose error message names the function to use, and when the agent runs its checks, it sees the error and fixes it on its own. Send this to Claude Code or Codex.
 
-可以先从 agent 反复犯的错开始。每个错配一条 lint 规则，报错里写明该用哪个函数，它跑检查看到就会自己改。把这段发给 Claude Code 或 Codex。
+## Source
 
-## 来源
-
-来自 [Copybook](https://copybook.page/zh/t/turn-repeat-agent-mistakes-into-lint-rules)：@Voxyz_ai 2026年10月4日[发在 X 上](https://x.com/Voxyz_ai/status/2106829206134931539)，截至 2026年11月1日有 184 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/turn-repeat-agent-mistakes-into-lint-rules): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2106829206134931539) on 4 Oct 2026, 184 saves as of 1 Nov 2026. For Claude Code and Codex.

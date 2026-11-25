@@ -1,35 +1,35 @@
-# Claude Code 里最耗额度的 3 个习惯
+# 3 habits burning your Claude Code usage
 
-总撞额度上限：扫最近 7 天的会话日志，算出每个习惯各占多少额度，再写规则把它们堵上。
+Keep hitting the usage limit: 7 days of session logs scanned, the 3 costliest habits and their share, rules to plug them.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在 Claude Code 里发出，用 Codex 就先照技巧里说的改 3 处。
-3. 得到：每个习惯一条规则，你同意后加进 CLAUDE.md 或 AGENTS.md。
+1. Copy the prompt.
+2. Send it in Claude Code, or in Codex with the three swaps the tip lists.
+3. You get: One rule per habit, added to CLAUDE.md or AGENTS.md once you say yes.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-在我说同意之前，什么都别改。写一个小脚本，扫描 ~/.claude/projects 里我最近 7 天的 Claude Code 会话日志，用日志里记录的 token 数来算；不要把原始文件读进上下文。找出最耗额度的 3 个习惯，比如读整个文件、倒出很长的测试或构建输出、开 subagent，或者一个会话连着跑好几个小时。对每个习惯，大致算出它占了我多少额度，并写一条能制止它的规则。我说同意以后，把这些规则加进这个项目实际加载的指令文件：有 CLAUDE.md 就加进 CLAUDE.md，没有就加进 AGENTS.md。绝不要打印密钥。
+Change nothing until I say yes. Write a small script to scan my Claude Code session logs in ~/.claude/projects from the last 7 days, using the token counts recorded in them; don't read the raw files into context. Find the 3 habits that burned the most usage, like reading whole files, dumping long test or build output, spawning subagents, or keeping one session going for hours. For each, work out roughly what share of my usage it took and write one rule that would stop it. When I say yes, add the rules to the instruction file this project actually loads: CLAUDE.md if there is one, otherwise AGENTS.md. Never print secrets.
 ```
 
-## 背景
+## Background
 
-总是撞上 Claude Code 的额度上限？
+Keep hitting your Claude Code usage limit?
 
-它会翻一遍你最近 7 天的会话，找出最耗额度的 3 个习惯，估出每个占多少，再写规则把它们堵上。
+It digs through your last 7 days of sessions, finds the 3 habits burning the most usage, estimates each one's share, and writes rules to plug them.
 
-用 Codex 的话，把 prompt 里的 Claude Code 换成 Codex，路径换成 ~/.codex/sessions，规则只放进 AGENTS.md。
+On Codex, swap Claude Code for Codex in the prompt, use ~/.codex/sessions as the path, and put the rules in AGENTS.md only.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/find-the-3-habits-burning-your-claude-code-usage)：@Voxyz_ai 2026年10月25日[发在 X 上](https://x.com/Voxyz_ai/status/2114416707385073819)，截至 2026年11月22日有 722 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/find-the-3-habits-burning-your-claude-code-usage): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2114416707385073819) on 25 Oct 2026, 722 saves as of 22 Nov 2026. For Claude Code and Codex.

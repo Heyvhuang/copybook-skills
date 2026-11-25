@@ -1,39 +1,39 @@
-# 按 OpenAI 指南设计的 Codex 远程工作流
+# Codex remote workflow from OpenAI's guide
 
-离开电脑时项目还能推进：按 OpenAI 的 Remote 指南排出哪些任务自己跑、哪些决定在手机上做。
+Projects that keep moving while you're out: OpenAI's Remote guide applied, what runs alone and what you decide by phone.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 连同 OpenAI Remote 指南的链接一起发给 Codex。
-3. 得到：一套贴合你项目的远程工作流，下次离开电脑时就能试。
+1. Copy the prompt.
+2. Send it to Codex together with the link to OpenAI's Remote guide.
+3. You get: A concrete remote workflow for your projects to try the next time you're away.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-读这份 Remote 指南，帮我围绕我的项目和工作习惯设计一套远程工作流。用你已有的上下文了解我在做什么，然后问清楚会影响方案的事：我通常离开电脑多久、多久能看一次手机、电脑能不能保持唤醒并联网。不要给我一份泛泛的功能清单。
+Read this Remote guide and help me design a remote workflow around my projects and work habits. Use the context you already have to understand what I’m working on, then ask about anything that would affect the plan: how long I’m usually away from my computer, how often I can check my phone, and whether my computer can stay awake and online. Don’t give me a generic feature list.
 
-从我实际的工作里挑出最适合远程推进的任务。说明我离开前要准备什么、你能独立完成什么、哪些决定我可以在手机上处理、哪些检查应该等我回到电脑前再做。让工作流贴合我的时间和设备，不需要我一直盯着。如果我没有回复，不要越过需要我批准的步骤。确认所需功能在我当前的配置里可用，然后给我一个下次离开时就能试的具体方案。先提出方案；暂时不要改设置，也不要启动任务。
+Choose tasks from my actual work that are best suited to making progress remotely. Explain what to prepare before I leave, what you can complete independently, which decisions I can handle on my phone, and which checks should wait until I’m back at my computer. Fit the workflow to my time and devices without requiring constant attention. If I don’t reply, don’t proceed past steps that need my approval. Verify that the required features are available in my current setup, then give me a concrete plan I can try the next time I’m away. Propose the plan first; don’t change settings or start tasks yet.
 ```
 
-## 背景
+## Background
 
-我觉得 Codex 的手机远程模式被严重低估了。我经常在离开电脑时用它让项目继续推进。OpenAI 有一份指南，可以交给 Codex，让它围绕你的项目和日常节奏设计一套远程工作流：https://developers.openai.com/blog/mastering-codex-remote-for-engineering
+I think Codex's mobile remote mode is seriously underrated. I often use it to keep projects moving when I'm away from my computer. OpenAI has a guide you can give Codex to help it design a remote workflow around your projects and daily routine: https://developers.openai.com/blog/mastering-codex-remote-for-engineering
 
-如果你只在手机上打开 Codex 看进度，就错过了它最有用的部分。一个任务后面可能还有很多活，但它只需要你给个回答，或者决定接下来怎么走。在手机上给它这个方向，电脑就能继续干活。
+If you only open Codex on your phone to check progress, you're missing its most useful part. A task might still have a lot of work ahead, but all it needs from you is an answer or a decision about how to proceed. Give it that direction from your phone, and your computer can keep working.
 
-开始前，打开最新版的 ChatGPT 桌面 app，进入 Settings、Connections、Control this Mac or PC，然后扫二维码配对手机。配对从桌面 app 开始，不是从 Codex CLI。两台设备用同一个账号和工作区，桌面 app 保持运行，电脑保持唤醒并联网。
+To get started, open the latest ChatGPT desktop app and go to Settings, Connections, Control this Mac or PC, then scan the QR code to pair your phone. Pairing starts in the desktop app, not the Codex CLI. Use the same account and workspace on both devices, and keep the desktop app running and your computer awake and online.
 
-把这条提示词和指南链接一起发给 Codex。
+Send this prompt and the guide's link to Codex.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/design-a-codex-remote-workflow-from-openais-guide)：@Voxyz_ai 2026年9月15日[发在 X 上](https://x.com/Voxyz_ai/status/2099931652524810457)，截至 2026年10月13日有 381 次收藏。适用于 Codex。
+From [Copybook](https://copybook.page/t/design-a-codex-remote-workflow-from-openais-guide): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2099931652524810457) on 15 Sep 2026, 381 saves as of 13 Oct 2026. For Codex.

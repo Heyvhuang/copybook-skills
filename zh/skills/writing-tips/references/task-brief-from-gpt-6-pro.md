@@ -1,41 +1,41 @@
-# GPT-6 Pro 写的给工程师的任务说明
+# Engineer's task brief from GPT-6 Pro
 
-任务没想透就派给 Codex：GPT-6 Pro 先挑出没想清楚的地方，写成工程师能直接接手的说明。
+Before a task goes to Codex: GPT-6 Pro finds what you haven't thought through and writes a brief an engineer could take.
 
-## 步骤
+## Steps
 
-1. 复制提示词，填上你想做的事。
-2. 先把想法、截图、相关代码和限制给 GPT-6 Pro，再贴上它。
-3. 得到：GPT-6 Pro 先问清没想好的地方，再写一份能直接交给 Codex 的任务说明。
+1. Copy the prompt and fill in what you want to do.
+2. Give GPT-6 Pro your ideas, screenshots, relevant code and constraints, then paste it.
+3. You get: GPT-6 Pro asks what you haven't settled, then writes a self-contained task brief for Codex.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-我要完成这件事：[一句话说清你想做什么]。
+I want to do this: [DESCRIBE WHAT YOU WANT TO DO IN ONE SENTENCE].
 
-假设接手的是一位能独立解决问题、但没看过我们聊天记录的工程师。结合我提供的材料，先帮我弄清楚：我要解决什么问题，现有要求有没有矛盾，还缺哪些会影响方案的信息。需要我决定的先问我，不要把猜测写成已经确定的需求。
+Assume an engineer who can solve problems independently will take over, but they haven’t seen our conversation. Using the materials I’ve provided, first help me clarify what problem I’m trying to solve, whether any requirements conflict, and what missing information could affect the approach. Ask me about decisions I need to make. Don’t turn assumptions into confirmed requirements.
 
-信息足够后，替我写一份可以直接发给他的任务说明。讲清必要背景、交付结果，以及材料中已经确定的项目位置、起始分支和修改边界。验收写成具体可执行的检查，说明什么结果算通过；材料不足以确定的文件、路径或测试命令，标明需要接手后确认，不要编造。
+Once you have enough information, write a task brief I can send directly to that engineer. Include the necessary background, deliverables, and any project location, starting branch, and change boundaries already established in the materials. Define specific checks and what counts as passing. If the materials don’t establish the files, paths, or test commands, mark those as needing confirmation when the engineer takes over. Don’t invent them.
 
-让他不用翻我们的聊天记录也能理解任务。实现细节留给接手的人判断，不要提前把每一步写死，也不要扩大需求。最后只输出这份任务说明。
+Make the brief understandable without reading our conversation. Leave implementation details to the engineer’s judgment. Don’t prescribe every step or expand the scope. At the end, output only the task brief.
 ```
 
-## 背景
+## Background
 
-写代码之前，先让 GPT-6 Pro 挑出你没想清楚的地方。别跟 Pro 说「帮我优化 prompt」，换成：「帮我写一份可以直接交给工程师的任务说明。」
+Before you start coding, have GPT-6 Pro point out what you haven't thought through. Don't ask Pro to "optimize my prompt". Ask it to "write a task brief I can hand directly to an engineer".
 
-「给 AI 写 prompt」可能让模型低估接手方的能力，写成手把手教程；换成给工程师派活，就是让它按一个能独立判断、只是缺少项目背景的人来写。
+Asking a model to write a prompt for AI may lead it to underestimate the agent doing the work and spell out every step. Framing it as an assignment for an engineer tells it to write for someone who can make independent decisions but lacks the project context.
 
-看过这份说明，确认没有误解你的意思，再连同需要的材料一起交给 Codex 开工。
+Read the brief and make sure it reflects what you meant. Then give it to Codex, along with the materials it needs, and let it get to work.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/ask-gpt-6-pro-for-an-engineer-task-brief)：@Voxyz_ai 2026年9月8日[发在 X 上](https://x.com/Voxyz_ai/status/2097369374453571975)，截至 2026年9月15日有 1,496 次收藏。最近一次检查：发帖当天，GPT-6 Pro，可用。适用于 Codex。
+From [Copybook](https://copybook.page/t/ask-gpt-6-pro-for-an-engineer-task-brief): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2097369374453571975) on 8 Sep 2026, 1.5K saves as of 15 Sep 2026. Last check: works on GPT-6 Pro, the day it was posted. For Codex.

@@ -1,24 +1,24 @@
-# 验收 · 18 条
+# Review · 18 tips
 
-Copybook 的 18 条「验收」技巧，按收藏数排序，与合不合适无关：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../review-tips/references/<名字>.md`。
+Copybook's 18 tips on review. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../review-tips/references/<name>.md`.
 
-| 技巧 | 做什么 |
+| Tip | What it does |
 | --- | --- |
-| tailscale-preview-links | agent 给的链接是 localhost：预览、审查页面、看板都换成 Tailscale 链接，手机上直接打开。 |
-| bug-score-rule-for-astra | Astra 总挑几乎不会发生的 bug，Opus 一条条去修：给 bug 打分，分低的记成 issue，代码不动。 |
-| blast-radius-and-4-more-prompts | 只说「修这个 bug」只拿到默认答案：影响范围、并行目标、红队计划、真实用户走查、思考预算。 |
-| ios-simulator-ui-bug-check | iOS app 里的 UI 问题：主要页面都点一遍，有 Duo 模拟器就查各形态，建议最小改法。 |
-| perf-review-the-5-slowest-spots | 想让代码变快，多半换来一层缓存：profile 测出的耗时，每处对上的改法，要改的行和预计提速。 |
-| one-question-before-it-answers | 一次问 10 个你就不想答：先摆出没说的假设、缺的信息和常见错误，再只问最可能改变做法的那个。 |
-| skill-backtest-on-codex-sessions | 凭记忆写的 skill 和实际做法对不上：拿过去的 Codex 会话回测，先出 dry run 的 diff，再定期复查。 |
-| code-and-direction-review | 代码越来越复杂，或忙了很久不知道通向哪里：一条找出不必存在的代码，一条重新审视方向。 |
-| claude-api-prompt-audit | skill 里还留着旧模型名和失效命令：官方 skill 审一遍，列出重复约束和过度强调，附 diff。 |
-| fake-busy-check | 开了一堆会话，回头看什么都没做成：分清今天真合并的和来回改的，一句话定下明天第一件事。 |
-| nightly-push-review-routine | 今天推到 main 的代码，睡觉时再看一遍：每个 bug 开 draft PR 附先失败的测试，笔记本合上也跑。 |
-| logging-plan-and-daily-fix-list | 坏掉的功能、卡住的用户、太慢的步骤：按影响人数排序，附日志原文，最严重的一条已有测试。 |
-| plan-review-5-methods | 计划写完代码还没动：一条消息要第一性原理、对抗性审查、消融测试、奥卡姆剃刀和高内聚低耦合。 |
-| skill-score-by-yes-no-questions | skill 改了一版有没有变好：10 个真实任务、8 道是非题、不知情的评分 subagent，只留提分的那版。 |
-| 3-checks-before-a-skill-install | 有人在 ClawHub 上放了 314 个恶意 skill：装之前查来源、扫代码、问清权限，不到 5 分钟。 |
+| tailscale-preview-links | Agent links that say localhost: Tailscale links to previews, review pages and dashboards that open right on your phone. |
+| bug-score-rule-for-astra | Astra flags bugs that almost never happen and Opus fixes each one: bugs scored, low scores filed as issues, code left alone. |
+| blast-radius-and-4-more-prompts | 'Fix this bug' hands you defaults: what your diff touches, an end-to-end goal, a red-teamed plan, a user walk, a thinking budget. |
+| ios-simulator-ui-bug-check | UI bugs in your iOS app: main screens tapped through, Duo poses checked if its simulator exists, smallest changes suggested. |
+| perf-review-the-5-slowest-spots | Ask for faster code and you probably get a cache: timings from a profile, one matching fix each, its lines and expected speedup. |
+| one-question-before-it-answers | Ten questions at once get ignored: assumptions, missing info, the usual mistake, then the one question that changes its approach. |
+| skill-backtest-on-codex-sessions | A skill written from memory drifts from how you work: compared with your past sessions, a dry-run diff, a recurring review. |
+| code-and-direction-review | Code too complicated, or busy a long time with no clear direction: one finds what needn't exist, one rechecks the direction. |
+| claude-api-prompt-audit | Skills for older models misfire on Fable 5.1: duplicate rules, dead commands and old model names listed, with a diff. |
+| fake-busy-check | A pile of sessions and nothing done: today's merges told apart from busywork, then one sentence on tomorrow's first task. |
+| nightly-push-review-routine | Today's pushes to main, reviewed while you sleep: a draft PR per bug with a test that fails first, in the cloud, laptop closed. |
+| logging-plan-and-daily-fix-list | Broken features, stuck users, slow steps: ranked by users affected, with log lines; the worst one already has a test. |
+| plan-review-5-methods | Plan written, no code yet: one message for first principles, adversarial review, ablation, Occam's razor and loose coupling. |
+| skill-score-by-yes-no-questions | Did the skill edit help: 10 real tasks, 8 yes/no questions, a blind judge subagent; keep only a fix that raises the score. |
+| 3-checks-before-a-skill-install | Someone put 314 malicious skills on ClawHub: check the source, scan the code, question the permissions, in under five minutes. |
 | 1-1-on-your-week-from-git-log | Moving this week or just busy: 7 days of git log and sessions, every judgment backed by a commit or conversation, 3 commitments. |
-| state-machine-check | 功能状态间的 bug：从 UI 到服务端的每个状态画在一页 HTML 上，附编号清单，写明文件、行号和原因。 |
+| state-machine-check | Bugs between a feature's states: every state from UI to server on one HTML page, then a numbered list with file, line and why. |
 | parallel-cloud-pr-checks | PRs wait their turn for one machine's checks: each head runs your gate in its own cloud session and gets a PASS or FAIL comment. |

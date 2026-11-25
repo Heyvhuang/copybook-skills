@@ -1,40 +1,40 @@
-# skill 按场景路由的规则
+# Situation routing rules for skills
 
-agent 常常忘了用装好的，你只好一个个点名：每个任务挑最合适的，一句话说明哪个、为什么。
+Your agent often forgets to use what you install, so you call each by name: the best fit per task, with one line on which and why.
 
-## 步骤
+## Steps
 
-1. 复制 skill 路由规则。
-2. 加进项目里的 CLAUDE.md 或 AGENTS.md。
-3. 得到：每个任务有合适的 skill 时，agent 挑出最能解决问题的那个，一句话说明是哪个、为什么。
+1. Copy the skill routing rules.
+2. Add them to the CLAUDE.md or AGENTS.md in your project.
+3. You get: The agent picks the best skill for each task, if one fits, and tells you in one line which and why.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## skill 路由规则
+## Skill routing rules
 
 ```markdown
-- 每次开始时，先弄清我在做什么、眼前是什么任务
-- 从我所有的 skill 里，挑出最能解决眼前问题的那一个，直接用
-- 用一句话告诉我你用了哪个、为什么
-- 我开始下一个任务或换了目标时，重新挑
-- 同一个任务里的追问和小改动，沿用同一个 skill
-- 如果没有合适的，就别提，接着干活
+- Every time you start, first check what I'm doing and what task is in front of me
+- Out of all my skills, pick the one that best solves the problem at hand, and just use it
+- Tell me in one line which one you used and why
+- When I start the next task or change the goal, pick again
+- Follow-ups and small edits on the same task keep the same skill
+- If none fits, don't bring it up, just keep working
 ```
 
-## 背景
+## Background
 
-做 vibe coding 的朋友，求你们了，每个 skill 都按场景路由。你装了一大堆，agent 常常忘了用，最后你只好记住名字，一个一个调用。
+Vibecoders, I'm begging you, route every skill by situation. You install a pile of them, your agent often forgets to use them, and you end up remembering names and calling them one by one.
 
-简单说，就是这几行，直接放进你的 CLAUDE.md 或 AGENTS.md。
+In short, it's these few lines. Put them straight into your CLAUDE.md or AGENTS.md.
 
-如果你自己写 skill，别一个个装。把它们都放进一个主 skill：每个 skill 的正文存成主 skill 文件夹里的一个文件，在主 skill 里放一张表，写明每个文件管哪类工作，再加上上面这几行，被挑中时才读对应的文件。这样你的上下文里只有一段描述：主 skill 的那段。
+If you write your own skills, don't install them one by one. Put them all into one main skill: save each skill's body as a file in the main skill's folder, put a table in the main skill saying what work each one handles, add the lines above, and read a file only when it gets picked. Your context only holds one description: the main skill's.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/route-every-skill-by-situation)：@Voxyz_ai 2026年11月4日[发在 X 上](https://x.com/Voxyz_ai/status/2117995297007972484)，截至 2026年11月11日有 116 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/route-every-skill-by-situation): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2117995297007972484) on 4 Nov 2026, 116 saves as of 11 Nov 2026. For Claude Code and Codex.

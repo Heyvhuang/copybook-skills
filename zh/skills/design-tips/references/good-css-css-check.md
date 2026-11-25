@@ -1,50 +1,50 @@
-# good-css：vibe coding 网站的 CSS 检查
+# good-css: CSS check for a vibe-coded site
 
-手机上 hover 卡住、表单一打开全红框：47 条现代 CSS 写法，先列出网站样式的毛病，不改代码。
+Hover stuck on phones, forms red before anyone types: 47 modern CSS techniques and a list of what your styles get wrong.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在网站项目里把它发给 Claude Code 或 Codex 里的 Opus 5.5。
-3. 得到：装好 good-css，外加一份按影响排序的样式问题清单，不改代码。
+1. Copy the prompt.
+2. Send it to Opus 5.5 in Claude Code or Codex, in your site's project.
+3. You get: good-css installed, and a ranked list of CSS issues in your styles, with no code changed.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-先照 https://github.com/vojtaholik/good-css 的 README 装好 good-css，装好后直接读它的 SKILL.md 和用得上的 references 文件。
+Install good-css following the README at https://github.com/vojtaholik/good-css, then read its SKILL.md and the reference files you need.
 
-然后用它查一遍这个项目现有的样式（CSS 文件和组件里的 Tailwind class 都算），找三类问题：
-1. 手机上会出的毛病：点完 hover 卡住，点击区域小于 44px。
-2. CSS 能做却写了脚本或一堆断点的：下拉菜单、弹出层、手风琴，靠好几个断点拼出来的布局。
-3. 细节：页内链接被固定导航栏盖住，表单一打开就满是红框，跳动的数字带着旁边的字晃，焦点框被去掉。
+Then use it to check this project's existing styles (CSS files and Tailwind classes in components both count) for three kinds of problems:
+1. Things that break on phones: hover states that stick after a tap, and tap areas smaller than 44px.
+2. Things CSS can do that were built with scripts or a pile of breakpoints: dropdown menus, popovers, accordions, and layouts stitched together from several breakpoints.
+3. Details: in-page links that land under the sticky nav, forms that open already full of red borders, ticking numbers that shift the text next to them, and focus rings that were removed.
 
-只报这三类，项目里没有的就跳过，组件库自带的组件不算。每个问题都引用原来的代码，说明在什么设备上会出什么事，给出最小的改法，按影响大小排序。用到的写法哪些浏览器还不支持，也写上。
+Report only these three kinds and skip any the project doesn't have. Components that come from a component library don't count. For each issue, quote the original code, explain what goes wrong on which device, and suggest the smallest change, ranked by impact. Also note which browsers don't support a technique you use yet.
 
-先给我看问题清单，别改代码。
+Show me the list of issues first. Don't change any code.
 ```
 
-## 背景
+## Background
 
-强烈推荐给 Claude Code 或 Codex 装上 [good-css](https://github.com/vojtaholik/good-css)，然后让 Opus 5.5 拿它查一遍你 vibe coding 出来的网站。里面是 47 条现代 CSS 写法，agent 写样式时会优先用。
+Highly recommend installing [good-css](https://github.com/vojtaholik/good-css) in Claude Code or Codex, then having Opus 5.5 use it to check the site you vibe-coded. It holds 47 modern CSS techniques, and with it installed, your agent tries them first whenever it writes styles.
 
-清单里这几条能直接拿来查：
+A few on the list you can check right away:
 
-- 手机上点一下按钮，hover 效果就卡住不走。把 hover 写进 `(hover: hover) and (pointer: fine)`，只给有鼠标的设备
-- 表单一打开，必填项全是红框。换成 `:user-invalid`，用户改过或点了提交才变红
-- 点页内链接，标题被固定导航栏盖住。给 `html` 加一条和导航栏一样高的 `scroll-padding`，跳转就落在导航栏下面
-- 价格、计时器一跳，旁边的字跟着晃。数字加 `tabular-nums`，每一位一样宽
-- 图标按钮太小点不中。用伪元素把点击区域撑到 44px，样子不变
+- Tap a button on your phone and the hover effect gets stuck. Put hover styles inside `(hover: hover) and (pointer: fine)` so only devices with a mouse get them.
+- Open a form and every required field is already red. Switch to `:user-invalid` so a field turns red only after someone edits it or hits submit.
+- Click an in-page link and the heading lands under your sticky nav. Give `html` a `scroll-padding` as tall as the nav, and the jump lands just below it.
+- A price or timer ticks and the text next to it shifts. Add `tabular-nums` so every digit is the same width.
+- An icon button is too small to tap. Use a pseudo-element to grow the tap area to 44px without changing how it looks.
 
-把这段 prompt 发给 Opus 5.5。
+Send this prompt to Opus 5.5.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/check-your-vibe-coded-site-with-good-css)：@Voxyz_ai 2026年10月10日[发在 X 上](https://x.com/Voxyz_ai/status/2108875199164871053)，截至 2026年11月7日有 1,547 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/check-your-vibe-coded-site-with-good-css): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2108875199164871053) on 10 Oct 2026, 1.5K saves as of 7 Nov 2026. For Claude Code and Codex.

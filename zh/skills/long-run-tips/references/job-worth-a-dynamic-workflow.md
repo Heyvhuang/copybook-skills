@@ -1,48 +1,48 @@
-# 最该用动态工作流跑的活
+# The job worth a dynamic workflow in Claude Code
 
-哪件活值得交给一批 agent：全仓库检查、迁移或修复循环，先在一个目录、10 个 agent 以内排好计划。
+Which job is worth many agents: repo-wide checks, migrations or fix loops, planned on one directory with at most 10 agents.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在项目里用 Claude Code 发给 Opus 5.5。
-3. 得到：Opus 5.5 挑出最值得跑动态工作流的活，先在一个目录上做好计划，等你确认。
+1. Copy the prompt.
+2. Send it to Opus 5.5 in Claude Code, in your project.
+3. You get: Opus 5.5 picks the job most worth a dynamic workflow and plans it on one directory, then waits.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-读一下这两篇文档：
+Read these two docs:
 https://code.claude.com/docs/en/workflows
 https://platform.claude.com/docs/en/managed-agents/multiagent-orchestration
-我们在 Claude Code 里用动态工作流跑，第二篇只借它分工和复查的写法。
+We'll run this as a dynamic workflow in Claude Code. From the second doc, only borrow how it splits and reviews the work.
 
-然后翻一遍这个项目的代码、issue 和最近的提交，找三类适合交给动态工作流的活：
-1. 整个仓库都要过一遍的检查，比如找 bug、查漏掉的权限校验。
-2. 要改很多文件的迁移，比如把 JavaScript 换成 TypeScript。
-3. 要反复修到通过的活，比如类型检查报出的一堆错，连续两轮没进展就停。
-哪类在项目里找不到就直说，别硬凑。
+Then go through this project's code, issues and recent commits, and find three kinds of work that fit a dynamic workflow:
+1. Checks that need to cover the whole repo, like hunting for bugs or finding missing permission checks.
+2. Migrations that touch many files, like moving from JavaScript to TypeScript.
+3. Fixes you have to repeat until they pass, like a pile of type-check errors. Stop if two rounds in a row make no progress.
+If the project doesn't have one of these, just say so. Don't force it.
 
-挑最值得的一个，先只拿一个目录排计划，agent 先控制在 10 个以内。每块活派一个 agent，再给每块配一个 agent 复查，专找前一个漏掉的；一个 agent 失败不拖垮整个 run，没跑到的单独列出来。挑的是检查类的话，报出来的每个问题再交给另一个 agent 挑刺，站得住才算数。
+Pick the one most worth doing and plan it on a single directory first, with no more than 10 agents for now. Give each piece of work one agent, and pair each piece with a second agent that reviews it and looks for what the first one missed. One agent failing must not fail the whole run; list anything that didn't get covered. If you pick a check, hand every issue it reports to another agent to pick apart, and only count the ones that hold up.
 
-先用文字给我看挑了哪个、分几个阶段、派多少个 agent。我确认之前别启动 workflow，也别改文件。
+Show me in writing which one you picked, how many phases it has and how many agents it sends out. Don't start the workflow or change any files until I confirm.
 ```
 
-## 背景
+## Background
 
-Anthropic 完整公开了 Managed Agents 动态工作流的官方文档。他们在一个 116K 行的代码库里埋了 70 个 bug，单个 agent 跑三次，分别找到 14、15、27 个；Managed Agents 的工作流跑三次，每次都找到 66 个。你可以让 Opus 5.5 照着文档翻一遍你的项目，挑出最该交给一批 agent 的活，在 Claude Code 里用动态工作流跑起来。
+Anthropic published the full official docs for dynamic workflows in Managed Agents. They planted 70 bugs in a 116K-line codebase. Across three runs, a single agent found 14, 15 and 27. A Managed Agents workflow ran three times and found 66 every time. You can have Opus 5.5 follow the docs to go through your project, pick the job most worth splitting across many agents, and run it as a dynamic workflow in Claude Code.
 
-动态工作流是 Claude 先写好计划，分几轮派给很多 agent，最后把结果合起来。Managed Agents 按 API 计费；Claude Code 里也有动态工作流，所有付费套餐都能用，算进套餐用量（Pro 要先在 /config 里打开）。一个 run 最多派 1,000 个 agent，个个都在花额度，所以先拿一个目录试，/workflows 里能看到每个 agent 用了多少 token，随时能停。
+In a dynamic workflow, Claude writes the plan first, hands the work to many agents in phases, then combines the results. Managed Agents bills at API rates. Claude Code has dynamic workflows too, on every paid plan, and they count toward your plan's usage (on Pro, turn them on in /config first). A single run can send out up to 1,000 agents, and every one of them uses your limits, so start with one directory. /workflows shows how many tokens each agent has used, and you can stop the run at any time.
 
-把这段 prompt 发给 Opus 5.5。
+Send this prompt to Opus 5.5.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/pick-a-job-for-a-dynamic-workflow-in-claude-code)：@Voxyz_ai 2026年10月11日[发在 X 上](https://x.com/Voxyz_ai/status/2109237583704445140)，截至 2026年11月8日有 670 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/pick-a-job-for-a-dynamic-workflow-in-claude-code): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2109237583704445140) on 11 Oct 2026, 670 saves as of 8 Nov 2026. For Claude Code.

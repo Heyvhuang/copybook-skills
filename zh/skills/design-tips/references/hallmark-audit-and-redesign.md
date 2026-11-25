@@ -1,51 +1,51 @@
-# Hallmark：审查和重做 AI 味页面
+# Hallmark: audit and redesign AI-looking pages
 
-标题上方的小标签一眼暴露是 AI 做的：一条命令列出页面的问题，另一条整页重做，内容和表单保留。
+A tiny label above every heading gives AI away: one command lists what's wrong with a page, another rebuilds it, content kept.
 
-## 步骤
+## Steps
 
-1. 复制安装命令，再复制审查或重做的命令。
-2. 安装命令在终端里运行，审查和重做命令发给 Claude Code，Codex 里把 / 换成 $。
-3. 得到：先拿到一份问题清单；重做时保留你的内容、链接和表单。
+1. Copy the install command, then the audit or the redesign command.
+2. Run the install in a terminal, the audit and redesign in Claude Code, or in Codex with $ for the /.
+3. You get: A list of what's wrong first; a redesign keeps your content, links and forms.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 安装命令
+## Install command
 
 ```bash
 npx skills add nutlope/hallmark -g
 ```
 
-## 命令：审查页面
+## Command: audit a page
 
 ```text
 /hallmark audit ./index.html
 ```
 
-## 命令：重做页面
+## Command: redesign a page
 
 ```text
 /hallmark redesign ./src/app
 ```
 
-## 背景
+## Background
 
-Claude Code 做的页面，每个标题上方都有一个小标签。一眼就知道是 AI 做的。
+Claude Code pages have a tiny label sitting above every heading. One look and you know AI made them.
 
-有一个设计 skill 正是为这个做的。它刚发布了 v2。
+There's a design skill made for exactly this. It just shipped v2.
 
-已经做好的页面，先让它列出哪里有问题：
+For a page you've already built, start by having it list what's wrong:
 
-之后想整页重做的话，它会保留你的内容、链接和表单：
+If you then want the whole page rebuilt, it keeps your content, links and forms:
 
-换成你自己的文件或文件夹路径。在 Codex 里，把开头的 / 换成 $。
+Swap in your own file or folder path. In Codex, replace the leading / with $.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/audit-and-redesign-ai-looking-pages-with-hallmark)：@Voxyz_ai 2026年10月24日[发在 X 上](https://x.com/Voxyz_ai/status/2114039214660850098)，截至 2026年11月21日有 185 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/audit-and-redesign-ai-looking-pages-with-hallmark): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2114039214660850098) on 24 Oct 2026, 185 saves as of 21 Nov 2026. For Claude Code and Codex.

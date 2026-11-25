@@ -1,33 +1,33 @@
-# happy-path 债务排查和修复
+# Happy-path debt, found and fixed
 
-界面只在数据加载快、什么都不出错时才正常：缺的状态和布局错乱逐个组件修好，设计不变。
+Screens that only work when data loads fast and nothing fails: missing states and layout breaks fixed per component, design kept.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在你的 app 项目里发给 Claude Code 或 Codex。
-3. 得到：缺的状态和布局错乱一次修好一个组件，外加一份按文件写的前后对比。
+1. Copy the prompt.
+2. Send it to Claude Code or Codex in your app's project.
+3. You get: Missing states and layout breaks fixed one component at a time, and a before/now summary by file.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-找出我这个 app 里所有的 happy-path 债：每一个只有在数据加载快、什么都不出错、列表不为空、文字很短、屏幕够宽时才正常的界面。修好缺失的状态和布局错乱，一次一个组件，不改我的设计，也不弄坏任何东西。按文件总结：之前发生了什么，现在是怎么运作的。
+Find all the happy-path debt in my app: every screen that only works when data loads fast, nothing fails, lists aren't empty, text is short, and the screen is wide. Fix missing states and layout breaks, one component at a time, without changing my design and without breaking anything. Summarize by file: what happened before vs. how it works now.
 ```
 
-## 背景
+## Background
 
-如果你还觉得 Claude Code 和 Codex 打磨不行，试试这个。
+If you still think Claude Code and Codex suck at polish, try this.
 
-agent 做东西是为了 demo，demo 里一切顺利。真用起来，并不是这样。
+Agents build for the demo, where everything goes right. In real use, it doesn't.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/fix-happy-path-debt-across-your-app)：@Voxyz_ai 2026年11月12日[发在 X 上](https://x.com/Voxyz_ai/status/2120864199324889469)，截至 2026年11月19日有 260 次收藏。最近一次检查：2026年11月19日，Opus 5.5，可用。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/fix-happy-path-debt-across-your-app): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2120864199324889469) on 12 Nov 2026, 260 saves as of 19 Nov 2026. Last check: works on Opus 5.5, 19 Nov 2026. For Claude Code and Codex.

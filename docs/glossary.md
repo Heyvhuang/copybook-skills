@@ -2,7 +2,7 @@
 
 The terms these tips use, in plain words, each with an example.
 
-[copybook.page/glossary](https://copybook.page/glossary) · [中文](glossary.zh-CN.md)
+[copybook.page/glossary](https://copybook.page/glossary)
 
 [A](#agent) · [B](#backend) · [C](#cache) · [D](#diff) · [E](#effort) · [F](#frontend) · [G](#git) · [L](#lint-rule) · [M](#mcp) · [P](#playbook) · [Q](#quota) · [R](#repo) · [S](#saves) · [T](#terminal) · [V](#vibe-coding)
 

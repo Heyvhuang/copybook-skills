@@ -1,87 +1,87 @@
-# Herdr：Astra 协调 Claude Code 执行者
+# Herdr: Astra coordinating Claude Code workers
 
-Codex 里也能用你的 Claude Code 订阅：Astra 通过 Herdr 协调最多 10 个 Opus 执行者，重活交给它们。
+Your Claude Code subscription, used from Codex: Astra runs up to 10 Opus workers through Herdr and hands them the heavy work.
 
-## 步骤
+## Steps
 
-1. 复制命令，再复制「创建 herdr-desktop skill」和「分工流程」两条提示词。
-2. 在 Codex Desktop 里按顺序发给 Astra，需要时登录 Claude Code。
-3. 得到：Astra 通过 Herdr 协调最多 10 个 Opus 5 执行者，你留在 Codex 里。
+1. Copy the commands, then the herdr-desktop skill prompt, then the delegation workflow prompt.
+2. Send them to Astra in Codex Desktop in order, and sign in to Claude Code when asked.
+3. You get: Astra coordinates up to 10 Claude Code workers on Opus 5 through Herdr while you stay in Codex.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 命令
+## Commands
 
 ```bash
 brew install herdr
 npx skills add herdrdev/herdr --skill herdr -g
 ```
 
-## 提示词：创建 herdr-desktop skill
+## Prompt: create the herdr-desktop skill
 
 ```text
-参考 Herdr 官方文档和刚安装的 Skill，为我创建一个名为 herdr-desktop 的协调 Skill。主对话保持在当前 Codex Desktop 中，通过 Herdr CLI 管理后台执行者，不要求我进入 Herdr 终端操作。
+Use the official Herdr docs and the Skill we just installed to create a coordination Skill called herdr-desktop. Keep the main conversation in Codex Desktop and use the Herdr CLI to manage background workers. Don’t require me to operate inside a Herdr terminal.
 
-为当前任务启动独立命名的 Herdr 后台会话，明确指定会话和工作目录。检查 Claude Code CLI 是否已安装；缺少时安装，需要认证时提示我登录。
+Start a separately named Herdr background session for this task, explicitly targeting the session and working directory. Check whether Claude Code CLI is installed. If it’s missing, install it. If authentication is needed, ask me to sign in.
 
-认证完成后，启动一个 Opus 5 执行者，显式设置 xhigh 推理强度，让它只读查看项目并说明主要入口。等待它完成，读回实际回答，确认派工和结果读取可用。模型或配置不可用时告诉我，不要悄悄替换。
+After authentication, start one Opus 5 worker with reasoning effort explicitly set to xhigh. Give it a read-only task: inspect the project and explain its main entry points. Wait for it to finish and read back its actual response to confirm that task dispatch and result retrieval work. If the model or configuration is unavailable, tell me. Don’t silently substitute another.
 
-将验证通过的启动、派工、等待和读取方式保存到 Skill。配置期间不要修改项目代码。
+Save the verified startup, dispatch, wait, and result-reading procedures in the Skill. Don’t modify project code during setup.
 ```
 
-## 提示词：分工流程
+## Prompt: delegation workflow
 
 ```text
-接下来按这个方式工作：
+From now on, use this workflow:
 
-你是协调者。
+You are the coordinator.
 
-→ 由你负责理解项目、制定方案、拆分任务、整合结果和最终复核。
+→ Handle project understanding, planning, task decomposition, integration, and final review.
 
-→ 需要较多实现、调试、修复测试或修改多个文件时，通过 herdr-desktop 把任务交给 Claude Code。涉及前端时，让它同时打磨布局、视觉细节和实际交互。
+→ When a task needs substantial implementation, debugging, test fixes, or multi-file changes, delegate it to Claude Code through herdr-desktop. For frontend work, have it refine the layout, visual details, and actual interactions.
 
-执行者使用 Opus 5，显式设置 xhigh 推理强度。
+Use Opus 5 for workers, with reasoning effort explicitly set to xhigh.
 
-先简短说明分工，再并行启动独立任务。根据任务需要、机器负载和可用额度决定数量，最多 10 个，不必 10 个都开满。
+Briefly explain the division of work, then start independent tasks in parallel. Choose concurrency based on the task, machine load, and available allowance, up to 10 workers. You don’t need to use all 10.
 
-每个任务写清目标、工作目录、必要上下文、交付物和完成标准。并行修改代码时使用独立 worktree，由你统一整合。
+Give each task a clear objective, working directory, necessary context, deliverable, and completion criteria. Use separate worktrees for parallel code changes. You own the integration.
 
-后续反馈优先交回原来的执行者，继续已有会话，不要每轮重新启动。
+Send follow-up feedback to the original worker whenever possible and continue its existing conversation. Don’t start over every round.
 
-执行者完成后，亲自检查实际改动，并在整合后完成必要验证。涉及页面时，打开浏览器检查。独立审查有帮助时，再交给另一个执行者检查。
+After a worker finishes, inspect the actual changes yourself and run the necessary checks after integration. For page changes, open the browser and check them. When independent review would help, have another worker review the work.
 
-不要因为另一个 agent 说完成了，就直接当作完成。
+Don’t treat a task as finished just because another agent says it is.
 
-最后给我结果、验证情况和未解决的问题。释放不再需要的任务资源，保留成果和继续工作需要的记录。
+At the end, show me the result, what was verified, and any unresolved issues. Release task resources that are no longer needed while preserving the work and records needed to continue.
 ```
 
-## 背景
+## Background
 
-你可以在 Codex 里同时用上你的 Claude Code 订阅。Astra 可以通过 Herdr 协调最多 10 个 Claude Code 执行者，全部使用 Opus 5。把大量实现工作分给 Claude Code，网页的布局、交互和视觉细节也一并交给它打磨。你继续在 Codex Desktop 里工作，Herdr 在后台管理 Claude Code。
+You can use your Claude Code subscription from Codex. Astra can coordinate up to 10 Claude Code workers through Herdr, all running Opus 5. Hand off the heavy implementation work to Claude Code, including polishing your pages' layout, interactions and visual details. You keep working in Codex Desktop while Herdr manages Claude Code in the background.
 
-**1. 安装 Herdr 和它的 skill**。打开 Codex Desktop，选择 Astra，把这两行发给它执行（Mac）。装好后，让 Astra 确认 Codex 和 Claude Code 两边都能找到这个 skill。
+**1. Install Herdr and its skill.** Open Codex Desktop, select Astra and ask it to run these two commands (Mac). Then have Astra confirm that both Codex and Claude Code can find the skill.
 
-**2. 让 Astra 完成配置。**
+**2. Have Astra finish the setup.**
 
-**3. 登录你的 Claude Code 账号**。Astra 会检查 Claude Code 的登录状态。需要时，按提示用你的 Claude Code 订阅账号完成认证。
+**3. Sign in to your Claude Code account.** Astra checks Claude Code's login status. If needed, authenticate with the account you use for your Claude Code subscription.
 
-**4. 告诉 Astra 怎样分工。**
+**4. Tell Astra how to delegate.**
 
-几个使用建议：
+A few tips:
 
-1. 把第 4 步的分工也保存进 herdr-desktop，以后开始任务时直接调用。
-2. 用 skill 配合一个明确的最终目标。例如：「完成这个定价页，保持网站现有风格，并检查手机显示和套餐切换。」
-3. 两边仍然各有自己的额度限制，并行数量按任务和剩余额度来定。
-4. 长任务保留进度、关键决定和下一步。换会话后先核对实际状态，再接着做。
+1. Save the delegation instructions from step 4 in herdr-desktop too, so you can invoke the skill at the start of future tasks.
+2. Pair the skill with a clear end goal, for example: "Finish this pricing page, keep it consistent with the existing site, and check the mobile layout and plan switching."
+3. Each account still has its own usage limits. Adjust concurrency to the task and remaining allowance.
+4. For long tasks, keep a record of progress, key decisions and next steps. When switching conversations, check the actual state before continuing.
 
-反过来也可以：让 Claude Code 负责协调，让 Codex 执行。把角色和对应配置对调即可。
+It works the other way around too: Claude Code coordinates and Codex executes. Swap the roles and their settings.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/let-codex-astra-run-claude-code-workers-with-herdr)：@Voxyz_ai 2026年9月22日[发在 X 上](https://x.com/Voxyz_ai/status/2102382418984415420)，截至 2026年10月20日有 1,065 次收藏。最近一次检查：发帖当天，Astra 配合 Opus 5 执行者，可用。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/let-codex-astra-run-claude-code-workers-with-herdr): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2102382418984415420) on 22 Sep 2026, 1.1K saves as of 20 Oct 2026. Last check: works on Astra with Opus 5 workers, the day it was posted. For Claude Code and Codex.

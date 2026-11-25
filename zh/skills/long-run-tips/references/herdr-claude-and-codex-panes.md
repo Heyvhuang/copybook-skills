@@ -1,22 +1,22 @@
-# Herdr：Claude 和 Codex 同跑一个任务
+# Herdr: one task across Claude and Codex panes
 
-结论靠你在窗口间搬来搬去：拆任务，每个 agent 自己的 worktree 和目标，一个执行、一个审查。
+Relaying conclusions between windows by hand: the task split, a worktree and outcome per agent, one executes, one reviews.
 
-## 步骤
+## Steps
 
-1. 复制提示词，把任务填进 [TASK]。
-2. 在 Herdr 里发给主 agent，Claude 和 Codex 各占一个窗格。
-3. 得到：主 agent 拆好任务，一个执行一个审查，不用你在窗口之间传话。
+1. Copy the prompt and put your task where it says [TASK].
+2. Send it to the main agent in Herdr, with Claude and Codex each in a pane.
+3. You get: The main agent splits the task, has one agent work and another review, and never asks you to relay.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
 Run this task with multiple agents in parallel:
@@ -38,10 +38,10 @@ Bring the work together in one place. For a Git repo, integrate through one chec
 Finish with the result, verification evidence, unresolved issues, and any panes or worktrees still running.
 ```
 
-## 背景
+## Background
 
-有了 Herdr，Claude 和 Codex 各占一个窗格。主 agent 负责派活、等结果、读输出、追问。以前我得自己把每个结论在窗口之间搬来搬去。手上有 ChatGPT、Codex 和别的 agent 时，一个干活，另一个审查。
+With Herdr, Claude and Codex each get a pane. The main agent assigns work, waits, reads and follows up. I used to carry every conclusion between windows myself. With ChatGPT, Codex and other agents, one works and another reviews.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/run-one-task-across-claude-and-codex-with-herdr)：@Voxyz_ai 2026年8月8日[发在 X 上](https://x.com/Voxyz_ai/status/2086059460502417772)，截至 2026年9月5日有 884 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/run-one-task-across-claude-and-codex-with-herdr): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2086059460502417772) on 8 Aug 2026, 884 saves as of 5 Sep 2026. For Claude Code and Codex.

@@ -1,44 +1,44 @@
-# hillclimb：Claude API 功能降本
+# hillclimb: a cheaper Claude API feature
 
-最花钱的 Claude API 调用：先搭测试集，再一档档换便宜模型、降 effort，准确率不掉才算数。
+Your costliest Claude API feature: a test set first, then cheaper models and lower effort step by step while accuracy holds.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在调用 Claude API 的项目里把它发给 Claude Code。
-3. 得到：最花钱的 Claude API 调用一档档换更便宜的模型、降 effort，准确率不降。
+1. Copy the prompt.
+2. Send it to Claude Code in the project that calls the Claude API.
+3. You get: Your costliest Claude API call, stepped down to cheaper models and effort while accuracy holds.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-读一下这篇指南：https://claude.dev/blog/automating-eval-design-and-hillclimbing/
+Read this guide: https://claude.dev/blog/automating-eval-design-and-hillclimbing/
 
-然后先列出项目里所有调用 Claude API 的地方，估一下哪个最花钱，让我挑一个。用 claude-api skill 里的 build-eval 给它搭一套测试，开跑前先告诉我大概要花多少 API 费用。
+Then list every place in this project that calls the Claude API, estimate which one costs the most, and let me pick one. Use build-eval from the claude-api skill to build a test set for it, and tell me roughly what it will cost in API fees before you run anything.
 
-测试题和评分方式我确认之后，在新分支上用 hillclimb 优化，目标是准确率不降、成本下降，可以试更低的 effort 和更便宜的模型，包括 Sonnet 5.5。报告里写清三件事：
-1. 每一步改了什么，准确率和每次调用的成本各变了多少。
-2. 哪些便宜配置做错了，错在哪。
-3. prompt 里删掉或加上了哪些句子。
+Once I've approved the test cases and the grading, run hillclimb on a new branch. The goal is to keep accuracy and cut cost. You can try lower effort and cheaper models, including Sonnet 5.5. The report should spell out three things:
+1. What changed at each step, and how accuracy and cost per call moved.
+2. Which cheaper setups got things wrong, and where.
+3. Which sentences were removed from or added to the prompt.
 
-跑完先给我看报告，我确认之前别合并。
+Show me the report first. Don't merge anything until I confirm.
 ```
 
-## 背景
+## Background
 
-Anthropic 公开了一份指南：他们让 Claude 一轮轮调一个 AI 功能，同样的活最后只花约 1/5 的钱，准确率还更高。你可以让 Claude Code 照着它，用两个命令给你产品里调用 Claude API 的功能也过一遍。
+Anthropic published a guide where they had Claude tune an AI feature round by round, and the same job ended up costing about 1/5 as much, with higher accuracy. You can have Claude Code follow it and put any feature in your product that calls the Claude API through the same process, with two commands.
 
-做法就三步：先删掉 prompt 里多余的步骤和互相矛盾的规则，再一档档往下换更便宜的模型、降 effort，最后补上缺的规则。每一步都拿一组它没见过的题验证，准确率掉了就撤回，最后准确率从 78.6% 升到 90.5%。新出的 Sonnet 5.5 能力和 Opus 5.5 相近，但更便宜、更快，想用它也照这个顺序先量一遍。
+It takes three steps. First, cut the extra steps and contradictory rules from the prompt. Then step down to cheaper models and lower effort, one level at a time. Finally, add the rules that were missing. Every step is checked against a set of cases it has never seen, and any change that lowers accuracy gets rolled back. In the end, accuracy went from 78.6% to 90.5%. The new Sonnet 5.5 is close to Opus 5.5 in capability but cheaper and faster, so if you want to use it, measure it the same way first.
 
-把这段 prompt 发给 Claude Code。
+Send this prompt to Claude Code.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/hillclimb-a-claude-api-feature-to-cut-its-cost)：@Voxyz_ai 2026年9月28日[发在 X 上](https://x.com/Voxyz_ai/status/2104710877505089920)，截至 2026年10月26日有 1,710 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/hillclimb-a-claude-api-feature-to-cut-its-cost): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2104710877505089920) on 28 Sep 2026, 1.7K saves as of 26 Oct 2026. For Claude Code.

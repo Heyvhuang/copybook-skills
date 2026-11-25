@@ -1,37 +1,37 @@
-# /design 画出的每个界面状态
+# Every UI state mocked up with Claude Design
 
-功能做之前先看到每个状态：/design 配一个设计参考仓库，默认、加载、空、出错、成功都画成稿。
+Before any app code changes: default, loading, empty, error and success on separate artboards, from a design reference repo.
 
-## 步骤
+## Steps
 
-1. 复制提示词，填好页面和需求文件。
-2. 在 Claude Code 里运行 /design，把提示词和参考仓库链接一起发过去。
-3. 得到：每个状态一张画板的静态设计稿，应用代码一行不动。
+1. Copy the prompt and fill in the page and the requirements files.
+2. Run /design in Claude Code and send the prompt with the reference repo link.
+3. You get: Static mockups of each state on separate artboards, before any app code changes.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-为 [页面或功能] 制作静态 UI 设计稿。先读当前项目里的 [需求文件和相关页面]，遵循它现有的设计系统和组件。然后浏览下面的参考仓库，选一个合适的 DESIGN.md，完整读完。项目还没定义的布局、字体和视觉风格，参考它来定。
+Create static UI mockups for [page or feature]. First, read [requirements files and relevant pages] in the current project, and follow its existing design system and components. Then browse the reference repository below, choose a suitable DESIGN.md, and read it in full. Use it to inform layout, typography, and visual styling that the project hasn’t already defined.
 
-使用我项目里的内容和功能，让主要操作和反馈清晰明确。除了默认视图，为这个功能相关的加载、空、出错和成功状态分别使用单独的画板。先给我看设计。现在不要修改应用代码。
+Use my project’s content and functionality, and make the primary actions and feedback clear. Alongside the default view, use separate artboards for any loading, empty, error, and success states relevant to this feature. Show me the design first. Don’t modify the application code yet.
 ```
 
-## 背景
+## Background
 
-Claude Design 本来审美就很强。现在它内置进了 Claude Code，我觉得这对前端工作会是件大事。你可以在同一个开发对话里讨论功能、让 Claude Design 画 UI 稿、再一起修改。
+Claude Design already has a strong eye for design. Now that it's built into Claude Code, I think this is going to be huge for frontend work. You can discuss a feature, have Claude Design create the UI mockups, and refine them all in the same development conversation.
 
-在 Claude Design 里有个特别好用的技巧：写 prompt 时附一个设计参考仓库作为上下文。同样的 prompt、同样的模型，有没有参考差别很明显。我用的是 voltagent/awesome-design-md，我发帖时它有 116.2k star。不一定非用这个，其他合适的设计参考也行。如果你是独立开发者或小团队，特别值得一试。
+One tip that works really well in Claude Design: attach a design reference repo as context when you write your prompt. With the same prompt and model, the difference with and without a reference is noticeable. I used voltagent/awesome-design-md, which had 116.2k stars when I posted. You don't have to use this one; other suitable design references work too. It's especially worth trying if you're a solo builder or on a small team.
 
-拿到 Claude Code 的 /design 权限后，运行这个命令，把你的需求、这段 prompt 和参考链接一起给它：https://github.com/VoltAgent/awesome-design-md
+Once you have access to /design in Claude Code, run the command and give it your requirements, this prompt, and the reference link: https://github.com/VoltAgent/awesome-design-md
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/mock-up-every-ui-state-with-claude-design-in-claude-code)：@Voxyz_ai 2026年9月16日[发在 X 上](https://x.com/Voxyz_ai/status/2100341922749374950)，截至 2026年10月14日有 386 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/mock-up-every-ui-state-with-claude-design-in-claude-code): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2100341922749374950) on 16 Sep 2026, 386 saves as of 14 Oct 2026. For Claude Code.

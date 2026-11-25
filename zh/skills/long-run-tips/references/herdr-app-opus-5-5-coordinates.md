@@ -1,91 +1,91 @@
-# Herdr 桌面版：Opus 5.5 协调执行者
+# Herdr app: Opus 5.5 coordinating workers
 
-不离开 Claude Code 也能多开 agent：Opus 5.5 通过 Herdr 协调最多 10 个执行者，Codex 负责审查。
+Running more agents without leaving Claude Code: Opus 5.5 coordinates up to 10 workers through Herdr, and a Codex worker reviews.
 
-## 步骤
+## Steps
 
-1. 复制命令、配置提示词和分工提示词。
-2. 在 Claude Code 里选 Opus 5.5，先让它跑命令，再依次发配置和分工两条提示词。
-3. 得到：一个 herdr-desktop skill，Opus 5.5 把活分给最多 10 个执行者。
+1. Copy the commands, the setup prompt and the delegation prompt.
+2. In Claude Code on Opus 5.5, have it run the commands, then send the setup and delegation prompts.
+3. You get: A herdr-desktop skill, with Opus 5.5 handing work to up to 10 Claude Code and Codex workers.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 命令
+## Commands
 
 ```bash
 curl -fsSL https://releases.herdr.dev/app/install.sh | sh
 hc --skill
 ```
 
-## 配置提示词
+## Setup prompt
 
 ```text
-参考 Herdr 官方文档，以及 hc --skill 和 herdr-app --skill 给出的说明，为我创建一个名为 herdr-desktop 的协调 Skill。主对话保持在当前 Claude Code 会话中，用 hc 管理后台执行者，不要求我进入 Herdr 终端操作。
+Use the official Herdr docs and the instructions from hc --skill and herdr-app --skill to create a coordination Skill called herdr-desktop. Keep the main conversation in this Claude Code session and use hc to manage background workers. Don’t require me to operate inside a Herdr terminal.
 
-为这个任务启动单独命名的后台执行者，明确设置工作目录。检查 Claude Code CLI 和 Codex CLI 是否已安装；缺哪个就装哪个，需要认证时提示我登录。
+Start separately named background workers for this task, explicitly setting the working directory. Check whether Claude Code CLI and Codex CLI are installed. If either is missing, install it. If authentication is needed, ask me to sign in.
 
-认证完成后，启动一个使用 Astra 的 Codex 执行者，显式设置 xhigh 推理强度，给它一个只读任务：查看项目并说明主要入口。运行 Codex 时加上 --no-daemon，并在它的沙箱里允许网络访问，否则它连不上 hc。它第一次在新文件夹里启动时，会问要不要信任这个文件夹；卡在那里的话，告诉我。等它完成，读回它的实际回答，确认派工和结果读取可用。模型或配置不可用时告诉我，不要悄悄替换。
+After authentication, start one Codex worker using Astra, with reasoning effort explicitly set to xhigh. Give it a read-only task: inspect the project and explain its main entry points. Run Codex with --no-daemon and allow network access in its sandbox, or it can’t reach hc. The first time it starts in a new folder, it asks whether to trust that folder. If it gets stuck there, tell me. Wait for it to finish and read back its actual response to confirm that task dispatch and result retrieval work. If the model or configuration is unavailable, tell me. Don’t silently substitute another.
 
-Herdr 应用打开时，把执行者放进一个空间，让我能在侧边栏看到它们。
+When the Herdr app is open, put the workers in a space so I can see them in the sidebar.
 
-将验证通过的启动、派工、等待和读取结果的方式保存到 Skill。配置期间不要修改项目代码。
+Save the verified startup, dispatch, wait, and result-reading procedures in the Skill. Don’t modify project code during setup.
 ```
 
-## 分工提示词
+## Delegation prompt
 
 ```text
-接下来按这个方式工作：
+From now on, use this workflow:
 
-你是协调者。
+You are the coordinator.
 
-→ 由你负责理解项目、制定方案、拆分任务、整合结果和最终复核。始终做出能同时提升用户体验（UX）、开发者体验（DX）和 agent 体验（AX）的最佳决定，而且不破坏任何东西。
+→ Handle project understanding, planning, task decomposition, integration, and final review. Make the best decision that will elevate all three: the user experience (UX), developer experience (DX), and agent experience (AX) always, without breaking anything.
 
-→ 需要较多实现、调试、修复测试或修改多个文件时，通过 herdr-desktop 把任务交给 Claude Code。涉及前端时，让它打磨布局、视觉细节和实际交互。给它这条规则：不要为没人问过的罕见情况或未来情况做设计。
+→ When a task needs substantial implementation, debugging, test fixes, or multi-file changes, delegate it to Claude Code through herdr-desktop. For frontend work, have it refine the layout, visual details, and actual interactions. Give it this rule: Do not design for rare or future cases nobody asked about.
 
-Claude Code 执行者使用 Opus 5.5，Codex 执行者使用 Astra，两者都显式设置 xhigh 推理强度。
+Use Opus 5.5 for Claude Code workers and Astra for Codex workers, both with reasoning effort explicitly set to xhigh.
 
-先简短说明分工，再并行启动独立任务。根据任务需要、机器负载和可用额度决定数量，最多 10 个，不必 10 个都开满。
+Briefly explain the division of work, then start independent tasks in parallel. Choose concurrency based on the task, machine load, and available allowance, up to 10 workers. You don’t need to use all 10.
 
-每个任务写清目标、工作目录、必要上下文、交付物和完成标准。并行修改代码时使用独立 worktree，由你统一整合。
+Give each task a clear objective, working directory, necessary context, deliverable, and completion criteria. Use separate worktrees for parallel code changes. You own the integration.
 
-后续反馈优先交回原来的执行者，继续已有会话，不要每轮重新启动。
+Send follow-up feedback to the original worker whenever possible and continue its existing conversation. Don’t start over every round.
 
-执行者完成后，亲自检查实际改动，并在整合后完成必要验证。涉及页面时，打开浏览器检查。
+After a worker finishes, inspect the actual changes yourself and run the necessary checks after integration. For page changes, open the browser and check them.
 
-代码改完后，把审查交给一个没参与实现的 Codex 执行者，并给它这条规则：每个 bug 按发生得有多频繁、会有多严重，各打 1 到 10 分。两个分数相乘如果低于 5，就只记成一个 issue，代码不要动。
+After code changes, hand the review to a Codex worker that didn’t work on the implementation, with this rule: Rate each bug from 1 to 10 on how often it would happen and how bad it would be. If the two scores multiplied are below 5, just file it as an issue and leave the code alone.
 
-不要因为另一个 agent 说完成了，就直接当作完成。
+Don’t treat a task as finished just because another agent says it is.
 
-最后给我结果、验证情况和未解决的问题。释放不再需要的任务资源，保留成果和继续工作需要的记录。
+At the end, show me the result, what was verified, and any unresolved issues. Release task resources that are no longer needed while preserving the work and records needed to continue.
 ```
 
-## 背景
+## Background
 
-Herdr 现在有自己的桌面版了。装好后，Opus 5.5 可以通过 Herdr 协调最多 10 个执行者：Claude Code 写代码，爱挑细节的 Codex Astra 来审。把大量实现工作分给 Claude Code，网页的布局、交互和视觉细节也一并交给它打磨。
+Herdr now has its own desktop app. Install it, and Opus 5.5 can coordinate up to 10 workers through Herdr: Claude Code writes the code, and nitpick-obsessed Codex Astra reviews it. Hand off the heavy implementation work to Claude Code, including polishing your pages' layout, interactions and visual details.
 
-**1. 安装 Herdr 和它的 skill**。打开 Claude Code，选择 Opus 5.5，让它执行 Herdr 的安装和 `hc --skill`（Mac）。装好后，让 Opus 5.5 确认 hc 能用。你继续在 Claude Code 里工作，Herdr 在后台管理执行者，不用来回切换界面。
+**1. Install Herdr and its skill.** Open Claude Code, select Opus 5.5 and have it run the Herdr install and `hc --skill` (Mac). Once installed, have Opus 5.5 confirm that hc works. You keep working in Claude Code: Herdr manages the workers in the background, so you don't have to switch interfaces.
 
-**2. 让 Opus 5.5 完成配置。**
+**2. Have Opus 5.5 finish the setup.**
 
-**3. 登录你的 Codex 账号**。Opus 5.5 会检查 Codex 的登录状态。需要时，按提示用你的 ChatGPT 账号完成认证。之后你继续在 Claude Code 里派任务，Codex 在后台用你 ChatGPT 账号的额度运行。
+**3. Sign in to your Codex account.** Opus 5.5 will check Codex's login status. If needed, follow the prompts to authenticate with your ChatGPT account. After that, you keep assigning tasks in Claude Code, while Codex runs in the background using your ChatGPT account's allowance.
 
-**4. 告诉 Opus 5.5 怎样分工。**
+**4. Tell Opus 5.5 how to delegate.**
 
-几个使用建议：
+A few tips:
 
-1. 把第 4 步的分工也保存进 herdr-desktop，以后开始任务时直接调用这个 skill。
-2. 用 skill 配合一个明确的最终目标，例如：「完成这个定价页，保持网站现有风格，并检查手机显示和套餐切换。」
-3. 每个账号仍然有自己的额度限制，并行数量按任务和剩余额度来定。
-4. 长任务保留进度、关键决定和下一步。换会话后先核对实际状态，再接着做。
+1. Save the delegation instructions from step 4 in herdr-desktop too, so you can invoke the skill at the start of future tasks.
+2. Pair the skill with a clear end goal, for example: "Finish this pricing page, keep it consistent with the existing site, and check the mobile layout and plan switching."
+3. Each account still has its own usage limits. Adjust concurrency to the task and remaining allowance.
+4. For long tasks, keep a record of progress, key decisions and next steps. When switching conversations, check the actual state before continuing.
 
-反过来也可以：让 Codex 负责协调，让 Claude Code 执行。把角色和对应配置对调即可。
+It works the other way around, too: Codex coordinates and Claude Code executes. Swap the roles and their settings.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/herdr-app-with-opus-5-5-coordinating-workers)：@Voxyz_ai 2026年10月31日[发在 X 上](https://x.com/Voxyz_ai/status/2116575932957762004)，截至 2026年11月7日有 1,200 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/herdr-app-with-opus-5-5-coordinating-workers): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2116575932957762004) on 31 Oct 2026, 1.2K saves as of 7 Nov 2026. For Claude Code and Codex.

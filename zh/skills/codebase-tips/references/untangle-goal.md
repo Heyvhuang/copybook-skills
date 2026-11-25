@@ -1,33 +1,33 @@
-# 理清面条代码的 /goal
+# Untangle /goal for spaghetti code
 
-几个月 vibe coding 让代码缠成一团：一页 HTML 接线图，最严重的结标红编号，再逐个修、逐个跑测试。
+Months of vibe coding left the code in knots: an HTML wiring diagram, the worst numbered in red, then fixes tested one by one.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在仓库里把它发给 Codex。
-3. 得到：一张接线图，然后是新分支上的修改，没通过的回滚，再加一张前后对比图。
+1. Copy the prompt.
+2. Send it to Codex in your repo.
+3. You get: A wiring diagram, then fixes on a new branch, any that fail rolled back, and a before/after image.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-/goal 把这个仓库里缠成一团的代码理清：抽象泄漏、复制粘贴之后越改越不一样的代码、一直没删掉的临时方案，还有空壳封装。先画一张一屏放得下的接线图，做成一个 HTML 页面：从每个功能连一条线到它涉及的每个文件，缠得最严重的结标成红色并编号。每一个都给出文件、行号，以及怎么解开。
+/goal Untangle the knotted code in this repo: leaky abstractions, copy-paste that has drifted apart, temporary workarounds that never got deleted, and empty wrappers. First, draw a wiring diagram that fits on one screen, as an HTML page: a line from each feature to every file it touches, with the worst knots marked in red and numbered. For each one, give the file, the line and how to untangle it.
 
-然后在新分支上，从最严重的开始解开。每解开一个，就跑一遍测试和构建（没有测试的话，至少确保构建能通过），只要有一项失败，就把这一个回滚。不要推送，也不要合并。最后给我一张对比图：左边是之前，右边是之后。
+Then, on a new branch, untangle them starting with the worst. After each one, run the tests and the build (if there are no tests, at least make sure the build passes), and if anything fails, roll that one back. Don't push, and don't merge. At the end, give me one comparison image: before on the left, after on the right.
 ```
 
-## 背景
+## Background
 
-把几个月 vibe coding 留下的面条代码彻底理清。
+Completely untangle the spaghetti code months of vibe coding left behind.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/untangle-goal-for-spaghetti-code)：@Voxyz_ai 2026年11月6日[发在 X 上](https://x.com/Voxyz_ai/status/2118810656241529199)，截至 2026年11月13日有 1,741 次收藏。适用于 Codex。
+From [Copybook](https://copybook.page/t/untangle-goal-for-spaghetti-code): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2118810656241529199) on 6 Nov 2026, 1.7K saves as of 13 Nov 2026. For Codex.

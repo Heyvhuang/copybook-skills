@@ -1,27 +1,27 @@
-# 装 skill 前的 3 项检查
+# 3 checks before installing a skill
 
-有人在 ClawHub 上放了 314 个恶意 skill：装之前查来源、扫代码、问清权限，不到 5 分钟。
+Someone put 314 malicious skills on ClawHub: check the source, scan the code, question the permissions, in under five minutes.
 
-## 步骤
+## Steps
 
-1. 复制这 3 项检查。
-2. 任何 skill 装进你的 agent 之前，先逐项过一遍。
-3. 得到：不到 5 分钟，你就知道谁写的、它会往外连什么、要什么权限。
+1. Copy the 3 checks.
+2. Run them on any skill before you install it in your agent.
+3. You get: In less than five minutes, you know who wrote it, what it calls out to, and what access it wants.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 我现在装任何 skill 前都做的 3 项检查
+## 3 checks I run before installing any skill now
 
 ```text
-1. 来源：作者是谁，有没有其他正经项目
-2. 代码扫描：搜 curl、wget、exec、外部 URL
-3. 权限：它需要文件系统权限吗？shell？为什么？
+1. source: who's the author, do they have other legit projects
+2. code scan: search for curl, wget, exec, external URLs
+3. permissions: does it need file system access? shell? why?
 ```
 
 ## Check: skill scan script
@@ -57,20 +57,18 @@ rm -f "$st"
 exit $r
 ```
 
-这块检查是 Copybook 为这条技巧写的，2026年11月24日在 macOS 26.6 上测过。它做什么、加到哪里，按下面这段英文说明：
+Lists the file and line number of each place in a skill that calls curl, wget or exec or names an external URL, without printing the line. It also lists files it skips because they may hold secrets (`.env`, keys, credentials) and symlinks it does not follow, exits 1 when there is something to read, and exits 2 when it cannot read the folder or a file in it. Save it as `scan-skill.sh` and run `sh scan-skill.sh path/to/skill` before you install. Copybook wrote and tested it on macOS 26.6, 24 Nov 2026.
 
-> Lists the file and line number of each place in a skill that calls curl, wget or exec or names an external URL, without printing the line. It also lists files it skips because they may hold secrets (`.env`, keys, credentials) and symlinks it does not follow, exits 1 when there is something to read, and exits 2 when it cannot read the folder or a file in it. Save it as `scan-skill.sh` and run `sh scan-skill.sh path/to/skill` before you install. Copybook wrote and tested it on macOS 26.6, 24 Nov 2026.
+This check is Copybook's, not part of the tip, and runs on the user's machine once added. Offer it once the tip is in place, show it, and add it only if the user says yes.
 
-这块检查是 Copybook 写的，不属于这条技巧，加上后会在用户电脑上运行。技巧用上之后再提出来，先给用户看，用户同意才加。
+## Background
 
-## 背景
+Someone published 314 skills on ClawHub. Every single one was malicious. Once installed, they read your MEMORY.md, SOUL.md, everything your agent remembers, leaked.
 
-有人在 ClawHub 上发了 314 个 skill。每一个都是恶意的。装上之后，它们会读你的 MEMORY.md、SOUL.md，你的 agent 记得的一切，全部泄露。
+I checked my own 5 agents. Clean. But honestly, cold sweat.
 
-我查了自己的 5 个 agent。干净。但说实话，出了一身冷汗。
+Takes less than five minutes. Installing skills without these three checks is like signing a contract without reading it.
 
-做完不到五分钟。不做这三项检查就装 skill，就像不看合同就签字。
+## Source
 
-## 来源
-
-来自 [Copybook](https://copybook.page/zh/t/run-3-checks-before-you-install-any-skill)：@Voxyz_ai 2026年3月14日[发在 X 上](https://x.com/Voxyz_ai/status/2032788846581031362)，截至 2026年10月24日有 308 次收藏。
+From [Copybook](https://copybook.page/t/run-3-checks-before-you-install-any-skill): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2032788846581031362) on 14 Mar 2026, 308 saves as of 24 Oct 2026.

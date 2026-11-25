@@ -1,5 +1,5 @@
 interface:
   display_name: "launch-tips"
-  short_description: "上线推广 · 12 条：上线前检查清单、搜索引流小工具、VPS 加固。"
+  short_description: "Launch · 12 tips: pre-launch, speed, and legal checks, SEO tool pages, VPS lockdown."
 policy:
   allow_implicit_invocation: false

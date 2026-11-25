@@ -1,46 +1,46 @@
-# AGENTS.md 瘦身：3 套方案并排
+# 3 slimmer AGENTS.md plans side by side
 
-AGENTS.md 超过 200 行就不照做了：3 版更精简的并排，一版比一版激进，不丢规则，改前先给你看。
+AGENTS.md past 200 lines gets followed less: 3 slimmer versions, each more aggressive, nothing lost, shown before changes.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 连同 Claude Code 和 Codex 的两份文档，发给 Opus 5.5。
-3. 得到：3 套重组方案并排对比，附前后行数和 KiB 大小，选定后再开 PR。
+1. Copy the prompt.
+2. Send it to Opus 5.5 with the Claude Code memory docs and the Codex AGENTS.md docs.
+3. You get: Three restructure plans side by side with line counts and KiB before and after, then a PR.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-先读这两份文档，再读我的 AGENTS.md（项目里有 CLAUDE.md 的话也读）以及它导入的文件，给我三种重组方式：
-1. 删掉不起作用的指令：Opus 本来就会做的事，以及它从代码里就能看出来的事。合并重复的，列出互相矛盾的地方让我来选。
-2. 根目录 AGENTS.md 只留每次都需要的规则，控制在 200 行以内。只对一个文件夹有用的规则，移进那个文件夹自己的 AGENTS.md；其他细节放进单独的文件。这两种都要在主文件里写明放在哪里、什么时候去读。细节文件不要用 @ 导入，并保留 CLAUDE.md 里导入 AGENTS.md 的那一行。
-让三个 subagent 各写一版，一版比一版激进。这一步只出方案，不要改任何文件。每一版都列出删了什么、什么挪到了哪里、主文件前后的行数和 KiB 大小。一条有用的规则都不能丢。先把三版并排给我看，我选一版，然后开 PR。
+Read these two docs, then read my AGENTS.md (and CLAUDE.md, if the project has one) and the files it imports, and give me three ways to restructure them:
+1. Delete instructions that do nothing: things Opus already does, and things it can tell from the code. Merge duplicates, and list any contradictions so I can choose.
+2. Keep only the rules needed every time in the root AGENTS.md, under 200 lines. Move rules that only matter for one folder into that folder's own AGENTS.md, and other details into separate files. For both, say in the main file where they are and when to read them. Don't use @ imports for detail files, and keep the line in CLAUDE.md that imports AGENTS.md.
+Have three subagents each write one version, each more aggressive than the last. This step is proposals only, so don't change any files. For each version, list what was deleted, where things moved, and the main file's line count and size in KiB before and after. Don't lose a single useful rule. Show me the three versions side by side first, I'll pick one, and then open a PR.
 ```
 
-## 背景
+## Background
 
-Claude Code 的文档说每个 AGENTS.md 要控制在 200 行以内，因为越长，Claude 越不照着做。Codex 默认最多读 32 KiB，超出部分直接跳过。
+Claude Code's docs say to keep each AGENTS.md under 200 lines, since the longer it gets, the less Claude follows it. Codex reads 32 KiB at most by default and skips anything past that.
 
-每次开会话，Codex 和 Claude Code 都会把 AGENTS.md 读进上下文，之后每一轮都带着它。瘦身之后，只有主文件每次都读，其余的等 agent 走到那个文件夹或者需要时才读。
+Every time you start a session, Codex and Claude Code read your AGENTS.md into context, and it comes along on every turn after that. After slimming, only the main file gets read every time, and the rest only when the agent gets to that folder or needs it.
 
-官方文档还讲了几件事：
+What the official docs add:
 
-- Codex 只在会话开始时读一次：全局那份，加上从项目根目录一路到你启动的那个文件夹，路上的每一份。换到别的文件夹，它不会自动重读。
-- Claude Code 只有在读到某个子文件夹里的文件时，才加载那个文件夹的 AGENTS.md。所以只对一个文件夹有用的规则，应该放进那个文件夹自己的 AGENTS.md。
-- 在 Claude Code 里，@ 导入只是让文件看起来整齐。被导入的文件启动时照样整份加载，所以一个 token 都省不了。
-- 在 Claude Code 里，每个已安装 skill 的名字和描述每一轮都占上下文。运行 /skill-doctor 看每个 skill 的开销和使用频率。
-- 在 Claude Code 里，运行 /doctor prompt-audit（v2.1.283 或更新）。它会找出给旧模型写的指令、引用了不存在文件的地方、互相矛盾的文件，你点头之前什么都不改。
+- Codex reads them once, when the session starts: the global one, plus every one from the project root down to the folder you launched in. It won't automatically reread them when you move to another folder.
+- Claude Code loads a subfolder's AGENTS.md only when it reads a file in that folder. So rules that only matter for one folder belong in that folder's own AGENTS.md.
+- In Claude Code, @ imports only make the file look tidier. Imported files still load in full at launch, so they save zero tokens.
+- In Claude Code, every installed skill's name and description takes up context on every turn. Run /skill-doctor to see what each one costs and how often it gets used.
+- In Claude Code, run /doctor prompt-audit (v2.1.283 or later). It finds instructions written for older models, references to files that don't exist, and files that contradict each other, and changes nothing until you say yes.
 
-把这段提示词连同两份文档发给 Opus 5.5：[Claude Code memory](https://code.claude.com/docs/en/memory) 和 [Codex AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md)。
+Send this prompt to Opus 5.5 with the two docs: [Claude Code memory](https://code.claude.com/docs/en/memory) and [Codex AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md).
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/slim-your-agents-md-with-three-restructure-plans)：@Voxyz_ai 2026年10月7日[发在 X 上](https://x.com/Voxyz_ai/status/2107939019091005836)，截至 2026年11月4日有 781 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/slim-your-agents-md-with-three-restructure-plans): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2107939019091005836) on 7 Oct 2026, 781 saves as of 4 Nov 2026. For Claude Code and Codex.

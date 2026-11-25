@@ -1,28 +1,28 @@
-# 长任务 · 22 条
+# Long runs · 22 tips
 
-Copybook 的 22 条「长任务」技巧，按收藏数排序，与合不合适无关：读完整个列表再选，合适的那条常常在后面。每条的文件是 `../long-run-tips/references/<名字>.md`。
+Copybook's 22 tips on long runs. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../long-run-tips/references/<name>.md`.
 
-| 技巧 | 做什么 |
+| Tip | What it does |
 | --- | --- |
-| week-calendar-from-sessions | 一周的会话多到记不清：本机记录做成 HTML 周日历，标出没提交就停的会话，顺手写好 3 行周报。 |
-| grok-bot-team-of-6-roles | 哪些活该有自己的 Bot：6 个角色各有职责、交接和边界，其余留作 Skill 或 routine。 |
-| later-items-from-20-sessions | 说过「以后再弄」就忘了的事：从过去的会话翻出来，排好优先级，每件变成能直接开新会话的卡片。 |
-| herdr-app-opus-5-5-coordinates | 不离开 Claude Code 也能多开 agent：Opus 5.5 通过 Herdr 协调最多 10 个执行者，Codex 负责审查。 |
-| 7-role-prompts-from-idea-to-done | 还把资深 AI 当实习生带：技术负责人、需求负责人、调试、性能、前端、后端、reviewer，各一条。 |
-| herdr-astra-coordinates-workers | Codex 里也能用你的 Claude Code 订阅：Astra 通过 Herdr 协调最多 10 个 Opus 执行者，重活交给它们。 |
-| progress-dashboard-subagent | 长任务跑着不知道进展：后台搭一个 HTML 看板，显示进度、卡点和等你拍板的问题，主会话不停。 |
-| herdr-claude-and-codex-panes | 结论靠你在窗口间搬来搬去：拆任务，每个 agent 自己的 worktree 和目标，一个执行、一个审查。 |
-| to-dos-first-in-long-reports | 要你做的事埋在长报告中间：AGENTS.md 加一节，每份长报告最上面先列编号待办。 |
-| slow-computer-audit-for-agents | 开着很多 agent 电脑就卡：先 dry run 理清进程树和开机启动项，再只清理你批准的那些。 |
-| job-worth-a-dynamic-workflow | 哪件活值得交给一批 agent：全仓库检查、迁移或修复循环，先在一个目录、10 个 agent 以内排好计划。 |
-| herdr-overnight-opus-and-sol | 一个卡住的步骤吃掉整晚：每步最多 3 次尝试，还不行就记下错误，转去下一个独立步骤。 |
-| bedtime-report-of-safe-tasks | 额度每晚用不完：睡前一小时从今天的活里挑 3-5 个可撤回、能验证的，写好提示词，什么都不改。 |
-| orca-a-task-across-cli-agents | 几个 CLI agent 同跑没人盯进度：各有目标，reviewer 只读，写代码的各用 worktree，一人整合。 |
-| handoff-md-for-the-next-agent | 任务一个会话做不完：进度、决定、相关文件、验证结果和下一步边做边记，下一个 agent 接得上。 |
-| decision-page-for-long-tasks | 总结只说一切顺利，藏起了 agent 替你拿的主意：改变结果的列在一屏里，要你确认的标红。 |
-| codex-remote-workflow | 离开电脑时项目还能推进：按 OpenAI 的 Remote 指南排出哪些任务自己跑、哪些决定在手机上做。 |
-| scheduled-agents-review | 定时任务写「最近 24 小时」会漏会重：固定时间窗口、读取失败不报和发帖风险，各附最小改法。 |
-| overnight-goal-for-open-issues | 睡前：每个 issue 和 TODO 不靠你推进到最远，最后一张 HTML 看板列出完成、卡住和等你拍板的。 |
-| goal-wrapper-and-5-prompts | 一个偏好写了 3 处还要说第四遍：一个目标外壳，加组件库、并行、互审、交互状态、纠正清单 5 条。 |
-| one-way-door-rules-when-to-ask | 只需要你走个过场的提问：撤得回的先做完再给你看，撤不回的先停下。 |
-| coordinator-for-claude-and-codex | 一个会话做不完的活：每条 lane 一份带边界和完成检查的任务说明，再在 Herdr 里跑 Claude 和 Codex。 |
+| week-calendar-from-sessions | A week of sessions you can't recall: local logs as an HTML calendar, no-commit sessions flagged, and a 3-line weekly report. |
+| grok-bot-team-of-6-roles | Which work deserves its own Bot: six roles with ownership, handoffs and limits, and what stays a Skill or a routine. |
+| later-items-from-20-sessions | What you said you'd do later and forgot: past sessions searched, items ranked, each one a card that opens its own session. |
+| herdr-app-opus-5-5-coordinates | Running more agents without leaving Claude Code: Opus 5.5 coordinates up to 10 workers through Herdr, and a Codex worker reviews. |
+| 7-role-prompts-from-idea-to-done | Still walking a senior AI through every step: tech lead, requirements, debugging, performance, frontend, backend, reviewer. |
+| herdr-astra-coordinates-workers | Your Claude Code subscription, used from Codex: Astra runs up to 10 Opus workers through Herdr and hands them the heavy work. |
+| progress-dashboard-subagent | Where a long task stands while you wait: an HTML dashboard of progress, blockers and open questions, built by a side subagent. |
+| herdr-claude-and-codex-panes | Relaying conclusions between windows by hand: the task split, a worktree and outcome per agent, one executes, one reviews. |
+| to-dos-first-in-long-reports | What it needs from you is buried mid-report: one AGENTS.md section puts the to-dos, numbered, at the top of every report. |
+| slow-computer-audit-for-agents | Many agents open and the Mac bogs down: a dry-run map of processes and startup items, cleaned only where you approve. |
+| job-worth-a-dynamic-workflow | Which job is worth many agents: repo-wide checks, migrations or fix loops, planned on one directory with at most 10 agents. |
+| herdr-overnight-opus-and-sol | One stuck step eating your whole night: at most 3 attempts per step, then its error recorded and the next independent step begun. |
+| bedtime-report-of-safe-tasks | Unused quota overnight: an hour before bed, 3-5 reversible, verifiable tasks from today, prompts ready, nothing changed. |
+| orca-a-task-across-cli-agents | Who finished what across several CLI agents: a goal each, read-only reviewers, worktrees for writers, one owner integrates. |
+| handoff-md-for-the-next-agent | A task longer than one session: progress, decisions, files, checks and next steps kept current for the next agent. |
+| decision-page-for-long-tasks | A summary saying all went well hides the agent's choices: one screen of the ones that change the result, those to confirm in red. |
+| codex-remote-workflow | Projects that keep moving while you're out: OpenAI's Remote guide applied, what runs alone and what you decide by phone. |
+| scheduled-agents-review | 'The last 24 hours' in a scheduled task skips or repeats work: fixed windows, silent read failures and risky posting flagged. |
+| overnight-goal-for-open-issues | Before bed: each issue and TODO taken as far as it can go without you, then one HTML board of what's done, stuck or your call. |
+| goal-wrapper-and-5-prompts | One preference typed in three places: a goal wrapper, plus prompts for components, parallel runs, review, states and corrections. |
+| one-way-door-rules-when-to-ask | Questions you'd only rubber-stamp: work you can undo done and shown after, a stop at anything you can't undo. |
+| coordinator-for-claude-and-codex | A job too big for one agent session: a brief per lane with boundaries and a done check, then Claude and Codex lanes run in Herdr. |

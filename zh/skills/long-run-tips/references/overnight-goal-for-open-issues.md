@@ -1,44 +1,44 @@
-# 通宵 /goal：未关闭的 issue 和 TODO
+# Overnight /goal for open issues and TODOs
 
-睡前：每个 issue 和 TODO 不靠你推进到最远，最后一张 HTML 看板列出完成、卡住和等你拍板的。
+Before bed: each issue and TODO taken as far as it can go without you, then one HTML board of what's done, stuck or your call.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 睡前在仓库里把它发给 Claude Code 或 Codex。
-3. 得到：改动各开一个 worktree，测试通过才算完成，再加一张 HTML 看板，标出每张卡片的级别。
+1. Copy the prompt.
+2. Send it to Claude Code or Codex in your repo before bed.
+3. You get: Changes in their own worktrees, not done until tests pass, and an HTML board with each card's level.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-/goal 过一遍这个仓库里所有未关闭的 issue 和 TODO。像自动驾驶分级那样给每一项定级，看你不靠我能推进到哪一步，然后就推进到那一步：
+/goal Go through every open issue and TODO in this repo. Grade each one like self-driving levels, by how far you can take it without me, then take it that far:
 
-→ L1：弄清来龙去脉，找到相关代码
-→ L2：写好计划，具体到要改哪些文件
-→ L3：能自己定的部分先做，需要我选方向的地方停下
-→ L4：除了要我拍板的那一步，其余全部做完
-→ L5：做完、测过、可以合并
+→ L1: get the full story, find the relevant code
+→ L2: write a plan, down to which files change
+→ L3: do the parts you can decide, stop where I need to pick a direction
+→ L4: finish everything except the one step that's my call
+→ L5: done, tested, ready to merge
 
-凡是改代码的都开一个单独的 worktree，测试通过才算完成。涉及发布、花钱、删除数据或推送到 main 的，立刻停下。需要的权限一开始就全部申请，夜里不要停下来等我。哪一项卡住了，记下来，接着做下一项。
+Anything that changes code gets its own worktree, and it isn't done until the tests pass. If it involves publishing, spending money, deleting data or pushing to main, stop right there. Ask for every permission you need up front, and don't stop to wait for me overnight. If one gets stuck, note it and move on to the next.
 
-最后给我一页 HTML 的 Overnight Review 看板，顶部写总数和每一列的数量，每张卡片标上级别：
-→ 做到对应级别的，一句话说明你做了什么
-→ 卡住的，卡在哪里、需要我提供什么
-→ 等我拍板的，附上你的建议
+At the end, give me a one-page Overnight Review board in HTML, with the total and each column's count at the top, and every card tagged with its level:
+→ Done to its level, one line on what you did
+→ Stuck, where it's stuck and what you need from me
+→ Waiting on my call, with your recommendation
 ```
 
-## 背景
+## Background
 
-睡前把这条发给 Claude Code 或 Codex。
+Send this to Claude Code or Codex before bed.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/overnight-goal-for-open-issues-and-todos)：@Voxyz_ai 2026年11月6日[发在 X 上](https://x.com/Voxyz_ai/status/2118689868016713934)，截至 2026年11月13日有 315 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/overnight-goal-for-open-issues-and-todos): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2118689868016713934) on 6 Nov 2026, 315 saves as of 13 Nov 2026. For Claude Code and Codex.

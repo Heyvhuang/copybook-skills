@@ -1,44 +1,44 @@
-# lemo-opuscar：代码做带旁白的发布短片
+# lemo-opuscar: narrated launch films in code
 
-没有视频模型：TTS 旁白、免费采样库配乐，每一帧按 43 种风格之一用代码渲染，30 到 60 分钟。
+No video model on hand: narration by TTS, music from free sample libraries, every frame in one of 43 styles, 30 to 60 minutes.
 
-## 步骤
+## Steps
 
-1. 复制两行安装命令，再复制提示词。
-2. 在终端里跑命令，再在项目里把提示词发给 Claude Code。
-3. 得到：一支 Dark Tech Keynote 风格、45 秒、带英文旁白的项目发布短片。
+1. Copy the two install commands, then the prompt.
+2. Run the commands in your terminal, then send the prompt in Claude Code in your project.
+3. You get: A 45-second launch film for your project with English narration, in the Dark Tech Keynote style.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 命令
+## Commands
 
 ```bash
 claude plugin marketplace add lemomo-ai/lemo-opuscar
 claude plugin install lemo-opuscar@lemolab
 ```
 
-## 提示词
+## Prompt
 
 ```text
-用 lemo-opuscar 的 Dark Tech Keynote 风格。先读这个项目的 README，再给它做一支 45 秒、带英文旁白的发布短片。
+Use lemo-opuscar's Dark Tech Keynote style. Read this project's README first, then make a 45-second launch film for it with English narration.
 ```
 
-## 背景
+## Background
 
-装上 lemo-opuscar，Opus 5.5 就能用 43 种电影风格做带旁白和配乐的短片，全部用代码完成。
+Install lemo-opuscar and Opus 5.5 can make short films with narration and music in 43 film styles, all in code.
 
-不用视频模型。每一帧都用代码渲染，配乐用免费的采样库拼出来，旁白用 TTS 配音。每种风格都附了一支它做的样片。
+No video model. It renders every frame in code, builds the score from free sample libraries and voices the narration with TTS. Each style comes with a sample film it made.
 
-一支片子大约要 30 到 60 分钟，很费 token，第一次运行还要下载超过 1 GB 的工具和语音模型。需要 Node 20+、ffmpeg 和 Python 3.11-3.13（或者 uv）。
+A film takes about 30 to 60 minutes and uses a lot of tokens, and the first run downloads over 1 GB of tools and voice models. You'll need Node 20+, ffmpeg and Python 3.11-3.13 (or uv).
 
-然后打开 Claude Code，发这段，给你的项目做一支发布短片。
+Then open Claude Code and send this to get a launch film for your project.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/make-a-launch-film-in-code-with-lemo-opuscar)：@Voxyz_ai 2026年10月15日[发在 X 上](https://x.com/Voxyz_ai/status/2110838129326473353)，截至 2026年11月12日有 634 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/make-a-launch-film-in-code-with-lemo-opuscar): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2110838129326473353) on 15 Oct 2026, 634 saves as of 12 Nov 2026. For Claude Code.

@@ -1,35 +1,35 @@
-# 设计师开源的落地页 skill
+# A designer's landing-page skill
 
-想要有设计感的落地页：一轮问题问完，布局、文案、字体和间距都替你定。
+A landing page that looks designed: layout, copy, fonts and spacing handled after one round of questions.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在项目里贴进 Claude Code，用 Codex 就先照技巧里说的改一处。
-3. 得到：你项目的落地页，布局、文案、字体和间距都替你处理好。
+1. Copy the prompt.
+2. Paste it into Claude Code in your project, or into Codex with the one change the tip gives.
+3. You get: A landing page for your project, with the layout, the copy, the fonts and the spacing handled.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-从 GitHub 上的 elayadesign/ai-design-skills 仓库安装 landing-page-design skill，装进这个项目的 .claude/skills，然后用它给这个项目做一个落地页。开始之前，把你所有的问题一次问完。
+Install the landing-page-design skill from the elayadesign/ai-design-skills repo on GitHub into this project's .claude/skills, then use it to build a landing page for this project. Ask me all your questions in one go before you start.
 ```
 
-## 背景
+## Background
 
-一位设计师刚把自己做落地页的秘密武器开源了。布局、文案、字体和间距，它都替你处理。
+A designer just open-sourced their secret weapon for landing pages. It handles the layout, the copy, the fonts and the spacing for you.
 
-在 Claude Code 里，这条提示词会装好这个 skill，然后开始做你的第一个页面。
+In Claude Code the prompt installs the skill and starts your first page.
 
-用 Codex 的话，把「装进这个项目的 .claude/skills」改成「方式是把它的 SKILL.md 追加到 AGENTS.md」。
+On Codex, change "into this project's .claude/skills" to "by appending its SKILL.md to AGENTS.md".
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/build-a-landing-page-with-a-designers-skill)：@Voxyz_ai 2026年10月25日[发在 X 上](https://x.com/Voxyz_ai/status/2114477103617835355)，截至 2026年11月22日有 161 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/build-a-landing-page-with-a-designers-skill): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2114477103617835355) on 25 Oct 2026, 161 saves as of 22 Nov 2026. For Claude Code and Codex.

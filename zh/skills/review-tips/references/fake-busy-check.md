@@ -1,41 +1,41 @@
-# 瞎忙检查：今天的 git 历史
+# Fake busy check from today's git history
 
-开了一堆会话，回头看什么都没做成：分清今天真合并的和来回改的，一句话定下明天第一件事。
+A pile of sessions and nothing done: today's merges told apart from busywork, then one sentence on tomorrow's first task.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 收工前在项目里把它发给 Claude Code 或 Codex。
-3. 得到：一句话：明天先做什么，做到什么算完成。
+1. Copy the prompt.
+2. Send it to Claude Code or Codex in your project before you log off.
+3. You get: One sentence: what to do first tomorrow, and what counts as done.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-先别总结，也别夸我。一次只问我一个问题，等我回答了再问下一个。
+Don't summarize yet, and don't praise me. Ask me one question at a time, and wait for my answer before the next one.
 
-1. 先自己看一遍今天的 commit、分支和还没提交的改动。挑出哪些真正合并了，哪些只是来回改。然后问我：只看这些记录，不听我怎么说，一个局外人会觉得我真正想要的是什么？
+1. First, look at today's commits, branches and uncommitted changes yourself. Pick out what actually got merged and what was just back-and-forth edits. Then ask me: Going only by these records, not by what I say, what would an outsider think I really want?
 
-2. 然后问我：我用这些瞎忙在逃避什么？
+2. Then ask me: What am I avoiding with all this busywork?
 
-3. 接着问我：那件事我到现在还没做，最丢人的原因是什么？我要听起来软弱、害怕或者懒的那个，不要听起来合理的那个。
+3. Next, ask me: What's the most embarrassing reason I still haven't done that thing? I want the one that sounds weak, scared or lazy, not the one that sounds reasonable.
 
-4. 如果我的回答含糊，就一直追问，直到我说具体。最多五个问题。最后只给我一句话：明天先做什么，做到什么算完成。
+4. If my answers are vague, keep pushing until I get specific. Five questions max. At the end, give me just one sentence: what to do first tomorrow, and what counts as done.
 ```
 
-## 背景
+## Background
 
-用编程 agent，最大的坑是瞎忙。开一堆会话，熬过半夜，回头一看，什么都没真正做完。
+The biggest trap with coding agents is fake busy. You open a pile of sessions, grind past midnight, then look back and nothing actually got done.
 
-每天收工前，让 Claude Code 或 Codex 查一遍你的 git 历史。
+Before you log off each day, have Claude Code or Codex check your git history.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/fake-busy-check-from-todays-git-history)：@Voxyz_ai 2026年10月31日[发在 X 上](https://x.com/Voxyz_ai/status/2116545745658806490)，截至 2026年11月7日有 394 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/fake-busy-check-from-todays-git-history): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2116545745658806490) on 31 Oct 2026, 394 saves as of 7 Nov 2026. For Claude Code and Codex.

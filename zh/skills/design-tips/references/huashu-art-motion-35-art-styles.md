@@ -1,88 +1,88 @@
-# huashu-art-motion：35 种画风动画
+# huashu-art-motion: animation in 35 art styles
 
-想要梵高、莫奈或包豪斯风格的动画：用代码画出来，几乎不动的片子交付前会被打回。
+You want Van Gogh, Monet or Bauhaus moving: drawn in code, and a delivery check rejects any film where almost nothing moves.
 
-## 步骤
+## Steps
 
-1. 复制安装命令，再复制提示词。
-2. 先运行命令，再把提示词发给 Claude Code 里的 Opus 5.5。
-3. 得到：一段你选定风格的 15 秒动画，经过 QA 脚本和 subagent 检查。
+1. Copy the install command, then the prompt.
+2. Run the command, then send the prompt to Opus 5.5 in Claude Code.
+3. You get: A 15-second animation in the style you pick, checked by its QA script and a subagent.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 安装命令
+## Install command
 
 ```text
 npx skills add alchaincyf/huashu-art-motion
 ```
 
-## 提示词
+## Prompt
 
 ```text
-用 huashu-art-motion 给我做一段 15 秒的动画。先读完这个 skill 的文档，全程用中文和我交流。
-1. 先检查 uv、ffmpeg 和 Playwright Chromium 有没有装，缺什么就告诉我怎么装。
-2. 问我这段动画讲什么、给谁看、横屏还是竖屏。从 references/风格配方/INDEX.md 的素材层里挑 3 种合适的风格，三星的优先。三种风格都按我的题材重新设计构图，彼此不一样，也别照搬样片里的房间。每种给我看一张静帧，让我挑。
-3. 我选好后，每个镜头给一个主动作，再从这种风格的卡片里拿两个母题循环。比如梵高，就是星空卷成漩涡、灯的光晕向外扩散。有音乐的话，用这个 skill 的 BPM 合成，让动作卡在节拍上。
-4. 需要出现人物的话，先问我：用我自己的角色图、用图像模型生成的画面，还是只画手和背影。
-5. 渲染完，按这个 skill 自己的 QA 步骤来：先跑它的 QA 脚本，再派一个没参与制作的 subagent 只看成片、找问题，让它把发现写进 审片/ 文件夹，最后用它的交付脚本交付。有任何一项标红，先修好、重新渲染，再交给我。
+Use huashu-art-motion to make me a 15-second animation. The skill's docs are in Chinese; read them and talk to me in English.
+1. First check for uv, ffmpeg and Playwright Chromium, and tell me how to install anything that's missing.
+2. Ask me what it's about, who it's for, and whether it's landscape or portrait. From the material layer in references/风格配方/INDEX.md, pick 3 styles that fit, three-star ones first. Redesign the composition for my subject in all three, each different from the others, and don't copy the room from the samples. Show me one still frame of each to choose from.
+3. Once I pick, give each scene one main action plus two motif loops from that style's card. For Van Gogh, that's the starry sky curling into swirls and the lamp's halo spreading outward. If there's music, use the skill's BPM synthesis and put the motion on the beat.
+4. If people need to appear, ask me first: my own character art, frames from an image model, or only hands and figures seen from behind.
+5. After rendering, follow the skill's own QA steps: run its QA script first, then send a subagent that took no part in making it to watch only the finished film and find problems, have it write its findings into the 审片/ folder, and deliver with its delivery script. If anything comes up red, fix it and re-render before giving it to me.
 ```
 
-## 背景
+## Background
 
-装上 huashu-art-motion，Opus 5.5 就能用代码画出 35 种艺术风格的动画。梵高的星空会打旋，达利的钟会往下滴。几乎什么都不动的片子，它的交付脚本会直接打回。
+Install huashu-art-motion and Opus 5.5 can draw animations in 35 art styles with code. Van Gogh's starry sky swirls. Dalí's clocks drip. And its delivery script rejects any film where almost nothing moves.
 
-你可以直接要一段梵高、莫奈或包豪斯风格的动画，一段配合你旁白的讲解动画，或者一个角色从一幅名画走进下一幅名画。给它一段参考动画，它会先拆出镜头切换、节拍和画面里什么在哪动，再用代码重做出来。
+You can just ask for an animation in the style of Van Gogh, Monet or Bauhaus, an explainer animation to go with your voiceover, or a character walking through one famous painting after another. Hand it a reference animation and it first breaks down the cuts, the beat and what moves where in the frame, then recreates it in code.
 
-装上不到 10 分钟，Opus 5.5 就用它内置的 35 种风格做了一段演示视频（在原帖里），从 40,000 年前的洞穴壁画一路走到 2026 年。房间、猫和女孩始终不变，变的只有风格。
+Within 10 minutes of installing it, Opus 5.5 made a demo video (in the original post) from its 35 built-in styles. It runs from cave painting 40,000 years ago all the way to 2026. The room, the cat and the girl never change; only the style does.
 
-17 种什么题材都能用：产品、数据、故事
+17 that work for any subject: products, data, stories
 
-- 梵高、马蒂斯剪纸、修拉点彩、印象派
-- 分析立体主义、利希滕斯坦波普艺术、包豪斯、俄国构成主义
-- 吉卜力水彩背景、新海诚的光、中国水墨
-- 8-bit 像素画、蒸汽波霓虹、2026 扁平插画
-- 庞贝马赛克、早期光线追踪 CGI、伦勃朗明暗法
+- Van Gogh, Matisse cut-outs, Seurat pointillism, Impressionism
+- Analytic Cubism, Lichtenstein pop art, Bauhaus, Russian Constructivism
+- Ghibli watercolor backgrounds, Makoto Shinkai light, Chinese ink wash
+- 8-bit pixel art, vaporwave neon, 2026 flat illustration
+- Pompeii mosaic, early ray-traced CGI, Rembrandt chiaroscuro
 
-18 种适合穿越时空、致敬和艺术史速通
+18 for time travel, tributes and art-history speedruns
 
-- 莫奈睡莲、克里姆特黄金时期、蒙克、达利
-- 霍珀、毕加索蓝色时期、穆夏新艺术
-- 凯斯·哈林、草间弥生波点、杰克·科比漫画、1930 年代橡皮管动画
-- 洞穴壁画、埃及墓室壁画、希腊黑绘陶器、敦煌壁画
-- 中国皮影、哥特泥金手抄本、文艺复兴晕涂法
+- Monet's water lilies, Klimt's golden period, Munch, Dalí
+- Hopper, Picasso's blue period, Mucha's Art Nouveau
+- Keith Haring, Kusama polka dots, Jack Kirby comics, 1930s rubber hose cartoons
+- Cave painting, Egyptian tomb murals, Greek black-figure pottery, Dunhuang murals
+- Chinese shadow puppets, Gothic illuminated manuscripts, Renaissance sfumato
 
-每种风格都写明了画里什么在动。克里姆特长袍上的眼睛轮流眨，霍珀那块边缘锐利的阳光慢慢滑过一张脸，8-bit 的问号砖块蹦出一枚金币。
+Each style spells out what moves in the picture. The eyes on Klimt's robe blink in turn, Hopper's hard-edged patch of sunlight slides slowly across a face, and the 8-bit question block pops out a coin.
 
-9 种讲解风格
+9 explainer styles
 
-- 讲数学和 AI 概念，用 3Blue1Brown，一个形状变成下一个形状
-- 讲数据，用财经图表：先画坐标轴，再画数据，只标注一处
-- 软件教程里的界面步骤，用发布会风格：光斑背景、毛玻璃卡片、大数字
-- 边讲边画关系，用白板，笔尖一点点画出线稿
-- 图文拼贴，用 Vox 讲解风格：剪报、红线、荧光笔
-- Kurzgesagt，扁平无描边，在极小和极大的尺度之间切换
-- 讲故事，切到反应特写，给笑点留一拍
-- 动态文字，关键词砸进画面
-- 有主讲人的财经讲解，主讲人形象由你自己提供
+- For math and AI concepts, use 3Blue1Brown, where one shape morphs into the next
+- For data, use finance charts: axes first, then the data, and label only one thing
+- For UI steps in a software tutorial, use the keynote look: light-spot background, frosted-glass cards, big numbers
+- To draw relationships as you narrate, use the whiteboard, where the pen tip reveals the line art bit by bit
+- For a collage of graphics and info, use the Vox explainer look: clippings, red lines, highlighter
+- Kurzgesagt, flat with no outlines, moving between tiny and huge scales
+- Storytime, cutting to reaction close-ups and leaving a beat for the joke
+- Kinetic type, with the key word slamming into the frame
+- Presenter-led finance explainers, where you supply the character yourself
 
-音乐也是用代码合成的，按 BPM 网格一个音一个音地写。片子做完，它先跑 QA 脚本，再派一个没参与制作的 agent 只看成片、找问题。交付脚本还会拦下另外两种情况：片中出现 0.3+ 秒的空白帧，以及蓝紫色背景超过全片 30%，它把这种配色算作 AI slop。
+The music is synthesized in code too, note by note on a BPM grid. When a film is done, it runs its QA script, then sends an agent that took no part in making it to watch only the finished film and find problems. The delivery script also blocks two more things: 0.3+ seconds of blank frames mid-film, and a blue-purple background in over 30% of the film, a palette it counts as AI slop.
 
-这个 skill 有一档专门给 Claude Opus 5.5 或更强的模型，在这一档里它能自己组合各个库、自己写渲染器。35 种风格都标了星级，其中 20 种三星风格一眼就能认出来，拿来就能用。
+The skill has a tier just for Claude Opus 5.5 or stronger models, where it can combine the libraries itself and write its own renderers. All 35 styles are star-rated, and the 20 with three stars are recognizable at a glance and ready to use.
 
-下面的提示词会让它先读完这个 skill 的文档，全程用中文和你交流。
-渲染视频需要 uv、ffmpeg 和 Playwright Chromium。
-想让画面里出现人物，就用你自己的角色图，或者接一个图像模型来生成画面。两样都没有的话，它只会画手和背影。
+The skill's docs are in Chinese; the prompt below has it read them and talk to you in English.
+Rendering video needs uv, ffmpeg and Playwright Chromium.
+If you want people on screen, use your own character art or connect an image model to make the frames. Without either, it only draws hands and figures seen from behind.
 
 https://github.com/alchaincyf/huashu-art-motion
 
-装好以后，把下面这段发给 Claude Code 里的 Opus 5.5。
+Once it's installed, send this to Opus 5.5 in Claude Code.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/animate-in-35-art-styles-with-huashu-art-motion)：@Voxyz_ai 2026年10月12日[发在 X 上](https://x.com/Voxyz_ai/status/2109690569563746755)，截至 2026年11月9日有 3,790 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/animate-in-35-art-styles-with-huashu-art-motion): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2109690569563746755) on 12 Oct 2026, 3.8K saves as of 9 Nov 2026. For Claude Code.

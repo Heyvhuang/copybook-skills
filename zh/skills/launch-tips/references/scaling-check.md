@@ -1,41 +1,41 @@
-# 扩容检查：缓存、队列、负载均衡
+# Scaling check: cache, queue, load balancer
 
-应用现在真需要扩容吗：6 种方案对照你的代码逐一判断，每条附文件证据和每月大概多花多少钱。
+Whether your app needs them yet: six scaling fixes judged from your code, the file behind each answer, the monthly cost of each.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在项目里粘贴进 Claude Code 或 Codex。
-3. 得到：现在就需要的方案，按流量突增时哪里最先扛不住排好序，每项附上大概的月费。
+1. Copy the prompt.
+2. Paste it into Claude Code or Codex in your project.
+3. You get: Fixes you need today, ranked by what breaks first if traffic spikes, each with a rough monthly cost.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-对照下面六种常见的扩容方案，检查这个仓库：
-- 给慢读取加缓存
-- 给慢的后台任务加队列
-- 给大流量加负载均衡
-- 给繁忙的数据库加只读副本
-- 给文件加对象存储 + CDN
-- 给故障加重试、超时和日志
+Check this repo against these six common scaling fixes:
+- a cache for slow reads
+- a queue for slow background jobs
+- a load balancer for heavy traffic
+- read replicas for a busy database
+- object storage + CDN for files
+- retries, timeouts and logs for failures
 
-从代码入手，只问我代码看不出来的东西，比如我们的流量数据，或者我们用的是哪家托管服务。每一项都告诉我我们现在需不需要，并给出证明它的文件或查询。如果我们的托管服务已经处理了其中某项，说明一下然后跳过。对于需要的项，给出最小的修改方案，以及在我们当前托管服务上大概的月费。按流量突增时应用哪部分最先扛不住来排序。还不需要的项，一行带过就行。不要改任何代码。
+Start from the code, and only ask me what it can't tell you, like our traffic numbers or which host we're on. For each one, tell me whether we need it today and show the file or query that proves it. If our host already handles one of these, say so and skip it. For the ones we need, give the smallest fix and a rough monthly cost on our current host. Rank them by which part of the app would break first if traffic spiked. For the ones we don't need yet, one line is enough. Don't change any code.
 ```
 
-## 背景
+## Background
 
-你的应用现在真的需要缓存、队列或负载均衡吗？
+Does your app actually need a cache, a queue or a load balancer yet?
 
-在你的项目里，把这段 prompt 粘贴进 Claude Code 或 Codex。它拿你的代码当证据，告诉你哪些现在就该加，以及每一项大概会让你的月账单多出多少。
+In your project, paste the prompt into Claude Code or Codex. It uses your code as evidence and tells you which ones to add now and roughly how much each adds to your monthly bill.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/check-whether-your-app-needs-a-cache-queue-or-load-balancer)：@Voxyz_ai 2026年10月25日[发在 X 上](https://x.com/Voxyz_ai/status/2114386505603137620)，截至 2026年11月22日有 79 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/check-whether-your-app-needs-a-cache-queue-or-load-balancer): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2114386505603137620) on 25 Oct 2026, 79 saves as of 22 Nov 2026. For Claude Code and Codex.

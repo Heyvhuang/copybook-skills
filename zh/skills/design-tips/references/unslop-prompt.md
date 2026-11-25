@@ -1,58 +1,58 @@
-# Unslop 提示词：去掉页面 AI 味
+# Unslop prompt for pages that look AI-made
 
-页面第一眼就像 AI 做的：列出每处 AI 味的痕迹，先写 5 行方向等你点头，再一轮一轮改。
+Pages that scream AI at first glance: every slop sign listed, a five-line direction for your OK, then fixes pass by pass.
 
-## 步骤
+## Steps
 
-1. 复制提示词，或者复制完整 skill 的安装命令。
-2. 在项目里把提示词发给 Claude Code，或者在终端里运行安装命令。
-3. 得到：页面去掉 AI 味，功能、内容和区块顺序都不动。
+1. Copy the prompt, or the install command for the full skill.
+2. In your project, send the prompt to Claude Code, or run the install in a terminal.
+3. You get: The page without its AI look, with features, content and section order untouched.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-把这个页面的 AI 味去掉。不要动功能、内容和区块顺序，只改做工。
+Take the AI look out of this page. Don't touch features, content or section order. Only change the craft.
 
-1. 审查：列出每一处 AI slop 的痕迹，以及它在哪里。先从这些查起：紫色渐变、发光、渐变文字、emoji 标签、「New ✨」徽章、字距很宽的全大写标签、一直不停的动画、这里大那里小的间距。
+1. Audit: list every sign of AI slop and where it is. Start with purple gradients, glows, gradient text, emoji labels, "New ✨" badges, all-caps labels with wide letter spacing, animations that never stop, spacing that's bigger here and smaller there.
 
-2. 方向：改任何东西之前，先写一份五行的方向，等我确认：
-产品：一句话说清它做什么、给谁用
-性格：两三个具体的词，不要用简洁、现代、利落、极简或高级
-世界：这个产品天然属于的场景或材质
-焦点：只有一两处用丰富的颜色和细节，其余都保持安静
-签名：一个只有这个产品才会有的小细节
+2. Direction: before you change anything, write a five-line direction and wait for my OK:
+Product: one sentence on what it does and who it's for
+Character: two or three concrete words, not clean, modern, sleek, minimal or premium
+World: the setting or material this product naturally belongs to
+Focus: only one or two spots get rich color and detail; everything else stays quiet
+Signature: one small detail only this product would have
 
-3. 逐轮修改：我确认之后，按这个顺序修，每轮只改一件事，整页改完再开始下一轮：间距、颜色、图标、文案、字体、布局、细节、视觉、动效。
-- 间距：全部对齐 4px 网格，同类元素大小一致
-- 颜色：一套略带色调的中性色阶，三级文字，一个强调色。不要色相渐变、发光或彩色阴影
-- 图标：把 emoji 换成同一套线性图标，大小和线宽一致
-- 文案：不要感叹号，不要「Welcome back!」这种标题，不要 seamless、supercharge 这类词
-- 字体：字重只用 400 和 500
-- 动效：去掉没有意义的循环动画、transition-all 和悬停放大
+3. Passes: once I confirm, fix it in this order, one thing per pass, finishing the whole page before starting the next: spacing, color, icons, copy, type, layout, details, visuals, motion.
+- Spacing: everything on a 4px grid, things of the same kind the same size
+- Color: one slightly tinted neutral scale, three text levels, one accent color. No hue gradients, glows or colored shadows
+- Icons: swap emoji for one set of line icons, same size and stroke width
+- Copy: no exclamation marks, no "Welcome back!" headings, no words like seamless or supercharge
+- Type: font weights 400 and 500 only
+- Motion: remove pointless looping animations, transition-all and hover scale-ups
 
-4. 检查：把产品名换成另一家公司的。如果页面照样说得通，说明它还不够独特。把「世界」和「签名」再往前推。
+4. Check: swap in another company's product name. If the page still makes sense, it isn't distinctive enough yet. Push World and Signature further.
 ```
 
-## 安装命令
+## Install command
 
 ```bash
 npx skills add heydamir/unslop
 ```
 
-## 背景
+## Background
 
-一条给仪表盘去 AI 味的视频刚过了 1.5M+ 播放。那是设计师手工做的。现在 AI 也能给 Claude Code 做的界面做同样的事：像首席设计师一样审查，一轮一轮修，直到没人看得出是 AI 做的。
+A dashboard unslop video just hit 1.5M+ views. A designer did it by hand. Now AI can do the same for Claude Code's UIs: audit like a lead designer, fix pass by pass until nobody can tell AI made it.
 
-如果这还不够，就装完整的 skill。它连前后对比视频都能帮你做：
+If that's still not enough, install the full skill. It'll even make the before/after video for you:
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/unslop-prompt-for-pages-that-look-ai-made)：@Voxyz_ai 2026年10月31日[发在 X 上](https://x.com/Voxyz_ai/status/2116515537496993856)，截至 2026年11月7日有 240 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/unslop-prompt-for-pages-that-look-ai-made): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2116515537496993856) on 31 Oct 2026, 240 saves as of 7 Nov 2026. For Claude Code.

@@ -1,47 +1,47 @@
-# Claude Code 会话做的周日历
+# Week calendar from Claude Code sessions
 
-一周的会话多到记不清：本机记录做成 HTML 周日历，标出没提交就停的会话，顺手写好 3 行周报。
+A week of sessions you can't recall: local logs as an HTML calendar, no-commit sessions flagged, and a 3-line weekly report.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 发给 Claude Code，看过它要建的文件再确认。
-3. 得到：一个 week-calendar subagent，把会话记录做成 HTML 周日历和 3 行周报。
+1. Copy the prompt.
+2. Send it to Claude Code, and confirm the files it shows you.
+3. You get: A week-calendar subagent that turns your session logs into an HTML calendar and a 3-line report.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-帮我配一个专门做周日历的 subagent：
+Set up a subagent that only builds weekly calendars:
 
-1. 在 ~/.claude/agents 新建 week-calendar：model 用 opus，effort 设 medium，memory 设 user；我装过的设计 skill（比如 impeccable）预装给它；给它 Bash，用来跑 git log 和生成日历的脚本；写文件只写 ~/.calendar/ 和它自己的记忆。
-2. 它第一次先问我喜欢什么风格：深色还是浅色、用哪个主色、按项目还是按任务类型上色、一周从周一还是周日开始，记进记忆，以后每次照着做。
-3. 日历是一个 HTML 文件，脚本把数据直接写进去，双击就能打开。数据用本周的会话记录：Claude Code 在 ~/.claude/projects/（跳过 subagents 子文件夹），用 Codex 的话加上 ~/.codex/sessions/，写脚本前先看一个文件确认字段。时间换成本地时区，项目按记录里的 cwd 认。每个会话一个色块，停了 30 分钟以上就断开；点开显示项目、起止时间、用的模型、会话标题（没有就把我手打的第一条消息概括成 3 到 5 个词）、我手打的第一条消息，以及这段时间我在那个仓库的提交数和改过的文件数（不是 git 仓库就不统计）。一次都没提交就停了的会话，色块描红边，旁边再单独列一份清单。顶部按项目汇总这周的小时数，并行的会话不重复算。所有东西只留在本地。
-4. 在 ~/.claude/CLAUDE.md 加一条规则：我说「这周干了啥」或者「写周报」的时候，先让 week-calendar 重新生成日历，再照着它写 3 行周报：这周主要做了什么、哪个项目最耗时、下周先接着做哪几个没提交就停了的会话。
+1. Create week-calendar in ~/.claude/agents: model: opus, effort: medium, memory: user. Preload the design skills I have installed (for example impeccable). Give it Bash so it can run git log and the script that builds the calendar. It only writes files to ~/.calendar/ and its own memory.
+2. The first time, it asks me what style I like: dark or light, one accent color, color by project or by task type, and whether the week starts on Monday or Sunday. It saves my answers to memory and follows them every time.
+3. The calendar is one HTML file. The script writes the data straight into it, so it opens with a double-click. Use this week's session logs: Claude Code's are in ~/.claude/projects/ (skip the subagents folders), and if I use Codex, add ~/.codex/sessions/. Before writing the script, open one file to check the fields. Convert times to my local time zone, and use the cwd in each record to tell projects apart. One block per session; start a new block after any gap longer than 30 minutes. Clicking a block shows the project, start and end time, the model used, the session title (if there isn't one, sum up my first typed message in 3 to 5 words), my first typed message, and my commits and changed files in that repo during that time (skip folders that aren't git repos). Sessions that stopped without a single commit get a red outline and also go in a separate list. At the top, total this week's hours per project, counting parallel sessions only once. Keep everything local.
+4. Add a rule to ~/.claude/CLAUDE.md: when I say "what did I do this week" or "write my weekly report", have week-calendar regenerate the calendar first, then write a 3-line weekly report from it: what I mainly got done this week, which project took the most time, and which no-commit sessions to pick up first next week.
 
-先把要新建和修改的文件内容给我看，再用 10 岁小孩都能听懂的话讲一遍整个流程。我确认之前什么都别写。
+Show me the contents of the files you'll create or change, then explain the whole flow in words a 10-year-old could follow. Don't write anything until I confirm.
 ```
 
-## 背景
+## Background
 
-Claude Code 一周的会话多到记不清，每个周末都该让 Opus 5.5 把本机的会话记录随手 vibe 成一张周日历。
+A week of Claude Code sessions is too much to remember. Every weekend, have Opus 5.5 vibe-code a quick weekly calendar from your local session logs.
 
-再单独给它配一个只做周日历的 subagent：
+Then give it a subagent that only builds weekly calendars:
 
-- 名字叫 week-calendar，effort 设 medium，再预装一个设计 skill
-- 第一次先问清你喜欢的配色、按项目还是按任务上色，记进它的记忆，以后每次照着来
-- 想复盘、要写周报的时候叫它，它把日历重新生成一遍，再顺手给你写好 3 行周报
-- 日历上放四样东西：哪天几点在干活、每个会话做了什么、哪些会话一次都没提交就停了，还有每个项目这周花了几个小时
+- Name it week-calendar, set its effort to medium, and preload a design skill
+- The first time, it asks which colors you like and whether to color by project or by task, and saves that to memory. After that, every calendar follows it
+- Call it when you want to look back on the week or write a weekly report. It regenerates the calendar and writes up a 3-line weekly report for you
+- The calendar shows four things: when you worked each day, what each session did, which sessions stopped without a single commit, and how many hours each project took this week
 
-把这段 prompt 发给 Claude Code。
+Send this prompt to Claude Code.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/turn-a-week-of-sessions-into-a-calendar)：@Voxyz_ai 2026年10月4日[发在 X 上](https://x.com/Voxyz_ai/status/2106746160211980427)，截至 2026年11月1日有 2,014 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/turn-a-week-of-sessions-into-a-calendar): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2106746160211980427) on 4 Oct 2026, 2K saves as of 1 Nov 2026. For Claude Code.

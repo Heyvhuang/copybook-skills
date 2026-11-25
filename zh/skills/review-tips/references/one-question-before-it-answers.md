@@ -1,40 +1,40 @@
-# 回答前先问一个问题
+# One question before it answers
 
-一次问 10 个你就不想答：先摆出没说的假设、缺的信息和常见错误，再只问最可能改变做法的那个。
+Ten questions at once get ignored: assumptions, missing info, the usual mistake, then the one question that changes its approach.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 把你的问题贴在末尾，发给 Codex 或 Claude Code。
-3. 得到：它先列出假设，再只问一个最可能改变答案的问题，等你回复。
+1. Copy the prompt.
+2. Paste your question at the end and send it to Codex or Claude Code.
+3. You get: It lists its assumptions, then asks the one question most likely to change its answer, and waits.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-先别回答我的问题。
-回答之前：
-1. 列出我没说、但你准备默认的假设。
-2. 告诉我缺了哪些关键信息，它们可能会怎样改变你的答案。
-3. 说出这类任务里大家最常犯的错。
-4. 只问我一个问题：答案最可能改变你整体做法的那一个。
-等我回复了再继续。
-我的问题：[粘贴你的问题]
+Do not answer my question yet.
+Before answering:
+1. List the assumptions I haven’t stated but you’re about to make.
+2. Tell me what key information is missing and how it could change your answer.
+3. Name the most common mistake people make with this kind of task.
+4. Ask me one question only: the one whose answer is most likely to change your overall approach.
+Wait for my reply before continuing.
+My question: [paste your question]
 ```
 
-## 背景
+## Background
 
-我在 Codex 里试了几个热门的推理 prompt，最后留下了这一个。它会让 Codex 先停下来，问我一个最可能改变它答案的问题，等我回复。Claude 也能用。
+I tried a few popular reasoning prompts with Codex. This is the one I kept. It makes Codex pause, ask the one question most likely to change its answer, and wait for your reply. It works with Claude too.
 
-它一次问十个问题，我多半会先放着。只问一个，我通常马上就回。
+Ten questions at once and I'll probably leave it for later. One question, and I'll usually answer right away.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/make-the-agent-ask-one-question-before-answering)：@Voxyz_ai 2026年8月14日[发在 X 上](https://x.com/Voxyz_ai/status/2088327172725592142)，截至 2026年9月11日有 631 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/make-the-agent-ask-one-question-before-answering): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2088327172725592142) on 14 Aug 2026, 631 saves as of 11 Sep 2026. For Claude Code and Codex.

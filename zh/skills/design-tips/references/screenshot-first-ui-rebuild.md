@@ -1,33 +1,33 @@
-# 先截图再重做的 UI 提示词
+# Screenshot-first UI rebuild prompt
 
-UI 层级和密度有问题：每个页面先截图，再只用一套间距、字号和最多 5 种颜色重做。
+UI hierarchy and density problems: every page screenshotted, then rebuilt on only a spacing scale, type scale and up to 5 colors.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 贴进用 claude --chrome 启动的会话，先输入 /advisor fable。
-3. 得到：层级和密度上最大的 5 个问题，只按新定的尺度重做，在 1440 和 390 下检查过。
+1. Copy the prompt.
+2. Paste it into Claude Code started with claude --chrome, after you run /advisor fable.
+3. You get: 5 biggest hierarchy and density problems, a rebuild on new scales only, checked at 1440 and 390.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-把我的应用跑起来，你自己在 Chrome 里打开每个页面并截图。先列出层级和密度上最大的 5 个问题。然后定一套间距尺度、字号尺度和最多 5 个颜色 token。只用这些重做。不要渐变。在 1440 和 390 下截图，修掉看着不对的地方
+Run my app, open every page in Chrome yourself and screenshot it. List the 5 biggest hierarchy and density problems first. Then define a spacing scale, type scale and max 5 color tokens. Rebuild using only those. No gradients. Screenshot at 1440 and 390, fix what looks off
 ```
 
-## 背景
+## Background
 
-Fable 5.2 + Opus 5.5 做 UI 好得吓人。动代码之前，先让它把你的应用跑起来，每个页面都截图，挑出毛病。这招真的很好用。
+Fable 5.2 + Opus 5.5 is scary good at UI. Before it touches code, have it run your app, screenshot every page and pick it apart. This works really well.
 
-用 `claude --chrome` 启动，输入 `/advisor fable`（Opus 写，Fable 审），再贴上提示词。
+Launch `claude --chrome`, run `/advisor fable` (Opus builds, Fable reviews), then paste the prompt.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/screenshot-every-page-then-rebuild-the-ui)：@Voxyz_ai 2026年11月15日[发在 X 上](https://x.com/Voxyz_ai/status/2121981549713457427)，截至 2026年11月22日有 1,103 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/screenshot-every-page-then-rebuild-the-ui): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2121981549713457427) on 15 Nov 2026, 1.1K saves as of 22 Nov 2026. For Claude Code.

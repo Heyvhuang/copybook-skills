@@ -1,52 +1,52 @@
-# Google 搜索检查：已上线网站 12 项
+# Google search check: 12 items for a live site
 
-拿名字在 Google 上搜不到你用 AI 做的网站：抓取、每个页面和全站，一次修好。
+You can't find your AI-built site by Googling its name: crawling, every page and the whole site, fixed in one pass.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在网站项目里把它发给 Claude Code 里的 Opus 5.5。
-3. 得到：一次全部修好，给出每个主要页面修改前后的对比，以及哪几项要去 Search Console 确认。
+1. Copy the prompt.
+2. Send it to Opus 5.5 in Claude Code, in your site's project.
+3. You get: All fixed in one pass, every main page before and after, and what to confirm in Search Console.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-让 Opus 5.5 派 3 个 subagent 分头把这 12 件事查一遍，再一次全部修好：
+Have Opus 5.5 send out 3 subagents to check these 12 things, then fix them all in one pass:
 
-抓取
-- 用 Googlebot 的 user agent 去 curl 每个主要页面。不跑 JS，title 和正文也应该都在
-- 如果 HTML 里只有一个空的根节点，改用服务端渲染或预渲染
-- robots.txt 和 noindex 只用来挡后台、登录这类页面
-- 不存在的页面要真的返回 404，而不是返回 200 再显示一句「找不到」
-- 页面之间用 <a href> 互相链接，不要只靠 onClick 跳转
+Crawling
+- Curl every main page with Googlebot's user agent. The title and body text should be there without JS
+- If the HTML is just an empty root, switch to server-side rendering or prerendering
+- Only use robots.txt and noindex to block pages like admin and login
+- Pages that don't exist should actually return a 404, not a 200 with a "not found" message
+- Link between pages with <a href>, not just onClick navigation
 
-每个页面
-- 每个页面都要有自己的 title、meta description 和 canonical，每个 canonical 都指向它自己的页面，不要整站都指向首页
-- 跑 Lighthouse，把 LCP 降到 2.5 秒以内，CLS 降到 0.1 以下
-- 图片转成 WebP，并给它们加上宽度、高度和 alt 文字
-- FAQ schema 就别加了。Google 从 2026 年五月起已经不再显示 FAQ 富媒体结果
+Every page
+- Give every page its own title, meta description and canonical, and point each canonical at its own page, not the whole site at the homepage
+- Run Lighthouse and get LCP under 2.5 seconds and CLS under 0.1
+- Convert images to WebP and give them a width, height and alt text
+- Skip FAQ schema. Google stopped showing FAQ rich results in May 2026
 
-全站
-- sitemap.xml 里只列你想被收录、而且返回 200 的 URL，再把 sitemap 的 URL 写进 robots.txt
-- 把整站爬一遍，修好失效链接，每个重定向都只跳一次
-- 没有别的页面链接过去的页面，给它们加上内链
+Site-wide
+- In sitemap.xml, list only URLs you want indexed that return a 200, and add the sitemap's URL to robots.txt
+- Crawl the whole site, fix broken links, and make every redirect a single hop
+- Add internal links to pages that no other page links to
 
-把这整条发给 Claude Code，最后再加上这句 👇
-「每一组派一个 subagent 去查，只查不改，列出有问题的 URL 和背后对应的文件。然后照它们的清单，你自己一次全部修好。改动之前，先 curl 每个主要页面，记下它的 title 和正文怎么开头。改完再 curl 一遍，给我看修改前后的对比。用不上的就跳过，最后告诉我哪几项要我登录 Search Console 去确认。」
+Send this whole post to Claude Code and add this line at the end 👇
+"Send one subagent per group to check without editing anything, and list the URLs with problems and the files behind them. Then fix everything yourself from their lists in one pass. Before changing anything, curl every main page and note its title and how its body text starts. Curl them again when you're done and show me the before and after. Skip anything that doesn't apply, and at the end tell me which ones I have to log in to Search Console to confirm."
 ```
 
-## 背景
+## Background
 
-你用 AI 做的网站上线了，拿它的名字去 Google 搜，却连它都搜不到。
+Your AI-built site is live, and you can't even find it by Googling its name.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/google-search-check-for-a-live-site)：@Voxyz_ai 2026年10月30日[发在 X 上](https://x.com/Voxyz_ai/status/2116304148228722833)，截至 2026年11月6日有 829 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/google-search-check-for-a-live-site): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2116304148228722833) on 30 Oct 2026, 829 saves as of 6 Nov 2026. For Claude Code.

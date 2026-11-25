@@ -1,24 +1,24 @@
-name: "Tip stopped working · 技巧不灵了"
-description: "A tip no longer does what its steps say. 照着技巧的步骤做，结果不对或报错。"
+name: "Tip stopped working"
+description: "A tip no longer does what its steps say."
 labels: ["broken"]
 body:
   - type: input
     id: skill
     attributes:
-      label: "Tip · 技巧"
+      label: "Tip"
       placeholder: "status-line-cache-countdown"
     validations:
       required: true
   - type: input
     id: agent
     attributes:
-      label: "Agent and model · Agent 和模型"
+      label: "Agent and model"
       placeholder: "Claude Code 2.1.312, Opus 5.5"
     validations:
       required: true
   - type: textarea
     id: what
     attributes:
-      label: "What happened · 发生了什么"
+      label: "What happened"
     validations:
       required: true

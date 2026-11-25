@@ -5,7 +5,7 @@
     "url": "https://x.com/Voxyz_ai"
   },
   "metadata": {
-    "description": "Skills that pick the prompt, rule or setup that fits the task your coding agent is on, from the posts readers saved most on X. Install copybook for English or copybook-zh for Chinese."
+    "description": "Skills that pick the prompt, rule or setup that fits the task your coding agent is on, from the posts readers saved most on X. Install copybook."
   },
   "plugins": [
     {
@@ -25,7 +25,7 @@
     {
       "name": "copybook-zh",
       "source": "./zh",
-      "description": "按情景替你的 coding agent 挑技巧（中文版）：一个会自己加载的 skill 从 149 条提示词、规则和设置里选一条，照着做。来自 @Voxyz_ai 在 X 上被读者收藏最多的帖子。",
+      "description": "The Chinese edition of Copybook has ended, and this plugin now carries the same English skills as copybook: install copybook and remove copybook-zh. Your coding agent picks the tip that fits the task: a skill that loads by itself chooses one of 149 prompts, rules and setups and follows it. From @Voxyz_ai's posts on X, the ones readers saved most.",
       "category": "development",
       "keywords": [
         "claude-code",
@@ -33,8 +33,7 @@
         "skills",
         "prompts",
         "agents-md",
-        "coding-agents",
-        "chinese"
+        "coding-agents"
       ]
     }
   ]

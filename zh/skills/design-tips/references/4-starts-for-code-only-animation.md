@@ -1,74 +1,74 @@
-# 纯代码动画的 4 个起点
+# 4 starting points for a code-only animation
 
-喜欢的动画、一句想法、一张角色图、想要的画风：各一条提示词，渲染成一个 HTML 文件，加配乐。
+An animation you love, a one-line idea, a character image or an art style: a prompt for each, one HTML file rendered, plus sound.
 
-## 步骤
+## Steps
 
-1. 复制你那种起点对应的提示词。
-2. 连同视频、图片或主题一起发给模型。
-3. 得到：一段完全用代码写成、从一个 HTML 文件渲染出来的动画。
+1. Copy the prompt for your starting point.
+2. Send it to the model with your video, image or topic.
+3. You get: An animation written entirely in code, rendered from one HTML file.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词：逆向还原
-
-```text
-把这个视频逆向还原成 HyperFrames 代码，然后从设计师的角度做一个更有创意的版本。
-```
-
-## 提示词：一句话，高强度
+## Prompt: reverse-engineer it
 
 ```text
-做一个能在我浏览器里运行、可以玩的 3D 赛车游戏，尽量做得好看。
+Reverse-engineer this video into HyperFrames code, then make a more creative version from a designer's point of view.
 ```
 
-## 提示词：从角色图开始
+## Prompt: one sentence, high effort
 
 ```text
-这是主角。把它做成一部关于 [TOPIC] 的 30 秒动画短片：好玩，有明确的结尾，用来发 X。不要合成音效，用我电脑上的真实音频素材。
+Make a playable 3D racing game that runs in my browser, and make it look as good as you can.
 ```
 
-## 提示词：特定画风
+## Prompt: from a character image
 
 ```text
-在单个 HTML 文件里用原生 JS 和 Canvas，做一只追萤火虫的像素风小猫。先在低分辨率画布上画，比如 160×90，再按整数倍放大。用一套小的固定调色板，不要抗锯齿。用一卡一卡的 10 fps 像素感做动画，分四个阶段：idle、stalk、pounce、land。无缝循环。
+Here's the main character. Turn it into a 30-second animated short about [TOPIC]: playful, with a clear ending, made to post on X. Skip synthesized sound effects and use real audio samples from my machine.
 ```
 
-## 背景
+## Prompt: a specific art style
 
-时间线上那些纯代码动画，归结起来就是四种做法，每种都有一条可以直接复制的提示词：
+```text
+In a single HTML file with vanilla JS and Canvas, make a pixel-art cat chasing fireflies. Draw on a low-res canvas first, like 160×90, then scale up by whole numbers. Use a small fixed palette and no anti-aliasing. Animate with a choppy 10 fps pixel feel, in four phases: idle, stalk, pounce, land. Loop it seamlessly.
+```
 
-- 看到喜欢的动画：让它逆向还原
-- 只有一个想法：一句话，高强度
-- 有角色图：一张截图加几句话
-- 想要特定画风：把规格写清楚
+## Background
 
-看到喜欢的动画？把视频和这条提示词一起丢进去。
+Those code-only animations all over the timeline come down to four approaches, each with a prompt you can copy:
 
-我的那个就是这么做的：两条消息，第二条只是让它改改故事、打磨一下画面。所有东西都在一个 index.html 里，用 HyperFrames 渲染成 MP4。从头到尾大约一小时，按 API 价格算大约 $14。
+- Found an animation you love: have it reverse-engineer it
+- Just have an idea: one sentence, high effort
+- Have a character image: a screenshot and a few lines
+- Want a specific art style: spell out the spec
 
-只有一个想法？把 /effort 设成 max 或 xhigh，然后只给它一句话：
+Found an animation you love? Drop the video in with the prompt.
 
-点子和细节都交给它。它可能跑一个多小时，也最耗你的额度。
+That's how I made mine: two messages, and the second one just asked it to change the story and polish the look. Everything lives in one index.html, rendered to MP4 with HyperFrames. About an hour start to finish, roughly $14 at API prices.
 
-有角色图？把它贴进去，再加几句话：
+Just have an idea? Set /effort to max or xhigh, then give it one sentence:
 
-最快的不到 20 分钟就做完了。换成你自己 app 的截图和仓库，就是一支产品介绍视频。
+Leave the ideas and the details to it. It can run for over an hour, and it uses the most of your limits.
 
-想要特定画风？把规格写清楚。比如像素风：
+Have a character image? Paste it in with a few lines:
 
-配乐怎么做：
+The fastest ones are done in under 20 minutes. Swap in screenshots and the repo of your own app, and you get a product intro video.
 
-- 只用代码：让它用 Web Audio API 或 Python 脚本合成配乐，卡准故事节点
-- 不满意：让它再重做几遍配乐，用真实乐器音色
-- 素材：本地音频素材、有授权的音乐，或用 ElevenLabs 做音效
+Want a specific art style? Spell out the spec. For pixel art, for example:
 
-## 来源
+How to do the sound:
 
-来自 [Copybook](https://copybook.page/zh/t/four-ways-to-make-a-code-only-animation)：@Voxyz_ai 2026年9月23日[发在 X 上](https://x.com/Voxyz_ai/status/2102805198838321649)，截至 2026年10月21日有 589 次收藏。适用于 Codex。
+- Code only: have it synthesize the score with the Web Audio API or a Python script, timed to the story beats
+- Not happy with it: have it redo the score a few more times, using real instrument sounds
+- Samples: local audio samples, licensed music, or ElevenLabs for sound effects
+
+## Source
+
+From [Copybook](https://copybook.page/t/four-ways-to-make-a-code-only-animation): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2102805198838321649) on 23 Sep 2026, 589 saves as of 21 Oct 2026. For Codex.

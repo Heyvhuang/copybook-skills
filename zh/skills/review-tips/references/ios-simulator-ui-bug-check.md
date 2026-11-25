@@ -1,39 +1,39 @@
-# iOS 模拟器 UI bug 检查，含 iPhone Duo
+# iOS simulator UI bug check with iPhone Duo
 
-iOS app 里的 UI 问题：主要页面都点一遍，有 Duo 模拟器就查各形态，建议最小改法。
+UI bugs in your iOS app: main screens tapped through, Duo poses checked if its simulator exists, smallest changes suggested.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 连同 Anthropic iOS 模拟器指南的链接一起发给桌面版 Claude Code。
-3. 得到：先给建议，涉及付款或删数据的改动单独列出，暂时什么都不改。
+1. Copy the prompt.
+2. Send it to Claude Code on desktop with the link to Anthropic's iOS simulator guide.
+3. You get: Recommendations first, with changes to payments or deleting data listed apart, nothing modified yet.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-读这份指南，然后构建我的 app，在模拟器里运行。把每个主要页面都点一遍。然后在 iPhone Duo 模拟器上运行这个 app，在合上、半开和打开时分别检查每个页面。找三类问题：布局坏掉或被截断的；按钮和链接不能用或点不到的；页面报错或和代码本来要做的不一致的。
+Read this guide, then build my app and run it in the simulator. Tap through every main screen. Then run the app on the iPhone Duo simulator and check each screen closed, half open, and open. Find three kinds of problems: layouts that break or get cut off; buttons and links that don't work or can't be reached; and screens that throw errors or don't match what the code is meant to do.
 
-每个问题都截一张图，说明用户会看到什么，并建议最小的改动。如果某个页面需要登录，停下来问我要测试账号。如果没有 iPhone Duo 模拟器，跳过这一步，告诉我怎么添加。涉及付款或删除数据的改动单独列出来，由我决定。
+For each issue, take a screenshot, explain what the user would see, and suggest the smallest change needed. If a screen needs signing in, stop and ask me for a test account. If there's no iPhone Duo simulator, skip that step and tell me how to add one. List any changes involving payments or deleting data separately for me to decide.
 
-先给我看建议。暂时不要改任何东西。
+Show me the recommendations first. Don't modify anything yet.
 ```
 
-## 背景
+## Background
 
-Anthropic 刚发了一份 [Claude Code 里 iOS 模拟器的指南](https://code.claude.com/docs/en/desktop-ios-simulator)。你可以让 Claude 用它在模拟器里把整个 app 点一遍，找出 UI 和交互上的 bug。
+Anthropic just published [a guide to the iOS simulator in Claude Code](https://code.claude.com/docs/en/desktop-ios-simulator). You can ask Claude to use it to tap through your whole app in the simulator and find the UI and interaction bugs.
 
-很多人知道这个功能，但很少有人知道怎么把它用足。同时开几个会话又不指定模拟器，它们会全挤到同一个上。而且它现在支持可折叠的 iPhone Duo。
+Lots of people know this feature, but few know how to get the most out of it. Run a few sessions at once without naming a simulator, and they all pile onto the same one. And it now supports the foldable iPhone Duo.
 
-把这条提示词和指南链接一起发给桌面版 Claude Code。
+Send this prompt and the guide's link to Claude Code on desktop.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/find-ios-app-bugs-in-the-claude-code-simulator)：@Voxyz_ai 2026年11月16日[发在 X 上](https://x.com/Voxyz_ai/status/2122465585984332276)，截至 2026年11月23日有 984 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/find-ios-app-bugs-in-the-claude-code-simulator): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2122465585984332276) on 16 Nov 2026, 984 saves as of 23 Nov 2026. For Claude Code.

@@ -1,95 +1,159 @@
-# 能点的仓库地图
+# Clickable repo map
 
-改一个仓库前先看清它：点任一模块，看到调用方、依赖、相关测试和源码证据，地图随代码更新。
+Before you change a repo: click any module for its callers, dependencies, tests and source evidence; a rule keeps it current.
 
-## 步骤
+## Steps
 
-1. 复制提示词，再复制下面那条 AGENTS.md 规则。
-2. 在项目里把提示词发给 Codex，规则贴进项目的 AGENTS.md。
-3. 得到：docs/codemap/ 里一张能点的仓库地图，跟着代码一起更新。
+1. Copy the prompt, then the AGENTS.md rule under it.
+2. Send the prompt to Codex in your project, and paste the rule into the project's AGENTS.md.
+3. You get: A clickable map of your repo in docs/codemap/ that stays in step with the code.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-分析当前代码库。不要改产品代码，只创建或更新 docs/codemap/ 下的文件。
-忽略 vendor、build、dist、cache 和其他生成出来的目录。
-如果 docs/codemap/ 已经存在，先拿现有的 codemap.lock 和当前仓库对比，列出改过的模块，再把下面三个文件一起重新生成：
+Analyze the current codebase. Do not modify product code. Only create or update files under docs/codemap/.
+
+Ignore vendor, build, dist, cache, and other generated directories.
+
+If docs/codemap/ already exists, first compare the existing codemap.lock with the current repo and list the modules that changed. Then regenerate these three files together:
 
 1. docs/codemap/codemap.html
-做一个完全自包含、浏览器直接打开的交互式代码地图，包括：
-- 主要模块、服务、数据库、队列和外部依赖
-- 主节点不超过 20 个，底层文件归到所属模块下
-- 模块之间的调用和数据流
-- 最重要的 3-5 条端到端流程
-- 默认用清晰的深色主题
-- 第一屏就能看到系统边界和最重要的数据流
-- 按模块类型上色，配一个简单的图例
-- 自动布局，尽量减少连线交叉
-- 点任意模块，高亮它的上游调用方、下游依赖、相关测试和所属流程
-- 选中一条流程，高亮它的完整路径
-- 支持搜索、筛选、缩放和拖动
-顶部显示仓库名、生成时间，以及基于哪个 commit 生成。
+
+Build a fully self-contained interactive code map that opens directly in a browser. Include:
+
+- major modules, services, databases, queues, and external dependencies
+- no more than 20 primary nodes; group low-level files under their parent module
+- calls and data flows between modules
+- the 3-5 most important end-to-end flows
+- a clear dark theme by default
+- system boundaries and the most important data flows visible on the first screen
+- color-coded module types with a simple legend
+- automatic layout that minimizes crossing edges
+- clicking any module highlights its upstream callers, downstream dependencies, related tests, and the flows it belongs to
+- selecting a flow highlights its complete path
+- search, filtering, zoom, and drag controls
+
+At the top, show the repo name, generation time, and the commit it was generated from.
 
 2. docs/codemap/codemap.json
-用这个结构：
-{ "generated_at": "", "generated_from_commit": "", "scope": [], "nodes": [], "edges": [], "flows": [] }
-每个 node 包含 id、path、role、entrypoints、tests、constraints、evidence。
-每条 edge 包含 from、to、type、evidence。type 只能是 imports、calls、reads、writes、publishes、subscribes。
-每条 flow 包含 trigger、steps、outcome，每个 step 都要引用已存在的 node id。
-每个 node 和 edge 都附上对应的源码路径和符号。没有源码证据的关系标成 unknown，不要猜。
+
+Use this structure:
+
+{
+  "generated_at": "",
+  "generated_from_commit": "",
+  "scope": [],
+  "nodes": [],
+  "edges": [],
+  "flows": []
+}
+
+Each node must include:
+
+- id
+- path
+- role
+- entrypoints
+- tests
+- constraints
+- evidence
+
+Each edge must include:
+
+- from
+- to
+- type
+- evidence
+
+type may only be:
+
+- imports
+- calls
+- reads
+- writes
+- publishes
+- subscribes
+
+Each flow must include:
+
+- trigger
+- steps
+- outcome
+
+Every step must reference an existing node id.
+
+Attach the matching source path and symbol to every node and edge. Mark any relationship without source evidence as unknown. Do not guess.
 
 3. docs/codemap/codemap.lock
-用能解析的 JSON 记录：当前 commit、工作区有没有未提交的改动、生成时间、扫描范围、排除的目录、指纹算法，以及每个顶层模块的确定性指纹（按它受 git 跟踪的文件路径和当前内容计算）。
-找不到现有的 codemap.lock，就把所有模块当成新的，生成完整地图。
 
-做完后确认：
-- codemap.json 能正常解析
-- 每个 node 的路径都存在，每个 evidence 符号都能在源码里找到
-- 每条 edge 和每个 flow step 都引用已存在的 node
-- codemap.html 和 codemap.json 用的是同一套 nodes、edges 和 flows
-- codemap.lock 和当前 commit、工作区状态、模块指纹一致
-- 每个没有源码证据的关系都标成了 unknown
-这三个文件必须一起从当前仓库生成，永远不要只手动改其中一个。
+Use parseable JSON to record:
 
-最后给我看：创建或修改了哪些文件、哪些模块过期了、还剩哪些 unknown、校验结果，以及完整的 diff。
+- the current commit
+- whether the working tree has uncommitted changes
+- generation time
+- scanned scope
+- excluded directories
+- the fingerprint algorithm
+- a deterministic fingerprint for each top-level module, calculated from its tracked file paths and current file contents
+
+If no existing codemap.lock is found, treat every module as new and generate the full map.
+
+When finished, verify that:
+
+- codemap.json parses successfully
+- every node path exists and every evidence symbol can be found in the source
+- every edge and flow step references an existing node
+- codemap.html and codemap.json use the same nodes, edges, and flows
+- codemap.lock matches the current commit, working tree state, and module fingerprints
+- every relationship without source evidence is marked unknown
+
+These three files must always be generated together from the current repo. Never edit only one of them manually.
+
+Finally, show:
+
+- files created or modified
+- stale modules
+- remaining unknowns
+- validation results
+- the complete diff
 ```
 
-## AGENTS.md 规则
+## AGENTS.md rule
 
 ```markdown
-每个要改代码的任务开始时，先拿当前仓库和 docs/codemap/codemap.lock 对比。
+At the start of every code-changing task, compare the current repo with docs/codemap/codemap.lock.
 
-改一个模块之前，先用 docs/codemap/codemap.json 回答三个问题：
+Before modifying a module, use docs/codemap/codemap.json to answer three questions:
 
-1. 谁在调用它？
-2. 它会影响什么？
-3. 哪些测试覆盖它？
+1. What calls it?
+2. What does it affect?
+3. Which tests cover it?
 
-地图过期了，或者回答不了这三个问题，就先重新生成 codemap.html、codemap.json 和 codemap.lock，再改代码。
+If the map is stale or cannot answer those questions, regenerate codemap.html, codemap.json, and codemap.lock before changing the code.
 
-模块边界、依赖、路由、数据库、队列或主要数据流有变化时，在同一个 commit 里同步更新代码地图。
+Whenever module boundaries, dependencies, routes, databases, queues, or major data flows change, update the code map in the same commit as the code.
 ```
 
-## 背景
+## Background
 
-让 Codex 给你的仓库做一张能点的地图，再标出地图生成之后，哪些模块改过。点任意一个模块，就能看到谁在调用它、它依赖什么、主要流程、相关测试和源码证据。
+Have Codex build a clickable map of your repo, then flag which modules have changed since the map was generated. Click any module to see its callers, dependencies, major flows, related tests and source evidence.
 
-它会生成三个文件，每次都一起重新生成：
+It generates three files that are always regenerated together:
 
 - `docs/codemap/codemap.html`
 - `docs/codemap/codemap.json`
 - `docs/codemap/codemap.lock`
 
-然后让代码地图跟着仓库一起更新。
+Then keep the code map in sync with the repo.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/have-codex-build-a-clickable-map-of-your-repo)：@Voxyz_ai 2026年8月4日[发在 X 上](https://x.com/Voxyz_ai/status/2084645222672154675)，截至 2026年9月1日有 2,670 次收藏。最近一次检查：2026年10月28日，Fable 5.1，可用。适用于 Codex。
+From [Copybook](https://copybook.page/t/have-codex-build-a-clickable-map-of-your-repo): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2084645222672154675) on 4 Aug 2026, 2.7K saves as of 1 Sep 2026. Last check: works on Fable 5.1, 28 Oct 2026. For Codex.

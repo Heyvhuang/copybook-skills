@@ -1,39 +1,39 @@
-# 开源侦察员和收尾者提示词
+# Open-Source Scout and Closer prompts
 
-不熟的功能从零写、问要不要继续：先搜 GitHub，再把整个活干完，附一份大白话总结。
+Unfamiliar features written from scratch, offers to continue: GitHub searched first, then the whole job done and a plain recap.
 
-## 步骤
+## Steps
 
-1. 复制开源侦察员、收尾者，或两条都复制。
-2. 连同你的任务发给项目里的 Claude Code。
-3. 得到：做不熟的功能前先比较开源项目的做法，或者整个活干完，附一份大白话总结。
+1. Copy the Open-Source Scout prompt, the Closer prompt, or both.
+2. Send it to Claude Code in your project along with your task.
+3. You get: Open-source approaches compared for an unfamiliar feature, or the whole job done and a plain recap.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词：开源侦察员
-
-```text
-不熟悉的功能别从零开始写。先在 GitHub 上搜开源项目，比较它们的做法，再动手。
-```
-
-## 提示词：收尾者
+## Prompt: Open-Source Scout
 
 ```text
-整个活干完再停。别问要不要继续：直接继续。删除任何东西之前先问我。最后给一个完全没看过这些工作的人写一份总结：要点放前面，用大白话。
+Don't write an unfamiliar feature from scratch. Search GitHub for open-source projects, compare their approaches, then start.
 ```
 
-## 背景
+## Prompt: Closer
 
-别对 Fable 5.2 说「找 bug」。别对 Fable 5.2 说「做这个功能」。别对 Fable 5.2 说「CI 为什么这么慢」。
+```text
+Finish the whole job before you stop. Don't offer to continue: continue. Ask me before you delete anything. End with a recap for someone who saw none of the work: key points first, plain words.
+```
 
-你在把最聪明的编程模型当实习生用。下面 2 条提示词，复制粘贴就行。
+## Background
 
-## 来源
+Don't tell Fable 5.2 "find the bugs." Don't tell Fable 5.2 "build this feature." Don't tell Fable 5.2 "why is CI so slow."
 
-来自 [Copybook](https://copybook.page/zh/t/search-github-first-and-finish-the-whole-job)：@Voxyz_ai 2026年11月15日[发在 X 上](https://x.com/Voxyz_ai/status/2122011755240984607)，截至 2026年11月22日有 1.5万次收藏。适用于 Claude Code。
+You're using the smartest coding model out there like it's an intern. Here are 2 prompts to copy and paste.
+
+## Source
+
+From [Copybook](https://copybook.page/t/search-github-first-and-finish-the-whole-job): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2122011755240984607) on 15 Nov 2026, 15K saves as of 22 Nov 2026. For Claude Code.

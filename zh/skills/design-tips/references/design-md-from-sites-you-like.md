@@ -1,50 +1,50 @@
-# 按你喜欢的网站写的 DESIGN.md
+# DESIGN.md from sites you like
 
-页面一眼 AI 味，是它没见过你喜欢的样子：3 到 5 张截图写成 DESIGN.md，再装两个设计 skill。
+Pages look AI-made since Opus hasn't seen what you like: 3-5 screenshots become a DESIGN.md; add taste-skill and Impeccable.
 
-## 步骤
+## Steps
 
-1. 复制提示词，再复制装两个设计 skill 的命令。
-2. 提示词连同 3 到 5 张截图发给 Claude Code，命令在项目根目录跑。
-3. 得到：项目根目录一份 DESIGN.md，导入 CLAUDE.md，以后每个页面都照它来。
+1. Copy the prompt, then the commands that install the two skills.
+2. Send the prompt to Claude Code with 3 to 5 screenshots, and run the commands in your project root.
+3. You get: A DESIGN.md in your project root, imported into CLAUDE.md, that every page after follows.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-这几张是我喜欢的网站截图。先别动代码：
-1. 逐张说说哪里做得好：版式、字体、配色、间距、留白。
-2. 列出几张图共同的地方，问我想要哪些，等我回复再往下做。
-3. 按我挑中的，在项目根目录写一份 DESIGN.md，写具体值：字号、字重、色值、间距、圆角。截图看不出的标「估计」，别编。写短一点，一屏以内。
-4. 在根目录的 CLAUDE.md 里用 @ 那一行导入 DESIGN.md，不要放进反引号里；再加一条规则：每做完一个页面，跑一次 /impeccable polish。
+These are screenshots of sites I like. Don't touch any code yet:
+1. For each one, tell me what it does well: layout, typography, color, spacing, white space.
+2. List what they have in common, ask me which parts I want, and wait for my answer before going on.
+3. Write a DESIGN.md in the project root based on what I pick, with real values: font sizes, weights, color codes, spacing, corner radius. Mark anything you can't tell from the screenshots as an estimate. Don't make it up. Keep it short, one screen at most.
+4. Import DESIGN.md into the root CLAUDE.md with an @ line, not inside backticks. Then add a rule: after every page you finish, run /impeccable polish.
 ```
 
-## 命令：装两个设计 skill
+## Commands: install the two skills
 
 ```bash
 npx skills add Leonxlnx/taste-skill --skill design-taste-frontend
 npx impeccable install
 ```
 
-## 背景
+## Background
 
-Opus 5.5 能做出一流的网页设计，前提是先让它看过一流的设计。页面还是一眼 AI 味，多半是它没见过你喜欢的样子。
+Opus 5.5 can make top-tier web design, as long as you show it top-tier design first. If your pages still look AI-made at a glance, it probably hasn't seen the kind of design you like.
 
-1. 去 Godly、Refero、One Page Love 挑 3 到 5 个喜欢的网站，截图直接拖进 Claude Code，让它说说每个站好看在哪。
-2. 把你挑中的写成一份 DESIGN.md，导入 CLAUDE.md，以后每个页面都照它来。
-3. 装两个设计 skill：
-   - taste-skill（90k+ 星）：做页面时用，让它别再做出一看就是模板的页面
-   - Impeccable（70k+ 星）：做完用 `/impeccable polish` 收尾。在项目根目录装好，再在 Claude Code 里跑 `/impeccable init`
+1. Pick 3 to 5 sites you like on Godly, Refero or One Page Love, drag the screenshots straight into Claude Code, and have it tell you what makes each one look good.
+2. Turn the parts you pick into a DESIGN.md and import it into CLAUDE.md. Every page after that follows it.
+3. Install two design skills:
+   - taste-skill (90k+ stars): use it while building, so its pages stop looking like templates.
+   - Impeccable (70k+ stars): finish each page with `/impeccable polish`. Run its install in your project root, then `/impeccable init` in Claude Code.
 
-截图发过去的时候，附上这段。
+When you send the screenshots, add this prompt.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/show-opus-5-5-sites-you-like-before-it-designs)：@Voxyz_ai 2026年10月3日[发在 X 上](https://x.com/Voxyz_ai/status/2106474370860548341)，截至 2026年11月1日有 1,404 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/show-opus-5-5-sites-you-like-before-it-designs): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2106474370860548341) on 3 Oct 2026, 1.4K saves as of 1 Nov 2026. For Claude Code.

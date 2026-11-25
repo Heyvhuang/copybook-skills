@@ -1,42 +1,42 @@
-# 703 条 Opus 5.5 视频提示词，重做一条
+# 703 Opus 5.5 video prompts, one remade for you
 
-给产品做一支爆款那样的视频：703 条提示词里最适合你的 5 条，你选的那条重做成一个 HTML 文件。
+A product video like the viral ones: the 5 of 703 prompts that fit your product, your pick remade as one HTML file.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在你产品的项目里发给 Claude Code。
-3. 得到：项目里一个介绍你产品的 HTML 动画；把页面录下来就是视频。
+1. Copy the prompt.
+2. Send it to Claude Code in your product's project.
+3. You get: An HTML animation of your product, saved in the project; record the page to get a video.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-读 https://github.com/yihui-dev/awesome-opus5-5-videos 里的 data/videos.json，只用 prompt_partial 为 false 的条目。先读这个项目的 README 弄清楚产品是什么，再从 motion、explainer、3d 或 interactive 里挑出最适合介绍它的 5 条，列出它们的原帖链接，让我先看。我选好以后，打开那一条的 prompt 文件，复制 Prompt 下面那段，把主体换成我的产品，保留原来的节奏和画面结构，渲染成一个能直接打开的单个 HTML 文件，存在这个项目里。
+Read data/videos.json in https://github.com/yihui-dev/awesome-opus5-5-videos and use only the entries where prompt_partial is false. First read this project's README to understand the product, then pick the 5 entries from motion, explainer, 3d or interactive that would best introduce it, and list their original post links so I can watch them first. Once I choose, open that entry's prompt file, copy the block under Prompt, swap the subject for my product, keep the original pacing and frame structure, and render it as a single HTML file I can open directly, saved in this project.
 ```
 
-## 背景
+## Background
 
-703 条爆款 Opus 5.5 视频背后的 prompt，全在一个仓库里。游戏、3D 场景、讲解动画、动态图形都有。其中 496 条带完整 prompt：复制一条进 Claude Code 就能开始做。这些视频每一条都是 Opus 5.5 用代码写出来的动画，大多用 Canvas、SVG、Three.js 和 shader。
+The prompts behind 703 viral Opus 5.5 videos, all in one repo. Games, 3D scenes, explainers, motion graphics. 496 come with the full prompt: copy one into Claude Code and start making it. Every one of these videos is Opus 5.5 writing the animation as code, mostly Canvas, SVG, Three.js and shaders.
 
-这 703 条分成四组：
+The 703 fall into four groups:
 
-- 369 条动态图形
-- 117 条 3D 场景
-- 116 条讲解动画
-- 101 条游戏和互动作品
+- 369 motion graphics
+- 117 3D scenes
+- 116 explainer animations
+- 101 games and interactive pieces
 
-每一条都链接到原帖，你可以先看效果再挑。另外 207 条，作者只放出了部分 prompt，文件里会注明。Opus 5.5 给你的是一个 HTML 页面；想要视频，就把页面录下来。
+Each one links to the original post, so you can watch the result before you pick. For the other 207, the creator shared only part of the prompt, and the file says so. Opus 5.5 gives you an HTML page; to get a video, record the page.
 
-仓库：https://github.com/yihui-dev/awesome-opus5-5-videos
+The repo: https://github.com/yihui-dev/awesome-opus5-5-videos
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/remake-an-opus-5-5-video-prompt-for-your-product)：@Voxyz_ai 2026年10月22日[发在 X 上](https://x.com/Voxyz_ai/status/2113284251386851617)，截至 2026年11月19日有 212 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/remake-an-opus-5-5-video-prompt-for-your-product): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2113284251386851617) on 22 Oct 2026, 212 saves as of 19 Nov 2026. For Claude Code.

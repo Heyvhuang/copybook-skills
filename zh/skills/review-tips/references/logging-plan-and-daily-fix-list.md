@@ -1,41 +1,41 @@
-# 日志方案和每天的待修清单
+# Logging plan and daily fix list
 
-坏掉的功能、卡住的用户、太慢的步骤：按影响人数排序，附日志原文，最严重的一条已有测试。
+Broken features, stuck users, slow steps: ranked by users affected, with log lines; the worst one already has a test.
 
-## 步骤
+## Steps
 
-1. 复制第 1 步和第 2 步的提示词。
-2. 第 1 步发给项目里的 agent，第 2 步贴进 Claude Code 的 /schedule。
-3. 得到：先拿到一份日志方案等你批准，之后每天早上一份排好的清单，最严重的一条附测试。
+1. Copy the Step 1 prompt, then the Step 2 prompt.
+2. Send Step 1 to your agent in the app's project, then paste Step 2 into /schedule in Claude Code.
+3. You get: A logging plan to approve first, then each morning a ranked list and a test for the worst one.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 第 1 步：加上像样的日志
-
-```text
-帮我为这个 app 规划日志，让我们能完整回放一个用户的经历：做了什么、在 app 里走过的关键步骤，以及最后看到了什么。给每个会话一个 ID，绝不记录密码、token 或个人数据。把日志存在每天定时运行的 agent 能读到的地方。先给我看方案，我批准之前不要写任何代码。
-```
-
-## 第 2 步：每天跑一次
+## Step 1: add proper logging
 
 ```text
-读这个 app 过去 24 小时的日志。找出坏掉的功能、用户卡住的地方，以及太慢或多余的步骤。按每个问题影响的用户数排序，并引用每个问题对应的日志行。把最严重的那个写成一个能复现它的测试。先不要改任何代码。
+Help me plan logging for this app so we can fully replay one user's experience: what they did, the key steps inside the app, and what they saw in the end. Give every session an ID, and never log passwords, tokens or personal data. Store the logs where an agent running on a daily schedule can read them. Show me the plan first, and don't write any code until I approve it.
 ```
 
-## 背景
+## Step 2: run once a day
 
-几乎任何 app 都能**每天自己变好一点**，只要两条 prompt。
+```text
+Read this app's logs from the past 24 hours. Find broken features, places where users got stuck, and steps that are slow or unnecessary. Rank them by how many users each one affects, and quote the log lines behind each one. Turn the worst one into a test that reproduces it. Don't change any code yet.
+```
 
-在 Claude Code 里输入 `/schedule`，把第 2 步的 prompt 粘贴进去。它在云端运行，**笔记本合上也会继续跑**，只要能读到你的日志。
+## Background
 
-第 3 步：每天早上读排好的清单，挑一个来修。最严重的那个已经有测试了，让你的 agent 修到这个测试通过就行。
+Almost any app can **improve itself a little every day**. All it takes is two prompts.
 
-## 来源
+In Claude Code, type `/schedule` and paste the Step 2 prompt in. It runs in the cloud and **keeps going with your laptop closed**, as long as it can read your logs.
 
-来自 [Copybook](https://copybook.page/zh/t/daily-fix-list-from-your-apps-logs)：@Voxyz_ai 2026年10月27日[发在 X 上](https://x.com/Voxyz_ai/status/2115228299400196368)，截至 2026年11月3日有 366 次收藏。适用于 Claude Code。
+Step 3: every morning, read the ranked list and pick one to fix. The worst one already has a test, so just have your agent fix it until that test passes.
+
+## Source
+
+From [Copybook](https://copybook.page/t/daily-fix-list-from-your-apps-logs): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2115228299400196368) on 27 Oct 2026, 363 saves as of 25 Nov 2026. For Claude Code.

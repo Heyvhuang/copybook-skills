@@ -1,40 +1,40 @@
-# 视频提示词里的运镜名称
+# Camera moves to name in video prompts
 
-Opus 5.5 做的视频像幻灯片：6 种运镜的名字和各自效果，外加要写的秒数和速度。
+Opus 5.5 videos that look like a slideshow: six camera moves by name with what each one does, plus seconds and speed to add.
 
-## 步骤
+## Steps
 
-1. 复制运镜。
-2. 把要用的运镜贴进你的视频提示词。
-3. 得到：一段视频提示词，每个运镜都写明秒数和速度。
+1. Copy the camera moves.
+2. Paste the moves you want into your video prompt.
+3. You get: A video prompt that names each camera move with its seconds and speed.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 运镜
+## Camera moves
 
 ```text
-→ 滑动变焦（dolly zoom）：人物大小不变，背景向后拉远或向前压近
-→ 焦点转移（rack focus）：焦点从前景移到背景
-→ FPV 无人机镜头（FPV drone shot）：镜头像无人机一样向前冲
-→ 甩镜（whip pan）：镜头猛地横甩，糊成下一个镜头
-→ 匹配剪辑（match cut）：用同样的形状或动作把两个镜头接起来
-→ J 剪辑（J-cut）：画面还没切过去，先听到下一个镜头的声音
+→ dolly zoom: the person stays the same size while the background stretches away or closes in
+→ rack focus: focus shifts from the foreground to the background
+→ FPV drone shot: the camera rushes forward like a drone
+→ whip pan: the camera snaps sideways and blurs into the next shot
+→ match cut: two shots joined by the same shape or motion
+→ J-cut: you hear the next shot before the picture cuts
 ```
 
-## 背景
+## Background
 
-如果你还觉得 Opus 5.5 做的视频像幻灯片，试试在提示词里按名字点出运镜。
+If you still think Opus 5.5's videos look like a slideshow, try calling out the camera moves by name in your prompt.
 
-在 Claude 里连上 Higgsfield，Opus 5.5 也能把这些名字写进你的视频生成提示词。
+Connect Higgsfield in Claude, and Opus 5.5 can put these names into your video generation prompts too.
 
-全部 24 种都在原帖的图里。点名的时候加上秒数和速度，比如「dolly in，3 秒，慢慢推向人物」。
+All 24 are in the post's image. When you name one, add the seconds and the speed, like "dolly in, 3 seconds, slowly toward the person."
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/camera-moves-to-name-in-video-prompts)：@Voxyz_ai 2026年10月14日[发在 X 上](https://x.com/Voxyz_ai/status/2110415335333433597)，截至 2026年11月11日有 354 次收藏。
+From [Copybook](https://copybook.page/t/camera-moves-to-name-in-video-prompts): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2110415335333433597) on 14 Oct 2026, 354 saves as of 11 Nov 2026.

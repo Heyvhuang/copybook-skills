@@ -1,112 +1,112 @@
-# vibe coding 后的清理：5 条 Codex /goal 提示词
+# Vibe-coding cleanup: 5 Codex /goal prompts
 
-额度重置时还剩一半：清掉死代码、重复实现和用不上的依赖，给定时任务和旧 worktree 分好类。
+Half your quota left at reset: dead code, duplicates and unneeded dependencies cut; scheduled tasks and old worktrees sorted.
 
-## 步骤
+## Steps
 
-1. 从 5 条 /goal 提示词里挑一条复制：死代码、重复实现、依赖、定时任务或 worktree。
-2. 在项目里贴进 Codex，赶在额度重置之前。
-3. 得到：新分支上测过、不推送的改动，或分好类的清单和一份等你过目的清理脚本。
+1. Copy one of the 5 /goal prompts: dead code, duplicates, dependencies, scheduled tasks or worktrees.
+2. Paste it into Codex in your project before your quota resets.
+3. You get: Tested changes on a new branch Codex doesn't push, or sorted lists and a cleanup script you review.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词：死代码
-
-```text
-/goal 找出这个仓库里已经没有任何地方在用的代码，删之前先证明它真的没用。
-
-→ 没有任何地方调用的函数、类、组件和导出
-→ 没有任何入口引用的文件和目录
-→ 永远走不到的代码分支、写死关闭的功能开关，以及整块被注释掉的代码
-
-每一处都先拿出证据：全仓库搜索的结果、从入口能不能走到它、有没有测试用到它。拿不准的（动态导入、按字符串名调用、公开 API）单独列一张清单，先留着。
-
-在新分支上删。每删一批就跑一遍测试和构建，哪里坏了就把这一批恢复。不要推送，也不要合并这个分支。
-
-最后给我：
-→ 删了多少个文件、多少行
-→ 留下了什么，为什么
-→ 测试和构建的结果
-```
-
-## 提示词：重复实现
+## Prompt: dead code
 
 ```text
-/goal 找出这个仓库里同一件事写了好几遍的地方，把每一处合并成一份。
+/goal Find the code in this repo that nothing uses anymore, and prove it's really unused before you delete it.
 
-→ 名字不同、干的是同一件事的函数和辅助函数
-→ 几乎一样的组件、请求封装和校验逻辑
-→ 复制粘贴之后在每个地方又改了一点的代码
+→ Functions, classes, components and exports that nothing calls
+→ Files and directories that no entry point references
+→ Branches that can never run, feature flags hard-coded off, and whole blocks of commented-out code
 
-每一组都说清楚你留哪个版本、为什么，再把其他所有调用处都指向它。只合并行为完全一样的代码。有细微差别的列出来，最后拿给我看。
+For each one, show the evidence first: the repo-wide search results, whether it's reachable from an entry point, and whether any test uses it. Anything you're unsure about (dynamic imports, calls by string name, public APIs) goes on a separate list and stays.
 
-在新分支上做，每合并一组就跑一遍测试。不要推送，也不要合并这个分支。
+Delete on a new branch. Run the tests and the build after each batch, and if anything breaks, restore that batch. Don't push, and don't merge the branch.
 
-最后给我：
-→ 合并了多少组，省了多少行
-→ 有差别、没合并的那些
-→ 测试结果
+At the end, give me:
+→ How many files and lines you deleted
+→ What you kept, and why
+→ The test and build results
 ```
 
-## 提示词：用不上的依赖
+## Prompt: duplicate implementations
 
 ```text
-/goal 检查这个项目装的每一个依赖，去掉它用不上的。
+/goal Find the places in this repo where the same thing is written several times, and merge each into one.
 
-→ 装了但代码里从来没用过的
-→ 只用在一两个小功能上、自己几十行就能写出来的
-→ 两个库干同一件事的
+→ Functions and helpers with different names that do the same job
+→ Near-identical components, request wrappers and validation logic
+→ Code that was copy-pasted and then tweaked a little in each place
 
-没用过的直接删。自己能写的，先写好替代代码、补上测试，再去掉这个依赖。两个干同一件事的，留一个，把所有调用都改到它上面。拿不准的大依赖列出来，最后让我决定。
+For each group, say which version you're keeping and why, then point every other call site at it. Only merge code that behaves exactly the same. List anything with small differences and show it to me at the end.
 
-在新分支上做，每改一处就跑一遍测试和构建。不要推送，也不要合并这个分支。
+Work on a new branch and run the tests after each group. Don't push, and don't merge the branch.
 
-最后给我：
-→ 去掉了哪些依赖，安装后小了多少
-→ 你自己写了什么，各多少行
-→ 留下了什么，为什么
+At the end, give me:
+→ How many groups you merged, and how many lines that saved
+→ The ones with differences that you didn't merge
+→ The test results
 ```
 
-## 提示词：定时任务
+## Prompt: dependencies you don’t need
 
 ```text
-/goal 列出我设过的每一个定时任务：这台机器上的 cron 和 launchd 任务、CI 里的定时工作流，以及项目里按时间跑的脚本。
+/goal Check every dependency this project installs and remove the ones it doesn't need.
 
-每一个都写下：
-→ 它做什么、多久跑一次
-→ 最近一个月跑了几次、失败了几次
-→ 有没有人真的在用它产出的东西
-→ 它和别的任务有没有重叠
+→ Installed but never used in the code
+→ Used for one or two small features you could write yourself in a few dozen lines
+→ Two libraries doing the same job
 
-把它们分成「保留」「改频率」和「关掉」。不要改任何设置。最后给我这份清单，以及每一个怎么关掉。
+Delete the unused ones outright. For the ones you can write yourself, write the replacement and add tests first, then remove the dependency. Where two do the same job, keep one and move every call over to it. List any big dependency you're unsure about and let me decide at the end.
+
+Work on a new branch and run the tests and the build after each change. Don't push, and don't merge the branch.
+
+At the end, give me:
+→ Which dependencies you removed, and how much smaller the install got
+→ What you wrote yourself, and how many lines each
+→ What you kept, and why
 ```
 
-## 提示词：旧会话和 worktree
+## Prompt: scheduled tasks
 
 ```text
-/goal 只读扫描 ~/.codex 和这个项目的 worktree。只看大小，不要打开任何文件的内容。
+/goal List every scheduled task I've set up: cron and launchd jobs on this machine, scheduled workflows in CI, and scripts in the project that run on a timer.
 
-→ 旧的会话日志，按月汇总大小
-→ 已经合并或不再使用的 worktree，以及它们的分支有没有还没推送的改动
-→ 删掉之后会自己重新生成的构建产物和缓存
+For each one, write down:
+→ What it does and how often it runs
+→ How many times it ran in the last month, and how many times it failed
+→ Whether anyone actually uses what it produces
+→ Whether it overlaps with another task
 
-把它们分成「可以删」和「先让我看」。有未推送改动的 worktree 一律放进「先让我看」。什么都不要删。只给「可以删」这一组写一个清理脚本，我看过之后再运行。脚本里用 git worktree remove 删除 worktree。
-
-最后告诉我，这样一共能腾出多少空间。
+Sort them into "keep", "change how often" and "turn off". Don't change any settings. At the end, give me the list and how to turn each one off.
 ```
 
-## 背景
+## Prompt: old sessions and worktrees
 
-额度重置时还剩一半，等于白白扔掉好几天的 Astra 和 Sol。
+```text
+/goal Do a read-only scan of ~/.codex and this project's worktrees. Look at sizes only and don't open any file contents.
 
-用 `/goal` 把最后一点也用上，清掉几个月 vibe coding 堆起来的东西：没人调用的死代码、写了好几遍的同一段逻辑、用不上的依赖、占着硬盘的旧会话和 worktree，甚至一直在白跑的定时任务。
+→ Old session logs, with sizes totaled by month
+→ Worktrees that are already merged or no longer in use, and whether their branches have unpushed changes
+→ Build output and caches that regenerate on their own after you delete them
 
-## 来源
+Sort them into "safe to remove" and "let me review first". Any worktree with unpushed changes always goes under "let me review first". Don't delete anything. Write a cleanup script for the "safe to remove" group only, and I'll review it before I run it. In the script, remove worktrees with git worktree remove.
 
-来自 [Copybook](https://copybook.page/zh/t/five-goal-prompts-to-clean-up-after-vibe-coding)：@Voxyz_ai 2026年11月5日[发在 X 上](https://x.com/Voxyz_ai/status/2118357672106029272)，截至 2026年11月12日有 3,883 次收藏。适用于 Codex。
+At the end, tell me how much space this would free up in total.
+```
+
+## Background
+
+If you still have half your quota left when it resets, you’re throwing away days of Astra and Sol.
+
+Use `/goal` to squeeze every last bit out of it and clean out what months of vibe coding piled up: dead code nothing calls, the same logic written several times over, dependencies you don’t need, old sessions and worktrees hogging your disk, or even scheduled tasks that have been running for nothing.
+
+## Source
+
+From [Copybook](https://copybook.page/t/five-goal-prompts-to-clean-up-after-vibe-coding): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2118357672106029272) on 5 Nov 2026, 3.9K saves as of 12 Nov 2026. For Codex.

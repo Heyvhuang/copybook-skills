@@ -1,39 +1,39 @@
-# 拉 Google 搜索用户的免费小工具
+# A free tool page for users from Google search
 
-想从 Google 搜索拉用户：3 个有人搜的免费小工具，你挑的做成独立 SEO 页，结果下面只放你的按钮。
+Users from Google search: 3 free tools people already search for, your pick built as an SEO page with one button to your app.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在产品的项目里，把它发给 Claude Code 里的 Opus 5.5。
-3. 得到：3 个免费小工具任你挑，挑中的做成独立 SEO 页面，下面一个跳到产品的按钮。
+1. Copy the prompt.
+2. Send it to Opus 5.5 in Claude Code, in your product's project.
+3. You get: Three free tool ideas; the one you pick becomes its own SEO page, with one button to your product.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-读一下这个项目，想 3 个免费小工具给我挑。要跟我的产品有关，也要有人会去搜，每个写上对应的搜索词。词别挑太大的，挑具体、竞争小的。每个词上网搜一下，看排在前面的是不是大网站；搜索量查不到就说是猜的，别编数字。
+Read this project and come up with 3 free tools for me to pick from. Each one should relate to my product and be something people search for. Give me the search term for each. Skip broad terms and pick specific ones with little competition. Search each term online and check whether big sites hold the top results. If you can't find the search volume, say it's a guess. Don't make up numbers.
 
-我挑好后，在我的网站上做成一个单独的页面；网站不在这个项目里就先问我。不用注册，打开就能用，手机上也好用，结果下面只放一个跳到我产品的按钮。SEO 的标题、描述、H1 都写好，页面上写几条常见问题的回答，再从首页或页脚加个链接过来。加进 sitemap，确认 Google 能收录，标题和正文不靠 JS 也能看到。
+Once I pick one, build it as its own page on my website. If my website isn't in this project, ask me first. It needs no signup, works the moment the page opens, and works well on phones. Under the result, put just one button that takes people to my product. Write the SEO title, meta description and H1, answer a few common questions on the page, and link to it from the homepage or footer. Add it to the sitemap, make sure Google can index it, and make sure the title and main text show up without JS.
 
-做完先在本地跑起来给我看，网址、标题、描述一起列出来，再告诉我还能改哪里。我说改哪里你就改，一轮轮改到我满意，再一步步带我上线。
+When it's done, run it locally so I can see it. List the URL, title and meta description, and tell me what else could be improved. Change whatever I point out, round after round, until I'm happy. Then walk me through launching it step by step.
 ```
 
-## 背景
+## Background
 
-强烈建议给你的产品做一个免费小工具，从 Google 搜索拉用户。
+Highly recommend building a small free tool for your product to bring in users from Google search.
 
-比如你做健身 App，就做一个免费的蛋白质计算器。有人搜「素食每天该吃多少蛋白质」点进来，算完，下面就是你 App 的下载按钮。
+Say you make a fitness app. Build a free protein calculator. Someone searches "how much protein do vegetarians need a day" and lands on it. Once they get their number, your app's download button is right below.
 
-在 Claude Code 里把这段 prompt 发给 Opus 5.5。
+Send this prompt to Opus 5.5 in Claude Code.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/build-a-free-tool-that-brings-users-from-google)：@Voxyz_ai 2026年10月10日[发在 X 上](https://x.com/Voxyz_ai/status/2108935588535492959)，截至 2026年11月7日有 1,487 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/build-a-free-tool-that-brings-users-from-google): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2108935588535492959) on 10 Oct 2026, 1.5K saves as of 7 Nov 2026. For Claude Code.

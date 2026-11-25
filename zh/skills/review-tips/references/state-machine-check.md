@@ -1,52 +1,52 @@
-# 状态机检查：错误的转换标红
+# State machine check: wrong transitions in red
 
-功能状态间的 bug：从 UI 到服务端的每个状态画在一页 HTML 上，附编号清单，写明文件、行号和原因。
+Bugs between a feature's states: every state from UI to server on one HTML page, then a numbered list with file, line and why.
 
-## 步骤
+## Steps
 
-1. 复制提示词，再复制 /goal 提示词。
-2. 先在仓库里把提示词发给 Claude Code 或 Codex，画好之后再发 /goal 提示词。
-3. 得到：一张 HTML 状态图，错误的转换编了号，然后是带测试的修复和重画后的状态图。
+1. Copy the prompt, then the /goal prompt.
+2. Send the prompt to Claude Code or Codex in your repo, then the /goal prompt once the chart is drawn.
+3. You get: An HTML chart with the wrong transitions numbered, then fixes with tests and a redrawn chart.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
-
-```text
-把仓库当成只读。挑出状态最多的那个功能，把它从 UI 到服务端的每个状态和转换都画出来，画在一个一屏放得下的 HTML 页面上。把不该发生的转换标红并编号。在下面列出每一个所在的文件、行号，以及它为什么不对。能复现的，写个小脚本跑一下。
-```
-
-## /goal 提示词
+## Prompt
 
 ```text
-/goal 修好状态图上每一个标红的转换：每一个都有一个修复前失败、修复后通过的测试，完整的测试套件通过，重画后的状态图上没有红色了，或者每一个还标红的都写明为什么要我拍板。
-
-→ 先把标红的分组。凡是动到同一个文件的，放进同一组。每组派一个 subagent，各在自己的 worktree 里，全部并行
-→ 每个 subagent 先写一个能复现问题的测试，再改代码，交回 diff、测试命令和它的输出
-→ 每一组你都亲自检查。没看到测试输出之前，不算修好。全部合并之后，你自己再跑一遍完整的测试套件
-
-不要推送，不要发布，和标红无关的代码一行都别碰。哪一组卡住了，记下来，接着做下一组。
-
-最后给我：
-→ 修好了什么，每项一句话说明改了什么
-→ 没修好什么，卡在哪里、需要我提供什么
-→ 重画后的状态图，和原图并排放
+Treat the repo as read-only. Pick the feature with the most states and draw every state and transition it has, from the UI to the server, as a single HTML page that fits on one screen. Mark the transitions that shouldn't happen in red and number them. Underneath, list the file, the line and why each one is wrong. For any you can reproduce, write a small script and run it.
 ```
 
-## 背景
+## /goal prompt
 
-一个普通的邮箱注册表单，画成状态机，有 47 个状态和 12 个 bug。
+```text
+/goal Fix every red transition on the state chart: each one has a test that failed before the fix and passes after it, the full test suite passes, and the redrawn chart has no red left, or every red one still there says why it needs my call.
 
-让 Claude Code 或 Codex 也把你代码里藏着的状态机画出来。
+→ Group the red ones first. Anything that touches the same file goes in one group. Send one subagent per group, each in its own worktree, all working in parallel
+→ Each subagent first writes a test that reproduces the problem, then changes the code, and hands back the diff, the test command and its output
+→ Check each group yourself. It doesn't count as fixed until you've seen the test output. Once everything is merged, run the full test suite again yourself
 
-画好之后，给它这条 /goal，让它派出 subagent，并行修掉标红的那些。
+Don't push, don't release, and don't touch a single line of code unrelated to the red ones. If a group gets stuck, note it and move on to the next.
 
-## 来源
+At the end, give me:
+→ What got fixed, one line each on what changed
+→ What didn't, where it's stuck and what you need from me
+→ The redrawn chart, side by side with the original
+```
 
-来自 [Copybook](https://copybook.page/zh/t/state-machine-check-for-wrong-transitions)：@Voxyz_ai 2026年11月6日[发在 X 上](https://x.com/Voxyz_ai/status/2118780460545532415)，截至 2026年11月13日有 143 次收藏。适用于 Claude Code 和 Codex。
+## Background
+
+One ordinary email signup form, drawn as a state machine, has 47 states and 12 bugs.
+
+Have Claude Code or Codex draw the state machine hiding in your code too.
+
+Once it's drawn, give it this /goal to send out subagents and fix the red ones in parallel.
+
+## Source
+
+From [Copybook](https://copybook.page/t/state-machine-check-for-wrong-transitions): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2118780460545532415) on 6 Nov 2026, 143 saves as of 13 Nov 2026. For Claude Code and Codex.

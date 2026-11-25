@@ -1,39 +1,39 @@
-# 让 Claude Code 给自己做 Mod 的提示词
+# Mod request for Claude Code itself
 
-想改 Claude Code 自己的界面或行为：这段提示词先找现成的 Mod，没有就提一个最小的方案。
+Something in Claude Code's interface you want changed: a prompt that finds an existing Mod or proposes the smallest one.
 
-## 步骤
+## Steps
 
-1. 复制提示词，把方括号里的需求换成你自己的。
-2. 连同 Mods 链接一起发给 Claude Code。
-3. 得到：现成的 Mod 或设置，或者最小的自定义 Mod 加测试方法，装之前先等你确认。
+1. Copy the prompt and replace the request in brackets with your own.
+2. Send it to Claude Code with the Mods link.
+3. You get: An existing Mod or setting, or the smallest custom Mod and a test plan, before installing.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-我想改变 Claude Code 的这个行为：[在桌面应用里，敏感值默认隐藏，鼠标悬停时显示]。
+I want to change this behavior in Claude Code: [in the desktop app, hide sensitive values by default and reveal them on hover].
 
-阅读下面的 Claude Mods 文档，检查我当前的版本和界面是否支持。先找有没有现成的 Mod 或设置能做到。如果需要自定义 Mod，提出最小的实现方式和测试方法。在安装任何东西或修改设置之前，等我确认。
+Read the Claude Mods documentation below and check whether my current version and interface support this. First look for an existing Mod or setting that can do it. If it needs a custom Mod, propose the smallest implementation and how to test it. Wait for my confirmation before installing anything or changing settings.
 ```
 
-## 背景
+## Background
 
-Claude Code 正在推出 Mods，你可以让 Claude 给它自己加功能。Mod 是一种插件，用来定制 Claude Code 的界面和行为。
+Claude Code is rolling out Mods, so you can ask Claude to add features to itself. A Mod is a plugin that customizes Claude Code's interface and behavior.
 
-比如你在录演示，不想让敏感信息出现在屏幕上。Anthropic 演示过 Claude Code Desktop 里的一个 Mod：敏感值默认隐藏，鼠标悬停时才显示。
+Say you're recording a demo and don't want sensitive information showing up on screen. Anthropic demonstrated a Mod in Claude Code Desktop that hides sensitive values by default and reveals them when you hover over them.
 
-把链接和这段 prompt 发给 Claude。方括号里的需求换成你自己的：https://github.com/anthropics/claude-code/issues/91870
+Send Claude the link and this prompt. Replace the request in brackets with your own: https://github.com/anthropics/claude-code/issues/91870
 
-Mods 还在抢先体验阶段，API 可能会变。
+Mods are still in early access, and their APIs may change.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/ask-claude-code-to-build-a-mod-for-itself)：@Voxyz_ai 2026年9月14日[发在 X 上](https://x.com/Voxyz_ai/status/2099564071972450641)，截至 2026年10月12日有 395 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/ask-claude-code-to-build-a-mod-for-itself): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2099564071972450641) on 14 Sep 2026, 395 saves as of 12 Oct 2026. For Claude Code.

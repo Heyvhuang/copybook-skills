@@ -1,42 +1,42 @@
-# 图片方案并成一张网格图：AGENTS.md 规则
+# Image options in one grid: an AGENTS.md rule
 
-图片方案一张张生成太烧额度：一条全局规则让所有方案进同一张带编号的网格图，再做你挑中的。
+Image options drawn one at a time burn your limits: a global rule puts them all in one numbered grid, then builds your pick.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 发给 Codex，看一眼它要加的规则，再确认。
-3. 得到：方案都在一张带编号的网格图里，回一个数字就得到那张的最终版。
+1. Copy the prompt.
+2. Send it to Codex, check the rule it shows you, then confirm.
+3. You get: Options arrive as one numbered grid. Reply with a number to get that one as the final version.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-在我的全局 Codex AGENTS.md 里加一条图片规则（在 ~/.codex 里；如果有 AGENTS.override.md，就加到那个文件里）：
+Add an image rule to my global Codex AGENTS.md (in ~/.codex; if an AGENTS.override.md exists, add it to that file):
 
-- 如果不清楚我要什么（是什么、给谁用、什么风格），先问我一两个问题。如果清楚，直接生成图片。
-- 当我要多个方案、变体或风格对比时，把它们都放进一张图里：按数量排成网格（9 个方案 → 3×3），每格标上编号，只生成这一张图。
-- 展示之后，告诉我怎么选：回复一个数字，你就把那个方案单独生成为最终版。
-- 如果我只要一张图、要分开的几张图或指定尺寸，照我说的做。
+- If it's unclear what I want (what it is, who it's for, what style), ask me one or two questions first. If it's clear, just generate the image.
+- When I ask for multiple options, variants or style comparisons, put them all in one image: a grid sized to the count (9 options → 3×3), each cell numbered, and generate only that one image.
+- After showing it, tell me how to pick: reply with a number, and you generate that option on its own as the final version.
+- If I ask for just one image, separate images or specific dimensions, do what I say.
 
-先给我看你要加的内容。我确认之前不要写入。
+Show me what you'll add first. Don't write it until I confirm.
 ```
 
-## 背景
+## Background
 
-如果你还让 Codex 一张一张地生成图片，那是在烧额度，也在烧时间。平均下来，每张图消耗额度的速度是普通一轮对话的 3-5x，而你要 9 个方案，它就画 9 张单独的图。
+If you still have Codex generate images one at a time, you're burning your limits and your time. Each image uses your limits 3-5x faster than a normal turn on average, and if you ask for 9 options, it draws 9 separate images.
 
-下次让它把 9 个方案都放进一张图里。生成一次，挑出最喜欢的那个再放大。logo、应用图标、落地页首屏和封面图都适用。更快，也省额度得多。
+Next time, have it put all 9 options in one image. One generation, then pick your favorite and blow it up. Works for logos, app icons, landing page heroes and cover images. Faster, and much lighter on your limits.
 
-用 Astra 做页面也是一样：先出一张方案图把方向定下来，再让 Astra 写代码。
+Same goes for building pages with Astra: get one options sheet first to lock in the direction, then have Astra write the code.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/have-codex-put-image-options-in-one-grid)：@Voxyz_ai 2026年9月26日[发在 X 上](https://x.com/Voxyz_ai/status/2103892360531001678)，截至 2026年10月24日有 379 次收藏。适用于 Codex。
+From [Copybook](https://copybook.page/t/have-codex-put-image-options-in-one-grid): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2103892360531001678) on 26 Sep 2026, 379 saves as of 24 Oct 2026. For Codex.

@@ -1,31 +1,31 @@
-# 带 ASCII 图的全项目审查
+# Whole-project audit with ASCII diagrams
 
-坏的、不一致或用不上的代码：改动前先讲清它怎么连起来，有把握的修掉，其余列出来。
+Broken, inconsistent or unneeded code: how it connects explained before any change, what it's sure about fixed, the rest listed.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在你最乱的项目里，发给 Claude Code 里的 Fable 5.2。
-3. 得到：用 ASCII 图讲清它怎么连起来、哪里可能坏，有把握的修掉，其余列出来。
+1. Copy the prompt.
+2. Send it to Fable 5.2 in Claude Code, in your messiest project.
+3. You get: How it connects and where it can break in ASCII diagrams, fixes where it is sure, the rest listed.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-通读整个项目，找出所有坏掉的、不一致的、低效的或者不再需要的东西。动任何代码之前，先证明你搞懂了各部分怎么连在一起、哪里可能坏掉，用大白话和 ASCII 图说明。有把握的就修，其余的列出来给我审。
+Read this entire project and find everything that's broken, inconsistent, inefficient, or no longer needed. Before you touch any code, prove you get how everything connects and where it can break, in plain English and ASCII diagrams. Fix what you're sure about and list the rest for me to review.
 ```
 
-## 背景
+## Background
 
-在 Claude Code 里打开你最乱的项目，输入 `/model`，选 Fable 5.2。
+Open your messiest project in Claude Code, type `/model` and pick Fable 5.2.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/audit-your-messiest-project-on-fable-5-2)：@Voxyz_ai 2026年11月12日[发在 X 上](https://x.com/Voxyz_ai/status/2120954788762255438)，截至 2026年11月19日有 785 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/audit-your-messiest-project-on-fable-5-2): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2120954788762255438) on 12 Nov 2026, 785 saves as of 19 Nov 2026. For Claude Code.

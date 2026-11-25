@@ -1,39 +1,39 @@
-# 写进 CLAUDE.md 或 AGENTS.md 里的修 bug 循环规则
+# Bug-fix loop rules for CLAUDE.md or AGENTS.md
 
-agent 既修又审，就会一直来回拉扯：修两次不好就停，只审这一轮的改动。
+Agents that both fix and review can't stop going back and forth: stop after two failed fixes, review only this round's changes.
 
-## 步骤
+## Steps
 
-1. 复制修 bug 规则。
-2. 加进项目里的 CLAUDE.md 或 AGENTS.md。
-3. 得到：同样的写法一次全改，修两次不好就停下，只审新改动。
+1. Copy the bug-fix rules.
+2. Add them to the CLAUDE.md or AGENTS.md in your project.
+3. You get: The agent fixes every copy of a bug, stops after two failed fixes and reviews only new changes.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 修 bug 规则
+## Bug-fix rules
 
 ```markdown
-修 bug 时，遵守这些规则：
-1. 同一个 bug 修了两次还在，就停下。告诉我你试过什么、改了什么、什么还没好，以及需要我决定什么。
-2. 只改和这个 bug 有关的代码。看到的旧问题列出来，不要修。
-3. 发现一个问题时，先搜同样的写法，所有地方一次改完，不要一处一处改。
-4. 审查时，不管是你自己审还是交给另一个 agent，只看这一轮的改动。已经提过的问题不要重复提。
+When fixing bugs, follow these rules:
+1. If the same bug survives two fixes, stop. Tell me what you tried, what you changed, what still fails, and what I need to decide.
+2. Only change code tied to this bug. List any old problems you spot; don't fix them.
+3. When you find a problem, search for the same pattern first and fix every copy at once, not one spot at a time.
+4. When reviewing, whether you do it yourself or hand it to another agent, look only at this round's changes. Don't repeat findings already raised.
 ```
 
-## 背景
+## Background
 
-终结 Claude Code 和 Codex 无休止的修 bug 循环，最管用的 4 条规则。
+The 4 most effective rules for ending Claude Code and Codex's endless bug-fix loops.
 
-agent 既修代码又审代码时，会一直来回拉扯，因为反复被挑出来的问题里，59% 是第一轮就已经在那里的旧代码。Claude Code 团队给自家的 agent 审查加了类似的限制之后，需要 5+ 轮的 PR 从 8.9% 降到 1.5%，一轮就通过的 PR 从 65% 升到 78%。
+When agents both fix and review the code, they can't stop going back and forth, because 59% of what keeps getting flagged is old code that was already there in the first round. After the Claude Code team put similar limits on their own agent reviews, PRs needing 5+ rounds dropped from 8.9% to 1.5%, and PRs passing in one round rose from 65% to 78%.
 
-把这些规则直接加进 CLAUDE.md 或 AGENTS.md，或者在修 bug 之前发给 agent。
+Add them straight to CLAUDE.md or AGENTS.md, or send them before a bug fix.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/end-bug-fix-loops-with-4-rules)：@Voxyz_ai 2026年11月1日[发在 X 上](https://x.com/Voxyz_ai/status/2116968517157212271)，截至 2026年11月8日有 325 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/end-bug-fix-loops-with-4-rules): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2116968517157212271) on 1 Nov 2026, 325 saves as of 8 Nov 2026. For Claude Code and Codex.

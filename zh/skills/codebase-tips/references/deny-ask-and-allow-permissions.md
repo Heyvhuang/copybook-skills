@@ -1,20 +1,20 @@
-# deny、ask、allow 权限规则
+# Claude Code permissions: deny, ask and allow commands
 
-顺手删过「看起来没用」的配置：危险命令直接拦，push 和发布前先问，日常放行，deny 永远优先。
+Claude deleted a config that 'looked unused': risky commands blocked, pushes ask first, routine ones run, deny always wins.
 
-## 步骤
+## Steps
 
-1. 复制这份权限配置。
-2. 放进项目的 .claude/settings.json，再按项目改这几个列表。
-3. 得到：deny 里的操作 Claude Code 做不了，ask 里的先问你，allow 里的直接跑。
+1. Copy the permissions config.
+2. Put it in .claude/settings.json in your project, then edit the lists to fit it.
+3. You get: Claude Code can't run what you deny, asks before what you list under ask, and runs what you allow.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
 ## .claude/settings.json
 
@@ -42,18 +42,18 @@
 }
 ```
 
-## 背景
+## Background
 
-有一天，Claude 在修 bug，顺手删了一个「看起来没用」的配置文件。那个文件是生产环境密钥的引用入口。
+One day, Claude was fixing a bug and casually deleted a config file that "looked unused." That file was the secret key reference entry for the production environment.
 
-之后我花了半小时配好 .claude/settings.json。
+I spent half an hour configuring .claude/settings.json after that.
 
-优先级：deny > ask > allow。deny 最高。一条命令只要匹配 deny，就算也匹配 allow，也不会执行。
+Priority: deny > ask > allow. Deny is highest. If a command matches deny, it won't execute even if allow also matches.
 
-权限列表这类数组设置会跨层级合并，而不是互相覆盖。所以用户级（~/.claude/settings.json）的一条 deny 和项目级（.claude/settings.json）的另一条 deny 都会生效。
+Array-valued settings like permission lists merge across scopes rather than replacing each other. So a deny rule at the user level (~/.claude/settings.json) and another at the project level (.claude/settings.json) both apply.
 
-业务风险我在项目级 deny，比如删 migrations。安全底线我在全局 deny，比如执行 rm -rf。两层，各自维护。
+I deny business risks at the project level, like deleting migrations. I deny safety baselines at the global level, like executing rm -rf. Two layers, maintained independently.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/tighten-claude-code-permissions-with-deny-ask-allow)：@Voxyz_ai 2026年3月25日[发在 X 上](https://x.com/Voxyz_ai/status/2036863425905586265)，截至 2026年10月24日有 662 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/tighten-claude-code-permissions-with-deny-ask-allow): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2036863425905586265) on 25 Mar 2026, 662 saves as of 24 Oct 2026. For Claude Code.

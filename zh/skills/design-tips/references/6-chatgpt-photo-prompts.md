@@ -1,101 +1,101 @@
-# 6 条 ChatGPT 改照片提示词
+# 6 ChatGPT photo prompts
 
-不请摄影师也有专业质感：职业头像、电影剧照、旅行照、杂志大片、老照片修复、黄金时刻补光。
+A finish you'd pay a photographer for: headshot, cinematic still, travel, magazine shoot, old-photo repair, golden hour.
 
-## 步骤
+## Steps
 
-1. 复制你想要的那种照片的提示词。
-2. 把方括号换成你自己的信息，连同照片发给 ChatGPT。
-3. 得到：有专业质感的照片，脸和身形保持原样。
+1. Copy the prompt for the photo you want.
+2. Replace the brackets with your own details and send it to ChatGPT with your photo.
+3. You get: Your photo with a professional finish, with your face and body kept as they are.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词：职业头像
-
-```text
-把这张照片变成一张干净的职业头像，用于 LinkedIn 或公司简介。保持我的脸、五官比例、肤色、发型、发际线、年龄、表情、头部角度、肩膀位置、身材比例和可辨认的特征完全不变。用胸部以上的构图、同样的平视视角、柔和可信的影棚光，以及简单的 [BACKGROUND]。
-
-保留我现在的衣服。如果我指定了 [OUTFIT]，只替换我的衣服，并让它自然贴合我现有的脖子、肩膀、手臂和躯干，不改变我的姿势或身形。
-
-保留真实的皮肤纹理、毛孔、小瑕疵、细纹和自然的眼下纹理。不要磨皮，不要改变我的脸型或身形，不要加面部光晕，也不要做成千篇一律的图库照片感。不要文字、logo、首饰或水印。
-```
-
-## 提示词：电影剧照
+## Prompt: professional headshot
 
 ```text
-把这张照片变成一张设定在 [SCENE] 的电影剧照。保持我的身份、五官比例、肤色、年龄、头发、表情、姿势、身材比例和衣服完全不变。
+Turn this photo into a clean professional headshot for LinkedIn or a company profile. Keep my exact face, facial proportions, skin tone, hairstyle, hairline, age, expression, head angle, shoulder position, body proportions, and recognizable features unchanged. Use a chest-up crop, the same eye-level viewpoint, soft believable studio lighting, and a simple [BACKGROUND].
 
-用宽银幕构图和真实的皮肤纹理。用来自 [VISIBLE LIGHT SOURCE] 的柔和可信的光照亮我，每一处高光和阴影都要和这个光源一致。光源应该自然属于这个场景，能入画时尽量出现在画面里。
+Keep my current outfit. If I specify [OUTFIT], replace only my clothing and fit it naturally to my existing neck, shoulders, arms, and torso without changing my pose or body shape.
 
-加上自然的环境纵深和细微的胶片颗粒。让它像片场拍下的一帧，不要蜡质皮肤、假镜头光晕、夸张调色、抠图边缘，也不要改变我的脸或身体。不要可读的文字、logo 或水印。
+Preserve real skin texture, pores, small blemishes, fine lines, and natural under-eye texture. Do not smooth the skin, reshape my face or body, add facial glow, or create a generic stock-photo look. No text, logos, jewelry, or watermark.
 ```
 
-## 提示词：放到任何地方
+## Prompt: cinematic still
 
 ```text
-把我自然地放进 [TIME OF DAY] 的 [DESTINATION]。保持我的身份、五官、肤色、年龄、发型、表情、身材比例、姿势、衣服、人物比例、机位视角和原始构图完全不变。
+Turn this photo into a cinematic still set in [SCENE]. Keep my exact identity, facial proportions, skin tone, age, hair, expression, pose, body proportions, and clothing unchanged.
 
-匹配当地真实的建筑、街道几何、透视、比例、天气、光线方向、阴影、反射、纵深和色温。加入细微的生活气息和不完美的日常构图，让它看起来像在那里随手拍的照片，而不是旅游宣传片。
+Use a widescreen composition and realistic skin texture. Light me with soft, believable light from [VISIBLE LIGHT SOURCE], and make every highlight and shadow consistent with that source. The light source should belong naturally in the scene and be visible in the frame whenever practical.
 
-除非我要求，否则避开著名地标；避免明信片式的对称或高饱和、错误的建筑、抠图边缘、光晕、不匹配的光线、美颜修饰、文字和水印。
+Add natural environmental depth and subtle film grain. Make it feel like a frame captured on set, without waxy skin, fake lens flare, extreme color grading, pasted edges, or changes to my face or body. No readable text, logos, or watermark.
 ```
 
-## 提示词：杂志大片
+## Prompt: put yourself anywhere
 
 ```text
-把这张照片变成一张用于杂志或品牌广告的高端时尚人像。保持我的身份、五官、肤色、年龄、发型、身材比例和自然的皮肤纹理完全不变。
+Place me naturally in [DESTINATION] at [TIME OF DAY]. Keep my exact identity, facial features, skin tone, age, hairstyle, expression, body proportions, pose, clothing, subject scale, camera viewpoint, and original framing unchanged.
 
-让我穿上 [OUTFIT]，背景是 [BACKGROUND]。用可控的柔和影棚光、真实的面料和头发质感、微微的四分之三侧身姿势，以及干净的竖版半身构图。让我略微偏离中心，有意留出负空间，方便以后放文案。
+Match the location’s real architecture, street geometry, perspective, scale, weather, light direction, shadows, reflections, depth, and color temperature. Include subtle lived-in details and an imperfect everyday composition so it looks like a casual photograph captured there, not a tourism campaign.
 
-不要加文字、logo、首饰或道具。避免美颜滤镜式磨皮、塑料感皮肤、夸张妆容、做作的姿势、变形的身体结构和重新设计五官。
+Avoid famous landmarks unless requested, postcard symmetry or saturation, incorrect architecture, pasted edges, halos, mismatched lighting, beauty retouching, text, and watermarks.
 ```
 
-## 提示词：修复老照片
+## Prompt: magazine campaign
 
 ```text
-修复这张老照片，同时保留照片中人物的身份、年龄、表情、姿势、年代和衣服完全不变。
+Turn this photo into a high-end editorial portrait for a magazine or brand campaign. Keep my exact identity, facial features, skin tone, age, hairstyle, body proportions, and natural skin texture unchanged.
 
-只去除物理损伤和扫描损伤：划痕、灰尘、污渍、褪色、折痕和扫描噪点。只恢复原图能支撑的细节，保留自然的照片颗粒和符合年代的质感。不要给脸磨皮或美化。
+Dress me in [OUTFIT] against [BACKGROUND]. Use controlled soft studio lighting, realistic fabric and hair texture, a subtle three-quarter pose, and a clean vertical waist-up composition. Place me slightly off-center with intentional negative space for future copy.
 
-保持原始的宽高比、裁切、构图、人物比例、物体位置和完整边框。不要放大、重新构图、扩展画面或重建构图。
-
-不要把场景现代化，不要编造缺失的细节或物体，不要改变身体或五官，除非我明确要求，否则不要上色。
+Add no text, logos, jewelry, or props. Avoid beauty-filter smoothing, plastic skin, exaggerated makeup, theatrical posing, distorted anatomy, and facial redesign.
 ```
 
-## 提示词：黄金时刻补光
+## Prompt: restore an old family photo
 
 ```text
-给这张照片重新打光，让它像在黄金时刻拍的。保持我的身份、脸、肤色、衣服、姿势、身材比例、地点、物体位置、机位角度、裁切和构图完全不变。
+Restore this old photograph while preserving the people’s exact identities, ages, expressions, poses, period, and clothing.
 
-把温暖的低角度太阳放在画面外、观者的 [LEFT / RIGHT] 侧。照亮我脸和身体的同一侧，所有新阴影都投向物理上相反的方向。每一处高光和阴影都要遵循这一个光线方向。
+Remove only physical and scanning damage: scratches, dust, stains, fading, creases, and scanning noise. Recover only details supported by the source image, and retain natural photographic grain and age-appropriate texture. Do not smooth or beautify faces.
 
-让我的脸和皮肤保持中性、自然、接近原图的白平衡。把大部分金色暖调限制在方向性高光和周围场景上，而不是改变我皮肤的底色。保留毛孔和细节。
+Keep the exact original aspect ratio, crop, framing, subject scale, object positions, and full border. Do not zoom, reframe, extend, or reconstruct the composition.
 
-避免橙色或黄色的皮肤、假镜头光晕、发光的边缘、过饱和和不一致的阴影。
+Do not modernize the scene, invent missing details or objects, alter body or facial features, or colorize the photograph unless explicitly requested.
 ```
 
-## 背景
+## Prompt: golden-hour light
 
-ChatGPT 现在能给你的照片做出平时要花钱请专业摄影师才有的质感。
+```text
+Relight this photo as if it were taken during golden hour. Keep my exact identity, face, skin tone, clothing, pose, body proportions, location, object positions, camera angle, crop, and composition unchanged.
 
-这 6 条提示词用的是 ChatGPT 的免费图像工具，做职业头像、电影剧照、旅行照、杂志大片、老照片修复和黄金时刻补光。换人换场景都能用，可以省下约拍或请修图师的钱。
+Place the warm, low-angle sun just outside the frame on the viewer’s [LEFT / RIGHT]. Illuminate that same side of my face and body, and cast all new shadows in the physically opposite direction. Make every highlight and shadow follow this single light direction.
 
-日常照片变电影剧照：
+Keep my face and skin on a neutral, natural white balance close to the source photo. Confine most of the golden warmth to directional highlights and the surrounding scene, rather than changing my base skin color. Preserve pores and fine detail.
 
-把自己放到任何地方：
+Avoid orange or yellow skin, fake lens flare, glowing edges, oversaturation, and inconsistent shadows.
+```
 
-自拍变杂志大片：
+## Background
 
-修复一张老的家庭照片：
+ChatGPT can now give your photos the finish you'd normally pay a professional photographer for.
 
-加上真实的黄金时刻光线：
+These 6 prompts use ChatGPT's free image tools for professional headshots, cinematic stills, travel photos, magazine shoots, old-photo restoration, and golden-hour relighting. They work across different people and scenes, and can save you the cost of booking a shoot or hiring a retoucher.
 
-## 来源
+Everyday photo to cinematic still:
 
-来自 [Copybook](https://copybook.page/zh/t/six-chatgpt-prompts-for-professional-looking-photos)：@Voxyz_ai 2026年9月3日[发在 X 上](https://x.com/Voxyz_ai/status/2095519687333323210)，截至 2026年10月1日有 412 次收藏。
+Put yourself anywhere:
+
+Selfie to magazine campaign:
+
+Restore an old family photo:
+
+Add realistic golden-hour light:
+
+## Source
+
+From [Copybook](https://copybook.page/t/six-chatgpt-prompts-for-professional-looking-photos): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2095519687333323210) on 3 Sep 2026, 412 saves as of 1 Oct 2026.

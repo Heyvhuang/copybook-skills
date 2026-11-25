@@ -54,4 +54,4 @@ The team behind a 220K-star open-source coding agent on GitHub wrote these rules
 
 ## Source
 
-From [Copybook](https://copybook.page/t/stop-codex-writing-code-too-defensively): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2115198100465697038) on 27 Oct 2026, 1.4K saves as of 3 Nov 2026. For Codex.
+From [Copybook](https://copybook.page/t/stop-codex-writing-code-too-defensively): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2115198100465697038) on 27 Oct 2026, 1.4K saves as of 25 Nov 2026. For Codex.

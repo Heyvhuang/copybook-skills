@@ -1,41 +1,41 @@
-# skill 的是非题评分
+# Skill score with yes/no questions
 
-skill 改了一版有没有变好：10 个真实任务、8 道是非题、不知情的评分 subagent，只留提分的那版。
+Did the skill edit help: 10 real tasks, 8 yes/no questions, a blind judge subagent; keep only a fix that raises the score.
 
-## 步骤
+## Steps
 
-1. 复制提示词，把要测的 skill 填进方括号。
-2. 发给 Claude Code 里的 Opus 5.5。
-3. 得到：skill 改前改后的分数，存成新文件的新版本，以及改了哪几行。
+1. Copy the prompt and put the skill you want to test in the brackets.
+2. Send it to Opus 5.5 in Claude Code.
+3. You get: Before-and-after scores for the skill, a new version saved as a new file and the lines it changed.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-对 [skill name] 跑一次评测，然后改进它：
-1. 从 ~/.claude/projects 的会话记录里挑 10 个用过它的真实任务，把输入原样存到 evals/。找不够就问我要。
-2. 写 8 道 yes/no 题，每道只查一件事：做到了记 1，没做到记 0。先给我看，等我改完再开始。
-3. 每个任务交给一个全新的 subagent，只给它这个 skill 和这一个输入。会发帖或花钱的步骤，只写下它会做什么，不要真的执行。
-4. 另用一个 subagent 当评分员。它只看输入和输出，也不告诉它评的是哪个版本。我先把 10 个输出都打一遍分，评分员和我的一致率到 90% 你再继续。
-5. 挑通过率最低的那道题，写两种改法，各跑一遍。得分高的那种，只有在这道题至少多通过 2 个任务、而且其他题都没掉分时才保留。
-6. 新版本另存为一个新文件。最后告诉我修改前后的分数，以及你改了哪几行。
+Run an eval on [skill name], then improve it:
+1. Pick 10 real tasks that used it from the session history in ~/.claude/projects, and save the inputs as-is in evals/. If you can't find enough, ask me for more.
+2. Write 8 yes/no questions, each checking one thing: 1 if it's done, 0 if it isn't. Show them to me first, and only start after I've edited them.
+3. Give each task a fresh subagent with only the skill and that one input. For steps that would post or spend money, write down what they'd do without running them.
+4. Use a separate subagent as the judge. It sees only the input and the output, and isn't told which version it's grading. I'll grade all 10 outputs first, and you continue only once the judge agrees with me 90% of the time.
+5. Take the question with the lowest pass rate, write two fixes and run each. Keep the higher-scoring one only if that question passes on at least 2 more tasks and no other question drops.
+6. Save the new version as a new file. At the end, give me the before-and-after scores and the lines you changed.
 ```
 
-## 背景
+## Background
 
-Mike Taylor 是 Every 的评测负责人，也写了 O'Reilly 那本提示词工程的书。他说，如果你能用分数来改进自己的 prompt 和 skill，你已经是前 5% 的 AI 用户了。
+Mike Taylor, head of evals at Every and author of O'Reilly's book on prompt engineering, says that if you can use scores to improve your own prompts and skills, you're already in the top 5% of AI users.
 
-Mike 只用是非题打分。比如你有一个写推文的 skill，就逐项检查它写出来的东西：做到一项得 1 分，没做到得 0 分。让另一个 AI 来答这些题，但先自己打一批分，和它对一对答案。10 道里有 9 道和你一致，剩下的就交给它。之后每改一次 skill，就重跑同一批任务，对比分数。
+Mike only grades with yes/no questions. Say you have a skill that writes tweets. Check what it writes, one item at a time: 1 point for each one it gets right, 0 for each miss. Have another AI answer those questions, but grade a batch yourself first and compare answers with it. If it agrees with you on 9 out of 10, hand the rest over. Then every time you change the skill, rerun the same tasks and compare the scores.
 
-把这段发给 Claude Code 里的 Opus 5.5，方括号里填你要测的 skill。
+Send this to Opus 5.5 in Claude Code, with the skill you want to test in the brackets.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/score-a-skill-with-yes-no-questions-and-improve-it)：@Voxyz_ai 2026年10月14日[发在 X 上](https://x.com/Voxyz_ai/status/2110354944482046278)，截至 2026年11月11日有 315 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/score-a-skill-with-yes-no-questions-and-improve-it): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2110354944482046278) on 14 Oct 2026, 315 saves as of 11 Nov 2026. For Claude Code.

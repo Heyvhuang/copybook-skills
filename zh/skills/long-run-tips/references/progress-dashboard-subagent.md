@@ -1,47 +1,47 @@
-# 长任务的进度看板 subagent
+# Progress dashboard subagent for long tasks
 
-长任务跑着不知道进展：后台搭一个 HTML 看板，显示进度、卡点和等你拍板的问题，主会话不停。
+Where a long task stands while you wait: an HTML dashboard of progress, blockers and open questions, built by a side subagent.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 发给 Claude Code，看过它列出的文件内容再确认。
-3. 得到：一个 dashboard-builder subagent，长任务开工前先搭好 HTML 进度看板。
+1. Copy the prompt.
+2. Send it to Claude Code, and confirm once it shows you the files.
+3. You get: A dashboard-builder subagent that makes an HTML progress dashboard before every long task.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-帮我配一个专门做进度看板的 subagent：
+Set up a subagent that only builds progress dashboards:
 
-1. 在 ~/.claude/agents 新建 dashboard-builder：model 用 opus，effort 设 medium，memory 设 user；我装过的设计 skill（比如 impeccable）预装给它；它只能读写 .dashboard/ 目录和自己的记忆。
-2. 现在就问我喜欢什么风格：深色还是浅色、密一点还是松一点、用哪个主色。把我的回答记进它的记忆，以后每次照着做。面板由它按当前任务来定，不套模板。
-3. 看板用一个 HTML 文件，放任务和状态、等我回答的问题和默认做法、最新产出、卡住的地方。时间一律用真实时钟。双击就能打开，每 10 秒自动刷新。
-4. 在 ~/.claude/CLAUDE.md 加一条规则：超过 5 步或预计超过 30 分钟的任务，开工前先让 dashboard-builder 搭好看板；每做完一步更新一次；需要我拍板的事写进问题列表，先按默认做法往下做；删除、发布这类撤不回的操作，等我回复再做。
+1. Create dashboard-builder in ~/.claude/agents: model: opus, effort: medium, memory: user. Preload the design skills I have installed (for example impeccable). It can only read and write the .dashboard/ folder and its own memory.
+2. Ask me now what style I like: dark or light, dense or airy, and one accent color. Save my answer to its memory so it follows it every time. It picks the panels for the current task; no template.
+3. The dashboard is one HTML file showing tasks and their status, questions waiting for me with the default action, the latest deliverables, and anything stuck. Use the real clock for every time. It opens with a double-click and refreshes itself every 10 seconds.
+4. Add a rule to ~/.claude/CLAUDE.md: for any task with more than 5 steps or that should take longer than 30 minutes, have dashboard-builder set up the dashboard before starting; update it after every step; when you need a decision from me, add it to the questions list and keep going with the default; anything that can't be undone, like deleting or publishing, waits for my answer.
 
-先把要新建和修改的文件内容给我看，再用 10 岁小孩都能听懂的话讲一遍整个流程。我确认之前什么都别写。
+Show me the contents of the files you'll create or change, then explain the whole flow in words a 10-year-old could follow. Don't write anything until I confirm.
 ```
 
-## 背景
+## Background
 
-让 Fable 5.2 自己跑长任务的时候，每次都该先让它随手 vibe 一个 HTML 看板。
+Every time you let Fable 5.2 run a long task on its own, have it vibe-code a quick HTML dashboard first.
 
-再单独给它配一个只做看板的 subagent：
+Then give it a subagent that only builds dashboards:
 
-- 名字叫 dashboard-builder，用 Opus 5.5 跑、effort 设 medium，再预装一个设计 skill
-- 第一次先问清你喜欢的风格，记进它的记忆，以后每次按你的口味和手上的任务来设计
-- 每个长任务开工前先叫它，它在后台一两分钟搭好，主会话不用停下来，继续写代码
-- 看板上放四样东西：任务进度、卡住的地方、等你拍板的问题，还有你没回时它先怎么做
+- Name it dashboard-builder, run it on Opus 5.5 at medium effort, and preload a design skill
+- The first time, it asks what style you like and saves it to memory. After that, every dashboard fits your taste and the task at hand
+- Call it before every long task. It builds the dashboard in the background in a minute or two, and the main session keeps coding without stopping
+- The dashboard shows four things: task progress, what's stuck, questions waiting on you, and what it'll do by default if you don't answer
 
-把这段 prompt 发给 Claude Code。
+Send this prompt to Claude Code.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/build-a-progress-dashboard-before-a-long-task)：@Voxyz_ai 2026年11月10日[发在 X 上](https://x.com/Voxyz_ai/status/2120141188304965959)，截至 2026年11月17日有 887 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/build-a-progress-dashboard-before-a-long-task): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2120141188304965959) on 10 Nov 2026, 887 saves as of 17 Nov 2026. For Claude Code.

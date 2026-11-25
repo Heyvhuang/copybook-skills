@@ -1,75 +1,75 @@
-# 上线前检查：25 项页面背后
+# Pre-launch check: 25 behind-the-page items
 
-页面背后也会出事：密钥、账单、收钱、监控和上线当天查完一次修好，要你做的列在最后。
+Trouble behind the page: keys, billing abuse, payments, monitoring and launch day fixed in one pass; what needs you listed last.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在网站的项目里把整份提示词发给 Claude Code。
-3. 得到：5 个 subagent 查完 25 件事，你确认后一次修好，剩下要你做的列给你。
+1. Copy the prompt.
+2. Send the whole prompt to Claude Code in your site's project.
+3. You get: Five subagents list issues in 25 checks; after your OK, it fixes them and gives you what's left.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-vibe coding 做完的网站，上线前让 Opus 5.5 派 5 个 subagent 分头把页面背后这 25 件事查一遍，再一次修好：
+Before you ship a vibe-coded site, have Opus 5.5 send out 5 subagents to check these 25 things behind the pages, then fix them all in one pass:
 
-密钥和权限
-- OpenAI key、Stripe secret key 这类私密的 key 只放服务端；前端文件和 git 历史里都搜一遍，出现过的全部换新
-- 每个接口都在服务端查登录和权限，用户填的东西也在服务端再校验一遍
-- 数据库开 RLS 或写好安全规则，用户只能读写自己的数据
-- 存用户上传文件的 bucket 别设成公开，用带过期时间的链接给出去
-- 登录用的 cookie 设上 HttpOnly 和 Secure
-- 日志里不记密码、token 和 API key
+Keys and access
+- Keep secret keys like your OpenAI key and Stripe secret key on the server only. Search your frontend files and git history, and replace any that show up
+- Check login and permissions on the server for every endpoint, and validate what users submit there too
+- Turn on RLS or write proper security rules for your database, so users can only read and write their own data
+- Keep the bucket that holds user uploads private, and share files through links that expire
+- Set HttpOnly and Secure on your login cookies
+- Keep passwords, tokens and API keys out of your logs
 
-别被刷爆账单
-- AI、短信、邮件这些按量收费的服务，后台设好花费上限或告警
-- 注册、登录、发验证码的接口加限流，调 AI 按用户每天限次数
-- 上传文件限制大小和类型
-- 注册页加人机验证，免费额度等邮箱验证后再给
+Don't let anyone run up your bill
+- Set spending caps or alerts on pay-per-use services like AI, SMS and email
+- Rate-limit sign-up, login and verification-code endpoints, and cap AI calls per user per day
+- Limit upload size and file types
+- Add a CAPTCHA to sign-up, and hold free credits until the email is verified
 
-收钱的地方
-- 支付回调先验签名
-- 同一笔付款回调两次，只记一次
-- 金额只认服务端算的，不信页面传来的
-- 在测试模式里把退款、取消订阅、扣款失败各走一遍，状态对得上
-- 试用结束、订阅到期，权限按时收回
+Where the money comes in
+- Verify the signature on every payment webhook
+- If the same payment webhook arrives twice, record it once
+- Only trust amounts your server calculates
+- In test mode, run through a refund, a canceled subscription and a failed charge, and make sure the statuses line up
+- When a trial ends or a subscription lapses, remove access on time
 
-出事的时候
-- 接上错误监控，出错时你第一个收到通知
-- 数据库每天自动备份，拿备份恢复到一个新库试一次
-- 定时任务跑失败也要通知你，别等用户发现数据没更新
-- 接一个外部在线监控，网站挂了马上通知你
-- 后台能一键封掉刷接口的账号
+When something breaks
+- Hook up error monitoring so you're the first to know when something fails
+- Back up the database daily, and restore a backup into a fresh database once to test it
+- Get notified when a scheduled job fails, before users notice stale data
+- Add an external uptime monitor that alerts you the moment the site goes down
+- Make sure you can ban an account that's hammering your API with one click from your admin panel
 
-上线当天
-- 关掉调试模式，删掉测试账号和测试数据
-- 支付从测试切到正式，正式的 key 和 webhook 签名密钥重新配一遍
-- Stripe、部署平台、数据库后台这些账号都开两步验证
-- 域名开自动续费，HTTPS 证书自动续期
-- 依赖包跑一遍安全检查（比如 npm audit），有已知漏洞的先升级
+Launch day
+- Turn off debug mode and delete test accounts and test data
+- Switch payments from test to live, and set up the live keys and webhook signing secret again
+- Turn on two-factor auth for Stripe, your hosting platform and your database dashboard
+- Turn on auto-renew for your domain and your HTTPS certificate
+- Run a security check on your dependencies (like npm audit) and upgrade anything with known vulnerabilities
 
-effort 照 Anthropic 的成本指南定。这类范围清楚的检查用默认的 medium 就够，密钥和收钱两组出错代价大，单独调到 high。Thariq 测过，调高 effort 换来的主要是更多验证和边界测试。
+For effort, follow Anthropic's cost guide. The default medium is enough for well-scoped checks like these. The keys and payments groups are expensive to get wrong, so raise those to high. Thariq tested it: turning effort up mostly buys more verification and edge-case testing.
 
-把这整条发给 Claude Code，需要的话，最后再加上这句 👇
-「每一组派一个 subagent 去查，只查不改，每个问题写清在哪个文件或哪个后台；密钥和收钱这两组的 subagent 调到 high effort。查到的密钥只报位置，别把值贴出来。主会话照它们的清单统一修，免得两个人改同一个文件。换密钥、开两步验证、设花费上限这些要去后台做的，给我步骤，我自己去做；上限设多少、每天限几次，先问我，别自己编。别改 git 历史，别动线上数据库，支付只在测试模式里试。先给我问题清单，我确认后再动手，修完告诉我改了什么、还剩哪几件要我自己做。」
+Send this whole post to Claude Code. If you need to, add this line at the end 👇
+"Send one subagent per group to check it without editing anything, and note which file or dashboard each issue is in. Run the keys and payments subagents at high effort. When you find a secret, report only where it is and never paste its value. Then fix everything yourself from their lists, so no two agents edit the same file. For things I have to do in a dashboard, like rotating keys, turning on two-factor auth or setting spending caps, give me the steps and I'll do them. For things only I know, like what the caps should be or how many AI calls per day to allow, ask me first and don't make them up. Don't rewrite git history, don't touch the production database, and only test payments in test mode. Show me the list of issues first, don't change anything until I confirm, and when you're done, tell me what you changed and what's left for me to do."
 ```
 
-## 背景
+## Background
 
-第 2 部分：vibe coding 做完的网站，上线前让 Opus 5.5 派 5 个 subagent 分头把页面背后这 25 件事查一遍，再一次修好。
+Part 2: before you ship a vibe-coded site, have Opus 5.5 send out 5 subagents to check these 25 things behind the pages, then fix them all in one pass.
 
-effort 照 Anthropic 的成本指南定。这类范围清楚的检查用默认的 medium 就够，密钥和收钱两组出错代价大，单独调到 high。Thariq 测过，调高 effort 换来的主要是更多验证和边界测试。
+For effort, follow Anthropic's cost guide. The default medium is enough for well-scoped checks like these. The keys and payments groups are expensive to get wrong, so raise those to high. Thariq tested it: turning effort up mostly buys more verification and edge-case testing.
 
-把整份清单发给 Claude Code。
+Send the whole list to Claude Code.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/check-25-things-behind-the-scenes-before-shipping)：@Voxyz_ai 2026年10月11日[发在 X 上](https://x.com/Voxyz_ai/status/2109328172273606771)，截至 2026年11月8日有 1,415 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/check-25-things-behind-the-scenes-before-shipping): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2109328172273606771) on 11 Oct 2026, 1.4K saves as of 8 Nov 2026. For Claude Code.

@@ -1,47 +1,47 @@
-# 每晚审查当天推送的 routine
+# Nightly routine reviewing the day's pushes
 
-今天推到 main 的代码，睡觉时再看一遍：每个 bug 开 draft PR 附先失败的测试，笔记本合上也跑。
+Today's pushes to main, reviewed while you sleep: a draft PR per bug with a test that fails first, in the cloud, laptop closed.
 
-## 步骤
+## Steps
 
-1. 复制这段 routine 提示词。
-2. 到要检查的仓库里，在 Claude Code 输入 /schedule，再粘贴进去。
-3. 得到：它能证实的 bug 各开一个 draft PR，早上还能读到一份交接说明。
+1. Copy the routine prompt.
+2. In the repo you want checked, type /schedule in Claude Code and paste it.
+3. You get: Draft PRs for the bugs it can prove, and a handoff note to read in the morning.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-每天 1:07 AM 在 Opus 5.5 上运行，不接任何 connector。把下面的说明逐字保存为提示词。
+Run every day at 1:07 AM on Opus 5.5 with no connectors attached. Save the instructions below as the prompt, word for word.
 
-先安装依赖，运行完整的测试套件。记下哪些测试本来就失败。如果测试跑不起来，或者根本没有测试，写下缺了什么，然后停止。
+First install dependencies and run the full test suite. Note which tests were already failing. If the tests can't run, or there are none, write down what's missing and stop.
 
-然后查看过去 24 小时内推到默认分支的 commit。如果没有，结束这次运行。已经有 claude/ 分支在修的 bug 就跳过。
+Then look at the commits pushed to the default branch in the last 24 hours. If there are none, end the run. Skip any bug that a claude/ branch is already fixing.
 
-只找真正的 bug。忽略风格和命名。要认定某处是 bug，你必须能指出注释、文档、类型或现有测试是怎么说的。如果某个行为变化看起来是有意的，只记下来，不要修。
+Only look for real bugs. Ignore style and naming. To call something a bug, you must be able to point to what a comment, the docs, a type, or an existing test says. If a change in behavior looks intentional, just note it. Don't fix it.
 
-每个 bug 先写一个会失败的测试。确保失败信息指向那个 bug，并排除测试本身坏了或环境有问题的可能。然后修改代码直到测试通过，只改必须改的地方，再跑一遍完整测试套件。每个 bug 开一个 draft PR，附上你的证据，最多三个。
+For each bug, write a failing test first. Make sure the failure message points to that bug, and rule out a broken test or an environment problem. Then change the code until the test passes, touching only what you must, and run the full suite again. Open one draft PR per bug with your evidence, three at most.
 
-绝不删除、修改或跳过现有测试。只推送到 claude/ 分支。不要合并任何东西。
+Never delete, change, or skip existing tests. Push only to claude/ branches. Don't merge anything.
 
-最后写一份交接说明：你检查过的 commit、你开的 PR，以及看起来像 bug 但没能证实的地方。
+Finish with a handoff note: the commits you checked, the PRs you opened, and anything that looked like a bug but couldn't be proven.
 ```
 
-## 背景
+## Background
 
-Opus 5.5 很擅长自动化，所以睡觉前也让它上个夜班。
+Opus 5.5 is really good at automation, so before you go to bed, put it on the night shift too.
 
-设置一个 Claude Code routine，它每晚回头检查你当天推到 main 的代码。每发现一个 bug，就开一个 draft PR，附一个修复前失败、修复后才通过的测试。它在云端运行，所以笔记本合上也会继续跑。
+Set up a Claude Code routine and every night it goes back over the code you pushed to main that day. For each bug it finds, it opens a draft PR with a test that fails first and only passes after the fix. It runs in the cloud, so it keeps going with your laptop closed.
 
-保存后，用 `/schedule run` 试跑一次。早上在网页版的 Routines 页面打开那次运行，读交接说明。运行列表里显示绿色只代表它跑完了。
+Once it's saved, do a test run with `/schedule run`. In the morning, open that run on the Routines page on the web and read the handoff note. Green in the run list only means it finished.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/review-the-days-pushes-with-a-nightly-claude-code-routine)：@Voxyz_ai 2026年9月30日[发在 X 上](https://x.com/Voxyz_ai/status/2105434062676431306)，截至 2026年10月28日有 387 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/review-the-days-pushes-with-a-nightly-claude-code-routine): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2105434062676431306) on 30 Sep 2026, 387 saves as of 28 Oct 2026. For Claude Code.

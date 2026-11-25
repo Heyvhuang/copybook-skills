@@ -1,46 +1,46 @@
-# 最近 20 个会话里的「以后再弄」
+# Later items from your last 20 Claude Code sessions
 
-说过「以后再弄」就忘了的事：从过去的会话翻出来，排好优先级，每件变成能直接开新会话的卡片。
+What you said you'd do later and forgot: past sessions searched, items ranked, each one a card that opens its own session.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在 Claude Code 桌面 app 里发给 Opus 5.5。
-3. 得到：一份按影响排序的未完成工作清单，每项都是能直接开始的卡片。
+1. Copy the prompt.
+2. Send it to Opus 5.5 in the Claude Code desktop app.
+3. You get: A ranked list of unfinished work from your sessions, each one a card you can start.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-读这份指南：https://code.claude.com/docs/en/desktop-quickstart
+Read this guide: https://code.claude.com/docs/en/desktop-quickstart
 
-然后翻一遍我最近 20 个会话（~/.claude/projects/ 下的 .jsonl 日志，不算这一个；文件很大，按关键词搜索，不要整个读），找出三类我说过要做却一直没做的工作：
-1. 我说过「以后再弄」「下次再处理」或「记一下」的事。
-2. 你在干活时提出、但当时不在任务范围内的问题，比如死代码、过时的文档、缺失的测试或安全风险。
-3. 话题一转就做到一半丢下的任务。
+Then go through my last 20 sessions (the .jsonl logs under ~/.claude/projects/, not counting this one; the files are big, so search them by keyword and don't read them whole) and find three kinds of work I said I'd do and never did:
+1. Things I said I'd "get to later", "deal with next time" or "make a note of".
+2. Problems you raised while working that were outside the task at the time, like dead code, stale docs, missing tests or security risks.
+3. Tasks we dropped halfway when the topic changed.
 
-每一项都引用我的原话，说明在哪个会话、哪个文件里，然后检查当前代码，把已经做完的划掉。按对项目的影响排序。
+For each one, quote my exact words, say which session and which file it was in, then check the current code and cross off anything already done. Rank them by impact on the project.
 
-先给我看清单。对我选中的每一项，给我一张一键就能开始的新会话卡片。
+Show me the list first. For each one I pick, give me a new-session card I can start with one click.
 ```
 
-## 背景
+## Background
 
-Anthropic 刚给 Claude Code 桌面 app 发了一次大更新，也更新了完整的入门指南。你可以让 Opus 5.5 拿它去翻你过去的会话，找出你说过「以后再弄」然后忘了的事，再把你选中的开成新会话。
+Anthropic just shipped a big update to the Claude Code desktop app and updated its full getting-started guide. You can ask Opus 5.5 to use it to go through your past sessions, find everything you said you'd "get to later" and then forgot, and start the ones you pick as new sessions.
 
-它干活时，现在会指出还没做完的地方，比如购物车图片没设尺寸、结账表单缺 label。每一项都会变成一张卡片：点 Start 在单独的会话里修它，或者点 Start all 一次全部打开。
+While it works, it now points out what's still left undone, like cart images with no set size or a checkout form missing labels. Each one becomes a card: click Start to fix it in a separate session, or Start all to open them all at once.
 
-一次交给它几件事，它会为每件开一个嵌套会话，每个做完后都向主会话汇报。侧边栏把会话分成 Needs input、Working 和 Completed。想顺带问点别的，输入 `/btw`，主会话会继续跑。
+Hand it a few things at once and it opens a nested session for each, and each one reports back to the main session when it's done. The sidebar groups sessions into Needs input, Working and Completed. To ask something on the side, type `/btw` and the main session keeps going.
 
-把这段发给 Opus 5.5，它会把你留下的每个尾巴都翻出来。
+Send this to Opus 5.5 and it'll dig up every loose end you left behind.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/find-the-later-items-in-your-last-20-sessions)：@Voxyz_ai 2026年10月14日[发在 X 上](https://x.com/Voxyz_ai/status/2110475744056877503)，截至 2026年11月11日有 1,422 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/find-the-later-items-in-your-last-20-sessions): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2110475744056877503) on 14 Oct 2026, 1.4K saves as of 11 Nov 2026. For Claude Code.

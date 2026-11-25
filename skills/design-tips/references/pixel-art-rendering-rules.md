@@ -59,4 +59,4 @@ If you're making a pixel art game with Claude Code, send it these rules and have
 
 ## Source
 
-From [Copybook](https://copybook.page/t/pixel-art-rendering-rules-for-claude-md): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2122789374039314882) on 17 Nov 2026, 306 saves as of 18 Nov 2026. For Claude Code.
+From [Copybook](https://copybook.page/t/pixel-art-rendering-rules-for-claude-md): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2122789374039314882) on 17 Nov 2026, 310 saves as of 25 Nov 2026. For Claude Code.

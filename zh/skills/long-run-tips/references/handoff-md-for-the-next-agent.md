@@ -1,31 +1,31 @@
-# 边做边写给下一个 agent 的 HANDOFF.md
+# HANDOFF.md for the next agent
 
-任务一个会话做不完：进度、决定、相关文件、验证结果和下一步边做边记，下一个 agent 接得上。
+A task longer than one session: progress, decisions, files, checks and next steps kept current for the next agent.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 填好[需求]，在项目里发给 Claude Code 或 Codex。
-3. 得到：agent 边做边更新 HANDOFF.md，你能检查，下一个 agent 接得上。
+1. Copy the prompt.
+2. Fill in [REQUIREMENT] and send it to Claude Code or Codex in your project.
+3. You get: A HANDOFF.md kept current as it works, so you can review it and the next agent can continue.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-实现[需求]，同时在 HANDOFF.md 里持续更新当前进度、关键决定及原因、相关文件、验证结果、未解决的问题和下一步。兼顾 DX（开发者体验）和 AX（Agent Experience），只保留当前有效的信息，让我能看懂并检查，也方便下一个 agent 读取后核对状态、继续完成任务。
+Implement [REQUIREMENT] and keep HANDOFF.md updated with current progress, key decisions and why you made them, relevant files, verification results, unresolved issues, and next steps. Keep both DX (developer experience) and AX (agent experience) in mind. Retain only information that’s still current, so I can understand and review the work, and the next agent can read it, check the current state, and continue the task.
 ```
 
-## 背景
+## Background
 
-我最近用得最多的一条 prompt。agent 干活时持续更新 HANDOFF.md，你能检查它做了什么，下一个 agent 也能核对当前状态，接着做。
+One of the prompts I've been using the most lately. The agent keeps HANDOFF.md current while it works, so you can review the work and the next agent can check the current state and continue.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/keep-a-handoff-md-while-the-agent-works)：@Voxyz_ai 2026年9月19日[发在 X 上](https://x.com/Voxyz_ai/status/2101325439805583554)，截至 2026年10月17日有 429 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/keep-a-handoff-md-while-the-agent-works): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2101325439805583554) on 19 Sep 2026, 429 saves as of 17 Oct 2026. For Claude Code and Codex.

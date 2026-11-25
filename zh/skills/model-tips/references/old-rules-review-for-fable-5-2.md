@@ -1,39 +1,39 @@
-# Fable 5.2 旧规则审查
+# Old-rules review for Fable 5.2
 
-给老模型写死的规则拖累 Fable 5.2：派活、少想、文风限制和「never」的句子，引原文给改法。
+Rules hard-coded for older models work against Fable 5.2: delegation, think-less, style-limit and 'never' lines quoted with a fix.
 
-## 步骤
+## Steps
 
-1. 复制提示词和 Anthropic 指南的链接。
-2. 在项目里把提示词和指南链接一起发给 Claude Code 里的 Fable 5.2。
-3. 得到：每个问题都引原指令，附可能的影响和最小改法，先不动任何文件。
+1. Copy the prompt and the link to Anthropic's guide.
+2. Send the prompt and the guide's link to Fable 5.2 in Claude Code, in your project.
+3. You get: Each issue with the instruction quoted, its potential impact and the smallest change, before edits.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-阅读 Anthropic 官方的 Prompting Claude Fable 5.2 指南，审查我项目里的 CLAUDE.md、AGENTS.md、skills、subagent 文件和 memory 文件。找出让你把活派给 subagent 的常驻指令，让你少想或直接回答的句子，写死的文风限制，「never」规则和积攒下来的旧笔记，以及没点名具体操作的审批规则。
+Read Anthropic's official Prompting Claude Fable 5.2 guide and review my project's CLAUDE.md, AGENTS.md, skills, subagent files and memory files. Identify standing instructions that tell you to delegate work to subagents, lines that tell you to think less or answer directly, hard-coded style limits, 'never' rules and old notes that have piled up, and approval rules that don't name the exact actions they cover.
 
-每个问题都引用原指令，说明可能的影响，给出最小的改法。涉及安全、权限边界或减少验证的建议单独列出来，交给我决定。先给我看建议。现在什么都不要改。
+For each issue, quote the original instruction, explain its potential impact, and suggest the smallest change needed. List any proposals involving safety, permission boundaries, or reduced verification separately for me to decide. Show me the recommendations first. Don't modify anything yet.
 ```
 
-## 背景
+## Background
 
-Anthropic 刚发布了一份 Fable 5.2 的 prompt 写法指南。你可以让 Fable 5.2 照着它审查项目里的旧规则。
+Anthropic just published a prompting guide for Fable 5.2. You can ask Fable 5.2 to use it to review the old rules in your project.
 
-在指南自己的测试里，Fable 5.2 的上下文里有十几条之前会话留下的笔记，只有一条写着「never retry」。就这一行，让它在工具繁忙后的重试从几乎每次都试，降到 10 次里大约 4 次。
+In the guide's own test, Fable 5.2 had a dozen notes from earlier sessions in context, and just one of them said "never retry." That one line cut its retries after a busy tool from nearly every time to about 4 in 10.
 
-当初为了不让老模型犯蠢写死的那些规则，现在反过来拖累新模型，还白白烧 token。
+The rules you hard-coded to stop older models from doing dumb things now work against the new one and burn tokens for nothing.
 
-把这段提示词和指南一起发给 Fable 5.2：https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2
+Send this prompt and the guide to Fable 5.2: https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-fable-5-2
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/review-old-rules-with-anthropics-fable-5-2-guide)：@Voxyz_ai 2026年11月11日[发在 X 上](https://x.com/Voxyz_ai/status/2120501801313267818)，截至 2026年11月18日有 863 次收藏。最近一次检查：2026年11月19日，Opus 5.5，可用。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/review-old-rules-with-anthropics-fable-5-2-guide): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2120501801313267818) on 11 Nov 2026, 863 saves as of 18 Nov 2026. Last check: works on Opus 5.5, 19 Nov 2026. For Claude Code.

@@ -1,35 +1,35 @@
-# Orca：一个任务分给多个 CLI agent
+# Orca: one task split across CLI agents
 
-几个 CLI agent 同跑没人盯进度：各有目标，reviewer 只读，写代码的各用 worktree，一人整合。
+Who finished what across several CLI agents: a goal each, read-only reviewers, worktrees for writers, one owner integrates.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 把 [TASK] 换成你的任务，发给你的 agent。
-3. 得到：执行者并行工作，另一个 agent 检查 commit，最后汇报结果、阻塞和遗留。
+1. Copy the prompt.
+2. Replace [TASK] with your task and send it to your agent.
+3. You get: Workers run in parallel, another agent checks commits, and you get results, blockers and leftovers.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-用 Orca 完成 [TASK]。每个执行者一个明确的目标。reviewer 只读；写代码的用 worktree。并行运行；等待 worker_done。由另一个 agent 检查 commit。
+Use Orca for [TASK]. One clear goal per worker. Reviewers read only; writers get worktrees. Run in parallel; wait for worker_done. Another agent checks commits.
 
-由一个负责人整合并测试。未经批准不推送、不上生产。
+One owner integrates and tests. No push or prod unless approved.
 
-汇报结果、阻塞和遗留问题。
+Report results, blockers and leftovers.
 ```
 
-## 背景
+## Background
 
-Herdr 负责窗格之间的交接；Orca 跟踪 CLI agent 的 worktree、任务和完成情况。
+Herdr handles pane handoffs; Orca tracks CLI agents’ worktrees, tasks and completion.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/split-a-task-across-cli-agents-with-orca)：@Voxyz_ai 2026年8月9日[发在 X 上](https://x.com/Voxyz_ai/status/2086483535829884975)，截至 2026年9月6日有 495 次收藏。
+From [Copybook](https://copybook.page/t/split-a-task-across-cli-agents-with-orca): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2086483535829884975) on 9 Aug 2026, 495 saves as of 6 Sep 2026.

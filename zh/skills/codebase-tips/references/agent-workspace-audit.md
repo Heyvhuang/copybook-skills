@@ -1,41 +1,41 @@
-# agent 工作区清点
+# Agent workspace audit
 
-agent 越用越笨先别怪模型：说明、skill、MCP 和记忆列成「保留 / 删除」清单，你批准后再清。
+Your agent feels dumber over time: every instruction, skill, MCP and memory marked KEEP or REMOVE, cleared on your OK.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在变笨的那个工作区里，把它发给 Codex、Claude Code 或 Cursor。
-3. 得到：一份「保留 / 删除」清单等你批准，清理完 agent 再回到手上的任务。
+1. Copy the prompt.
+2. Send it to Codex, Claude Code or Cursor in the workspace that started feeling dumber.
+3. You get: A KEEP / REMOVE list to approve, then the agent refocuses on your current task.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-检查这个工作区里所有会影响你工作方式的长期配置：项目说明、skill、MCP 和记忆。
+Audit every persistent configuration in this workspace that shapes how you work: project instructions, skills, MCPs, and memory.
 
-找出多余的、过时的、互相冲突的，以及和这个项目无关的。先给我一份「保留 / 删除」清单，每项配一句说明。不要改任何文件。
+Find anything redundant, outdated, conflicting, or irrelevant to this project. First give me a KEEP / REMOVE list with one sentence per item. Do not edit any files.
 
-等我批准。只删我批准的「删除」项。所有安全规则、密钥处理规则，以及这个项目明确要求的配置，一律保留。
+Wait for my approval. Remove only approved REMOVE items. Keep every safety rule, secret-handling rule, and configuration this project explicitly requires.
 
-清理完，重新读一遍我现在的任务，抓住三件事：最终要的结果、不能越过的边界、能证明做完了的检查。
+After cleanup, reread my current task. Focus on three things: the final outcome, the boundaries you must not cross, and the checks that prove the work is done.
 
-具体怎么实现你自己定。做完给我看 diff，跑一遍项目已有的检查。有不清楚的就问，别猜。
+Choose the implementation yourself. When finished, show the diff and run the project's existing checks. If anything is unclear, ask. Don't guess.
 ```
 
-## 背景
+## Background
 
-Codex 用久了会觉得它变笨了。我先查工作区，再怪模型。我不会全删：这个项目用得上的 skill、MCP 和 AGENTS.md 规则留着，其余的大多删掉。
+Codex can feel worse over time. I check the workspace before blaming the model. I don't wipe everything: I keep the skills, MCPs and AGENTS.md rules the project uses, then remove most of the rest.
 
-我的 prompt 只写清结果、边界和检查方法，步骤让 Codex 自己定。Codex、Claude Code 或 Cursor 突然变笨的时候，就拿出来用。
+My prompts name the outcome, the boundaries and the checks, and Codex picks its own steps. Use this one when Codex, Claude Code or Cursor suddenly starts feeling dumber.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/audit-your-agent-workspace-before-blaming-the-model)：@Voxyz_ai 2026年8月8日[发在 X 上](https://x.com/Voxyz_ai/status/2086150296842219888)，截至 2026年9月5日有 887 次收藏。适用于 Claude Code、Codex 和 Cursor。
+From [Copybook](https://copybook.page/t/audit-your-agent-workspace-before-blaming-the-model): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2086150296842219888) on 8 Aug 2026, 887 saves as of 5 Sep 2026. For Claude Code, Codex and Cursor.

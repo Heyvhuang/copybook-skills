@@ -1,48 +1,48 @@
-# Herdr 通宵：Opus 5.5 写，Sol 审
+# Herdr overnight: Opus 5.5 builds, Sol reviews
 
-一个卡住的步骤吃掉整晚：每步最多 3 次尝试，还不行就记下错误，转去下一个独立步骤。
+One stuck step eating your whole night: at most 3 attempts per step, then its error recorded and the next independent step begun.
 
-## 步骤
+## Steps
 
-1. 复制命令，再复制 CLAUDE.md 规则。
-2. 在终端里运行命令，再把规则存进项目里的 CLAUDE.md。
-3. 得到：Opus 5.5 通宵干活，每一步要验证通过、Sol 签字才算完成。
+1. Copy the commands, then the CLAUDE.md rule.
+2. In a terminal, run the commands, then save the rule to the CLAUDE.md in your project.
+3. You get: Opus 5.5 works overnight, and a step is done only when verify passes and Sol signs off.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 命令
+## Commands
 
 ```bash
 brew install herdr
 npx skills add herdrdev/herdr --skill herdr -g
 ```
 
-## CLAUDE.md 规则
+## CLAUDE.md rule
 
 ```markdown
-每一步都按计划、构建、验证、修复走。只有验证通过，这一步才算完成。每步最多 3 次尝试，每次都要有具体的改动。每次通过后保存进度。如果某一步还是失败，记下错误，把它标为 blocked，转到下一个独立的步骤。
+For every step: plan, build, verify, fix. A step is done only when verify passes. Max 3 attempts per step, each with a specific change. Save progress after every pass. If a step still fails, record the error, mark it blocked and move to the next independent step.
 ```
 
-## 背景
+## Background
 
-Opus 5.5 + GPT-6.1 Sol 跑通宵任务强得离谱。
+Opus 5.5 + GPT-6.1 Sol is insane for overnight work.
 
-**1. 安装 Herdr，给 Claude Code 装上它的 skill。**
+**1. Install Herdr and give Claude Code its skill.**
 
-**2. 在项目里运行 herdr。** 一个窗格跑 `claude --model claude-opus-5-5`，旁边的窗格跑 `codex -m gpt-6.1-sol`。
+**2. Run herdr in your project.** One pane: `claude --model claude-opus-5-5`. The pane next to it: `codex -m gpt-6.1-sol`.
 
-**3. 把这段存进 CLAUDE.md**，这样一个卡住的步骤就吃不掉你一整晚。
+**3. Save this to CLAUDE.md** so one stuck step can't eat your whole night.
 
-**4. 告诉 Opus，Codex 那个窗格是它的 reviewer：** 每做完一步，它通过 Herdr 把 diff 发给 Sol，Sol 签字之前这一步不算完成。
+**4. Tell Opus the Codex pane is its reviewer:** after each step, it sends Sol the diff through Herdr, and the step isn't done until Sol signs off.
 
-**5. 在 Opus 窗格里输入 `/goal` 和今晚「完成」指什么，** 然后按 `ctrl+b q` 脱离。别合上盖子，去睡觉。
+**5. In the Opus pane, type `/goal` and what "done" means tonight,** then `ctrl+b q` to detach. Keep the lid open and go to sleep.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/run-opus-5-5-overnight-with-a-sol-reviewer-in-herdr)：@Voxyz_ai 2026年11月15日[发在 X 上](https://x.com/Voxyz_ai/status/2122072146411438294)，截至 2026年11月22日有 661 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/run-opus-5-5-overnight-with-a-sol-reviewer-in-herdr): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2122072146411438294) on 15 Nov 2026, 661 saves as of 22 Nov 2026. For Claude Code and Codex.

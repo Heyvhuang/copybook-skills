@@ -1,56 +1,56 @@
-# Opus 5.5 主模型配 medium subagent
+# Opus 5.5 main model, medium subagents
 
-想让额度撑久一点：主模型换成 Opus 5.5，默认 subagent 用 medium，改前先找出写死的模型 ID。
+Usage that lasts longer: Opus 5.5 as main model, Opus 5.5 on medium as default subagent; hard-coded model IDs found first.
 
-## 步骤
+## Steps
 
-1. 复制环境变量和 subagent 设置，再复制提示词。
-2. 设好环境变量，两行写进每个 subagent 定义，提示词发给 Claude Code。
-3. 得到：subagent 换成 Opus 5.5 medium，改之前先列出写死的模型 ID。
+1. Copy the environment variable and the subagent settings, then the prompt.
+2. Set the variable, put the lines in each subagent definition, and send the prompt to Claude Code.
+3. You get: Subagents on Opus 5.5 at medium effort, with hard-coded model IDs listed before anything changes.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 环境变量
+## Environment variable
 
 ```bash
 CLAUDE_CODE_SUBAGENT_MODEL=opus
 ```
 
-## 每个 subagent 定义里
+## In each subagent definition
 
 ```yaml
 model: opus
 effort: medium
 ```
 
-## 提示词
+## Prompt
 
 ```text
-检查这个项目，以及 ~/.claude 下的 settings、agents 和 skills：
+Check this project, plus the settings, agents, and skills under ~/.claude:
 
-1. 所有 subagent 定义，把 model 改成别名 opus，effort 设成 medium。需要更高档位的 subagent 单独列出来，写明理由。
-2. AGENTS.md、CLAUDE.md、skill 和脚本里写死的模型 ID，比如 claude-opus-5、claude-fable-5-1，能换成别名 opus 的换掉；写死 Fable 的逐个判断，拿不准的标出来让我决定。
-3. 看有没有设置 CLAUDE_CODE_EFFORT_LEVEL 这类环境变量，它会盖过 subagent 自己的 effort。
+1. For every subagent definition, change model to the alias opus and set effort to medium. List any subagents that need a higher effort level separately, with the reason.
+2. Find hard-coded model IDs in AGENTS.md, CLAUDE.md, skills, and scripts, like claude-opus-5 and claude-fable-5-1. Switch the ones that can use the opus alias. Go through anything hard-coded to Fable one by one, and flag the ones you're unsure about for me to decide.
+3. Check whether environment variables like CLAUDE_CODE_EFFORT_LEVEL are set. They override a subagent's own effort setting.
 
-先给我看清单和改法，我确认后再动文件。最后在 AGENTS.md 里加一条：同一个问题连续两次没解决，就停下来告诉我试过什么、为什么失败，由我决定要不要切到 Fable。
+Show me the list and proposed changes first. Don't edit any files until I confirm. Finally, add a rule to AGENTS.md: if the same problem fails twice in a row, stop and tell me what you tried and why it failed, and I'll decide whether to switch to Fable.
 ```
 
-## 背景
+## Background
 
-想让额度撑久一点，主模型可以直接换成 Opus 5.5。它的标价只有 Fable 5.1 的 40%，跑分还反超了：Artificial Analysis 综合指数 58 比 53。
+If you want your usage to last longer, you can switch your main model straight to Opus 5.5. Its listed price is only 40% of Fable 5.1's, and it's ahead on benchmarks too: 58 vs 53 on the Artificial Analysis Intelligence Index, both at max effort.
 
-subagent 也该一起换。我建议默认 subagent 用 Opus 5.5 medium：官方编程测试里，medium 的分数不输 max，成本不到 max 的五分之一。读代码、查文档、跑测试这类活，用不上更高的档位。
+Your subagents should switch too. I'd make Opus 5.5 at medium effort your default subagent: on the official coding eval, medium scores as well as max at less than a fifth of the cost. Reading code, looking up docs and running tests usually don't need a higher effort level.
 
-用别名 opus 的地方会自动跟着升级，写死模型 ID 的不会。把下面这段丢给 Claude Code，让它先审一遍再改：
+Anything using the opus alias upgrades automatically. Hard-coded model IDs don't. Hand this to Claude Code and have it review everything before changing anything:
 
-改完用 `/tasks` 看一下，每个 subagent 实际跑的是哪个模型。
+After the changes, run `/tasks` to check which model each subagent is actually running.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/switch-claude-code-to-opus-5-5-with-medium-subagents)：@Voxyz_ai 2026年9月23日[发在 X 上](https://x.com/Voxyz_ai/status/2102775004723351811)，截至 2026年10月21日有 437 次收藏。最近一次检查：发帖当天，Opus 5.5，可用。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/switch-claude-code-to-opus-5-5-with-medium-subagents): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2102775004723351811) on 23 Sep 2026, 437 saves as of 21 Oct 2026. Last check: works on Opus 5.5, the day it was posted. For Claude Code.

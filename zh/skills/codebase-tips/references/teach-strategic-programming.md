@@ -1,43 +1,43 @@
-# /teach：拿自己的项目学战略型编程
+# /teach: strategic programming on your project
 
-贵的 token 花在 AI 替代不了的事上：先问你代码库的 3 个问题，写出 MISSION.md 和课程，拿项目教你。
+Spend tokens learning what AI can't replace: 3 questions about your codebase, then MISSION.md, a curriculum and lessons on it.
 
-## 步骤
+## Steps
 
-1. 复制安装命令，再复制提示词。
-2. 在项目里运行命令，再把提示词贴进 Claude Code。
-3. 得到：先是关于你代码库的 3 个问题，然后是 MISSION.md 和一份照着你真实项目教的课程。
+1. Copy the install command, then the prompt.
+2. Run the command in your project, then paste the prompt into Claude Code.
+3. You get: Three questions about your codebase, then MISSION.md and a curriculum built on your actual project.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。有几段时，用第 2 步点名的那几段，按它的顺序；看不出来就问用户。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word. When there are several, use the ones step 2 names, in its order; if that is not clear, ask.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 命令：安装 teach skill
+## Install the teach skill
 
 ```bash
 npx skills add mattpocock/skills --skill teach
 ```
 
-## 提示词
+## Prompt
 
 ```text
-/teach 教我怎么成为一个出色的战略型程序员。AI 正在吃掉战术层面、一线的编程工作。我想要战略层面的能力：规划、QA、代码库设计，这些过去让人从 junior 成长为 senior 的能力。在这个时代，它们是基本功。
+/teach me how to be a great strategic programmer. ai is eating tactical, on-the-ground programming. i want the strategic skills, planning, qa, codebase design, the ones that used to take people from junior to senior. in this era they're table stakes.
 ```
 
-## 背景
+## Background
 
-Fable 5 的 token 很贵。我 $200 的 Max 套餐，每周额度一天半就用完了。但花在 AI 替代不了的事情上，每个 token 都值。
+Fable 5 tokens are expensive. My $200 Max plan weekly limit was gone in a day and a half. But spend them on what AI can't replace and it's worth every token.
 
-从 [mattpocock/skills](https://github.com/mattpocock/skills) 安装 mattpocock 的 teach skill。
+Install mattpocock's teach skill from [mattpocock/skills](https://github.com/mattpocock/skills).
 
-然后贴这段：
+Then paste this:
 
-它会先针对你真实的代码库问三个问题，然后写出 MISSION.md 和一份课程，拿你的实际项目来教。
+It asks three questions about your real codebase first, then writes MISSION.md and a curriculum, and teaches against your actual project.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/learn-strategic-programming-with-the-teach-skill)：@Voxyz_ai 2026年6月11日[发在 X 上](https://x.com/Voxyz_ai/status/2065188795469709501)，截至 2026年7月22日有 326 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/learn-strategic-programming-with-the-teach-skill): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2065188795469709501) on 11 Jun 2026, 326 saves as of 22 Jul 2026. For Claude Code.

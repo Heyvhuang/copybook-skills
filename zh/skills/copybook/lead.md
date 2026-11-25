@@ -1,5 +1,5 @@
-# 多个 agent 分工，以及以后阶段的工作
+# Several agents, and work for a later stage
 
-主会话按能独立验收的工作选技巧，每项默认一条。用户允许并行时，互不依赖的工作可以分路执行，各路可以用相同或不同的技巧；工作先后交给几个 agent 接力时，也由主会话逐项选。用户点名要用不同方法独立复核同一问题时，可以按方法分工。执行者沿用主会话选定的技巧和已有授权，不自行重选。主会话核对并汇总各路结果。
+The lead agent chooses tips for work that can be verified independently, with one tip per item by default. When the user permits parallel work, independent items can run in parallel with the same or different tips; when the work passes from one agent to the next in turn, the lead picks for each as well. If the user requests independent reviews of the same question using different methods, split the work by method. Workers use the lead’s selected tip within their existing permissions and do not pick again. The lead checks and combines their findings.
 
-用户主动使用 Copybook 时，在已有计划或交接里，给约好留到以后阶段做的工作记一句「开始时再选技巧」。开始这项工作或用户改变目标时，主会话读一次它所属话题的列表，前面用过别的话题也一样。下一步取决于前一步结果时，等结果出来再选。到时由主会话发起的重选，按 SKILL.md 第 6 条里「你自己加载」的规则处理：当前技巧仍适用就沿用，另有更合适的就换，都不适用就静默停用。同一项工作里的追问、微调、重试和技巧自身的步骤无需重选。
+When the user invokes Copybook, mark any work agreed for a later stage in the existing plan or handoff with “pick a tip when this starts.” When that work starts or the user changes the goal, the lead reads the list of the topic it belongs to, even if an earlier step used another topic. If the next step depends on an earlier result, wait for that result before choosing. A recheck the lead starts then follows the rule for a skill you loaded on your own under step 6 of SKILL.md. Keep a tip that still fits, switch to a better fit, or quietly drop it if none fits. Follow-ups on the same item, small edits, retries and steps within a tip need no new match.

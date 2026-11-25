@@ -1,25 +1,25 @@
-# 手机上的 Tailscale 预览链接规则
+# Tailscale preview links on your phone: a rule
 
-agent 给的链接是 localhost：预览、审查页面、看板都换成 Tailscale 链接，手机上直接打开。
+Agent links that say localhost: Tailscale links to previews, review pages and dashboards that open right on your phone.
 
-## 步骤
+## Steps
 
-1. 复制 Tailscale 链接规则。
-2. 加进 AGENTS.md 或 CLAUDE.md，电脑和手机用同一个账号装上 Tailscale。
-3. 得到：链接用 tailscale serve 发布，agent 自己先打开确认过能用。
+1. Copy the Tailscale link rule.
+2. Add it to your AGENTS.md or CLAUDE.md, with Tailscale on your computer and phone, same account.
+3. You get: Links the agent published with tailscale serve and opened itself to check they work.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 规则：Tailscale 链接
+## Rule: Tailscale links
 
 ```markdown
-你给我的链接只要指向这台电脑上正在运行的东西（预览、审查页面、看板），都给我 Tailscale 链接，绝不要 localhost。我在好几台电脑和手机之间工作。用 tailscale serve 发布，自己先打开链接确认能用，再发给我。
+Any time you give me a link to something running on this computer (a preview, a review page, a dashboard), give me a Tailscale link, never localhost. I work across several computers and my phone. Publish it with tailscale serve, open the link yourself to check it works, then send it.
 ```
 
 ## Check: Stop hook
@@ -41,19 +41,17 @@ agent 给的链接是 localhost：预览、审查页面、看板都换成 Tailsc
 }
 ```
 
-这块检查是 Copybook 为这条技巧写的，2026年11月24日在 Claude Code 2.1.331 上测过。它做什么、加到哪里，按下面这段英文说明：
+When a reply links to localhost, 127.0.0.1, ::1 or 0.0.0.0, Claude Code is sent back once to publish a Tailscale link instead; it reads only the links in the reply and lets the second stop through. Needs `jq` (built into macOS 15 and later); without it the hook reports an error and blocks nothing. Merge it into `.claude/settings.json`. Copybook wrote and tested it on Claude Code 2.1.331, 24 Nov 2026.
 
-> When a reply links to localhost, 127.0.0.1, ::1 or 0.0.0.0, Claude Code is sent back once to publish a Tailscale link instead; it reads only the links in the reply and lets the second stop through. Needs `jq` (built into macOS 15 and later); without it the hook reports an error and blocks nothing. Merge it into `.claude/settings.json`. Copybook wrote and tested it on Claude Code 2.1.331, 24 Nov 2026.
+This check is Copybook's, not part of the tip, and runs on the user's machine once added. Offer it once the tip is in place, show it, and add it only if the user says yes.
 
-这块检查是 Copybook 写的，不属于这条技巧，加上后会在用户电脑上运行。技巧用上之后再提出来，先给用户看，用户同意才加。
+## Background
 
-## 背景
+1. Install Tailscale on your computer and your phone, same account (free).
+2. Open your project in Claude Code or Codex.
+3. Ask it to run the project and send you a preview link.
+4. Add this and the link opens right on your phone. Save it to AGENTS.md or CLAUDE.md and it works every time.
 
-1. 电脑和手机都装上 Tailscale，登录同一个账号（免费）。
-2. 在 Claude Code 或 Codex 里打开你的项目。
-3. 让它把项目跑起来，发你一个预览链接。
-4. 加上这段，链接在手机上就能直接打开。存进 AGENTS.md 或 CLAUDE.md，每次都管用。
+## Source
 
-## 来源
-
-来自 [Copybook](https://copybook.page/zh/t/open-preview-links-on-your-phone-with-tailscale)：@Voxyz_ai 2026年11月14日[发在 X 上](https://x.com/Voxyz_ai/status/2121702208546967753)，截至 2026年11月21日有 4,182 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/open-preview-links-on-your-phone-with-tailscale): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2121702208546967753) on 14 Nov 2026, 4.2K saves as of 21 Nov 2026. For Claude Code and Codex.

@@ -1,66 +1,66 @@
-# 上线前检查：4 个测试 subagent
+# Pre-launch check: 4 test subagents
 
-自己先往坏里试：4 个只测不改的 subagent 用 16 个问题查安全、数据、操作、环境，按轻重修。
+Try to break it yourself first: 16 questions on security, data, flows and environment, issues ranked by severity, then fixed.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 发给 Claude Code，看过 4 个 subagent 文件再确认。
-3. 得到：4 个只测不改的 subagent 试完 16 个问题，按严重程度交给主会话修。
+1. Copy the prompt.
+2. Send it to Claude Code, and confirm the four subagent files it shows you.
+3. You get: Four read-only subagents test 16 questions and hand issues ranked by severity to the main session.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-上线前，让 Opus 5.5 派 4 个专门搞破坏的 subagent，分头拿这 16 个问题把你的 App 往坏里试一遍：
+Before you ship, have Opus 5.5 send out 4 subagents whose only job is to break your app, and split these 16 questions between them:
 
-安全
-- 打包后的前端 JS 和 git 历史里，有没有 sk_、service_role 这种私密 key
-- 不走页面，直接调接口：不登录、换成别人的 ID，服务端拦不拦
-- 把请求里的价格、数量、权限改一下再发，服务端认不认
-- 同一个接口连发 100 次，有没有按用户和 IP 限流
-- 在 Markdown、富文本、上传的 SVG 里塞一段会弹窗的代码，换个账号打开会不会执行
+Security
+- Do your bundled frontend JS or git history contain private keys like sk_ or service_role?
+- Skip the UI and call your APIs directly, logged out or with someone else's ID. Does the server stop you?
+- Change the price, quantity or role in a request and send it again. Does the server accept it?
+- Hit the same endpoint 100 times in a row. Is there a rate limit per user and IP?
+- Hide a snippet that pops an alert in Markdown, rich text or an uploaded SVG. Does it run when another account opens it?
 
-数据
-- 塞进 10,000 条数据，页面还打不打得开
-- 名字写 200 个字、带 emoji，页面被撑爆没有
-- 邮箱大小写不同，是不是注册出了两个账号
-- 什么都不填直接提交，数据库里多没多一条空记录
+Data
+- Load 10,000 records. Does the page still open?
+- Use a 200-character name with emoji. Does it break the layout?
+- Sign up with the same email in different capitalization. Did you just get two accounts?
+- Submit an empty form. Is there now a blank record in your database?
 
-操作
-- 同一笔订单并发下两次、同一个付款回调重放两次，有没有出两笔订单
-- 做到一半刷新、按返回，填好的东西还在不在
-- 断网时点保存：显示成功了，数据却没存上
-- 上传一张 50MB 的图，卡不卡死
+Flows
+- Place the same order twice at once, and replay the same payment webhook twice. Did you get two orders?
+- Refresh or hit Back halfway through a form. Is what you typed still there?
+- Save while offline: it says saved, but nothing was stored
+- Upload a 50MB image. Does everything freeze?
 
-环境
-- 手机小屏、页面放大到 200%，按钮还点不点得到
-- 换成 Safari 内核，页面乱没乱
-- 用户在别的时区，日期、截止时间、打卡会不会差一天
+Environment
+- On a small phone screen at 200% zoom, can you still tap every button?
+- Switch to Safari's engine. Does the layout fall apart?
+- For users in other time zones, are dates, deadlines and check-ins off by a day?
 
-4 个 subagent 的 effort 都设 high；安全那组管着付款和登录，一出错就出大事，可以调到 xhigh 甚至 max。Anthropic 的 Thariq 说过，调高 effort 换来的主要就是更多验证和边界测试。
+Set all 4 subagents to high effort. The security one covers payments and login, where one mistake is a disaster, so you can raise it to xhigh or even max. Anthropic's Thariq has said that turning effort up mostly buys more verification and edge-case testing.
 
-把这整条发给 Claude Code，最后加一句 👇
-「在 ~/.claude/agents 建 4 个测试 subagent，上面每组各建一个：security-breaker、data-breaker、flow-breaker、env-breaker。model 都用 opus，effort 设 high，security-breaker 设 xhigh；只给读文件、跑命令和浏览器（Playwright）的权限，不改代码和配置，没有 Playwright 就先装上。
-每次上线前，在本地或测试环境把 App 跑起来，让它们分头按自己那组逐条试。需要登录的，先问我要两个测试账号；付款只用测试模式；AI 接口先 mock，或用有花费上限的测试 key；测试数据只写测试库，测完清掉。发现用的是正式环境的 key 或线上域名，立刻停下来问我。
-每个问题写清复现步骤、截图和修法，汇总后按严重程度排好，交给主会话修；做不到的项标「未测」并写原因。先把要新建的文件给我看，我确认后再写。」
+Send this whole post to Claude Code, and add this line at the end 👇
+"Create 4 testing subagents in ~/.claude/agents, one for each group above: security-breaker, data-breaker, flow-breaker and env-breaker. Use model opus for all of them, effort high, and xhigh for security-breaker. Give them permission only to read files, run commands and use a browser (Playwright), with no changes to code or config. Install Playwright first if it's missing.
+Before every launch, run the app locally or in a test environment and have each of them work through its group item by item. If login is needed, ask me for two test accounts first. Use payment test mode only. Mock the AI APIs, or use a test key with a spending cap. Write test data only to a test database and clean it up afterwards. If you find production keys or a live domain, stop immediately and ask me.
+For every issue, write the steps to reproduce, a screenshot and the fix. Combine them, rank them by severity and hand them to the main session to fix. Mark anything you can't test as "untested" with the reason. Show me the files you'll create first, and don't write them until I confirm."
 ```
 
-## 背景
+## Background
 
-上线前，让 Opus 5.5 派 4 个专门搞破坏的 subagent，分头拿 16 个问题把你的 App 往坏里试一遍：安全、数据、操作、环境。
+Before you ship, have Opus 5.5 send out 4 subagents whose only job is to break your app, and split 16 questions between them: security, data, flows and environment.
 
-4 个 subagent 的 effort 都设 high；安全那组管着付款和登录，一出错就出大事，可以调到 xhigh 甚至 max。Anthropic 的 Thariq 说过，调高 effort 换来的主要就是更多验证和边界测试。
+Set all 4 subagents to high effort. The security one covers payments and login, where one mistake is a disaster, so you can raise it to xhigh or even max. Anthropic's Thariq has said that turning effort up mostly buys more verification and edge-case testing.
 
-把整份清单连同最后那段话一起发给 Claude Code。
+Send the whole list to Claude Code, with the instruction at the end.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/send-4-subagents-to-break-your-app-before-shipping)：@Voxyz_ai 2026年9月27日[发在 X 上](https://x.com/Voxyz_ai/status/2104224555040452925)，截至 2026年10月25日有 2,132 次收藏。适用于 Claude Code。
+From [Copybook](https://copybook.page/t/send-4-subagents-to-break-your-app-before-shipping): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2104224555040452925) on 27 Sep 2026, 2.1K saves as of 25 Oct 2026. For Claude Code.

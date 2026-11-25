@@ -1,24 +1,18 @@
-# Third-party license notices · 第三方许可说明
+# Third-party license notices
 
-Copybook’s licenses exclude third-party quotations identified in its tips. That applies in both language editions.
-
-中英文技巧中注明来源的第三方引文均不在 Copybook 的授权范围内。
+Copybook’s licenses exclude third-party quotations identified in its tips.
 
 ## George Orwell
 
-In both editions of the Copybook tip “Orwell’s 6 writing rules”, the six numbered rules are in English in the first copyable block. They quote George Orwell’s essay *Politics and the English Language*, first published in *Horizon* in 1946. Copybook’s MIT and CC BY 4.0 licenses grant no rights in that excerpt. The surrounding instructions written by Copybook are covered by [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). [Essay and source](https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/)
+In the Copybook tip “Orwell’s 6 writing rules”, the six numbered rules are in English in the first copyable block. They quote George Orwell’s essay *Politics and the English Language*, first published in *Horizon* in 1946. Copybook’s MIT and CC BY 4.0 licenses grant no rights in that excerpt. The surrounding instructions written by Copybook are covered by [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). [Essay and source](https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/)
 
 The Orwell Foundation says that UK copyright in Orwell’s works published during his lifetime expired on 1 January 2021 and that the essay remains protected in the United States. For uses that require permission, the Foundation directs US quotation requests to HarperCollins US. Rights and exceptions depend on where and how the excerpt is used. [Rights and permissions](https://www.orwellfoundation.com/the-orwell-foundation/contact/)
-
-中英文版「Orwell 的 6 条写作规则」中，第一段复制块内的六条编号规则均为英文，引自 George Orwell 的《Politics and the English Language》，1946 年首刊于《Horizon》。Copybook 的 MIT 和 CC BY 4.0 许可均不授予这段引文的使用权。周围由 Copybook 撰写的操作说明采用 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)。[文章出处](https://www.orwellfoundation.com/the-orwell-foundation/orwell/essays-and-other-works/politics-and-the-english-language/)
-
-据 Orwell Foundation 说明，Orwell 生前发表作品的英国版权已于 2021 年 1 月 1 日届满，这篇文章在美国仍受版权保护。是否需要许可取决于使用地点和方式。需要取得美国引文许可时，基金会指引联系 HarperCollins US。[各地权利和许可联系渠道](https://www.orwellfoundation.com/the-orwell-foundation/contact/)
 
 ## Site assets
 
 The entries below cover the site's fonts, icons and emoji, including their use in rendered share images. Copybook's own licences do not replace these licences. The full texts below travel with this notice, which is also published at https://copybook.page/licenses.txt.
 
-The skills exporter copies this whole file into both language editions. Its social preview contains rendered Geist, Geist Mono and Noto Sans SC lettering, and its plugin icon is Copybook's own drawn mark. These outputs do not redistribute font files. The exporter does not copy the site's Phosphor icons or Noto emoji sprite into the skills repositories.
+The skills exporter copies this whole file into each plugin. Its social preview contains rendered Geist, Geist Mono and Noto Sans SC lettering, and its plugin icon is Copybook's own drawn mark. These outputs do not redistribute font files. The exporter does not copy the site's Phosphor icons or Noto emoji sprite into the skills repositories.
 
 ## Phosphor icons
 
@@ -133,7 +127,6 @@ The copyright lines in the font entries above accompany this text, copied from t
 This Font Software is licensed under the SIL Open Font License, Version 1.1.
 This license is copied below, and is also available with a FAQ at:
 http://scripts.sil.org/OFL
-
 
 -----------------------------------------------------------
 SIL OPEN FONT LICENSE Version 1.1 - 26 February 2007

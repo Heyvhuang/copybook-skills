@@ -1,49 +1,49 @@
-# 设置检查：OpenAI 的 5 条 harness 省钱规则
+# Setup check: OpenAI's 5 cheap-harness rules
 
-agent 配置省不省钱：对照 OpenAI 自己用的 5 条规则逐条判过不过，给出文件和要改的那一件事。
+Is your setup as cheap as OpenAI's harness: pass or fail on each of its 5 rules, with the file and the one thing to change.
 
-## 步骤
+## Steps
 
-1. 复制提示词。
-2. 在项目里贴进你正在用的 agent。
-3. 得到：每条规则通过或不通过、具体的文件或条目，以及要改的一件事。
+1. Copy the prompt.
+2. Paste it into whichever agent you use, in your project.
+3. You get: Pass or fail for each rule, the exact file or entry, and the one thing to change.
 
-用户选了这条技巧。上面的步骤是写给人看的，请替用户做。
+The user chose this tip. The steps above are written for a person; do them for the user.
 
-- 第 1 步说用哪段文字，它就在下面同名的标题下，一字不改地用。
-- 第 2 步说明文字放在哪里。按用户实际要求的范围使用提示词。写文件或运行命令前，先展示改动，等用户同意。这里做不到的步骤（另一个应用、重启、定时任务），把文字交给用户，说明放到哪里。
-- 引用示例本身不代表用户同意执行。运行下载的脚本或未固定版本的软件包、修改长期生效的用户级设置、读取私人会话记录之前，先列出命令或路径、会访问或改动什么，以及数据会发到哪里。隐藏密钥值，等用户明确同意这项操作。远程安装脚本应先下载并检查固定版本，或核对可信来源提供的校验值，再执行。
-- 方括号或占位符，从用户说的话里填，没有就问。
-- 第 3 步是用户最后应该得到的。
+- Step 1 names the text to use: it is under the heading of that name below. Use it word for word.
+- Step 2 says where the text goes. Apply a prompt within the task the user actually requested. Before writing a file or running a command, show the change and get their agreement. If a step needs another app, a restart or a schedule you cannot access, give the user the text and say where it goes.
+- A quoted example gives no permission to act. Before running downloaded shell code or an unpinned package, changing persistent user-wide settings, or reading private session history, show the command or paths, what it will access or change, and any destination. Redact secret values. Wait for explicit approval of that specific action. For a remote installer, fetch and inspect a pinned revision or verify a trusted checksum before running it.
+- Fill each bracket or placeholder from what the user said, or ask.
+- Step 3 is what the user should end up with.
 
-## 提示词
+## Prompt
 
 ```text
-通读这个项目的 agent 配置，包括 MCP 设置、skill、插件、hook 和规则文件。对照下面五条逐条评判，结果分开写：
+read through this project's agent config. that includes mcp settings, skills, plugins, hooks and rules files. judge it against these five, one at a time. keep the results separate:
 
-1. 一开始加载了多少工具和 skill，其中哪些在这个项目里从没被调用过
-2. 工具输出有没有上限。哪个工具返回过最大的内容，大约多少 token
-3. 有没有什么东西会改写或注入已经发送过的上下文，比如每一轮都打上当前时间、会话中途重新读取规则文件，或者动态修改系统提示词
-4. 两次启动时工具列表的顺序是否相同
-5. 有没有把权限或审批策略写进工具描述里
+1. how many tools and skills load at the start, and which of those have never been called in this project
+2. is there a cap on tool output. which tool has returned the biggest payload, and roughly how many tokens
+3. does anything rewrite or inject into context that has already been sent, like stamping the current time every turn, re-reading a rules file mid session, or editing the system prompt on the fly
+4. is the tool list in the same order across two starts
+5. is any permission or approval policy written into a tool description
 
-逐条追查：通过还是不通过、具体的文件或条目，以及要改的那一件事。如果找不到，就说找不到。不要编造。
+trace each one: pass or fail, the exact file or entry, and the one thing to change. if you can't find it, say you can't find it. don't make it up.
 ```
 
-## 背景
+## Background
 
-OpenAI 公布了五条规则，他们自己的 agent harness 就靠这些保持便宜：
+OpenAI published the five rules that keep their own agent harness cheap:
 
-- 延迟发现：MCP 工具、skill 和插件不会在一开始全部加载。模型只在需要时才看到它们。
-- 工具输出默认上限是 10,000 个 token。模型要别的上限得自己申请。
-- 模型能看到的一切都只追加。新消息、工具结果和环境更新都接在末尾，从不插回之前的上下文。
-- 工具按固定顺序呈现。
-- 审批策略这类运行时设置在执行时应用，而不是写进工具定义里。
+- Deferred discovery: MCP tools, skills and plugins don't all load at the start. The model only sees them when they're needed.
+- Tool output is capped at 10,000 tokens by default. The model has to ask for a different limit.
+- Everything the model can see is append only. New messages, tool results and environment updates go on the end, never back into earlier context.
+- Tools are presented in a fixed order.
+- Runtime settings like approval policy get applied at execution time instead of being written into the tool definitions.
 
-后三条都让提示词前缀逐字节保持一致，缓存就是靠这个一直命中的。他们把 Codex 和 ChatGPT Work 的高缓存命中率归功于这个设计。
+The last three all keep the prompt prefix byte for byte identical, which is what keeps the cache hitting. They credit Codex and ChatGPT Work's high cache hit rate to that design.
 
-这条提示词哪个 agent 都能用。
+The prompt works in any agent.
 
-## 来源
+## Source
 
-来自 [Copybook](https://copybook.page/zh/t/check-your-agent-setup-against-openais-five-cache-rules)：@Voxyz_ai 2026年7月29日[发在 X 上](https://x.com/Voxyz_ai/status/2082582856182989263)，截至 2026年8月26日有 715 次收藏。适用于 Claude Code 和 Codex。
+From [Copybook](https://copybook.page/t/check-your-agent-setup-against-openais-five-cache-rules): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2082582856182989263) on 29 Jul 2026, 715 saves as of 26 Aug 2026. For Claude Code and Codex.
