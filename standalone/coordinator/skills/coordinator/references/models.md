@@ -1,6 +1,6 @@
 # Models and effort
 
-The one place for exact model IDs and effort in a coordinator run; in that run it replaces parallel-goal-fleet's model and effort defaults. The table holds the defaults the example run used, as written on 16 Nov 2026, with that run's reasons. They are an example, not a ranking: put in the models your account offers, and change a row when a run has shown how a model does, never just because a newer one came out. Herdr launch flags: SKILL.md (Runtime) and `references/herdr.md` §0; T3 option ids: `references/t3.md`; Orca flags: `references/orca.md`.
+The one place for exact model IDs and effort in a coordinator run; in that run it replaces parallel-goal-fleet's model and effort defaults. The table holds the defaults the example run used, as written on 16 Nov 2026, with that run's reasons. They are an example, not a ranking: put in the models your account offers, and change a row when a run has shown how a model does, never just because a newer one came out. Herdr launch flags: SKILL.md (Runtime) and `references/herdr.md` §0; T3 option ids: `references/t3.md`; Orca flags: `references/orca.md`; Paseo fields and the user's profiles: `references/paseo.md`.
 
 ## Overrides
 
@@ -34,10 +34,13 @@ Some plans keep running on paid credits once the quota is used up. Before an una
 
 ## Reaching each model
 
-| Model | Herdr | T3 Code | Orca |
-| --- | --- | --- | --- |
-| Claude | `--kind claude`, `--model <id>` | `claudeAgent` child task, option `effort` | `--agent claude --model <id> --effort <e>` |
-| Codex | `--kind codex`, `-m <id>` | `codex` child task, option `reasoningEffort` | `--agent codex --model <id> --effort <e>` (no speed-tier flag: `references/orca.md`) |
+| Model | Herdr | T3 Code | Orca | Paseo |
+| --- | --- | --- | --- | --- |
+| Claude | `--kind claude`, `--model <id>` | `claudeAgent` child task, option `effort` | `--agent claude --model <id> --effort <e>` | `create_agent` `provider: "claude/<id>"` (or a custom Claude provider for another account), `settings.thinkingOptionId` |
+| Codex | `--kind codex`, `-m <id>` | `codex` child task, option `reasoningEffort` | `--agent codex --model <id> --effort <e>` (no speed-tier flag: `references/orca.md`) | `create_agent` `provider: "codex/<id>"`, `settings.thinkingOptionId`, speed tier in `settings.features.service_tier` |
+| Gemini (a report-only reader through Antigravity's `agy`) | `--kind agy -- --model gemini-4-argon-<low/medium/high> --dangerously-skip-permissions` (measured: one query task, Nov 2026) | `antigravity` child task, option `thinking_level` (low, medium, high) (measured: one query and one commit lane, Nov 2026) | `--agent antigravity --model <id>` (measured once: `references/orca.md`, Trial) | `create_agent` `provider: "antigravity/<id>"`, the profile's `settings.modeId` (`full-access` with no profile) (measured once: `references/paseo.md`, Trial) |
+
+Antigravity's FAQ warns that third-party agents driving `agy` on consumer plans can lead to account suspension; `scripts/gemini.mjs` through the Vercel AI Gateway (Gemini, below) is the alternative.
 
 When a model is out of reach (quota, outage, provider disabled): Codex Astra review → Codex Sol xhigh plus a second Claude reviewer, flagged in the record; second reader → `scripts/gemini.mjs` if you set it up, else a second Claude reviewer, else decide alone and mark the decision for the user's confirmation; front-end work never falls back to Codex.
 

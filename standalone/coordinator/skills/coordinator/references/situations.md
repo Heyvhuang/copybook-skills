@@ -18,7 +18,7 @@ First moves, from the example run.
 
 **Merge conflict.** Gates and the ship lane don't resolve conflicts; the owning lane merges main and is re-gated. Lanes sharing a rule file (DESIGN.md, tokens) conflict often: merge one, then have the other merge main.
 
-**Stalled lane.** Read the pane: usually it is text left in the input (send Enter), a dialog (Codex's hook review swallows the first prompt if `~/.codex/hooks.json` changed since it was trusted), or a monitor that stopped on a failure and sat idle. If it is idle with no READY, nudge it with the brief path. An Orca lane: `worker-show` and `worker-read` (`references/orca.md`, Stuck lane). A T3 lane: read its activity (`t3_thread_read`, `view: "activity"`) and steer it with `t3_thread_send`.
+**Stalled lane.** Read the pane: usually it is text left in the input (send Enter), a dialog (Codex's hook review swallows the first prompt if `~/.codex/hooks.json` changed since it was trusted), or a monitor that stopped on a failure and sat idle. If it is idle with no READY, nudge it with the brief path. An Orca lane: `worker-show` and `worker-read` (`references/orca.md`, Stuck lane). A T3 lane: read its activity (`t3_thread_read`, `view: "activity"`) and steer it with `t3_thread_send`. A Paseo lane: `get_agent_status` (pending permissions, `requiresAttention`) and `get_agent_activity`, then answer a prompt with `respond_to_permission` or steer with `send_agent_prompt` (`references/paseo.md`, Stuck lane).
 
 **Machine overload** (load 300–900 on 10 cores). Heavy checks through `scripts/heavy.sh`, one full suite per machine, close finished lanes. Waiting for the load to drop doesn't work; a lane once waited 2 h 45 m that way.
 

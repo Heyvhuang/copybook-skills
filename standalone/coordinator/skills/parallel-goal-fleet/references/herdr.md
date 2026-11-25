@@ -1,6 +1,6 @@
 # Herdr commands
 
-Use one named session per target host for the task and reuse its workers. Examples target Herdr 0.9.0; the full-access flags were checked on 0.9.5. When using a different installed version, check help for the operation that differs; ordinary local workers do not require multi-machine support.
+Use one named session per target host for the task and reuse its workers. Examples match the help and bundled guide (`herdr --skill`) of Herdr 0.9.5, the latest release on 25 Nov 2026; the full-access flags were run on 0.9.5. When using a different installed version, check help for the operation that differs; `herdr status` shows the client and server versions, which can differ after an update. Ordinary local workers do not require multi-machine support.
 
 ## Session and workers
 
@@ -30,7 +30,7 @@ H=(env -u HERDR_SESSION herdr --session <session>)
   -- resume <codex_session_id> -m <codex_model> -c model_reasoning_effort=<effort> -s danger-full-access -a never
 ```
 
-Each start command targets its own returned pane. `agent start` reports agent detection and readiness; normal work needs no additional UI proof. If dispatch encounters an update, trust, or permission prompt, inspect and handle that prompt within the task scope.
+Each start command targets its own returned pane. `agent start` reports agent detection and readiness; normal work needs no additional UI proof. An agent blocked at startup returns `agent_not_ready` at once and keeps its name. If startup or dispatch encounters an update, trust, hook-review, or permission prompt, inspect and handle that prompt within the task scope before prompting.
 
 For simultaneous Git writers, create each workspace through a worktree:
 
@@ -53,7 +53,7 @@ Send one clear goal to a ready worker:
 
 Dispatch independent workers concurrently from the coordinator. While they work, continue useful local work. Reuse the same worker for the next turn.
 
-`agent prompt --wait` observes agent states, not turn identity. In 0.9.0, a submission from a non-working state must show working or blocked activity within 5 seconds (unless the caller timeout expires first), or it returns `agent_prompt_stalled`. On a stalled or timed-out submission, read the pane and check artifacts before deciding whether to retry; text may already have reached the worker. Submit to an idle worker, then read the result and verify it belongs to the requested task. A returned state or completion phrase alone is not proof of success.
+`agent prompt --wait` observes agent states, not turn identity. Since 0.9.0 (unchanged in 0.9.5), a submission from a non-working state must show working or blocked activity within 5 seconds (unless the caller timeout expires first), or it returns `agent_prompt_stalled`. A worker already at an approval or question dialog is refused with `agent_blocked` before any input is sent. On a stalled or timed-out submission, read the pane and check artifacts before deciding whether to retry; text may already have reached the worker. Submit to an idle worker, then read the result and verify it belongs to the requested task. A returned state or completion phrase alone is not proof of success.
 
 Without `--until`, `agent wait` returns on idle, done, or blocked. A timeout does not cancel the worker: continue useful work and use another bounded `agent wait` when needed, without resending the goal. Use `agent read --source visible` to diagnose a blocked worker; long history reads may require idle. If the result is incomplete, ask the worker to write the full result to a file and retrieve it before closing the pane. Increasing `--lines` cannot recover output already lost from the alternate screen.
 
@@ -83,7 +83,7 @@ An output file may exist before completion. Wait for the round's exit file and c
 
 Use `agent get`, `agent read --source visible`, or `pane process-info` when startup or execution fails. Do not turn these into a checklist for every worker. Report observed configuration only when actually checked.
 
-For remote workers, use [machines.md](machines.md). `--remote` is a client-attach option and cannot prefix `agent`, `workspace`, or other control subcommands; on Herdr 0.9.5 use `--machine <profile-id>` for its configured session, or run them on the target host with its explicit session.
+For remote workers, use [machines.md](machines.md). `--remote` is a client-attach option and cannot prefix `agent`, `workspace`, or other control subcommands; since Herdr 0.9.1 use `--machine <profile-id>` for its configured session, or run them on the target host with its explicit session.
 
 ## Finish
 
@@ -96,4 +96,4 @@ env -u HERDR_SESSION herdr session delete <session> --json
 
 Stop/delete only a session created for this task. Preserve the default session and other work. Herdr provides persistent terminals and state observation; task dependencies and result verification belong to the coordinator.
 
-Sources: [Herdr v0.9.0](https://github.com/herdrdev/herdr/releases/tag/v0.9.0), installed CLI help, and [versioned agent guidance](https://github.com/herdrdev/herdr/blob/v0.9.0/skills/herdr/SKILL.md).
+Sources: [Herdr v0.9.0](https://github.com/herdrdev/herdr/releases/tag/v0.9.0) through [v0.9.5](https://github.com/herdrdev/herdr/releases/tag/v0.9.5), installed CLI help, and [versioned agent guidance](https://github.com/herdrdev/herdr/blob/v0.9.5/skills/herdr/SKILL.md).

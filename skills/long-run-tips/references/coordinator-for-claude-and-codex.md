@@ -1,12 +1,12 @@
 # Coordinator skill for Claude Code and Codex
 
-A job too big for one agent session: a brief per lane with boundaries and a done check, then Claude and Codex lanes run in Herdr.
+A job too big for one agent session: a brief per lane with boundaries and a done check, then Claude, Codex and Gemini lanes.
 
 ## Steps
 
 1. Copy the prompt. For the fleet, copy the install command and the fleet prompt too.
 2. Send the prompt with your goal to Claude Code or Codex in your repo.
-3. You get: Briefs to approve before a lane starts; run them yourself or hand them to the coordinator in Herdr.
+3. You get: Briefs to approve before a lane starts; run them yourself or hand them to the coordinator.
 
 The user chose this tip. The steps above are written for a person; do them for the user.
 
@@ -37,20 +37,22 @@ npx skills@latest add https://copybook.page --skill coordinator --skill parallel
 ## Fleet prompt
 
 ```text
-You are the coordinator for this run. Goal: <what done means, and the check that proves it>. Use Herdr for the lanes. Run directory: ../<project>-fleet
+Use the coordinator skill for this run. Goal: <your goal>. Define what done means and the check that proves it. You can merge PRs that pass review and checks. Ask me before deploys, migrations, payments or deleting data.
 ```
 
 ## Background
 
 The prompt works in one Claude Code or Codex chat with nothing installed. Before anyone writes code, it reads the repo and turns your goal into lanes, each with a brief, the files it owns, what it must not touch and the check that proves it done, then lists the decisions that are yours.
 
-Two skills take the same plan further: they turn one session into a coordinator for a fleet of workers running in [Herdr](https://herdr.dev). The coordinator never writes code itself. It splits the work into lanes (one worker, one branch, one brief), picks a model and effort for each, checks what comes back, follows the project's gate and release process, and brings you only the decisions that are yours. For batch releases it tests the ready PRs together and pushes each batch once.
+Two skills take the same plan further: they turn one session into a coordinator for a fleet of Claude, Codex and Gemini workers, running by default in [Orca](https://github.com/stablyai/orca), [T3 Code](https://github.com/pingdotgg/t3code) or [Paseo](https://paseo.sh) when the coordinator runs inside one of them and in [Herdr](https://herdr.dev) otherwise. The coordinator never writes code itself. It splits the work into lanes (one worker, one branch, one brief), picks a model and effort for each, checks what comes back, follows the project's gate and release process, and brings you only the decisions that are yours. For batch releases it tests the ready PRs together and pushes each batch once.
 
 It was distilled from a three-day production run: about 160 PRs, 107 lane briefs, 118 hand-overs and 166 batch test runs. The source is in [Heyvhuang/copybook-skills](https://github.com/Heyvhuang/copybook-skills/tree/main/standalone/coordinator), with a README on what each script does. The model choices it ships with are an example from that run. Swap in the models your account offers and keep the same workflow.
 
-The fleet needs Herdr 0.9.5 or later, Claude Code and Codex CLI signed in, and a git repo with the GitHub CLI.
+The fleet needs Claude Code and Codex CLI signed in, a git repo with the GitHub CLI, and Herdr 0.9.5 or later unless the coordinator runs inside Orca, T3 Code or Paseo and no lane needs Herdr (remote machines, interactive cloud gates). Gemini lanes are optional.
 
-Workers run with full access: they start without permission prompts and can edit any file and run any command your user account can. Use it only on a machine and repositories where you accept that.
+To run the lanes in Herdr wherever the coordinator runs, add `Use Herdr for the lanes.` to the prompt.
+
+Workers run with full access by default: they start without permission prompts and can edit any file and run any command your user account can. Use it only on a machine and repositories where you accept that.
 
 ## Source
 

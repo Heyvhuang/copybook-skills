@@ -262,6 +262,20 @@
         }
       ],
       "retired": []
+    },
+    {
+      "version": "1.0.16",
+      "date": "2026-11-25",
+      "added": [],
+      "changed": [
+        {
+          "slug": "coordinator-skill-for-claude-code-and-codex",
+          "title": {
+            "en": "Coordinator skill for Claude Code and Codex"
+          }
+        }
+      ],
+      "retired": []
     }
   ],
   "tips": {
@@ -488,7 +502,7 @@
       }
     },
     "coordinator-skill-for-claude-code-and-codex": {
-      "en": "a822cccccc6f3d73",
+      "en": "cdd68136b5a76972",
       "title": {
         "en": "Coordinator skill for Claude Code and Codex"
       }

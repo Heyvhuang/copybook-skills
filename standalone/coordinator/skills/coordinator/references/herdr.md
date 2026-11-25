@@ -1,10 +1,10 @@
 # Herdr in a coordinator run
 
-Herdr lanes: recommended when the coordinator runs in a terminal, Codex or the Claude desktop app, and for any lane that needs mid-turn steering, its own account or Codex speed tier, a cloud gate or a remote machine (SKILL.md, Runtime). The mechanics live in the parallel-goal-fleet skill: its `SKILL.md`, `references/herdr.md` (session, worker start, dispatch, waiting, quick reviews) and `references/cleanup.md`. Read the section you need there. This page adds only what the coordinator learned on the example run. Counts from two coordinator transcripts: `agent prompt` 224, `pane read` 126, `agent list` 62, `agent start` 56, `workspace close` 33.
+Herdr lanes: recommended when the coordinator runs in a terminal, Codex or the Claude desktop app, for any lane that needs a cloud gate or a remote machine, and for mid-turn steering, its own account or Codex speed tier unless the host is Paseo (SKILL.md, Runtime). The mechanics live in the parallel-goal-fleet skill: its `SKILL.md`, `references/herdr.md` (session, worker start, dispatch, waiting, quick reviews) and `references/cleanup.md`. Read the section you need there. This page adds only what the coordinator learned on the example run. Counts from two coordinator transcripts: `agent prompt` 224, `pane read` 126, `agent list` 62, `agent start` 56, `workspace close` 33.
 
 ## 0. Full access and providers
 
-Workers start without permission prompts (read the warning in SKILL.md, Runtime). Verified in Herdr 0.9.5:
+Workers start without permission prompts (read the warning in SKILL.md, Runtime). Verified in Herdr 0.9.5, still the latest release on 25 Nov 2026:
 
 | Provider | Start | Checked |
 | --- | --- | --- |
@@ -42,9 +42,9 @@ Decide first whether the message steers, queues or is held (SKILL.md, A lane). A
 | Busy Codex, steer | `H pane send-text <pane> "<text>"`, then `H pane send-keys <pane> Enter`: it joins the current turn |
 | Busy Codex, queue | `H pane send-text <pane> "<text>" && sleep 1 && H pane send-keys <pane> Tab`: it waits for the next turn |
 | Busy Claude Code | paste with `send-text`, then `Enter`: it queues and reaches the worker once the running tool calls finish, inside the same turn, so it acts as a correction. `Ctrl+X` then `Enter` (v2.1.247+) marks it to wait its turn without interrupting; `Ctrl+X` then `Ctrl+S` (v2.1.275+) sends the draft and everything queued at once |
-| Dialog or menu | read with `pane read --source visible`, then `send-keys Down` / `Enter` within scope |
+| Dialog or menu | `agent prompt` refuses a lane Herdr sees as blocked (`agent_blocked`, nothing sent); read with `pane read --source visible`, then `send-keys Down` / `Enter` within scope |
 
-Sources, read 18 Nov 2026: Codex CLI [developer commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli) (Enter steers, Tab queues; Codex CLI 0.169 here) and Claude Code [queued messages](https://code.claude.com/docs/en/interactive-mode#queue-messages-while-claude-works) and [chat keys](https://code.claude.com/docs/en/keybindings#chat-actions). On the example run the Codex Tab queue and the Escape stop were used; `agent prompt` was sent to busy Claude workers without confirming that it queues every time, and the Claude Ctrl+X chords were not sent through Herdr. Herdr 0.9.5's `pane send-keys --help` names `esc` but not how to write a Ctrl chord, so check the pane after trying one.
+Sources, read 18 Nov 2026: Codex CLI [developer commands](https://learn.chatgpt.com/docs/developer-commands?surface=cli) (Enter steers, Tab queues; Codex CLI 0.169 here) and Claude Code [queued messages](https://code.claude.com/docs/en/interactive-mode#queue-messages-while-claude-works) and [chat keys](https://code.claude.com/docs/en/keybindings#chat-actions). On the example run the Codex Tab queue and the Escape stop were used; `agent prompt` was sent to busy Claude workers without confirming that it queues every time, and the Claude Ctrl+X chords were not sent through Herdr. Herdr 0.9.5's `pane send-keys --help` names only `esc`; its bundled guide (`herdr --skill`) writes a Ctrl chord as `ctrl+c`, so Ctrl+X is `ctrl+x`. Check the pane after trying one.
 
 **Check it landed.** Read the pane (`pane read --source visible`) after every send. The message landed when it shows in the conversation or in the CLI's queue (Claude Code shows queued messages in grey until it starts on them) and the input box is empty. Text still in the box was not sent: press the key for the mode you meant, once. A busy `agent prompt --wait` can return on the current turn ending, which proves nothing about your message.
 
@@ -54,8 +54,8 @@ Messages start `Coordinator:` and name files, PRs and heads, not chat context.
 
 ## 4. Traps and fixes
 
-- **Codex hook-review dialog**: after `~/.codex/hooks.json` is edited, the hooks no longer match their trusted hashes in `~/.codex/config.toml`, and every new Codex pane opens "N hooks need review" at start. The first prompt vanishes into it while `agent prompt --wait --until working` still returns `working`; three lanes sat about 3 minutes before anyone read the pane. Show the user the new hook commands and let them choose to trust them in one Codex TUI. Until then, read the pane after each first send, `send-keys escape`, and resend.
-- **`invalid_agent_name`**: names are lowercase letters, digits, `-` or `_`, 1 to 32 characters. A script that ignores the failed `agent start` then waits on a lane that never existed; stop on a non-zero exit.
+- **Codex hook-review dialog**: after `~/.codex/hooks.json` is edited, the hooks no longer match their trusted hashes in `~/.codex/config.toml`, and every new Codex pane opens "N hooks need review" at start. The first prompt vanishes into it while `agent prompt --wait --until working` still returns `working`; three lanes sat about 3 minutes before anyone read the pane. Show the user the new hook commands and let them choose to trust them in one Codex TUI. Until then, read the pane after each first send, `send-keys escape`, and resend. Herdr's own Codex integration is a hook in that file (`herdr integration status` names it), so rerunning `herdr integration install codex`, as the 0.9.5 release notes ask, can bring the dialog back.
+- **`invalid_agent_name`**: a name starts with a lowercase letter, then lowercase letters, digits, `-` or `_`, 32 characters at most (`[a-z][a-z0-9_-]{0,31}`, `herdr --skill`). A script that ignores the failed `agent start` then waits on a lane that never existed; stop on a non-zero exit.
 - **`agent_name_taken`**: names are unique per server. Reuse that worker (it keeps context) or start under a new name; address by pane id when unsure.
 - **Brief left unsent / messages queued and never submitted / lane sitting on a dialog**: read the pane after every send and on every tick.
 - **Standing monitor stopped and idle**: briefs tell standing lanes to write a STOP line to the run record before stopping; your tick reads their panes.
