@@ -1,4 +1,4 @@
-# Lessons from the example run (3 days, about 160 PRs)
+# Lessons from the example run
 
 Each: what happened → the rule. Times are from the run record, gate reports and playbook.
 
@@ -13,7 +13,7 @@ Each: what happened → the rule. Times are from the run record, gate reports an
 ## Gate and tests
 
 - One gate passed the payment PRs with a scope that missed the admission route suites; the ship lane's wider checks found 27 failures. → Boundary changes add every caller's suite (`rg` the changed function).
-- One train ran 639 test files for an 11-file change (12 min). → Scope = changed tests + tests beside changed source; full suite once a day.
+- One train ran every test file for a change to a few files. → Scope = changed tests + tests beside changed source; full suite once a day.
 - One train stopped at the first conflict and tested nothing. → Conflict rule: abort that merge only, test the rest.
 - Two trains failed on tests main had already broken; another failed a required layout-shift ceiling that main also failed. → Reproduce on the exact base, classify contract drift vs product defect; a test-only fix needs a decision behind it; baseline exceptions are explicit and scoped and never waive a required acceptance target.
 - Name filters skipped every control assertion and still exited 0 with passing counts; a changed-file design check read uncommitted `git status` and was empty on a committed merge. → Verify selection against the real diff; whole-file control runs; per-assertion executed/pass/fail/skip evidence.
@@ -23,12 +23,12 @@ Each: what happened → the rule. Times are from the run record, gate reports an
 
 ## Shipping and builds
 
-- Main took about 136 pushes in 32 hours, each a production build. → One push per batch; docs ride the next batch.
+- Main took a push for every merge, each a production build. → One push per batch; docs ride the next batch.
 - A batch kept growing while its checks ran and went 40 minutes without a push. → Freeze at check start.
 - The ship monitor stopped on a failing file and sat idle three times. → Standing lanes write a STOP line; every tick reads their panes; attribute, drop the causal PR, ship the rest.
 - Two merges in a row started two production builds. → Cancel the earlier one at once.
 - A docs commit pushed while the previous production build was queued built in full. → Never push docs to main alone.
-- 15 failed hosted preview builds in two days, each billed in full. → Local build before any preview push; at most two local builds at once.
+- Hosted preview builds kept failing, each billed in full. → Local build before any preview push; at most two local builds at once.
 - Hosted CI ran a 70-minute matrix per push and used the month's allowance in one morning. → No paid CI on that run; the local gate is the merge check.
 - The framework's build rejected a `node_modules` symlinked to the main checkout, and removing the link needed a permission prompt. → Real install per worktree with the project's package manager (for pnpm: `pnpm install --frozen-lockfile --prefer-offline`).
 - Local `main` was a day behind `origin/main` during review. → Writer lanes branch from a fetched, recorded SHA.

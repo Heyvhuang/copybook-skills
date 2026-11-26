@@ -1,6 +1,8 @@
-# Example run (3 days, about 160 PRs)
+# Example run
 
-The production run this skill was distilled from: a public web app rebuilt from an older template (Next.js, hosted Postgres, a payments provider, an error tracker, preview and production builds on a hosting platform). One coordinator session in the Claude desktop app; Herdr workers for everything else. Run size: 107 lane briefs, 118 hand-overs, 166 gate train reports, 34 review files, a 1,484-line run record.
+The production run this skill was distilled from: a public web app rebuilt from an older template (Next.js, hosted Postgres, a payments provider, an error tracker, preview and production builds on a hosting platform). One coordinator session in the Claude desktop app; Herdr workers for everything else.
+
+Copybook ships with this coordinator. Its run of 25 to 26 Nov 2026 merged 10 changes after 16 review rounds, 3 of which sent the change back, at a median 28 minutes from the last commit to the merge.
 
 ## Layout
 
@@ -36,7 +38,7 @@ The production run this skill was distilled from: a public web app rebuilt from 
 
 ## Kinds of grants the run had
 
-Each was dated, quoted in the run record and limited to that run: ship ordinary gated batches; a fast fix loop for error-tracker incidents, including rollback to a version known to work with the current database; urgent fixes merged after the lane's own checks; the migrations named in one question; one night's delegation with a 40% quota stop; an image budget for one design round; one payments release. None of them is a default.
+Each was dated, quoted in the run record and limited to that run: ship ordinary gated batches; a fast fix loop for error-tracker incidents, including rollback to a version known to work with the current database; urgent fixes merged after the lane's own checks; the migrations named in one question; one night's delegation; an image budget for one design round; one payments release. None of them is a default.
 
 ## Files drift
 

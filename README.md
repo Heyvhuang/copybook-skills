@@ -237,7 +237,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[Overnight /goal for open issues and TODOs](./skills/long-run-tips/references/overnight-goal-for-open-issues.md)** `overnight-goal-for-open-issues`<br>Before bed: each issue and TODO taken as far as it can go without you, then one HTML board of what's done, stuck or your call. | 315 |
 | **[Goal wrapper and 5 prompts built on it](./skills/long-run-tips/references/goal-wrapper-and-5-prompts.md)** `goal-wrapper-and-5-prompts`<br>One preference typed in three places: a goal wrapper, plus prompts for components, parallel runs, review, states and corrections. | 309 |
 | **[One-way door rules for AGENTS.md: when to ask](./skills/long-run-tips/references/one-way-door-rules-when-to-ask.md)** `one-way-door-rules-when-to-ask`<br>Questions you'd only rubber-stamp: work you can undo done and shown after, a stop at anything you can't undo. | 257 |
-| **[Coordinator skill for Claude Code and Codex](./skills/long-run-tips/references/coordinator-for-claude-and-codex.md)** `coordinator-for-claude-and-codex`<br>A job too big for one agent session: a brief per lane with boundaries and a done check, then Claude, Codex and Gemini lanes. |  |
+| **[Coordinator skill for Claude Code and Codex](./skills/long-run-tips/references/coordinator-for-claude-and-codex.md)** `coordinator-for-claude-and-codex`<br>A job too big for one session, or several parallel agents overwriting each other on one repo: a brief with boundaries per lane. |  |
 
 ### Models and cost
 

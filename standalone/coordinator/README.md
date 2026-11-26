@@ -2,7 +2,7 @@
 
 Two skills that turn one agent session into a coordinator for a fleet of Claude Code and Codex workers running in [Herdr](https://herdr.dev), T3 Code, Orca or Paseo. The coordinator never writes code itself. It splits the work into lanes (one worker, one branch, one brief), picks a model and effort for each, checks what comes back, follows the project's gate and release process, and brings you only the decisions that are yours. For batch releases it tests the ready PRs together and pushes each batch once. It picks the lane runtime by where it runs: Orca workers inside Orca, T3 Code child tasks inside T3 Code, Paseo agents inside Paseo, Herdr workers everywhere else (`skills/coordinator/SKILL.md`, Runtime).
 
-It was distilled from a three-day production run: about 160 PRs, 107 lane briefs, 118 hand-overs, 166 batch test runs and a 1,484-line run record. Every rule in `skills/coordinator/references/lessons.md` comes from something that went wrong on that run. Made by [@Voxyz_ai](https://x.com/Voxyz_ai); the sanitized run is in `skills/coordinator/references/example-run.md`. Not affiliated with Anthropic, OpenAI or Herdr.
+Copybook ships with this coordinator. Its run of 25 to 26 Nov 2026 merged 10 changes after 16 review rounds, 3 of which sent the change back, at a median 28 minutes from the last commit to the merge. [`runs/`](runs/) holds that run's record, change by change. The skill was distilled from an earlier production run, and every rule in `skills/coordinator/references/lessons.md` comes from something that went wrong on that run. Made by [@Voxyz_ai](https://x.com/Voxyz_ai); the sanitized run is in `skills/coordinator/references/example-run.md`. Not affiliated with Anthropic, OpenAI or Herdr.
 
 **Quick start**
 
@@ -62,9 +62,9 @@ For a single task that only needs a few workers and no gates, `parallel-goal-fle
 
 ## Defaults you will probably change
 
-- Model table (`skills/coordinator/references/models.md`): Opus for front end, Codex Sol for back end, gates and shipping, Codex Astra for risky reviews, Sonnet for lists. Codex reviews front-end files but never edits them. Fable is left out to save quota; `max` effort only when you ask.
+- Model table (`skills/coordinator/references/models.md`): Opus for front end, Codex Sol for back end, gates and shipping, Codex Astra for risky reviews, Sonnet for lists. Codex reviews front-end files but never edits them. Fable is not in the table; `max` effort only when you ask.
 - Heavy checks share 2 machine-wide slots (`HEAVY_SLOTS`).
-- Overnight runs stop new work at a quota threshold you give (40% left on the original run).
+- Overnight runs stop new work at a quota threshold you give (for example, 40% left).
 
 ## Known gaps
 
@@ -72,7 +72,7 @@ For a single task that only needs a few workers and no gates, `parallel-goal-fle
 - Steering and queueing a busy worker follow each CLI's documented keys (`skills/coordinator/references/herdr.md` §3, read 18 Nov 2026). Sending Claude Code's Ctrl+X chords through Herdr (`ctrl+x` in Herdr's key names), and whether `agent prompt` to a busy Claude worker queues every time, were not tested; read the pane after each send.
 - T3 Code behaviour past about 10 concurrent lanes, and long lanes that compact, were not tested.
 - Orca lanes were tried on throwaway workers only (full access, sign-in, follow-ups; 24 Nov 2026). They take their permission mode from Orca's and each agent's own settings, not from launch flags, so the flag advice above does not apply to them. An Orca restart mid-lane, more than 4 lanes and a full brief-to-ship lane were not tested (`skills/coordinator/references/orca.md`, Next tests).
-- Paseo lanes were tried in one run (25 Nov 2026): worktrees, a Claude lane on a second account, finish reports waking the idle coordinator, a heartbeat wake, and reviewers on three providers (a Codex reviewer in plan mode could not write files). Error and permission reports, steer on a working lane, the Codex speed tier, idle release, a daemon restart and a full brief-to-ship lane were not tested (`skills/coordinator/references/paseo.md`, Next tests).
+- Paseo lanes were tried in one run (25 Nov 2026): worktrees, finish reports waking the idle coordinator, a heartbeat wake, and reviewers on three providers (a Codex reviewer in plan mode could not write files). Error and permission reports, steer on a working lane, the Codex speed tier, idle release, a daemon restart and a full brief-to-ship lane were not tested (`skills/coordinator/references/paseo.md`, Next tests).
 - The release-packet template assumes a Postgres-style database with migrations; adapt it to your stack.
 
 ## License

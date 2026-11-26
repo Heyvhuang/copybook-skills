@@ -61,11 +61,11 @@ Coordinator: a Paseo 0.17.4 agent on a custom Claude provider (Opus 5.5) in a lo
 | Step | What happened |
 | --- | --- |
 | `create_workspace` (worktree, branch-off, `baseBranch: origin/main`) | Returned at once; HEAD = the fetched base SHA; branch checked out; no upstream; no `node_modules`. |
-| Writer lane (custom Claude provider, `bypassPermissions`, thinking high) | Returned at once, running. Mode `bypassPermissions`; wrote outside its worktree with no prompt; `CLAUDE_CONFIG_DIR` = the custom provider's directory, claude.ai subscription sign-in: a second account through a custom provider works. Hand-over about 7 min after start. |
+| Writer lane (custom Claude provider, `bypassPermissions`, thinking high) | Returned at once, running. Mode `bypassPermissions`; wrote outside its worktree with no prompt; `CLAUDE_CONFIG_DIR` = the custom provider's directory: a lane on another account through a custom provider works. Hand-over about 7 min after start. |
 | Reports while the coordinator's turn ran | The writer's two `finished` reports (its READY turn and a later short turn) were held during the coordinator's turn and delivered in order when it ended, with the lane's last response. |
 | Heartbeat | Fired on time and woke an idle coordinator. |
 | Steer to an idle lane | Started a new turn at once. |
-| Three reviewers in parallel, one message | Codex review profile with `plan_mode`, `full-access`: could not write its probe or review file, returned the review in its final message, which the report truncated. A second Claude account, Fable 5.2: wrote its files. Antigravity Gemini, `full-access`: wrote its files. |
+| Three reviewers in parallel, one message | Codex review profile with `plan_mode`, `full-access`: could not write its probe or review file, returned the review in its final message, which the report truncated. A Claude reviewer on Fable 5.2 through a custom provider: wrote its files. Antigravity Gemini, `full-access`: wrote its files. |
 | Feature ids | Claude: `fast_mode`, `ultracode`. Codex: `service_tier`, `plan_mode`. |
 
 ### 2026-11-25, cloud gate from a Paseo terminal
@@ -75,7 +75,7 @@ A lane tried gating its docs PR with a cloud session (Sonnet, bypass) started fr
 | Step | What happened |
 | --- | --- |
 | Start | `create_terminal`, the command by `send_terminal_keys` with `literal: true`, then `Enter`: the session URL printed and the command returned in 22 s; no other key. |
-| Result | No PR comment within 45 minutes, cause unknown (the session page needs a claude.ai sign-in the lane did not use). The forge's CI was on a billing stop, so the PR got a local gate. |
+| Result | No PR comment within 45 minutes, cause unknown. The PR got a local gate. |
 
 ## Where Paseo pays
 

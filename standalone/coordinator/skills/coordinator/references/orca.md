@@ -60,8 +60,8 @@ One Run in a throwaway repo, coordinator inside an Orca workspace chat: three Ta
 
 | Lane | Receipt | Hand-over | Full access | Sign-in and configuration |
 | --- | --- | --- | --- | --- |
-| Claude Opus 5.5, `--effort medium` | 3 s | 16 s | yes, `bypassPermissions`, no prompt | claude.ai subscription sign-in, default config directory |
-| Codex `gpt-6.2-sol`, `--effort medium` | 3 s | 28 s | yes, `never` + `danger-full-access`, no prompt | ChatGPT sign-in, default `CODEX_HOME`; `config.toml` sets `service_tier = "default"` (active tier unverified) |
+| Claude Opus 5.5, `--effort medium` | 3 s | 16 s | yes, `bypassPermissions`, no prompt | default config directory |
+| Codex `gpt-6.2-sol`, `--effort medium` | 3 s | 28 s | yes, `never` + `danger-full-access`, no prompt | default `CODEX_HOME`; `config.toml` sets `service_tier = "default"` (active tier unverified) |
 | Gemini 4 Argon (`--model gemini-4-argon-medium`, receipt shows `gemini-4-argon`, effort medium) | 2 s | 49 s | yes, `agy acp --dangerously-skip-permissions`, no prompt | agy 1.5.16 has no command that shows the signed-in account |
 | Follow-up to the settled, still-open Claude worker (`send --to dispatch:`) | at once, as a follow-up Task | 7 s | — | it answered the first task's time from memory: context kept |
 

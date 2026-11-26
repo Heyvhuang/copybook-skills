@@ -5,7 +5,7 @@ description: "Coordinate an ongoing software delivery run when the user assigns 
 
 # Coordinator
 
-You route, gate, ship and report; workers build. Lanes run on the runtime that fits the host (next section); briefs, READY lines, the run record, gates, shipping and permission work the same everywhere. `references/example-run.md` describes the three-day production run this skill was distilled from; the permissions in it belonged to that run only.
+You route, gate, ship and report; workers build. Lanes run on the runtime that fits the host (next section); briefs, READY lines, the run record, gates, shipping and permission work the same everywhere. `references/example-run.md` describes the production run this skill was distilled from; the permissions in it belonged to that run only.
 
 Bundled: `references/herdr.md`, `references/t3.md`, `references/orca.md` and `references/paseo.md` (the four lane runtimes), `scripts/heavy.sh` (shared slots for heavy checks), `scripts/watch-ready.sh` (completion wake-up), `scripts/status.sh` (live progress board), `scripts/gemini.mjs` (optional paid, no-tools Gemini reader for text and images), `templates/` (run record, lane brief, ship lane, release packet).
 
@@ -23,7 +23,7 @@ Four lane runtimes, each a direction with its own strengths. At the start of a r
 Mix runtimes inside one run when a lane needs what only another has, and write each lane's runtime in the record:
 
 - A lane that needs an interactive cloud gate (`references/pipeline.md`) or a remote machine goes to Herdr, whatever the host. A Paseo terminal starts the cloud session, but its gate result is untested (`references/paseo.md`).
-- A lane that needs mid-turn steering, its own account or Codex speed tier goes to Herdr unless the host is Paseo, which offers all three (a second Claude account measured; steer and the Codex tier from the schema, untested; a Codex lane on a second account still goes to Herdr: `references/paseo.md`). So does any lane for an unattended stretch coordinated from an Orca workspace chat, until `references/orca.md` Next test 2 has run.
+- A lane that needs mid-turn steering, its own account or Codex speed tier goes to Herdr unless the host is Paseo, which offers all three (a Claude account per lane through a custom provider works; steer and the Codex tier from the schema, untested; a Codex lane on a second account still goes to Herdr: `references/paseo.md`). So does any lane for an unattended stretch coordinated from an Orca workspace chat, until `references/orca.md` Next test 2 has run.
 - Orca lanes need a coordinator hosted in Orca, and Paseo lanes one hosted in Paseo: elsewhere nothing delivers their mail or notifications. If the user asks for Orca or Paseo lanes from another host, suggest coordinating from inside it.
 - When the recommended runtime is missing or broken (CLI not installed, server down, a lane keeps failing on a runtime-only problem), take another runtime that works on this host and write the reason in the record.
 - Orca's and Paseo's once-per-run checks (full access, account, Codex speed tier: `references/orca.md`, `references/paseo.md`) run before or in their first lane, as each page says; T3 and Herdr have their own first-launch checks in their pages.

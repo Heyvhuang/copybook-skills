@@ -68,7 +68,7 @@ For example: The code map rule tells the agent to update the map in the same com
 
 ## Config
 
-Short for configuration: the settings a tool reads when it starts, such as which model it uses. On copybook.page, these tips are under Settings.
+Short for configuration: the settings a tool reads when it starts, such as which model it uses. On copybook.page, these tips are under Config.
 
 For example: The line model: opus in a subagent's definition is config that decides which model that helper runs on.
 

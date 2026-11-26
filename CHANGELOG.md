@@ -2,7 +2,7 @@
 
 What each version of Copybook's skills added, changed and retired, by week (from Monday, UTC). A tip counts as changed when its copy blocks or steps change; a version that only updates saves or dates is not listed.
 
-## Week of 23 Nov 2026 · 1.0.11 to 1.0.17
+## Week of 23 Nov 2026 · 1.0.11 to 1.0.18
 
 **Added**
 
