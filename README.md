@@ -1,8 +1,8 @@
 # Copybook
 
-Copybook is a skill pack for people who code with Claude Code or Codex. You ask for the work as usual, and it picks the prompt, rule or checklist that fits the task from the 149 tips, then follows it. You have nothing to remember and nothing to choose.
+Copybook is a skill pack for people who code with Claude Code or Codex. You ask for the work as usual, and it picks the prompt, rule or checklist that fits the task from the 150 tips, then follows it. You have nothing to remember and nothing to choose.
 
-The tips are the posts readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai) on X: 227K saves in all, counted between 22 Jul and 25 Nov 2026.
+The tips are the posts readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai) on X: 228K saves in all, counted between 22 Jul and 25 Nov 2026.
 
 [copybook.page](https://copybook.page) · [New tips by email](https://copybook.page/about#email-about-title) · [Changelog](CHANGELOG.md)
 
@@ -14,8 +14,8 @@ copybook ───────────────────────�
   ·····•······
 
 › This page looks AI-made, redo it
-  Design list · picks 1 of 33
-  ············•····················
+  Design list · picks 1 of 34
+  ·············•····················
 
 › Trim our AGENTS.md
   Codebase list · picks 1 of 34
@@ -91,7 +91,7 @@ When no tip fits, it leaves Copybook out of it and carries on with your task. If
 
 - **[Codebase](#codebase)** · 34 tips: repo index and map, coding principles, AGENTS.md, scope rules.
 - **[Review](#review)** · 18 tips: PR, code, and plan reviews, bug scoring, skill audits and backtests.
-- **[Design](#design)** · 33 tips: image-first pages, motion libraries, reference sites, design skills.
+- **[Design](#design)** · 34 tips: image-first pages, motion libraries, reference sites, design skills.
 - **[Long runs](#long-runs)** · 22 tips: multi-agent roles, progress dashboards, handoffs, remote workflows.
 - **[Models and cost](#models-and-cost)** · 25 tips: model pairings, effort, cache timing, leftover quota.
 - **[Launch](#launch)** · 12 tips: pre-launch, speed, and legal checks, SEO tool pages, VPS lockdown.
@@ -136,7 +136,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[Claude Code project instructions from your sessions](./skills/codebase-tips/references/instructions-from-your-sessions.md)** `instructions-from-your-sessions`<br>Background you re-explain every new session: pulled from your last 20 sessions and written up as project instructions. | 490 |
 | **[Mod request for Claude Code itself](./skills/codebase-tips/references/mod-request-for-claude-code.md)** `mod-request-for-claude-code`<br>Something in Claude Code's interface you want changed: a prompt that finds an existing Mod or proposes the smallest one. | 395 |
 | **[\~/.codex and \~/.claude sorted before cleanup](./skills/codebase-tips/references/codex-and-claude-sorted.md)** `codex-and-claude-sorted`<br>A cleanup that could delete your chats: items sorted Keep, History, Work, Clearable or Unknown, each command approved by you. | 367 |
-| **[Mod ideas from your last 20 sessions](./skills/codebase-tips/references/mod-ideas-from-20-sessions.md)** `mod-ideas-from-20-sessions`<br>Requests you repeat, commands you stop or undo, how you check changes: ranked by how much each would help, your words quoted. | 359 |
+| **[Mod ideas from your last 20 sessions](./skills/codebase-tips/references/mod-ideas-from-20-sessions.md)** `mod-ideas-from-20-sessions`<br>Requests you repeat, commands you stop or undo, how you check changes: ranked by how much each would help, your words quoted. | 354 |
 | **[/teach: strategic programming on your project](./skills/codebase-tips/references/teach-strategic-programming.md)** `teach-strategic-programming`<br>Spend tokens learning what AI can't replace: 3 questions about your codebase, then MISSION.md, a curriculum and lessons on it. | 326 |
 | **[Bug-fix loop rules for CLAUDE.md or AGENTS.md](./skills/codebase-tips/references/bug-fix-loop-rules.md)** `bug-fix-loop-rules`<br>Agents that both fix and review can't stop going back and forth: stop after two failed fixes, review only this round's changes. | 325 |
 | **[ub-mode: the Clean Code author's agent rules](./skills/codebase-tips/references/ub-mode-clean-code-agent-rules.md)** `ub-mode-clean-code-agent-rules`<br>Your agent's code hides bugs and its tests fool you: a skill it follows on every change, with crapper, dryer and mutator checks. | 312 |
@@ -189,6 +189,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[Dashboard redesign: 2 skills, 2 prompts](./skills/design-tips/references/dashboard-redesign-2-skills.md)** `dashboard-redesign-2-skills`<br>Dashboards that look AI-made on sight: ui-ux-pro-max and frontend-design in one redesign prompt, then a four-angle review. | 1.3K |
 | **[Screenshot-first UI rebuild prompt](./skills/design-tips/references/screenshot-first-ui-rebuild.md)** `screenshot-first-ui-rebuild`<br>UI hierarchy and density problems: every page screenshotted, then rebuilt on only a spacing scale, type scale and up to 5 colors. | 1.1K |
 | **[Codex computer use as a local MCP server](./skills/design-tips/references/codex-computer-use-as-mcp-server.md)** `codex-computer-use-as-mcp-server`<br>A fast browser for Claude Code: ChatGPT's computer use as a local MCP server, clicking pages and comparing live with local. | 1.1K |
+| **[HTML page prompt: less text, more diagrams](./skills/design-tips/references/html-page-prompt-more-diagrams.md)** `html-page-prompt-more-diagrams`<br>Claude Code's HTML pages are a wall of text: diagrams built to fit, real photos and data, the screen checked before publishing. | 729 |
 | **[UI/UX audit as a senior designer](./skills/design-tips/references/ui-ux-audit-as-a-senior-designer.md)** `ui-ux-audit-as-a-senior-designer`<br>A review with a designer's authority: taste baseline, correctness fixed, cheap-looking parts found, big changes proposed. | 645 |
 | **[lemo-opuscar: narrated launch films in code](./skills/design-tips/references/lemo-opuscar-launch-films.md)** `lemo-opuscar-launch-films`<br>No video model on hand: narration by TTS, music from free sample libraries, every frame in one of 43 styles, 30 to 60 minutes. | 634 |
 | **[4 starting points for a code-only animation](./skills/design-tips/references/4-starts-for-code-only-animation.md)** `4-starts-for-code-only-animation`<br>An animation you love, a one-line idea, a character image or an art style: a prompt for each, one HTML file rendered, plus sound. | 589 |

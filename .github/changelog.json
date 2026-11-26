@@ -276,6 +276,20 @@
         }
       ],
       "retired": []
+    },
+    {
+      "version": "1.0.17",
+      "date": "2026-11-26",
+      "added": [
+        {
+          "slug": "make-html-pages-you-get-at-a-glance",
+          "title": {
+            "en": "HTML page prompt: less text, more diagrams"
+          }
+        }
+      ],
+      "changed": [],
+      "retired": []
     }
   ],
   "tips": {
@@ -733,6 +747,12 @@
       "en": "cd37a661fe0aa75c",
       "title": {
         "en": "lemo-opuscar: narrated launch films in code"
+      }
+    },
+    "make-html-pages-you-get-at-a-glance": {
+      "en": "5e45008fc15f7543",
+      "title": {
+        "en": "HTML page prompt: less text, more diagrams"
       }
     },
     "make-motion-videos-with-a-4-subagent-team": {

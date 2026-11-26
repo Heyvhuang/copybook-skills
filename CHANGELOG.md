@@ -2,12 +2,13 @@
 
 What each version of Copybook's skills added, changed and retired, by week (from Monday, UTC). A tip counts as changed when its copy blocks or steps change; a version that only updates saves or dates is not listed.
 
-## Week of 23 Nov 2026 · 1.0.11 to 1.0.16
+## Week of 23 Nov 2026 · 1.0.11 to 1.0.17
 
 **Added**
 
 - [1:1 on your week from git log and sessions](./skills/review-tips/references/1-1-on-your-week-from-git-log.md)
 - [Delete-first prompt for your messiest project](./skills/codebase-tips/references/delete-first-project-prompt.md)
+- [HTML page prompt: less text, more diagrams](./skills/design-tips/references/html-page-prompt-more-diagrams.md)
 - [Overnight market research for startup ideas](./skills/launch-tips/references/overnight-startup-idea-research.md)
 - [Parallel PR checks with claude --cloud](./skills/review-tips/references/parallel-cloud-pr-checks.md)
 - [STATE.md and new-session rules for CLAUDE.md](./skills/model-tips/references/state-md-and-new-session-rules.md)

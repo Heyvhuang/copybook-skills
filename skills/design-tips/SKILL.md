@@ -1,16 +1,16 @@
 ---
 name: design-tips
-description: "Design · 33 tips: image-first pages, motion libraries, reference sites, design skills."
+description: "Design · 34 tips: image-first pages, motion libraries, reference sites, design skills."
 disable-model-invocation: true
 ---
 
-# Design · 33 tips
+# Design · 34 tips
 
-Copybook's 33 tips on design, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
+Copybook's 34 tips on design, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
 
 - If the user names a tip, use that tip. If they describe a task, choose the tip that best meets their goal and constraints from those that work with the agent doing the work. If several fit equally well, choose one. Tell the user in one sentence which tip you picked and why, then read its file and follow it. If another tip also fits and would materially change the approach or result, name it and say how it differs.
 - If the user said nothing, show them the list below (each tip's name and what it does) and ask which to use.
-- If none fits, say so and suggest copybook, which looks through all 149 tips.
+- If none fits, say so and suggest copybook, which looks through all 150 tips.
 
 | Tip | What it does |
 | --- | --- |
@@ -28,6 +28,7 @@ Copybook's 33 tips on design, most saved first. Each tip's text, where it goes a
 | [Dashboard redesign: 2 skills, 2 prompts](references/dashboard-redesign-2-skills.md) `dashboard-redesign-2-skills` | Dashboards that look AI-made on sight: ui-ux-pro-max and frontend-design in one redesign prompt, then a four-angle review. |
 | [Screenshot-first UI rebuild prompt](references/screenshot-first-ui-rebuild.md) `screenshot-first-ui-rebuild` | UI hierarchy and density problems: every page screenshotted, then rebuilt on only a spacing scale, type scale and up to 5 colors. |
 | [Codex computer use as a local MCP server](references/codex-computer-use-as-mcp-server.md) `codex-computer-use-as-mcp-server` | A fast browser for Claude Code: ChatGPT's computer use as a local MCP server, clicking pages and comparing live with local. |
+| [HTML page prompt: less text, more diagrams](references/html-page-prompt-more-diagrams.md) `html-page-prompt-more-diagrams` | Claude Code's HTML pages are a wall of text: diagrams built to fit, real photos and data, the screen checked before publishing. |
 | [UI/UX audit as a senior designer](references/ui-ux-audit-as-a-senior-designer.md) `ui-ux-audit-as-a-senior-designer` | A review with a designer's authority: taste baseline, correctness fixed, cheap-looking parts found, big changes proposed. |
 | [lemo-opuscar: narrated launch films in code](references/lemo-opuscar-launch-films.md) `lemo-opuscar-launch-films` | No video model on hand: narration by TTS, music from free sample libraries, every frame in one of 43 styles, 30 to 60 minutes. |
 | [4 starting points for a code-only animation](references/4-starts-for-code-only-animation.md) `4-starts-for-code-only-animation` | An animation you love, a one-line idea, a character image or an art style: a prompt for each, one HTML file rendered, plus sound. |

@@ -39,4 +39,4 @@ A mod is a small feature you add to Claude Code yourself, and you don't need to 
 
 ## Source
 
-From [Copybook](https://copybook.page/t/mod-ideas-from-your-last-20-sessions): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2115549175110676753) on 28 Oct 2026, 359 saves as of 4 Nov 2026. For Claude Code.
+From [Copybook](https://copybook.page/t/mod-ideas-from-your-last-20-sessions): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2115549175110676753) on 28 Oct 2026, 354 saves as of 25 Nov 2026. For Claude Code.

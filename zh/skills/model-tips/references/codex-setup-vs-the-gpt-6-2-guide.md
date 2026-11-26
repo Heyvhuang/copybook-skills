@@ -49,4 +49,4 @@ A one-time config check is the right place to spend one Astra message. Start Cod
 
 ## Source
 
-From [Copybook](https://copybook.page/t/review-your-codex-setup-with-openais-gpt-6-2-guide): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2123038513352622087) on 18 Nov 2026, 1.9K saves as of 19 Nov 2026. For Codex.
+From [Copybook](https://copybook.page/t/review-your-codex-setup-with-openais-gpt-6-2-guide): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2123038513352622087) on 18 Nov 2026, 1.9K saves as of 25 Nov 2026. For Codex.

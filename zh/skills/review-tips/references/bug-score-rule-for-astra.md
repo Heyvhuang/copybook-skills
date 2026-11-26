@@ -42,4 +42,4 @@ For Opus, the one fixing the code, add one more line to CLAUDE.md or AGENTS.md:
 
 ## Source
 
-From [Copybook](https://copybook.page/t/bug-score-rule-for-astras-code-reviews): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2115518965443076573) on 28 Oct 2026, 3.2K saves as of 4 Nov 2026. For Claude Code and Codex.
+From [Copybook](https://copybook.page/t/bug-score-rule-for-astras-code-reviews): [posted on X by @Voxyz_ai](https://x.com/Voxyz_ai/status/2115518965443076573) on 28 Oct 2026, 3.2K saves as of 25 Nov 2026. For Claude Code and Codex.
