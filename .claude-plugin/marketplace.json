@@ -11,7 +11,7 @@
     {
       "name": "copybook",
       "source": "./",
-      "description": "Your coding agent picks the tip that fits the task: a skill that loads by itself chooses one of 150 prompts, rules and setups and follows it. From @Voxyz_ai's posts on X, the ones readers saved most.",
+      "description": "Your coding agent picks the tip that fits the task: a skill that loads by itself chooses one of 153 prompts, rules and setups and follows it. From @Voxyz_ai's posts on X, the ones readers saved most.",
       "category": "development",
       "keywords": [
         "claude-code",
@@ -25,7 +25,7 @@
     {
       "name": "copybook-zh",
       "source": "./zh",
-      "description": "The Chinese edition of Copybook has ended, and this plugin now carries the same English skills as copybook: install copybook and remove copybook-zh. Your coding agent picks the tip that fits the task: a skill that loads by itself chooses one of 150 prompts, rules and setups and follows it. From @Voxyz_ai's posts on X, the ones readers saved most.",
+      "description": "The Chinese edition of Copybook has ended, and this plugin now carries the same English skills as copybook: install copybook and remove copybook-zh. Your coding agent picks the tip that fits the task: a skill that loads by itself chooses one of 153 prompts, rules and setups and follows it. From @Voxyz_ai's posts on X, the ones readers saved most.",
       "category": "development",
       "keywords": [
         "claude-code",

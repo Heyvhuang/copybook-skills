@@ -4,7 +4,7 @@ Dozens of grep and read turns per question: the repo as one graph of functions, 
 
 ## Steps
 
-1. Copy the two prompts.
+1. Copy the first prompt; after the restart, the second.
 2. Send them to Claude Code or Codex in your project, in order.
 3. You get: A map of your repo at localhost:9749, and a list of dead functions that are safe to delete.
 

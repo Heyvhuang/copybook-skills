@@ -1,16 +1,16 @@
 ---
 name: codebase-tips
-description: "Codebase · 34 tips: repo index and map, coding principles, AGENTS.md, scope rules."
+description: "Codebase · 36 tips: repo index and map, coding principles, AGENTS.md, scope rules."
 disable-model-invocation: true
 ---
 
-# Codebase · 34 tips
+# Codebase · 36 tips
 
-Copybook's 34 tips on codebase, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
+Copybook's 36 tips on codebase, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
 
 - If the user names a tip, use that tip. If they describe a task, choose the tip that best meets their goal and constraints from those that work with the agent doing the work. If several fit equally well, choose one. Tell the user in one sentence which tip you picked and why, then read its file and follow it. If another tip also fits and would materially change the approach or result, name it and say how it differs.
 - If the user said nothing, show them the list below (each tip's name and what it does) and ask which to use.
-- If none fits, say so and suggest copybook, which looks through all 150 tips.
+- If none fits, say so and suggest copybook, which looks through all 153 tips.
 
 | Tip | What it does |
 | --- | --- |
@@ -33,6 +33,7 @@ Copybook's 34 tips on codebase, most saved first. Each tip's text, where it goes
 | [CI time audit: 150 runs, 9 checks](references/ci-time-audit.md) `ci-time-audit` | Code takes minutes, then each PR waits on CI: the 5 slowest jobs split into queue, setup and run, and the line to change per fix. |
 | [Agent workspace audit](references/agent-workspace-audit.md) `agent-workspace-audit` | Your agent feels dumber over time: every instruction, skill, MCP and memory marked KEEP or REMOVE, cleared on your OK. |
 | [Agent memory tools: 8 repos in 4 kinds](references/agent-memory-tools-8-repos.md) `agent-memory-tools-8-repos` | No memory of code, notes, sessions or long tasks: 8 repos in those 4 kinds, one of each installed on your OK. |
+| [Mac disk reconciliation for hidden usage](references/mac-disk-reconciliation.md) `mac-disk-reconciliation` | Disk nearly full and Finder doesn't show why: the disk reconciled for hidden usage, a cleanup plan checked against your projects. |
 | [Whole-project audit with ASCII diagrams](references/whole-project-audit.md) `whole-project-audit` | Broken, inconsistent or unneeded code: how it connects explained before any change, what it's sure about fixed, the rest listed. |
 | [3 slimmer AGENTS.md plans side by side](references/3-slimmer-agents-md-plans.md) `3-slimmer-agents-md-plans` | AGENTS.md past 200 lines gets followed less: 3 slimmer versions, each more aggressive, nothing lost, shown before changes. |
 | [No compatibility code yet: AGENTS.md rules](references/no-compatibility-code-yet.md) `no-compatibility-code-yet` | No users yet, but the agent adds compatibility code and migrations: skip both, then docs, tests, smallest change and cleanup. |
@@ -46,5 +47,6 @@ Copybook's 34 tips on codebase, most saved first. Each tip's text, where it goes
 | [Bug-fix loop rules for CLAUDE.md or AGENTS.md](references/bug-fix-loop-rules.md) `bug-fix-loop-rules` | Agents that both fix and review can't stop going back and forth: stop after two failed fixes, review only this round's changes. |
 | [ub-mode: the Clean Code author's agent rules](references/ub-mode-clean-code-agent-rules.md) `ub-mode-clean-code-agent-rules` | Your agent's code hides bugs and its tests fool you: a skill it follows on every change, with crapper, dryer and mutator checks. |
 | [Clickable repo map with words vs names](references/repo-map-words-vs-names.md) `repo-map-words-vs-names` | What you call a module isn't what the code calls it: every mismatch marked in red, those likeliest to cause a wrong edit first. |
+| [Outdated CLAUDE.md and AGENTS.md review](references/outdated-claude-md-review.md) `outdated-claude-md-review` | Agents follow an outdated CLAUDE.md over your code: its old instructions identified, and a rule that puts code first. |
 | [Repeat mistakes as helpers and lint rules](references/repeat-mistakes-as-lint-rules.md) `repeat-mistakes-as-lint-rules` | The agent keeps making one mistake: the right way in a helper, the old way banned by lint, an error that names the helper to use. |
 | [Situation routing rules for skills](references/situation-routing-for-skills.md) `situation-routing-for-skills` | Your agent often forgets to use what you install, so you call each by name: the best fit per task, with one line on which and why. |

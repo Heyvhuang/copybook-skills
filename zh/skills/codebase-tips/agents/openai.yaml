@@ -1,5 +1,5 @@
 interface:
   display_name: "codebase-tips"
-  short_description: "Codebase · 34 tips: repo index and map, coding principles, AGENTS.md, scope rules."
+  short_description: "Codebase · 36 tips: repo index and map, coding principles, AGENTS.md, scope rules."
 policy:
   allow_implicit_invocation: false

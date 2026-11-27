@@ -4,7 +4,7 @@ $20 plan on Opus 5.5 by default: Haiku reads code, looks up docs; Opus advises b
 
 ## Steps
 
-1. Copy the prompt and the agent tree.
+1. Copy the prompt and the tree.
 2. Send the prompt and the agent tree to Claude Code.
 3. You get: The changes before any edit, then Sonnet 5.5 doing the work with Opus on call.
 

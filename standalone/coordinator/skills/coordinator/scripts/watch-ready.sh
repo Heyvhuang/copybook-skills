@@ -1,15 +1,19 @@
 #!/bin/bash
 # watch-ready.sh — wake the coordinator when a lane, review or gate finishes.
 # Usage: watch-ready.sh <run-dir> [timeout-seconds] [herdr-session]   (run one per run, in the background)
-# Reads lines starting with <NAME>-READY in <run-dir>/handover-*.md and review-*.md, and the lines
-# under "## Done" in <run-dir>/gate/queue.md. Prints BASELINE on first use, CHANGED: + new lines, or TIMEOUT.
+# Reads lines starting with <NAME>-READY in <run-dir>/handover-*.md and review-*.md, any files matched by
+# READY_GLOBS (space-separated globs relative to <run-dir>; keep it the same on every start), and the lines under "## Done" in
+# <run-dir>/gate/queue.md. Prints BASELINE on first use, CHANGED: + new lines, or TIMEOUT.
+# Seen lines persist in <run-dir>/tools/.ready-seen, so a line written while no watcher ran fires on the next start.
 # With a Herdr session it also prints STOPPED: when a worker seen working stops (done, idle, blocked)
 # without a new READY line: a lane that stopped to ask a question, or crashed.
 RUN=${1:?usage: watch-ready.sh <run-dir> [timeout-seconds] [herdr-session]}
 SESSION=$3
 mkdir -p "$RUN/tools"; SEEN="$RUN/tools/.ready-seen"
 sig() {
-  { grep -h -E '^[-*>` ]*[A-Z0-9-]+-READY( |$)' "$RUN"/handover-*.md "$RUN"/review-*.md 2>/dev/null | sed -E 's/^[-*>` ]*//'
+  local extra=() g
+  for g in $READY_GLOBS; do extra+=("$RUN"/$g); done
+  { grep -h -E '^[-*>` ]*[A-Z0-9-]+-READY( |$)' "$RUN"/handover-*.md "$RUN"/review-*.md "${extra[@]}" 2>/dev/null | sed -E 's/^[-*>` ]*//'
     [ -f "$RUN/gate/queue.md" ] && awk '/^## /{d=($0 ~ /^## Done[[:space:]]*$/); next} d' "$RUN/gate/queue.md"
   } | sort
 }

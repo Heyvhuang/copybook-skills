@@ -33,6 +33,7 @@ Each: what happened → the rule. Times are from the run record, gate reports an
 - The framework's build rejected a `node_modules` symlinked to the main checkout, and removing the link needed a permission prompt. → Real install per worktree with the project's package manager (for pnpm: `pnpm install --frozen-lockfile --prefer-offline`).
 - Local `main` was a day behind `origin/main` during review. → Writer lanes branch from a fetched, recorded SHA.
 - The SSH agent stopped signing at 03:20. → Per-command HTTPS with the gh credential helper; change no git config.
+- In zsh, `git push origin $d1:refs/heads/batch/x` read `$d1:r` (a modifier) and pushed `<sha>efs/heads/...`, which failed. → Brace variables before a colon (`${d1}:refs/...`), or use `scripts/batch.sh` (bash).
 - `git add docs/brand` committed 119 local working files (~33 MB). → Add explicit paths; ignore rules for working folders.
 
 ## Watching lanes (Herdr runtime; T3 child tasks, Orca workers under a coordinator hosted in Orca, and Paseo agents under a coordinator hosted in Paseo wake the coordinator themselves)
@@ -42,6 +43,7 @@ Each: what happened → the rule. Times are from the run record, gate reports an
 - The watcher lapsed after a long review and lines piled up. → Re-arm after every fire; a lapse means a catch-up tick at once.
 - A brief sat unsent in a lane's input; two coordinator messages stayed queued after their lanes' turns ended; a lane sat on an auto-mode dialog. → Read the pane after every send and on every tick.
 - `agent_name_taken` on restarting a reviewer. → Reuse it or choose a new name.
+- On a Paseo run, one READY line was written while the coordinator's process restarted; its finish report never came and the run's own watcher took a new baseline on restart, so it was collected two hours late. Another sat 37 minutes while its lane kept the turn open for a perf run, and that watcher's fixed name list did not include it. → `watch-ready.sh` (seen state kept across starts, any `<NAME>-READY`) runs beside Paseo reports; extra files through `READY_GLOBS`.
 
 ## Machine and quota
 
@@ -60,3 +62,5 @@ Each: what happened → the rule. Times are from the run record, gate reports an
 - On the money lane two reviewers on different models each found a high-severity defect the other missed. → Two reviewers for money and auth; adopt it per run.
 - A long-lived design session was auto-archived after a PR merged. → Never archive owner sessions; unarchive and say so.
 - Error-tracker issues stayed open after their fixes shipped. → Resolve on SHIPPED, same turn.
+- A public repo was moved on an answer that ended in a question (move it, or keep it where it is?); a scheduled publish lost its app install, and the repo moved back 24 minutes later. → An answer with a question, condition or other option is not a yes to a one-way step (SKILL.md, Permission).
+- A question card held the coordinator's turn for 10 minutes while gates finished and reports queued. → Card last in the turn (SKILL.md, Reporting).

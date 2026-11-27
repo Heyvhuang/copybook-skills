@@ -1,6 +1,6 @@
-# Codebase · 34 tips
+# Codebase · 36 tips
 
-Copybook's 34 tips on codebase. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../codebase-tips/references/<name>.md`.
+Copybook's 36 tips on codebase. The order is by saves, not by fit: read the whole list before choosing, since the tip that fits is often further down. Each tip's file is `../codebase-tips/references/<name>.md`.
 
 | Tip | What it does |
 | --- | --- |
@@ -23,6 +23,7 @@ Copybook's 34 tips on codebase. The order is by saves, not by fit: read the whol
 | ci-time-audit | Code takes minutes, then each PR waits on CI: the 5 slowest jobs split into queue, setup and run, and the line to change per fix. |
 | agent-workspace-audit | Your agent feels dumber over time: every instruction, skill, MCP and memory marked KEEP or REMOVE, cleared on your OK. |
 | agent-memory-tools-8-repos | No memory of code, notes, sessions or long tasks: 8 repos in those 4 kinds, one of each installed on your OK. |
+| mac-disk-reconciliation | Disk nearly full and Finder doesn't show why: the disk reconciled for hidden usage, a cleanup plan checked against your projects. |
 | whole-project-audit | Broken, inconsistent or unneeded code: how it connects explained before any change, what it's sure about fixed, the rest listed. |
 | 3-slimmer-agents-md-plans | AGENTS.md past 200 lines gets followed less: 3 slimmer versions, each more aggressive, nothing lost, shown before changes. |
 | no-compatibility-code-yet | No users yet, but the agent adds compatibility code and migrations: skip both, then docs, tests, smallest change and cleanup. |
@@ -36,5 +37,6 @@ Copybook's 34 tips on codebase. The order is by saves, not by fit: read the whol
 | bug-fix-loop-rules | Agents that both fix and review can't stop going back and forth: stop after two failed fixes, review only this round's changes. |
 | ub-mode-clean-code-agent-rules | Your agent's code hides bugs and its tests fool you: a skill it follows on every change, with crapper, dryer and mutator checks. |
 | repo-map-words-vs-names | What you call a module isn't what the code calls it: every mismatch marked in red, those likeliest to cause a wrong edit first. |
+| outdated-claude-md-review | Agents follow an outdated CLAUDE.md over your code: its old instructions identified, and a rule that puts code first. |
 | repeat-mistakes-as-lint-rules | The agent keeps making one mistake: the right way in a helper, the old way banned by lint, an error that names the helper to use. |
 | situation-routing-for-skills | Your agent often forgets to use what you install, so you call each by name: the best fit per task, with one line on which and why. |

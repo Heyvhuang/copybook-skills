@@ -1,5 +1,5 @@
 interface:
   display_name: "design-tips"
-  short_description: "Design · 34 tips: image-first pages, motion libraries, reference sites, design skills."
+  short_description: "Design · 35 tips: image-first pages, motion libraries, reference sites, design skills."
 policy:
   allow_implicit_invocation: false

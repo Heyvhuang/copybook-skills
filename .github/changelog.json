@@ -304,6 +304,45 @@
         }
       ],
       "retired": []
+    },
+    {
+      "version": "1.0.19",
+      "date": "2026-11-27",
+      "added": [
+        {
+          "slug": "five-design-prompts-from-references-to-polish",
+          "title": {
+            "en": "5 design prompts, from references to polish"
+          }
+        },
+        {
+          "slug": "reconcile-your-mac-disk-to-find-hidden-usage",
+          "title": {
+            "en": "Mac disk reconciliation for hidden usage"
+          }
+        },
+        {
+          "slug": "review-outdated-claude-md-rules-against-your-code",
+          "title": {
+            "en": "Outdated CLAUDE.md and AGENTS.md review"
+          }
+        }
+      ],
+      "changed": [
+        {
+          "slug": "index-your-repo-with-codebase-memory",
+          "title": {
+            "en": "codebase-memory MCP: an index of your repo"
+          }
+        },
+        {
+          "slug": "switch-to-sonnet-5-5-with-opus-on-call",
+          "title": {
+            "en": "/advisor: Sonnet 5.5 works, Opus on call"
+          }
+        }
+      ],
+      "retired": []
     }
   ],
   "tips": {
@@ -589,6 +628,12 @@
         "en": "Later items from your last 20 Claude Code sessions"
       }
     },
+    "five-design-prompts-from-references-to-polish": {
+      "en": "932ead49a89cda64",
+      "title": {
+        "en": "5 design prompts, from references to polish"
+      }
+    },
     "five-goal-prompts-for-leftover-codex-quota": {
       "en": "b9679dbeb25fbcf2",
       "title": {
@@ -680,7 +725,7 @@
       }
     },
     "index-your-repo-with-codebase-memory": {
-      "en": "5e386ad5130600c2",
+      "en": "5695e57eac2dcc0d",
       "title": {
         "en": "codebase-memory MCP: an index of your repo"
       }
@@ -895,6 +940,12 @@
         "en": "Code and direction review prompts"
       }
     },
+    "reconcile-your-mac-disk-to-find-hidden-usage": {
+      "en": "66f408ea0b7b38dd",
+      "title": {
+        "en": "Mac disk reconciliation for hidden usage"
+      }
+    },
     "refero-style-prompt-with-a-design-plan-first": {
       "en": "f5378c4f3fa90651",
       "title": {
@@ -929,6 +980,12 @@
       "en": "04a01648a125be0d",
       "title": {
         "en": "Old-rules review for Fable 5.2"
+      }
+    },
+    "review-outdated-claude-md-rules-against-your-code": {
+      "en": "ee7123baecaed537",
+      "title": {
+        "en": "Outdated CLAUDE.md and AGENTS.md review"
       }
     },
     "review-the-days-pushes-with-a-nightly-claude-code-routine": {
@@ -1130,7 +1187,7 @@
       }
     },
     "switch-to-sonnet-5-5-with-opus-on-call": {
-      "en": "24f91a8ae585946b",
+      "en": "7f2dc93a9f41ef31",
       "title": {
         "en": "/advisor: Sonnet 5.5 works, Opus on call"
       }

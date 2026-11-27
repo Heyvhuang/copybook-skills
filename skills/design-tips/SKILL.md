@@ -1,16 +1,16 @@
 ---
 name: design-tips
-description: "Design · 34 tips: image-first pages, motion libraries, reference sites, design skills."
+description: "Design · 35 tips: image-first pages, motion libraries, reference sites, design skills."
 disable-model-invocation: true
 ---
 
-# Design · 34 tips
+# Design · 35 tips
 
-Copybook's 34 tips on design, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
+Copybook's 35 tips on design, most saved first. Each tip's text, where it goes and what the user should get are in its file in references/.
 
 - If the user names a tip, use that tip. If they describe a task, choose the tip that best meets their goal and constraints from those that work with the agent doing the work. If several fit equally well, choose one. Tell the user in one sentence which tip you picked and why, then read its file and follow it. If another tip also fits and would materially change the approach or result, name it and say how it differs.
 - If the user said nothing, show them the list below (each tip's name and what it does) and ask which to use.
-- If none fits, say so and suggest copybook, which looks through all 150 tips.
+- If none fits, say so and suggest copybook, which looks through all 153 tips.
 
 | Tip | What it does |
 | --- | --- |
@@ -41,6 +41,7 @@ Copybook's 34 tips on design, most saved first. Each tip's text, where it goes a
 | [Camera moves to name in video prompts](references/camera-moves-for-video-prompts.md) `camera-moves-for-video-prompts` | Opus 5.5 videos that look like a slideshow: six camera moves by name with what each one does, plus seconds and speed to add. |
 | [/learn-taste: design corrections as rules](references/learn-taste-design-corrections.md) `learn-taste-design-corrections` | You keep fixing the same design mistakes: each correction in a session turned into a strict rule with reasoning. |
 | [Pixel art rendering rules for CLAUDE.md](references/pixel-art-rendering-rules.md) `pixel-art-rendering-rules` | Pixels crisp in your sprites but blurry on screen: textures on Nearest, whole-number scaling, camera and sprites rounded alike. |
+| [5 design prompts, from references to polish](references/5-design-prompts.md) `5-design-prompts` | A site that looks like every other AI site: a DESIGN.md from 10 real sites, 3 mockups to choose from and a harsh 1 to 10 score. |
 | [Happy-path debt, found and fixed](references/happy-path-debt-found-and-fixed.md) `happy-path-debt-found-and-fixed` | Screens that only work when data loads fast and nothing fails: missing states and layout breaks fixed per component, design kept. |
 | [Unslop prompt for pages that look AI-made](references/unslop-prompt.md) `unslop-prompt` | Pages that scream AI at first glance: every slop sign listed, a five-line direction for your OK, then fixes pass by pass. |
 | [703 Opus 5.5 video prompts, one remade for you](references/703-video-prompts-one-remade.md) `703-video-prompts-one-remade` | A product video like the viral ones: the 5 of 703 prompts that fit your product, your pick remade as one HTML file. |

@@ -2,20 +2,25 @@
 
 What each version of Copybook's skills added, changed and retired, by week (from Monday, UTC). A tip counts as changed when its copy blocks or steps change; a version that only updates saves or dates is not listed.
 
-## Week of 23 Nov 2026 · 1.0.11 to 1.0.18
+## Week of 23 Nov 2026 · 1.0.11 to 1.0.19
 
 **Added**
 
 - [1:1 on your week from git log and sessions](./skills/review-tips/references/1-1-on-your-week-from-git-log.md)
+- [5 design prompts, from references to polish](./skills/design-tips/references/5-design-prompts.md)
 - [Delete-first prompt for your messiest project](./skills/codebase-tips/references/delete-first-project-prompt.md)
 - [HTML page prompt: less text, more diagrams](./skills/design-tips/references/html-page-prompt-more-diagrams.md)
+- [Mac disk reconciliation for hidden usage](./skills/codebase-tips/references/mac-disk-reconciliation.md)
+- [Outdated CLAUDE.md and AGENTS.md review](./skills/codebase-tips/references/outdated-claude-md-review.md)
 - [Overnight market research for startup ideas](./skills/launch-tips/references/overnight-startup-idea-research.md)
 - [Parallel PR checks with claude --cloud](./skills/review-tips/references/parallel-cloud-pr-checks.md)
 - [STATE.md and new-session rules for CLAUDE.md](./skills/model-tips/references/state-md-and-new-session-rules.md)
 
 **Changed**
 
+- [/advisor: Sonnet 5.5 works, Opus on call](./skills/model-tips/references/advisor-opus-on-call.md)
 - [3 checks before installing a skill](./skills/review-tips/references/3-checks-before-a-skill-install.md)
+- [codebase-memory MCP: an index of your repo](./skills/codebase-tips/references/codebase-memory-repo-index.md)
 - [Coordinator skill for Claude Code and Codex](./skills/long-run-tips/references/coordinator-for-claude-and-codex.md)
 - [Less defensive code: 4 AGENTS.md rules](./skills/codebase-tips/references/less-defensive-code.md)
 - [One AGENTS.md for Claude Code and Codex](./skills/codebase-tips/references/one-agents-md-for-both-agents.md)

@@ -1,26 +1,28 @@
 # Copybook
 
-Copybook is a skill pack for people who code with Claude Code or Codex. You ask for the work as usual, and it picks the prompt, rule or checklist that fits the task from the 150 tips, then follows it. You have nothing to remember and nothing to choose.
+Copybook is a skill pack for people who code with Claude Code or Codex. You ask for the work as usual, and it picks the prompt, rule or checklist that fits the task from the 153 tips, then follows it. You have nothing to remember and nothing to choose.
 
-The tips are the posts readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai) on X: 228K saves in all, counted between 22 Jul and 25 Nov 2026.
+The tips are the posts readers saved most from [@Voxyz_ai](https://x.com/Voxyz_ai) on X: 229K saves in all, counted between 22 Jul and 26 Nov 2026.
 
 [copybook.page](https://copybook.page) · [New tips by email](https://copybook.page/about#email-about-title) · [Changelog](CHANGELOG.md)
 
 ```text
-copybook ───────────────────────────
+copybook ─────────────────────────
 
 › Is this site ready to launch?
   Launch list · picks 1 of 12
   ·····•······
 
 › This page looks AI-made, redo it
-  Design list · picks 1 of 34
-  ·············•····················
+  Design list · picks 1 of 35
+  ·············•····
+  ·················
 
 › Trim our AGENTS.md
-  Codebase list · picks 1 of 34
-  ························•·········
-────────────────────────────────────
+  Codebase list · picks 1 of 36
+  ··················
+  ········•·········
+──────────────────────────────────
   then names the tip, and why,
   and works through its steps
 ```
@@ -89,9 +91,9 @@ When no tip fits, it leaves Copybook out of it and carries on with your task. If
 
 ## What's inside
 
-- **[Codebase](#codebase)** · 34 tips: repo index and map, coding principles, AGENTS.md, scope rules.
+- **[Codebase](#codebase)** · 36 tips: repo index and map, coding principles, AGENTS.md, scope rules.
 - **[Review](#review)** · 18 tips: PR, code, and plan reviews, bug scoring, skill audits and backtests.
-- **[Design](#design)** · 34 tips: image-first pages, motion libraries, reference sites, design skills.
+- **[Design](#design)** · 35 tips: image-first pages, motion libraries, reference sites, design skills.
 - **[Long runs](#long-runs)** · 22 tips: multi-agent roles, progress dashboards, handoffs, remote workflows.
 - **[Models and cost](#models-and-cost)** · 25 tips: model pairings, effort, cache timing, leftover quota.
 - **[Launch](#launch)** · 12 tips: pre-launch, speed, and legal checks, SEO tool pages, VPS lockdown.
@@ -99,7 +101,7 @@ When no tip fits, it leaves Copybook out of it and carries on with your task. If
 
 To open Copybook yourself, type `/copybook:copybook` (or `/copybook`). In Codex, type `$copybook`. To browse a topic, use a command such as `/copybook:design-tips`. Add the tip's name to use it.
 
-Grouped by topic, most saved first; saves counted between 22 Jul and 25 Nov 2026, each tip's date in its file.
+Grouped by topic, most saved first; saves counted between 22 Jul and 26 Nov 2026, each tip's date in its file.
 
 The words the tips use are in the [glossary](docs/glossary.md); the tips that stay on copybook.page are listed in [scope](docs/scope.md).
 
@@ -128,6 +130,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[CI time audit: 150 runs, 9 checks](./skills/codebase-tips/references/ci-time-audit.md)** `ci-time-audit`<br>Code takes minutes, then each PR waits on CI: the 5 slowest jobs split into queue, setup and run, and the line to change per fix. | 1.2K |
 | **[Agent workspace audit](./skills/codebase-tips/references/agent-workspace-audit.md)** `agent-workspace-audit`<br>Your agent feels dumber over time: every instruction, skill, MCP and memory marked KEEP or REMOVE, cleared on your OK. | 887 |
 | **[Agent memory tools: 8 repos in 4 kinds](./skills/codebase-tips/references/agent-memory-tools-8-repos.md)** `agent-memory-tools-8-repos`<br>No memory of code, notes, sessions or long tasks: 8 repos in those 4 kinds, one of each installed on your OK. | 869 |
+| **[Mac disk reconciliation for hidden usage](./skills/codebase-tips/references/mac-disk-reconciliation.md)** `mac-disk-reconciliation`<br>Disk nearly full and Finder doesn't show why: the disk reconciled for hidden usage, a cleanup plan checked against your projects. | 849 |
 | **[Whole-project audit with ASCII diagrams](./skills/codebase-tips/references/whole-project-audit.md)** `whole-project-audit`<br>Broken, inconsistent or unneeded code: how it connects explained before any change, what it's sure about fixed, the rest listed. | 785 |
 | **[3 slimmer AGENTS.md plans side by side](./skills/codebase-tips/references/3-slimmer-agents-md-plans.md)** `3-slimmer-agents-md-plans`<br>AGENTS.md past 200 lines gets followed less: 3 slimmer versions, each more aggressive, nothing lost, shown before changes. | 781 |
 | **[No compatibility code yet: AGENTS.md rules](./skills/codebase-tips/references/no-compatibility-code-yet.md)** `no-compatibility-code-yet`<br>No users yet, but the agent adds compatibility code and migrations: skip both, then docs, tests, smallest change and cleanup. | 756 |
@@ -141,6 +144,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[Bug-fix loop rules for CLAUDE.md or AGENTS.md](./skills/codebase-tips/references/bug-fix-loop-rules.md)** `bug-fix-loop-rules`<br>Agents that both fix and review can't stop going back and forth: stop after two failed fixes, review only this round's changes. | 325 |
 | **[ub-mode: the Clean Code author's agent rules](./skills/codebase-tips/references/ub-mode-clean-code-agent-rules.md)** `ub-mode-clean-code-agent-rules`<br>Your agent's code hides bugs and its tests fool you: a skill it follows on every change, with crapper, dryer and mutator checks. | 312 |
 | **[Clickable repo map with words vs names](./skills/codebase-tips/references/repo-map-words-vs-names.md)** `repo-map-words-vs-names`<br>What you call a module isn't what the code calls it: every mismatch marked in red, those likeliest to cause a wrong edit first. | 303 |
+| **[Outdated CLAUDE.md and AGENTS.md review](./skills/codebase-tips/references/outdated-claude-md-review.md)** `outdated-claude-md-review`<br>Agents follow an outdated CLAUDE.md over your code: its old instructions identified, and a rule that puts code first. | 216 |
 | **[Repeat mistakes as helpers and lint rules](./skills/codebase-tips/references/repeat-mistakes-as-lint-rules.md)** `repeat-mistakes-as-lint-rules`<br>The agent keeps making one mistake: the right way in a helper, the old way banned by lint, an error that names the helper to use. | 184 |
 | **[Situation routing rules for skills](./skills/codebase-tips/references/situation-routing-for-skills.md)** `situation-routing-for-skills`<br>Your agent often forgets to use what you install, so you call each by name: the best fit per task, with one line on which and why. | 116 |
 
@@ -202,6 +206,7 @@ The words the tips use are in the [glossary](docs/glossary.md); the tips that st
 | **[Camera moves to name in video prompts](./skills/design-tips/references/camera-moves-for-video-prompts.md)** `camera-moves-for-video-prompts`<br>Opus 5.5 videos that look like a slideshow: six camera moves by name with what each one does, plus seconds and speed to add. | 354 |
 | **[/learn-taste: design corrections as rules](./skills/design-tips/references/learn-taste-design-corrections.md)** `learn-taste-design-corrections`<br>You keep fixing the same design mistakes: each correction in a session turned into a strict rule with reasoning. | 340 |
 | **[Pixel art rendering rules for CLAUDE.md](./skills/design-tips/references/pixel-art-rendering-rules.md)** `pixel-art-rendering-rules`<br>Pixels crisp in your sprites but blurry on screen: textures on Nearest, whole-number scaling, camera and sprites rounded alike. | 310 |
+| **[5 design prompts, from references to polish](./skills/design-tips/references/5-design-prompts.md)** `5-design-prompts`<br>A site that looks like every other AI site: a DESIGN.md from 10 real sites, 3 mockups to choose from and a harsh 1 to 10 score. | 305 |
 | **[Happy-path debt, found and fixed](./skills/design-tips/references/happy-path-debt-found-and-fixed.md)** `happy-path-debt-found-and-fixed`<br>Screens that only work when data loads fast and nothing fails: missing states and layout breaks fixed per component, design kept. | 260 |
 | **[Unslop prompt for pages that look AI-made](./skills/design-tips/references/unslop-prompt.md)** `unslop-prompt`<br>Pages that scream AI at first glance: every slop sign listed, a five-line direction for your OK, then fixes pass by pass. | 240 |
 | **[703 Opus 5.5 video prompts, one remade for you](./skills/design-tips/references/703-video-prompts-one-remade.md)** `703-video-prompts-one-remade`<br>A product video like the viral ones: the 5 of 703 prompts that fit your product, your pick remade as one HTML file. | 212 |
