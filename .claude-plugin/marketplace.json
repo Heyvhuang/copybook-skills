@@ -1,8 +1,8 @@
 {
   "name": "copybook",
   "owner": {
-    "name": "Vox",
-    "url": "https://x.com/Voxyz_ai"
+    "name": "Copybook",
+    "url": "https://copybook.page"
   },
   "metadata": {
     "description": "Skills that pick the prompt, rule or setup that fits the task your coding agent is on, from the posts readers saved most on X. Install copybook."

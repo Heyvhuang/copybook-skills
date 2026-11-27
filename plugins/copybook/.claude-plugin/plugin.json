@@ -1,10 +1,10 @@
 {
   "name": "copybook",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "description": "Your coding agent picks the tip that fits the task: a skill that loads by itself chooses one of 153 prompts, rules and setups and follows it. From @Voxyz_ai's posts on X, the ones readers saved most.",
   "author": {
-    "name": "Vox",
-    "url": "https://x.com/Voxyz_ai"
+    "name": "Copybook",
+    "url": "https://copybook.page"
   },
   "homepage": "https://copybook.page",
   "repository": "https://github.com/Heyvhuang/copybook-skills",
@@ -17,6 +17,10 @@
     "agents-md",
     "coding-agents"
   ],
+  "documentationUrl": "https://copybook.page/skills",
+  "supportUrl": "https://copybook.page/support",
+  "privacyPolicyUrl": "https://copybook.page/privacy",
+  "termsOfServiceUrl": "https://copybook.page/terms",
   "skills": [
     "./skills/copybook",
     "./skills/codebase-tips",
