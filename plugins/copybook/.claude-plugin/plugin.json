@@ -1,6 +1,6 @@
 {
   "name": "copybook",
-  "version": "1.0.20",
+  "version": "1.0.21",
   "description": "Your coding agent picks the tip that fits the task: a skill that loads by itself chooses one of 153 prompts, rules and setups and follows it. From @Voxyz_ai's posts on X, the ones readers saved most.",
   "author": {
     "name": "Vox",
